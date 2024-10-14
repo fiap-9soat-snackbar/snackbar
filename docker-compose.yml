@@ -1,0 +1,28 @@
+services:
+  app:
+    build: backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      mongodb:
+        condition: service_healthy 
+
+#    environment:
+#      - SPRING_DATA_MONGODB_HOST=mongodb
+  mongodb:
+    build: database
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      #test: [ "CMD", "mongosh", "--quiet", "127.0.0.1/test", "--eval", "'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)'" ]
+      test: ["CMD", "docker-healthcheck"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+#    command: sh ./dbLoad.sh
+
+volumes:
+  mongodb_data:
