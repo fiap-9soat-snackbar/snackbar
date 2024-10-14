@@ -13,7 +13,7 @@ COPY docker-healthcheck /usr/local/bin/
 
 HEALTHCHECK CMD ["docker-healthcheck"]
 
-RUN ["echo", "Loading database..."]
-CMD ["mongosh", "localhost:27017/snackbar", "dbLoadProducts.js"]
+#RUN ["echo", "Loading database..."]
+#CMD ["mongosh", "localhost:27017/snackbar", "dbLoadProducts.js"]
 
 #CMD ["sh", "dbLoad.sh"]
