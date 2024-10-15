@@ -1,27 +1,33 @@
 services:
   app:
     build: backend
+    container_name: snackbar-app-container
     ports:
       - "8080:8080"
+    volumes:
+      - .:/app
     depends_on:
-      mongodb:
-        condition: service_healthy 
+      - mongodb
+      #  condition: service_healthy 
+    environment:
+      - DB_HOST=mongodb
+      - DB_PORT=27017
+      - APP_DB=snackbar
 
-#    environment:
-#      - SPRING_DATA_MONGODB_HOST=mongodb
   mongodb:
     build: database
+    container_name: mongodb-container
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
-    healthcheck:
-      #test: [ "CMD", "mongosh", "--quiet", "127.0.0.1/test", "--eval", "'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)'" ]
-      test: ["CMD", "docker-healthcheck"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
+    #healthcheck:
+    #  test: [ "CMD", "mongosh", "--quiet", "127.0.0.1/test", "--eval", "'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)'" ]
+    #  test: ["CMD", "docker-healthcheck"]
+    #  interval: 10s
+    #  timeout: 5s
+    #  retries: 5
+    #  start_period: 10s
 #    command: sh ./dbLoad.sh
 
 volumes:

@@ -8,13 +8,13 @@ ENV APP_PORT=$APP_PORT
 EXPOSE $APP_PORT
 
 # Create application directory, create group and user specific for app, and change ownership for app specific user, to avoid run as root 
-RUN mkdir /app && groupadd --system javauser
-RUN useradd --system --shell /bin/false -g javauser javauser
-RUN chown -R javauser:javauser /app
+#RUN mkdir /app && groupadd --system javauser
+#RUN useradd --system --shell /bin/false -g javauser javauser
+#RUN chown -R javauser:javauser /app
 
 # Define working directory and define app specific user
-WORKDIR /app
-USER javauser
+#WORKDIR /app
+#USER javauser
 
 # Define JAR file and copy source code last, as it changes the most
 ARG JAR_FILE=target/*.jar
