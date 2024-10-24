@@ -1,34 +1,37 @@
 services:
   app:
     build: backend
+    restart: always
     container_name: snackbar-app-container
     ports:
       - "8080:8080"
     volumes:
       - .:/app
     depends_on:
-      - mongodb
-      #  condition: service_healthy 
+      - mongodb 
     environment:
-      - DB_HOST=mongodb
-      - DB_PORT=27017
-      - APP_DB=snackbar
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - APP_DB=${APP_DB}
+      - MONGODB_USER=${MONGODB_USER}
+      - MONGODB_PASSWORD=${MONGODB_PASSWORD}
 
   mongodb:
-    build: database
+    image: mongo:8.0.1
+    restart: always
     container_name: mongodb-container
     ports:
       - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
+      - MONGODB_USER=${MONGODB_USER}
+      - MONGODB_PASSWORD=${MONGODB_PASSWORD}
+      - DB_PORT=${DB_PORT}
     volumes:
       - mongodb_data:/data/db
-    #healthcheck:
-    #  test: [ "CMD", "mongosh", "--quiet", "127.0.0.1/test", "--eval", "'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)'" ]
-    #  test: ["CMD", "docker-healthcheck"]
-    #  interval: 10s
-    #  timeout: 5s
-    #  retries: 5
-    #  start_period: 10s
-#    command: sh ./dbLoad.sh
+      - ./database/dbLoad.sh:/docker-entrypoint-initdb.d/dbLoad.sh
 
 volumes:
   mongodb_data:

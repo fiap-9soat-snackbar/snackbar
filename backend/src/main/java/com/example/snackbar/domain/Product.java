@@ -7,13 +7,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Product {
     @Id
     private String id;
+    private String category;
+    private String description;
     private String name;
     private double price;
 
     public Product() {}
 
-    public Product(String name, double price) {
+    public Product(String name, String category, String description, double price) {
         this.name = name;
+        this.category = category;
+        this.description = description;
         this.price = price;
     }
 
@@ -33,6 +37,22 @@ public class Product {
         this.name = name;
     }
 
+    public String getCategory() {
+        return category;
+    }
+    
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
     public double getPrice() {
         return price;
     }

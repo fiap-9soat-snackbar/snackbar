@@ -1,6 +1,6 @@
-/home/saulo/workspace/fiap-alura/fase01/01-tc-lanchonete/backend/src/main/java/com/example/snackbar/domain/Product.java
-/home/saulo/workspace/fiap-alura/fase01/01-tc-lanchonete/backend/src/main/java/com/example/snackbar/web/ProductController.java
-/home/saulo/workspace/fiap-alura/fase01/01-tc-lanchonete/backend/src/main/java/com/example/snackbar/application/ProductServiceImpl.java
-/home/saulo/workspace/fiap-alura/fase01/01-tc-lanchonete/backend/src/main/java/com/example/snackbar/SnackbarApplication.java
-/home/saulo/workspace/fiap-alura/fase01/01-tc-lanchonete/backend/src/main/java/com/example/snackbar/application/ProductService.java
-/home/saulo/workspace/fiap-alura/fase01/01-tc-lanchonete/backend/src/main/java/com/example/snackbar/infrastructure/ProductRepository.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/example/snackbar/domain/Product.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/example/snackbar/infrastructure/ProductRepository.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/example/snackbar/application/ProductService.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/example/snackbar/web/ProductController.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/example/snackbar/application/ProductServiceImpl.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/example/snackbar/SnackbarApplication.java
