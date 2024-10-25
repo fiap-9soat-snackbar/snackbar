@@ -33,9 +33,16 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> getProductsByCategory(String category) {
+        return productRepository.getProductsByCategory(category);
+    }
+
+    @Override
     public Product updateProduct(String id, Product product) {
         Product existingProduct = getProduct(id);
         existingProduct.setName(product.getName());
+        existingProduct.setCategory(product.getCategory());
+        existingProduct.setDescription(product.getDescription());
         existingProduct.setPrice(product.getPrice());
         return productRepository.save(existingProduct);
     }
