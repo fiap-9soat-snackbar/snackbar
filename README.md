@@ -1,14 +1,44 @@
 # Snackbar Application
 
+<p align="center">
+	<img alt="Spring boot" src="https://img.shields.io/badge/Spring%20Boot-6DB33F.svg?style=for-the-badge&logo=Spring-Boot&logoColor=white">
+	<img alt="Maven" src="https://img.shields.io/badge/Apache%20Maven-C71A36.svg?style=for-the-badge&logo=Apache-Maven&logoColor=white">
+	<img alt="MongoDb" src="https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=MongoDB&logoColor=white">
+	<img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white   ">
+	<img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420.svg?style=for-the-badge&logo=Ubuntu&logoColor=white">
+</p>
+
+<h4 align="center"> 
+  🍔 Snack bar 🍟
+</h4>
+
+<p align="center">
+<a href="#about">About</a> •
+<a href="#run"> Running the Application</a> •
+<a href="#endpoints">API Endpoints</a> •
+<a href="tecnologies">Tecnolgies<a/> •
+<a href="#colab">Collaborators</a> •
+<a href="#deploy">Deployed version</a> •
+<a href="#license">License</a>
+</p>
+   
+<p id="about">
+
+## 💻 About the project
 This is a backend-only application for managing products in a snackbar, following an hexagonal architecture.
 
 The application is written in Java 21 using Spring Boot, built using Maven 3.9.9, uses MongoDB 8.0.1 as database, and runs containerized using Docker 27.2 and Docker Compose 2.29 on container images based on Ubuntu 24.04 (Noble Numbat).
+</p>
 
-## Running the Application
 
-### Cloning the Git repository
+   
+## 🏃‍♂️‍➡️ Running the Application
 
-The application repository is privately hosted on GitHub (https://github.com/commskywalker/snackbar), with access allowed only to specific users.
+<p id="run"></p>
+
+### 👯‍♂️ Cloning the Git repository
+
+The application repository is privately hosted on [GitHub](https://github.com/commskywalker/snackbar), with access allowed only to specific users.
 
 Once you have access to the repository:
 
@@ -20,7 +50,7 @@ Once you have access to the repository:
    git clone https://github.com/commskywalker/snackbar.git
    ```
 
-### Using Docker Compose
+### 🚢 Using Docker Compose
 
 To run the application using Docker Compose:
 
@@ -30,10 +60,10 @@ To run the application using Docker Compose:
    ```
    docker-compose up -d --build
    ```
+   
+<h6>💡OBS: If you prefer to run the application with the logs displaying in the console, run the following command above without the flag "-d"</h6>
 
-OBS: If you prefer to run the application with the logs displaying in the console, run the following command above without the flag "-d"
-
-3. The application will start and be accessible at http://localhost:8080.
+3. The application will start and be accessible at [localhost:8080](http://localhost:8080).
 
 To stop the application run:
 
@@ -41,23 +71,156 @@ To stop the application run:
 docker-compose down -v
 ```
 
-OBS: If you were running with logs on the console, use Ctrl+C in the terminal where docker-compose is running and then the command above. 
+<h6>💡OBS: If you were running with logs on the console, use Ctrl+C in the terminal where docker-compose is running and then the command above. </h6> 
 
-### Accessing the API Endpoints
+<p id="endpoints">
+   
+## 📍API Endpoints
+</p>
+
+* Before testing the APIs, ensure you have [Postman](https://www.postman.com/) or similar installed on your system.
+* The MongoDB "products" collection, within the "snackbar" database, comes pre-loaded with a series of products.
 
 The application exposes the following REST API endpoints:
 
-Before testing the APIs, ensure you have Postman (https://www.postman.com/) or similar installed on your system.
 
-The MongoDB "products" collection, within the "snackbar" database, comes pre-loaded with a series of products. 
+| route               | description                                          
+|----------------------|-----------------------------------------------------
+| <kbd>GET /api/products</kbd>     | See [request details](#get-products)
+| <kbd>GET /api/products/{id}</kbd>     |  See [request details](#get-products-id)
+| <kbd>GET /api/products/category/{category}</kbd>     |See [request details](#get-products-category)
+| <kbd>POST /api/products</kbd>     | See [request details](#post-products)
+| <kbd>PUT /api/products/{id}</kbd>     | See [request details](#put-products)
+| <kbd>DELETE /api/products/{id}</kbd>     | Will only return the HTTP status code. 
+| <kbd>DELETE /api/products/{id}</kbd>     |  [pasta](https://github.com/commskywalker/snackbar/blob/main/database/dbLoad.sh)
 
-Short description:
-- `GET /api/products`: Get all products
-- `GET /api/products/{id}`: Get a product by ID
-- `GET /api/products/category/{category}`: Get products by category
-- `POST /api/products`: Create a new product
-- `PUT /api/products/{id}`: Update a product
-- `DELETE /api/products/{id}`: Delete a product
+
+
+
+<h3 id="get-products">GET /api/products</h3>
+
+**RESPOSNSE**  
+```json
+{
+    "success": true,
+    "message": "Products retrieved successfully",
+    "data": [
+        {
+            "id": "671bb29c52801c1c1efe6911",
+            "category": "Lanche",
+            "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
+            "name": "Hambúrguer",
+            "price": 30
+        },
+        {
+            "id": "671bb29c52801c1c1efe6912",
+            "category": "Acompanhamento",
+            "description": "Batatas fritas crocantes com ketchup",
+            "name": "Batata frita",
+            "price": 15
+        }
+    ]
+}
+```
+
+<h3 id="get-products-id">GET /api/products/{id}</h3>
+
+**RESPONSE**
+```json
+{
+    "success": true,
+    "message": "Product retrieved successfully",
+    "data": {
+        "id": "671d1ab834d76230acfe6911",
+        "category": "Lanche",
+        "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
+        "name": "Hambúrguer",
+        "price": 30
+    }
+}
+```
+
+<h3 id="get-products-category">GET /api/products/category/{category}</h3>
+
+**RESPONSE**
+```json
+{
+    "success": true,
+    "message": "Products retrieved successfully",
+    "data": [
+        {
+            "id": "671d1ab834d76230acfe6911",
+            "category": "Lanche",
+            "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
+            "name": "Hambúrguer",
+            "price": 30
+        },
+        {
+            "id": "671d1ab834d76230acfe6915",
+            "category": "Lanche",
+            "description": "Pizza de mussarela com tomate e manjericão.",
+            "name": "Pizza",
+            "price": 25
+        }
+    ]
+}
+```
+<h3 id="post-products">POST /registerClient/:idUser</h3>
+
+**REQUEST**  
+```json
+{
+    "name": "Hambúrguer",
+    "category": "Lanche",
+    "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
+    "price": 10
+}
+```
+**RESPONSE**
+```json
+{
+    "success": true,
+    "message": "Product created successfully",
+    "data": {
+        "id": "671d1c91f7689b2849534586",
+        "category": "Lanche",
+        "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
+        "name": "Hambúrguer",
+        "price": 10
+    }
+}
+```
+
+<h3 id="put-products">PUT /api/products/{id}</h3>
+
+**REQUEST**  
+```json
+{
+    "name": "Salada",
+    "category": "Acompanhamento",
+    "description": "Batatas fritas com ketchup",
+    "price": 10
+}
+```
+
+**RESPONSE**  
+```json
+{
+    "success": true,
+    "message": "Product updated successfully",
+    "data": {
+        "id": "671d1c91f7689b2849534586",
+        "category": "Acompanhamento",
+        "description": "Batatas fritas crocantes com ketchup",
+        "name": "Batata frita",
+        "price": 15
+    }
+}
+```
+
+
+
+
 
 Long description:
 
@@ -142,147 +305,3 @@ To run the application directly using Java and Maven:
    ```
    java -jar target/snackbar-0.0.1-SNAPSHOT.jar
    ```
-
-Get Products (GET http://localhost:8080/api/products) Response:
-
-{
-    "success": true,
-    "message": "Products retrieved successfully",
-    "data": [
-        {
-            "id": "671d1ab834d76230acfe6911",
-            "category": "Lanche",
-            "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
-            "name": "Hambúrguer",
-            "price": 30
-        },
-        {
-            "id": "671d1ab834d76230acfe6912",
-            "category": "Acompanhamento",
-            "description": "Batatas fritas crocantes com ketchup.",
-            "name": "Batata frita",
-            "price": 15
-        },
-        {
-            "id": "671d1ab834d76230acfe6913",
-            "category": "Bebida",
-            "description": "Refrigerante de cola 300ml.",
-            "name": "Refrigerante",
-            "price": 8
-        },
-        {
-            "id": "671d1ab834d76230acfe6914",
-            "category": "Sobremesa",
-            "description": "Sorvete de chocolate com calda de caramelo.",
-            "name": "Sorvete",
-            "price": 12
-        },
-        {
-            "id": "671d1ab834d76230acfe6915",
-            "category": "Lanche",
-            "description": "Pizza de mussarela com tomate e manjericão.",
-            "name": "Pizza",
-            "price": 25
-        },
-        {
-            "id": "671d1ab834d76230acfe6916",
-            "category": "Acompanhamento",
-            "description": "Chips de batata doce.",
-            "name": "Chips",
-            "price": 18
-        },
-        {
-            "id": "671d1ab834d76230acfe6917",
-            "category": "Bebida",
-            "description": "Água mineral 500ml.",
-            "name": "Água",
-            "price": 5
-        },
-        {
-            "id": "671d1ab834d76230acfe6918",
-            "category": "Sobremesa",
-            "description": "Brownie de chocolate com cobertura de caramelo.",
-            "name": "Brownie",
-            "price": 15
-        },
-        {
-            "id": "671d1ab834d76230acfe6919",
-            "category": "Lanche",
-            "description": "Salada de alface, tomate e manjericão.",
-            "name": "Salada",
-            "price": 20
-        }
-    ]
-}
-
-Get Product (GET http://localhost:8080/api/products/671d1ab834d76230acfe691) Response:
-
-{
-    "success": true,
-    "message": "Product retrieved successfully",
-    "data": {
-        "id": "671d1ab834d76230acfe6911",
-        "category": "Lanche",
-        "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
-        "name": "Hambúrguer",
-        "price": 30
-    }
-}
-
-Get Products by Category (GET http://localhost:8080/api/products/category/Lanche) Response:
-
-{
-    "success": true,
-    "message": "Products retrieved successfully",
-    "data": [
-        {
-            "id": "671d1ab834d76230acfe6911",
-            "category": "Lanche",
-            "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
-            "name": "Hambúrguer",
-            "price": 30
-        },
-        {
-            "id": "671d1ab834d76230acfe6915",
-            "category": "Lanche",
-            "description": "Pizza de mussarela com tomate e manjericão.",
-            "name": "Pizza",
-            "price": 25
-        },
-        {
-            "id": "671d1ab834d76230acfe6919",
-            "category": "Lanche",
-            "description": "Salada de alface, tomate e manjericão.",
-            "name": "Salada",
-            "price": 20
-        }
-    ]
-}
-
-Post Product (POST http://localhost:8080/api/products) Response:
-
-{
-    "success": true,
-    "message": "Product created successfully",
-    "data": {
-        "id": "671d1c91f7689b2849534586",
-        "category": "Lanche",
-        "description": "My new product 01 description",
-        "name": "My new product 01",
-        "price": 10
-    }
-}
-
-Put Product (PUT http://localhost:8080/api/products/671d1c91f7689b2849534586) Response:
-
-{
-    "success": true,
-    "message": "Product updated successfully",
-    "data": {
-        "id": "671d1c91f7689b2849534586",
-        "category": "Lanche",
-        "description": "My new product 01 description 02",
-        "name": "My new product 01",
-        "price": 10
-    }
-}
