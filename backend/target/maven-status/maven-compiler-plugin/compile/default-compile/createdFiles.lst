@@ -1,7 +1,1 @@
-com/snackbar/web/ProductController.class
-com/snackbar/web/dto/ApiResponse.class
-com/snackbar/application/ProductService.class
 com/snackbar/SnackbarApplication.class
-com/snackbar/infrastructure/ProductRepository.class
-com/snackbar/application/ProductServiceImpl.class
-com/snackbar/domain/Product.class

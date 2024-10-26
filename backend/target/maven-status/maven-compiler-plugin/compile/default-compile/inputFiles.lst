@@ -1,7 +1,7 @@
-/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/web/dto/ApiResponse.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/product/domain/Product.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/product/web/ProductController.java
 /home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/SnackbarApplication.java
-/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/domain/Product.java
-/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/infrastructure/ProductRepository.java
-/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/web/ProductController.java
-/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/application/ProductServiceImpl.java
-/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/application/ProductService.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/product/application/ProductService.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/product/infrastructure/ProductRepository.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/product/application/ProductServiceImpl.java
+/home/saulo/workspace/fiap/fase01-tc/snackbar/backend/src/main/java/com/snackbar/common/dto/ApiResponse.java
