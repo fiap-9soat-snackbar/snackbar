@@ -142,3 +142,147 @@ To run the application directly using Java and Maven:
    ```
    java -jar target/snackbar-0.0.1-SNAPSHOT.jar
    ```
+
+Get Products (GET http://localhost:8080/api/products) Response:
+
+{
+    "success": true,
+    "message": "Products retrieved successfully",
+    "data": [
+        {
+            "id": "671d1ab834d76230acfe6911",
+            "category": "Lanche",
+            "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
+            "name": "Hambúrguer",
+            "price": 30
+        },
+        {
+            "id": "671d1ab834d76230acfe6912",
+            "category": "Acompanhamento",
+            "description": "Batatas fritas crocantes com ketchup.",
+            "name": "Batata frita",
+            "price": 15
+        },
+        {
+            "id": "671d1ab834d76230acfe6913",
+            "category": "Bebida",
+            "description": "Refrigerante de cola 300ml.",
+            "name": "Refrigerante",
+            "price": 8
+        },
+        {
+            "id": "671d1ab834d76230acfe6914",
+            "category": "Sobremesa",
+            "description": "Sorvete de chocolate com calda de caramelo.",
+            "name": "Sorvete",
+            "price": 12
+        },
+        {
+            "id": "671d1ab834d76230acfe6915",
+            "category": "Lanche",
+            "description": "Pizza de mussarela com tomate e manjericão.",
+            "name": "Pizza",
+            "price": 25
+        },
+        {
+            "id": "671d1ab834d76230acfe6916",
+            "category": "Acompanhamento",
+            "description": "Chips de batata doce.",
+            "name": "Chips",
+            "price": 18
+        },
+        {
+            "id": "671d1ab834d76230acfe6917",
+            "category": "Bebida",
+            "description": "Água mineral 500ml.",
+            "name": "Água",
+            "price": 5
+        },
+        {
+            "id": "671d1ab834d76230acfe6918",
+            "category": "Sobremesa",
+            "description": "Brownie de chocolate com cobertura de caramelo.",
+            "name": "Brownie",
+            "price": 15
+        },
+        {
+            "id": "671d1ab834d76230acfe6919",
+            "category": "Lanche",
+            "description": "Salada de alface, tomate e manjericão.",
+            "name": "Salada",
+            "price": 20
+        }
+    ]
+}
+
+Get Product (GET http://localhost:8080/api/products/671d1ab834d76230acfe691) Response:
+
+{
+    "success": true,
+    "message": "Product retrieved successfully",
+    "data": {
+        "id": "671d1ab834d76230acfe6911",
+        "category": "Lanche",
+        "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
+        "name": "Hambúrguer",
+        "price": 30
+    }
+}
+
+Get Products by Category (GET http://localhost:8080/api/products/category/Lanche) Response:
+
+{
+    "success": true,
+    "message": "Products retrieved successfully",
+    "data": [
+        {
+            "id": "671d1ab834d76230acfe6911",
+            "category": "Lanche",
+            "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
+            "name": "Hambúrguer",
+            "price": 30
+        },
+        {
+            "id": "671d1ab834d76230acfe6915",
+            "category": "Lanche",
+            "description": "Pizza de mussarela com tomate e manjericão.",
+            "name": "Pizza",
+            "price": 25
+        },
+        {
+            "id": "671d1ab834d76230acfe6919",
+            "category": "Lanche",
+            "description": "Salada de alface, tomate e manjericão.",
+            "name": "Salada",
+            "price": 20
+        }
+    ]
+}
+
+Post Product (POST http://localhost:8080/api/products) Response:
+
+{
+    "success": true,
+    "message": "Product created successfully",
+    "data": {
+        "id": "671d1c91f7689b2849534586",
+        "category": "Lanche",
+        "description": "My new product 01 description",
+        "name": "My new product 01",
+        "price": 10
+    }
+}
+
+Put Product (PUT http://localhost:8080/api/products/671d1c91f7689b2849534586) Response:
+
+{
+    "success": true,
+    "message": "Product updated successfully",
+    "data": {
+        "id": "671d1c91f7689b2849534586",
+        "category": "Lanche",
+        "description": "My new product 01 description 02",
+        "name": "My new product 01",
+        "price": 10
+    }
+}
