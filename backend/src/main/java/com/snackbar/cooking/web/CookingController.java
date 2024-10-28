@@ -25,7 +25,7 @@ public class CookingController {
         return ResponseEntity.ok(ClientName);
     }
 
-    @GetMapping("/cookings")
+    @GetMapping("/cooking")
     public ResponseEntity<List<Cooking>> getAllCookings() {
         List<Cooking> cookings = this.cookingService.obtainAll();
         return ResponseEntity.ok(cookings);
