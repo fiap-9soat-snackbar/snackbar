@@ -29,6 +29,8 @@ public class ProductController {
         }
     }
 
+    // Removed getProductsByCookingTime endpoint as it is not necessary
+
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse<Product>> getProduct(@PathVariable String id) {
         try {

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.snackbar.cooking.domain.Cooking;
 import com.snackbar.cooking.infrastructure.CookingRepository;
-import com.snackbar.cooking.application.CookingService;
+//import com.snackbar.cooking.application.CookingService;
 
 @Service
 public class CookingServiceImpl implements CookingService {
@@ -25,7 +25,7 @@ public class CookingServiceImpl implements CookingService {
     public Cooking getById(String id) {
         return this.cookingRepository
         .findById(id)
-        .orElseThrow(() -> new IllegalArgumentException("Pedido nao existe, nego"));
+        .orElseThrow(() -> new IllegalArgumentException("Cooking not found"));
     }
 
     public String startPreparation(String id) {

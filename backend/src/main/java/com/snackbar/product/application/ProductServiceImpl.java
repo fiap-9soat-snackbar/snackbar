@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 import java.math.BigDecimal;
 
 @Service
@@ -26,21 +25,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     private void validateProduct(Product product) {
-        if (product.getName() == null || product.getName().trim().isEmpty()) {
-            throw new IllegalArgumentException("Product name is required");
-        }
-        if (product.getCategory() == null || product.getCategory().trim().isEmpty()) {
-            throw new IllegalArgumentException("Product category is required");
-        }
-        if (product.getDescription() == null || product.getDescription().trim().isEmpty()) {
-            throw new IllegalArgumentException("Product description is required");
-        }
-        if (Objects.isNull(product.getPrice())) {
-            throw new IllegalArgumentException("Product price is required");
-        }
-        if (product.getPrice().compareTo(BigDecimal.ZERO) < 0) {
-            throw new IllegalArgumentException("Product price must be zero or greater");
-        }
+        product.validateProduct();
     }
 
     @Override
@@ -73,6 +58,10 @@ public class ProductServiceImpl implements ProductService {
         if (product.getPrice() != null && product.getPrice().compareTo(BigDecimal.ZERO) >= 0) {
             existingProduct.setPrice(product.getPrice());
         }
+        if (product.getCookingTime() != null && product.getCookingTime() > 0) {
+            existingProduct.setCookingTime(product.getCookingTime());
+        }
+        existingProduct.validateProduct();
         return productRepository.save(existingProduct);
     }
 

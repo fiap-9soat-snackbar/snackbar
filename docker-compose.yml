@@ -31,7 +31,7 @@ services:
       - DB_PORT=${DB_PORT}
     volumes:
       - mongodb_data:/data/db
-      - ./database/dbLoad.sh:/docker-entrypoint-initdb.d/dbLoad.sh
+      - ./database/dbSampleDataLoad.sh:/docker-entrypoint-initdb.d/dbSampleDataLoad.sh
 
 volumes:
   mongodb_data:
