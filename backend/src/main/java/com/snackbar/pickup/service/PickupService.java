@@ -37,6 +37,6 @@ public class PickupService implements DeliveryPickupUseCase, NotifyCustomerUseCa
 
         // Update status on Database (MongoDB)
         pickupRepository.save(pickup);
-        System.out.println("Order " + orderId + " delivered.");
+        System.out.println("Order " + orderId + " is delivered");
     }
 }
