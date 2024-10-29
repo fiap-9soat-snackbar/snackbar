@@ -82,7 +82,7 @@ The application exposes the following REST API endpoints:
 
 | route               | description                                          
 |----------------------|-----------------------------------------------------
-| <kbd>Products Endpoints</kbd>     | See [products.md](https://github.com/commskywalker/snackbar/blob/main/backend/products.md)
+| <kbd>Products Endpoints</kbd>     | See [products.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/product/products.md)
 </div>
 
 
