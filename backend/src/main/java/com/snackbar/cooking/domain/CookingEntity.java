@@ -26,7 +26,7 @@ public class CookingEntity {
 
     public static class Item {
     /*     private String nome;
-        private int quantidade;
+        private int quantity;
         private String personalizacao;
     */
     }
