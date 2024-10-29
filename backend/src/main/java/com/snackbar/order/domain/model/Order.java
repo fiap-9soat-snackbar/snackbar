@@ -8,12 +8,12 @@ public class Order {
 
     @Id
     private String id;
-    private String descricao;
-    private int quantidade;
-    private double precoTotal;
+    private String description;
+    private int quantity;
+    private double totalPrice;
     private StatusOrder statusOrder;
-    private boolean pago;           
-    private boolean retirado;      
+    private boolean paid;           
+    private boolean delivered;      
 
     // Getters e Setters
 
@@ -25,28 +25,28 @@ public class Order {
         this.id = id;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public double getPrecoTotal() {
-        return precoTotal;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setPrecoTotal(double precoTotal) {
-        this.precoTotal = precoTotal;
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public StatusOrder getStatusOrder() {
@@ -57,19 +57,19 @@ public class Order {
         this.statusOrder = statusOrder;
     }
 
-    public boolean isPago() {
-        return pago;
+    public boolean isPaid() {
+        return paid;
     }
 
-    public void setPago(boolean pago) {
-        this.pago = pago;
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 
-    public boolean isRetirado() {
-        return retirado;
+    public boolean isDelivered() {
+        return delivered;
     }
 
-    public void setRetirado(boolean retirado) {
-        this.retirado = retirado;
+    public void setDelivered(boolean delivered) {
+        this.delivered = delivered;
     }
 }

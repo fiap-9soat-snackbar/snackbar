@@ -18,25 +18,25 @@ public class OrderController {
 
     // Create New order
     @PostMapping
-    public Order criarOrder(@RequestBody Order order) {
-        return orderService.criarOrder(order);
+    public Order createOrder(@RequestBody Order order) {
+        return orderService.createOrder(order);
     }
 
     // Update order 
     @PutMapping
-    public Order atualizarOrder(@RequestBody Order order) {
-        return orderService.atualizarOrder(order);
+    public Order updateOrder(@RequestBody Order order) {
+        return orderService.updateOrder(order);
     }
 
     // Search all orders
     @GetMapping
-    public List<Order> listarTodosOrders() {
-        return orderService.listarTodosOrders();
+    public List<Order> listOrders() {
+        return orderService.listOrders();
     }
 
     // Search Order with status (Checkout/Pickup)
     @GetMapping("/{id}")
-    public Order buscarOrderComStatus(@PathVariable String id) {
-        return orderService.buscarOrderComStatus(id);
+    public Order searchOrderWithStatus(@PathVariable String id) {
+        return orderService.searchOrderWithStatus(id);
     }
 }

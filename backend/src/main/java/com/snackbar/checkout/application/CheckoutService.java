@@ -5,7 +5,7 @@ import com.snackbar.checkout.adapter.out.CheckoutRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CheckoutService implements PagarOrderUseCase {
+public class CheckoutService implements CheckoutOrderUseCase {
 
     private final CheckoutRepository checkoutRepository;
 
@@ -14,10 +14,10 @@ public class CheckoutService implements PagarOrderUseCase {
     }
 
     @Override
-    public void pagar(String orderId) {
+    public void pay(String orderId) {
         Checkout checkout = new Checkout();
         checkout.setOrderId(orderId);
-        checkout.setPago(true);
+        checkout.setPaid(true);
         checkoutRepository.save(checkout);
     }
 }

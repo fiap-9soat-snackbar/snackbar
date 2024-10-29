@@ -26,37 +26,37 @@ public class OrderService {
     }
 
     // Create new order
-    public Order criarOrder(Order order) {
-        order.setStatusOrder(StatusOrder.NOVO);
+    public Order createOrder(Order order) {
+        order.setStatusOrder(StatusOrder.NEW);
         return orderRepository.save(order);
     }
 
     // Apdate existent order
-    public Order atualizarOrder(Order order) {
+    public Order updateOrder(Order order) {
         return orderRepository.save(order);
     }
 
     // List all order
-    public List<Order> listarTodosOrders() {
+    public List<Order> listOrders() {
         return orderRepository.findAll();
     }
 
     // Search order with status (Checkout/Pickup)
-    public Order buscarOrderComStatus(String orderId) {
+    public Order searchOrderWithStatus(String orderId) {
         Order order = orderRepository.findById(orderId)
-                .orElseThrow(() -> new IllegalArgumentException("Pedido não encontrado"));
+                .orElseThrow(() -> new IllegalArgumentException("Order not Found"));
 
         // Request Checkout Status
-        boolean isPago = checkoutRepository.findByOrderId(orderId)
-                .map(Checkout::isPago)
+        boolean isPaid = checkoutRepository.findByOrderId(orderId)
+                .map(Checkout::ispaid)
                 .orElse(false);
-        order.setPago(isPago);
+        order.setPaid(isPaid);
 
         // Request Pickup Status
-        boolean isRetirado = pickupRepository.findByOrderId(orderId)
-                .map(pickup -> pickup.getStatusPickup() == StatusPickup.RETIRADO)
+        boolean isDelivered = pickupRepository.findByOrderId(orderId)
+                .map(pickup -> pickup.getStatusPickup() == StatusPickup.DELIVERED)
                 .orElse(false);
-        order.setRetirado(isRetirado);
+        order.setDelivered(isDelivered);
 
         return order;
     }

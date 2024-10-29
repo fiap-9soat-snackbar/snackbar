@@ -14,8 +14,8 @@ public class CheckoutController {
     }
 
     @PostMapping("/{orderId}")
-    public String realizarPagamento(@PathVariable String orderId) {
-        checkoutService.pagar(orderId);
-        return "Pagamento realizado com sucesso para o pedido " + orderId;
+    public String makePayment(@PathVariable String orderId) {
+        checkoutService.pay(orderId);
+        return "Payment made successfully for the order " + orderId;
     }
 }

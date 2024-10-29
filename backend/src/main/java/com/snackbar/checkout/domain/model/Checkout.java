@@ -9,7 +9,7 @@ public class Checkout {
     @Id
     private String id;
     private String orderId;
-    private boolean pago;
+    private boolean paid;
 
     // Getters e Setters
     public String getId() {
@@ -28,11 +28,11 @@ public class Checkout {
         this.orderId = orderId;
     }
 
-    public boolean isPago() {
-        return pago;
+    public boolean ispaid() {
+        return paid;
     }
 
-    public void setPago(boolean pago) {
-        this.pago = pago;
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 }

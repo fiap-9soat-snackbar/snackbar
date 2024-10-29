@@ -13,15 +13,15 @@ public class PickupController {
         this.pickupService = pickupService;
     }
 
-    @PostMapping("/notificar/{orderId}")
-    public String notificarCliente(@PathVariable String orderId) {
-        pickupService.notificar(orderId);
-        return "Cliente notificado para o pedido " + orderId;
+    @PostMapping("/notify/{orderId}")
+    public String customerNotify(@PathVariable String orderId) {
+        pickupService.notify(orderId);
+        return "Customer notified for order " + orderId;
     }
 
-    @PostMapping("/confirmar/{orderId}")
-    public String confirmarRetirada(@PathVariable String orderId) {
-        pickupService.confirmar(orderId);
-        return "Retirada confirmada para o pedido " + orderId;
+    @PostMapping("/delivery/{orderId}")
+    public String deliveryOrder(@PathVariable String orderId) {
+        pickupService.delivery(orderId);
+        return "Order " + orderId + " is Delivered";
     }
 }

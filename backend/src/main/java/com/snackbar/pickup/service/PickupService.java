@@ -7,7 +7,7 @@ import com.snackbar.pickup.application.*;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PickupService implements ConfirmarPickupUseCase, NotificarClienteUseCase {
+public class PickupService implements DeliveryPickupUseCase, NotifyCustomerUseCase {
 
     private final PickupRepository pickupRepository;
 
@@ -16,27 +16,27 @@ public class PickupService implements ConfirmarPickupUseCase, NotificarClienteUs
     }
 
     @Override
-    public void notificar(String orderId) {
+    public void notify(String orderId) {
         Pickup pickup = new Pickup();
         pickup.setOrderId(orderId);
-        pickup.setStatusPickup(StatusPickup.PRONTO);
-        pickup.setClienteNotificado(true);
+        pickup.setStatusPickup(StatusPickup.READY);
+        pickup.setNotifyCustomer(true);
 
         // Save status on Database (MongoDB)
         pickupRepository.save(pickup);
-        System.out.println("Notificação enviada para o pedido " + orderId);
+        System.out.println("Order " + orderId + "is Ready, Notified Customer");
     }
 
     @Override
-    public void confirmar(String orderId) {
+    public void delivery(String orderId) {
         // Search Pickup associate to OrderID on Database (MongoDB)
         Pickup pickup = pickupRepository.findByOrderId(orderId)
-                .orElseThrow(() -> new IllegalArgumentException("Retirada não encontrada para o pedido " + orderId));
+                .orElseThrow(() -> new IllegalArgumentException("This order has not yet been delivered" + orderId));
 
-        pickup.setStatusPickup(StatusPickup.RETIRADO);
+        pickup.setStatusPickup(StatusPickup.DELIVERED);
 
         // Update status on Database (MongoDB)
         pickupRepository.save(pickup);
-        System.out.println("Pedido " + orderId + " retirado.");
+        System.out.println("Order " + orderId + " delivered.");
     }
 }

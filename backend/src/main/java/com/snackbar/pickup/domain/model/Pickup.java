@@ -10,7 +10,7 @@ public class Pickup {
     private String id;
     private String orderId;
     private StatusPickup statusPickup;
-    private boolean clienteNotificado;
+    private boolean notifyCustomer;
 
     // Getters e Setters
     public String getId() {
@@ -37,11 +37,11 @@ public class Pickup {
         this.statusPickup = statusPickup;
     }
 
-    public boolean isClienteNotificado() {
-        return clienteNotificado;
+    public boolean isNotifyCustomer() {
+        return notifyCustomer;
     }
 
-    public void setClienteNotificado(boolean clienteNotificado) {
-        this.clienteNotificado = clienteNotificado;
+    public void setNotifyCustomer(boolean notifyCustomer) {
+        this.notifyCustomer = notifyCustomer;
     }
 }
