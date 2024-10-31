@@ -34,7 +34,7 @@ public class OrderController {
         return orderService.listOrders();
     }
 
-    // Search Order with status (Checkout/Pickup)
+    // Search Order with status
     @GetMapping("/{id}")
     public Order searchOrderWithStatus(@PathVariable String id) {
         return orderService.searchOrderWithStatus(id);
