@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.math.BigDecimal;
 
 @Service
 public class OrderService { // Service for managing orders
@@ -39,11 +40,24 @@ public class OrderService { // Service for managing orders
         }).collect(Collectors.toList());
         
         order.setItems(updatedItems);
+        
+        // Calculate and set the total price
+        BigDecimal totalPrice = updatedItems.stream()
+            .map(item -> item.getPrice() != null ? item.getPrice().multiply(BigDecimal.valueOf(item.getQuantity())) : BigDecimal.ZERO)
+            .reduce(BigDecimal.ZERO, BigDecimal::add);
+        order.setTotalPrice(totalPrice);
+        
         return orderRepository.save(order);
     }
 
-    // Apdate existent order
+    // Update existing order
     public Order updateOrder(Order order) {
+        // Calculate and set the total price
+        BigDecimal totalPrice = order.getItems().stream()
+            .map(item -> item.getPrice() != null ? item.getPrice().multiply(BigDecimal.valueOf(item.getQuantity())) : BigDecimal.ZERO)
+            .reduce(BigDecimal.ZERO, BigDecimal::add);
+        order.setTotalPrice(totalPrice);
+        
         return orderRepository.save(order);
     }
 
