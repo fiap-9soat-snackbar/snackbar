@@ -29,6 +29,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Product getProductByName(String name) {
+        return productRepository.findByName(name)
+            .orElseThrow(() -> new RuntimeException("Product not found: " + name));
+    }
+
+    @Override
     public Product getProduct(String id) {
         return productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
     }

@@ -29,82 +29,169 @@ db.products.insertMany( [
       name: 'Hambúrguer',
       category: 'Lanche',
       description: 'Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.',
-      price: 30.00,
+      price: 22.00,
       cookingTime: 10,
-      image: 'https://example.com/hamburguer.jpg',
-      _class: 'com.example.snackbar.domain.Product'
+      image: 'https://example.com/hamburguer.jpg'
    },
    {
-      name: 'Batata frita',
-      category: 'Acompanhamento',
-      description: 'Batatas fritas crocantes com ketchup.',
-      price: 15.00,
-      cookingTime: 8,
-      image: 'https://example.com/batata-frita.jpg',
-      _class: 'com.example.snackbar.domain.Product'
-   },
-   {
-      name: 'Refrigerante',
-      category: 'Bebida',
-      description: 'Refrigerante de cola 300ml.',
-      price: 8.00,
-      cookingTime: 1,
-      image: 'https://example.com/refrigerante.jpg',
-      _class: 'com.example.snackbar.domain.Product'
-   },
-   {
-      name: 'Sorvete',
-      category: 'Sobremesa',
-      description: 'Sorvete de chocolate com calda de caramelo.',
-      price: 12.00,
-      cookingTime: 5,
-      image: 'https://example.com/sorvete.jpg',
-      _class: 'com.example.snackbar.domain.Product'
-   },
-   {
-      name: 'Pizza',
+      name: 'Cheesebúrguer',
       category: 'Lanche',
-      description: 'Pizza de mussarela com tomate e manjericão.',
+      description: 'Hambúrguer artesanal 160g, servido com pão de brioche e queijo prato.',
+      price: 25.00,
+      cookingTime: 10,
+      image: 'https://example.com/cheeseburguer.jpg'
+   },
+   {
+      name: 'Hot Dog de Salsicha',
+      category: 'Lanche',
+      description: 'Hot dog  servido com duas salsichas, molho, batata palha.',
+      price: 20.00,
+      cookingTime: 10,
+      image: 'https://example.com/hotdog-salsicha.jpg'
+   },
+   {
+      name: 'Pizza de Muçarela',
+      category: 'Lanche',
+      description: 'Pizza de muçarela individual com tomate e manjericão.',
       price: 25.00,
       cookingTime: 12,
-      image: 'https://example.com/pizza.jpg',
-      _class: 'com.example.snackbar.domain.Product'
+      image: 'https://example.com/pizza-mucarela.jpg'
    },
    {
-      name: 'Chips',
+      name: 'Pizza de Calabresa',
+      category: 'Lanche',
+      description: 'Pizza de calabresa individual com queijo muçarela e cebolas.',
+      price: 25.00,
+      cookingTime: 12,
+      image: 'https://example.com/pizza-calabresa.jpg'
+   },
+   {
+      name: 'Salada Caesar',
+      category: 'Lanche',
+      description: 'Salada de alface americana, peito de frango em tiras, queijo parmesão, croutons e molho caesar.',
+      price: 20.00,
+      cookingTime: 5,
+      image: 'https://example.com/salada-caesar.jpg'
+   },
+   {
+      name: 'Batata frita Grande',
       category: 'Acompanhamento',
-      description: 'Chips de batata doce.',
-      price: 18.00,
-      cookingTime: 1,
-      image: 'https://example.com/chips.jpg',
-      _class: 'com.example.snackbar.domain.Product'
+      description: 'Porção grande de batatas fritas crocantes.',
+      price: 15.00,
+      cookingTime: 8,
+      image: 'https://example.com/batata-frita-grande.jpg'
    },
    {
-      name: 'Água',
+      name: 'Batata frita Media',
+      category: 'Acompanhamento',
+      description: 'Porção media de batatas fritas crocantes.',
+      price: 12.00,
+      cookingTime: 8,
+      image: 'https://example.com/batata-frita-media.jpg'
+   },
+   {
+      name: 'Batata frita Pequena',
+      category: 'Acompanhamento',
+      description: 'Porção pequena de batatas fritas crocantes.',
+      price: 10.00,
+      cookingTime: 8,
+      image: 'https://example.com/batata-frita-pequenaa.jpg'
+   },
+   {
+      name: 'Chips de Batata Doce',
+      category: 'Acompanhamento',
+      description: 'Pacote de chips de batata doce.',
+      price: 8.00,
+      cookingTime: 1,
+      image: 'https://example.com/chips-batata-doce.jpg'
+   },
+   {
+      name: 'Coca-Cola 350ml',
       category: 'Bebida',
-      description: 'Água mineral 500ml.',
+      description: 'Refrigerante Coca-Cola lata de 350ml.',
+      price: 8.00,
+      cookingTime: 1,
+      image: 'https://example.com/coca-lata-350ml.jpg'
+   },
+   {
+      name: 'Coca-Cola 500ml',
+      category: 'Bebida',
+      description: 'Refrigerante Coca-Cola copo de 500ml.',
+      price: 10.00,
+      cookingTime: 1,
+      image: 'https://example.com/coca-copo-500ml.jpg'
+   },
+   {
+      name: 'Guaraná Antarctica 350ml',
+      category: 'Bebida',
+      description: 'Refrigerante Guaraná Antarctica lata de 350ml.',
+      price: 8.00,
+      cookingTime: 1,
+      image: 'https://example.com/guarana-lata-350ml.jpg'
+   },
+   {
+      name: 'Guaraná Antarctica 500ml',
+      category: 'Bebida',
+      description: 'Refrigerante Guaraná Antarctica copo de 500ml.',
+      price: 10.00,
+      cookingTime: 1,
+      image: 'https://example.com/guarana-copo-500ml.jpg'
+   },
+   {
+      name: 'Suco Natural 350ml',
+      category: 'Bebida',
+      description: 'Suco natural em copo de 350ml.',
+      price: 8.00,
+      cookingTime: 1,
+      image: 'https://example.com/suco-copo-350ml.jpg'
+   },
+   {
+      name: 'Suco Natural 500ml',
+      category: 'Bebida',
+      description: 'Suco natural em copo de 500ml.',
+      price: 10.00,
+      cookingTime: 1,
+      image: 'https://example.com/suco-copo-500ml.jpg'
+   },
+   {
+      name: 'Água Mineral 500ml',
+      category: 'Bebida',
+      description: 'Água mineral em garrafa de 500ml.',
       price: 5.00,
       cookingTime: 1,
-      image: 'https://example.com/agua.jpg',
-      _class: 'com.example.snackbar.domain.Product'
+      image: 'https://example.com/agua-garrafa-500ml.jpg'
+   },
+   {
+      name: 'Sundae de Chocolate',
+      category: 'Sobremesa',
+      description: 'Sorvete de baunilha com calda de chocolate.',
+      price: 10.00,
+      cookingTime: 5,
+      image: 'https://example.com/sundae-chocolate.jpg'
+   },
+   {
+      name: 'Sundae de Morango',
+      category: 'Sobremesa',
+      description: 'Sorvete de baunilha com calda de morango.',
+      price: 10.00,
+      cookingTime: 5,
+      image: 'https://example.com/sundae-morango.jpg'
+   },
+   {
+      name: 'Pudim',
+      category: 'Sobremesa',
+      description: 'Pudim de leite.',
+      price: 12.00,
+      cookingTime: 2,
+      image: 'https://example.com/pudim.jpg'
    },
    {
       name: 'Brownie',
       category: 'Sobremesa',
-      description: 'Brownie de chocolate com cobertura de caramelo.',
-      price: 15.00,
+      description: 'Brownie de chocolate.',
+      price: 12.00,
       cookingTime: 2,
-      image: 'https://example.com/brownie.jpg',
-      _class: 'com.example.snackbar.domain.Product'
-   },
-   {
-      name: 'Salada',
-      category: 'Lanche',
-      description: 'Salada de alface, tomate e manjericão.',
-      price: 20.00,
-      cookingTime: 5,
-      image: 'https://example.com/salada.jpg',
-      _class: 'com.example.snackbar.domain.Product'
+      image: 'https://example.com/brownie.jpg'
    }
 ] )
 EOF
@@ -117,98 +204,48 @@ mongosh $MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@localhost:$DB_PO
 
 use snackbar
 db.orders.insertMany([
-  {
-    id: "1234567890abcdef12345678",
-    client_cpf: "123.456.789-00",
-    client_name: "João Silva",
-    dataHoraPedido: "2023-05-10T14:30:00",
-    items: [
-      { name: "X-Burger", quantity: 2, customization: "Sem cebola" },
-      { name: "Batata Frita", quantity: 1, customization: "Tamanho grande" }
-    ],
-    status: "Recebido"
-  },
-  {
-    id: "234567890abcdef123456789",
-    client_cpf: "987.654.321-00",
-    client_name: "Maria Oliveira",
-    dataHoraPedido: "2023-05-10T15:45:00",
-    items: [
-      { name: "Pizza Margherita", quantity: 1, customization: "Borda recheada" },
-      { name: "Refrigerante", quantity: 2, customization: "Sem gelo" }
-    ],
-    status: "Em preparação"
-  },
-  {
-    id: "345678901abcdef234567890",
-    client_cpf: "456.789.012-34",
-    client_name: "Carlos Santos",
-    dataHoraPedido: "2023-05-10T16:20:00",
-    items: [
-      { name: "Salada Caesar", quantity: 1, customization: "Sem croutons" },
-      { name: "Suco Natural", quantity: 1, customization: "Laranja com morango" }
-    ],
-    status: "Pronto"
-  },
-  {
-    id: "456789012abcdef345678901",
-    client_cpf: "789.012.345-67",
-    client_name: "Ana Ferreira",
-    dataHoraPedido: "2023-05-10T17:10:00",
-    items: [
-      { name: "Prato do Dia", quantity: 2, customization: "Vegetariano" },
-      { name: "Sobremesa", quantity: 2, customization: "Pudim" }
-    ],
-    status: "Finalizado"
-  },
-  {
-    id: "567890123abcdef456789012",
-    client_cpf: "012.345.678-90",
-    client_name: "Pedro Almeida",
-    dataHoraPedido: "2023-05-10T18:00:00",
-    items: [
-      { name: "Hot Dog", quantity: 3, customization: "Molho extra" },
-      { name: "Milkshake", quantity: 1, customization: "Chocolate com menta" }
-    ],
-    status: "Finalizado"
-},
 {
     "id": "67230df5305e6e531c4149a2",
-    "orderNumber": 10,
+    "orderNumber": 000001,
     "orderDateTime": "2024-10-31T04:52:17.367Z",
     "customerId": 12345.0,
     "clientName": "Jose Moreira",
     "items": [
         {
-            "name": "Hot Dog",
-            "price": 3,
-            "quantity": 3,
+            "name": "Hot Dog de Salsicha",
+            "price": 20.00,
+            "quantity": 1,
             "cookingTime": 10,
             "customization": "Molho extra"
         }
     ],
     "statusOrder": "NOVO",
     "waitingTime": 10,
-    "totalPrice": 3.0
+    "totalPrice": 20.00
 },
 {
     "id": "67230e25305e6e531c4149a3",
-    "orderNumber": 10,
+    "orderNumber": 000002,
     "orderDateTime": "2024-10-31T04:52:17.367Z",
-    "customerId": 12347.0,
+    "customerId": 12346.0,
     "clientName": "Rosangela Santos",
     "items": [
         {
-            "name": "Hot Dog",
-            "price": 3,
-            "quantity": 3,
+            "name": "Hambúrguer",
+            "price": 22,
+            "quantity": 1,
             "cookingTime": 10,
-            "customization": "Molho extra"
+        },
+        {
+            "name": "Coca-Cola 350ml",
+            "price": 8,
+            "quantity": 1,
+            "cookingTime": 1,
         }
     ],
     "statusOrder": "NOVO",
-    "waitingTime": 10,
-    "totalPrice": 3.0
+    "waitingTime": 11,
+    "totalPrice": 30.00
 }
   ])
 EOF
