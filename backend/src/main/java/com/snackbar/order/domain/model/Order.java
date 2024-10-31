@@ -23,7 +23,6 @@ public class Order {
     private String clientName;
     private List<Item> items = new ArrayList<>(); 
     private StatusOrder statusOrder;
-    private int waitingTime;
     private BigDecimal totalPrice;    
    
 
@@ -79,12 +78,12 @@ public class Order {
 
 
     public int getWaitingTime() {
-        return waitingTime;
+        return items.stream()
+                .mapToInt(item -> item.getCookingTime() * item.getQuantity())
+                .sum();
     }
 
-    public void setWaitingTime(int waitingTime) {
-        this.waitingTime = waitingTime;
-    }
+    // Removed setWaitingTime as it's now calculated dynamically
 
     public BigDecimal getTotalPrice() {
         return totalPrice;
