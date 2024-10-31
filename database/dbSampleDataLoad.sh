@@ -171,6 +171,44 @@ db.orders.insertMany([
       { name: "Milkshake", quantity: 1, customization: "Chocolate com menta" }
     ],
     status: "Finalizado"
-  }
+},
+{
+    "id": "67230df5305e6e531c4149a2",
+    "orderNumber": 10,
+    "orderDateTime": "2024-10-31T04:52:17.367Z",
+    "customerId": 12345.0,
+    "clientName": "Jose Moreira",
+    "items": [
+        {
+            "name": "Hot Dog",
+            "price": 3,
+            "quantity": 3,
+            "cookingTime": 10,
+            "customization": "Molho extra"
+        }
+    ],
+    "statusOrder": "NOVO",
+    "waitingTime": 10,
+    "totalPrice": 3.0
+},
+{
+    "id": "67230e25305e6e531c4149a3",
+    "orderNumber": 10,
+    "orderDateTime": "2024-10-31T04:52:17.367Z",
+    "customerId": 12347.0,
+    "clientName": "Rosangela Santos",
+    "items": [
+        {
+            "name": "Hot Dog",
+            "price": 3,
+            "quantity": 3,
+            "cookingTime": 10,
+            "customization": "Molho extra"
+        }
+    ],
+    "statusOrder": "NOVO",
+    "waitingTime": 10,
+    "totalPrice": 3.0
+}
   ])
 EOF
