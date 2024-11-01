@@ -26,6 +26,9 @@ public class OrderService { // Service for managing orders
 
     // Create new order
     public Order createOrder(Order order) {
+        if (order.getCustomerId() == null) {
+            throw new IllegalArgumentException("customerId is mandatory for creating an order");
+        }
         String lastOrderNumber = orderRepository.findTopByOrderByOrderNumberDesc()
                 .map(Order::getOrderNumber)
                 .orElse(null);
@@ -100,5 +103,11 @@ public class OrderService { // Service for managing orders
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new IllegalArgumentException("Order not Found"));
         return order;
+    }
+
+    // Search order by orderNumber
+    public Order getOrderByOrderNumber(String orderNumber) {
+        return orderRepository.findByOrderNumber(orderNumber)
+                .orElseThrow(() -> new IllegalArgumentException("Order not found with orderNumber: " + orderNumber));
     }
 }

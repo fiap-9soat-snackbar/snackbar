@@ -8,4 +8,5 @@ import java.util.Optional;
 @Repository
 public interface OrderRepository extends MongoRepository<Order, String> {
     Optional<Order> findTopByOrderByOrderNumberDesc();
+    Optional<Order> findByOrderNumber(String orderNumber);
 }

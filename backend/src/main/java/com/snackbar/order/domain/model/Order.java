@@ -19,8 +19,8 @@ public class Order {
     private String orderNumber;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Instant orderDateTime;
-    private Double customerId;
-    private String clientName;
+    private String customerId; // Mandatory field for creating an order
+    private String customerName;
     private List<Item> items = new ArrayList<>(); 
     private StatusOrder statusOrder;
     private BigDecimal totalPrice;    
@@ -62,20 +62,20 @@ public class Order {
         this.orderDateTime = orderDateTime;
     }
 
-    public Double getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Double customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 
-    public String getClientName() {
-        return clientName;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public List<Item> getItems() {
