@@ -24,9 +24,19 @@ public class Order {
     private List<Item> items = new ArrayList<>(); 
     private StatusOrder statusOrder;
     private BigDecimal totalPrice;    
-   
+    private long remainingTime;
 
     // Getters e Setters
+
+    public long getRemainingTime() {
+        return remainingTime;
+    }
+
+    public void calculateRemainingTime() {
+        Instant now = Instant.now();
+        long elapsedTime = java.time.Duration.between(orderDateTime, now).toMinutes();
+        this.remainingTime = Math.max(0, getWaitingTime() - elapsedTime);
+    }
 
     public String getId() {
         return id;

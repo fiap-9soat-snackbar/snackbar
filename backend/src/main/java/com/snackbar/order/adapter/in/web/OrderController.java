@@ -31,12 +31,16 @@ public class OrderController {
     // Search all orders
     @GetMapping
     public List<Order> listOrders() {
-        return orderService.listOrders();
+        List<Order> orders = orderService.listOrders();
+        orders.forEach(Order::calculateRemainingTime);
+        return orders;
     }
 
     // Search Order with status
     @GetMapping("/{id}")
     public Order searchOrderWithStatus(@PathVariable String id) {
-        return orderService.searchOrderWithStatus(id);
+        Order order = orderService.searchOrderWithStatus(id);
+        order.calculateRemainingTime();
+        return order;
     }
 }
