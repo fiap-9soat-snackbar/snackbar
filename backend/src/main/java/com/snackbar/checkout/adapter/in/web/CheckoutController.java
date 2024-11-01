@@ -1,7 +1,8 @@
 package com.snackbar.checkout.adapter.in.web;
 
-import com.snackbar.checkout.application.CheckoutService;
 import org.springframework.web.bind.annotation.*;
+
+import com.snackbar.checkout.service.CheckoutService;
 
 @RestController
 @RequestMapping("/api/checkout")
@@ -16,6 +17,6 @@ public class CheckoutController {
     @PostMapping("/{orderId}")
     public String makePayment(@PathVariable String orderId) {
         checkoutService.pay(orderId);
-        return "Payment made successfully for the order " + orderId;
+        return "Pagamento para o pedido " + orderId + " efetuado com sucesso";
     }
 }
