@@ -16,7 +16,7 @@ public class Order {
     @Id
 
     private String id;
-    private int orderNumber;
+    private String orderNumber;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Instant orderDateTime;
     private Double customerId;
@@ -36,11 +36,11 @@ public class Order {
         this.id = id;
     }
 
-    public int getOrderNumber() {
+    public String getOrderNumber() {
         return orderNumber;
     }
 
-    public void setOrderNumber(int orderNumber) {
+    public void setOrderNumber(String orderNumber) {
         this.orderNumber = orderNumber;
     }
 
@@ -99,6 +99,14 @@ public class Order {
 
     public void setStatusOrder(StatusOrder statusOrder) {
         this.statusOrder = statusOrder;
+    }
+
+    public static String generateOrderNumber(String lastOrderNumber) {
+        if (lastOrderNumber == null || lastOrderNumber.isEmpty()) {
+            return "000001";
+        }
+        int nextNumber = Integer.parseInt(lastOrderNumber) + 1;
+        return String.format("%06d", nextNumber);
     }
 }
 

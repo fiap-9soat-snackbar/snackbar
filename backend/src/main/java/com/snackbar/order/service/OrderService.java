@@ -25,6 +25,10 @@ public class OrderService { // Service for managing orders
 
     // Create new order
     public Order createOrder(Order order) {
+        String lastOrderNumber = orderRepository.findTopByOrderByOrderNumberDesc()
+                .map(Order::getOrderNumber)
+                .orElse(null);
+        order.setOrderNumber(Order.generateOrderNumber(lastOrderNumber));
         order.setStatusOrder(StatusOrder.NOVO);
         
         List<Item> updatedItems = order.getItems().stream().map(item -> {
