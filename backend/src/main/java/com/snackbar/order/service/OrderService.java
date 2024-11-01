@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.math.BigDecimal;
+import java.time.Instant;
 
 @Service
 public class OrderService { // Service for managing orders
@@ -30,6 +31,7 @@ public class OrderService { // Service for managing orders
                 .orElse(null);
         order.setOrderNumber(Order.generateOrderNumber(lastOrderNumber));
         order.setStatusOrder(StatusOrder.NOVO);
+        order.setOrderDateTime(Instant.now()); // Set orderDateTime to current time in ISO format
         
         List<Item> updatedItems = order.getItems().stream().map(item -> {
             Product product = productService.getProductByName(item.getName());
