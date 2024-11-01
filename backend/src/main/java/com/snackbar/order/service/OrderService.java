@@ -123,6 +123,11 @@ public class OrderService { // Service for managing orders
                 .map(checkout -> checkout.isPaid())
                 .orElse(false);
 
+        // Check if the order is ready for pickup or has been picked up
+        boolean isReady = pickupRepository.findByOrderId(orderId)
+        .map(pickup -> pickup.getStatusPickup() == StatusPickup.PRONTO)
+        .orElse(false);
+
         // Check if the order has been picked up
         boolean isFinalizado = pickupRepository.findByOrderId(orderId)
                 .map(pickup -> pickup.getStatusPickup() == StatusPickup.FINALIZADO)
@@ -131,8 +136,10 @@ public class OrderService { // Service for managing orders
         // Update StatusOrder based on payment and pickup status
         if (isPaid && isFinalizado) {
             order.setStatusOrder(StatusOrder.FINALIZADO);
-        } else if (isPaid) {
+        } else if (isReady) {
             order.setStatusOrder(StatusOrder.PRONTO);
+        } else if (isPaid) {
+            order.setStatusOrder(StatusOrder.PAGO);
         } else {
             order.setStatusOrder(StatusOrder.NOVO);
         }
