@@ -1,7 +1,8 @@
 package com.snackbar.checkout.adapter.in.web;
 
-import com.snackbar.checkout.application.CheckoutService;
 import org.springframework.web.bind.annotation.*;
+
+import com.snackbar.checkout.service.CheckoutService;
 
 @RestController
 @RequestMapping("/api/checkout")

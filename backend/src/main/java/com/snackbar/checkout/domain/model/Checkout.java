@@ -28,7 +28,7 @@ public class Checkout {
         this.orderId = orderId;
     }
 
-    public boolean ispaid() {
+    public boolean isPaid() {
         return paid;
     }
 
