@@ -16,12 +16,12 @@ public class PickupController {
     @PostMapping("/notify/{orderId}")
     public String customerNotify(@PathVariable String orderId) {
         pickupService.notify(orderId);
-        return "Customer notified for order " + orderId;
+        return "Cliente notificado - Pedido: " + orderId;
     }
 
     @PostMapping("/delivery/{orderId}")
     public String deliveryOrder(@PathVariable String orderId) {
         pickupService.delivery(orderId);
-        return "Order " + orderId + " is Delivered";
+        return "Pedido " + orderId + " está Finalizado!";
     }
 }
