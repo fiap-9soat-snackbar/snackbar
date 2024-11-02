@@ -83,6 +83,8 @@ The application exposes the following REST API endpoints:
 | route               | description                                          
 |----------------------|-----------------------------------------------------
 | <kbd>Products Endpoints</kbd>     | See [products.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/product/products.md)
+| <kbd>Checkout Endpoints</kbd>     | See [checkout.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/checkout/checkout.md)
+| <kbd>Pickup Endpoints</kbd>     | See [pickup.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/pickup/pickup.md)
 </div>
 
 
