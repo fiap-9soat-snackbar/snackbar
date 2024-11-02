@@ -116,6 +116,8 @@ public class OrderService { // Service for managing orders
         return orderRepository.findById(orderId).orElse(order);
     }
 
+    
+
     // Update the Order status based on Checkout and Pickup statuses
     public void updateStatusOrder(String orderId) {
         Order order = orderRepository.findById(orderId)
@@ -143,6 +145,7 @@ public class OrderService { // Service for managing orders
             order.setStatusOrder(StatusOrder.PRONTO);
         } else if (isPaid) {
             order.setStatusOrder(StatusOrder.PAGO);
+            order.setPaymentMethod("Mercado Pago");
         } else {
             order.setStatusOrder(StatusOrder.NOVO);
         }

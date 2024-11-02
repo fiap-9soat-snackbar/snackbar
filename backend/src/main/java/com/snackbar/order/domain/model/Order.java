@@ -23,8 +23,10 @@ public class Order {
     private String customerName;
     private List<Item> items = new ArrayList<>(); 
     private StatusOrder statusOrder;
+    private String paymentMethod;
     private BigDecimal totalPrice;    
     private long remainingTime;
+    
 
     // Getters e Setters
 
@@ -117,6 +119,14 @@ public class Order {
         }
         int nextNumber = Integer.parseInt(lastOrderNumber) + 1;
         return String.format("%06d", nextNumber);
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }
 

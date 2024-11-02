@@ -23,6 +23,7 @@ public class CheckoutService implements CheckoutOrderUseCase {
         Checkout checkout = new Checkout();
         checkout.setOrderId(orderId);
         checkout.setPaid(true);
+        checkout.setPaymentMethod("Mercado Pago");
         checkoutRepository.save(checkout);
 
         // Update  StatusOders (Order Collection)
