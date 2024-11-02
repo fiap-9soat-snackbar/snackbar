@@ -8,12 +8,12 @@
 | <kbd>GET /api/products/category/{category}</kbd>     |See [request details](#get-products-category)
 | <kbd>POST /api/products</kbd>     | See [request details](#post-products)
 | <kbd>PUT /api/products/{id}</kbd>     | See [request details](#put-products)
-| <kbd>DELETE /api/products/{id}</kbd>     | Will only return the HTTP status code. 
+| <kbd>DELETE /api/products/{id}</kbd>     | See [request details](#delete-products) 
 
 
 <h3 id="get-products">GET /api/products</h3>
 
-**RESPOSNSE**  
+**RESPONSE**  
 ```json
 {
     "success": true,
@@ -24,15 +24,10 @@
             "category": "Lanche",
             "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
             "name": "Hambúrguer",
-            "price": 30
-        },
-        {
-            "id": "671bb29c52801c1c1efe6912",
-            "category": "Acompanhamento",
-            "description": "Batatas fritas crocantes com ketchup",
-            "name": "Batata frita",
-            "price": 15
+            "price": 22,
+            "cookingTime": 10
         }
+        /* All other products */
     ]
 }
 ```
@@ -49,7 +44,8 @@
         "category": "Lanche",
         "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
         "name": "Hambúrguer",
-        "price": 30
+        "price": 22,
+        "cookingTime": 10
     }
 }
 ```
@@ -67,19 +63,22 @@
             "category": "Lanche",
             "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
             "name": "Hambúrguer",
-            "price": 30
+            "price": 22,
+            "cookingTime": 10
         },
         {
-            "id": "671d1ab834d76230acfe6915",
+            "id": "67266201b5ad4f0589fe6912",
             "category": "Lanche",
-            "description": "Pizza de mussarela com tomate e manjericão.",
-            "name": "Pizza",
-            "price": 25
+            "description": "Hambúrguer artesanal 160g, servido com pão de brioche e queijo prato.",
+            "name": "Cheesebúrguer",
+            "price": 25,
+            "cookingTime": 10
         }
+        /* All other products in the same category */
     ]
 }
 ```
-<h3 id="post-products">POST /registerClient/:idUser</h3>
+<h3 id="post-products">POST /api/products</h3>
 
 **REQUEST**  
 ```json
@@ -87,7 +86,8 @@
     "name": "Hambúrguer",
     "category": "Lanche",
     "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
-    "price": 10
+    "price": 22,
+    "cookingTime": 10
 }
 ```
 **RESPONSE**
@@ -100,7 +100,8 @@
         "category": "Lanche",
         "description": "Hambúrguer artesanal 160g, servido com pão de brioche, alface e tomate.",
         "name": "Hambúrguer",
-        "price": 10
+        "price": 22,
+        "cookingTime": 10
     }
 }
 ```
@@ -110,10 +111,12 @@
 **REQUEST**  
 ```json
 {
-    "name": "Salada",
+    "id": "67266201b5ad4f0589fe6917",
     "category": "Acompanhamento",
-    "description": "Batatas fritas com ketchup",
-    "price": 10
+    "description": "Porção grande de batatas fritas crocantes.",
+    "name": "Batata frita Grande",
+    "price": 15,
+    "cookingTime": 12
 }
 ```
 
@@ -123,11 +126,22 @@
     "success": true,
     "message": "Product updated successfully",
     "data": {
-        "id": "671d1c91f7689b2849534586",
+        "id": "67266201b5ad4f0589fe6917",
         "category": "Acompanhamento",
-        "description": "Batatas fritas crocantes com ketchup",
-        "name": "Batata frita",
-        "price": 15
+        "description": "Porção grande de batatas fritas crocantes.",
+        "name": "Batata frita Grande",
+        "price": 15,
+        "cookingTime": 12
     }
 }
 ```
+<h3 id="delete-products">DELETE /api/products/{id}</h3>
+
+**RESPONSE**  
+```json
+{
+    "success": true,
+    "message": "Product deleted successfully",
+    "data": null
+}
+
