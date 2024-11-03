@@ -58,6 +58,7 @@ public class CookingController {
 
         if(cooking.getStatusOrder().equals("PAGO")) {
             cooking.setStatusOrder("RECEBIDO");
+            cookingService.updateOrder(cooking);
             return ResponseEntity.ok("Pedido recebido");
         }
         else {
@@ -74,6 +75,7 @@ public class CookingController {
 
         if(cooking.getStatusOrder().equals("RECEBIDO")) {
             cooking.setStatusOrder("PREPARACAO");
+            cookingService.updateOrder(cooking);
             return ResponseEntity.ok("Preparo iniciado");
         }
         else {
@@ -89,6 +91,7 @@ public class CookingController {
 
         if(cooking.getStatusOrder().equals("PREPARACAO")) {
             cooking.setStatusOrder("PRONTO");
+            cookingService.updateOrder(cooking);
             return ResponseEntity.ok("Preparo pronto");
         }
         else {
