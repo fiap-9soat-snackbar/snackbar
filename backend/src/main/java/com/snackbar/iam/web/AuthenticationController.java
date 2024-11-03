@@ -8,13 +8,9 @@ import com.snackbar.iam.domain.UserEntity;
 import com.snackbar.iam.web.dto.LoginResponse;
 import com.snackbar.iam.web.dto.LoginUserDto;
 import com.snackbar.iam.web.dto.RegisterUserDto;
-import com.snackbar.order.domain.model.Order;
-import com.snackbar.order.domain.model.StatusOrder;
 import com.snackbar.order.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequestMapping("/api/user")
 @RestController
@@ -52,13 +48,7 @@ public class AuthenticationController {
             jwtToken = jwtService.generateToken(authenticatedUser);
         }
 
-
         LoginResponse loginResponse = new LoginResponse(jwtToken, jwtService.getExpirationTime());
-        Order order = new Order();
-        order.setStatusOrder(StatusOrder.NOVO);
-        order.setCustomerId(authenticatedUser.getId());
-        var orderResult = orderService.createOrder(order);
-        loginResponse.setOrderId(orderResult.getId());
         return ResponseEntity.ok(loginResponse);
     }
 
