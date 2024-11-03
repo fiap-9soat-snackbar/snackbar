@@ -10,10 +10,6 @@ public class LoginResponse {
 
     private long expiresIn;
 
-    private String orderId;
-
-
-
     public LoginResponse(String jwtToken, long expirationTime) {
         this.token = jwtToken;
         this.expiresIn = expirationTime;

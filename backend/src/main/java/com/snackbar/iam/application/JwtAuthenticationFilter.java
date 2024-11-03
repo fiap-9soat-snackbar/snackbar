@@ -1,6 +1,5 @@
 package com.snackbar.iam.application;
 
-import com.snackbar.iam.application.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
