@@ -1,37 +1,20 @@
 services:
-  app:
-    build: backend
-    restart: always
-    container_name: snackbar-app-container
-    ports:
-      - "8080:8080"
-    volumes:
-      - .:/app
-    depends_on:
-      - mongodb 
+  mongodbIssrael:
+    image: mongo:latest
+    container_name: mongodb_contaner
     environment:
-      - DB_HOST=${DB_HOST}
-      - DB_PORT=${DB_PORT}
-      - APP_DB=${APP_DB}
-      - MONGODB_USER=${MONGODB_USER}
-      - MONGODB_PASSWORD=${MONGODB_PASSWORD}
-
-  mongodb:
-    image: mongo:8.0.1
-    restart: always
-    container_name: mongodb-container
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: snack
+    command:
+      - '--logpath'
+      - '/var/log/mongodb/mongod.log'
     ports:
-      - "27017:27017"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
-      - MONGODB_USER=${MONGODB_USER}
-      - MONGODB_PASSWORD=${MONGODB_PASSWORD}
-      - DB_PORT=${DB_PORT}
+      - 27017:27017
     volumes:
-      - mongodb_data:/data/db
-      - ./database/dbSampleDataLoad.sh:/docker-entrypoint-initdb.d/dbSampleDataLoad.sh
+      - ./docker/mongodb_data:/data/db
+      - ./docker/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
 
 volumes:
   mongodb_data:
+
