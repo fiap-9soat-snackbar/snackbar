@@ -17,37 +17,47 @@ public class CookingServiceImpl implements CookingService {
     private CookingRepository cookingRepository;
 
     @Override
-    public List<Cooking> obtainAll() {
-        return this.cookingRepository.findAll();
-    }
-
-    @Override
     public Cooking getById(String id) {
         return this.cookingRepository
         .findById(id)
         .orElseThrow(() -> new IllegalArgumentException("Cooking not found"));
     }
 
+    @Override
+    public Cooking getByOrderNumber(String orderNumber) {
+        return this.cookingRepository.findByOrderNumber(orderNumber);
+    }
+
     public String startPreparation(String id) {
         Cooking cooking = cookingRepository.findById(id).orElseThrow(() -> new RuntimeException("Cooking not found"));
-        if ("pending".equals(cooking.getStatus())) {
-            cooking.setStatus("cooking");
+        if ("pending".equals(cooking.getStatusOrder())) {
+            cooking.setStatusOrder("cooking");
             cookingRepository.save(cooking);
             return "Cooking status changed to 'cooking'";
         } else {
-            return "The cooking is already in " + cooking.getStatus() + " status";
+            return "The cooking is already in " + cooking.getStatusOrder() + " status";
         }
     }
 
     public String finishPreparation(String id) {
         Cooking cooking = cookingRepository.findById(id).orElseThrow(() -> new RuntimeException("Cooking not found"));
-        if ("cooking".equals(cooking.getStatus())) {
-            cooking.setStatus("ready");
+        if ("cooking".equals(cooking.getStatusOrder())) {
+            cooking.setStatusOrder("ready");
             cookingRepository.save(cooking);
             return "Cooking status changed to 'ready'";
         } else {
-            return "The cooking is currently in " + cooking.getStatus() + " status";
+            return "The cooking is currently in " + cooking.getStatusOrder() + " status";
         }
+    }
+
+    @Override
+    public List<Cooking> findByStatusOrder(String statusOrder) {
+        return cookingRepository.findByStatusOrder(statusOrder);
+    }
+
+    @Override
+    public List<Cooking> obtainAll() {
+        return findByStatusOrder("PREPARACAO");
     }
 
 }

@@ -3,6 +3,7 @@ package com.snackbar.cooking.domain;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,17 +18,28 @@ public class CookingEntity {
 
     @Id
     private String id;
-    
-    private String cpfCliente;
-    private String ClientName;
-    private LocalDateTime dataHoraPedido;
-    private List<Item> itens;
 
+    @Field("client_name")
+    private String customerName;
 
+    private String orderNumber;
+
+    private LocalDateTime orderDateTime;
+
+    private List<Item> items;
+
+    private String statusOrder;
+
+    private int waitingTime;
+
+    private long remainingWaitingTime;
+
+    @Data
     public static class Item {
-    /*     private String nome;
+        private String name;
+        private int price;
         private int quantity;
-        private String personalizacao;
-    */
+        private int cookingTime;
+        private String customization;
     }
 }

@@ -14,23 +14,27 @@ public class Cooking {
 
     @Id
     private String id;
-    
-    @Field("client_cpf")
-    private String cpfCliente;
 
-    @Field("client_name")
-    private String clientName;
+    private String customerName;
+
+    private String orderNumber;
     
-    private LocalDateTime dataHoraPedido;
+    private LocalDateTime orderDateTime;
 
     private List<Item> items;
 
-    private String status;
+    private String statusOrder;
+
+    private int waitingTime;
+
+    private long remainingWaitingTime;
 
     @Data
     public static class Item {
         private String name;
+        private int price;
         private int quantity;
+        private int cookingTime;
         private String customization;
     }
 }
