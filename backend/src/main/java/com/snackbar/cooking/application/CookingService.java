@@ -9,7 +9,14 @@ public interface CookingService {
     
     public Cooking getById(String id);
 
+    public Cooking getByOrderNumber(String orderNumber);
+
     public String startPreparation(String id);
     
     public String finishPreparation(String id);
+
+    public List<Cooking> findByStatusOrder(String statusOrder);
+
+    
+
 }
