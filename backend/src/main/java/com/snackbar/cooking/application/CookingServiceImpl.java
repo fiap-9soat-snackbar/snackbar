@@ -50,6 +50,11 @@ public class CookingServiceImpl implements CookingService {
         }
     }
 
+    public void updateOrder(Cooking cooking) {
+        cookingRepository.save(cooking);
+    }
+
+
     @Override
     public List<Cooking> findByStatusOrder(String statusOrder) {
         return cookingRepository.findByStatusOrder(statusOrder);

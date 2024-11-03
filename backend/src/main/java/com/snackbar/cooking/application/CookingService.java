@@ -17,6 +17,7 @@ public interface CookingService {
 
     public List<Cooking> findByStatusOrder(String statusOrder);
 
+    public void updateOrder(Cooking cooking);
     
 
 }
