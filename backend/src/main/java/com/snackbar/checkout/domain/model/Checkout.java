@@ -10,6 +10,7 @@ public class Checkout {
     private String id;
     private String orderId;
     private boolean paid;
+    private String paymentMethod;
 
     // Getters e Setters
     public String getId() {
@@ -28,11 +29,19 @@ public class Checkout {
         this.orderId = orderId;
     }
 
-    public boolean ispaid() {
+    public boolean isPaid() {
         return paid;
     }
 
     public void setPaid(boolean paid) {
         this.paid = paid;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }
