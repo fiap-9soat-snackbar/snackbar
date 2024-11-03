@@ -4,8 +4,8 @@ com/snackbar/cooking/application/CookingService.class
 com/snackbar/product/infrastructure/ProductRepository.class
 com/snackbar/cooking/web/CookingController.class
 com/snackbar/cooking/domain/CookingEntity.class
-com/snackbar/product/web/ProductController.class
 com/snackbar/product/domain/Product.class
+com/snackbar/product/web/ProductController.class
 com/snackbar/cooking/domain/CookingEntity$Item.class
 com/snackbar/cooking/infrastructure/CookingRepository.class
 com/snackbar/product/application/ProductService.class
