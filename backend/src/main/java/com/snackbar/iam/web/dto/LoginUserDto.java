@@ -12,4 +12,6 @@ public class LoginUserDto {
     private String cpf;
 
     private String password;
+
+    private Boolean anonymous = false;
 }

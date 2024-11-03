@@ -40,9 +40,17 @@ public class AuthenticationController {
 
     @PostMapping("/auth/login")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
-        UserDetailsEntity authenticatedUser = authenticationService.authenticate(loginUserDto);
+        String jwtToken = null;
 
-        String jwtToken = jwtService.generateToken(authenticatedUser);
+        if (loginUserDto.getAnonymous() == true) {
+            UserDetailsEntity authenticatedUser = new UserDetailsEntity();
+            Order order = new Order();
+            jwtToken = jwtService.generateToken(authenticatedUser);
+        } else {
+            UserDetailsEntity authenticatedUser = authenticationService.authenticate(loginUserDto);
+            jwtToken = jwtService.generateToken(authenticatedUser);
+        }
+
 
         LoginResponse loginResponse = new LoginResponse(jwtToken, jwtService.getExpirationTime());
         Order order = new Order();
