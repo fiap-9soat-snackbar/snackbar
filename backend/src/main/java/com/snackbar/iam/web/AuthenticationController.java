@@ -9,6 +9,7 @@ import com.snackbar.iam.web.dto.LoginResponse;
 import com.snackbar.iam.web.dto.LoginUserDto;
 import com.snackbar.iam.web.dto.RegisterUserDto;
 import com.snackbar.order.domain.model.Order;
+import com.snackbar.order.domain.model.StatusOrder;
 import com.snackbar.order.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,19 +42,21 @@ public class AuthenticationController {
     @PostMapping("/auth/login")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
         String jwtToken = null;
+        UserDetailsEntity authenticatedUser = null;
 
         if (loginUserDto.getAnonymous() == true) {
-            UserDetailsEntity authenticatedUser = new UserDetailsEntity();
-            Order order = new Order();
+            authenticatedUser = new UserDetailsEntity();
             jwtToken = jwtService.generateToken(authenticatedUser);
         } else {
-            UserDetailsEntity authenticatedUser = authenticationService.authenticate(loginUserDto);
+            authenticatedUser = authenticationService.authenticate(loginUserDto);
             jwtToken = jwtService.generateToken(authenticatedUser);
         }
 
 
         LoginResponse loginResponse = new LoginResponse(jwtToken, jwtService.getExpirationTime());
         Order order = new Order();
+        order.setStatusOrder(StatusOrder.NOVO);
+        order.setCustomerId(authenticatedUser.getId());
         var orderResult = orderService.createOrder(order);
         loginResponse.setOrderId(orderResult.getId());
         return ResponseEntity.ok(loginResponse);
