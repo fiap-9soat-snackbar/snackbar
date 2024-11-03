@@ -37,10 +37,7 @@ public class SecurityConfiguration {
                         .requestMatchers( "/v3/api-docs/**").permitAll()
                         .requestMatchers("/api/user/auth/**").permitAll()
                         .requestMatchers("/api/checkout").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/orders/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/orders/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/orders/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
