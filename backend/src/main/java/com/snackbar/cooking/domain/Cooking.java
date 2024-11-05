@@ -17,6 +17,8 @@ public class Cooking {
 
     private String customerName;
 
+    private String customerId;
+
     private String orderNumber;
     
     private LocalDateTime orderDateTime;
@@ -28,6 +30,10 @@ public class Cooking {
     private int waitingTime;
 
     private long remainingWaitingTime;
+
+    private String paymentMethod;
+
+    private int totalPrice;
 
     @Data
     public static class Item {
