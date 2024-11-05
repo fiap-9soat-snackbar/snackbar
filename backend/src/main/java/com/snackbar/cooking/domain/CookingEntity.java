@@ -19,8 +19,9 @@ public class CookingEntity {
     @Id
     private String id;
 
-    @Field("client_name")
     private String customerName;
+
+    private String customerId;
 
     private String orderNumber;
 
@@ -33,6 +34,10 @@ public class CookingEntity {
     private int waitingTime;
 
     private long remainingWaitingTime;
+
+    private String paymentMethod;
+
+    private int totalPrice;
 
     @Data
     public static class Item {
