@@ -55,8 +55,12 @@ The application repository is privately hosted on [GitHub](https://github.com/co
 ```bash
 # Create a new directory
 $ mkdir grupo-82
+# Access the new directory
+$ cd grupo-82
 # Clone this repository:
 $ git clone https://github.com/commskywalker/snackbar.git
+# Access the cloned repository directory
+$ cd snackbar
 # Build and start the application in background using the command:
 $ docker-compose up -d --build
 
