@@ -27,10 +27,17 @@
 ## 💻 About the project
 This is a backend-only application for managing products in a snackbar, following an hexagonal architecture.
 
-The application is written in Java 21 using Spring Boot, built using Maven 3.9.9, uses MongoDB 8.0.1 as database, and runs containerized using Docker 27.2 and Docker Compose 2.29 on container images based on Ubuntu 24.04 (Noble Numbat).
+The application is written in Java 21 using Spring Boot, built using Maven 3.9.9, uses MongoDB 8.0.1 as database, and runs containerized using Docker 27.2 and Docker Compose 2.29 on container images based on Ubuntu 24.04 (Noble Numbat) of amd64 architecture.
+
+The Domain Drive Design (DDD) diagrams that define the main application flows are accessible in this Miro board: https://miro.com/app/board/uXjVLK2yXLA=/
+
+The two videos that describe the user flow and the admin flow are hosted in Youtube in the following links (only visible through the links, not searcheable):
+
+User Video:
+
+Admin Video: 
+
 </p>
-
-
    
 
 <p id="run">
@@ -41,32 +48,31 @@ The application is written in Java 21 using Spring Boot, built using Maven 3.9.9
 The application repository is privately hosted on [GitHub](https://github.com/commskywalker/snackbar), with access allowed only to specific users.
 
 ### To run the application: 
+* Ensure you are running a system with Windows Subsystem for Linux (WSL) with Ubuntu 22 or 24 installed, Ubuntu 22 or 24 directly or MacOS Sequoia (version 15)
 * Ensure you have Git installed on your system
 * Ensure you have Docker and Docker Compose installed on your system.
 
 ```bash
 # Create a new directory
-
+$ mkdir grupo-82
 # Clone this repository:
 $ git clone https://github.com/commskywalker/snackbar.git
+# Build and start the application in background using the command:
+$ docker-compose up -d --build
 
 ```
 The application will start and be accessible at [localhost:8080](http://localhost:8080).
 
-#### Using Docker Compose:
+#### Other Docker Compose instructions:
 ```bash
-# Build and start the application in background with the logs displaying in the console using the command:
-$ docker-compose up -d --build
-
-# To build and start the application without the logs displaying run:
+# To build and start the application in foreground with the logs displaying in the console, use the following command:
 $ docker-compose up --build
 
 # Stop the application using the command:
 $ docker-compose down -v
-# If you were running with logs, use Ctrl+C in the terminal where docker-compose is running and then the command above
+# If you were running in foregroud with logs displaying, use Ctrl+C in the terminal where docker-compose is running and then the command above
 
 ```
-
 
 <p id="endpoints">
    
@@ -74,7 +80,7 @@ $ docker-compose down -v
 </p>
 
 * Before testing the APIs, ensure you have [Postman](https://www.postman.com/) or similar installed on your system.
-* The MongoDB "products" collection, within the "snackbar" database, comes pre-loaded with a series of products.
+* The MongoDB "snackbar" database comes with two collections pre-loaded: "products" and "orders".
 
 The application exposes the following REST API endpoints:
 
@@ -82,8 +88,10 @@ The application exposes the following REST API endpoints:
 
 | route               | description                                          
 |----------------------|-----------------------------------------------------
+| <kbd>Identity and Access Management (IAM) Endpoints</kbd>     | See [iam.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/iam/iam.md)
 | <kbd>Products Endpoints</kbd>     | See [products.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/product/products.md)
 | <kbd>Orders Endpoints</kbd>     | See [orders.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/order/orders.md)
+| <kbd>Cooking Endpoints</kbd>     | See [cooking.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/cooking/cooking.md)
 | <kbd>Checkout Endpoints</kbd>     | See [checkout.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/checkout/checkout.md)
 | <kbd>Pickup Endpoints</kbd>     | See [pickup.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/pickup/pickup.md)
 </div>
@@ -94,7 +102,7 @@ The application exposes the following REST API endpoints:
 ## 📄 Accessing the Swagger UI
 </p>
 
-You can access the Swagger UI to explore and test the API at:
+You can access the Swagger UI to explore and test the APIs at:
 
 http://localhost:8080/swagger-ui.html
 
@@ -116,7 +124,7 @@ This architecture promotes separation of concerns and makes the application more
 	
 ## 🗃️ Database
 </p>
-This application uses MongoDB as its database. The MongoDB database name is "snackbar", and the collection used for storing product information is "products".
+This application uses MongoDB as its database. The MongoDB database name is "snackbar". It requires authentication and have pre-loaded an administrative user and a regular user, this last one used by the Java application with read/write access only to the "snackbar" database. 
 
 <p id="run-outside">
 	
@@ -139,14 +147,12 @@ This application uses MongoDB as its database. The MongoDB database name is "sna
    mvn -version
    ```
 
-3. Navigate to the project's root directory (where the `pom.xml` file is located) in your terminal.
+3. Navigate in your terminal to the project's root directory (where the `docker-compose.yml` file is located).
+```bash
+# Build the project using Maven:
+$ mvn -f ./backend/pom.xml package
 
-4. Build the project using Maven:
-   ```
-   mvn package
-   ```
+# Run the application:
+$ java -jar ./backend/target/snackbar-0.0.1-SNAPSHOT.jar
 
-6. Run the application:
-   ```
-   java -jar target/snackbar-0.0.1-SNAPSHOT.jar
-   ```
+```
