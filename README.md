@@ -33,9 +33,8 @@ The Domain Drive Design (DDD) diagrams that define the main application flows ar
 
 The two videos that describe the user flow and the admin flow are hosted in Youtube in the following links (only visible through the links, not searcheable):
 
-User Video:
-
-Admin Video: 
+Project presentation and user flow: part 01 - https://youtu.be/T2oW0KYMC-U and part 02 - https://youtu.be/y6bCACwyYLU 
+Admin flow: - https://youtu.be/14HJadw8JQ0 
 
 </p>
    
