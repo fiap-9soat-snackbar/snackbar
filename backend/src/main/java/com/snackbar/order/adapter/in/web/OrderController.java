@@ -21,8 +21,8 @@ public class OrderController {
     // Create New order
     @PostMapping
     public Order createOrder(@RequestBody Order order) {
-        if (order.getCustomerId() == null) {
-            throw new IllegalArgumentException("customerId is mandatory for creating an order");
+        if (order.getCpf() == null) {
+            throw new IllegalArgumentException("CPF is mandatory for creating an order");
         }
         return orderService.createOrder(order);
     }

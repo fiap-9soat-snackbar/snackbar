@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 import com.snackbar.checkout.adapter.out.CheckoutRepository;
 import com.snackbar.pickup.adapter.out.PickupRepository;
 import com.snackbar.pickup.domain.model.StatusPickup;
-
+import com.snackbar.iam.infrastructure.UserRepository;
+import com.snackbar.iam.domain.UserEntity;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.math.BigDecimal;
@@ -23,19 +24,29 @@ public class OrderService { // Service for managing orders
     private final ProductService productService;
     private final CheckoutRepository checkoutRepository;
     private final PickupRepository pickupRepository;
+    private final UserRepository userRepository;
 
-    public OrderService(OrderRepository orderRepository, ProductService productService, CheckoutRepository checkoutRepository, PickupRepository pickupRepository) {
+    public OrderService(OrderRepository orderRepository, ProductService productService, CheckoutRepository checkoutRepository, PickupRepository pickupRepository, UserRepository userRepository) {
         this.orderRepository = orderRepository;
         this.productService = productService;
         this.checkoutRepository = checkoutRepository;
         this.pickupRepository = pickupRepository;
+        this.userRepository = userRepository;
     }
 
     // Create new order
     public Order createOrder(Order order) {
-        if (order.getCustomerId() == null) {
-            throw new IllegalArgumentException("customerId is mandatory for creating an order");
+        if (order.getCpf() == null) {
+            throw new IllegalArgumentException("CPF is mandatory for creating an order");
         }
+        
+        // Validate if the user exists and get the user's name
+        String userName = userRepository.findByCpf(order.getCpf())
+            .map(UserEntity::getName)
+            .orElseThrow(() -> new IllegalArgumentException("User with provided CPF does not exist"));
+        
+        order.setName(userName);
+
         String lastOrderNumber = orderRepository.findTopByOrderByOrderNumberDesc()
                 .map(Order::getOrderNumber)
                 .orElse(null);
