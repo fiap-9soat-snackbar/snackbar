@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface PickupRepository extends MongoRepository<Pickup, String> {
-
+   
     Optional<Pickup> findByOrderId(String orderId);
 }

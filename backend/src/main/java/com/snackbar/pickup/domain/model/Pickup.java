@@ -1,12 +1,7 @@
 package com.snackbar.pickup.domain.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "pickups")
 public class Pickup {
 
-    @Id
     private String id;
     private String orderId;
     private StatusPickup statusPickup;

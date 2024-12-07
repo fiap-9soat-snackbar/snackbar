@@ -1,27 +1,30 @@
 package com.snackbar.pickup.adapter.in.web;
 
-import com.snackbar.pickup.service.PickupService;
+import com.snackbar.pickup.application.DeliveryPickupUseCase;
+import com.snackbar.pickup.application.NotifyCustomerUseCase;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/pickup")
 public class PickupController {
 
-    private final PickupService pickupService;
+    private final NotifyCustomerUseCase notifyCustomerUseCase;
+    private final DeliveryPickupUseCase deliveryPickupUseCase;
 
-    public PickupController(PickupService pickupService) {
-        this.pickupService = pickupService;
+    public PickupController(NotifyCustomerUseCase notifyCustomerUseCase, DeliveryPickupUseCase deliveryPickupUseCase) {
+        this.notifyCustomerUseCase = notifyCustomerUseCase;
+        this.deliveryPickupUseCase = deliveryPickupUseCase;
     }
 
     @PostMapping("/notify/{orderId}")
     public String customerNotify(@PathVariable String orderId) {
-        pickupService.notify(orderId);
+        notifyCustomerUseCase.notify(orderId);
         return "Cliente notificado - Pedido: " + orderId;
     }
 
     @PostMapping("/delivery/{orderId}")
     public String deliveryOrder(@PathVariable String orderId) {
-        pickupService.delivery(orderId);
+        deliveryPickupUseCase.delivery(orderId);
         return "Pedido " + orderId + " está Finalizado!";
     }
 }
