@@ -1,0 +1,15 @@
+apiVersion: v2
+description: FIAP Tech Challenge Project
+keywords:
+- snackbar
+- FIAP
+- Grupo 82
+- 09SOAT
+- JAVA Spring Boot
+maintainers:
+- email: devops@printi.com.br
+  name: Team Grupo 82
+  url: https://github.com/commskywalker/snackbar
+name: snackbar
+version: 1.0.0
+type: application
