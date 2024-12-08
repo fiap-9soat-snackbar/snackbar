@@ -7,10 +7,11 @@ import com.snackbar.order.adapter.out.OrderRepository;
 import com.snackbar.product.application.ProductService;
 import com.snackbar.product.domain.Product;
 import org.springframework.stereotype.Service;
-import com.snackbar.checkout.adapter.out.CheckoutRepository;
-import com.snackbar.pickup.adapter.out.PickupRepository;
-import com.snackbar.pickup.domain.model.StatusPickup;
+
+import com.snackbar.pickup.entity.StatusPickup;
+import com.snackbar.pickup.gateway.PickupRepository;
 import com.snackbar.iam.infrastructure.UserRepository;
+import com.snackbar.checkout.gateway.CheckoutRepository;
 import com.snackbar.iam.domain.UserEntity;
 import java.util.List;
 import java.util.stream.Collectors;
