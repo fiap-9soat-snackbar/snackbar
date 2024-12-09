@@ -159,3 +159,27 @@ $ mvn -f ./backend/pom.xml package
 $ java -jar ./backend/target/snackbar-0.0.1-SNAPSHOT.jar
 
 ```
+
+<p id="Kubernetes">
+	
+## 🗃️ Kubernetes
+
+To run the application on Kubernetes, do the following:
+
+1. Install minikube as per the official documentation.
+
+2. Run the start.sh script.
+
+```bash
+# Run the start.sh script:
+$ sh ./start.sh
+```
+</p>
+This script should:
+
+- Start minikube 
+- Create the ns-snackbar namespace. 
+- Install the Helm chart for the Snackbar application. 
+- Install the MongoDB database used by the Snackbar application. 
+- Connect the Snackbar and MongoDB services to the user's machine via port-forward. 
+- List the pods that were created.

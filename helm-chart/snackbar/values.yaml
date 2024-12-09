@@ -1,7 +1,7 @@
 
 IMAGE:
   REPOSITORY: 171219910203199431032017/snackbar
-  TAG: v1.0.0
+  TAG: latest
   PULL_POLICY: Always
 
 HPA:
@@ -46,14 +46,14 @@ DEPLOYMENT:
   LIVENESSPROBE:
     ENABLED: false
     PATH: /api/healthcheck
-    INITIALDELAY: 60
-    PERIOD: 10
+    INITIALDELAY: 20
+    PERIOD: 5
     FAILURETHRESHOLD: 3
 
   READINESSPROBE:
     ENABLED: true
-    INITIALDELAY: 30
-    PERIOD: 10
+    INITIALDELAY: 10
+    PERIOD: 5
     FAILURETHRESHOLD: 3
 
 SERVICE:
@@ -67,9 +67,9 @@ SECRET:
   DATABASE:
     MONGODB_USER: snackbaruser
     MONGODB_PASSWORD: snack01
-    DB_HOST: mongodb
-    DB_PORT: 27017
+    DB_HOST: snackbar-mongo-db.ns-snackbar.svc.cluster.local
+    DB_PORT: "27017"
     APP_DB: snackbar
   JWT:
     SECRET: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
-    EXPIRES_IN: 3600000
+    EXPIRES_IN: "3600000"
