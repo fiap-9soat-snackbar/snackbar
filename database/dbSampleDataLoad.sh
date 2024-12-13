@@ -220,8 +220,9 @@ db.orders.insertMany([
         }
     ],
     "statusOrder": "NOVO",
+    "paymentMethod": "Credit card",
     "waitingTime": 10,
-    "totalPrice": 20.00
+    "totalPrice": 20.00,
 },
 {
     "id": "67230e25305e6e531c4149a3",
@@ -244,8 +245,9 @@ db.orders.insertMany([
         }
     ],
     "statusOrder": "NOVO",
+    "paymentMethod": "Debit card",
     "waitingTime": 11,
-    "totalPrice": 30.00
+    "totalPrice": 30.00,
 }
   ])
 EOF

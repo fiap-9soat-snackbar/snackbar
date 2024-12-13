@@ -1,30 +1,34 @@
 package com.snackbar.cooking.web;
 
-import org.springframework.web.bind.annotation.*;
-
-import com.snackbar.cooking.domain.Cooking;
-import com.snackbar.cooking.application.CookingService;
-
-import java.util.List;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.Duration;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.snackbar.cooking.application.port.input.CookingUseCase;
+import com.snackbar.cooking.domain.model.Cooking;
+import com.snackbar.cooking.web.dto.CookingDTO;
+import com.snackbar.cooking.web.mapper.CookingWebMapper;
 import org.springframework.http.HttpStatus;
-//import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.time.LocalDateTime;
+import java.time.Duration;
 @RestController
 @RequestMapping("/api")
 public class CookingController {
 
-    @Autowired
-    private CookingService cookingService;
+    private final CookingUseCase cookingUseCase;
+    private final CookingWebMapper mapper;
+
+    public CookingController(CookingUseCase cookingUseCase, CookingWebMapper mapper) {
+        this.cookingUseCase = cookingUseCase;
+        this.mapper = mapper;
+    }
 
     @GetMapping("/cooking")
-    public ResponseEntity<List<Cooking>> getAllCookings() {
-        List<Cooking> cookings = cookingService.findByStatusOrder("PREPARACAO");
+    public ResponseEntity<List<CookingDTO>> getAllCookings() {
+        var cookings = cookingUseCase.findByStatusOrder("PREPARACAO")
+                .stream()
+                .map(mapper::toDTO)
+                .collect(Collectors.toList());
         
         if (cookings.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -34,69 +38,36 @@ public class CookingController {
     }
 
     @GetMapping("/cooking/get-order-by-id/{id}")
-    public ResponseEntity<Cooking> getCookingById(@PathVariable String id) {
-        Cooking cooking = this.cookingService.getById(id);
-
-        defineRemainingAwatingTime(cooking);
-
-        return ResponseEntity.ok(cooking);
+    public ResponseEntity<CookingDTO> getCookingById(@PathVariable String id) {
+        var cooking = cookingUseCase.getCookingById(id);
+        return ResponseEntity.ok(mapper.toDTO(cooking));
     }
 
     @GetMapping("/cooking/get-order-by-number/{order_number}")
-    public ResponseEntity<Cooking> getCookingByNumber(@PathVariable String order_number) {
-        Cooking cooking = this.cookingService.getByOrderNumber(order_number);
-
-        defineRemainingAwatingTime(cooking);
-
-        return ResponseEntity.ok(cooking);
-    }
-
-    @PutMapping("/cooking/receive-order/{id}")
-    public ResponseEntity<String> receiveOrder(@PathVariable String id) {
-
-        Cooking cooking = this.cookingService.getById(id);
-
-        if(cooking.getStatusOrder().equals("PAGO")) {
-            cooking.setStatusOrder("RECEBIDO");
-            cookingService.updateOrder(cooking);
-            return ResponseEntity.ok("Pedido recebido");
-        }
-        else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-            .body("Impossível receber o pedido. O status do pedido solicitado é " + cooking.getStatusOrder());
-        }
-
+    public ResponseEntity<CookingDTO> getCookingByNumber(@PathVariable String order_number) {
+        var cooking = cookingUseCase.getCookingByOrderNumber(order_number);
+        return ResponseEntity.ok(mapper.toDTO(cooking));
     }
 
     @PutMapping("/cooking/start-preparation/{id}")
     public ResponseEntity<String> startPreparation(@PathVariable String id) {
-
-        Cooking cooking = this.cookingService.getById(id);
-
-        if(cooking.getStatusOrder().equals("RECEBIDO")) {
-            cooking.setStatusOrder("PREPARACAO");
-            cookingService.updateOrder(cooking);
-            return ResponseEntity.ok("Preparo iniciado");
-        }
-        else {
+        try {
+            String result = cookingUseCase.startPreparation(id);
+            return ResponseEntity.ok(result);
+        } catch (IllegalStateException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-            .body("Impossível iniciar preparo. O status do pedido solicitado é " + cooking.getStatusOrder());
+                    .body(e.getMessage());
         }
-
     }
 
     @PutMapping("/cooking/finish-preparation/{id}")
     public ResponseEntity<String> finishPreparation(@PathVariable String id) {
-        Cooking cooking = this.cookingService.getById(id);
-
-        if(cooking.getStatusOrder().equals("PREPARACAO")) {
-            cooking.setStatusOrder("PRONTO");
-            cookingService.updateOrder(cooking);
-            return ResponseEntity.ok("Preparo pronto");
-        }
-        else {
+        try {
+            String result = cookingUseCase.finishPreparation(id);
+            return ResponseEntity.ok(result);
+        } catch (IllegalStateException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-            .body("Impossível finalizar preparo. O status do pedido solicitado é " + cooking.getStatusOrder());
+                    .body(e.getMessage());
         }
     }
 
