@@ -12,11 +12,9 @@ com/snackbar/iam/application/IamService.class
 com/snackbar/checkout/entity/Checkout.class
 com/snackbar/iam/web/UserController.class
 com/snackbar/iam/domain/IamRole.class
-com/snackbar/common/dto/ApiResponse.class
 com/snackbar/pickup/usecase/DeliveryPickupUseCaseImpl.class
 com/snackbar/iam/application/ApplicationConfiguration.class
 com/snackbar/iam/application/OpenApiConfig.class
-com/snackbar/checkout/infrastructure/configuration/GlobalExceptionHandler.class
 com/snackbar/iam/web/dto/LoginResponse.class
 com/snackbar/iam/web/dto/RegisterUserDto.class
 com/snackbar/iam/application/AuthenticationService.class
@@ -36,7 +34,6 @@ com/snackbar/iam/application/UserService.class
 com/snackbar/order/application/UpdateOrderUseCase.class
 com/snackbar/iam/web/dto/LoginUserDto.class
 com/snackbar/order/domain/model/Item.class
-com/snackbar/checkout/infrastructure/configuration/ErrorResponse.class
 com/snackbar/order/adapter/out/OrderRepository.class
 com/snackbar/checkout/usecase/CheckoutOrderUseCase.class
 com/snackbar/iam/application/SecurityConfiguration.class

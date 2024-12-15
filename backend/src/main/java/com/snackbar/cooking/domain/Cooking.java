@@ -12,9 +12,9 @@ public class Cooking {
     @Id
     private String id;
 
-    private String customerName;
+    private String name;
 
-    private String customerId;
+    private String cpf;
 
     private String orderNumber;
     

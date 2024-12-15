@@ -1,4 +1,4 @@
-package com.snackbar.common.dto;
+package com.snackbar.product.common.dto;
 
 public class ApiResponse<T> {
     private boolean success;

@@ -19,9 +19,9 @@ public class CookingEntity {
     @Id
     private String id;
 
-    private String customerName;
+    private String name;
 
-    private String customerId;
+    private String cpf;
 
     private String orderNumber;
 
