@@ -1,7 +1,8 @@
 package com.snackbar.cooking.application;
 
 import java.util.List;
-import com.snackbar.cooking.domain.Cooking;
+
+import com.snackbar.cooking.entity.Cooking;
 
 public interface CookingService {
 

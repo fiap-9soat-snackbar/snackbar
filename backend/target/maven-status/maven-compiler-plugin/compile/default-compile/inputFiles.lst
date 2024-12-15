@@ -14,8 +14,8 @@
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/application/AuthenticationService.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/pickup/entity/Pickup.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/web/AuthenticationController.java
+/Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/cooking/gateway/CookingRepository.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/domain/IamRole.java
-/Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/cooking/domain/CookingEntity.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/product/domain/Product.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/application/SecurityConfiguration.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/web/dto/LoginUserDto.java
@@ -26,14 +26,13 @@
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/application/JwtService.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/order/application/CreateOrderUseCase.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/pickup/usecase/DeliveryPickupUseCaseImpl.java
-/Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/cooking/web/CookingController.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/web/dto/RegisterUserDto.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/web/dto/UserResponse.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/domain/UserDetailsEntity.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/application/UserService.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/pickup/usecase/NotifyCustomerUseCase.java
+/Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/cooking/presentation/CookingController.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/application/IamService.java
-/Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/CookingRepository.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/checkout/usecase/CheckoutOrderUseCaseImpl.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/checkout/gateway/CheckoutRepository.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/product/application/ProductService.java
@@ -46,7 +45,7 @@
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/order/adapter/in/web/OrderController.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/application/IamServiceImpl.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/order/domain/model/Order.java
-/Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/cooking/domain/Cooking.java
+/Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/cooking/entity/Cooking.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/order/domain/model/StatusOrder.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/cooking/application/CookingService.java
 /Users/thiagomoreira/FIAP/tech-challange/code/snackbar/backend/src/main/java/com/snackbar/iam/application/JwtAuthenticationFilter.java
