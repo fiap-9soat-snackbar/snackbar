@@ -219,7 +219,7 @@ db.orders.insertMany([
             "customization": "Molho extra"
         }
     ],
-    "statusOrder": "NOVO",
+    "statusOrder": "PAGO",
     "waitingTime": 10,
     "totalPrice": 20.00
 },
