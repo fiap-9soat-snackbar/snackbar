@@ -33,10 +33,10 @@ public class CookingServiceImpl implements CookingService {
     @Override
     public String startPreparation(String id) {
         Cooking cooking = getById(id);
-        if ("pending".equals(cooking.getStatusOrder())) {
-            cooking.setStatusOrder("cooking");
+        if ("RECEBIDO".equals(cooking.getStatusOrder())) {
+            cooking.setStatusOrder("EM_PREPARACAO");
             updateOrder(cooking);
-            return "Cooking status changed to 'cooking'";
+            return "Cooking status changed to 'EM_PREPARACAO'";
         }
         return "The cooking is already in " + cooking.getStatusOrder() + " status";
     }
@@ -44,10 +44,10 @@ public class CookingServiceImpl implements CookingService {
     @Override
     public String finishPreparation(String id) {
         Cooking cooking = getById(id);
-        if ("cooking".equals(cooking.getStatusOrder())) {
-            cooking.setStatusOrder("ready");
+        if ("EM_PREPARACAO".equals(cooking.getStatusOrder())) {
+            cooking.setStatusOrder("EM_ENTREGA");
             updateOrder(cooking);
-            return "Cooking status changed to 'ready'";
+            return "Cooking status changed to 'EM_ENTREGA'";
         }
         return "The cooking is currently in " + cooking.getStatusOrder() + " status";
     }
