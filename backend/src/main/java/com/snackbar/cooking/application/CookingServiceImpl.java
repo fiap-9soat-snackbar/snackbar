@@ -34,7 +34,7 @@ public class CookingServiceImpl implements CookingService {
     public String startPreparation(String id) {
         Cooking cooking = getById(id);
         if ("RECEBIDO".equals(cooking.getStatusOrder())) {
-            cooking.setStatusOrder("EPREPARACAO");
+            cooking.setStatusOrder("PREPARACAO");
             updateOrder(cooking);
             return "Cooking status changed to 'PREPARACAO'";
         }
