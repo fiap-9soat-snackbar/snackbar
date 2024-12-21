@@ -12,6 +12,8 @@ public interface CookingService {
 
     public Cooking getByOrderNumber(String orderNumber);
 
+    public String receiveOrder(String id);
+
     public String startPreparation(String id);
     
     public String finishPreparation(String id);

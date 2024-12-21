@@ -44,15 +44,8 @@ public class CookingController {
 
     @PutMapping("/cooking/receive-order/{id}")
     public ResponseEntity<String> receiveOrder(@PathVariable String id) {
-        Cooking cooking = cookingService.getById(id);
-
-        if ("PAGO".equals(cooking.getStatusOrder())) {
-            cooking.setStatusOrder("RECEBIDO");
-            cookingService.updateOrder(cooking);
-            return ResponseEntity.ok("Pedido recebido");
-        }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-            .body("Impossível receber o pedido. O status atual é " + cooking.getStatusOrder());
+        String response = cookingService.receiveOrder(id);
+        return ResponseEntity.ok(response);
     }
 
     @PutMapping("/cooking/start-preparation/{id}")

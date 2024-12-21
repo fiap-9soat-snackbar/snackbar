@@ -31,6 +31,17 @@ public class CookingServiceImpl implements CookingService {
     }
 
     @Override
+    public String receiveOrder(String id) {
+        Cooking cooking = getById(id);
+        if ("PAGO".equals(cooking.getStatusOrder())) {
+            cooking.setStatusOrder("RECEBIDO");
+            updateOrder(cooking);
+            return "Cooking status changed to 'RECEBIDO'";
+        }
+        return "The cooking is already in " + cooking.getStatusOrder() + " status";
+    }
+
+    @Override
     public String startPreparation(String id) {
         Cooking cooking = getById(id);
         if ("RECEBIDO".equals(cooking.getStatusOrder())) {
