@@ -4,10 +4,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-@ControllerAdvice
+@ControllerAdvice("checkoutGlobalExceptionHandler")
+@Component("checkoutGlobalExceptionHandler")
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)

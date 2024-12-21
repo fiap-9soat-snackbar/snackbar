@@ -13,8 +13,11 @@ public class Cooking {
 
     @Id
     private String id;
-    private String customerName;
-    private String customerId;
+
+    private String name;
+
+    private String cpf;
+
     private String orderNumber;
     private LocalDateTime orderDateTime;
     private List<Item> items;

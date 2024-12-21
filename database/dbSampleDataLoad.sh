@@ -208,8 +208,8 @@ db.orders.insertMany([
     "id": "67230df5305e6e531c4149a2",
     "orderNumber": "000001",
     "orderDateTime": "2024-10-31T04:52:17.367Z",
-    "customerId": "12345",
-    "customerName": "Jose Moreira",
+    "cpf": "00000000001",
+    "name": "Jose Moreira",
     "items": [
         {
             "name": "Hot Dog de Salsicha",
@@ -227,8 +227,8 @@ db.orders.insertMany([
     "id": "67230e25305e6e531c4149a3",
     "orderNumber": "000002",
     "orderDateTime": "2024-10-31T04:52:17.367Z",
-    "customerId": "12346",
-    "customerName": "Rosangela Santos",
+    "cpf": "00000000002",
+    "name": "Rosangela Santos",
     "items": [
         {
             "name": "Hambúrguer",
