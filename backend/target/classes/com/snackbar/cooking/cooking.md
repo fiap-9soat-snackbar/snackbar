@@ -18,7 +18,7 @@
 [
     {
         "id": "6726d7cdb6db288888fe6911",
-        "customerName": "Jose Moreira",
+        "name": "Jose Moreira",
         "orderNumber": "000001",
         "orderDateTime": "2024-11-03T01:00:25.14",
         "items": [
@@ -45,7 +45,7 @@
 [
     {
         "id": "6726d7cdb6db288888fe6911",
-        "customerName": "Jose Moreira",
+        "name": "Jose Moreira",
         "orderNumber": "000001",
         "orderDateTime": "2024-11-03T01:00:25.14",
         "items": [
@@ -72,7 +72,7 @@
 [
     {
         "id": "6726d7cdb6db288888fe6911",
-        "customerName": "Jose Moreira",
+        "name": "Jose Moreira",
         "orderNumber": "000001",
         "orderDateTime": "2024-11-03T01:00:25.14",
         "items": [

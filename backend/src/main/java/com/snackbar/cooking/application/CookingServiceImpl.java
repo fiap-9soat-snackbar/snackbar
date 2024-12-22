@@ -5,55 +5,68 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.snackbar.cooking.domain.Cooking;
-import com.snackbar.cooking.infrastructure.CookingRepository;
-//import com.snackbar.cooking.application.CookingService;
+import com.snackbar.cooking.entity.Cooking;
+import com.snackbar.cooking.gateway.CookingRepository;
 
 @Service
 public class CookingServiceImpl implements CookingService {
 
+    private final CookingRepository cookingRepository;
 
     @Autowired
-    private CookingRepository cookingRepository;
+    public CookingServiceImpl(CookingRepository cookingRepository) {
+        this.cookingRepository = cookingRepository;
+    }
 
     @Override
     public Cooking getById(String id) {
-        return this.cookingRepository
-        .findById(id)
-        .orElseThrow(() -> new IllegalArgumentException("Cooking not found"));
+        return cookingRepository
+            .findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("Cooking not found"));
     }
 
     @Override
     public Cooking getByOrderNumber(String orderNumber) {
-        return this.cookingRepository.findByOrderNumber(orderNumber);
+        return cookingRepository.findByOrderNumber(orderNumber);
     }
 
+    @Override
+    public String receiveOrder(String id) {
+        Cooking cooking = getById(id);
+        if ("PAGO".equals(cooking.getStatusOrder())) {
+            cooking.setStatusOrder("RECEBIDO");
+            updateOrder(cooking);
+            return "Cooking status changed to 'RECEBIDO'";
+        }
+        return "The cooking is already in " + cooking.getStatusOrder() + " status";
+    }
+
+    @Override
     public String startPreparation(String id) {
-        Cooking cooking = cookingRepository.findById(id).orElseThrow(() -> new RuntimeException("Cooking not found"));
-        if ("pending".equals(cooking.getStatusOrder())) {
-            cooking.setStatusOrder("cooking");
-            cookingRepository.save(cooking);
-            return "Cooking status changed to 'cooking'";
-        } else {
-            return "The cooking is already in " + cooking.getStatusOrder() + " status";
+        Cooking cooking = getById(id);
+        if ("RECEBIDO".equals(cooking.getStatusOrder())) {
+            cooking.setStatusOrder("PREPARACAO");
+            updateOrder(cooking);
+            return "Cooking status changed to 'PREPARACAO'";
         }
+        return "The cooking is already in " + cooking.getStatusOrder() + " status";
     }
 
+    @Override
     public String finishPreparation(String id) {
-        Cooking cooking = cookingRepository.findById(id).orElseThrow(() -> new RuntimeException("Cooking not found"));
-        if ("cooking".equals(cooking.getStatusOrder())) {
-            cooking.setStatusOrder("ready");
-            cookingRepository.save(cooking);
-            return "Cooking status changed to 'ready'";
-        } else {
-            return "The cooking is currently in " + cooking.getStatusOrder() + " status";
+        Cooking cooking = getById(id);
+        if ("PREPARACAO".equals(cooking.getStatusOrder())) {
+            cooking.setStatusOrder("PRONTO");
+            updateOrder(cooking);
+            return "Cooking status changed to 'PRONTO'";
         }
+        return "The cooking is currently in " + cooking.getStatusOrder() + " status";
     }
 
+    @Override
     public void updateOrder(Cooking cooking) {
         cookingRepository.save(cooking);
     }
-
 
     @Override
     public List<Cooking> findByStatusOrder(String statusOrder) {
@@ -64,5 +77,4 @@ public class CookingServiceImpl implements CookingService {
     public List<Cooking> obtainAll() {
         return findByStatusOrder("PREPARACAO");
     }
-
 }

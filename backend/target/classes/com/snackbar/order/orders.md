@@ -19,8 +19,8 @@
         "id": "672662025524c80e99fe6911",
         "orderNumber": "000001",
         "orderDateTime": "2024-10-31T04:52:17.367Z",
-        "customerId": "12345",
-        "customerName": "Jose Moreira",
+        "cpf": "12345",
+        "name": "Jose Moreira",
         "items": [
             {
                 "name": "Hot Dog de Salsicha",
@@ -48,8 +48,8 @@
     "id": "672662025524c80e99fe6911",
     "orderNumber": "000001",
     "orderDateTime": "2024-10-31T04:52:17.367Z",
-    "customerId": "12345",
-    "customerName": "Jose Moreira",
+    "cpf": "12345",
+    "name": "Jose Moreira",
     "items": [
         {
             "name": "Hot Dog de Salsicha",
@@ -75,8 +75,8 @@
     "id": "672662025524c80e99fe6911",
     "orderNumber": "000001",
     "orderDateTime": "2024-10-31T04:52:17.367Z",
-    "customerId": "12345",
-    "customerName": "Jose Moreira",
+    "cpf": "12345",
+    "name": "Jose Moreira",
     "items": [
         {
             "name": "Hot Dog de Salsicha",
@@ -98,8 +98,8 @@
 **REQUEST**  
 ```json
 {
-    "customerId": "12347",
-    "customerName": "Fulano de Souza", // Optional field
+    "cpf": "12347",
+    "name": "Fulano de Souza", // Optional field
     "items": [ //Product names must follow existing items in Products collection (see GET /api/products)
         {
             "name": "Pizza de Calabresa",
@@ -123,8 +123,8 @@
     "id": "67266dffb6941f69258b3919",
     "orderNumber": "000002",
     "orderDateTime": "2024-11-02T18:22:55.239740534Z",
-    "customerId": "12347",
-    "customerName": "Fulano de Souza",
+    "cpf": "12347",
+    "name": "Fulano de Souza",
     "items": [
         {
             "name": "Pizza de Calabresa",
@@ -178,8 +178,8 @@
     "id": "672662a6b6941f69258b3918",
     "orderNumber": "000002",
     "orderDateTime": "2024-11-02T17:34:30.979Z",
-    "customerId": "12347",
-    "customerName": "Fulano de Souza",
+    "cpf": "12347",
+    "name": "Fulano de Souza",
     "items": [
         {
             "name": "Coca-Cola 350ml",
