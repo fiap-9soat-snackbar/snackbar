@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.snackbar.pickup.entity.StatusPickup;
 import com.snackbar.pickup.gateway.PickupRepository;
-import com.snackbar.iam.infrastructure.UserRepository;
+import com.snackbar.iam.gateway.UserRepository;
 import com.snackbar.checkout.gateway.CheckoutRepository;
-import com.snackbar.iam.domain.UserEntity;
+import com.snackbar.iam.entity.UserEntity;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.math.BigDecimal;

@@ -1,16 +1,13 @@
-package com.snackbar.iam.domain;
+package com.snackbar.iam.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.management.relation.Role;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Document(collection = "user")
 @Getter

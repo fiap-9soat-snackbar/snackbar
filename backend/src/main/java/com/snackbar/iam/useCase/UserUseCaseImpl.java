@@ -1,26 +1,30 @@
-package com.snackbar.iam.application;
+package com.snackbar.iam.useCase;
 
-import com.snackbar.iam.domain.UserDetailsEntity;
-import com.snackbar.iam.domain.UserEntity;
-import com.snackbar.iam.infrastructure.IamRepository;
-import com.snackbar.iam.infrastructure.UserRepository;
-import com.snackbar.iam.web.dto.UserResponse;
-import org.springframework.stereotype.Service;
+import com.snackbar.iam.entity.UserEntity;
+import com.snackbar.iam.gateway.IamRepository;
+import com.snackbar.iam.gateway.UserRepository;
+import com.snackbar.iam.presentation.dto.UserResponse;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-public class UserService {
+@Component
+public class UserUseCaseImpl implements UserUseCase {
+
     private final IamRepository iamRepository;
     private final UserRepository userRepository;
 
-    public UserService(IamRepository iamRepository, UserRepository userRepository) {
+    public UserUseCaseImpl(
+            IamRepository iamRepository,
+            UserRepository userRepository
+    ) {
         this.iamRepository = iamRepository;
         this.userRepository = userRepository;
     }
 
-    public List<UserEntity> allUsers() {
+    @Override
+    public List<UserEntity> getAllUsers() {
         List<UserEntity> users = new ArrayList<>();
 
         iamRepository.findAll().forEach(users::add);
@@ -28,7 +32,9 @@ public class UserService {
         return users;
     }
 
+    @Override
     public UserResponse getUserByCpf(String cpf) {
+
         return userRepository.findByCpf(cpf).map(user ->
                 UserResponse.builder()
                         .id(user.getId())
@@ -36,10 +42,11 @@ public class UserService {
                         .cpf(user.getCpf())
                         .email(user.getEmail())
                         .role(user.getRole())
-                    .build()
+                        .build()
         ).orElseThrow();
     }
 
+    @Override
     public void deleteUser(String id) {
         iamRepository.deleteById(id);
     }

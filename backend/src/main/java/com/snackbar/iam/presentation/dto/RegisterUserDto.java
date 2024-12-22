@@ -1,4 +1,4 @@
-package com.snackbar.iam.web.dto;
+package com.snackbar.iam.presentation.dto;
 
 import lombok.Data;
 import lombok.Getter;
