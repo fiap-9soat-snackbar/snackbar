@@ -16,13 +16,13 @@ kubectl create namespace ns-snackbar
 echo "Entrando no namespace ns-snackbar..."
 kubectl config set-context --current --namespace=ns-snackbar
 
-# 4- Instalar o Helm Chart snackbar
-echo "Instalando o Helm Chart snackbar..."
-helm install snackbar ./helm-chart/snackbar --namespace ns-snackbar
-
-# 5- Instalar o Helm Chart snackbar-mongo-db
+# 4- Instalar o Helm Chart snackbar-mongo-db
 echo "Instalando o Helm Chart snackbar-mongo-db..."
-helm install snackbar-mongo-db ./helm-chart/mongo-custom --namespace ns-snackbar
+helm install snackbar-mongo-db ./infra/helm-chart/mongo-custom --namespace ns-snackbar
+
+# 5- Instalar o Helm Chart snackbar
+echo "Instalando o Helm Chart snackbar..."
+helm install snackbar ./infra/helm-chart/snackbar --namespace ns-snackbar
 
 echo "Aguardando 30 segundos para que os pods iniciem..."
 sleep 30
