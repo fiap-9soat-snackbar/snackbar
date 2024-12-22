@@ -2,7 +2,7 @@ package com.snackbar.product.usecase.impl;
 
 import com.snackbar.product.dto.ProductDTO;
 import com.snackbar.product.entity.Product;
-import com.snackbar.product.gateway.ProductGateway;
+import com.snackbar.product.gateway.ProductRepository;
 import com.snackbar.product.usecase.GetProductUseCase;
 import com.snackbar.product.common.exception.BusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,16 +10,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GetProductUseCaseImpl implements GetProductUseCase {
-    private final ProductGateway productGateway;
+    private final ProductRepository ProductRepository;
 
     @Autowired
-    public GetProductUseCaseImpl(ProductGateway productGateway) {
-        this.productGateway = productGateway;
+    public GetProductUseCaseImpl(ProductRepository ProductRepository) {
+        this.ProductRepository = ProductRepository;
     }
 
     @Override
     public ProductDTO getProduct(String id) {
-        Product product = productGateway.findById(id)
+        Product product = ProductRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Product not found"));
         return mapToDTO(product);
     }

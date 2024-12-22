@@ -2,7 +2,7 @@ package com.snackbar.product.usecase.impl;
 
 import com.snackbar.product.dto.ProductDTO;
 import com.snackbar.product.entity.Product;
-import com.snackbar.product.gateway.ProductGateway;
+import com.snackbar.product.gateway.ProductRepository;
 import com.snackbar.product.usecase.GetProductsByCategoryUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,16 +12,16 @@ import java.util.stream.Collectors;
 
 @Service
 public class GetProductsByCategoryUseCaseImpl implements GetProductsByCategoryUseCase {
-    private final ProductGateway productGateway;
+    private final ProductRepository ProductRepository;
 
     @Autowired
-    public GetProductsByCategoryUseCaseImpl(ProductGateway productGateway) {
-        this.productGateway = productGateway;
+    public GetProductsByCategoryUseCaseImpl(ProductRepository ProductRepository) {
+        this.ProductRepository = ProductRepository;
     }
 
     @Override
     public List<ProductDTO> getProductsByCategory(String category) {
-        return productGateway.findByCategory(category).stream()
+        return ProductRepository.findByCategory(category).stream()
                 .map(this::mapToDTO)
                 .collect(Collectors.toList());
     }

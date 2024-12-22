@@ -2,7 +2,7 @@ package com.snackbar.product.usecase.impl;
 
 import com.snackbar.product.dto.ProductDTO;
 import com.snackbar.product.entity.Product;
-import com.snackbar.product.gateway.ProductGateway;
+import com.snackbar.product.gateway.ProductRepository;
 import com.snackbar.product.usecase.GetAllProductsUseCase;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,16 +11,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GetAllProductsUseCaseImpl implements GetAllProductsUseCase {
-    private final ProductGateway productGateway;
+    private final ProductRepository ProductRepository;
 
     @Autowired
-    public GetAllProductsUseCaseImpl(ProductGateway productGateway) {
-        this.productGateway = productGateway;
+    public GetAllProductsUseCaseImpl(ProductRepository ProductRepository) {
+        this.ProductRepository = ProductRepository;
     }
 
     @Override
     public List<ProductDTO> getAllProducts() {
-        return productGateway.findAll().stream()
+        return ProductRepository.findAll().stream()
                 .map(this::mapToDTO)
                 .collect(Collectors.toList());
     }

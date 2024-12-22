@@ -2,25 +2,25 @@ package com.snackbar.product.usecase.impl;
 
 import com.snackbar.product.dto.ProductDTO;
 import com.snackbar.product.entity.Product;
-import com.snackbar.product.gateway.ProductGateway;
+import com.snackbar.product.gateway.ProductRepository;
 import com.snackbar.product.usecase.CreateProductUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CreateProductUseCaseImpl implements CreateProductUseCase {
-    private final ProductGateway productGateway;
+    private final ProductRepository ProductRepository;
 
     @Autowired
-    public CreateProductUseCaseImpl(ProductGateway productGateway) {
-        this.productGateway = productGateway;
+    public CreateProductUseCaseImpl(ProductRepository ProductRepository) {
+        this.ProductRepository = ProductRepository;
     }
 
     @Override
     public ProductDTO createProduct(ProductDTO productDTO) {
         Product product = mapToEntity(productDTO);
         product.validateProduct();
-        Product savedProduct = productGateway.save(product);
+        Product savedProduct = ProductRepository.save(product);
         return mapToDTO(savedProduct);
     }
 
