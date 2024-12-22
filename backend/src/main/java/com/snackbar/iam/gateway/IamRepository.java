@@ -1,7 +1,7 @@
-package com.snackbar.iam.infrastructure;
+package com.snackbar.iam.gateway;
 
-import com.snackbar.iam.domain.UserDetailsEntity;
-import com.snackbar.iam.domain.UserEntity;
+import com.snackbar.iam.entity.UserDetailsEntity;
+import com.snackbar.iam.entity.UserEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

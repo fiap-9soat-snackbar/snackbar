@@ -1,6 +1,6 @@
-package com.snackbar.iam.web.dto;
+package com.snackbar.iam.presentation.dto;
 
-import com.snackbar.iam.domain.IamRole;
+import com.snackbar.iam.entity.IamRole;
 import lombok.Builder;
 import lombok.Data;
 

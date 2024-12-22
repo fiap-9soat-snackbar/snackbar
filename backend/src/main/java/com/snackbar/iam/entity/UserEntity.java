@@ -1,4 +1,4 @@
-package com.snackbar.iam.domain;
+package com.snackbar.iam.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

@@ -1,6 +1,6 @@
 package com.snackbar.iam.application;
 
-import com.snackbar.iam.domain.UserEntity;
+import com.snackbar.iam.entity.UserEntity;
 
 public interface IamService {
 

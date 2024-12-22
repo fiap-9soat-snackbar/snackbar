@@ -1,7 +1,7 @@
 package com.snackbar.iam.application;
 
 
-import com.snackbar.iam.infrastructure.IamRepository;
+import com.snackbar.iam.gateway.IamRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

@@ -1,7 +1,7 @@
 package com.snackbar.iam.application;
 
-import com.snackbar.iam.domain.UserEntity;
-import com.snackbar.iam.infrastructure.IamRepository;
+import com.snackbar.iam.entity.UserEntity;
+import com.snackbar.iam.gateway.IamRepository;
 import org.springframework.stereotype.Component;
 
 @Component
