@@ -8,6 +8,6 @@ terraform {
   backend "s3" {
     region = "us-east-1"
     bucket = "fiap-9soat-snackbar"
-    key    = "fiap-9soat-snackbar/global/terraform.tfstate"
+    key    = "global/terraform.tfstate"
   }
 }

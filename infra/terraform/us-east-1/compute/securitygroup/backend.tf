@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     region = "us-east-1"
     bucket = "fiap-9soat-snackbar"
-    key    = "fiap-9soat-snackbar/compute/securitygroup/eks/mithrandir/terraform.tfstate"
+    key    = "compute/securitygroup/eks/mithrandir/terraform.tfstate"
   }
 }
 
@@ -17,7 +17,7 @@ data "terraform_remote_state" "global" {
   config = {
     region = "us-east-1"
     bucket = "fiap-9soat-snackbar"
-    key    = "fiap-9soat-snackbar/global/terraform.tfstate"
+    key    = "global/terraform.tfstate"
   }
 }
 
@@ -26,6 +26,6 @@ data "terraform_remote_state" "vpc" {
   config = {
     region = "us-east-1"
     bucket = "fiap-9soat-snackbar"
-    key    = "fiap-9soat-snackbar/network/vpc/terraform.tfstate"
+    key    = "network/vpc/terraform.tfstate"
   }
 }

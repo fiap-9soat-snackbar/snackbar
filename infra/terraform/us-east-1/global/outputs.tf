@@ -31,37 +31,30 @@ output "volume_size" {
 # VPC
 output "vpc_cidr" {
   description = "VPC network range"
-  value = {
-    prod = "10.30.0.0/16"
-  }
+  value = "10.30.0.0/16"
 }
 
 output "secondary_cidr_blocks" {
   description = "Secondary VPC netwoork range"
-  value = {
-    prod = "198.19.0.0/16"
-  }
-
+  value = "198.19.0.0/16"
 }
 output "azs" {
   description = "Availability zones"
-  value = {
-    prod = ["us-east-1a", "us-east-1c", "us-east-1b"]
-  }
+  value = ["us-east-1a", "us-east-1c", "us-east-1b"]
 }
 
 output "public_subnets" {
   description = "Public subnet ranges"
-  value = {
-    prod = ["10.30.10.0/24", "10.30.11.0/24", "10.30.12.0/24"]
-  }
+  value = ["10.30.10.0/24", "10.30.11.0/24", "10.30.12.0/24"]
 }
 
 output "private_subnets" {
   description = "Private subnet ranges"
-  value = {
-    prod = ["10.30.20.0/24", "10.30.21.0/24", "10.30.22.0/24"]
-  }
+  value = ["10.30.20.0/24", "10.30.21.0/24", "10.30.22.0/24"]
 }
 
+output "database_subnets" {
+  description = "Private subnet ranges"
+  value = ["10.30.30.0/24", "10.30.31.0/24", "10.30.32.0/24"]
+}
 

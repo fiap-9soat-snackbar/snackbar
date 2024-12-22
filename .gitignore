@@ -1,3 +1,5 @@
 duvidas
 .vscode
 .DS_Store
+.terraform
+.terraform.lock.hcl

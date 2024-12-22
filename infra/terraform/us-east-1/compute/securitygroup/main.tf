@@ -7,7 +7,7 @@ module "sg_additional_mithrandir_eks" {
 
 
   ingress_cidr_blocks = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block, "10.30.0.0/16"]
-  ingress_rules       = ["all-all"]
+  #ingress_rules       = ["all-all"]
 
   ingress_with_self = [{
     rule        = "all-all"
@@ -39,7 +39,7 @@ module "sg_node_mithrandir_eks" {
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
 
   ingress_cidr_blocks = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block, "10.30.0.0/16"]
-  ingress_rules       = ["all-all"]
+  #ingress_rules       = ["all-all"]
 
   ingress_with_self = [{
     rule        = "all-all"
