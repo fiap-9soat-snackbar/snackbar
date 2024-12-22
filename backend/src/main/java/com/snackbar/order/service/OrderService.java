@@ -4,7 +4,7 @@ import com.snackbar.order.domain.model.Order;
 import com.snackbar.order.domain.model.StatusOrder;
 import com.snackbar.order.domain.model.Item;
 import com.snackbar.order.adapter.out.OrderRepository;
-import com.snackbar.product.usecase.ProductUseCase;
+import com.snackbar.product.usecase.GetProductByNameUseCase;
 import com.snackbar.product.dto.ProductDTO;
 import org.springframework.stereotype.Service;
 
@@ -22,14 +22,14 @@ import java.time.Instant;
 public class OrderService { // Service for managing orders
 
     private final OrderRepository orderRepository;
-    private final ProductUseCase productUseCase;
+    private final GetProductByNameUseCase getProductByNameUseCase;
     private final CheckoutRepository checkoutRepository;
     private final PickupRepository pickupRepository;
     private final UserRepository userRepository;
 
-    public OrderService(OrderRepository orderRepository, ProductUseCase productUseCase, CheckoutRepository checkoutRepository, PickupRepository pickupRepository, UserRepository userRepository) {
+    public OrderService(OrderRepository orderRepository, GetProductByNameUseCase getProductByNameUseCase, CheckoutRepository checkoutRepository, PickupRepository pickupRepository, UserRepository userRepository) {
         this.orderRepository = orderRepository;
-        this.productUseCase = productUseCase;
+        this.getProductByNameUseCase = getProductByNameUseCase;
         this.checkoutRepository = checkoutRepository;
         this.pickupRepository = pickupRepository;
         this.userRepository = userRepository;
@@ -56,7 +56,7 @@ public class OrderService { // Service for managing orders
         order.setOrderDateTime(Instant.now()); // Set orderDateTime to current time in ISO format
         
         List<Item> updatedItems = order.getItems().stream().map(item -> {
-            ProductDTO product = productUseCase.getProductByName(item.getName());
+            ProductDTO product = getProductByNameUseCase.getProductByName(item.getName());
             if (product != null) {
                 item.setName(product.getName());  // Explicitly set the product name
                 item.setPrice(product.getPrice());
@@ -88,7 +88,7 @@ public class OrderService { // Service for managing orders
 
         // Update items
         List<Item> updatedItems = order.getItems().stream().map(item -> {
-            ProductDTO product = productUseCase.getProductByName(item.getName());
+            ProductDTO product = getProductByNameUseCase.getProductByName(item.getName());
             if (product != null) {
                 item.setName(product.getName());
                 item.setPrice(product.getPrice());

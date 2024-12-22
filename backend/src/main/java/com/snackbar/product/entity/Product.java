@@ -6,30 +6,85 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.math.BigDecimal;
 
 @Document(collection = "products")
-public class Product extends BaseProduct {
+public class Product {
     @Id
-    @Override
-    public String getId() {
-        return super.getId();
+    private String id;
+    private String name;
+    private String category;
+    private String description;
+    private BigDecimal price;
+    private Integer cookingTime;
+
+    public Product() {}
+
+    public Product(String id, String name, String category, String description, BigDecimal price, Integer cookingTime) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.price = price;
+        this.cookingTime = cookingTime;
     }
 
+    // Getters and setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Integer getCookingTime() {
+        return cookingTime;
+    }
+
+    public void setCookingTime(Integer cookingTime) {
+        this.cookingTime = cookingTime;
+    }
+
+    // Business rules for product validation
     public void validateProduct() {
-        if (getName() == null || getName().trim().isEmpty()) {
+        if (name == null || name.trim().isEmpty()) {
             throw new BusinessException("Product name is required");
         }
-        if (getCategory() == null || getCategory().trim().isEmpty()) {
+        if (category == null || category.trim().isEmpty()) {
             throw new BusinessException("Product category is required");
         }
-        if (getPrice() == null || getPrice().compareTo(BigDecimal.ZERO) <= 0) {
+        if (price == null || price.compareTo(BigDecimal.ZERO) <= 0) {
             throw new BusinessException("Product price must be greater than zero");
         }
-    }
-
-    public Product() {
-        super();
-    }
-
-    public Product(String name, String category, String description, BigDecimal price, Integer cookingTime) {
-        super(name, category, description, price, cookingTime);
     }
 }
