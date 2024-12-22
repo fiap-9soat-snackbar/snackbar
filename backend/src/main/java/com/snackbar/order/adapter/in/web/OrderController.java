@@ -58,4 +58,10 @@ public class OrderController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
+
+    //Search sorted orders
+    @GetMapping("/sorted")
+    public List<Order> getSortedOrders() {
+        return orderService.getSortedOrders();
+    }
 }

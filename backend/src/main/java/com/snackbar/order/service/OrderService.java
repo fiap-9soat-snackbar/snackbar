@@ -80,7 +80,7 @@ public class OrderService { // Service for managing orders
         return orderRepository.save(order);
     }
 
-    // Update existing order
+    // Update an existing order
     public Order updateOrder(Order order) {
         // Fetch the existing order
         Order existingOrder = orderRepository.findById(order.getId())
@@ -112,19 +112,17 @@ public class OrderService { // Service for managing orders
         return orderRepository.save(existingOrder);
     }
 
-    // List all order
+    // List all orders
     public List<Order> listOrders() {
         return orderRepository.findAll();
     }
 
-    // Search order with status
+    // Search an order with status
     public Order searchOrderWithStatus(String orderId) {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new IllegalArgumentException("Order not Found"));
         return orderRepository.findById(orderId).orElse(order);
     }
-
-    
 
     // Update the Order status based on Checkout and Pickup statuses
     public void updateStatusOrder(String orderId) {
@@ -165,5 +163,30 @@ public class OrderService { // Service for managing orders
     public Order getOrderByOrderNumber(String orderNumber) {
         return orderRepository.findByOrderNumber(orderNumber)
                 .orElseThrow(() -> new IllegalArgumentException("Order not found with orderNumber: " + orderNumber));
+    }
+
+    // Get all orders sorted by status and orderDateTime
+    public List<Order> getSortedOrders() {
+        return orderRepository.findAll().stream()
+                .filter(order -> order.getStatusOrder() == StatusOrder.PRONTO ||
+                                 order.getStatusOrder() == StatusOrder.PREPARACAO ||
+                                 order.getStatusOrder() == StatusOrder.RECEBIDO)
+                .sorted((o1, o2) -> {
+                    int statusComparison = compareStatus(o1.getStatusOrder(), o2.getStatusOrder());
+                    if (statusComparison != 0) {
+                        return statusComparison;
+                    }
+                    return o1.getOrderDateTime().compareTo(o2.getOrderDateTime());
+                })
+                .collect(Collectors.toList());
+    }
+
+    private int compareStatus(StatusOrder status1, StatusOrder status2) {
+        if (status1 == status2) return 0;
+        if (status1 == StatusOrder.PRONTO) return -1;
+        if (status2 == StatusOrder.PRONTO) return 1;
+        if (status1 == StatusOrder.PREPARACAO) return -1;
+        if (status2 == StatusOrder.PREPARACAO) return 1;
+        return 0;
     }
 }
