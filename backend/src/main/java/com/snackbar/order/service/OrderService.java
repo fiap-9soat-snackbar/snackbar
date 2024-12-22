@@ -118,7 +118,7 @@ public class OrderService { // Service for managing orders
     }
 
     // Search an order with status
-    public Order searchOrderWithStatus(String orderId) {
+    public Order searchOrderId(String orderId) {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new IllegalArgumentException("Order not Found"));
         return orderRepository.findById(orderId).orElse(order);

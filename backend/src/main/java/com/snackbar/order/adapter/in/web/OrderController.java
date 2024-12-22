@@ -43,8 +43,8 @@ public class OrderController {
 
     // Search Order with status
     @GetMapping("/{id}")
-    public Order searchOrderWithStatus(@PathVariable String id) {
-        Order order = orderService.searchOrderWithStatus(id);
+    public Order searchOrderId(@PathVariable String id) {
+        Order order = orderService.searchOrderId(id);
         return order;
     }
 
