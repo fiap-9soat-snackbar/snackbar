@@ -6,7 +6,7 @@ import com.snackbar.cooking.entity.Cooking;
 
 public interface CookingService {
 
-    public List<Cooking> obtainAll();
+    public List<Cooking> obtainAll(List<String> statuses);
     
     public Cooking getById(String id);
 
@@ -18,7 +18,7 @@ public interface CookingService {
     
     public String finishPreparation(String id);
 
-    public List<Cooking> findByStatusOrder(String statusOrder);
+    public List<Cooking> findByStatuses(List<String> statuses);
 
     public void updateOrder(Cooking cooking);
     

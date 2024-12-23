@@ -6,9 +6,9 @@
 | <kbd>GET /api/cooking</kbd>     | See [request details](#cooking)
 | <kbd>GET /api/cooking/get-order-by-id/{id}</kbd>     |  See [request details](#get-order-by-id)
 | <kbd>GET /api/cooking/get-order-by-number/{order_number}</kbd>     |See [request details](#get-order-by-number)
-| <kbd>PUT /api/cooking/receive-order/{id}</kbd>     | See [request details](#receive-order)
-| <kbd>PUT /api/cooking/start-preparation/{id}</kbd>     | See [request details](#start-preparation)
-| <kbd>PUT /api/cooking/finish-preparation/{id}</kbd>     | See [request details](#finish-preparation)
+| <kbd>POST /api/cooking/receive-order/{id}</kbd>     | See [request details](#receive-order)
+| <kbd>POST /api/cooking/start-preparation/{id}</kbd>     | See [request details](#start-preparation)
+| <kbd>POST /api/cooking/finish-preparation/{id}</kbd>     | See [request details](#finish-preparation)
 
 
 <h3 id="cooking">GET /api/cooking</h3>
@@ -92,21 +92,21 @@
 ]
 ```
 
-<h3 id="receive-order">PUT /api/cooking/receive-order/{id}</h3>
+<h3 id="receive-order">POST /api/cooking/receive-order/{id}</h3>
 
 **RESPONSE**  
 ```json
    Pedido recebido
 ```
 
-<h3 id="start-preparation">PUT /api/cooking/start-preparation/{id}</h3>
+<h3 id="start-preparation">POST /api/cooking/start-preparation/{id}</h3>
 
 **RESPONSE**  
 ```json
    Preparo iniciado
 ```
 
-<h3 id="finish-preparation">PUT /api/cooking/finish-preparation/{id}</h3>
+<h3 id="finish-preparation">POST /api/cooking/finish-preparation/{id}</h3>
 
 **RESPONSE**  
 ```json

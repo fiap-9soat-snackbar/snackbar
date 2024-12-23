@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import com.snackbar.cooking.application.CookingService;
 import com.snackbar.cooking.entity.Cooking;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,8 @@ public class CookingController {
 
     @GetMapping("/cooking")
     public ResponseEntity<List<Cooking>> getAllCookings() {
-        List<Cooking> cookings = cookingService.findByStatusOrder("PREPARACAO");
+        List<String> statuses = Arrays.asList("PREPARACAO", "RECEBIDO", "PRONTO");
+        List<Cooking> cookings = cookingService.findByStatuses(statuses);
 
         if (cookings.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -42,19 +44,19 @@ public class CookingController {
         return ResponseEntity.ok(cooking);
     }
 
-    @PutMapping("/cooking/receive-order/{id}")
+    @PostMapping("/cooking/receive-order/{id}")
     public ResponseEntity<String> receiveOrder(@PathVariable String id) {
         String response = cookingService.receiveOrder(id);
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/cooking/start-preparation/{id}")
+    @PostMapping("/cooking/start-preparation/{id}")
     public ResponseEntity<String> startPreparation(@PathVariable String id) {
         String response = cookingService.startPreparation(id);
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/cooking/finish-preparation/{id}")
+    @PostMapping("/cooking/finish-preparation/{id}")
     public ResponseEntity<String> finishPreparation(@PathVariable String id) {
         String response = cookingService.finishPreparation(id);
         return ResponseEntity.ok(response);
