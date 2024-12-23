@@ -36,7 +36,7 @@ public class CookingServiceImpl implements CookingService {
         if ("PAGO".equals(cooking.getStatusOrder())) {
             cooking.setStatusOrder("RECEBIDO");
             updateOrder(cooking);
-            return "Cooking status changed to 'RECEBIDO'";
+            return "Pedido recebido";
         }
         return "The cooking is already in " + cooking.getStatusOrder() + " status";
     }
@@ -47,7 +47,7 @@ public class CookingServiceImpl implements CookingService {
         if ("RECEBIDO".equals(cooking.getStatusOrder())) {
             cooking.setStatusOrder("PREPARACAO");
             updateOrder(cooking);
-            return "Cooking status changed to 'PREPARACAO'";
+            return "Preparo iniciado";
         }
         return "The cooking is already in " + cooking.getStatusOrder() + " status";
     }
@@ -58,7 +58,7 @@ public class CookingServiceImpl implements CookingService {
         if ("PREPARACAO".equals(cooking.getStatusOrder())) {
             cooking.setStatusOrder("PRONTO");
             updateOrder(cooking);
-            return "Cooking status changed to 'PRONTO'";
+            return "Preparo pronto";
         }
         return "The cooking is currently in " + cooking.getStatusOrder() + " status";
     }

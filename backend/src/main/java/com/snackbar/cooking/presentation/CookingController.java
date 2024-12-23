@@ -44,19 +44,19 @@ public class CookingController {
         return ResponseEntity.ok(cooking);
     }
 
-    @PutMapping("/cooking/receive-order/{id}")
+    @PostMapping("/cooking/receive-order/{id}")
     public ResponseEntity<String> receiveOrder(@PathVariable String id) {
         String response = cookingService.receiveOrder(id);
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/cooking/start-preparation/{id}")
+    @PostMapping("/cooking/start-preparation/{id}")
     public ResponseEntity<String> startPreparation(@PathVariable String id) {
         String response = cookingService.startPreparation(id);
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/cooking/finish-preparation/{id}")
+    @PostMapping("/cooking/finish-preparation/{id}")
     public ResponseEntity<String> finishPreparation(@PathVariable String id) {
         String response = cookingService.finishPreparation(id);
         return ResponseEntity.ok(response);
