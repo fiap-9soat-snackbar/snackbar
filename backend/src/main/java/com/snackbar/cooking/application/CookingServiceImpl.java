@@ -69,12 +69,12 @@ public class CookingServiceImpl implements CookingService {
     }
 
     @Override
-    public List<Cooking> findByStatusOrder(String statusOrder) {
-        return cookingRepository.findByStatusOrder(statusOrder);
+    public List<Cooking> findByStatuses(List<String> statuses) {
+        return cookingRepository.findByStatusOrderIn(statuses);
     }
 
     @Override
-    public List<Cooking> obtainAll() {
-        return findByStatusOrder("PREPARACAO");
+    public List<Cooking> obtainAll(List<String> statuses) {
+        return findByStatuses(statuses);
     }
 }

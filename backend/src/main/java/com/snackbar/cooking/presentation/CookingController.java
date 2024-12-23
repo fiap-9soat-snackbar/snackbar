@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import com.snackbar.cooking.application.CookingService;
 import com.snackbar.cooking.entity.Cooking;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,8 @@ public class CookingController {
 
     @GetMapping("/cooking")
     public ResponseEntity<List<Cooking>> getAllCookings() {
-        List<Cooking> cookings = cookingService.findByStatusOrder("PREPARACAO");
+        List<String> statuses = Arrays.asList("PREPARACAO", "RECEBIDO", "PRONTO");
+        List<Cooking> cookings = cookingService.findByStatuses(statuses);
 
         if (cookings.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
