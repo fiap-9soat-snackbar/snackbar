@@ -216,8 +216,8 @@ data:
         "id": "67230df5305e6e531c4149a2",
         "orderNumber": "000001",
         "orderDateTime": "2024-10-31T04:52:17.367Z",
-        "customerId": "12345",
-        "customerName": "Jose Moreira",
+        "cpf": "12345",
+        "name": "Jose Moreira",
         "items": [
             {
                 "name": "Hot Dog de Salsicha",
@@ -235,8 +235,8 @@ data:
         "id": "67230e25305e6e531c4149a3",
         "orderNumber": "000002",
         "orderDateTime": "2024-10-31T04:52:17.367Z",
-        "customerId": "12346",
-        "customerName": "Rosangela Santos",
+        "cpf": "12346",
+        "name": "Rosangela Santos",
         "items": [
             {
                 "name": "Hambúrguer",
