@@ -15,6 +15,20 @@ module "sg_additional_mithrandir_eks" {
   }]
 
 
+  ingress_with_cidr_blocks = [
+    {
+      rule        = "all-all"
+      cidr_blocks = "10.30.0.0/16"
+      description = "Allow all traffic from 10.30.0.0/16"
+    },
+    {
+      rule        = "all-all"
+      cidr_blocks = "10.40.0.0/16"
+      description = "Allow all traffic from 10.40.0.0/16"
+    }
+  ]
+
+
   egress_with_cidr_blocks = [
     {
       rule        = "all-all"
@@ -46,6 +60,19 @@ module "sg_node_mithrandir_eks" {
     description = "Allow node to communicate with each other."
   }]
 
+
+  ingress_with_cidr_blocks = [
+    {
+      rule        = "all-all"
+      cidr_blocks = "10.30.0.0/16"
+      description = "Allow all traffic from 10.30.0.0/16"
+    },
+    {
+      rule        = "all-all"
+      cidr_blocks = "10.40.0.0/16"
+      description = "Allow all traffic from 10.40.0.0/16"
+    }
+  ]
   egress_with_cidr_blocks = [
     {
       rule        = "all-all"

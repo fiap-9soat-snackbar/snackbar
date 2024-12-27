@@ -1,6 +1,6 @@
 module "eks_mithrandir" {
   source                          = "terraform-aws-modules/eks/aws"
-  #version                         = "18.27.1"
+  version                         = "18.27.1"
   vpc_id                          = data.terraform_remote_state.vpc.outputs.vpc_id
   cluster_name                    = join("-", [data.terraform_remote_state.global.outputs.project_name, "mithrandir"])
   cluster_version                 = "1.31"
@@ -12,7 +12,7 @@ module "eks_mithrandir" {
   cluster_endpoint_public_access  = false
   cluster_endpoint_private_access = true
   create_iam_role                 = "false"
-  iam_role_arn                    = "arn:aws:iam::093272851603:role/LabRole"  
+  iam_role_arn                    = "arn:aws:iam::208016918243:role/LabRole"  
   tags = {
     Provisioned  = "Terraform"
     CreatedBy    = "Team-82"
@@ -23,18 +23,20 @@ module "eks_mithrandir" {
     coredns = {
       resolve_conflicts_on_update = "OVERWRITE"
       resolve_conflicts_on_create = "OVERWRITE"
+      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
     }
     aws-ebs-csi-driver = {
       #addon_version               = "v1.22.0-eksbuild.2"
       resolve_conflicts_on_update = "OVERWRITE"
       resolve_conflicts_on_create = "OVERWRITE"
-      #service_account_role_arn    = "arn:aws:iam::093272851603:role/LabRole"
+      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
     }
     kube-proxy = {}
     vpc-cni = {
       #addon_version               = "v1.12.6-eksbuild.1"
       resolve_conflicts_on_update = "OVERWRITE"
       resolve_conflicts_on_create = "OVERWRITE"
+      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
     }
   }
 
@@ -54,10 +56,10 @@ module "eks_mithrandir" {
       instance_types          = ["t3.medium"]
       key_name                = "eks-key-pair"
       create_iam_role         = "false"
-      iam_role_arn            = "arn:aws:iam::093272851603:role/LabRole"  
+      iam_role_arn            = "arn:aws:iam::208016918243:role/LabRole"  
       #iam_role_name          = "LabRole"
-      pre_bootstrap_user_data = var.bootstrap
-      iam_role_additional_policies = []
+      #pre_bootstrap_user_data = var.bootstrap
+      #iam_role_additional_policies = []
 
       labels = {
         application = "snackbar"
@@ -101,9 +103,9 @@ module "eks_mithrandir" {
       key_name                = "eks-key-pair"
       create_iam_role         = "false"
       #iam_role_name           = "LabRole"
-      iam_role_arn            = "arn:aws:iam::093272851603:role/LabRole" 
-      pre_bootstrap_user_data = var.bootstrap
-      iam_role_additional_policies = []
+      iam_role_arn            = "arn:aws:iam::208016918243:role/LabRole" 
+      #pre_bootstrap_user_data = var.bootstrap
+      #iam_role_additional_policies = []
 
       labels = {
         application = "mongodb"
