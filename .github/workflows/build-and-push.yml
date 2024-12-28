@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - homolog
+      - feature/eks
 
 jobs:
   build:

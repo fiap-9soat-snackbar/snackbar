@@ -12,6 +12,7 @@ module "eks_mithrandir" {
   cluster_endpoint_public_access  = false
   cluster_endpoint_private_access = true
   create_iam_role                 = "false"
+  enable_irsa                     = "false"
   iam_role_arn                    = "arn:aws:iam::208016918243:role/LabRole"  
   tags = {
     Provisioned  = "Terraform"
@@ -19,26 +20,26 @@ module "eks_mithrandir" {
     Product      = "SnackBar"
   }
 
-  cluster_addons = {
-    coredns = {
-      resolve_conflicts_on_update = "OVERWRITE"
-      resolve_conflicts_on_create = "OVERWRITE"
-      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-    }
-    aws-ebs-csi-driver = {
-      #addon_version               = "v1.22.0-eksbuild.2"
-      resolve_conflicts_on_update = "OVERWRITE"
-      resolve_conflicts_on_create = "OVERWRITE"
-      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-    }
-    kube-proxy = {}
-    vpc-cni = {
-      #addon_version               = "v1.12.6-eksbuild.1"
-      resolve_conflicts_on_update = "OVERWRITE"
-      resolve_conflicts_on_create = "OVERWRITE"
-      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-    }
-  }
+  #cluster_addons = {
+  #  coredns = {
+  #    resolve_conflicts_on_update = "OVERWRITE"
+  #    resolve_conflicts_on_create = "OVERWRITE"
+  #    service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+  #  }
+  #  aws-ebs-csi-driver = {
+  #    #addon_version               = "v1.22.0-eksbuild.2"
+  #    resolve_conflicts_on_update = "OVERWRITE"
+  #    resolve_conflicts_on_create = "OVERWRITE"
+  #    service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+  #  }
+  #  kube-proxy = {}
+  #  vpc-cni = {
+  #    #addon_version               = "v1.12.6-eksbuild.1"
+  #    resolve_conflicts_on_update = "OVERWRITE"
+  #    resolve_conflicts_on_create = "OVERWRITE"
+  #    service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+  #  }
+  #}
 
   # EKS Managed Node Group(s)
   eks_managed_node_group_defaults = {
@@ -49,7 +50,7 @@ module "eks_mithrandir" {
 
   eks_managed_node_groups = {
     snackbar = {
-      name                    = "snackbar"
+      name                    = "ng-snackbar-app"
       min_size                = 1
       max_size                = 3
       desired_size            = 1
@@ -57,9 +58,6 @@ module "eks_mithrandir" {
       key_name                = "eks-key-pair"
       create_iam_role         = "false"
       iam_role_arn            = "arn:aws:iam::208016918243:role/LabRole"  
-      #iam_role_name          = "LabRole"
-      #pre_bootstrap_user_data = var.bootstrap
-      #iam_role_additional_policies = []
 
       labels = {
         application = "snackbar"
@@ -68,7 +66,7 @@ module "eks_mithrandir" {
       taints = {
         dedicated = {
           key    = "application"
-          value  = "snackbar"
+          value  = "snackbar-app"
           effect = "NO_SCHEDULE"
         }
       }
@@ -95,18 +93,14 @@ module "eks_mithrandir" {
     }
 
     database = {
-      name                    = "database"
+      name                    = "ng-database"
       min_size                = 1
       max_size                = 3
       desired_size            = 1
       instance_types          = ["t3.medium"]
       key_name                = "eks-key-pair"
       create_iam_role         = "false"
-      #iam_role_name           = "LabRole"
       iam_role_arn            = "arn:aws:iam::208016918243:role/LabRole" 
-      #pre_bootstrap_user_data = var.bootstrap
-      #iam_role_additional_policies = []
-
       labels = {
         application = "mongodb"
       }
