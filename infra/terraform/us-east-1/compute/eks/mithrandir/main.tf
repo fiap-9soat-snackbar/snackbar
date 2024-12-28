@@ -20,27 +20,24 @@ module "eks_mithrandir" {
     Product      = "SnackBar"
   }
 
-  #cluster_addons = {
-  #  coredns = {
-  #    resolve_conflicts_on_update = "OVERWRITE"
-  #    resolve_conflicts_on_create = "OVERWRITE"
-  #    service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-  #  }
-  #  aws-ebs-csi-driver = {
-  #    #addon_version               = "v1.22.0-eksbuild.2"
-  #    resolve_conflicts_on_update = "OVERWRITE"
-  #    resolve_conflicts_on_create = "OVERWRITE"
-  #    service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-  #  }
-  #  kube-proxy = {}
-  #  vpc-cni = {
-  #    #addon_version               = "v1.12.6-eksbuild.1"
-  #    resolve_conflicts_on_update = "OVERWRITE"
-  #    resolve_conflicts_on_create = "OVERWRITE"
-  #    service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-  #  }
-  #}
-
+  cluster_addons = {
+    coredns = {
+      resolve_conflicts_on_update = "OVERWRITE"
+      resolve_conflicts_on_create = "OVERWRITE"
+      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+    }
+    aws-ebs-csi-driver = {
+      resolve_conflicts_on_update = "OVERWRITE"
+      resolve_conflicts_on_create = "OVERWRITE"
+      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+    }
+    kube-proxy = {}
+    vpc-cni = {
+      resolve_conflicts_on_update = "OVERWRITE"
+      resolve_conflicts_on_create = "OVERWRITE"
+      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+    }
+  }
   # EKS Managed Node Group(s)
   eks_managed_node_group_defaults = {
     ami_type       = "AL2_x86_64"
