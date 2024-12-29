@@ -9,7 +9,7 @@ module "eks_mithrandir" {
   node_security_group_id          = data.terraform_remote_state.security_group_mithrandir.outputs.sg_node_mithrandir_eks_id
   create_cluster_security_group   = false
   create_node_security_group      = false
-  cluster_endpoint_public_access  = false
+  cluster_endpoint_public_access  = true
   cluster_endpoint_private_access = true
   create_iam_role                 = "false"
   enable_irsa                     = "false"
@@ -20,24 +20,29 @@ module "eks_mithrandir" {
     Product      = "SnackBar"
   }
 
-  cluster_addons = {
-    coredns = {
-      resolve_conflicts_on_update = "OVERWRITE"
-      resolve_conflicts_on_create = "OVERWRITE"
-      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-    }
-    aws-ebs-csi-driver = {
-      resolve_conflicts_on_update = "OVERWRITE"
-      resolve_conflicts_on_create = "OVERWRITE"
-      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-    }
-    kube-proxy = {}
-    vpc-cni = {
-      resolve_conflicts_on_update = "OVERWRITE"
-      resolve_conflicts_on_create = "OVERWRITE"
-      service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-    }
-  }
+  #cluster_addons = {
+  #  coredns = {
+  #    #resolve_conflicts_on_update = "PRESERVE"
+  #    #resolve_conflicts_on_create = "OVERWRITE"
+  #    #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+  #    #version                     = "v1.11.3-eksbuild.1"
+  #  }
+  #  aws-ebs-csi-driver = {
+  #    #resolve_conflicts_on_update = "PRESERVE"
+  #    #resolve_conflicts_on_create = "OVERWRITE"
+  #    #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+  #    #version                     = "v1.37.0-eksbuild.1"
+  #  }
+  #  kube-proxy = {}
+  #  vpc-cni = {
+  #   #resolve_conflicts_on_update = "PRESERVE"
+  #   #resolve_conflicts_on_create = "OVERWRITE"
+  #   #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+  #   #version                     = "v1.19.0-eksbuild.1"
+  #  }
+  #}
+
+  
   # EKS Managed Node Group(s)
   eks_managed_node_group_defaults = {
     ami_type       = "AL2_x86_64"
@@ -132,6 +137,36 @@ module "eks_mithrandir" {
     }
 
   }
+}
+
+# Manage aws-auth ConfigMap
+resource "kubernetes_config_map_v1_data" "aws_auth" {
+metadata {
+    name      = "aws-auth"
+    namespace = "kube-system"
+}
+
+data = {
+    mapRoles = yamlencode([
+    {
+        rolearn  = "arn:aws:iam::208016918243:role/LabRole"
+        username = "eks-bastion-role"
+        groups   = ["system:masters"]
+    },
+    {
+        rolearn  = module.eks_mithrandir.eks_managed_node_groups["snackbar"].iam_role_arn
+        username = "system:node:{{EC2PrivateDNSName}}"
+        groups   = ["system:bootstrappers", "system:nodes"]
+    },
+    {
+        rolearn  = module.eks_mithrandir.eks_managed_node_groups["database"].iam_role_arn
+        username = "system:node:{{EC2PrivateDNSName}}"
+        groups   = ["system:bootstrappers", "system:nodes"]
+    }
+    ])
+}
+
+force = true
 }
 
 # Node Group Scale Up
