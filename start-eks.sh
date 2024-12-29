@@ -15,19 +15,19 @@ apply_terraform() {
 }
 
 # 1. Criação do Bucket S3 (storage/s3)
-apply_terraform "terraform/$REGION/storage/s3"
+apply_terraform "infra/terraform/$REGION/storage/s3"
 
 # 2. Criação das Configurações Globais (global)
-apply_terraform "terraform/$REGION/global"
+apply_terraform "infra/terraform/$REGION/global"
 
 # 3. Criação da VPC (network/vpc)
-apply_terraform "terraform/$REGION/network/vpc"
+apply_terraform "infra/terraform/$REGION/network/vpc"
 
 # 4. Criação dos Security Groups (compute/securitygroup)
-apply_terraform "terraform/$REGION/compute/securitygroup"
+apply_terraform "infra/terraform/$REGION/compute/securitygroup"
 
 # 5. Criação do Cluster EKS (compute/eks/mithrandir)
-apply_terraform "terraform/$REGION/compute/eks/mithrandir"
+apply_terraform "infra/terraform/$REGION/compute/eks/mithrandir"
 
 
 # 6. Configuração do Cluster EKS (compute/eks/mithrandir)
@@ -52,3 +52,11 @@ helm install snackbar ./infra/helm-chart/snackbar --namespace ns-snackbar
 echo "Helm Chart snackbar instalado com sucesso!"
 
 echo "Automatização dos recursos AWS completada com sucesso!"
+
+#TODO
+# SET AWS ACCOUND ID ON TERRAFORM
+# IMPLEMENT SERVICE ON HELM CHART
+# CREATE AWS R53 ZONE
+# CREATE AWS R53 RECORD TO SERVICE
+
+

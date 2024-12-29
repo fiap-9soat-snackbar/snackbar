@@ -45,7 +45,12 @@ destroy_terraform "infra/terraform/$REGION/network/vpc"
 # 8. Remover as Configurações Globais (global)
 destroy_terraform "infra/terraform/$REGION/global"
 
-# 9. Remover o Bucket S3 (storage/s3)
+# 9. limpar bucket s3 fiap-9soat-snackbar com aws cli
+echo "Limpando o bucket s3 fiap-9soat-snackbar..."
+aws s3 rm s3://fiap-9soat-snackbar --recursive
+echo "Bucket s3 fiap-9soat-snackbar limpo com sucesso!"
+
+# 10. Remover o Bucket S3 (storage/s3)
 destroy_terraform "infra/terraform/$REGION/storage/s3"
 
 echo "Remoção dos recursos AWS e Kubernetes completada com sucesso!"
