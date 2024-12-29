@@ -5,6 +5,16 @@ IMAGE:
 DEPLOYMENT:
   REPLICAS: 1
   PORT: 27017
+  TOLERATIONS:
+    ENABLED: true
+    KEY: application
+    OPERATOR: Equal
+    VALUE: mongodb
+    EFFECT: NoSchedule
+  NODESELECTOR:
+    ENABLED: true
+    KEY: application
+    VALUE: mongodb
 
 SERVICE:
   TYPE: ClusterIP
@@ -38,3 +48,5 @@ SECRET:
   MONGODB_PASSWORD: snack01
   MONGO_INITDB_DATABASE: snackbar
   DB_HOST: snackbar-mongo-db.ns-snackbar.svc.cluster.local
+
+

@@ -30,3 +30,14 @@ spec:
         - name: {{ .Values.PERSISTENCE.VOLUME_NAME }}
           persistentVolumeClaim:
             claimName: {{ .Values.PERSISTENCE.PVC_NAME }}
+      {{ if .Values.DEPLOYMENT.TOLERATIONS.ENABLED }}
+      tolerations:
+      - key: {{ .Values.DEPLOYMENT.TOLERATIONS.KEY }}
+        operator: {{ .Values.DEPLOYMENT.TOLERATIONS.OPERATOR }}
+        value: {{ .Values.DEPLOYMENT.TOLERATIONS.VALUE }}
+        effect: {{ .Values.DEPLOYMENT.TOLERATIONS.EFFECT }}
+      {{ end }}
+      {{ if .Values.DEPLOYMENT.NODESELECTOR.ENABLED }}
+      nodeSelector:
+        {{ .Values.DEPLOYMENT.NODESELECTOR.KEY }}: {{ .Values.DEPLOYMENT.NODESELECTOR.VALUE }}
+        {{ end }}
