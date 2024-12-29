@@ -28,7 +28,7 @@ jobs:
       run: |
         if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
           echo "IMAGE_TAG=latest" >> $GITHUB_ENV
-        elif [[ "${{ github.ref }}" == "refs/heads/homolog" ]]; then
+        elif [[ "${{ github.ref }}" != "refs/heads/main" ]]; then
           echo "IMAGE_TAG=homolog" >> $GITHUB_ENV
         fi
 
