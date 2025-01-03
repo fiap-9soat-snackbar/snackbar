@@ -4,7 +4,7 @@ import com.snackbar.checkout.usecase.CheckoutOrderUseCase;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/checkout")
+@RequestMapping("/api/basket")
 public class BasketController {
 
     private final CheckoutOrderUseCase checkoutOrderUseCase;

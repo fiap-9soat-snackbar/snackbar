@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface BasketRepository extends MongoRepository<Basket, String> {
-    Optional<Basket> findByOrderId(String orderId);
+
 }

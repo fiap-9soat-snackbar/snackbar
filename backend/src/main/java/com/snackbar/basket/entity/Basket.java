@@ -1,48 +1,24 @@
 package com.snackbar.basket.entity;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
-@Document(collection = "Baskets")
+import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
+@Document(collection = "baskets")
+@Data
 public class Basket {
 
     @Id
     private String id;
-    private String orderId;
-    private boolean paid;
-    private String paymentMethod;
-
-    // Getters e Setters
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    public boolean isPaid() {
-        return paid;
-    }
-
-    public void setPaid(boolean paid) {
-        this.paid = paid;
-    }
-
-    public String getPaymentMethod() {
-        return paymentMethod;
-    }
-
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private Instant basketDateTime;
+    private String cpf;
+    private String name;
+    private List<Item> items = new ArrayList<>();
 }
-

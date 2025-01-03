@@ -1,6 +1,7 @@
 package com.snackbar.basket.usecase;
 
 import com.snackbar.basket.entity.Basket;
+import com.snackbar.basket.entity.Item;
 import com.snackbar.basket.gateway.BasketRepository;
 import com.snackbar.order.service.OrderService;
 import org.springframework.stereotype.Component;
@@ -16,15 +17,19 @@ public class BasketOrderUseCaseImpl implements BasketOrderUseCase {
         this.orderService = orderService;
     }
 
-    @Override
-    public void pay(String orderId) {
-        Basket basket = new Basket();
-        basket.setOrderId(orderId);
-        basket.setPaid(true);
-        basket.setPaymentMethod("Mercado Pago");
-        basketRepository.save(basket);
 
-        // Atualizar o status da ordem
-        orderService.updateStatusOrder(orderId);
+    @Override
+    public void createBasket(Basket basket) {
+
+    }
+
+    @Override
+    public Basket findBasket(String basketId) {
+        return null;
+    }
+
+    @Override
+    public Basket addItemToBasket(String basketId, Item orderId) {
+        return null;
     }
 }
