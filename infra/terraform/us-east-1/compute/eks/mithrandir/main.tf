@@ -20,6 +20,15 @@ module "eks_mithrandir" {
     Product      = "SnackBar"
   }
   
+  cluster_addons = {
+    coredns = {
+      resolve_conflicts_on_update = "NONE"
+      resolve_conflicts_on_create = "OVERWRITE"
+      #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+      version                     = "v1.11.3-eksbuild.1"
+    }
+  }
+
   # EKS Managed Node Group(s)
   eks_managed_node_group_defaults = {
     ami_type       = "AL2_x86_64"
@@ -89,7 +98,7 @@ module "eks_mithrandir" {
         dedicated = {
           key    = "application"
           value  = "mongodb"
-          effect = "NO_SCHEDULE"
+          effect = "PREFER_NO_SCHEDULE"
         }
       }
 
