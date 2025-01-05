@@ -43,8 +43,8 @@ public class OrderController {
 
     // Search Order with status
     @GetMapping("/{id}")
-    public Order searchOrderWithStatus(@PathVariable String id) {
-        Order order = orderService.searchOrderWithStatus(id);
+    public Order searchOrderId(@PathVariable String id) {
+        Order order = orderService.searchOrderId(id);
         return order;
     }
 
@@ -57,5 +57,11 @@ public class OrderController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
+    }
+
+    //Search sorted orders
+    @GetMapping("/sorted")
+    public List<Order> getSortedOrders() {
+        return orderService.getSortedOrders();
     }
 }

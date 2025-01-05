@@ -4,7 +4,7 @@ import com.snackbar.order.domain.model.Order;
 import com.snackbar.order.domain.model.StatusOrder;
 import com.snackbar.order.domain.model.Item;
 import com.snackbar.order.adapter.out.OrderRepository;
-import com.snackbar.product.usecase.ProductUseCase;
+import com.snackbar.product.usecase.GetProductByNameUseCase;
 import com.snackbar.product.dto.ProductDTO;
 import org.springframework.stereotype.Service;
 
@@ -22,14 +22,14 @@ import java.time.Instant;
 public class OrderService { // Service for managing orders
 
     private final OrderRepository orderRepository;
-    private final ProductUseCase productUseCase;
+    private final GetProductByNameUseCase getProductByNameUseCase;
     private final CheckoutRepository checkoutRepository;
     private final PickupRepository pickupRepository;
     private final UserRepository userRepository;
 
-    public OrderService(OrderRepository orderRepository, ProductUseCase productUseCase, CheckoutRepository checkoutRepository, PickupRepository pickupRepository, UserRepository userRepository) {
+    public OrderService(OrderRepository orderRepository, GetProductByNameUseCase getProductByNameUseCase, CheckoutRepository checkoutRepository, PickupRepository pickupRepository, UserRepository userRepository) {
         this.orderRepository = orderRepository;
-        this.productUseCase = productUseCase;
+        this.getProductByNameUseCase = getProductByNameUseCase;
         this.checkoutRepository = checkoutRepository;
         this.pickupRepository = pickupRepository;
         this.userRepository = userRepository;
@@ -56,7 +56,7 @@ public class OrderService { // Service for managing orders
         order.setOrderDateTime(Instant.now()); // Set orderDateTime to current time in ISO format
         
         List<Item> updatedItems = order.getItems().stream().map(item -> {
-            ProductDTO product = productUseCase.getProductByName(item.getName());
+            ProductDTO product = getProductByNameUseCase.getProductByName(item.getName());
             if (product != null) {
                 item.setName(product.getName());  // Explicitly set the product name
                 item.setPrice(product.getPrice());
@@ -80,7 +80,7 @@ public class OrderService { // Service for managing orders
         return orderRepository.save(order);
     }
 
-    // Update existing order
+    // Update an existing order
     public Order updateOrder(Order order) {
         // Fetch the existing order
         Order existingOrder = orderRepository.findById(order.getId())
@@ -88,7 +88,7 @@ public class OrderService { // Service for managing orders
 
         // Update items
         List<Item> updatedItems = order.getItems().stream().map(item -> {
-            ProductDTO product = productUseCase.getProductByName(item.getName());
+            ProductDTO product = getProductByNameUseCase.getProductByName(item.getName());
             if (product != null) {
                 item.setName(product.getName());
                 item.setPrice(product.getPrice());
@@ -112,19 +112,17 @@ public class OrderService { // Service for managing orders
         return orderRepository.save(existingOrder);
     }
 
-    // List all order
+    // List all orders
     public List<Order> listOrders() {
         return orderRepository.findAll();
     }
 
-    // Search order with status
-    public Order searchOrderWithStatus(String orderId) {
+    // Search an order with status
+    public Order searchOrderId(String orderId) {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new IllegalArgumentException("Order not Found"));
         return orderRepository.findById(orderId).orElse(order);
     }
-
-    
 
     // Update the Order status based on Checkout and Pickup statuses
     public void updateStatusOrder(String orderId) {
@@ -165,5 +163,30 @@ public class OrderService { // Service for managing orders
     public Order getOrderByOrderNumber(String orderNumber) {
         return orderRepository.findByOrderNumber(orderNumber)
                 .orElseThrow(() -> new IllegalArgumentException("Order not found with orderNumber: " + orderNumber));
+    }
+
+    // Get all orders sorted by status and orderDateTime
+    public List<Order> getSortedOrders() {
+        return orderRepository.findAll().stream()
+                .filter(order -> order.getStatusOrder() == StatusOrder.PRONTO ||
+                                 order.getStatusOrder() == StatusOrder.PREPARACAO ||
+                                 order.getStatusOrder() == StatusOrder.RECEBIDO)
+                .sorted((o1, o2) -> {
+                    int statusComparison = compareStatus(o1.getStatusOrder(), o2.getStatusOrder());
+                    if (statusComparison != 0) {
+                        return statusComparison;
+                    }
+                    return o1.getOrderDateTime().compareTo(o2.getOrderDateTime());
+                })
+                .collect(Collectors.toList());
+    }
+
+    private int compareStatus(StatusOrder status1, StatusOrder status2) {
+        if (status1 == status2) return 0;
+        if (status1 == StatusOrder.PRONTO) return -1;
+        if (status2 == StatusOrder.PRONTO) return 1;
+        if (status1 == StatusOrder.PREPARACAO) return -1;
+        if (status2 == StatusOrder.PREPARACAO) return 1;
+        return 0;
     }
 }
