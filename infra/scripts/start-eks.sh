@@ -45,7 +45,7 @@ apply_terraform() {
     echo "Iniciando Terraform no diretório: $DIR"
     cd $DIR || exit
     terraform init
-    terraform destroy -auto-approve
+    terraform apply -auto-approve
     cd - || exit
 }
 

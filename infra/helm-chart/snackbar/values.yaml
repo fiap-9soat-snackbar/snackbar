@@ -27,15 +27,15 @@ DEPLOYMENT:
     ENABLED: true
 
   TOLERATIONS:
-    ENABLED: false
+    ENABLED: true
     KEY: application
     OPERATOR: Equal
-    VALUE: mongodb
+    VALUE: snackbar
     EFFECT: NoSchedule
   NODESELECTOR:
-    ENABLED: false
+    ENABLED: true
     KEY: application
-    VALUE: mongodb
+    VALUE: snackbar
   RESOURCES:
     MIN:
       CPU: 50m
@@ -59,9 +59,13 @@ DEPLOYMENT:
 SERVICE:
   TYPE: ClusterIP
   PORT: 80
-  LOAD_BALANCER:
+  INTERNAL: false
+  HTTPS:
     ENABLED: false
+  LOAD_BALANCER:
+    ENABLED: true
     DNS_SUFFIX: api.snackbar.com.br
+    
 
 SECRET:
   DATABASE:

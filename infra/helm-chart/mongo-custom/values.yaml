@@ -6,22 +6,26 @@ DEPLOYMENT:
   REPLICAS: 1
   PORT: 27017
   TOLERATIONS:
-    ENABLED: false
+    ENABLED: true
     KEY: application
     OPERATOR: Equal
     VALUE: mongodb
     EFFECT: NoSchedule
   NODESELECTOR:
-    ENABLED: false
+    ENABLED: true
     KEY: application
     VALUE: mongodb
 
 SERVICE:
   TYPE: ClusterIP
   PORT: 27017
-  LOAD_BALANCER:
+  INTERNAL: false
+  HTTPS:
     ENABLED: false
+  LOAD_BALANCER:
+    ENABLED: true
     DNS_SUFFIX: db.snackbar.com.br
+    
 
 HPA:
   ENABLED: true

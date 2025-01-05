@@ -12,12 +12,11 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{.Values.SERVICE.HTTPS.CERT}}
       # Only run SSL on the port named "https" below.
     service.beta.kubernetes.io/aws-load-balancer-ssl-ports: https
+    {{ end }}
       # Make Load Balancer internal
     service.beta.kubernetes.io/aws-load-balancer-internal: {{.Values.SERVICE.INTERNAL | quote}}
-    {{ end }}
   labels:
     app: {{ .Release.Name }}
-
 spec:
   type: LoadBalancer
   ports:
