@@ -7,7 +7,7 @@ public class ProductDTOMapper {
         return new CreateProductResponse(product.name(), product.category(), product.description(), product.price(), product.cookingTime());
     }
 
-    public Product toProduct(CreateProductRequest request) {
+    public Product toDomain(CreateProductRequest request) {
         return new Product(request.name(), request.category(), request.description(), request.price(), request.cookingTime());
     }
 }
