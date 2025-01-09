@@ -32,7 +32,6 @@ com/snackbar/product/dto/ProductDTO.class
 com/snackbar/order/domain/model/Item.class
 com/snackbar/product/usecase/CreateProductUseCase.class
 com/snackbar/checkout/infrastructure/configuration/ErrorResponse.class
-com/snackbar/payment/application/usecases/impl/CreatePaymentUseCaseImpl.class
 com/snackbar/product/common/exception/BusinessException.class
 com/snackbar/iam/application/SecurityConfiguration.class
 com/snackbar/cooking/application/usecase/StartPreparationUseCase.class

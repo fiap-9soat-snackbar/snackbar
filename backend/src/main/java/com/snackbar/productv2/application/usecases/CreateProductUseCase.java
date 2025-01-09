@@ -6,7 +6,7 @@ import com.snackbar.productv2.domain.entity.Product;
 /*import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;*/
 
-// This should be equivalent to a Spring Service definition), 
+// This should be equivalent to a Spring Service definition, 
 // but without any framework dependencies. It's also called an Interactor.
 
 public class CreateProductUseCase {

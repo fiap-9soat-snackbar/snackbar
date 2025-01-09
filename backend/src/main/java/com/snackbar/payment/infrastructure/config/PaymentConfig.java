@@ -2,7 +2,6 @@ package com.snackbar.payment.infrastructure.config;
 
 import com.snackbar.payment.application.gateways.PaymentGateway;
 import com.snackbar.payment.application.usecases.CreatePaymentUseCase;
-import com.snackbar.payment.application.usecases.impl.CreatePaymentUseCaseImpl;
 import com.snackbar.payment.infrastructure.controllers.PaymentDTOMapper;
 import com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper;
 import com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway;
@@ -34,7 +33,7 @@ public class PaymentConfig {
     public CreatePaymentUseCase createPaymentUseCase(PaymentGateway paymentGateway, OrderService orderService) {
         // Logging
         //logger.info("Creating CreatePaymentUseCase bean");
-        return new CreatePaymentUseCaseImpl(paymentGateway, orderService);
+        return new CreatePaymentUseCase(paymentGateway, orderService);
     }
     
     @Bean
