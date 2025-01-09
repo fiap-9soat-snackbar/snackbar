@@ -17,23 +17,36 @@ public class Productv2Controller {
     //private static final Logger logger = LoggerFactory.getLogger(Productv2Controller.class);
     
     private final CreateProductUseCase createProductUseCase;
+    private final GetProductUseCase getProductUseCase;
     private final ProductDTOMapper productDTOMapper;
 
     @Autowired
     public Productv2Controller(
             CreateProductUseCase createProductUseCase,
+            GetProductUseCase getProductUseCase,
             ProductDTOMapper productDTOMapper) {
         this.createProductUseCase = createProductUseCase;
+        this.getProductUseCase = getProductUseCase;
         this.productDTOMapper = productDTOMapper;
     }
 
     @PostMapping
     public ResponseEntity<CreateProductResponse> createProduct(@RequestBody CreateProductRequest request) {
         //logger.info("Received request to create product: {}", request);
-        Product product = productDTOMapper.toDomain(request);
+        Product product = productDTOMapper.createRequestToDomain(request);
         Product createdProduct = createProductUseCase.createProduct(product);
-        CreateProductResponse response = productDTOMapper.toResponse(createdProduct);
+        CreateProductResponse response = productDTOMapper.createToResponse(createdProduct);
         //logger.info("Product created successfully: {}", response);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping
+    public ResponseEntity<GetProductResponse> getProduct(@RequestBody GetProductRequest request) {
+        //logger.info("Received request to get product: {}", request);
+        Product product = productDTOMapper.getRequestToDomain(request);
+        Product retrievedProduct = getProductUseCase.getProduct(product);
+        GetProductResponse response = productDTOMapper.getToResponse(retrievedProduct);
+        //logger.info("Product retrieved successfully: {}", response);
         return ResponseEntity.ok(response);
     }
 }

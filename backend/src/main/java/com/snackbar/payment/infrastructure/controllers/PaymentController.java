@@ -31,11 +31,11 @@ public class PaymentController {
     @PostMapping
     public ResponseEntity<CreatePaymentResponse> createPayment(@RequestBody CreatePaymentRequest request) {
         //logger.info("Received request to create payment: {}", request);
-        Payment payment = paymentDTOMapper.toDomain(request);
+        Payment payment = paymentDTOMapper.createRequestToDomain(request);
         //logger.info("Payment converted to domain object: {}", payment);
         Payment createdPayment = createPaymentUseCase.createPayment(payment);
         //Payment createdPayment = createPaymentUseCase.createPayment(payment.orderId(), payment.paymentMethod());
-        CreatePaymentResponse response = paymentDTOMapper.toResponse(createdPayment);
+        CreatePaymentResponse response = paymentDTOMapper.createToResponse(createdPayment);
         //logger.info("Payment created successfully: {}", response);
         return ResponseEntity.ok(response);
     }

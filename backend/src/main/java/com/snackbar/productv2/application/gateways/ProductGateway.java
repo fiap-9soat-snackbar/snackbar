@@ -7,4 +7,5 @@ import com.snackbar.productv2.domain.entity.Product;
 
 public interface ProductGateway {
     Product createProduct(Product product);
+    Product getProduct(Product product);
 }

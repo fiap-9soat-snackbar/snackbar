@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.snackbar.productv2.application.gateways.ProductGateway;
 import com.snackbar.productv2.application.usecases.CreateProductUseCase;
+import com.snackbar.productv2.application.usecases.GetProductUseCase;
 import com.snackbar.productv2.infrastructure.controllers.ProductDTOMapper;
 import com.snackbar.productv2.infrastructure.gateways.ProductEntityMapper;
 import com.snackbar.productv2.infrastructure.gateways.ProductRepositoryGateway;
@@ -15,6 +16,11 @@ public class ProductConfig {
     @Bean
     CreateProductUseCase createProductUseCase(ProductGateway productGateway) {
         return new CreateProductUseCase(productGateway);
+    }
+
+    @Bean
+    GetProductUseCase getProductUseCase(ProductGateway productGateway) {
+        return new GetProductUseCase(productGateway);
     }
     
     @Bean

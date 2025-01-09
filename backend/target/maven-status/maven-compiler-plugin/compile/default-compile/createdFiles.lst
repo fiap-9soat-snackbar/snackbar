@@ -24,8 +24,10 @@ com/snackbar/payment/application/usecases/CreatePaymentUseCase.class
 com/snackbar/checkout/gateway/CheckoutRepository.class
 com/snackbar/productv2/domain/entity/Product.class
 com/snackbar/product/usecase/impl/DeleteProductUseCaseImpl.class
+com/snackbar/productv2/infrastructure/controllers/GetProductRequest.class
 com/snackbar/product/usecase/impl/CreateProductUseCaseImpl.class
 com/snackbar/productv2/infrastructure/controllers/Productv2Controller.class
+com/snackbar/productv2/infrastructure/controllers/GetProductResponse.class
 com/snackbar/product/usecase/UpdateProductUseCase.class
 com/snackbar/product/entity/Product.class
 com/snackbar/product/dto/ProductDTO.class
@@ -90,6 +92,7 @@ com/snackbar/product/common/handler/GlobalExceptionHandler.class
 com/snackbar/product/usecase/impl/UpdateProductUseCaseImpl.class
 com/snackbar/iam/application/UserService.class
 com/snackbar/order/application/UpdateOrderUseCase.class
+com/snackbar/productv2/application/usecases/GetProductUseCase.class
 com/snackbar/iam/web/dto/LoginUserDto.class
 com/snackbar/payment/infrastructure/controllers/PaymentDTOMapper.class
 com/snackbar/payment/infrastructure/gateways/PaymentEntityMapper.class
