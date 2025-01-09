@@ -7,6 +7,7 @@ com/snackbar/product/usecase/GetProductByNameUseCase.class
 com/snackbar/product/usecase/GetProductsByCategoryUseCase.class
 com/snackbar/order/service/OrderService.class
 com/snackbar/iam/application/JwtService.class
+com/snackbar/productv2/infrastructure/config/ProductConfig.class
 com/snackbar/pickup/usecase/NotifyCustomerUseCaseImpl.class
 com/snackbar/iam/domain/UserDetailsEntity.class
 com/snackbar/productv2/infrastructure/persistence/ProductEntity.class
@@ -51,7 +52,6 @@ com/snackbar/iam/web/dto/UserResponse$UserResponseBuilder.class
 com/snackbar/cooking/application/CookingService.class
 com/snackbar/product/controller/ProductController.class
 com/snackbar/product/usecase/impl/DeleteProductUseCaseImpl.class
-com/snackbar/productv2/main/ProductConfig.class
 com/snackbar/iam/domain/UserEntity.class
 com/snackbar/cooking/application/usecase/FinishPreparationUseCase.class
 com/snackbar/product/usecase/impl/CreateProductUseCaseImpl.class
@@ -67,7 +67,6 @@ com/snackbar/order/application/UpdateOrderUseCase.class
 com/snackbar/product/entity/Product.class
 com/snackbar/iam/web/dto/LoginUserDto.class
 com/snackbar/product/dto/ProductDTO.class
-com/snackbar/productv2/domain/valueobject/ProductId.class
 com/snackbar/order/domain/model/Item.class
 com/snackbar/product/usecase/CreateProductUseCase.class
 com/snackbar/checkout/infrastructure/configuration/ErrorResponse.class
