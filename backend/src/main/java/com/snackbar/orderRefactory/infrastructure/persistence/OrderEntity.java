@@ -1,17 +1,19 @@
-package com.snackbar.order.domain.model;
+package com.snackbar.orderRefactory.infrastructure.persistence;
 
-import java.time.Instant;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import lombok.AllArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Document(collection = "orders")
-
-public class Order {
+@AllArgsConstructor
+public class OrderEntity {
 
     @Id
 
@@ -21,8 +23,8 @@ public class Order {
     private Instant orderDateTime;
     private String cpf; // Mandatory field for creating an order
     private String name;
-    private List<Item> items = new ArrayList<>(); 
-    private StatusOrder statusOrder;
+    private List<ItemEntity> itemEntities = new ArrayList<>();
+    private StatusOrderEntity statusOrder;
     private String paymentMethod;
     private BigDecimal totalPrice;    
     private long remainingTime;
@@ -80,18 +82,18 @@ public class Order {
         this.name = name;
     }
 
-    public List<Item> getItems() {
-        return items;
+    public List<ItemEntity> getItems() {
+        return itemEntities;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setItems(List<ItemEntity> itemEntities) {
+        this.itemEntities = itemEntities;
     }
 
 
     public int getWaitingTime() {
-        return items.stream()
-                .mapToInt(item -> item.getCookingTime() * item.getQuantity())
+        return itemEntities.stream()
+                .mapToInt(itemEntity -> itemEntity.getCookingTime() * itemEntity.getQuantity())
                 .sum();
     }
 
@@ -105,11 +107,11 @@ public class Order {
         this.totalPrice = totalPrice;
     }
 
-    public StatusOrder getStatusOrder() {
+    public StatusOrderEntity getStatusOrder() {
         return statusOrder;
     }
 
-    public void setStatusOrder(StatusOrder statusOrder) {
+    public void setStatusOrder(StatusOrderEntity statusOrder) {
         this.statusOrder = statusOrder;
     }
 
