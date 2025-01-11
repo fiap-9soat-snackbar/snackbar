@@ -40,8 +40,8 @@ public class Productv2Controller {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping
-    public ResponseEntity<GetProductv2Response> getProductv2(@RequestBody GetProductv2Request request) {
+    @GetMapping("/{id}")
+    public ResponseEntity<GetProductv2Response> getProductv2(@PathVariable("id") GetProductv2Request request) {
         //logger.info("Received request to get product: {}", request);
         Productv2 productv2 = productv2DTOMapper.getRequestToDomain(request);
         Productv2 retrievedProductv2 = getProductv2UseCase.getProductv2(productv2);
