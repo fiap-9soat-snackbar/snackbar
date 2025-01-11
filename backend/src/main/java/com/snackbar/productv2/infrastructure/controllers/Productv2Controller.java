@@ -1,7 +1,7 @@
 package com.snackbar.productv2.infrastructure.controllers;
 
 import com.snackbar.productv2.application.usecases.*;
-import com.snackbar.productv2.domain.entity.Product;
+import com.snackbar.productv2.domain.entity.Productv2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,41 +11,41 @@ import org.springframework.web.bind.annotation.*;
 import org.slf4j.LoggerFactory;*/
 
 @RestController
-@RequestMapping("/newapi/products")
+@RequestMapping("/api/productsv2")
 public class Productv2Controller {
 
     //private static final Logger logger = LoggerFactory.getLogger(Productv2Controller.class);
     
-    private final CreateProductUseCase createProductUseCase;
-    private final GetProductUseCase getProductUseCase;
-    private final ProductDTOMapper productDTOMapper;
+    private final CreateProductv2UseCase createProductv2UseCase;
+    private final GetProductv2UseCase getProductv2UseCase;
+    private final Productv2DTOMapper productv2DTOMapper;
 
     @Autowired
     public Productv2Controller(
-            CreateProductUseCase createProductUseCase,
-            GetProductUseCase getProductUseCase,
-            ProductDTOMapper productDTOMapper) {
-        this.createProductUseCase = createProductUseCase;
-        this.getProductUseCase = getProductUseCase;
-        this.productDTOMapper = productDTOMapper;
+            CreateProductv2UseCase createProductv2UseCase,
+            GetProductv2UseCase getProductv2UseCase,
+            Productv2DTOMapper productv2DTOMapper) {
+        this.createProductv2UseCase = createProductv2UseCase;
+        this.getProductv2UseCase = getProductv2UseCase;
+        this.productv2DTOMapper = productv2DTOMapper;
     }
 
     @PostMapping
-    public ResponseEntity<CreateProductResponse> createProduct(@RequestBody CreateProductRequest request) {
+    public ResponseEntity<CreateProductv2Response> createProductv2(@RequestBody CreateProductv2Request request) {
         //logger.info("Received request to create product: {}", request);
-        Product product = productDTOMapper.createRequestToDomain(request);
-        Product createdProduct = createProductUseCase.createProduct(product);
-        CreateProductResponse response = productDTOMapper.createToResponse(createdProduct);
+        Productv2 productv2 = productv2DTOMapper.createRequestToDomain(request);
+        Productv2 createdProductv2 = createProductv2UseCase.createProductv2(productv2);
+        CreateProductv2Response response = productv2DTOMapper.createToResponse(createdProductv2);
         //logger.info("Product created successfully: {}", response);
         return ResponseEntity.ok(response);
     }
 
     @GetMapping
-    public ResponseEntity<GetProductResponse> getProduct(@RequestBody GetProductRequest request) {
+    public ResponseEntity<GetProductv2Response> getProductv2(@RequestBody GetProductv2Request request) {
         //logger.info("Received request to get product: {}", request);
-        Product product = productDTOMapper.getRequestToDomain(request);
-        Product retrievedProduct = getProductUseCase.getProduct(product);
-        GetProductResponse response = productDTOMapper.getToResponse(retrievedProduct);
+        Productv2 productv2 = productv2DTOMapper.getRequestToDomain(request);
+        Productv2 retrievedProductv2 = getProductv2UseCase.getProductv2(productv2);
+        GetProductv2Response response = productv2DTOMapper.getToResponse(retrievedProductv2);
         //logger.info("Product retrieved successfully: {}", response);
         return ResponseEntity.ok(response);
     }

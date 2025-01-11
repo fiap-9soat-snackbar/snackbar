@@ -3,38 +3,38 @@ package com.snackbar.productv2.infrastructure.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.snackbar.productv2.application.gateways.ProductGateway;
-import com.snackbar.productv2.application.usecases.CreateProductUseCase;
-import com.snackbar.productv2.application.usecases.GetProductUseCase;
-import com.snackbar.productv2.infrastructure.controllers.ProductDTOMapper;
-import com.snackbar.productv2.infrastructure.gateways.ProductEntityMapper;
-import com.snackbar.productv2.infrastructure.gateways.ProductRepositoryGateway;
-import com.snackbar.productv2.infrastructure.persistence.ProductRepository;
+import com.snackbar.productv2.application.gateways.Productv2Gateway;
+import com.snackbar.productv2.application.usecases.CreateProductv2UseCase;
+import com.snackbar.productv2.application.usecases.GetProductv2UseCase;
+import com.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper;
+import com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper;
+import com.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway;
+import com.snackbar.productv2.infrastructure.persistence.Productv2Repository;
 
 @Configuration
 public class ProductConfig {
     @Bean
-    CreateProductUseCase createProductUseCase(ProductGateway productGateway) {
-        return new CreateProductUseCase(productGateway);
+    CreateProductv2UseCase createv2ProductUseCase(Productv2Gateway productv2Gateway) {
+        return new CreateProductv2UseCase(productv2Gateway);
     }
 
     @Bean
-    GetProductUseCase getProductUseCase(ProductGateway productGateway) {
-        return new GetProductUseCase(productGateway);
+    GetProductv2UseCase getProductv2UseCase(Productv2Gateway productv2Gateway) {
+        return new GetProductv2UseCase(productv2Gateway);
     }
     
     @Bean
-    ProductGateway productGateway(ProductRepository productRepository, ProductEntityMapper productEntityMapper) {
-        return new ProductRepositoryGateway(productRepository, productEntityMapper);
+    Productv2Gateway productv2Gateway(Productv2Repository productv2Repository, Productv2EntityMapper productv2EntityMapper) {
+        return new Productv2RepositoryGateway(productv2Repository, productv2EntityMapper);
     }
 
     @Bean
-    ProductEntityMapper productEntityMapper() {
-        return new ProductEntityMapper();
+    Productv2EntityMapper productv2EntityMapper() {
+        return new Productv2EntityMapper();
     }
 
     @Bean
-    ProductDTOMapper productDTOMapper() {
-        return new ProductDTOMapper();
+    Productv2DTOMapper productv2DTOMapper() {
+        return new Productv2DTOMapper();
     }
 }
