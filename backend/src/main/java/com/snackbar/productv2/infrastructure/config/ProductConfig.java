@@ -18,7 +18,7 @@ public class ProductConfig {
     }
 
     @Bean
-    GetProductv2ByIdUseCase getProductv2UseCase(Productv2Gateway productv2Gateway) {
+    GetProductv2ByIdUseCase getProductv2ByIdUseCase(Productv2Gateway productv2Gateway) {
         return new GetProductv2ByIdUseCase(productv2Gateway);
     }
     
@@ -30,6 +30,11 @@ public class ProductConfig {
     @Bean
     GetProductsv2ByCategoryUseCase getProductsv2ByCategory(Productv2Gateway productv2Gateway) {
         return new GetProductsv2ByCategoryUseCase(productv2Gateway);
+    }
+
+    @Bean
+    GetProductv2ByNameUseCase getProductv2ByNameUseCase(Productv2Gateway productv2Gateway) {
+        return new GetProductv2ByNameUseCase(productv2Gateway);
     }
 
     @Bean

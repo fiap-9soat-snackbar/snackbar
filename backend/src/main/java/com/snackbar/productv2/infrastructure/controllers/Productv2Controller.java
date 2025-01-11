@@ -19,22 +19,25 @@ public class Productv2Controller {
     //private static final Logger logger = LoggerFactory.getLogger(Productv2Controller.class);
     
     private final CreateProductv2UseCase createProductv2UseCase;
-    private final GetProductv2ByIdUseCase getProductv2UseCase;
+    private final GetProductv2ByIdUseCase getProductv2ByIdUseCase;
     private final ListProductsv2UseCase listProductsv2UseCase;
     private final GetProductsv2ByCategoryUseCase getProductsv2ByCategoryUseCase;
+    private final GetProductv2ByNameUseCase getProductv2ByNameUseCase;
     private final Productv2DTOMapper productv2DTOMapper;
 
     @Autowired
     public Productv2Controller(
             CreateProductv2UseCase createProductv2UseCase,
-            GetProductv2ByIdUseCase getProductv2UseCase,
+            GetProductv2ByIdUseCase getProductv2ByIdUseCase,
             ListProductsv2UseCase listProductsv2UseCase,
             GetProductsv2ByCategoryUseCase getProductsv2ByCategoryUseCase,
+            GetProductv2ByNameUseCase getProductv2ByNameUseCase,
             Productv2DTOMapper productv2DTOMapper) {
         this.createProductv2UseCase = createProductv2UseCase;
-        this.getProductv2UseCase = getProductv2UseCase;
+        this.getProductv2ByIdUseCase = getProductv2ByIdUseCase;
         this.listProductsv2UseCase = listProductsv2UseCase;
         this.getProductsv2ByCategoryUseCase = getProductsv2ByCategoryUseCase;
+        this.getProductv2ByNameUseCase = getProductv2ByNameUseCase;
         this.productv2DTOMapper = productv2DTOMapper;
     }
 
@@ -48,10 +51,10 @@ public class Productv2Controller {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<GetProductv2Response> getProductv2(@PathVariable("id") String id) {
+    @GetMapping("/id/{id}")
+    public ResponseEntity<GetProductv2Response> getProductv2ById(@PathVariable("id") String id) {
         //logger.info("Received request to get product: {}", request);
-        Productv2 retrievedProductv2 = getProductv2UseCase.getProductv2ById(id);
+        Productv2 retrievedProductv2 = getProductv2ByIdUseCase.getProductv2ById(id);
         GetProductv2Response response = productv2DTOMapper.getToResponse(retrievedProductv2);
         //logger.info("Product retrieved successfully: {}", response);
         return ResponseEntity.ok(response);
@@ -68,6 +71,15 @@ public class Productv2Controller {
     public ResponseEntity<List<GetProductv2Response>> getProductsv2ByCategory(@PathVariable("category") String category) {
         List<Productv2> retrievedProductsv2List = getProductsv2ByCategoryUseCase.getProductsv2ByCategory(category);
         List<GetProductv2Response> response = productv2DTOMapper.listToResponse(retrievedProductsv2List);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/name/{name}")
+    public ResponseEntity<GetProductv2Response> getProductv2ByName(@PathVariable("name") String name) {
+        //logger.info("Received request to get product: {}", request);
+        Productv2 retrievedProductv2 = getProductv2ByNameUseCase.getProductv2ByName(name);
+        GetProductv2Response response = productv2DTOMapper.getToResponse(retrievedProductv2);
+        //logger.info("Product retrieved successfully: {}", response);
         return ResponseEntity.ok(response);
     }
 

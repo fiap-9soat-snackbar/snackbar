@@ -11,4 +11,5 @@ public interface Productv2Gateway {
     Productv2 getProductv2ById(String id);
     List<Productv2> listProductsv2();
     List<Productv2> getProductsv2ByCategory(String category);
+    Productv2 getProductv2ByName(String name);
 }
