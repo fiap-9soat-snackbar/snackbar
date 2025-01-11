@@ -11,6 +11,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface Productv2Repository extends MongoRepository<Productv2Entity, String> {
-    List<Productv2> findByCategory(String category);
+    List<Productv2Entity> findByCategory(String category);
     Optional<Productv2> findByName(String name);
 }

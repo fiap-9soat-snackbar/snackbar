@@ -41,4 +41,11 @@ public class Productv2RepositoryGateway implements Productv2Gateway {
         return retrievedProductsv2List;
         
     }
+
+    @Override
+    public List<Productv2> getProductsv2ByCategory(String productv2Category) {
+        List<Productv2Entity> retrievedObjList = productv2Repository.findByCategory(productv2Category);
+        List<Productv2> retrievedProductsv2List = productv2EntityMapper.toDomainListObj(retrievedObjList);
+        return retrievedProductsv2List;
+    }
 }

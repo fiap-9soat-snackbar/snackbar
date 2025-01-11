@@ -21,6 +21,7 @@ public class Productv2Controller {
     private final CreateProductv2UseCase createProductv2UseCase;
     private final GetProductv2ByIdUseCase getProductv2UseCase;
     private final ListProductsv2UseCase listProductsv2UseCase;
+    private final GetProductsv2ByCategoryUseCase getProductsv2ByCategoryUseCase;
     private final Productv2DTOMapper productv2DTOMapper;
 
     @Autowired
@@ -28,10 +29,12 @@ public class Productv2Controller {
             CreateProductv2UseCase createProductv2UseCase,
             GetProductv2ByIdUseCase getProductv2UseCase,
             ListProductsv2UseCase listProductsv2UseCase,
+            GetProductsv2ByCategoryUseCase getProductsv2ByCategoryUseCase,
             Productv2DTOMapper productv2DTOMapper) {
         this.createProductv2UseCase = createProductv2UseCase;
         this.getProductv2UseCase = getProductv2UseCase;
         this.listProductsv2UseCase = listProductsv2UseCase;
+        this.getProductsv2ByCategoryUseCase = getProductsv2ByCategoryUseCase;
         this.productv2DTOMapper = productv2DTOMapper;
     }
 
@@ -57,6 +60,13 @@ public class Productv2Controller {
     @GetMapping
     public ResponseEntity<List<GetProductv2Response>> listProductsv2() {
         List<Productv2> retrievedProductsv2List = listProductsv2UseCase.listProductsv2();
+        List<GetProductv2Response> response = productv2DTOMapper.listToResponse(retrievedProductsv2List);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<GetProductv2Response>> getProductsv2ByCategory(@PathVariable("category") String category) {
+        List<Productv2> retrievedProductsv2List = getProductsv2ByCategoryUseCase.getProductsv2ByCategory(category);
         List<GetProductv2Response> response = productv2DTOMapper.listToResponse(retrievedProductsv2List);
         return ResponseEntity.ok(response);
     }

@@ -4,9 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.snackbar.productv2.application.gateways.Productv2Gateway;
-import com.snackbar.productv2.application.usecases.CreateProductv2UseCase;
-import com.snackbar.productv2.application.usecases.GetProductv2ByIdUseCase;
-import com.snackbar.productv2.application.usecases.ListProductsv2UseCase;
+import com.snackbar.productv2.application.usecases.*;
 import com.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper;
 import com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper;
 import com.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway;
@@ -27,6 +25,11 @@ public class ProductConfig {
     @Bean
     ListProductsv2UseCase listProductsv2UseCase(Productv2Gateway productv2Gateway) {
         return new ListProductsv2UseCase(productv2Gateway);
+    }
+
+    @Bean
+    GetProductsv2ByCategoryUseCase getProductsv2ByCategory(Productv2Gateway productv2Gateway) {
+        return new GetProductsv2ByCategoryUseCase(productv2Gateway);
     }
 
     @Bean
