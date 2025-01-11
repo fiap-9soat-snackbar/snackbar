@@ -6,6 +6,8 @@ import com.snackbar.productv2.application.gateways.Productv2Gateway;
 import com.snackbar.productv2.domain.entity.Productv2;
 import com.snackbar.productv2.infrastructure.persistence.Productv2Entity;
 import com.snackbar.productv2.infrastructure.persistence.Productv2Repository;
+import java.util.List;
+
 
 public class Productv2RepositoryGateway implements Productv2Gateway {
 
@@ -32,4 +34,11 @@ public class Productv2RepositoryGateway implements Productv2Gateway {
         return retrievedProductv2;
     }
 
+    @Override
+    public List<Productv2> listProductsv2() {
+        List<Productv2Entity> retrievedObjList = productv2Repository.findAll();
+        List<Productv2> retrievedProductsv2List = productv2EntityMapper.toDomainListObj(retrievedObjList);
+        return retrievedProductsv2List;
+        
+    }
 }

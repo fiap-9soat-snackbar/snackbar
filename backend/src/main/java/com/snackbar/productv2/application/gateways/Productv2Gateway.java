@@ -4,8 +4,10 @@ package com.snackbar.productv2.application.gateways;
 // memory, in a database, or in a file.
 
 import com.snackbar.productv2.domain.entity.Productv2;
+import java.util.List;
 
 public interface Productv2Gateway {
     Productv2 createProductv2(Productv2 productv2);
     Productv2 getProductv2ById(String id);
+    List<Productv2> listProductsv2();
 }

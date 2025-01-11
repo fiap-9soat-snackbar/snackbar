@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /*import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;*/
 
@@ -18,15 +20,18 @@ public class Productv2Controller {
     
     private final CreateProductv2UseCase createProductv2UseCase;
     private final GetProductv2ByIdUseCase getProductv2UseCase;
+    private final ListProductsv2UseCase listProductsv2UseCase;
     private final Productv2DTOMapper productv2DTOMapper;
 
     @Autowired
     public Productv2Controller(
             CreateProductv2UseCase createProductv2UseCase,
             GetProductv2ByIdUseCase getProductv2UseCase,
+            ListProductsv2UseCase listProductsv2UseCase,
             Productv2DTOMapper productv2DTOMapper) {
         this.createProductv2UseCase = createProductv2UseCase;
         this.getProductv2UseCase = getProductv2UseCase;
+        this.listProductsv2UseCase = listProductsv2UseCase;
         this.productv2DTOMapper = productv2DTOMapper;
     }
 
@@ -48,4 +53,12 @@ public class Productv2Controller {
         //logger.info("Product retrieved successfully: {}", response);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping
+    public ResponseEntity<List<GetProductv2Response>> listProductsv2() {
+        List<Productv2> retrievedProductsv2List = listProductsv2UseCase.listProductsv2();
+        List<GetProductv2Response> response = productv2DTOMapper.listToResponse(retrievedProductsv2List);
+        return ResponseEntity.ok(response);
+    }
+
 }
