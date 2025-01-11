@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Values.STATEFULSET.LABEL }}
+
+spec:
+  type: {{ .Values.SERVICE.TYPE }}
+  ports:
+    - name: http
+      port: {{ .Values.SERVICE.PORT }}
+      targetPort: {{ .Values.STATEFULSET.PORT }}
+      protocol: TCP
+  selector:
+    app: {{ .Values.STATEFULSET.LABEL }}

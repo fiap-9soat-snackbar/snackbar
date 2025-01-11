@@ -1,0 +1,14 @@
+apiVersion: v2
+description: A custom MongoDB Helm Chart
+keywords:
+- mongodb-custom
+- FIAP
+- Grupo 82
+- 09SOAT
+maintainers:
+- email: team82@snackbar.com.br
+  name: Team Grupo 82
+  url: https://github.com/commskywalker/snackbar
+name: mongodb-custom
+version: 1.0.0
+type: application

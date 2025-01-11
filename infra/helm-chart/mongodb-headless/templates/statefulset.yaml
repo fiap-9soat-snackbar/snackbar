@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Values.STATEFULSET.LABEL }}
+spec:
+  serviceName: {{ .Release.Name }}
+  replicas: {{ .Values.STATEFULSET.REPLICAS }}
+  selector:
+    matchLabels:
+      app: {{ .Values.STATEFULSET.LABEL }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.STATEFULSET.LABEL }}
+    spec:
+      serviceAccountName: {{ .Values.STATEFULSET.LABEL }}
+      containers:
+        - name: {{ .Values.STATEFULSET.LABEL }}
+          image: {{ .Values.IMAGE.VERSION }}
+          ports:
+            - containerPort: {{ .Values.STATEFULSET.PORT }}
+              name: {{ .Values.STATEFULSET.LABEL }}
+          volumeMounts:
+            - name: {{ .Values.PERSISTENCE.VOLUME_NAME }}
+              mountPath: {{ .Values.PERSISTENCE.PATH }}
+          envFrom:
+            - secretRef:
+                name: {{ .Release.Name }}
+      volumes:
+        - name: {{ .Values.PERSISTENCE.VOLUME_NAME }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.PERSISTENCE.PVC_NAME }}
+  volumeClaimTemplates:
+    - metadata:
+        name: {{ .Values.PERSISTENCE.VOLUME_NAME }}
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: {{ .Values.PERSISTENCE.SIZE }}
+      {{ if .Values.STATEFULSET.TOLERATIONS.ENABLED }}
+      tolerations:
+      - key: {{ .Values.STATEFULSET.TOLERATIONS.KEY }}
+        operator: {{ .Values.STATEFULSET.TOLERATIONS.OPERATOR }}
+        value: {{ .Values.STATEFULSET.TOLERATIONS.VALUE }}
+        effect: {{ .Values.STATEFULSET.TOLERATIONS.EFFECT }}
+      {{ end }}
+      {{ if .Values.STATEFULSET.NODESELECTOR.ENABLED }}
+      nodeSelector:
+        {{ .Values.STATEFULSET.NODESELECTOR.KEY }}: {{ .Values.STATEFULSET.NODESELECTOR.VALUE }}
+        {{ end }}

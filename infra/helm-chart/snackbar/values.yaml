@@ -1,0 +1,79 @@
+
+IMAGE:
+  REPOSITORY: 171219910203199431032017/snackbar
+  TAG: latest
+  PULL_POLICY: Always
+
+HPA:
+  ENABLED: true
+  MAXREPLICAS: 5
+  CPU: 90
+  MEMORY: 400Mi
+
+INGRESS:
+  ENABLED: false
+  HOST: api.snackbar.com.br
+  GATEWAY: ingress-gw
+  PREFIX: /
+  
+DEPLOYMENT:
+  REPLICAS: 2
+  PORT: 8080
+  STRATEGY:
+    MAXSURGE: 2
+    MAXUNAVAILABLE: 0
+    TYPE: RollingUpdate
+  ENV:
+    ENABLED: true
+
+  TOLERATIONS:
+    ENABLED: true
+    KEY: application
+    OPERATOR: Equal
+    VALUE: snackbar
+    EFFECT: NoSchedule
+  NODESELECTOR:
+    ENABLED: true
+    KEY: application
+    VALUE: snackbar
+  RESOURCES:
+    MIN:
+      CPU: 50m
+      RAM: 12Mi
+    MAX:
+      RAM: 500Mi
+  
+  LIVENESSPROBE:
+    ENABLED: false
+    PATH: /api/healthcheck
+    INITIALDELAY: 20
+    PERIOD: 5
+    FAILURETHRESHOLD: 3
+
+  READINESSPROBE:
+    ENABLED: true
+    INITIALDELAY: 10
+    PERIOD: 5
+    FAILURETHRESHOLD: 3
+
+SERVICE:
+  TYPE: ClusterIP
+  PORT: 80
+  INTERNAL: false
+  HTTPS:
+    ENABLED: false
+  LOAD_BALANCER:
+    ENABLED: true
+    DNS_SUFFIX: api.snackbar.com.br
+    
+
+SECRET:
+  DATABASE:
+    MONGODB_USER: snackbaruser
+    MONGODB_PASSWORD: snack01
+    DB_HOST: mongodb-headless.ns-snackbar.svc.cluster.local
+    DB_PORT: "27017"
+    APP_DB: snackbar
+  JWT:
+    SECRET: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+    EXPIRES_IN: "3600000"
