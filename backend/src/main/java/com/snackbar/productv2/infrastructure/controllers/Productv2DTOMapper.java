@@ -15,8 +15,4 @@ public class Productv2DTOMapper {
         return new GetProductv2Response(productv2.id(), productv2.name(), productv2.category(), productv2.description(), productv2.price(), productv2.cookingTime());
     }
     
-    public Productv2 getRequestToDomain(GetProductv2Request request) {
-        return new Productv2(request.id(), null, null, null, null, null);
-
-    }
 }
