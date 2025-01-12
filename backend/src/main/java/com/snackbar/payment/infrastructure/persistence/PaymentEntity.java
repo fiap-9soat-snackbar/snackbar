@@ -18,7 +18,8 @@ public class PaymentEntity {
     private String paymentMethod;
     private String externalPaymentId;
 
-    public PaymentEntity(String orderId, BigDecimal totalDue, String paymentStatus, String paymentMethod, String externalPaymentId) {
+    public PaymentEntity(String id, String orderId, BigDecimal totalDue, String paymentStatus, String paymentMethod, String externalPaymentId) {
+        this.id = id;
         this.orderId = orderId;
         this.totalDue = totalDue;
         this.paymentStatus = paymentStatus;

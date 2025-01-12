@@ -4,7 +4,7 @@ package com.snackbar.payment.domain.entities;
 
 import java.math.BigDecimal;
 
-public record Payment(String orderId, BigDecimal totalDue, String paymentStatus, String paymentMethod, String externalPaymentId) {
+public record Payment(String id, String orderId, BigDecimal totalDue, String paymentStatus, String paymentMethod, String externalPaymentId) {
 
 }
 

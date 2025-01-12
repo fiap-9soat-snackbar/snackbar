@@ -33,9 +33,10 @@ public class CreatePaymentUseCase {
         //logger.info("Obtaining total price for order: {}", order.getTotalPrice);
         BigDecimal totalDue = order.getTotalPrice();
         //logger.info("Setting payment status and temporary external payment ID:");
+        String id = null;
         String paymentStatus = "PENDENTE";
-        String externalPaymentId = "PENDENTE";
-        Payment localPayment = new Payment(payment.orderId(), totalDue, paymentStatus, payment.paymentMethod(), externalPaymentId);
+        String externalPaymentId = null;
+        Payment localPayment = new Payment(id, payment.orderId(), totalDue, paymentStatus, payment.paymentMethod(), externalPaymentId);
         //Payment localPayment = new Payment(orderId, totalDue, paymentStatus, paymentMethod, externalPaymentId);
         Payment createdPayment = paymentGateway.createPayment(localPayment);
         return createdPayment;
