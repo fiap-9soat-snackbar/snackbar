@@ -1,4 +1,4 @@
-package com.snackbar.payment.domain.entities;
+package com.snackbar.payment.domain.entity;
 
 // This should be a pure Payment business domain entity, not a JPA/database entity
 

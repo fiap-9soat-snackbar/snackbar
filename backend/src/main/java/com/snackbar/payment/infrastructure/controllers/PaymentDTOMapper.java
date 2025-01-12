@@ -1,8 +1,9 @@
 package com.snackbar.payment.infrastructure.controllers;
 
 import java.math.BigDecimal;
+import java.util.List;
 
-import com.snackbar.payment.domain.entities.Payment;  
+import com.snackbar.payment.domain.entity.Payment; 
 
 public class PaymentDTOMapper {
 
@@ -21,5 +22,15 @@ public class PaymentDTOMapper {
         Payment localPayment = new Payment(id, myOrderId, totalDue, paymentStatus, myPaymentMethod, externalPaymentId);
         return localPayment;
     }    
+
+    GetPaymentResponse getToResponse(Payment payment) {
+        return new GetPaymentResponse(payment.id(), payment.orderId(), payment.totalDue(), payment.paymentStatus(), payment.paymentMethod(), payment.externalPaymentId());
+    }
+
+    List<GetPaymentResponse> listToResponse(List<Payment> listPayments) {
+        return listPayments.stream()
+            .map(this::getToResponse)
+            .toList();
+    }
 
 }

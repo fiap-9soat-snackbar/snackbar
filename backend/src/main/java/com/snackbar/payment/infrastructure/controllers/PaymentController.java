@@ -1,7 +1,10 @@
 package com.snackbar.payment.infrastructure.controllers;
 
 import com.snackbar.payment.application.usecases.*;
-import com.snackbar.payment.domain.entities.Payment;
+import com.snackbar.payment.domain.entity.Payment;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,13 +21,16 @@ public class PaymentController {
     //private static final Logger logger = LoggerFactory.getLogger(PaymentController.class);
 
     private final CreatePaymentUseCase createPaymentUseCase;
+    private final ListPaymentsUseCase listPaymentsUseCase;
     private final PaymentDTOMapper paymentDTOMapper;
 
     @Autowired
     public PaymentController(
             CreatePaymentUseCase createPaymentUseCase,
+            ListPaymentsUseCase listPaymentsUseCase,
             PaymentDTOMapper paymentDTOMapper) {
         this.createPaymentUseCase = createPaymentUseCase;
+        this.listPaymentsUseCase = listPaymentsUseCase;
         this.paymentDTOMapper = paymentDTOMapper;
     }
 
@@ -37,6 +43,13 @@ public class PaymentController {
         //Payment createdPayment = createPaymentUseCase.createPayment(payment.orderId(), payment.paymentMethod());
         CreatePaymentResponse response = paymentDTOMapper.createToResponse(createdPayment);
         //logger.info("Payment created successfully: {}", response);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<GetPaymentResponse>> listPayments() {
+        List<Payment> retrievedPaymentsList = listPaymentsUseCase.listPayments();
+        List<GetPaymentResponse> response = paymentDTOMapper.listToResponse(retrievedPaymentsList);
         return ResponseEntity.ok(response);
     }
 

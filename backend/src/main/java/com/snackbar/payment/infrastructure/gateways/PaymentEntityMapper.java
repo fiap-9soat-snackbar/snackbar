@@ -1,6 +1,8 @@
 package com.snackbar.payment.infrastructure.gateways;
 
-import com.snackbar.payment.domain.entities.Payment;
+import java.util.List;
+
+import com.snackbar.payment.domain.entity.Payment;
 import com.snackbar.payment.infrastructure.persistence.PaymentEntity;
 
 public class PaymentEntityMapper {
@@ -12,5 +14,11 @@ public class PaymentEntityMapper {
     
     Payment toDomainObj(PaymentEntity paymentEntity) {
         return new Payment(paymentEntity.getId(), paymentEntity.getOrderId(), paymentEntity.getTotalDue(), paymentEntity.getPaymentStatus(), paymentEntity.getPaymentMethod(), paymentEntity.getExternalPaymentId());
+    }
+
+    List<Payment> toDomainListObj(List<PaymentEntity> paymentEntityList) {
+        return paymentEntityList.stream()
+            .map(this::toDomainObj)
+            .toList();
     }
 }

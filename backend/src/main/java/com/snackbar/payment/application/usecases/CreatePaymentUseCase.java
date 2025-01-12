@@ -6,7 +6,8 @@ package com.snackbar.payment.application.usecases;
 import com.snackbar.order.domain.model.Order;
 import com.snackbar.order.service.OrderService;
 import com.snackbar.payment.application.gateways.PaymentGateway;
-import com.snackbar.payment.domain.entities.Payment;
+import com.snackbar.payment.domain.entity.Payment;
+
 import java.math.BigDecimal;
 
 /*import org.slf4j.Logger;

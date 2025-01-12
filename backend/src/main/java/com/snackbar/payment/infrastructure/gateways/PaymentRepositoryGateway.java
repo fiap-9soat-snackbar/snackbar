@@ -1,9 +1,11 @@
 package com.snackbar.payment.infrastructure.gateways;
 
+import java.util.List;
+
 // This should be equivalent to the previous ServiceImpl
 
 import com.snackbar.payment.application.gateways.PaymentGateway;
-import com.snackbar.payment.domain.entities.Payment;
+import com.snackbar.payment.domain.entity.Payment;
 import com.snackbar.payment.infrastructure.persistence.PaymentEntity;
 import com.snackbar.payment.infrastructure.persistence.PaymentRepository;
 
@@ -32,6 +34,14 @@ public class PaymentRepositoryGateway implements PaymentGateway {
         Payment createdPayment = paymentEntityMapper.toDomainObj(savedObj);
         //logger.info("Payment saved to database: {}", createdPayment);
         return createdPayment;
+    }
+
+    @Override
+    public List<Payment> listPayments() {
+        List<PaymentEntity> retrievedObjList = paymentRepository.findAll();
+        List<Payment> retrievedPaymentsList = paymentEntityMapper.toDomainListObj(retrievedObjList);
+        return retrievedPaymentsList;
+        
     }
 
 }
