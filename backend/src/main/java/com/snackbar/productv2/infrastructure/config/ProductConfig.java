@@ -43,6 +43,11 @@ public class ProductConfig {
     }
 
     @Bean
+    DeleteProductv2ByIdUseCase deleteProductv2ByIdUseCase(Productv2Gateway productv2Gateway) {
+        return new DeleteProductv2ByIdUseCase(productv2Gateway);
+    }
+
+    @Bean
     Productv2Gateway productv2Gateway(Productv2Repository productv2Repository, Productv2EntityMapper productv2EntityMapper) {
         return new Productv2RepositoryGateway(productv2Repository, productv2EntityMapper);
     }

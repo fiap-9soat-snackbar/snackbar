@@ -58,14 +58,17 @@ public class Productv2RepositoryGateway implements Productv2Gateway {
 
     @Override
     public Productv2 updateProductv2ById(String id, Productv2 productv2) {
-        //Productv2Entity retrievedObj = productv2Repository.findById(id).orElse(null);
-        //Productv2 retrievedProductv2 = productv2EntityMapper.toDomainObj(retrievedObj);
-        //return retrievedProductv2;
         Productv2Entity productv2Entity = productv2EntityMapper.toEntity(productv2);
         productv2Entity.setId(id);
         Productv2Entity savedObj = productv2Repository.save(productv2Entity);
         Productv2 updatedProductv2 = productv2EntityMapper.toDomainObj(savedObj);
         return updatedProductv2;
+    }
+
+    @Override
+    public void deleteProductv2ById(String id) {
+        Productv2Entity retrievedObj = productv2Repository.findById(id).orElse(null);
+        productv2Repository.delete(retrievedObj);
     }
 
 }

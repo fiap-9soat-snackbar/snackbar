@@ -1,13 +1,10 @@
 package com.snackbar.productv2.application.usecases;
 
-import com.snackbar.productv2.application.gateways.Productv2Gateway;
-import com.snackbar.productv2.domain.entity.Productv2;
-
-/*import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;*/
-
 // This should be equivalent to a Spring Service definition, 
 // but without any framework dependencies. It's also called an Interactor.
+
+import com.snackbar.productv2.application.gateways.Productv2Gateway;
+import com.snackbar.productv2.domain.entity.Productv2;
 
 public class UpdateProductv2ByIdUseCase {
 
@@ -25,18 +22,5 @@ public class UpdateProductv2ByIdUseCase {
         Productv2 updatedProductv2 = productv2Gateway.updateProductv2ById(locatedProductv2.id(), productv2);
         return updatedProductv2;
     }
-
-    /*/
-    public ProductDTO updateProduct(String id, ProductDTO productDTO) {
-        Product existingProduct = ProductRepository.findById(id)
-            .orElseThrow(() -> new BusinessException("Product not found with id: " + id));
-
-        Product updatedProduct = mapToEntity(productDTO);
-        updatedProduct.setId(existingProduct.getId());
-        updatedProduct.validateProduct();
-        
-        Product savedProduct = ProductRepository.save(updatedProduct);
-        return mapToDTO(savedProduct);
-    }*/
 
 }

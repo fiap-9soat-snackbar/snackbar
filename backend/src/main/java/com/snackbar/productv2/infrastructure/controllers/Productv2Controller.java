@@ -24,6 +24,7 @@ public class Productv2Controller {
     private final GetProductsv2ByCategoryUseCase getProductsv2ByCategoryUseCase;
     private final GetProductv2ByNameUseCase getProductv2ByNameUseCase;
     private final UpdateProductv2ByIdUseCase updateProductv2ByIdUseCase;
+    private final DeleteProductv2ByIdUseCase deleteProductv2ByIdUseCase;
     private final Productv2DTOMapper productv2DTOMapper;
 
     @Autowired
@@ -34,6 +35,7 @@ public class Productv2Controller {
             GetProductsv2ByCategoryUseCase getProductsv2ByCategoryUseCase,
             GetProductv2ByNameUseCase getProductv2ByNameUseCase,
             UpdateProductv2ByIdUseCase updateProductv2ByIdUseCase,
+            DeleteProductv2ByIdUseCase deleteProductv2ByIdUseCase,
             Productv2DTOMapper productv2DTOMapper) {
         this.createProductv2UseCase = createProductv2UseCase;
         this.getProductv2ByIdUseCase = getProductv2ByIdUseCase;
@@ -41,6 +43,7 @@ public class Productv2Controller {
         this.getProductsv2ByCategoryUseCase = getProductsv2ByCategoryUseCase;
         this.getProductv2ByNameUseCase = getProductv2ByNameUseCase;
         this.updateProductv2ByIdUseCase = updateProductv2ByIdUseCase;
+        this.deleteProductv2ByIdUseCase = deleteProductv2ByIdUseCase;
         this.productv2DTOMapper = productv2DTOMapper;
     }
 
@@ -92,6 +95,12 @@ public class Productv2Controller {
         Productv2 updatedProductv2 = updateProductv2ByIdUseCase.updateProductv2ById(id, productv2);
         CreateProductv2Response response = productv2DTOMapper.createToResponse(updatedProductv2);
         return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping("/id/{id}")
+    public ResponseEntity<Void> deleteProduct(@PathVariable String id) {
+        deleteProductv2ByIdUseCase.deleteProductv2ById(id);
+        return ResponseEntity.ok().build();
     }
 
 }
