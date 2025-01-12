@@ -23,6 +23,7 @@ public class Productv2Controller {
     private final ListProductsv2UseCase listProductsv2UseCase;
     private final GetProductsv2ByCategoryUseCase getProductsv2ByCategoryUseCase;
     private final GetProductv2ByNameUseCase getProductv2ByNameUseCase;
+    private final UpdateProductv2ByIdUseCase updateProductv2ByIdUseCase;
     private final Productv2DTOMapper productv2DTOMapper;
 
     @Autowired
@@ -32,12 +33,14 @@ public class Productv2Controller {
             ListProductsv2UseCase listProductsv2UseCase,
             GetProductsv2ByCategoryUseCase getProductsv2ByCategoryUseCase,
             GetProductv2ByNameUseCase getProductv2ByNameUseCase,
+            UpdateProductv2ByIdUseCase updateProductv2ByIdUseCase,
             Productv2DTOMapper productv2DTOMapper) {
         this.createProductv2UseCase = createProductv2UseCase;
         this.getProductv2ByIdUseCase = getProductv2ByIdUseCase;
         this.listProductsv2UseCase = listProductsv2UseCase;
         this.getProductsv2ByCategoryUseCase = getProductsv2ByCategoryUseCase;
         this.getProductv2ByNameUseCase = getProductv2ByNameUseCase;
+        this.updateProductv2ByIdUseCase = updateProductv2ByIdUseCase;
         this.productv2DTOMapper = productv2DTOMapper;
     }
 
@@ -80,6 +83,14 @@ public class Productv2Controller {
         Productv2 retrievedProductv2 = getProductv2ByNameUseCase.getProductv2ByName(name);
         GetProductv2Response response = productv2DTOMapper.getToResponse(retrievedProductv2);
         //logger.info("Product retrieved successfully: {}", response);
+        return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/id/{id}")
+    public ResponseEntity<CreateProductv2Response> updateProductv2ById(@PathVariable("id") String id, @RequestBody CreateProductv2Request request) {
+        Productv2 productv2 = productv2DTOMapper.createRequestToDomain(request);
+        Productv2 updatedProductv2 = updateProductv2ByIdUseCase.updateProductv2ById(id, productv2);
+        CreateProductv2Response response = productv2DTOMapper.createToResponse(updatedProductv2);
         return ResponseEntity.ok(response);
     }
 

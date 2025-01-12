@@ -38,6 +38,11 @@ public class ProductConfig {
     }
 
     @Bean
+    UpdateProductv2ByIdUseCase updateProductv2ByIdUseCase(Productv2Gateway productv2Gateway, GetProductv2ByIdUseCase getProductv2ByIdUseCase) {
+        return new UpdateProductv2ByIdUseCase(productv2Gateway, getProductv2ByIdUseCase);
+    }
+
+    @Bean
     Productv2Gateway productv2Gateway(Productv2Repository productv2Repository, Productv2EntityMapper productv2EntityMapper) {
         return new Productv2RepositoryGateway(productv2Repository, productv2EntityMapper);
     }

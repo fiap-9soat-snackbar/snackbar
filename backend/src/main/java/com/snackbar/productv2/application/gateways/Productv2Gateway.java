@@ -12,4 +12,5 @@ public interface Productv2Gateway {
     List<Productv2> listProductsv2();
     List<Productv2> getProductsv2ByCategory(String category);
     Productv2 getProductv2ByName(String name);
+    Productv2 updateProductv2ById(String id, Productv2 productv2);
 }
