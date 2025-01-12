@@ -74,10 +74,10 @@ echo "Criando o namespace ns-snackbar..."
 kubectl create namespace ns-snackbar
 echo "Namespace ns-snackbar criado com sucesso!"
 
-# 2.8 Aplicar o Helm Chart mongodb-headless
-echo "Instalando o Helm Chart mongodb-headless..."
-helm install mongodb-headless $(pwd)/infra/helm-chart/mongodb-headless --namespace ns-snackbar
-echo "Helm Chart mongodb-headless instalado com sucesso!"
+# 2.8 Aplicar o Helm Chart mongodb
+echo "Instalando o Helm Chart mongodb..."
+helm install mongodb $(pwd)/infra/helm-chart/mongodb --namespace ns-snackbar
+echo "Helm Chart mongodb instalado com sucesso!"
 
 # 2.9 Aplicar o Helm Chart snackbar
 echo "Instalando o Helm Chart snackbar..."

@@ -55,10 +55,11 @@ esac
 
 
 #TODO
-# Mongo StatefulSet XX
-# Scripts para o Kubernetes
+# Mongo StatefulSet OK
+# Init do Mongo OK
+# Ajustar Script do start-eks (Oferecer os DNS dos ELB)
 # Mudar variáveis do Bucket
 # AutoScaling
-# Init do Mongo
 # DOC
 # README.md
+# Probes (Talvez Swagger)

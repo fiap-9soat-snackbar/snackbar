@@ -31,28 +31,30 @@ kubectl create namespace ns-snackbar
 echo "Entrando no namespace ns-snackbar..."
 kubectl config set-context --current --namespace=ns-snackbar
 
-# 7. Instalar o Helm Chart mongodb-headless
-echo "Instalando o Helm Chart mongodb-headless..."
-helm install mongodb-headless $(pwd)/infra/helm-chart/mongodb-headless --namespace ns-snackbar --values $(pwd)/infra/helm-chart/mongodb-headless/values-minikube.yaml
+# 7. Instalar o Helm Chart mongodb
+echo "Instalando o Helm Chart mongodb..."
+helm install mongodb $(pwd)/infra/helm-chart/mongodb --namespace ns-snackbar --values $(pwd)/infra/helm-chart/mongodb/values-minikube.yaml
 
 # 8. Instalar o Helm Chart snackbar
 echo "Instalando o Helm Chart snackbar..."
 helm install snackbar $(pwd)/infra/helm-chart/snackbar --namespace ns-snackbar --values $(pwd)/infra/helm-chart/snackbar/values-minikube.yaml
 
-echo "Aguardando 30 segundos para que os pods iniciem..."
-sleep 30
+echo "Por favor, aguarde enquanto estamos provisionando o ambiente..."
+echo "Tempo estimado.. 1 minuto"
+sleep 60
 
 # 9. Listar todos os pods no namespace ns-snackbar
 echo "Listando todos os pods no namespace ns-snackbar..."
 kubectl get pods --namespace ns-snackbar
 
 # 10. Fazer kubectl port-forward para o serviço snackbar (porta 8080)
-echo "Configurando port-forward para o serviço snackbar na porta 8080 e mongodb-headless na porta 27017..."
-kubectl port-forward service/snackbar 8080:80 --namespace ns-snackbar && kubectl port-forward service/mongodb-headless 27017:27017 --namespace ns-snackbar &
+echo "Configurando port-forward para o serviço snackbar na porta 8080 e mongodb-clusterip  na porta 27017..."
+#kubectl port-forward service/snackbar 8080:80 --namespace ns-snackbar && kubectl port-forward service/mongodb-clusterip 27017:27017 --namespace ns-snackbar &
+kubectl port-forward service/snackbar 8080:80 --namespace ns-snackbar &
 
 # 11. Fazer kubectl port-forward para o serviço mongodb-headless (porta 27017)
-#echo "Configurando port-forward para o serviço mongodb-headless na porta 27017..."
-#kubectl port-forward service/mongodb-headless 27017:27017 --namespace ns-snackbar &
+echo "Configurando port-forward para o serviço mongodb-clusterip  na porta 27017..."
+kubectl port-forward service/mongodb-clusterip  27017:27017 --namespace ns-snackbar &
 
 
 
