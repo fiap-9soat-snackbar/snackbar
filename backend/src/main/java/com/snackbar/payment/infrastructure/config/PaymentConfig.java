@@ -3,8 +3,11 @@ package com.snackbar.payment.infrastructure.config;
 import com.snackbar.payment.application.gateways.PaymentGateway;
 import com.snackbar.payment.application.usecases.*;
 import com.snackbar.payment.infrastructure.controllers.PaymentDTOMapper;
+import com.snackbar.payment.infrastructure.controllers.PaymentMPDTOMapper;
 import com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper;
+import com.snackbar.payment.infrastructure.gateways.PaymentMPEntityMapper;
 import com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway;
+import com.snackbar.payment.infrastructure.persistence.PaymentMPRepository;
 import com.snackbar.payment.infrastructure.persistence.PaymentRepository;
 
 import com.snackbar.order.service.OrderService;
@@ -44,10 +47,17 @@ public class PaymentConfig {
     }
     
     @Bean
-    public PaymentGateway paymentGateway(PaymentRepository paymentRepository, PaymentEntityMapper paymentEntityMapper) {
+    public CreatePaymentMPUseCase createPaymentMPUseCase(PaymentGateway paymentGateway) {
+        // Logging
+        //logger.info("Creating CreatePaymentUseCase bean");
+        return new CreatePaymentMPUseCase(paymentGateway);
+    }
+
+    @Bean
+    public PaymentGateway paymentGateway(PaymentRepository paymentRepository, PaymentMPRepository paymentMPRepository, PaymentEntityMapper paymentEntityMapper, PaymentMPEntityMapper paymentMPEntityMapper) {
         // Logging
         //logger.info("Creating PaymenttGateway bean");
-        return new PaymentRepositoryGateway(paymentRepository, paymentEntityMapper);
+        return new PaymentRepositoryGateway(paymentRepository, paymentMPRepository, paymentEntityMapper, paymentMPEntityMapper);
     }
 
     @Bean
@@ -58,9 +68,23 @@ public class PaymentConfig {
     }
 
     @Bean
+    public PaymentMPEntityMapper paymentMPEntityMapper() {
+        // Logging
+        //logger.info("Creating PaymentEntityMapper bean");
+        return new PaymentMPEntityMapper();
+    }
+
+    @Bean
     public PaymentDTOMapper paymentDTOMapper() {
         // Logging
         //logger.info("Creating PaymentDTOMapper bean");
         return new PaymentDTOMapper();
+    }
+
+    @Bean
+    public PaymentMPDTOMapper paymentMPDTOMapper() {
+        // Logging
+        //logger.info("Creating PaymentDTOMapper bean");
+        return new PaymentMPDTOMapper();
     }
 }

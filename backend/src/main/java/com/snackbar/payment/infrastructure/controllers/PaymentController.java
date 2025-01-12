@@ -2,6 +2,7 @@ package com.snackbar.payment.infrastructure.controllers;
 
 import com.snackbar.payment.application.usecases.*;
 import com.snackbar.payment.domain.entity.Payment;
+import com.snackbar.payment.domain.entity.PaymentMP;
 
 import java.util.List;
 
@@ -22,16 +23,22 @@ public class PaymentController {
 
     private final CreatePaymentUseCase createPaymentUseCase;
     private final ListPaymentsUseCase listPaymentsUseCase;
+    private final CreatePaymentMPUseCase createPaymentMPUseCase;
     private final PaymentDTOMapper paymentDTOMapper;
+    private final PaymentMPDTOMapper paymentMPDTOMapper;
 
     @Autowired
     public PaymentController(
             CreatePaymentUseCase createPaymentUseCase,
             ListPaymentsUseCase listPaymentsUseCase,
-            PaymentDTOMapper paymentDTOMapper) {
+            CreatePaymentMPUseCase createPaymentMPUseCase,
+            PaymentDTOMapper paymentDTOMapper,
+            PaymentMPDTOMapper paymentMPDTOMapper) {
         this.createPaymentUseCase = createPaymentUseCase;
         this.listPaymentsUseCase = listPaymentsUseCase;
+        this.createPaymentMPUseCase = createPaymentMPUseCase;
         this.paymentDTOMapper = paymentDTOMapper;
+        this.paymentMPDTOMapper = paymentMPDTOMapper;
     }
 
     @PostMapping
@@ -50,6 +57,14 @@ public class PaymentController {
     public ResponseEntity<List<GetPaymentResponse>> listPayments() {
         List<Payment> retrievedPaymentsList = listPaymentsUseCase.listPayments();
         List<GetPaymentResponse> response = paymentDTOMapper.listToResponse(retrievedPaymentsList);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/mercadopago")
+    public ResponseEntity<CreatePaymentMPResponse> createPaymentMP(@RequestBody CreatePaymentMPRequest request) {
+        PaymentMP paymentMP = paymentMPDTOMapper.createRequestToDomain(request);
+        PaymentMP createdPaymentMP = createPaymentMPUseCase.createPaymentMP(paymentMP);
+        CreatePaymentMPResponse response = paymentMPDTOMapper.createToResponse(createdPaymentMP);
         return ResponseEntity.ok(response);
     }
 
