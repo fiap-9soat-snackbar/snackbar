@@ -82,4 +82,3 @@
     "message": "User deleted successfully"
 }
 ```
-```

@@ -8,7 +8,7 @@
 | <kbd>GET /api/orders/number/{orderNumber}</kbd>     |See [request details](#get-orders-ordernumber)
 | <kbd>GET /api/orders/sorted</kbd>     | See [request details](#get-orders-sorted)
 | <kbd>POST /api/orders</kbd>     | See [request details](#post-orders)
-| <kbd>PUT /api/orders/{id}</kbd>     | See [request details](#put-orders)
+| <kbd>PUT /api/orders</kbd>     | See [request details](#put-orders)
 
 <h3 id="get-orders">GET /api/orders</h3>
 
@@ -156,7 +156,7 @@
 }
 ```
 
-<h3 id="put-orders">PUT /api/orders/{id}</h3>
+<h3 id="put-orders">PUT /api/orders</h3>
 
 **REQUEST**  
 ```json
