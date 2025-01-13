@@ -4,7 +4,6 @@ import com.snackbar.basket.domain.entity.Item;
 import com.snackbar.basket.infrastructure.persistence.ItemEntity;
 import org.springframework.stereotype.Component;
 
-@Component
 public class ItemEntityMapper {
     public ItemEntity toEntity(Item itemDomainObj) {
         return new ItemEntity(

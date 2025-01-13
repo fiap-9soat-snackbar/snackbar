@@ -8,46 +8,44 @@ import java.util.stream.Collectors;
 
 public class OrderDTOMapper {
 
-
     public Order toDomain(CreateOrderRequest request) {
         List<OrderItem> items = request.items().stream()
                 .map(item -> new OrderItem(
-                        item.productId(),
-                        null, // Add appropriate value for the second argument
-                        item.quantity(),
-                        item.price(),
-                        null, // Add appropriate value for the fifth argument
-                        null  // Add appropriate value for the sixth argument
+                        item.getId(),
+                        item.getName(), // Add appropriate value for the name
+                        item.getQuantity(),
+                        item.getPrice(),
+                        item.getCookingTime(),
+                        item.getCustomization()
                 ))
                 .collect(Collectors.toList());
         return new Order(
                 null, // Add appropriate value for the first argument
-                request.customerId(),
+                null, // Add appropriate value for the second argument
                 request.orderDate(),
-                null, // Add appropriate value for the fourth argument
-                null, // Add appropriate value for the fifth argument
+                request.cpf(),
+                request.name(), // Add appropriate value for the fifth argument
                 items,
                 null, // Add appropriate value for the seventh argument
-                request.totalPrice().toString(), // Convert BigDecimal to String
-                null, // Add appropriate value for the ninth argument
+                null, // Add appropriate value for the eighth argument
+                request.totalPrice(),
                 0  // Add appropriate value for the tenth argument
         );
     }
-
     public CreateOrderResponse toResponse(Order order) {
-        List<OrderItemResponse> items = order.items().stream()
+        List<OrderItemResponse> items = order.getItems().stream()
                 .map(item -> new OrderItemResponse(
-                        item.id(),
-                        item.quantity(),
-                        item.price()
+                        item.getId(),
+                        item.getQuantity(),
+                        item.getPrice()
                 ))
                 .collect(Collectors.toList());
         return new CreateOrderResponse(
-                order.id(),
-                order.cpf(),
-                order.orderDateTime(),
+                order.getId(),
+                order.getCpf(), // Added cpf field
+                order.getOrderDateTime(),
                 items,
-                order.totalPrice()
+                order.getTotalPrice()
         );
     }
 }

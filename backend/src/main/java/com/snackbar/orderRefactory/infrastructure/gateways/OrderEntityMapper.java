@@ -13,23 +13,23 @@ import java.util.stream.Collectors;
 public class OrderEntityMapper {
 
     public OrderEntity toEntity(Order orderDomainObj) {
-        List<ItemEntity> itemEntities = orderDomainObj.items().stream()
+        List<ItemEntity> itemEntities = orderDomainObj.getItems().stream()
                 .map(this::toItemEntity)
                 .collect(Collectors.toList());
 
-        StatusOrderEntity statusOrder = toPersistenceStatusOrder(orderDomainObj.statusOrder());
+        StatusOrderEntity statusOrder = toPersistenceStatusOrder(orderDomainObj.getStatusOrder());
 
         return new OrderEntity(
-                orderDomainObj.id(),
-                orderDomainObj.orderNumber(),
-                orderDomainObj.orderDateTime(),
-                orderDomainObj.cpf(),
-                orderDomainObj.name(),
+                orderDomainObj.getId(),
+                orderDomainObj.getOrderNumber(),
+                orderDomainObj.getOrderDateTime(),
+                orderDomainObj.getCpf(),
+                orderDomainObj.getName(),
                 itemEntities,
                 statusOrder,
-                orderDomainObj.paymentMethod(),
-                orderDomainObj.totalPrice(),
-                orderDomainObj.remainingTime()
+                orderDomainObj.getPaymentMethod(),
+                orderDomainObj.getTotalPrice(),
+                orderDomainObj.getRemainingTime()
         );
     }
 
@@ -56,12 +56,12 @@ public class OrderEntityMapper {
 
     private ItemEntity toItemEntity(OrderItem item) {
         return new ItemEntity(
-                item.id(),
-                item.name(),
-                item.quantity(),
-                item.price(),
-                item.cookingTime(),
-                item.customization()
+                item.getId(),
+                item.getName(),
+                item.getQuantity(),
+                item.getPrice(),
+                item.getCookingTime(),
+                item.getCustomization()
         );
     }
 

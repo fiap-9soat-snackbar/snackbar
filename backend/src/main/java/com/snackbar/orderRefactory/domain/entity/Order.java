@@ -6,18 +6,111 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 
-public record Order(
-        String id,
-        String orderNumber,
-        Instant orderDateTime,
-        String cpf,
-        String name,
-        List<OrderItem> items,
-        StatusOrder statusOrder,
-        String paymentMethod,
-        BigDecimal totalPrice,
-        long remainingTime
-) {
+public class Order {
+    private String id;
+    private String orderNumber;
+    private Instant orderDateTime;
+    private String cpf;
+    private String name;
+    private List<OrderItem> items;
+    private StatusOrder statusOrder;
+    private String paymentMethod;
+    private BigDecimal totalPrice;
+    private long remainingTime;
+
+    public Order(String id, String orderNumber, Instant orderDateTime, String cpf, String name, List<OrderItem> items, StatusOrder statusOrder, String paymentMethod, BigDecimal totalPrice, long remainingTime) {
+        this.id = id;
+        this.orderNumber = orderNumber;
+        this.orderDateTime = orderDateTime;
+        this.cpf = cpf;
+        this.name = name;
+        this.items = items;
+        this.statusOrder = statusOrder;
+        this.paymentMethod = paymentMethod;
+        this.totalPrice = totalPrice;
+        this.remainingTime = remainingTime;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(String orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    public Instant getOrderDateTime() {
+        return orderDateTime;
+    }
+
+    public void setOrderDateTime(Instant orderDateTime) {
+        this.orderDateTime = orderDateTime;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
+    }
+
+    public StatusOrder getStatusOrder() {
+        return statusOrder;
+    }
+
+    public void setStatusOrder(StatusOrder statusOrder) {
+        this.statusOrder = statusOrder;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public long getRemainingTime() {
+        return remainingTime;
+    }
+
+    public void setRemainingTime(long remainingTime) {
+        this.remainingTime = remainingTime;
+    }
+
     public long calculateRemainingTime() {
         Instant now = Instant.now();
         long elapsedTime = java.time.Duration.between(orderDateTime, now).toMinutes();
@@ -26,7 +119,7 @@ public record Order(
 
     public int getWaitingTime() {
         return items.stream()
-                .mapToInt(item -> item.cookingTime() * item.quantity())
+                .mapToInt(item -> item.getCookingTime() * item.getQuantity())
                 .sum();
     }
 

@@ -5,9 +5,7 @@ import com.snackbar.basket.infrastructure.persistence.BasketRepository;
 import com.snackbar.basket.domain.entity.Basket;
 import com.snackbar.basket.domain.entity.Item;
 import com.snackbar.basket.application.gateways.BasketUseCaseGateway;
-import org.springframework.stereotype.Service;
 
-@Service
 public class BasketRepositoryGateway implements BasketUseCaseGateway {
 
     private final BasketRepository basketRepository;

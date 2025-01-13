@@ -5,7 +5,6 @@ import com.snackbar.basket.domain.entity.Basket;
 import com.snackbar.basket.domain.entity.Item;
 import org.springframework.stereotype.Service;
 
-@Service
 public class BasketUseCase {
 
     private final BasketUseCaseGateway basketUseCaseGateway;

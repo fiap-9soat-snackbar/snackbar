@@ -22,59 +22,59 @@ public class OrderUseCase {
     }
 
     public Order createOrder(Order order) {
-        if (order.cpf() == null) {
+        if (order.getCpf() == null) {
             throw new IllegalArgumentException("CPF is mandatory for creating an order");
         }
 
         // Validate if the user exists and get the user's name
-        String userName = orderGateway.findUserByCpf(order.cpf())
+        String userName = orderGateway.findUserByCpf(order.getCpf())
                 .orElseThrow(() -> new IllegalArgumentException("User with provided CPF does not exist"));
 
-        order = new Order(order.id(), order.orderNumber(), order.orderDateTime(), order.cpf(), userName, order.items(), order.statusOrder(), order.paymentMethod(), order.totalPrice(), order.remainingTime());
+        order.setName(userName);
 
         String lastOrderNumber = orderGateway.findTopByOrderByOrderNumberDesc();
+        order.setOrderNumber(Order.generateOrderNumber(lastOrderNumber));
+        order.setOrderDateTime(Instant.now());
+        order.setStatusOrder(StatusOrder.NOVO);
 
-        order = new Order(order.id(), Order.generateOrderNumber(lastOrderNumber), order.orderDateTime(), order.cpf(), order.name(), order.items(), StatusOrder.NOVO, order.paymentMethod(), order.totalPrice(), order.remainingTime());
-        order = new Order(order.id(), order.orderNumber(), Instant.now(), order.cpf(), order.name(), order.items(), order.statusOrder(), order.paymentMethod(), order.totalPrice(), order.remainingTime());
-
-        List<OrderItem> updatedItems = order.items().stream().map(item -> {
-            OrderItem updatedItem = productGateway.getProductByName(item.name());
+        List<OrderItem> updatedItems = order.getItems().stream().map(item -> {
+            OrderItem updatedItem = productGateway.getProductByName(item.getName());
             if (updatedItem != null) {
-                return new OrderItem(item.id(), updatedItem.name(), item.quantity(), updatedItem.price(), updatedItem.cookingTime(), updatedItem.customization());
+                return new OrderItem(item.getId(), updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
             } else {
-                throw new IllegalArgumentException("Product not found: " + item.name());
+                throw new IllegalArgumentException("Product not found: " + item.getName());
             }
         }).collect(Collectors.toList());
 
-        order = new Order(order.id(), order.orderNumber(), order.orderDateTime(), order.cpf(), order.name(), updatedItems, order.statusOrder(), order.paymentMethod(), order.totalPrice(), order.remainingTime());
+        order.setItems(updatedItems);
 
         BigDecimal totalPrice = updatedItems.stream()
-                .map(item -> item.price() != null ? item.price().multiply(BigDecimal.valueOf(item.quantity())) : BigDecimal.ZERO)
+                .map(item -> item.getPrice() != null ? item.getPrice().multiply(BigDecimal.valueOf(item.getQuantity())) : BigDecimal.ZERO)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-        order = new Order(order.id(), order.orderNumber(), order.orderDateTime(), order.cpf(), order.name(), order.items(), order.statusOrder(), order.paymentMethod(), totalPrice, order.remainingTime());
+        order.setTotalPrice(totalPrice);
 
         return orderGateway.createOrder(order);
     }
 
     public Order updateOrder(Order order) {
-        Order existingOrder = orderGateway.findOrderById(order.id())
+        Order existingOrder = orderGateway.findOrderById(order.getId())
                 .orElseThrow(() -> new IllegalArgumentException("Order not found"));
 
-        List<OrderItem> updatedItems = order.items().stream().map(item -> {
-            OrderItem updatedItem = productGateway.getProductByName(item.name());
+        List<OrderItem> updatedItems = order.getItems().stream().map(item -> {
+            OrderItem updatedItem = productGateway.getProductByName(item.getName());
             if (updatedItem != null) {
-                return new OrderItem(item.id(), updatedItem.name(), item.quantity(), updatedItem.price(), updatedItem.cookingTime(), updatedItem.customization());
+                return new OrderItem(item.getId(), updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
             } else {
-                throw new IllegalArgumentException("Product not found: " + item.name());
+                throw new IllegalArgumentException("Product not found: " + item.getName());
             }
         }).collect(Collectors.toList());
 
-        existingOrder = new Order(existingOrder.id(), existingOrder.orderNumber(), existingOrder.orderDateTime(), existingOrder.cpf(), existingOrder.name(), updatedItems, existingOrder.statusOrder(), existingOrder.paymentMethod(), existingOrder.totalPrice(), existingOrder.remainingTime());
+        existingOrder.setItems(updatedItems);
 
         BigDecimal totalPrice = updatedItems.stream()
-                .map(item -> item.price() != null ? item.price().multiply(BigDecimal.valueOf(item.quantity())) : BigDecimal.ZERO)
+                .map(item -> item.getPrice() != null ? item.getPrice().multiply(BigDecimal.valueOf(item.getQuantity())) : BigDecimal.ZERO)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-        existingOrder = new Order(existingOrder.id(), existingOrder.orderNumber(), existingOrder.orderDateTime(), existingOrder.cpf(), existingOrder.name(), existingOrder.items(), existingOrder.statusOrder(), existingOrder.paymentMethod(), totalPrice, existingOrder.remainingTime());
+        existingOrder.setTotalPrice(totalPrice);
 
         return orderGateway.updateOrder(existingOrder);
     }
@@ -87,15 +87,31 @@ public class OrderUseCase {
         return orderGateway.searchOrderId(orderId);
     }
 
-    public void updateStatusOrder(String orderId) {
-
-    }
-
     public Order getOrderByOrderNumber(String orderNumber) {
         return orderGateway.getOrderByOrderNumber(orderNumber);
     }
 
     public List<Order> getSortedOrders() {
-        return orderGateway.getSortedOrders();
+        return orderGateway.getSortedOrders().stream()
+                .filter(order -> order.getStatusOrder() == StatusOrder.PRONTO ||
+                        order.getStatusOrder() == StatusOrder.PREPARACAO ||
+                        order.getStatusOrder() == StatusOrder.RECEBIDO)
+                .sorted((o1, o2) -> {
+                    int statusComparison = compareStatus(o1.getStatusOrder(), o2.getStatusOrder());
+                    if (statusComparison != 0) {
+                        return statusComparison;
+                    }
+                    return o1.getOrderDateTime().compareTo(o2.getOrderDateTime());
+                })
+                .collect(Collectors.toList());
+    }
+
+    private int compareStatus(StatusOrder status1, StatusOrder status2) {
+        if (status1 == status2) return 0;
+        if (status1 == StatusOrder.PRONTO) return -1;
+        if (status2 == StatusOrder.PRONTO) return 1;
+        if (status1 == StatusOrder.PREPARACAO) return -1;
+        if (status2 == StatusOrder.PREPARACAO) return 1;
+        return 0;
     }
 }

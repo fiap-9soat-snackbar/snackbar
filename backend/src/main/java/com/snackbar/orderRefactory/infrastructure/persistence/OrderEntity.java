@@ -23,7 +23,7 @@ public class OrderEntity {
     private Instant orderDateTime;
     private String cpf; // Mandatory field for creating an order
     private String name;
-    private List<ItemEntity> itemEntities = new ArrayList<>();
+    private List<ItemEntity> items = new ArrayList<>();
     private StatusOrderEntity statusOrder;
     private String paymentMethod;
     private BigDecimal totalPrice;    
@@ -83,16 +83,16 @@ public class OrderEntity {
     }
 
     public List<ItemEntity> getItems() {
-        return itemEntities;
+        return items;
     }
 
     public void setItems(List<ItemEntity> itemEntities) {
-        this.itemEntities = itemEntities;
+        this.items = itemEntities;
     }
 
 
     public int getWaitingTime() {
-        return itemEntities.stream()
+        return items.stream()
                 .mapToInt(itemEntity -> itemEntity.getCookingTime() * itemEntity.getQuantity())
                 .sum();
     }
