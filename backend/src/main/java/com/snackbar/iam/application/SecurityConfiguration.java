@@ -33,11 +33,15 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers( "/swagger-ui/**").permitAll()
-                        .requestMatchers( "/v3/api-docs/**").permitAll()
+                        .requestMatchers("/v3/api-docs/**").permitAll()
+                        .requestMatchers("/swagger-ui/**").permitAll()
+                        .requestMatchers("/swagger-ui.html").permitAll()
+                        .requestMatchers("/swagger-resources/**").permitAll()
                         .requestMatchers("/api/user/auth/**").permitAll()
                         .requestMatchers("/api/checkout").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/orders/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/orders/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

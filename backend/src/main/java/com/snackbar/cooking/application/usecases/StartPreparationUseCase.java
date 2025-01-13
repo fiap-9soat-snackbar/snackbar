@@ -1,4 +1,4 @@
-package com.snackbar.cooking.application.usecase;
+package com.snackbar.cooking.application.usecases;
 
 public interface StartPreparationUseCase {
     String execute(String id);
