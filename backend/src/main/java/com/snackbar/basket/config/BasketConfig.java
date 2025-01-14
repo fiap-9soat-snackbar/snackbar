@@ -1,4 +1,4 @@
-package com.snackbar.orderRefactory.config;
+package com.snackbar.basket.config;
 
 import com.snackbar.basket.application.usecases.BasketUseCase;
 import com.snackbar.basket.infrastructure.controllers.BasketDTOMapper;
