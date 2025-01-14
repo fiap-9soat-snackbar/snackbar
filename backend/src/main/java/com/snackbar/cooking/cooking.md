@@ -21,7 +21,7 @@
         "name": "Jose Moreira",
         "orderNumber": "000001",
         "orderDateTime": "2024-11-03T01:00:25.14",
-        "items": [
+        "itemEntities": [
             {
                 "name": "Hot Dog de Salsicha",
                 "price": 20,
@@ -48,7 +48,7 @@
         "name": "Jose Moreira",
         "orderNumber": "000001",
         "orderDateTime": "2024-11-03T01:00:25.14",
-        "items": [
+        "itemEntities": [
             {
                 "name": "Hot Dog de Salsicha",
                 "price": 20,
@@ -75,7 +75,7 @@
         "name": "Jose Moreira",
         "orderNumber": "000001",
         "orderDateTime": "2024-11-03T01:00:25.14",
-        "items": [
+        "itemEntities": [
             {
                 "name": "Hot Dog de Salsicha",
                 "price": 20,

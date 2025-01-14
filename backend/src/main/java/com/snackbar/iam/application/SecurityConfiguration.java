@@ -38,7 +38,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/user/auth/**").permitAll()
                         .requestMatchers("/api/checkout").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/orders/**").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

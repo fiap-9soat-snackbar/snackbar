@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Release.Name }}
+          image: {{ .Values.IMAGE.VERSION }}
+          imagePullPolicy: {{ .Values.IMAGE.PULL_POLICY }}
+          ports:
+            - containerPort: {{ .Values.DEPLOYMENT.PORT }}
+          envFrom:
+            - secretRef:
+                name: {{ .Release.Name }}
+          volumeMounts:
+            - name: {{ .Values.PERSISTENCE.VOLUME_NAME }}
+              mountPath: {{ .Values.PERSISTENCE.PATH }}
+      volumes:
+        - name: {{ .Values.PERSISTENCE.VOLUME_NAME }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.PERSISTENCE.PVC_NAME }}
+      {{ if .Values.DEPLOYMENT.TOLERATIONS.ENABLED }}
+      tolerations:
+      - key: {{ .Values.DEPLOYMENT.TOLERATIONS.KEY }}
+        operator: {{ .Values.DEPLOYMENT.TOLERATIONS.OPERATOR }}
+        value: {{ .Values.DEPLOYMENT.TOLERATIONS.VALUE }}
+        effect: {{ .Values.DEPLOYMENT.TOLERATIONS.EFFECT }}
+      {{ end }}
+      {{ if .Values.DEPLOYMENT.NODESELECTOR.ENABLED }}
+      nodeSelector:
+        {{ .Values.DEPLOYMENT.NODESELECTOR.KEY }}: {{ .Values.DEPLOYMENT.NODESELECTOR.VALUE }}
+        {{ end }}
