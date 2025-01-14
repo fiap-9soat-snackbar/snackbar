@@ -41,12 +41,15 @@ public class CheckoutOrderUseCaseImpl implements CheckoutOrderUseCase {
             return orderItem;
         }).collect(Collectors.toList()));
 
-        Order orderCreated = this.orderService.createOrder(order);
+//        basketUseCase.createBasket(order);
 
-        Checkout checkout = new Checkout();
-        checkout.setOrderId(orderCreated.getId());
-        checkout.setPaymentMethod("Mercado Pago");
-        checkoutRepository.save(checkout);
+//
+//        Order orderCreated = this.orderService.createOrder(order);
+//
+//        Checkout checkout = new Checkout();
+//        checkout.setOrderId(orderCreated.getId());
+//        checkout.setPaymentMethod("Mercado Pago");
+//        checkoutRepository.save(checkout);
 
 //         Atualizar o status da ordem
 //        orderService.updateStatusOrder(orderId);
