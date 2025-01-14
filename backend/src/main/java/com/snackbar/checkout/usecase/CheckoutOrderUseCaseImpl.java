@@ -41,7 +41,7 @@ public class CheckoutOrderUseCaseImpl implements CheckoutOrderUseCase {
             return orderItem;
         }).collect(Collectors.toList()));
 
-        basketUseCase.createBasket(order);
+//        basketUseCase.createBasket(order);
 
 //
 //        Order orderCreated = this.orderService.createOrder(order);
