@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
     "com.snackbar.order",
     "com.snackbar.checkout",
     "com.snackbar.pickup",
+    "com.snackbar.productv2"
 })
 
 public class SnackbarApplication {

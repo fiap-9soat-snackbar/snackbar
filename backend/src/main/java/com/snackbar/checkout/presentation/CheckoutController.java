@@ -12,9 +12,9 @@ public class CheckoutController {
     public CheckoutController(CheckoutOrderUseCase checkoutOrderUseCase) {
         this.checkoutOrderUseCase = checkoutOrderUseCase;
     }
-    @PostMapping("/{orderId}")
-    public String makePayment(@PathVariable String orderId) {
-        checkoutOrderUseCase.pay(orderId);
-        return "Pagamento do pedido " + orderId + " pago via Mercado Pago (QR Code) com sucesso!";
+    @PostMapping("/{basketId}")
+    public String makePayment(@PathVariable String basketId) {
+        checkoutOrderUseCase.pay(basketId);
+        return "Pagamento do pedido " + basketId + " pago via Mercado Pago (QR Code) com sucesso!";
     }
 }
