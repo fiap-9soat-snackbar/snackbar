@@ -4,7 +4,7 @@ set -e
 
 echo Creating database User
 
-mongosh mongodb+srv://pos_tech:eTgPpD9VqPtpTCzK@pos-tech.bggov.mongodb.net/pos-tech?retryWrites=true&w=majority&appName=pos-tech <<EOF
+mongosh $MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@localhost:$DB_PORT <<EOF
 
 use admin
 db.createUser({
@@ -21,7 +21,7 @@ EOF
 
 echo Loading Products collection
 
-mongosh mongodb+srv://pos_tech:eTgPpD9VqPtpTCzK@pos-tech.bggov.mongodb.net/pos-tech?retryWrites=true&w=majority&appName=pos-tech <<EOF
+mongosh $MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@localhost:$DB_PORT <<EOF
 
 use snackbar
 db.products.insertMany( [
@@ -200,7 +200,7 @@ EOF
 
 echo Loading Orders collection
 
-mongosh mongodb+srv://pos_tech:eTgPpD9VqPtpTCzK@pos-tech.bggov.mongodb.net/pos-tech?retryWrites=true&w=majority&appName=pos-tech <<EOF
+mongosh $MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@localhost:$DB_PORT <<EOF
 
 use snackbar
 db.orders.insertMany([
