@@ -71,7 +71,8 @@ SECRET:
   DATABASE:
     MONGODB_USER: snackbaruser
     MONGODB_PASSWORD: snack01
-    DB_HOST: mongodb-headless.ns-snackbar.svc.cluster.local
+    DB_HOST: mongodb-clusterip.ns-snackbar.svc.cluster.local
+    MONGODB_OPTIONS: "&replicaSet=rs0&retryWrites=true&directConnection=true"
     DB_PORT: "27017"
     APP_DB: snackbar
   JWT:

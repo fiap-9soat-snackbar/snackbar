@@ -3,6 +3,7 @@
 #1. Aplicando permissão de execução aos scripts
 chmod +x ./infra/scripts/start-minikube.sh
 chmod +x ./infra/scripts/start-eks.sh
+chmod +x ./infra/scripts/host.sh
 
 #2. Função para verificar se AWS, HELM e TERRAFORM estão instalados
 check_command() {
@@ -57,9 +58,9 @@ esac
 #TODO
 # Mongo StatefulSet OK
 # Init do Mongo OK
-# Ajustar Script do start-eks (Oferecer os DNS dos ELB)
-# Mudar variáveis do Bucket
-# AutoScaling
-# DOC
-# README.md
+# Ajustar Script do start-eks (Oferecer os DNS dos ELB) OK
+# Mudar variáveis do Bucket - Não será possível
+# AutoScaling OK
 # Probes (Talvez Swagger)
+# README.md
+# DOC

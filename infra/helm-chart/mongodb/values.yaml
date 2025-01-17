@@ -1,6 +1,6 @@
 IMAGE:
   VERSION: "171219910203199431032017/mongo-snackbar:latest"
-  PULL_POLICY: IfNotPresent
+  PULL_POLICY: Always
 
 STATEFULSET:
   CONTAINER:
@@ -41,4 +41,4 @@ SECRET:
   MONGODB_USER: snackbaruser
   MONGODB_PASSWORD: snack01
   MONGO_INITDB_DATABASE: snackbar
-  DB_HOST: mongodb-clusterip.ns-snackbar.svc.cluster.local:27017/?replicaSet=rs0
+  DB_HOST: mongodb-clusterip.ns-snackbar.svc.cluster.local

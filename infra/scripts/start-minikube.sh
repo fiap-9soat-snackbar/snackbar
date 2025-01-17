@@ -46,6 +46,7 @@ sleep 60
 # 9. Listar todos os pods no namespace ns-snackbar
 echo "Listando todos os pods no namespace ns-snackbar..."
 kubectl get pods --namespace ns-snackbar
+kubectl create secret generic mongo-keyfile2 --from-file=mongo-keyfile=mongo-keyfile
 
 # 10. Fazer kubectl port-forward para o serviço snackbar (porta 8080)
 echo "Configurando port-forward para o serviço snackbar na porta 8080 e mongodb-clusterip  na porta 27017..."

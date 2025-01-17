@@ -6,4 +6,12 @@ db.createUser({
     roles: [{ role: "readWrite", db: "snackbar" }]
 });
 
+db.createUser({
+  user: "admin",
+  pwd: "adminpassword",
+  roles: [
+    { role: "root", db: "admin" }
+  ]
+})
+
 print("User 'snackbaruser' created.");

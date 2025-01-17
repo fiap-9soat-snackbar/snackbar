@@ -27,6 +27,12 @@ module "eks_mithrandir" {
       #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
       version                     = "v1.11.3-eksbuild.1"
     }
+   aws-ebs-csi-driver = {
+      resolve_conflicts_on_update = "NONE"
+      resolve_conflicts_on_create = "OVERWRITE"
+      #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+      version                     = "v1.38.1-eksbuild.1"
+    }
   }
 
   # EKS Managed Node Group(s)
@@ -123,7 +129,7 @@ module "eks_mithrandir" {
       }
     }
 
-  }
+  } 
 }
 
 # Node Group Scale Up
@@ -153,7 +159,7 @@ resource "aws_cloudwatch_metric_alarm" "eks-node-group-up" {
     AutoScalingGroupName = module.eks_mithrandir.eks_managed_node_groups_autoscaling_group_names[count.index]
   }
   alarm_actions     = [aws_autoscaling_policy.eks_autoscaling_policy-up[count.index].arn]
-  alarm_description = "This metric monitors the memory usage of the autoscaling group machines"
+  alarm_description = "This metric monitors the CPU usage of the autoscaling group machines"
 }
 
 # Node Group Scale Down
@@ -183,5 +189,6 @@ resource "aws_cloudwatch_metric_alarm" "eks-node-group-down" {
     AutoScalingGroupName = module.eks_mithrandir.eks_managed_node_groups_autoscaling_group_names[count.index]
   }
   alarm_actions     = [aws_autoscaling_policy.eks_autoscaling_policy-down[count.index].arn]
-  alarm_description = "This metric monitors the memory usage of the autoscaling group machines"
+  alarm_description = "This metric monitors the CPU usage of the autoscaling group machines"
 }
+

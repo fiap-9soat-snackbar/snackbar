@@ -1,7 +1,7 @@
 
 IMAGE:
   REPOSITORY: 171219910203199431032017/snackbar
-  TAG: latest
+  TAG: v4
   PULL_POLICY: Always
 
 HPA:
@@ -67,9 +67,13 @@ SECRET:
   DATABASE:
     MONGODB_USER: snackbaruser
     MONGODB_PASSWORD: snack01
-    DB_HOST: mongodb-headless.ns-snackbar.svc.cluster.local
+    MONGODB_OPTIONS: "replicaSet=rs0"
+    DB_HOST: mongodb-clusterip.ns-snackbar.svc.cluster.local
+    DB_HOST1: mongodb-0.mongodb-clusterip.ns-snackbar.svc.cluster.local
+    DB_HOST2: mongodb-1.mongodb-clusterip.ns-snackbar.svc.cluster.local
     DB_PORT: "27017"
     APP_DB: snackbar
   JWT:
     SECRET: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
     EXPIRES_IN: "3600000"
+

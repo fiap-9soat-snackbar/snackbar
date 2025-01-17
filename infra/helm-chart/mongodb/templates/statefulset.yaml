@@ -15,25 +15,74 @@ spec:
       labels:
         app: {{ .Values.STATEFULSET.LABEL }}
     spec:
+      initContainers:
+        - name: fix-permissions
+          image: mongo:8.0.1
+          command:
+            - sh
+            - -c
+            #- sleep 600
+            - "cp /etc/mongo/mongo-keyfile /tmp && chown mongodb:mongodb /tmp/mongo-keyfile && chmod 400 /tmp/mongo-keyfile"
+          volumeMounts:
+            - name: mongo-keyfile
+              mountPath: /etc/mongo
+            - name: mongo-keyfile-temp
+              mountPath: /tmp
       containers:
-#        - args:
-#            - '--dbpath'
-#            - /data/db
-#          command:
-#            - mongod
-#            - '--bind_ip_all'
-#            - '--replSet'
-#            - rs0
         - name: {{ .Values.STATEFULSET.CONTAINER.NAME }}
           imagePullPolicy: {{ .Values.IMAGE.PULL_POLICY }}
-          
+          image: {{ .Values.IMAGE.VERSION }}
+          #command: ["/bin/sh", "-c", "docker-entrypoint.sh --replSet rs0 --keyFile /tmp/mongo-keyfile"]
+          args: ["--replSet", "rs0", "--keyFile", "/tmp/mongo-keyfile"]
           envFrom:
             - secretRef:
                 name: {{ .Release.Name }}
-          image: {{ .Values.IMAGE.VERSION }}
           volumeMounts:
             - mountPath: {{ .Values.PERSISTENCE.PATH }}
               name: {{ .Values.PERSISTENCE.PVC_NAME }}
+            - mountPath: /etc/mongo
+              name: mongo-keyfile
+              readOnly: true
+            - mountPath: /tmp
+              name: mongo-keyfile-temp
+              
+      volumes:
+        - name: mongo-keyfile
+          secret:
+            secretName: mongo-keyfile2
+        - name: mongo-keyfile-temp
+          emptyDir: {}
+      #    readinessProbe:
+      #      exec:
+      #        command:
+      #          - mongod
+      #          - "db.runCommand('ping')"
+      #      initialDelaySeconds: 30
+      #      periodSeconds: 5
+      #      failureThreshold: 3
+      #      timeoutSeconds: 5
+#
+      #    livenessProbe:
+      #      tcpSocket:
+      #        port: 27017
+      #      initialDelaySeconds: 40
+      #      periodSeconds: 10
+      #      failureThreshold: 3
+      #      timeoutSeconds: 5
+            
+
+        {{ if .Values.STATEFULSET.TOLERATIONS.ENABLED }}
+      tolerations:
+      - key: {{ .Values.STATEFULSET.TOLERATIONS.KEY }}
+        operator: {{ .Values.STATEFULSET.TOLERATIONS.OPERATOR }}
+        value: {{ .Values.STATEFULSET.TOLERATIONS.VALUE }}
+        effect: {{ .Values.STATEFULSET.TOLERATIONS.EFFECT }}
+      {{ end }}
+      {{ if .Values.STATEFULSET.NODESELECTOR.ENABLED }}
+      nodeSelector:
+        {{ .Values.STATEFULSET.NODESELECTOR.KEY }}: {{ .Values.STATEFULSET.NODESELECTOR.VALUE }}
+      {{ end }}
+
   volumeClaimTemplates:
     - apiVersion: v1
       kind: PersistentVolumeClaim
@@ -46,14 +95,5 @@ spec:
           requests:
             storage: {{ .Values.PERSISTENCE.SIZE }}
 
-      {{ if .Values.STATEFULSET.TOLERATIONS.ENABLED }}
-      tolerations:
-      - key: {{ .Values.STATEFULSET.TOLERATIONS.KEY }}
-        operator: {{ .Values.STATEFULSET.TOLERATIONS.OPERATOR }}
-        value: {{ .Values.STATEFULSET.TOLERATIONS.VALUE }}
-        effect: {{ .Values.STATEFULSET.TOLERATIONS.EFFECT }}
-      {{ end }}
-      {{ if .Values.STATEFULSET.NODESELECTOR.ENABLED }}
-      nodeSelector:
-        {{ .Values.STATEFULSET.NODESELECTOR.KEY }}: {{ .Values.STATEFULSET.NODESELECTOR.VALUE }}
-        {{ end }}
+
+

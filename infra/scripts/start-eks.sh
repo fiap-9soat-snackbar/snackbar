@@ -69,20 +69,33 @@ echo "Configurando o Cluster EKS..."
 aws eks update-kubeconfig --region us-east-1 --name snackbar-mithrandir
 echo "Cluster EKS configurado com sucesso!"
 
-# 2.7 Criar um namespace chamado ns-snackbar
+# 2.7 Configuracão do Storage Class
+echo "Configurando o Storage Class..."
+kubectl patch storageclass gp2 -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+
+# 2.8 Criar um namespace chamado ns-snackbar
 echo "Criando o namespace ns-snackbar..."
 kubectl create namespace ns-snackbar
 echo "Namespace ns-snackbar criado com sucesso!"
 
-# 2.8 Aplicar o Helm Chart mongodb
+# 2.8.1. Logar no namespace ns-snackbar
+echo "Entrando no namespace ns-snackbar..."
+kubectl config set-context --current --namespace=ns-snackbar
+
+# 2.9 Aplicar o Helm Chart mongodb
 echo "Instalando o Helm Chart mongodb..."
 helm install mongodb $(pwd)/infra/helm-chart/mongodb --namespace ns-snackbar
 echo "Helm Chart mongodb instalado com sucesso!"
 
-# 2.9 Aplicar o Helm Chart snackbar
+# 2.10 Aplicar o Helm Chart snackbar
 echo "Instalando o Helm Chart snackbar..."
 helm install snackbar $(pwd)/infra/helm-chart/snackbar --namespace ns-snackbar
 echo "Helm Chart snackbar instalado com sucesso!"
 
 echo "Automatização dos recursos AWS completada com sucesso!"
+echo "Aguarde enquanto os LoadBalancers são provisionados..."  
+sleep 60 
+echo ""  
 
+
+./infra/scripts/host.sh
