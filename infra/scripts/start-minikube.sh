@@ -38,15 +38,22 @@ helm install mongodb $(pwd)/infra/helm-chart/mongodb --namespace ns-snackbar --v
 # 8. Instalar o Helm Chart snackbar
 echo "Instalando o Helm Chart snackbar..."
 helm install snackbar $(pwd)/infra/helm-chart/snackbar --namespace ns-snackbar --values $(pwd)/infra/helm-chart/snackbar/values-minikube.yaml
-
 echo "Por favor, aguarde enquanto estamos provisionando o ambiente..."
-echo "Tempo estimado.. 1 minuto"
+echo ""
+echo "Tempo estimado.. 2 minuto"
 sleep 60
+
+echo ""
+echo "Ajustando as configurações de réplica do MongoDB..."
+kubectl exec -it mongodb-1 -c mongodb-c -- mongosh --username root --password rootpassword --eval "rs.initiate({ _id: 'rs0', members: [ { _id: 0, host: 'mongodb-0.mongodb-clusterip.ns-snackbar.svc.cluster.local:27017' }, { _id: 1, host: 'mongodb-1.mongodb-clusterip.ns-snackbar.svc.cluster.local:27017' } ] });"
+
+echo ""
+echo "Disponibilizando os serviços no Minikube..."
+sleep 20
 
 # 9. Listar todos os pods no namespace ns-snackbar
 echo "Listando todos os pods no namespace ns-snackbar..."
 kubectl get pods --namespace ns-snackbar
-kubectl create secret generic mongo-keyfile2 --from-file=mongo-keyfile=mongo-keyfile
 
 # 10. Fazer kubectl port-forward para o serviço snackbar (porta 8080)
 echo "Configurando port-forward para o serviço snackbar na porta 8080 e mongodb-clusterip  na porta 27017..."

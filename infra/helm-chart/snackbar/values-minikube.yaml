@@ -1,7 +1,7 @@
 
 IMAGE:
   REPOSITORY: 171219910203199431032017/snackbar
-  TAG: v4
+  TAG: latest
   PULL_POLICY: Always
 
 HPA:
