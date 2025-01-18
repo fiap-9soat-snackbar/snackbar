@@ -6,6 +6,7 @@ import com.snackbar.payment.domain.entity.PaymentMP;
 
 import java.util.List;
 
+import com.snackbar.payment.infrastructure.MpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,7 @@ public class PaymentController {
     private final CreatePaymentMPUseCase createPaymentMPUseCase;
     private final PaymentDTOMapper paymentDTOMapper;
     private final PaymentMPDTOMapper paymentMPDTOMapper;
+    private final MpService mpService;
 
     @Autowired
     public PaymentController(
@@ -33,20 +35,27 @@ public class PaymentController {
             ListPaymentsUseCase listPaymentsUseCase,
             CreatePaymentMPUseCase createPaymentMPUseCase,
             PaymentDTOMapper paymentDTOMapper,
-            PaymentMPDTOMapper paymentMPDTOMapper) {
+            PaymentMPDTOMapper paymentMPDTOMapper,
+            MpService mpService) {
         this.createPaymentUseCase = createPaymentUseCase;
         this.listPaymentsUseCase = listPaymentsUseCase;
         this.createPaymentMPUseCase = createPaymentMPUseCase;
         this.paymentDTOMapper = paymentDTOMapper;
         this.paymentMPDTOMapper = paymentMPDTOMapper;
+        this.mpService = mpService;
     }
 
     @PostMapping
     public ResponseEntity<CreatePaymentResponse> createPayment(@RequestBody CreatePaymentRequest request) {
         //logger.info("Received request to create payment: {}", request);
+
         Payment payment = paymentDTOMapper.createRequestToDomain(request);
         //logger.info("Payment converted to domain object: {}", payment);
         Payment createdPayment = createPaymentUseCase.createPayment(payment);
+        var res = mpService.postMercadoPago(paymentDTOMapper.toPaymentMP(createdPayment));
+        // lookup com cpf
+        // gerar url
+        // criar usecase para atualizar externalid
         //Payment createdPayment = createPaymentUseCase.createPayment(payment.orderId(), payment.paymentMethod());
         CreatePaymentResponse response = paymentDTOMapper.createToResponse(createdPayment);
         //logger.info("Payment created successfully: {}", response);

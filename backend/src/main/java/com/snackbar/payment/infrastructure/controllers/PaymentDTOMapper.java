@@ -3,7 +3,8 @@ package com.snackbar.payment.infrastructure.controllers;
 import java.math.BigDecimal;
 import java.util.List;
 
-import com.snackbar.payment.domain.entity.Payment; 
+import com.snackbar.payment.domain.entity.Payment;
+import com.snackbar.payment.domain.entity.PaymentMP;
 
 public class PaymentDTOMapper {
 
@@ -31,6 +32,20 @@ public class PaymentDTOMapper {
         return listPayments.stream()
             .map(this::getToResponse)
             .toList();
+    }
+
+    public PaymentMP toPaymentMP(Payment payment) {
+        if (payment == null) {
+            return null;
+        }
+
+        return new PaymentMP(
+                payment.id(),
+                payment.orderId(),
+                payment.totalDue(),
+                payment.paymentMethod(),
+                payment.paymentStatus()
+        );
     }
 
 }
