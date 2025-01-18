@@ -17,7 +17,7 @@ minikube delete
 
 # 3. Start Minikube
 echo "Iniciando o Minikube..."
-minikube start
+minikube start --addons=metrics-server
 
 # 4. Setar o contexto Kubernetes para o Minikube
 echo "Setando contexto Kubernetes para o Minikube..."

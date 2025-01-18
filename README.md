@@ -175,15 +175,33 @@ Before you begin, ensure that the following tools are installed on your environm
 
 If any of these tools are not installed, follow the links above to complete the installation.
 
-### What do these scripts do?
+# Kubernetes Specifications
 
-- Start a Kubernetes Cluster v1.31 on Minikube or AWS EKS.
-- Create the ns-snackbar namespace.
-- Install the Helm chart for the Snackbar application.
-- Install the MongoDB database used by the Snackbar application in Replicaset configuration.
-- Connect the Snackbar and MongoDB services to the user's machine via port-forward (Minikube).
-- Provision a LoadBalancer so that the user can access the Snackbar and MongoDB services (AWS EKS).
-- List the pods that were created.
+## 1. Technologies Used:
+- **Backend API:** Java Spring Boot (Java 21, using Maven 3.9.9).
+- **Database:** MongoDB 8.0.1 in replicaset mode.
+- **Container Orchestration:** Minikube v1.34.0 / AWS EKS v1.31.
+- **Package Management:** Helm v3.15.3.
+- **IaC:** Terraform v1.10.3.
+
+## 2. System Components
+
+### Backend (Java Spring Boot):
+- Configured as a **Deployment** and implemented via Helm Chart.
+- Main container **snackbar** used for the API service.
+- Communication via port **8080** for APIs exposed by the Kubernetes Service.
+- Secret configuration stored in **Kubernetes Secret**:
+  - **snackbar Secret:** Stores the database access credentials, connection string, JWT token, and its validity period.
+- **Horizontal Pod Autoscaling (HPA)** enabled for scaling based on CPU and memory usage.
+
+### MongoDB (Running via Docker):
+- Configured as a **StatefulSet** and implemented via Helm Chart.
+- **Init container wait-mongo** used to configure the MongoDB replicaset.
+- Main container **mongo-c** used as the primary container for MongoDB database.
+- StatefulSet starts with **2 replicas** needed for replicaset mode.
+- Communication via port **27017** exposed by the Kubernetes Service.
+- Secret configuration stored in **Kubernetes Secret**:
+  - **mongodb Secret:** Stores the users and passwords created during the database startup.
 
 ## Infrastructure Provisioning
 
@@ -211,6 +229,16 @@ If you choose option **1**, the environment will be configured locally with Mini
 ### Provisioning with EKS
 
 If you choose option **2**, the environment will be configured on AWS using EKS. The script `infra/scripts/start-eks.sh` will be responsible for provisioning the resources on AWS and configuring the Kubernetes cluster on EKS.
+
+### What do these scripts do?
+
+- Start a Kubernetes Cluster v1.31 on Minikube or AWS EKS.
+- Create the ns-snackbar namespace.
+- Install the Helm chart for the Snackbar application.
+- Install the MongoDB database used by the Snackbar application in Replicaset configuration.
+- Connect the Snackbar and MongoDB services to the user's machine via port-forward (Minikube).
+- Provision a LoadBalancer so that the user can access the Snackbar and MongoDB services (AWS EKS).
+- List the pods that were created.
 
 ### Destroying the Infrastructure
 

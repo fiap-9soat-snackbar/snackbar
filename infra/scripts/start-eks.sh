@@ -92,6 +92,12 @@ echo "Instalando o Helm Chart snackbar..."
 helm install snackbar $(pwd)/infra/helm-chart/snackbar --namespace ns-snackbar
 echo "Helm Chart snackbar instalado com sucesso!"
 
+# 2.11 Aplicar o Helm Chart Metric Server utilizado para monitoramento do cluster
+echo "Instalando o Helm Chart Metrics Server..."
+helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
+helm install metrics-server metrics-server/metrics-server
+echo "Helm Chart Metrics Server instalado com sucesso!"
+
 echo ""
 echo "Ajustando as configurações de réplica do MongoDB..."
 sleep 90
