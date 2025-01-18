@@ -160,26 +160,68 @@ $ java -jar ./backend/target/snackbar-0.0.1-SNAPSHOT.jar
 
 ```
 
-<p id="Kubernetes">
-	
-## 🗃️ Kubernetes
+# Kubernetes Provisioning
 
-To run the application on Kubernetes, do the following:
+This project consists of an application composed of a MongoDB and a Java Spring Boot application. Both components can be provisioned in Kubernetes in two ways: using **EKS** (Elastic Kubernetes Service) from AWS or **Minikube**. This README provides detailed instructions for environment provisioning, either locally or on AWS.
 
-1. Install minikube as per the official documentation.
+## Prerequisites
 
-2. Run the start.sh script.
+Before you begin, ensure that the following tools are installed on your environment:
 
-```bash
-# Run the start.sh script:
-$ sh ./start.sh
-```
-</p>
-This script should:
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- [Helm](https://helm.sh/docs/intro/install/)
+- [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
-- Start minikube 
-- Create the ns-snackbar namespace. 
-- Install the Helm chart for the Snackbar application. 
-- Install the MongoDB database used by the Snackbar application. 
-- Connect the Snackbar and MongoDB services to the user's machine via port-forward. 
+If any of these tools are not installed, follow the links above to complete the installation.
+
+### What do these scripts do?
+
+- Start a Kubernetes Cluster v1.31 on Minikube or AWS EKS.
+- Create the ns-snackbar namespace.
+- Install the Helm chart for the Snackbar application.
+- Install the MongoDB database used by the Snackbar application in Replicaset configuration.
+- Connect the Snackbar and MongoDB services to the user's machine via port-forward (Minikube).
+- Provision a LoadBalancer so that the user can access the Snackbar and MongoDB services (AWS EKS).
 - List the pods that were created.
+
+## Infrastructure Provisioning
+
+The infrastructure can be provisioned with the `start-kubernetes.sh` script, which offers two environment options:
+
+### Starting the Provisioning
+
+1. Navigate to the project root.
+2. Run the following command to start the provisioning:
+
+   ```bash
+   ./start-kubernetes.sh
+
+   ```
+3. The script will prompt you to choose between two environment options:
+
+   1. Provision with Minikube (local)
+   2. Provision with EKS (AWS)
+Choose the desired option by entering **1** or **2**.
+
+### Provisioning with Minikube
+
+If you choose option **1**, the environment will be configured locally with Minikube. The script `infra/scripts/start-minikube.sh` will be executed to provision the application and MongoDB in the local cluster.
+
+### Provisioning with EKS
+
+If you choose option **2**, the environment will be configured on AWS using EKS. The script `infra/scripts/start-eks.sh` will be responsible for provisioning the resources on AWS and configuring the Kubernetes cluster on EKS.
+
+### Destroying the Infrastructure
+
+If you want to remove the provisioned environment, use the `destroy-kubernetes.sh` script. It works similarly to the creation script and allows for the removal of the Kubernetes cluster based on your choice (Minikube or EKS).
+
+To start the destruction process, run:
+
+   ```bash
+   ./destroy-kubernetes.sh
+
+   ```
+### Infrastructure Architecture
+
+Available at: miro.com.br

@@ -92,10 +92,15 @@ echo "Instalando o Helm Chart snackbar..."
 helm install snackbar $(pwd)/infra/helm-chart/snackbar --namespace ns-snackbar
 echo "Helm Chart snackbar instalado com sucesso!"
 
+echo ""
+echo "Ajustando as configurações de réplica do MongoDB..."
+sleep 90
+kubectl exec -it mongodb-1 -c mongodb-c -- mongosh --username root --password rootpassword --eval "rs.initiate({ _id: 'rs0', members: [ { _id: 0, host: 'mongodb-0.mongodb-clusterip.ns-snackbar.svc.cluster.local:27017' }, { _id: 1, host: 'mongodb-1.mongodb-clusterip.ns-snackbar.svc.cluster.local:27017' } ] });"
+
+
 echo "Automatização dos recursos AWS completada com sucesso!"
 echo "Aguarde enquanto os LoadBalancers são provisionados..."  
 sleep 60 
 echo ""  
-
 
 ./infra/scripts/host.sh

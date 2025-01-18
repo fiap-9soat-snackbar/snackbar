@@ -17,11 +17,11 @@ INGRESS:
   PREFIX: /
   
 DEPLOYMENT:
-  REPLICAS: 2
+  REPLICAS: 3
   PORT: 8080
   STRATEGY:
-    MAXSURGE: 2
-    MAXUNAVAILABLE: 0
+    MAXSURGE: 1
+    MAXUNAVAILABLE: 1
     TYPE: RollingUpdate
   ENV:
     ENABLED: true
@@ -71,8 +71,10 @@ SECRET:
   DATABASE:
     MONGODB_USER: snackbaruser
     MONGODB_PASSWORD: snack01
+    MONGODB_OPTIONS: "replicaSet=rs0"
     DB_HOST: mongodb-clusterip.ns-snackbar.svc.cluster.local
-    MONGODB_OPTIONS: "&replicaSet=rs0&retryWrites=true&directConnection=true"
+    DB_HOST1: mongodb-0.mongodb-clusterip.ns-snackbar.svc.cluster.local
+    DB_HOST2: mongodb-1.mongodb-clusterip.ns-snackbar.svc.cluster.local
     DB_PORT: "27017"
     APP_DB: snackbar
   JWT:

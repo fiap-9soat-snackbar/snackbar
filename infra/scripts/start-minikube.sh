@@ -41,7 +41,7 @@ helm install snackbar $(pwd)/infra/helm-chart/snackbar --namespace ns-snackbar -
 echo "Por favor, aguarde enquanto estamos provisionando o ambiente..."
 echo ""
 echo "Tempo estimado.. 2 minuto"
-sleep 60
+sleep 90
 
 echo ""
 echo "Ajustando as configurações de réplica do MongoDB..."

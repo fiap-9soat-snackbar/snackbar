@@ -34,8 +34,8 @@ services:
       - MONGODB_PASSWORD=${MONGODB_PASSWORD}
       - DB_PORT=${DB_PORT}
     volumes:
-      - mongodb_data:/data/db
-      - ./database/init-scripts/dbSampleDataLoad.sh:/docker-entrypoint-initdb.d/dbSampleDataLoad.sh
+      - mongodb_data:/docker-entrypoint-initdb.d/
+      - ./database/init-scripts/*js
 
 volumes:
   mongodb_data:

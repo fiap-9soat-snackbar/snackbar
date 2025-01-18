@@ -61,6 +61,6 @@ esac
 # Ajustar Script do start-eks (Oferecer os DNS dos ELB) OK
 # Mudar variáveis do Bucket - Não será possível
 # AutoScaling OK
-# Probes (Talvez Swagger)
-# README.md
+# README.md OK
 # DOC
+# Probes (Talvez Swagger)

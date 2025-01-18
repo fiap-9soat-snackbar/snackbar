@@ -15,7 +15,3 @@ COPY ./init-scripts/*.js /docker-entrypoint-initdb.d/
 
 # Exponha a porta padrão do MongoDB
 EXPOSE 27017
-
-
-# Definir o comando de inicialização da réplica
-#CMD ["mongod", "--replSet", "rs0", "--keyFile", "/etc/mongo/mongo-keyfile"]
