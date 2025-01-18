@@ -44,8 +44,8 @@ DEPLOYMENT:
       RAM: 500Mi
   
   LIVENESSPROBE:
-    ENABLED: false
-    PATH: /api/healthcheck
+    ENABLED: true
+    PATH: /actuator/health
     INITIALDELAY: 20
     PERIOD: 5
     FAILURETHRESHOLD: 3

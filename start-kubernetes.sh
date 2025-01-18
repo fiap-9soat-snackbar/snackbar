@@ -53,14 +53,3 @@ case $OPTION in
         exit 1
         ;;
 esac
-
-
-#TODO
-# Mongo StatefulSet OK
-# Init do Mongo OK
-# Ajustar Script do start-eks (Oferecer os DNS dos ELB) OK
-# Mudar variáveis do Bucket - Não será possível
-# AutoScaling OK
-# README.md OK
-# DOC
-# Probes (Talvez Swagger)

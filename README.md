@@ -193,8 +193,9 @@ If any of these tools are not installed, follow the links above to complete the 
 - Secret configuration stored in **Kubernetes Secret**:
   - **snackbar Secret:** Stores the database access credentials, connection string, JWT token, and its validity period.
 - **Horizontal Pod Autoscaling (HPA)** enabled for scaling based on CPU and memory usage.
+- Lineness and Readiness probes configured for health checks.
 
-### MongoDB (Running via Docker):
+### MongoDB:
 - Configured as a **StatefulSet** and implemented via Helm Chart.
 - **Init container wait-mongo** used to configure the MongoDB replicaset.
 - Main container **mongo-c** used as the primary container for MongoDB database.
@@ -252,4 +253,4 @@ To start the destruction process, run:
    ```
 ### Infrastructure Architecture
 
-Available at: miro.com.br
+Available at: [miro.com.br](https://miro.com/app/board/uXjVL0azFlU=/?track=true&utm_source=notification&utm_medium=email&utm_campaign=approve-request&utm_content=go-to-miro&lid=1v8fyk3ru6qu)

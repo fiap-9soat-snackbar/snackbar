@@ -37,6 +37,7 @@ public class SecurityConfiguration {
                         .requestMatchers( "/v3/api-docs/**").permitAll()
                         .requestMatchers("/api/user/auth/**").permitAll()
                         .requestMatchers("/api/checkout").permitAll()
+                        .requestMatchers( "/actuator/health/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/orders/**").permitAll()
                         .anyRequest().authenticated()
                 )
