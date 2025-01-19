@@ -127,10 +127,19 @@ public class OrderUseCase {
         return 0;
     }
 
-    public void updateStatusOrder(String orderId) {
+    public Order updateStatusOrder(String orderId, String orderStatus) {
         Order order = orderGateway.findOrderById(orderId)
                 .orElseThrow(() -> new IllegalArgumentException("Order not found"));
 
+        try {
+                StatusOrder status = StatusOrder.valueOf(orderStatus);
+                order.setStatusOrder(status);
+            } catch (IllegalArgumentException e) {
+                throw new IllegalArgumentException("Invalid order status: " + orderStatus);
+            }
+        //order.setStatusOrder(StatusOrder.valueOf(orderStatus));
+
+        /*
         // Check if the order has been paid
         boolean isPaid = this.checkoutOrderUseCase.isPaid(orderId);
 
@@ -151,8 +160,8 @@ public class OrderUseCase {
             order.setPaymentMethod("Mercado Pago");
         } else {
             order.setStatusOrder(StatusOrder.NOVO);
-        }
+        }*/
 
-        orderGateway.updateOrder(order);
+       return orderGateway.updateOrder(order);
     }
 }
