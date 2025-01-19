@@ -19,14 +19,14 @@ helm uninstall snackbar --namespace ns-snackbar
 echo "Helm Chart snackbar removido com sucesso!"
 
 # 1.2 Remover o Helm Chart mongodb-headless
-echo "Removendo o Helm Chart mongodb-headless..."
+echo "Removendo o Helm Chart mongodb..."
 helm uninstall mongodb --namespace ns-snackbar
 echo "Helm Chart mongodb removido com sucesso!"
 
 # 1.3 Remover o namespace ns-snackbarsd
-echo "Removendo o namespace ns-snackbar..."
-kubectl delete namespace ns-snackbar
-echo "Namespace ns-snackbar removido com sucesso!"
+#echo "Removendo o namespace ns-snackbar..."
+#kubectl delete namespace ns-snackbar
+#echo "Namespace ns-snackbar removido com sucesso!"
 
 # 1.4 Remover as configurações do Cluster EKS
 echo "Removendo configurações do Cluster EKS..."
