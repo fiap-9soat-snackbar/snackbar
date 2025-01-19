@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
+
 @Service
 public class MpService {
 
@@ -22,12 +24,13 @@ public class MpService {
                 .block();
     }
 
-    public String patchBackMercadoPago(String uri, Object requestBody) {
-        return webClient.patch()
-                .uri(uri)
-                .bodyValue(requestBody)
-                .retrieve()
-                .bodyToMono(String.class)
-                .block();
+    public void patchBackMercadoPago(String uri, Object requestBody) {
+        Mono.delay(Duration.ofSeconds(10))
+                .flatMap(delay -> webClient.patch()
+                        .uri(uri)
+                        .bodyValue(requestBody)
+                        .retrieve()
+                        .bodyToMono(String.class))
+                .subscribe();
     }
 }
