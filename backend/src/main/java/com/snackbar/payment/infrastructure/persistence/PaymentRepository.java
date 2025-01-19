@@ -10,4 +10,5 @@ import java.util.Optional;
 @Repository
 public interface PaymentRepository extends MongoRepository<PaymentEntity, String> {
     Optional<PaymentEntity> findByOrderId(String orderId);
+    Optional<PaymentEntity> findByExternalPaymentId(String externalPaymentId);
 }

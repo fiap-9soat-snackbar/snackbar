@@ -55,6 +55,10 @@ public class PaymentEntity {
         return paymentStatus;
     }
 
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
     public void getPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
     }

@@ -10,7 +10,6 @@ import com.snackbar.payment.infrastructure.gateways.PaymentMPEntityMapper;
 import com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway;
 import com.snackbar.payment.infrastructure.persistence.PaymentMPRepository;
 import com.snackbar.payment.infrastructure.persistence.PaymentRepository;
-
 import com.snackbar.order.service.OrderService;
 
 import org.springframework.context.annotation.Bean;
@@ -56,7 +55,35 @@ public class PaymentConfig {
     }
 
     @Bean
-    public WebHookExecution createWebHookExecutuion(PaymentGateway paymentGateway) {
+    public GetPaymentByIdUseCase getPaymentByIdUseCase(PaymentGateway paymentGateway) {
+        // Logging
+        //logger.info("Creating CreatePaymentUseCase bean");
+        return new GetPaymentByIdUseCase(paymentGateway);
+    }
+
+    @Bean
+    public UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase(PaymentGateway paymentGateway, GetPaymentByIdUseCase getPaymentByIdUseCase) {
+        // Logging
+        //logger.info("Creating CreatePaymentUseCase bean");
+        return new UpdatePaymentExternalIdByIdUseCase(paymentGateway, getPaymentByIdUseCase);
+    }
+
+    @Bean
+    public GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase(PaymentGateway paymentGateway) {
+        // Logging
+        //logger.info("Creating CreatePaymentUseCase bean");
+        return new GetPaymentByExternalIdUseCase(paymentGateway);
+    }
+
+    @Bean
+    public UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase(PaymentGateway paymentGateway, GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase) {
+        // Logging
+        //logger.info("Creating CreatePaymentUseCase bean");
+        return new UpdatePaymentStatusWebhook(paymentGateway, getPaymentByExternalIdUseCase);
+    }
+
+    @Bean
+    public PaymentGateway paymentGateway(PaymentRepository paymentRepository, PaymentMPRepository paymentMPRepository, PaymentEntityMapper paymentEntityMapper, PaymentMPEntityMapper paymentMPEntityMapper) {
         // Logging
         //logger.info("Creating CreatePaymentUseCase bean");
         return new WebHookExecution(paymentGateway);
@@ -110,4 +137,5 @@ public class PaymentConfig {
         //logger.info("Creating PaymentDTOMapper bean");
         return new PaymentMPDTOMapper();
     }
+
 }

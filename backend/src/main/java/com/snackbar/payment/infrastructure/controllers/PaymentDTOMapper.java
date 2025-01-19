@@ -39,13 +39,27 @@ public class PaymentDTOMapper {
             return null;
         }
 
+        String id = null;
+        String cpf = "UM_CPF";
+        String callbackURL = "http://localhost:8080/api/payment/updateStatusWebhook";
+
         return new PaymentMP(
+                id,
                 payment.id(),
-                payment.orderId(),
                 payment.totalDue(),
-                payment.paymentMethod(),
-                payment.paymentStatus()
+                cpf,
+                callbackURL
         );
+    }
+
+    public Payment updateRequestToDomain(UpdatePaymentStatusByExternalIdRequest request) {
+        String id = null;
+        String orderId = null;
+        BigDecimal totalDue = new BigDecimal(0.0);
+        String paymentStatus = request.paymentStatus();
+        String paymentMethod = null;
+        String externalPaymentId = request.externalId();
+        return new Payment(id, orderId, totalDue, paymentStatus, paymentMethod, externalPaymentId);
     }
 
 }
