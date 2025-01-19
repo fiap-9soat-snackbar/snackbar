@@ -2,6 +2,7 @@ package com.snackbar.payment.infrastructure.config;
 
 import com.snackbar.payment.application.gateways.PaymentGateway;
 import com.snackbar.payment.application.usecases.*;
+import com.snackbar.payment.infrastructure.MpService;
 import com.snackbar.payment.infrastructure.controllers.PaymentDTOMapper;
 import com.snackbar.payment.infrastructure.controllers.PaymentMPDTOMapper;
 import com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper;
@@ -14,6 +15,7 @@ import com.snackbar.order.service.OrderService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
 
 /* Logging imports
 import org.slf4j.Logger;
@@ -47,23 +49,44 @@ public class PaymentConfig {
     }
     
     @Bean
-    public CreatePaymentMPUseCase createPaymentMPUseCase(PaymentGateway paymentGateway) {
+    public CreatePaymentMPUseCase createPaymentMPUseCase(PaymentGateway paymentGateway, WebHookExecution webHookExecution) {
         // Logging
         //logger.info("Creating CreatePaymentUseCase bean");
-        return new CreatePaymentMPUseCase(paymentGateway);
+        return new CreatePaymentMPUseCase(paymentGateway, webHookExecution);
     }
 
     @Bean
-    public PaymentGateway paymentGateway(PaymentRepository paymentRepository, PaymentMPRepository paymentMPRepository, PaymentEntityMapper paymentEntityMapper, PaymentMPEntityMapper paymentMPEntityMapper) {
+    public WebHookExecution createWebHookExecutuion(PaymentGateway paymentGateway) {
         // Logging
-        //logger.info("Creating PaymenttGateway bean");
-        return new PaymentRepositoryGateway(paymentRepository, paymentMPRepository, paymentEntityMapper, paymentMPEntityMapper);
+        //logger.info("Creating CreatePaymentUseCase bean");
+        return new WebHookExecution(paymentGateway);
+    }
+
+    @Bean
+    public MpService createMpService(WebClient webClient) {
+        // Logging
+        //logger.info("Creating CreatePaymentUseCase bean");
+        return new MpService(webClient);
+    }
+
+    @Bean
+    public PaymentGateway paymentGateway(
+            PaymentRepository paymentRepository,
+            PaymentMPRepository paymentMPRepository,
+            PaymentEntityMapper paymentEntityMapper,
+            PaymentMPEntityMapper paymentMPEntityMapper,
+            MpService mpService
+    ) {
+        return new PaymentRepositoryGateway(
+                paymentRepository,
+                paymentMPRepository,
+                paymentEntityMapper,
+                paymentMPEntityMapper,
+                mpService);
     }
 
     @Bean
     public PaymentEntityMapper paymentEntityMapper() {
-        // Logging
-        //logger.info("Creating PaymentEntityMapper bean");
         return new PaymentEntityMapper();
     }
 

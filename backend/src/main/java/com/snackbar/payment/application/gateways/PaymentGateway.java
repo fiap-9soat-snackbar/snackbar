@@ -9,5 +9,5 @@ public interface PaymentGateway {
     Payment createPayment(Payment payment);
     List<Payment> listPayments();
     PaymentMP createPaymentMP(PaymentMP paymentMP);
+    void webHookExecution(PaymentMP paymentMP);
 }
-    

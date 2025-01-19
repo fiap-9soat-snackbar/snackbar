@@ -21,6 +21,7 @@ public class CreatePaymentUseCase {
     private final PaymentGateway paymentGateway;
     private final OrderService orderService;
 
+
     public CreatePaymentUseCase(PaymentGateway paymentGateway, OrderService orderService) {
         this.paymentGateway = paymentGateway;
         this.orderService = orderService;

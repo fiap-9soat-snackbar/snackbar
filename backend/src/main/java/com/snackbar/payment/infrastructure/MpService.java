@@ -19,6 +19,14 @@ public class MpService {
                 .bodyValue(requestBody)
                 .retrieve()
                 .bodyToMono(String.class)
-                .block(); // This makes the request synchronous
+                .block();
+    }
+
+    public Mono<String> postBackMercadoPago(String uri, Object requestBody) {
+        return webClient.post()
+                .uri(uri)
+                .bodyValue(requestBody)
+                .retrieve()
+                .bodyToMono(String.class);
     }
 }

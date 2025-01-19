@@ -54,4 +54,12 @@ public class CheckoutOrderUseCaseImpl implements CheckoutOrderUseCase {
 //         Atualizar o status da ordem
 //        orderService.updateStatusOrder(orderId);
     }
+
+    @Override
+    public boolean isPaid(String orderId) {
+        boolean isPaid = checkoutRepository.findByOrderId(orderId)
+                .map(checkout -> checkout.isPaid())
+                .orElse(false);
+        return isPaid;
+    }
 }

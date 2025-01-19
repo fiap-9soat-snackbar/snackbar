@@ -1,10 +1,13 @@
 package com.snackbar.orderRefactory.application.usecases;
 
+import com.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl;
 import com.snackbar.orderRefactory.application.gateways.ProductGateway;
 import com.snackbar.orderRefactory.domain.entity.Order;
 import com.snackbar.orderRefactory.domain.entity.OrderItem;
 import com.snackbar.orderRefactory.domain.valueobject.StatusOrder;
 import com.snackbar.orderRefactory.application.gateways.OrderGateway;
+import com.snackbar.pickup.entity.StatusPickup;
+import com.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -15,10 +18,19 @@ public class OrderUseCase {
 
     private final OrderGateway orderGateway;
     private final ProductGateway productGateway;
+    private final CheckoutOrderUseCaseImpl checkoutOrderUseCase;
+    private final IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl;
 
-    public OrderUseCase(OrderGateway orderGateway, ProductGateway productGateway) {
+    public OrderUseCase(
+            OrderGateway orderGateway,
+            ProductGateway productGateway,
+            CheckoutOrderUseCaseImpl checkoutOrderUseCase,
+            IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl
+    ) {
         this.orderGateway = orderGateway;
         this.productGateway = productGateway;
+        this.checkoutOrderUseCase = checkoutOrderUseCase;
+        this.isReadyPickupUseCaseImpl = isReadyPickupUseCaseImpl;
     }
 
     public Order createOrder(Order order) {
@@ -113,5 +125,34 @@ public class OrderUseCase {
         if (status1 == StatusOrder.PREPARACAO) return -1;
         if (status2 == StatusOrder.PREPARACAO) return 1;
         return 0;
+    }
+
+    public void updateStatusOrder(String orderId) {
+        Order order = orderGateway.findOrderById(orderId)
+                .orElseThrow(() -> new IllegalArgumentException("Order not found"));
+
+        // Check if the order has been paid
+        boolean isPaid = this.checkoutOrderUseCase.isPaid(orderId);
+
+        boolean isReady = this.isReadyPickupUseCaseImpl.isReady(orderId);
+
+
+        // Check if the order has been picked up
+        boolean isDone = this.isReadyPickupUseCaseImpl.isDone(orderId);
+
+
+        // Update StatusOrder based on payment and pickup status
+        if (isPaid && isDone) {
+            order.setStatusOrder(StatusOrder.FINALIZADO);
+        } else if (isReady) {
+            order.setStatusOrder(StatusOrder.PRONTO);
+        } else if (isPaid) {
+            order.setStatusOrder(StatusOrder.PAGO);
+            order.setPaymentMethod("Mercado Pago");
+        } else {
+            order.setStatusOrder(StatusOrder.NOVO);
+        }
+
+        orderGateway.updateOrder(order);
     }
 }

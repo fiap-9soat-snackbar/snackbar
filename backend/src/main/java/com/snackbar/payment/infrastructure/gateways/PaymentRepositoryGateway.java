@@ -7,6 +7,7 @@ import java.util.List;
 import com.snackbar.payment.application.gateways.PaymentGateway;
 import com.snackbar.payment.domain.entity.Payment;
 import com.snackbar.payment.domain.entity.PaymentMP;
+import com.snackbar.payment.infrastructure.MpService;
 import com.snackbar.payment.infrastructure.persistence.PaymentEntity;
 import com.snackbar.payment.infrastructure.persistence.PaymentMPEntity;
 import com.snackbar.payment.infrastructure.persistence.PaymentRepository;
@@ -25,15 +26,19 @@ public class PaymentRepositoryGateway implements PaymentGateway {
     private final PaymentMPRepository paymentMPRepository;
     private final PaymentEntityMapper paymentEntityMapper;
     private final PaymentMPEntityMapper paymentMPEntityMapper;
+    private final MpService mpService;
+
 
     public PaymentRepositoryGateway(PaymentRepository paymentRepository,
                                     PaymentMPRepository paymentMPRepository,
                                     PaymentEntityMapper paymentEntityMapper,
-                                    PaymentMPEntityMapper paymentMPEntityMapper) {
+                                    PaymentMPEntityMapper paymentMPEntityMapper,
+                                    MpService mpService) {
         this.paymentRepository = paymentRepository;
         this.paymentMPRepository = paymentMPRepository;
         this.paymentEntityMapper = paymentEntityMapper;
         this.paymentMPEntityMapper = paymentMPEntityMapper;
+        this.mpService = mpService;
     }
 
     @Override
@@ -63,5 +68,11 @@ public class PaymentRepositoryGateway implements PaymentGateway {
         //logger.info("Payment saved to database: {}", createdPayment);
         return createdPaymentMP;
     }
+
+    @Override
+    public void webHookExecution(PaymentMP paymentMP) {
+        this.mpService.postBackMercadoPago(paymentMP.callbackURL(), paymentMP);
+    }
+
 
 }
