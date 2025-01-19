@@ -9,5 +9,7 @@ public interface PaymentGateway {
     Payment createPayment(Payment payment);
     List<Payment> listPayments();
     PaymentMP createPaymentMP(PaymentMP paymentMP);
+    Payment getPaymentById(String id);
+    Payment updatePaymentExternalIdById(String id, String externalPaymentId);
 }
     

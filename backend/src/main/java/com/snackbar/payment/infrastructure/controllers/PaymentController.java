@@ -3,24 +3,20 @@ package com.snackbar.payment.infrastructure.controllers;
 import com.snackbar.payment.application.usecases.*;
 import com.snackbar.payment.domain.entity.Payment;
 import com.snackbar.payment.domain.entity.PaymentMP;
+import com.snackbar.payment.infrastructure.MpService;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.util.List;
 
-import com.snackbar.payment.infrastructure.MpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/* Logging imports
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;*/
-
 @RestController
 @RequestMapping("/api/payments")
 public class PaymentController {
-
-    // Logging definition
-    //private static final Logger logger = LoggerFactory.getLogger(PaymentController.class);
 
     private final CreatePaymentUseCase createPaymentUseCase;
     private final ListPaymentsUseCase listPaymentsUseCase;
@@ -28,6 +24,8 @@ public class PaymentController {
     private final PaymentDTOMapper paymentDTOMapper;
     private final PaymentMPDTOMapper paymentMPDTOMapper;
     private final MpService mpService;
+    private final GetPaymentByIdUseCase getPaymentByIdUseCase;
+    private final UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase;
 
     @Autowired
     public PaymentController(
@@ -36,6 +34,8 @@ public class PaymentController {
             CreatePaymentMPUseCase createPaymentMPUseCase,
             PaymentDTOMapper paymentDTOMapper,
             PaymentMPDTOMapper paymentMPDTOMapper,
+            GetPaymentByIdUseCase getPaymentByIdUseCase,
+            UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase,
             MpService mpService) {
         this.createPaymentUseCase = createPaymentUseCase;
         this.listPaymentsUseCase = listPaymentsUseCase;
@@ -43,22 +43,26 @@ public class PaymentController {
         this.paymentDTOMapper = paymentDTOMapper;
         this.paymentMPDTOMapper = paymentMPDTOMapper;
         this.mpService = mpService;
+        this.getPaymentByIdUseCase = getPaymentByIdUseCase;
+        this.updatePaymentExternalIdByIdUseCase = updatePaymentExternalIdByIdUseCase;
     }
 
     @PostMapping
     public ResponseEntity<CreatePaymentResponse> createPayment(@RequestBody CreatePaymentRequest request) {
-        //logger.info("Received request to create payment: {}", request);
 
         Payment payment = paymentDTOMapper.createRequestToDomain(request);
-        //logger.info("Payment converted to domain object: {}", payment);
         Payment createdPayment = createPaymentUseCase.createPayment(payment);
         var res = mpService.postMercadoPago(paymentDTOMapper.toPaymentMP(createdPayment));
+        
+        // Parse the JSON response using Gson
+        JsonObject jsonObject = JsonParser.parseString(res).getAsJsonObject();
+        String externalPaymentId = jsonObject.get("id").getAsString();
+        String paymentId = jsonObject.get("paymentId").getAsString();
+
+        Payment updatedPayment = updatePaymentExternalIdByIdUseCase.updatePaymentExternalIdById(paymentId,externalPaymentId);
         // lookup com cpf
         // gerar url
-        // criar usecase para atualizar externalid
-        //Payment createdPayment = createPaymentUseCase.createPayment(payment.orderId(), payment.paymentMethod());
-        CreatePaymentResponse response = paymentDTOMapper.createToResponse(createdPayment);
-        //logger.info("Payment created successfully: {}", response);
+        CreatePaymentResponse response = paymentDTOMapper.createToResponse(updatedPayment);
         return ResponseEntity.ok(response);
     }
 
@@ -66,6 +70,13 @@ public class PaymentController {
     public ResponseEntity<List<GetPaymentResponse>> listPayments() {
         List<Payment> retrievedPaymentsList = listPaymentsUseCase.listPayments();
         List<GetPaymentResponse> response = paymentDTOMapper.listToResponse(retrievedPaymentsList);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<GetPaymentResponse> getPaymentById(@PathVariable("id") String id) {
+        Payment retrievedPayment = getPaymentByIdUseCase.getPaymentById(id);
+        GetPaymentResponse response = paymentDTOMapper.getToResponse(retrievedPayment);
         return ResponseEntity.ok(response);
     }
 

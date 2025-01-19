@@ -1,7 +1,5 @@
 package com.snackbar.payment.infrastructure.gateways;
 
-import java.util.List;
-
 // This should be equivalent to the previous ServiceImpl
 
 import com.snackbar.payment.application.gateways.PaymentGateway;
@@ -11,6 +9,8 @@ import com.snackbar.payment.infrastructure.persistence.PaymentEntity;
 import com.snackbar.payment.infrastructure.persistence.PaymentMPEntity;
 import com.snackbar.payment.infrastructure.persistence.PaymentRepository;
 import com.snackbar.payment.infrastructure.persistence.PaymentMPRepository;
+
+import java.util.List;
 
 /*Logging imports
 import org.slf4j.Logger;
@@ -62,6 +62,23 @@ public class PaymentRepositoryGateway implements PaymentGateway {
         PaymentMP createdPaymentMP = paymentMPEntityMapper.toDomainObj(savedObj);
         //logger.info("Payment saved to database: {}", createdPayment);
         return createdPaymentMP;
+    }
+
+    @Override
+    public Payment getPaymentById(String id) {
+        PaymentEntity retrievedObj = paymentRepository.findById(id).orElse(null);
+        Payment retrievedPayment = paymentEntityMapper.toDomainObj(retrievedObj);
+        return retrievedPayment;
+    } 
+
+    @Override
+    public Payment updatePaymentExternalIdById(String id, String externalPaymentId) {
+        PaymentEntity retrievedPayment = paymentRepository.findById(id).orElse(null);
+        retrievedPayment.setExternalPaymentId(externalPaymentId);
+        PaymentEntity savedObj = paymentRepository.save(retrievedPayment);
+        Payment updatedPayment = paymentEntityMapper.toDomainObj(savedObj);
+        return updatedPayment;
+
     }
 
 }

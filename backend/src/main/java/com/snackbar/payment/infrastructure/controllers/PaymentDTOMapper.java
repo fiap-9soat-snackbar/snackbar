@@ -39,12 +39,16 @@ public class PaymentDTOMapper {
             return null;
         }
 
+        String id = null;
+        String cpf = "UM_CPF";
+        String callbackURL = "http://localhost:8080/api/payment/webhook";
+
         return new PaymentMP(
+                id,
                 payment.id(),
-                payment.orderId(),
                 payment.totalDue(),
-                payment.paymentMethod(),
-                payment.paymentStatus()
+                cpf,
+                callbackURL
         );
     }
 
