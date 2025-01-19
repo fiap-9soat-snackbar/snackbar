@@ -31,16 +31,14 @@ public class StartPreparationUseCase {
     public Cooking updateCooking(Cooking cooking) {
         // 1. Get and validate order
         Order order = orderService.searchOrderId(cooking.orderId());
-        validateOrderStatus(order);
+        validateOrderStatus(order, StatusOrder.RECEBIDO);
         
         try {
             // 2. Create cooking record with RECEBIDO status
-            System.out.println("cooking.orderId(): " +  cooking.orderId());
             cookingGateway.updateCookingStatus(cooking.orderId(), StatusOrder.PREPARACAO);
             Cooking savedCooking = cookingGateway.findByOrderId(cooking.orderId());
             // 3. Update order status
-            System.out.println("Before");
-            orderService.updateOrderStatus(savedCooking.id(), StatusOrder.PREPARACAO);
+            orderService.updateOrderStatus(cooking.orderId(), StatusOrder.PREPARACAO);
 
             return savedCooking;
             
@@ -49,8 +47,8 @@ public class StartPreparationUseCase {
         }
     }
 
-    private void validateOrderStatus(Order order) {
-        if (order.getStatusOrder() != StatusOrder.RECEBIDO) {
+    private void validateOrderStatus(Order order, StatusOrder currentStatusOrder) {
+        if (order.getStatusOrder() != currentStatusOrder) {
             throw new OrderStatusInvalidException(
                 "Order must be in RECEBIDO status to be received for cooking. Current status: " + order.getStatusOrder()
             );

@@ -28,7 +28,7 @@ public class CreateCookingUseCase {
     public Cooking createCooking(Cooking cooking) {
         // 1. Get and validate order
         Order order = orderService.searchOrderId(cooking.orderId());
-        validateOrderStatus(order);
+        validateOrderStatus(order, StatusOrder.PAGO);
 
         try {
             // 2. Create cooking record with RECEBIDO status
@@ -46,8 +46,8 @@ public class CreateCookingUseCase {
         }
     }
 
-    private void validateOrderStatus(Order order) {
-        if (order.getStatusOrder() != StatusOrder.PAGO) {
+    private void validateOrderStatus(Order order, StatusOrder currentStatusOrder) {
+        if (order.getStatusOrder() != currentStatusOrder) {
             throw new OrderStatusInvalidException(
                 "Order must be in PAGO status to be received for cooking. Current status: " + order.getStatusOrder()
             );

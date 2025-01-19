@@ -33,11 +33,9 @@ public class CookingController {
 
     @PostMapping("/start-preparation/{id}")
     public ResponseEntity<CreateCookingResponse> startPreparation(@PathVariable String id) {
-        System.out.println("TESTING");
         Cooking cooking = cookingDTOMapper.createRequestToDomain(id);
         Cooking result = startPreparationUseCase.updateCooking(cooking);
-        System.out.println("result: " + result);
-        CreateCookingResponse response = cookingDTOMapper.createToResponse(cooking);
+        CreateCookingResponse response = cookingDTOMapper.createToResponse(result);
         return ResponseEntity.ok(response);
     }
 }
