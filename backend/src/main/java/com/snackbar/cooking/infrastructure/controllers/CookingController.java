@@ -19,13 +19,15 @@ public class CookingController {
     private final StartPreparationUseCase startPreparationUseCase;
     private final FinishPreparationUseCase finishPreparationUseCase;
     private final GetAllCookingsUseCase getAllCookingsUseCase;
+    private final GetCookingByOrderIdUseCase getCookingByOrderIdUseCase;
     private final CookingDTOMapper cookingDTOMapper;
 
-    public CookingController(CreateCookingUseCase createCookingUseCase, StartPreparationUseCase startPreparationUseCase, FinishPreparationUseCase finishPreparationUseCase, GetAllCookingsUseCase getAllCookingsUseCase, CookingDTOMapper cookingDTOMapper) {
+    public CookingController(CreateCookingUseCase createCookingUseCase, StartPreparationUseCase startPreparationUseCase, FinishPreparationUseCase finishPreparationUseCase, GetAllCookingsUseCase getAllCookingsUseCase, GetCookingByOrderIdUseCase getCookingByOrderIdUseCase, CookingDTOMapper cookingDTOMapper) {
         this.createCookingUseCase = createCookingUseCase;
         this.startPreparationUseCase = startPreparationUseCase;
         this.finishPreparationUseCase = finishPreparationUseCase;
         this.getAllCookingsUseCase = getAllCookingsUseCase;
+        this.getCookingByOrderIdUseCase = getCookingByOrderIdUseCase;
         this.cookingDTOMapper = cookingDTOMapper;
     }
 
@@ -65,6 +67,13 @@ public class CookingController {
                 .map(cookingDTOMapper::createToResponse)
                 .collect(Collectors.toList());
         
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<CreateCookingResponse> getCookingByOrderId(@PathVariable String id) {
+        Cooking cooking = getCookingByOrderIdUseCase.execute(id);
+        CreateCookingResponse response = cookingDTOMapper.createToResponse(cooking);
         return ResponseEntity.ok(response);
     }
 }

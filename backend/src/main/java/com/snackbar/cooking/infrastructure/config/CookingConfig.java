@@ -9,6 +9,7 @@ import com.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway;
 import com.snackbar.cooking.infrastructure.persistence.CookingRepository;
 import com.snackbar.cooking.application.usecases.CreateCookingUseCase;
 import com.snackbar.cooking.application.usecases.GetAllCookingsUseCase;
+import com.snackbar.cooking.application.usecases.GetCookingByOrderIdUseCase;
 import com.snackbar.cooking.application.usecases.StartPreparationUseCase;
 import com.snackbar.order.service.OrderService;
 import com.snackbar.cooking.infrastructure.controllers.CookingDTOMapper;
@@ -44,6 +45,11 @@ public class CookingConfig {
     @Bean
     public GetAllCookingsUseCase getAllCookingsUseCase(CookingGateway cookingGateway) {
         return new GetAllCookingsUseCase(cookingGateway);
+    }
+
+    @Bean
+    public GetCookingByOrderIdUseCase getCookingByOrderIdUseCase(CookingGateway cookingGateway) {
+        return new GetCookingByOrderIdUseCase(cookingGateway);
     }
 
 }
