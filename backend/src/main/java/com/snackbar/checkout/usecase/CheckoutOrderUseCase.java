@@ -1,5 +1,7 @@
 package com.snackbar.checkout.usecase;
 
+import com.snackbar.orderRefactory.domain.entity.Order;
+
 public interface CheckoutOrderUseCase {
-    void pay(String orderId);
+    Order checkout(String orderId);
 }

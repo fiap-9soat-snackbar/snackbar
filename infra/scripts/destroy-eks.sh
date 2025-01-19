@@ -18,12 +18,12 @@ echo "Removendo o Helm Chart snackbar..."
 helm uninstall snackbar --namespace ns-snackbar
 echo "Helm Chart snackbar removido com sucesso!"
 
-# 1.2 Remover o Helm Chart snackbar-mongo-db
-echo "Removendo o Helm Chart snackbar-mongo-db..."
-helm uninstall snackbar-mongo-db --namespace ns-snackbar
-echo "Helm Chart snackbar-mongo-db removido com sucesso!"
+# 1.2 Remover o Helm Chart mongodb-headless
+echo "Removendo o Helm Chart mongodb-headless..."
+helm uninstall mongodb --namespace ns-snackbar
+echo "Helm Chart mongodb removido com sucesso!"
 
-# 1.3 Remover o namespace ns-snackbar
+# 1.3 Remover o namespace ns-snackbarsd
 echo "Removendo o namespace ns-snackbar..."
 kubectl delete namespace ns-snackbar
 echo "Namespace ns-snackbar removido com sucesso!"
