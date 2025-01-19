@@ -159,6 +159,13 @@ public class OrderService { // Service for managing orders
         orderRepository.save(order);
     }
 
+    public void updateOrderStatus(String orderId, StatusOrder newStatus) {
+        Order order = orderRepository.findById(orderId)
+            .orElseThrow(() -> new IllegalArgumentException("Order not found with ID: " + orderId));
+        order.setStatusOrder(newStatus);
+        orderRepository.save(order);
+    }
+
     // Search order by orderNumber
     public Order getOrderByOrderNumber(String orderNumber) {
         return orderRepository.findByOrderNumber(orderNumber)
