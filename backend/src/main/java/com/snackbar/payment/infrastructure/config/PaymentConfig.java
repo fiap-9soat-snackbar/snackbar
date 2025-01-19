@@ -46,6 +46,13 @@ public class PaymentConfig {
         //logger.info("Creating CreatePaymentUseCase bean");
         return new ListPaymentsUseCase(paymentGateway);
     }
+
+    @Bean
+    public WebHookExecution webHookExecution(PaymentGateway paymentGateway) {
+        // Logging
+        //logger.info("Creating CreatePaymentUseCase bean");
+        return new WebHookExecution(paymentGateway);
+    }
     
     @Bean
     public CreatePaymentMPUseCase createPaymentMPUseCase(PaymentGateway paymentGateway, WebHookExecution webHookExecution) {
@@ -82,12 +89,6 @@ public class PaymentConfig {
         return new UpdatePaymentStatusWebhook(paymentGateway, getPaymentByExternalIdUseCase);
     }
 
-    @Bean
-    public PaymentGateway paymentGateway(PaymentRepository paymentRepository, PaymentMPRepository paymentMPRepository, PaymentEntityMapper paymentEntityMapper, PaymentMPEntityMapper paymentMPEntityMapper) {
-        // Logging
-        //logger.info("Creating CreatePaymentUseCase bean");
-        return new WebHookExecution(paymentGateway);
-    }
 
     @Bean
     public MpService createMpService(WebClient webClient) {
