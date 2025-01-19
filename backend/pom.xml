@@ -116,9 +116,6 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
-
-    </dependencies>
-
                <!-- Spring Boot Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
