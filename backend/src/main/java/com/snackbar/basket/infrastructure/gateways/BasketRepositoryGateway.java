@@ -6,6 +6,8 @@ import com.snackbar.basket.domain.entity.Basket;
 import com.snackbar.basket.domain.entity.Item;
 import com.snackbar.basket.application.gateways.BasketUseCaseGateway;
 
+import java.util.List;
+
 public class BasketRepositoryGateway implements BasketUseCaseGateway {
 
     private final BasketRepository basketRepository;
@@ -32,6 +34,11 @@ public class BasketRepositoryGateway implements BasketUseCaseGateway {
     }
 
     @Override
+    public List<Basket> findAllBaskets() {
+        return basketRepository.findAll().stream().map(basketEntityMapper::toDomainObj).toList();
+    }
+
+    @Override
     public Basket addItemToBasket(String basketId, Item item) {
         BasketEntity basketEntity = basketRepository.findById(basketId).orElseThrow(() -> new RuntimeException("Basket not found"));
         basketEntity.getItems().add(itemEntityMapper.toEntity(item));
@@ -40,9 +47,9 @@ public class BasketRepositoryGateway implements BasketUseCaseGateway {
     }
 
     @Override
-    public Basket deleteItemToBasket(String basketId, String itemId) {
+    public Basket deleteItemToBasket(String basketId, String name) {
         BasketEntity basketEntity = basketRepository.findById(basketId).orElseThrow(() -> new RuntimeException("Basket not found"));
-        basketEntity.getItems().removeIf(item -> item.getId().equals(itemId));
+        basketEntity.getItems().removeIf(item -> item.getName().equals(name));
         BasketEntity updatedEntity = basketRepository.save(basketEntity);
         return basketEntityMapper.toDomainObj(updatedEntity);
     }

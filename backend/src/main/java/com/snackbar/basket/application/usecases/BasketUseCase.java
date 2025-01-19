@@ -5,6 +5,9 @@ import com.snackbar.basket.domain.entity.Basket;
 import com.snackbar.basket.domain.entity.Item;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.List;
+
 public class BasketUseCase {
 
     private final BasketUseCaseGateway basketUseCaseGateway;
@@ -14,7 +17,18 @@ public class BasketUseCase {
     }
 
     public Basket createBasket(Basket basket) {
-        return basketUseCaseGateway.createBasket(basket);
+        BigDecimal totalPrice = basket.items().stream()
+                .map(item -> item.price().multiply(BigDecimal.valueOf(item.quantity())))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        Basket updatedBasket = new Basket(
+                basket.id(),
+                basket.basketDateTime(),
+                basket.cpf(),
+                basket.name(),
+                basket.items(),
+                totalPrice
+        );
+        return basketUseCaseGateway.createBasket(updatedBasket);
     }
 
     public Basket findBasket(String basketId) {
@@ -25,7 +39,11 @@ public class BasketUseCase {
         return basketUseCaseGateway.addItemToBasket(basketId, item);
     }
 
-    public Basket deleteItemToBasket(String basketId, String itemId) {
-        return basketUseCaseGateway.deleteItemToBasket(basketId, itemId);
+    public Basket deleteItemToBasket(String basketId, String name) {
+        return basketUseCaseGateway.deleteItemToBasket(basketId, name);
+    }
+
+    public List<Basket> findAllBaskets() {
+        return basketUseCaseGateway.findAllBaskets();
     }
 }
