@@ -1,6 +1,7 @@
 package com.snackbar.orderRefactory.application.usecases;
 
 import com.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl;
+import com.snackbar.iam.application.UserService;
 import com.snackbar.orderRefactory.application.gateways.ProductGateway;
 import com.snackbar.orderRefactory.domain.entity.Order;
 import com.snackbar.orderRefactory.domain.entity.OrderItem;
@@ -20,17 +21,20 @@ public class OrderUseCase {
     private final ProductGateway productGateway;
     private final CheckoutOrderUseCaseImpl checkoutOrderUseCase;
     private final IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl;
+    private final UserService userService;
 
     public OrderUseCase(
             OrderGateway orderGateway,
             ProductGateway productGateway,
             CheckoutOrderUseCaseImpl checkoutOrderUseCase,
-            IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl
+            IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl,
+            UserService userService
     ) {
         this.orderGateway = orderGateway;
         this.productGateway = productGateway;
         this.checkoutOrderUseCase = checkoutOrderUseCase;
         this.isReadyPickupUseCaseImpl = isReadyPickupUseCaseImpl;
+        this.userService = userService;
     }
 
     public Order createOrder(Order order) {
@@ -39,10 +43,10 @@ public class OrderUseCase {
         }
 
         // Validate if the user exists and get the user's name
-        String userName = orderGateway.findUserByCpf(order.getCpf())
-                .orElseThrow(() -> new IllegalArgumentException("User with provided CPF does not exist"));
 
-        order.setName(userName);
+        var user = this.userService.getUserByCpf(order.getCpf());
+
+        order.setName(user.getName());
 
         String lastOrderNumber = orderGateway.findTopByOrderByOrderNumberDesc();
         order.setOrderNumber(Order.generateOrderNumber(lastOrderNumber));
@@ -131,27 +135,7 @@ public class OrderUseCase {
         Order order = orderGateway.findOrderById(orderId)
                 .orElseThrow(() -> new IllegalArgumentException("Order not found"));
 
-        // Check if the order has been paid
-        boolean isPaid = this.checkoutOrderUseCase.isPaid(orderId);
 
-        boolean isReady = this.isReadyPickupUseCaseImpl.isReady(orderId);
-
-
-        // Check if the order has been picked up
-        boolean isDone = this.isReadyPickupUseCaseImpl.isDone(orderId);
-
-
-        // Update StatusOrder based on payment and pickup status
-        if (isPaid && isDone) {
-            order.setStatusOrder(StatusOrder.FINALIZADO);
-        } else if (isReady) {
-            order.setStatusOrder(StatusOrder.PRONTO);
-        } else if (isPaid) {
-            order.setStatusOrder(StatusOrder.PAGO);
-            order.setPaymentMethod("Mercado Pago");
-        } else {
-            order.setStatusOrder(StatusOrder.NOVO);
-        }
 
         orderGateway.updateOrder(order);
     }

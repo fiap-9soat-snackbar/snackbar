@@ -1,6 +1,7 @@
 package com.snackbar.orderRefactory.config;
 
 import com.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl;
+import com.snackbar.iam.application.UserService;
 import com.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapper;
 import com.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway;
 import com.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl;
@@ -21,9 +22,10 @@ public class OrderConfig {
             OrderRepositoryGateway orderRepositoryGateway,
             ProductServiceGateway productServiceGateway,
             CheckoutOrderUseCaseImpl checkoutOrderUseCaseImpl,
-            IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl
+            IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl,
+            UserService userService
     ) {
-        return new OrderUseCase(orderRepositoryGateway, productServiceGateway, checkoutOrderUseCaseImpl, isReadyPickupUseCaseImpl);
+        return new OrderUseCase(orderRepositoryGateway, productServiceGateway, checkoutOrderUseCaseImpl, isReadyPickupUseCaseImpl, userService);
     }
 
     @Bean

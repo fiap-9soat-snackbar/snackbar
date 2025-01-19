@@ -4,28 +4,40 @@ import com.snackbar.basket.application.usecases.BasketUseCase;
 import com.snackbar.basket.domain.entity.Basket;
 import com.snackbar.checkout.entity.Checkout;
 import com.snackbar.checkout.gateway.CheckoutRepository;
-import com.snackbar.order.domain.model.Order;
-import com.snackbar.order.domain.model.StatusOrder;
-import com.snackbar.order.service.OrderService;
+import com.snackbar.orderRefactory.domain.entity.Order;
+import com.snackbar.orderRefactory.domain.entity.OrderItem;
+import com.snackbar.orderRefactory.domain.valueobject.StatusOrder;
+import com.snackbar.orderRefactory.application.usecases.OrderUseCase;
+import com.snackbar.payment.application.usecases.CreatePaymentUseCase;
+import com.snackbar.payment.domain.entity.Payment;
+import com.snackbar.payment.infrastructure.controllers.CreatePaymentRequest;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.stream.Collectors;
 
 @Component
 public class CheckoutOrderUseCaseImpl implements CheckoutOrderUseCase {
 
     private final CheckoutRepository checkoutRepository;
-    private final OrderService orderService;
     private final BasketUseCase basketUseCase;
+    private final OrderUseCase orderUseCase;
+    private final CreatePaymentUseCase createPaymentUseCase;
 
-    public CheckoutOrderUseCaseImpl(CheckoutRepository checkoutRepository, OrderService orderService, BasketUseCase basketUseCase) {
+    public CheckoutOrderUseCaseImpl(
+            CheckoutRepository checkoutRepository,
+            BasketUseCase basketUseCase,
+            OrderUseCase orderUseCase,
+            CreatePaymentUseCase createPaymentUseCase
+    ) {
         this.checkoutRepository = checkoutRepository;
-        this.orderService = orderService;
         this.basketUseCase = basketUseCase;
+        this.orderUseCase = orderUseCase;
+        this.createPaymentUseCase = createPaymentUseCase;
     }
 
     @Override
-    public void pay(String basketId) {
+    public void checkout(String basketId) {
         Basket basket = basketUseCase.findBasket(basketId);
 
         Order order = new Order();
@@ -35,24 +47,17 @@ public class CheckoutOrderUseCaseImpl implements CheckoutOrderUseCase {
         order.setTotalPrice(basket.totalPrice());
 
         order.setItems(basket.items().stream().map(item -> {
-            com.snackbar.order.domain.model.Item orderItem = new com.snackbar.order.domain.model.Item();
+            OrderItem orderItem = new OrderItem();
             orderItem.setName(item.name());
             orderItem.setQuantity(item.quantity());
             return orderItem;
         }).collect(Collectors.toList()));
 
-//        basketUseCase.createBasket(order);
+        Order orderCreated = this.orderUseCase.createOrder(order);
 
-//
-//        Order orderCreated = this.orderService.createOrder(order);
-//
-//        Checkout checkout = new Checkout();
-//        checkout.setOrderId(orderCreated.getId());
-//        checkout.setPaymentMethod("Mercado Pago");
-//        checkoutRepository.save(checkout);
+        Payment localPayment = new Payment(null, orderCreated.getId(), new BigDecimal(0.0), null, "mercado_pago", null);
 
-//         Atualizar o status da ordem
-//        orderService.updateStatusOrder(orderId);
+        this.createPaymentUseCase.createPayment(localPayment);
     }
 
     @Override

@@ -1,10 +1,12 @@
 package com.snackbar.orderRefactory.domain.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @Data
+@NoArgsConstructor
 public class OrderItem {
     private String id;
     private String name;

@@ -14,7 +14,7 @@ public class CheckoutController {
     }
     @PostMapping("/{basketId}")
     public String makePayment(@PathVariable String basketId) {
-        checkoutOrderUseCase.pay(basketId);
+        checkoutOrderUseCase.checkout(basketId);
         return "Pagamento do pedido " + basketId + " pago via Mercado Pago (QR Code) com sucesso!";
     }
 }
