@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface CookingRepository extends MongoRepository<CookingEntity, String> {
-    @Query("{ 'orderId' : ?0 }")
+    // @Query("{ 'orderId' : ?0 }")
     CookingEntity findByOrderId(String orderId);
 }

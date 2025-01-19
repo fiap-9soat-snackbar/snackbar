@@ -29,11 +29,9 @@ public class CookingRepositoryGateway implements CookingGateway {
 
     @Override
     public Cooking updateCookingStatus(String orderId, StatusOrder status) {
-        System.out.println("orderId: " + orderId);
-        System.out.println("status: " + status);
-        System.out.println("Obtendo o cooking:");
+
         CookingEntity entity = cookingRepository.findByOrderId(orderId);
-        System.out.println("entity: " + entity);
+        
         if (entity == null) {
             throw new RuntimeException("Cooking not found for orderId: " + orderId);
         }

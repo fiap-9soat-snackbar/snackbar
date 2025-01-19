@@ -4,18 +4,19 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.snackbar.order.domain.model.StatusOrder;
+
 @Document(collection = "cookings")
 public class CookingEntity {
 
     @Id
     private String id;
 
-    @Field("orderId")
     private String orderId;
     
-    private Enum status;
+    private StatusOrder status;
 
-    public CookingEntity(String id, String orderId, Enum status) {
+    public CookingEntity(String id, String orderId, StatusOrder status) {
         this.id = id;
         this.orderId = orderId;
         this.status = status;
@@ -38,11 +39,11 @@ public class CookingEntity {
         this.orderId = orderId;
     }
 
-    public Enum getStatus() {
+    public StatusOrder getStatus() {
         return status;
     }
 
-    public void setStatus(Enum status) {
+    public void setStatus(StatusOrder status) {
         this.status = status;
     }
 }
