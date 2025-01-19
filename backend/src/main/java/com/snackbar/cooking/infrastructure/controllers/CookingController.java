@@ -15,11 +15,13 @@ import java.util.stream.Collectors;
 public class CookingController {
     private final CreateCookingUseCase createCookingUseCase;
     private final StartPreparationUseCase startPreparationUseCase;
+    private final FinishPreparationUseCase finishPreparationUseCase;
     private final CookingDTOMapper cookingDTOMapper;
 
-    public CookingController(CreateCookingUseCase createCookingUseCase, StartPreparationUseCase startPreparationUseCase, CookingDTOMapper cookingDTOMapper) {
+    public CookingController(CreateCookingUseCase createCookingUseCase, StartPreparationUseCase startPreparationUseCase, FinishPreparationUseCase finishPreparationUseCase, CookingDTOMapper cookingDTOMapper) {
         this.createCookingUseCase = createCookingUseCase;
         this.startPreparationUseCase = startPreparationUseCase;
+        this.finishPreparationUseCase = finishPreparationUseCase;
         this.cookingDTOMapper = cookingDTOMapper;
     }
 
@@ -35,6 +37,14 @@ public class CookingController {
     public ResponseEntity<CreateCookingResponse> startPreparation(@PathVariable String id) {
         Cooking cooking = cookingDTOMapper.createRequestToDomain(id);
         Cooking result = startPreparationUseCase.updateCooking(cooking);
+        CreateCookingResponse response = cookingDTOMapper.createToResponse(result);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/finish-preparation/{id}")
+    public ResponseEntity<CreateCookingResponse> finishPreparation(@PathVariable String id) {
+        Cooking cooking = cookingDTOMapper.createRequestToDomain(id);
+        Cooking result = finishPreparationUseCase.updateCooking(cooking);
         CreateCookingResponse response = cookingDTOMapper.createToResponse(result);
         return ResponseEntity.ok(response);
     }

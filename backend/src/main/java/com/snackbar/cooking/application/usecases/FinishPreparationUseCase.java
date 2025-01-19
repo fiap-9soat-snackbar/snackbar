@@ -13,13 +13,12 @@ import com.snackbar.cooking.infrastructure.persistence.CookingRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class StartPreparationUseCase {
-
+public class FinishPreparationUseCase {
     private final CookingGateway cookingGateway;
     private final CookingRepository cookingRepository;
     private final OrderService orderService;
 
-    public StartPreparationUseCase(CookingGateway cookingGateway, CookingRepository cookingRepository, OrderService orderService) {
+    public FinishPreparationUseCase(CookingGateway cookingGateway, CookingRepository cookingRepository, OrderService orderService) {
         this.cookingGateway = cookingGateway;
         this.cookingRepository = cookingRepository;
         this.orderService = orderService;
@@ -28,14 +27,14 @@ public class StartPreparationUseCase {
     public Cooking updateCooking(Cooking cooking) {
         // 1. Get and validate order
         Order order = orderService.searchOrderId(cooking.orderId());
-        validateOrderStatus(order, StatusOrder.RECEBIDO);
+        validateOrderStatus(order, StatusOrder.PREPARACAO);
         
         try {
             // 2. Create cooking record with RECEBIDO status
-            cookingGateway.updateCookingStatus(cooking.orderId(), StatusOrder.PREPARACAO);
+            cookingGateway.updateCookingStatus(cooking.orderId(), StatusOrder.PRONTO);
             Cooking savedCooking = cookingGateway.findByOrderId(cooking.orderId());
             // 3. Update order status
-            orderService.updateOrderStatus(cooking.orderId(), StatusOrder.PREPARACAO);
+            orderService.updateOrderStatus(cooking.orderId(), StatusOrder.PRONTO);
 
             return savedCooking;
             
@@ -47,8 +46,9 @@ public class StartPreparationUseCase {
     private void validateOrderStatus(Order order, StatusOrder currentStatusOrder) {
         if (order.getStatusOrder() != currentStatusOrder) {
             throw new OrderStatusInvalidException(
-                "Order must be in RECEBIDO status to be received for cooking. Current status: " + order.getStatusOrder()
+                "Order must be in PREPARACAO status to be received for cooking. Current status: " + order.getStatusOrder()
             );
         }
     }
+
 }
