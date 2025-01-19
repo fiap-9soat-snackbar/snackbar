@@ -78,7 +78,6 @@ public class PaymentRepositoryGateway implements PaymentGateway {
         PaymentEntity savedObj = paymentRepository.save(retrievedPayment);
         Payment updatedPayment = paymentEntityMapper.toDomainObj(savedObj);
         return updatedPayment;
-
     }
 
     @Override
@@ -86,6 +85,15 @@ public class PaymentRepositoryGateway implements PaymentGateway {
         PaymentEntity retrievedObj = paymentRepository.findByExternalPaymentId(externalId).orElse(null);
         Payment retrievedPayment = paymentEntityMapper.toDomainObj(retrievedObj);
         return retrievedPayment;
+    }
+
+    @Override
+    public Payment updatePaymentStatusByExternalId(String externalId, String paymentStatus) {
+        PaymentEntity retrievedPayment = paymentRepository.findByExternalPaymentId(externalId).orElse(null);
+        retrievedPayment.setPaymentStatus(paymentStatus);
+        PaymentEntity savedObj = paymentRepository.save(retrievedPayment);
+        Payment updatedPayment = paymentEntityMapper.toDomainObj(savedObj);
+        return updatedPayment;
     }
 
 }

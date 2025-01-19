@@ -12,5 +12,6 @@ public interface PaymentGateway {
     Payment getPaymentById(String id);
     Payment updatePaymentExternalIdById(String id, String externalPaymentId);
     Payment getPaymentByExternalId(String externalId);
+    Payment updatePaymentStatusByExternalId(String externalId, String paymentStatus);
 }
     

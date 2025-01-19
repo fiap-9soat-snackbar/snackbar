@@ -52,4 +52,14 @@ public class PaymentDTOMapper {
         );
     }
 
+    public Payment updateRequestToDomain(UpdatePaymentStatusByExternalIdRequest request) {
+        String id = null;
+        String orderId = null;
+        BigDecimal totalDue = new BigDecimal(0.0);
+        String paymentStatus = request.paymentStatus();
+        String paymentMethod = null;
+        String externalPaymentId = request.externalId();
+        return new Payment(id, orderId, totalDue, paymentStatus, paymentMethod, externalPaymentId);
+    }
+
 }

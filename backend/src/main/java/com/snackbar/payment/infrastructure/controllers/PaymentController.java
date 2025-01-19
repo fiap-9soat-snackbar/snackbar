@@ -27,6 +27,7 @@ public class PaymentController {
     private final GetPaymentByIdUseCase getPaymentByIdUseCase;
     private final UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase;
     private final GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase;
+    private final UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase;
 
     @Autowired
     public PaymentController(
@@ -38,6 +39,7 @@ public class PaymentController {
             GetPaymentByIdUseCase getPaymentByIdUseCase,
             UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase,
             GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase,
+            UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase,
             MpService mpService) {
         this.createPaymentUseCase = createPaymentUseCase;
         this.listPaymentsUseCase = listPaymentsUseCase;
@@ -48,6 +50,7 @@ public class PaymentController {
         this.getPaymentByIdUseCase = getPaymentByIdUseCase;
         this.updatePaymentExternalIdByIdUseCase = updatePaymentExternalIdByIdUseCase;
         this.getPaymentByExternalIdUseCase = getPaymentByExternalIdUseCase;
+        this.updatePaymentStatusByExternalIdUseCase = updatePaymentStatusByExternalIdUseCase;
     }
 
     @PostMapping
@@ -98,4 +101,10 @@ public class PaymentController {
         return ResponseEntity.ok(response);
     }
 
+    @PatchMapping("/updateStatusWebhook")
+    public ResponseEntity<GetPaymentResponse> updatePaymentStatusByExternalId(@RequestBody UpdatePaymentStatusByExternalIdRequest request) {
+        Payment updatedPayment = updatePaymentStatusByExternalIdUseCase.updatePaymentStatus(request.externalId(), request.paymentStatus());
+        GetPaymentResponse response = paymentDTOMapper.getToResponse(updatedPayment);
+        return ResponseEntity.ok(response);
+    }
 }

@@ -74,6 +74,13 @@ public class PaymentConfig {
     }
 
     @Bean
+    public UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase(PaymentGateway paymentGateway, GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase) {
+        // Logging
+        //logger.info("Creating CreatePaymentUseCase bean");
+        return new UpdatePaymentStatusWebhook(paymentGateway, getPaymentByExternalIdUseCase);
+    }
+
+    @Bean
     public PaymentGateway paymentGateway(PaymentRepository paymentRepository, PaymentMPRepository paymentMPRepository, PaymentEntityMapper paymentEntityMapper, PaymentMPEntityMapper paymentMPEntityMapper) {
         // Logging
         //logger.info("Creating PaymenttGateway bean");

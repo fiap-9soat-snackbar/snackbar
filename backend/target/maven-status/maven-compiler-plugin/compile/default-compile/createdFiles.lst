@@ -116,9 +116,11 @@ com/snackbar/cooking/presentation/CookingController.class
 com/snackbar/iam/web/AuthenticationController.class
 com/snackbar/checkout/presentation/CheckoutController.class
 com/snackbar/productv2/application/usecases/GetProductv2ByIdUseCase.class
+com/snackbar/payment/application/usecases/UpdatePaymentStatusWebhook.class
 com/snackbar/orderRefactory/application/gateways/ProductGateway.class
 com/snackbar/iam/infrastructure/UserRepository.class
 com/snackbar/productv2/infrastructure/gateways/Productv2RepositoryGateway.class
+com/snackbar/payment/infrastructure/controllers/UpdatePaymentStatusByExternalIdRequest.class
 com/snackbar/cooking/application/usecase/ReceiveOrderUseCase.class
 com/snackbar/checkout/usecase/CheckoutOrderUseCaseImpl.class
 com/snackbar/payment/infrastructure/persistence/PaymentMPEntity.class
