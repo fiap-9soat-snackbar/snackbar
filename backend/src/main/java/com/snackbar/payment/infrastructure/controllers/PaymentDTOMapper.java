@@ -41,7 +41,7 @@ public class PaymentDTOMapper {
 
         String id = null;
         String cpf = "UM_CPF";
-        String callbackURL = "http://localhost:8080/api/payment/webhook";
+        String callbackURL = "http://localhost:8080/api/payment/updateStatusWebhook";
 
         return new PaymentMP(
                 id,
