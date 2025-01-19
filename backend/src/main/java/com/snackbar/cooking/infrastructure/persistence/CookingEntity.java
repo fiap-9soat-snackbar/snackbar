@@ -1,12 +1,18 @@
 package com.snackbar.cooking.infrastructure.persistence;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "cookings")
 public class CookingEntity {
+
     @Id
     private String id;
+
+    @Field("orderId")
     private String orderId;
+    
     private Enum status;
 
     public CookingEntity(String id, String orderId, Enum status) {

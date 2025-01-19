@@ -160,8 +160,12 @@ public class OrderService { // Service for managing orders
     }
 
     public void updateOrderStatus(String orderId, StatusOrder newStatus) {
+        System.out.println("orderId: " + orderId);
+        System.out.println("newStatus: " + newStatus);
         Order order = orderRepository.findById(orderId)
             .orElseThrow(() -> new IllegalArgumentException("Order not found with ID: " + orderId));
+        System.out.println("order: " + order);
+        System.out.println("newStatus: " + newStatus);
         order.setStatusOrder(newStatus);
         orderRepository.save(order);
     }
