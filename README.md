@@ -188,7 +188,7 @@ If any of these tools are not installed, follow the links above to complete the 
 
 ### Backend (Java Spring Boot):
 - Configured as a **Deployment** and implemented via Helm Chart.
-- Main container **snackbar** used for the API service.
+   - Main container **snackbar** used for the API service.
 - Communication via port **8080** for APIs exposed by the Kubernetes Service.
 - Secret configuration stored in **Kubernetes Secret**:
   - **snackbar Secret:** Stores the database access credentials, connection string, JWT token, and its validity period.
@@ -197,8 +197,8 @@ If any of these tools are not installed, follow the links above to complete the 
 
 ### MongoDB:
 - Configured as a **StatefulSet** and implemented via Helm Chart.
-- **Init container wait-mongo** used to configure the MongoDB replicaset.
-- Main container **mongo-c** used as the primary container for MongoDB database.
+   - Init container **wait-mongo** used to configure the MongoDB replicaset.
+   - Main container **mongo-c** used as the primary container for MongoDB database.
 - StatefulSet starts with **2 replicas** needed for replicaset mode.
 - Communication via port **27017** exposed by the Kubernetes Service.
 - Secret configuration stored in **Kubernetes Secret**:
