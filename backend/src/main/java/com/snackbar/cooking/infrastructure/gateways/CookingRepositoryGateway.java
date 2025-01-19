@@ -47,33 +47,11 @@ public class CookingRepositoryGateway implements CookingGateway {
         return cookingMapper.toDomainObj(entity);
     }
 
-    // @Override
-    // public List<Cooking> listCookings() {
-    //     return repository.findAll().stream()
-    //             .map(mapper::toDomainObj)
-    //             .collect(Collectors.toList());
-    // }
-
-    // @Override
-    // public Cooking getCookingById(String id) {
-    //     return repository.findById(id)
-    //             .map(mapper::toDomainObj)
-    //             .orElseThrow(() -> new RuntimeException("Cooking not found"));
-    // }
-
-    // @Override
-    // public Cooking getCookingByOrderId(String orderId) {
-    //     return repository.findByOrderId(orderId)
-    //             .map(mapper::toDomainObj)
-    //             .orElseThrow(() -> new RuntimeException("Cooking not found"));
-    // }
-
-    // @Override
-    // public Cooking updateCookingStatus(String id, Enum status) {
-    //     var entity = repository.findById(id)
-    //             .orElseThrow(() -> new RuntimeException("Cooking not found"));
-    //     entity.setStatus(status);
-    //     var updatedEntity = repository.save(entity);
-    //     return mapper.toDomainObj(updatedEntity);
-    // }
+    @Override
+    public List<Cooking> findAll() {
+        List<CookingEntity> entities = cookingRepository.findAll();
+        return entities.stream()
+                .map(cookingMapper::toDomainObj)
+                .collect(Collectors.toList());
+    }
 }

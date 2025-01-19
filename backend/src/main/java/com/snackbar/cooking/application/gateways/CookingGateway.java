@@ -7,9 +7,7 @@ import java.util.List;
 
 public interface CookingGateway {
     Cooking createCooking(Cooking cooking);
-    // List<Cooking> listCookings();
-    // Cooking getCookingById(String id);
-    // Cooking getCookingByOrderId(String orderId);
     Cooking updateCookingStatus(String id, StatusOrder status);
     Cooking findByOrderId(String orderId);
+    List<Cooking> findAll();
 }

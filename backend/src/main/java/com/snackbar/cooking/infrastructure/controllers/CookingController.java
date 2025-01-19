@@ -7,6 +7,8 @@ import com.snackbar.cooking.infrastructure.persistence.CookingEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,12 +18,14 @@ public class CookingController {
     private final CreateCookingUseCase createCookingUseCase;
     private final StartPreparationUseCase startPreparationUseCase;
     private final FinishPreparationUseCase finishPreparationUseCase;
+    private final GetAllCookingsUseCase getAllCookingsUseCase;
     private final CookingDTOMapper cookingDTOMapper;
 
-    public CookingController(CreateCookingUseCase createCookingUseCase, StartPreparationUseCase startPreparationUseCase, FinishPreparationUseCase finishPreparationUseCase, CookingDTOMapper cookingDTOMapper) {
+    public CookingController(CreateCookingUseCase createCookingUseCase, StartPreparationUseCase startPreparationUseCase, FinishPreparationUseCase finishPreparationUseCase, GetAllCookingsUseCase getAllCookingsUseCase, CookingDTOMapper cookingDTOMapper) {
         this.createCookingUseCase = createCookingUseCase;
         this.startPreparationUseCase = startPreparationUseCase;
         this.finishPreparationUseCase = finishPreparationUseCase;
+        this.getAllCookingsUseCase = getAllCookingsUseCase;
         this.cookingDTOMapper = cookingDTOMapper;
     }
 
@@ -46,6 +50,21 @@ public class CookingController {
         Cooking cooking = cookingDTOMapper.createRequestToDomain(id);
         Cooking result = finishPreparationUseCase.updateCooking(cooking);
         CreateCookingResponse response = cookingDTOMapper.createToResponse(result);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<CreateCookingResponse>> getAllCookings() {
+        List<Cooking> cookings = getAllCookingsUseCase.execute();
+        
+        if (cookings.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        List<CreateCookingResponse> response = cookings.stream()
+                .map(cookingDTOMapper::createToResponse)
+                .collect(Collectors.toList());
+        
         return ResponseEntity.ok(response);
     }
 }
