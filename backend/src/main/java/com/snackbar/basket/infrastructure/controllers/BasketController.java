@@ -47,9 +47,9 @@ public class BasketController {
         return basketDTOMapper.toResponse(basket);
     }
 
-    @DeleteMapping("/{basketId}/items/{itemId}")
-    public CreateBasketResponse deleteItem(@PathVariable String basketId, @PathVariable String itemId) {
-        Basket basket = basketUseCase.deleteItemToBasket(basketId, itemId);
+    @DeleteMapping("/{basketId}/items/{name}")
+    public CreateBasketResponse deleteItem(@PathVariable String basketId, @PathVariable String name) {
+        Basket basket = basketUseCase.deleteItemToBasket(basketId, name);
         return basketDTOMapper.toResponse(basket);
     }
 }

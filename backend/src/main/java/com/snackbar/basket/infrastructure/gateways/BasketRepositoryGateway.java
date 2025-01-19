@@ -47,9 +47,9 @@ public class BasketRepositoryGateway implements BasketUseCaseGateway {
     }
 
     @Override
-    public Basket deleteItemToBasket(String basketId, String itemId) {
+    public Basket deleteItemToBasket(String basketId, String name) {
         BasketEntity basketEntity = basketRepository.findById(basketId).orElseThrow(() -> new RuntimeException("Basket not found"));
-        basketEntity.getItems().removeIf(item -> item.getId().equals(itemId));
+        basketEntity.getItems().removeIf(item -> item.getName().equals(name));
         BasketEntity updatedEntity = basketRepository.save(basketEntity);
         return basketEntityMapper.toDomainObj(updatedEntity);
     }

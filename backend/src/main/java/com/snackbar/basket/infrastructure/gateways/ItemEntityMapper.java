@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 public class ItemEntityMapper {
     public ItemEntity toEntity(Item itemDomainObj) {
         return new ItemEntity(
-                itemDomainObj.id(),
                 itemDomainObj.name(),
                 itemDomainObj.quantity(),
                 itemDomainObj.price(),
@@ -18,7 +17,6 @@ public class ItemEntityMapper {
 
     public Item toDomainObj(ItemEntity itemEntity) {
         return new Item(
-                itemEntity.getId(),
                 itemEntity.getName(),
                 itemEntity.getQuantity(),
                 itemEntity.getPrice(),

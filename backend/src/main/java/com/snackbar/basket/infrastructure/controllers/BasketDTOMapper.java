@@ -45,7 +45,6 @@ public class BasketDTOMapper {
 
     public Item toItem(ItemRequest request) {
         return new Item(
-                request.id(),
                 request.name(),
                 request.quantity(),
                 request.price(),
@@ -56,7 +55,6 @@ public class BasketDTOMapper {
 
     private ItemResponse toItemResponse(Item item) {
         return new ItemResponse(
-                item.id(),
                 item.name(),
                 item.quantity(),
                 item.price(),
