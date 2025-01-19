@@ -1,30 +1,58 @@
 package com.snackbar.checkout.usecase;
 
-import com.snackbar.checkout.entity.Checkout;
+import com.snackbar.basket.application.usecases.BasketUseCase;
+import com.snackbar.basket.domain.entity.Basket;
 import com.snackbar.checkout.gateway.CheckoutRepository;
-import com.snackbar.order.service.OrderService;
+import com.snackbar.orderRefactory.domain.entity.Order;
+import com.snackbar.orderRefactory.domain.entity.OrderItem;
+import com.snackbar.orderRefactory.domain.valueobject.StatusOrder;
+import com.snackbar.orderRefactory.application.usecases.OrderUseCase;
+import com.snackbar.payment.application.usecases.CreatePaymentUseCase;
+import com.snackbar.payment.domain.entity.Payment;
 import org.springframework.stereotype.Component;
+
+import java.math.BigDecimal;
+import java.util.stream.Collectors;
 
 @Component
 public class CheckoutOrderUseCaseImpl implements CheckoutOrderUseCase {
 
     private final CheckoutRepository checkoutRepository;
-    private final OrderService orderService;
+    private final BasketUseCase basketUseCase;
+    private final OrderUseCase orderUseCase;
+    private final CreatePaymentUseCase createPaymentUseCase;
 
-    public CheckoutOrderUseCaseImpl(CheckoutRepository checkoutRepository, OrderService orderService) {
+    public CheckoutOrderUseCaseImpl(
+            CheckoutRepository checkoutRepository,
+            BasketUseCase basketUseCase,
+            OrderUseCase orderUseCase,
+            CreatePaymentUseCase createPaymentUseCase
+    ) {
         this.checkoutRepository = checkoutRepository;
-        this.orderService = orderService;
+        this.basketUseCase = basketUseCase;
+        this.orderUseCase = orderUseCase;
+        this.createPaymentUseCase = createPaymentUseCase;
     }
 
     @Override
-    public void pay(String orderId) {
-        Checkout checkout = new Checkout();
-        checkout.setOrderId(orderId);
-        checkout.setPaid(true);
-        checkout.setPaymentMethod("Mercado Pago");
-        checkoutRepository.save(checkout);
+    public Order checkout(String basketId) {
+        Basket basket = basketUseCase.findBasket(basketId);
 
-        // Atualizar o status da ordem
-        orderService.updateStatusOrder(orderId);
+        Order order = new Order();
+        order.setName(basket.name());
+        order.setCpf(basket.cpf());
+        order.setStatusOrder(StatusOrder.NOVO);
+        order.setTotalPrice(basket.totalPrice());
+
+        order.setItems(basket.items().stream().map(item -> {
+            OrderItem orderItem = new OrderItem();
+            orderItem.setName(item.name());
+            orderItem.setQuantity(item.quantity());
+            return orderItem;
+        }).collect(Collectors.toList()));
+
+        Order orderCreated = this.orderUseCase.createOrder(order);
+
+        return orderCreated;
     }
 }

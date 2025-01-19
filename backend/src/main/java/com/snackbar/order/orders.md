@@ -21,7 +21,7 @@
         "orderDateTime": "2024-10-31T04:52:17.367Z",
         "cpf": "12345",
         "name": "Jose Moreira",
-        "items": [
+        "itemEntities": [
             {
                 "name": "Hot Dog de Salsicha",
                 "quantity": 1,
@@ -50,7 +50,7 @@
     "orderDateTime": "2024-10-31T04:52:17.367Z",
     "cpf": "12345",
     "name": "Jose Moreira",
-    "items": [
+    "itemEntities": [
         {
             "name": "Hot Dog de Salsicha",
             "quantity": 1,
@@ -77,7 +77,7 @@
     "orderDateTime": "2024-10-31T04:52:17.367Z",
     "cpf": "12345",
     "name": "Jose Moreira",
-    "items": [
+    "itemEntities": [
         {
             "name": "Hot Dog de Salsicha",
             "quantity": 1,
@@ -100,7 +100,7 @@
 {
     "cpf": "04953129326", // CPF must be previously enrolled (see POST /api/user/auth/signup) 
     "name": "Fulano de Souza", // Optional field
-    "items": [ //Product names must follow existing items in Products collection (see GET /api/products)
+    "itemEntities": [ //Product names must follow existing itemEntities in Products collection (see GET /api/products)
         {
             "name": "Pizza de Calabresa",
             "quantity": 1,
@@ -125,7 +125,7 @@
     "orderDateTime": "2024-11-02T18:22:55.239740534Z",
     "cpf": "04953129326",
     "name": "Fulano de Souza",
-    "items": [
+    "itemEntities": [
         {
             "name": "Pizza de Calabresa",
             "quantity": 1,
@@ -162,7 +162,7 @@
 ```json
 {
   "id": "672662a6b6941f69258b3918",
-  "items": [
+  "itemEntities": [
     {
       "name": "Coca-Cola 350ml",
       "quantity": 2,
@@ -180,7 +180,7 @@
     "orderDateTime": "2024-11-02T17:34:30.979Z",
     "cpf": "04953129326",
     "name": "Fulano de Souza",
-    "items": [
+    "itemEntities": [
         {
             "name": "Coca-Cola 350ml",
             "quantity": 2,
@@ -207,7 +207,7 @@
         "orderDateTime": "2024-10-31T04:52:17.367Z",
         "cpf": "00000000001",
         "name": "Jose Moreira",
-        "items": [
+        "itemEntities": [
             {
                 "name": "Hot Dog de Salsicha",
                 "quantity": 1,
@@ -227,7 +227,7 @@
         "orderDateTime": "2024-10-31T05:52:17.367Z",
         "cpf": "00000000002",
         "name": "Maria Silva",
-        "items": [
+        "itemEntities": [
             {
                 "name": "Hamburger",
                 "quantity": 2,
@@ -247,7 +247,7 @@
         "orderDateTime": "2024-12-22T13:38:32.008Z",
         "cpf": "04953129326",
         "name": "fulano da silva",
-        "items": [
+        "itemEntities": [
             {
                 "name": "Coca-Cola 350ml",
                 "quantity": 2,

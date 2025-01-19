@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - homolog
-      - feature/gh-actions
+      - feature/eks-v2
 
 jobs:
   build:
@@ -24,13 +24,33 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v3
-      with:
-        context: ./backend
-        file: Dockerfile
-        push: true
-        tags: 171219910203199431032017/snackbar:latest
+    - name: Set Docker image tag based on branch
+      run: |
+        if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+          echo "IMAGE_TAG=latest" >> $GITHUB_ENV
+        elif [[ "${{ github.ref }}" != "refs/heads/main" ]]; then
+          echo "IMAGE_TAG=homolog" >> $GITHUB_ENV
+        fi
+
+    - name: Set Docker repo Snackbar
+      run: echo "DOCKER_REPO_SNACKBAR=snackbar" >> $GITHUB_ENV
+
+    - name: Set Docker repo MONGODB
+      run: echo "DOCKER_REPO_MONGODB=mongo-snackbar" >> $GITHUB_ENV
+      
+
+    - name: Build and push Snackbar Docker image
+      run: |
+        set -x
+        cd backend
+        docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_REPO_SNACKBAR }}:${{ env.IMAGE_TAG }} --push --no-cache .
+
+    - name: Build and push MongoDB Docker image
+      run: |
+          set -x
+          cd database
+          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_REPO_MONGODB }}:${{ env.IMAGE_TAG }} --push --no-cache .
+
 
     - name: Docker logout
       run: docker logout

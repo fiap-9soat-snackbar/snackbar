@@ -1,6 +1,5 @@
 package com.snackbar.product.common.handler;
 
-import com.snackbar.product.common.dto.ApiResponse;
 import com.snackbar.product.common.exception.BusinessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -12,12 +11,12 @@ import org.springframework.stereotype.Component;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(BusinessException.class)
-    public ResponseEntity<ApiResponse<?>> handleBusinessException(BusinessException e) {
-        return ResponseEntity.badRequest().body(new ApiResponse<>(false, e.getMessage(), null));
+    public ResponseEntity<String> handleBusinessException(BusinessException e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiResponse<?>> handleGenericException(Exception e) {
-        return ResponseEntity.badRequest().body(new ApiResponse<>(false, "An unexpected error occurred", null));
+    public ResponseEntity<String> handleGenericException(Exception e) {
+        return ResponseEntity.badRequest().body("An unexpected error occurred");
     }
 }

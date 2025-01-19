@@ -1,22 +1,17 @@
 package com.snackbar.product.controller;
 
-import com.snackbar.product.common.controller.BaseController;
-import com.snackbar.product.common.dto.ApiResponse;
 import com.snackbar.product.dto.ProductDTO;
-import com.snackbar.product.usecase.CreateProductUseCase;
-import com.snackbar.product.usecase.GetProductUseCase;
-import com.snackbar.product.usecase.GetAllProductsUseCase;
-import com.snackbar.product.usecase.GetProductsByCategoryUseCase;
-import com.snackbar.product.usecase.UpdateProductUseCase;
-import com.snackbar.product.usecase.DeleteProductUseCase;
+import com.snackbar.product.usecase.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
-public class ProductController extends BaseController {
+public class ProductController {
+
     private final CreateProductUseCase createProductUseCase;
     private final GetProductUseCase getProductUseCase;
     private final GetAllProductsUseCase getAllProductsUseCase;
@@ -41,38 +36,38 @@ public class ProductController extends BaseController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<ProductDTO>> createProduct(@RequestBody ProductDTO productDTO) {
+    public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO productDTO) {
         ProductDTO createdProduct = createProductUseCase.createProduct(productDTO);
-        return success(createdProduct, "Product created successfully");
+        return ResponseEntity.ok(createdProduct);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<ProductDTO>> getProduct(@PathVariable String id) {
+    public ResponseEntity<ProductDTO> getProduct(@PathVariable String id) {
         ProductDTO product = getProductUseCase.getProduct(id);
-        return success(product, "Product retrieved successfully");
+        return ResponseEntity.ok(product);
     }
 
     @GetMapping
-    public ResponseEntity<ApiResponse<List<ProductDTO>>> getAllProducts() {
+    public ResponseEntity<List<ProductDTO>> getAllProducts() {
         List<ProductDTO> products = getAllProductsUseCase.getAllProducts();
-        return success(products, "Products retrieved successfully");
+        return ResponseEntity.ok(products);
     }
 
     @GetMapping("/category/{category}")
-    public ResponseEntity<ApiResponse<List<ProductDTO>>> getProductsByCategory(@PathVariable String category) {
+    public ResponseEntity<List<ProductDTO>> getProductsByCategory(@PathVariable String category) {
         List<ProductDTO> products = getProductsByCategoryUseCase.getProductsByCategory(category);
-        return success(products, "Products retrieved successfully");
+        return ResponseEntity.ok(products);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApiResponse<ProductDTO>> updateProduct(@PathVariable String id, @RequestBody ProductDTO productDTO) {
+    public ResponseEntity<ProductDTO> updateProduct(@PathVariable String id, @RequestBody ProductDTO productDTO) {
         ProductDTO updatedProduct = updateProductUseCase.updateProduct(id, productDTO);
-        return success(updatedProduct, "Product updated successfully");
+        return ResponseEntity.ok(updatedProduct);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse<Void>> deleteProduct(@PathVariable String id) {
+    public ResponseEntity<Void> deleteProduct(@PathVariable String id) {
         deleteProductUseCase.deleteProduct(id);
-        return success(null, "Product deleted successfully");
+        return ResponseEntity.ok().build();
     }
 }
