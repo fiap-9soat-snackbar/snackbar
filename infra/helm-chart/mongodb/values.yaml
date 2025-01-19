@@ -1,0 +1,44 @@
+IMAGE:
+  VERSION: "171219910203199431032017/mongo-snackbar:latest"
+  PULL_POLICY: Always
+
+STATEFULSET:
+  CONTAINER:
+    NAME: mongodb-c
+  LABEL: mongodb
+  REPLICAS: 2
+  PORT: 27017
+  TOLERATIONS:
+    ENABLED: true
+    KEY: application
+    OPERATOR: Equal
+    VALUE: mongodb
+    EFFECT: NoSchedule
+  NODESELECTOR:
+    ENABLED: true
+    KEY: application
+    VALUE: mongodb
+
+SERVICE:
+  NAME: mongodb-clusterip
+  TYPE: ClusterIP
+  PORT: 27017
+  INTERNAL: false
+  HTTPS:
+    ENABLED: false
+  LOAD_BALANCER:
+    ENABLED: true
+    DNS_SUFFIX: db.snackbar.com.br
+
+PERSISTENCE:
+  SIZE: 10Gi
+  PATH: /data/db
+  PVC_NAME: mongo-pvc
+
+SECRET:
+  MONGO_INITDB_ROOT_USERNAME: root
+  MONGO_INITDB_ROOT_PASSWORD: rootpassword
+  MONGODB_USER: snackbaruser
+  MONGODB_PASSWORD: snack01
+  MONGO_INITDB_DATABASE: snackbar
+  DB_HOST: mongodb-clusterip.ns-snackbar.svc.cluster.local
