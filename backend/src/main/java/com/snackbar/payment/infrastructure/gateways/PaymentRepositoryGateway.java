@@ -81,4 +81,11 @@ public class PaymentRepositoryGateway implements PaymentGateway {
 
     }
 
+    @Override
+    public Payment getPaymentByExternalId(String externalId) {
+        PaymentEntity retrievedObj = paymentRepository.findByExternalPaymentId(externalId).orElse(null);
+        Payment retrievedPayment = paymentEntityMapper.toDomainObj(retrievedObj);
+        return retrievedPayment;
+    }
+
 }

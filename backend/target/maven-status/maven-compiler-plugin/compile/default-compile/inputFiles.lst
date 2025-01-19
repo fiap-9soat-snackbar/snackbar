@@ -23,6 +23,7 @@
 /home/saulo/workspace/fiap-alura/fase02/snackbar/backend/src/main/java/com/snackbar/iam/infrastructure/UserRepository.java
 /home/saulo/workspace/fiap-alura/fase02/snackbar/backend/src/main/java/com/snackbar/iam/infrastructure/IamRepository.java
 /home/saulo/workspace/fiap-alura/fase02/snackbar/backend/src/main/java/com/snackbar/basket/infrastructure/gateways/BasketEntityMapper.java
+/home/saulo/workspace/fiap-alura/fase02/snackbar/backend/src/main/java/com/snackbar/payment/application/usecases/GetPaymentByExternalIdUseCase.java
 /home/saulo/workspace/fiap-alura/fase02/snackbar/backend/src/main/java/com/snackbar/iam/domain/IamRole.java
 /home/saulo/workspace/fiap-alura/fase02/snackbar/backend/src/main/java/com/snackbar/pickup/presentation/PickupController.java
 /home/saulo/workspace/fiap-alura/fase02/snackbar/backend/src/main/java/com/snackbar/productv2/application/usecases/GetProductv2ByIdUseCase.java

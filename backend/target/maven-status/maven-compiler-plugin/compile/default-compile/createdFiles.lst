@@ -85,6 +85,7 @@ com/snackbar/order/service/OrderService.class
 com/snackbar/basket/domain/entity/Item.class
 com/snackbar/productv2/infrastructure/config/ProductConfig.class
 com/snackbar/orderRefactory/domain/valueobject/StatusOrder.class
+com/snackbar/payment/application/usecases/GetPaymentByExternalIdUseCase.class
 com/snackbar/product/usecase/impl/GetProductUseCaseImpl.class
 com/snackbar/product/usecase/GetAllProductsUseCase.class
 com/snackbar/orderRefactory/domain/entity/OrderItem.class

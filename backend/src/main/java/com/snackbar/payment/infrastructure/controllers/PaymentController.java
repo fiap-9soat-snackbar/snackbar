@@ -26,6 +26,7 @@ public class PaymentController {
     private final MpService mpService;
     private final GetPaymentByIdUseCase getPaymentByIdUseCase;
     private final UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase;
+    private final GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase;
 
     @Autowired
     public PaymentController(
@@ -36,6 +37,7 @@ public class PaymentController {
             PaymentMPDTOMapper paymentMPDTOMapper,
             GetPaymentByIdUseCase getPaymentByIdUseCase,
             UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase,
+            GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase,
             MpService mpService) {
         this.createPaymentUseCase = createPaymentUseCase;
         this.listPaymentsUseCase = listPaymentsUseCase;
@@ -45,6 +47,7 @@ public class PaymentController {
         this.mpService = mpService;
         this.getPaymentByIdUseCase = getPaymentByIdUseCase;
         this.updatePaymentExternalIdByIdUseCase = updatePaymentExternalIdByIdUseCase;
+        this.getPaymentByExternalIdUseCase = getPaymentByExternalIdUseCase;
     }
 
     @PostMapping
@@ -85,6 +88,13 @@ public class PaymentController {
         PaymentMP paymentMP = paymentMPDTOMapper.createRequestToDomain(request);
         PaymentMP createdPaymentMP = createPaymentMPUseCase.createPaymentMP(paymentMP);
         CreatePaymentMPResponse response = paymentMPDTOMapper.createToResponse(createdPaymentMP);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/externalId/{externalId}")
+    public ResponseEntity<GetPaymentResponse> getPaymentByExternalId(@PathVariable("externalId") String externalId) {
+        Payment retrievedPayment = getPaymentByExternalIdUseCase.getPaymentByExternalId(externalId);
+        GetPaymentResponse response = paymentDTOMapper.getToResponse(retrievedPayment);
         return ResponseEntity.ok(response);
     }
 

@@ -11,5 +11,6 @@ public interface PaymentGateway {
     PaymentMP createPaymentMP(PaymentMP paymentMP);
     Payment getPaymentById(String id);
     Payment updatePaymentExternalIdById(String id, String externalPaymentId);
+    Payment getPaymentByExternalId(String externalId);
 }
     
