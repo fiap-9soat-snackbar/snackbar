@@ -22,11 +22,12 @@ public class MpService {
                 .block();
     }
 
-    public Mono<String> postBackMercadoPago(String uri, Object requestBody) {
-        return webClient.post()
+    public String patchBackMercadoPago(String uri, Object requestBody) {
+        return webClient.patch()
                 .uri(uri)
                 .bodyValue(requestBody)
                 .retrieve()
-                .bodyToMono(String.class);
+                .bodyToMono(String.class)
+                .block();
     }
 }

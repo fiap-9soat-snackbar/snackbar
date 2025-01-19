@@ -2,6 +2,7 @@ package com.snackbar.payment.application.usecases;
 
 import com.snackbar.payment.application.gateways.PaymentGateway;
 import com.snackbar.payment.domain.entity.PaymentMP;
+import com.snackbar.payment.domain.entity.PaymentStatus;
 
 
 public class WebHookExecution {
@@ -12,8 +13,8 @@ public class WebHookExecution {
         this.paymentGateway = paymentGateway;
     }
 
-    public void webHookExecution(PaymentMP paymentMP){
-        paymentGateway.webHookExecution(paymentMP);
+    public void webHookExecution(PaymentStatus paymentStatus){
+        paymentGateway.webHookExecution(paymentStatus);
     }
 
 }

@@ -5,6 +5,7 @@ package com.snackbar.payment.infrastructure.gateways;
 import com.snackbar.payment.application.gateways.PaymentGateway;
 import com.snackbar.payment.domain.entity.Payment;
 import com.snackbar.payment.domain.entity.PaymentMP;
+import com.snackbar.payment.domain.entity.PaymentStatus;
 import com.snackbar.payment.infrastructure.MpService;
 import com.snackbar.payment.infrastructure.persistence.PaymentEntity;
 import com.snackbar.payment.infrastructure.persistence.PaymentMPEntity;
@@ -70,8 +71,8 @@ public class PaymentRepositoryGateway implements PaymentGateway {
     }
 
     @Override
-    public void webHookExecution(PaymentMP paymentMP) {
-        this.mpService.postBackMercadoPago(paymentMP.callbackURL(), paymentMP);
+    public void webHookExecution(PaymentStatus paymentStatus) {
+        this.mpService.patchBackMercadoPago(paymentStatus.callbackURL(), paymentStatus);
     }
 
     public Payment getPaymentById(String id) {
