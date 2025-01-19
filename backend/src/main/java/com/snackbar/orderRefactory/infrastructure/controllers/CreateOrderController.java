@@ -59,4 +59,11 @@ public class CreateOrderController {
     public List<Order> getSortedOrders() {
         return orderUseCase.getSortedOrders();
     }
+
+    @PutMapping("/status")
+    public Order updateStatusOrder(@RequestBody UpdateOrderStatusRequest request) {
+        String status = request.status();
+        String id = request.orderId();
+        return orderUseCase.updateStatusOrder(id, status);
+    }
 }

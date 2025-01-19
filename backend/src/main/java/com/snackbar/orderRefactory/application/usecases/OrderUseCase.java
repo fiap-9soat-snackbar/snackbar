@@ -131,12 +131,41 @@ public class OrderUseCase {
         return 0;
     }
 
-    public void updateStatusOrder(String orderId) {
+    public Order updateStatusOrder(String orderId, String orderStatus) {
         Order order = orderGateway.findOrderById(orderId)
                 .orElseThrow(() -> new IllegalArgumentException("Order not found"));
 
+        try {
+                StatusOrder status = StatusOrder.valueOf(orderStatus);
+                order.setStatusOrder(status);
+            } catch (IllegalArgumentException e) {
+                throw new IllegalArgumentException("Invalid order status: " + orderStatus);
+            }
+        //order.setStatusOrder(StatusOrder.valueOf(orderStatus));
+
+        /*
+        // Check if the order has been paid
+        boolean isPaid = this.checkoutOrderUseCase.isPaid(orderId);
+
+        boolean isReady = this.isReadyPickupUseCaseImpl.isReady(orderId);
 
 
-        orderGateway.updateOrder(order);
+        // Check if the order has been picked up
+        boolean isDone = this.isReadyPickupUseCaseImpl.isDone(orderId);
+
+
+        // Update StatusOrder based on payment and pickup status
+        if (isPaid && isDone) {
+            order.setStatusOrder(StatusOrder.FINALIZADO);
+        } else if (isReady) {
+            order.setStatusOrder(StatusOrder.PRONTO);
+        } else if (isPaid) {
+            order.setStatusOrder(StatusOrder.PAGO);
+            order.setPaymentMethod("Mercado Pago");
+        } else {
+            order.setStatusOrder(StatusOrder.NOVO);
+        }*/
+
+       return orderGateway.updateOrder(order);
     }
 }
