@@ -4,9 +4,9 @@ import com.snackbar.cooking.domain.entity.Cooking;
 
 public class CookingDTOMapper {
     
-    public Cooking createRequestToDomain(CreateCookingRequest request) {
+    public Cooking createRequestToDomain(String orderId) {
 
-        String myOrderId = request.orderId();
+        String myOrderId = orderId;
         String id = null;
         Enum status = null;
         Cooking localCooking = new Cooking(id, myOrderId, status);

@@ -18,21 +18,10 @@ public class CookingController {
         this.createCookingUseCase = createCookingUseCase;
         this.cookingDTOMapper = cookingDTOMapper;
     }
-    
 
-    // @PostMapping("/receive-order/{id}")
-    // public ResponseEntity<String> receiveOrder(@PathVariable String id) {
-    //     try {
-    //         String result = receiveOrderUseCase.execute(id);
-    //         return ResponseEntity.ok(result);
-    //     } catch (RuntimeException e) {
-    //         return ResponseEntity.notFound().build();
-    //     }
-    // }
-
-    @PostMapping("/receive-order")
-    public ResponseEntity<CreateCookingResponse> createCooking(@RequestBody CreateCookingRequest request) {
-        Cooking cooking = cookingDTOMapper.createRequestToDomain(request);
+    @PostMapping("/receive-order/{id}")
+    public ResponseEntity<CreateCookingResponse> receiveOrder(@PathVariable String id) {
+        Cooking cooking = cookingDTOMapper.createRequestToDomain(id);
         Cooking createdCooking = createCookingUseCase.createCooking(cooking);
         CreateCookingResponse response = cookingDTOMapper.createToResponse(createdCooking);
         return ResponseEntity.ok(response);
