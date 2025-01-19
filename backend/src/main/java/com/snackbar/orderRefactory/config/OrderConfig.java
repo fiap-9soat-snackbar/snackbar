@@ -1,10 +1,8 @@
 package com.snackbar.orderRefactory.config;
 
-import com.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl;
 import com.snackbar.iam.application.UserService;
 import com.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapper;
 import com.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway;
-import com.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl;
 import com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,11 +19,9 @@ public class OrderConfig {
     OrderUseCase orderUseCase(
             OrderRepositoryGateway orderRepositoryGateway,
             ProductServiceGateway productServiceGateway,
-            CheckoutOrderUseCaseImpl checkoutOrderUseCaseImpl,
-            IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl,
             UserService userService
     ) {
-        return new OrderUseCase(orderRepositoryGateway, productServiceGateway, checkoutOrderUseCaseImpl, isReadyPickupUseCaseImpl, userService);
+        return new OrderUseCase(orderRepositoryGateway, productServiceGateway, userService);
     }
 
     @Bean

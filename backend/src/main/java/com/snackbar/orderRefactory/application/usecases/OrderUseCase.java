@@ -19,21 +19,15 @@ public class OrderUseCase {
 
     private final OrderGateway orderGateway;
     private final ProductGateway productGateway;
-    private final CheckoutOrderUseCaseImpl checkoutOrderUseCase;
-    private final IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl;
     private final UserService userService;
 
     public OrderUseCase(
             OrderGateway orderGateway,
             ProductGateway productGateway,
-            CheckoutOrderUseCaseImpl checkoutOrderUseCase,
-            IsReadyPickupUseCaseImpl isReadyPickupUseCaseImpl,
             UserService userService
     ) {
         this.orderGateway = orderGateway;
         this.productGateway = productGateway;
-        this.checkoutOrderUseCase = checkoutOrderUseCase;
-        this.isReadyPickupUseCaseImpl = isReadyPickupUseCaseImpl;
         this.userService = userService;
     }
 
@@ -136,11 +130,11 @@ public class OrderUseCase {
                 .orElseThrow(() -> new IllegalArgumentException("Order not found"));
 
         try {
-                StatusOrder status = StatusOrder.valueOf(orderStatus);
-                order.setStatusOrder(status);
-            } catch (IllegalArgumentException e) {
-                throw new IllegalArgumentException("Invalid order status: " + orderStatus);
-            }
+            StatusOrder status = StatusOrder.valueOf(orderStatus);
+            order.setStatusOrder(status);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid order status: " + orderStatus);
+        }
         //order.setStatusOrder(StatusOrder.valueOf(orderStatus));
 
         /*
