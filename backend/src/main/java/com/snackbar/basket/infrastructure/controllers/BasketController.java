@@ -5,6 +5,8 @@ import com.snackbar.basket.domain.entity.Basket;
 import com.snackbar.basket.domain.entity.Item;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/baskets")
 public class BasketController {
@@ -30,6 +32,12 @@ public class BasketController {
     public CreateBasketResponse find(@PathVariable String basketId) {
         Basket basket = basketUseCase.findBasket(basketId);
         return basketDTOMapper.toResponse(basket);
+    }
+
+    @GetMapping("/")
+    public List<CreateBasketResponse> findAll() {
+        List<Basket> basket = basketUseCase.findAllBaskets();
+        return basketDTOMapper.toResponseList(basket);
     }
 
     @PostMapping("/{basketId}/items")

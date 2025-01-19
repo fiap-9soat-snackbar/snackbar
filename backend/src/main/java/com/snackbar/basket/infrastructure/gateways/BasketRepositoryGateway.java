@@ -6,6 +6,8 @@ import com.snackbar.basket.domain.entity.Basket;
 import com.snackbar.basket.domain.entity.Item;
 import com.snackbar.basket.application.gateways.BasketUseCaseGateway;
 
+import java.util.List;
+
 public class BasketRepositoryGateway implements BasketUseCaseGateway {
 
     private final BasketRepository basketRepository;
@@ -29,6 +31,11 @@ public class BasketRepositoryGateway implements BasketUseCaseGateway {
     public Basket findBasket(String basketId) {
         BasketEntity basketEntity = basketRepository.findById(basketId).orElseThrow(() -> new RuntimeException("Basket not found"));
         return basketEntityMapper.toDomainObj(basketEntity);
+    }
+
+    @Override
+    public List<Basket> findAllBaskets() {
+        return basketRepository.findAll().stream().map(basketEntityMapper::toDomainObj).toList();
     }
 
     @Override

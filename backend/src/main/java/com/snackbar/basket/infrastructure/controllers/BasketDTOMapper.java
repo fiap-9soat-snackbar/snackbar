@@ -37,6 +37,12 @@ public class BasketDTOMapper {
         );
     }
 
+    public List<CreateBasketResponse> toResponseList(List<Basket> baskets) {
+        return baskets.stream()
+                .map(this::toResponse)
+                .collect(Collectors.toList());
+    }
+
     public Item toItem(ItemRequest request) {
         return new Item(
                 request.id(),
