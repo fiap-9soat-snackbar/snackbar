@@ -1,6 +1,7 @@
 package com.snackbar.cooking.infrastructure.controllers;
 
 import com.snackbar.cooking.domain.entity.Cooking;
+import com.snackbar.order.domain.model.StatusOrder;
 
 public class CookingDTOMapper {
     
@@ -8,7 +9,7 @@ public class CookingDTOMapper {
 
         String myOrderId = orderId;
         String id = null;
-        Enum status = null;
+        StatusOrder status = null;
         Cooking localCooking = new Cooking(id, myOrderId, status);
         return localCooking;
     }

@@ -1,10 +1,11 @@
 package com.snackbar.cooking.domain.entity;
 
+import com.snackbar.order.domain.model.StatusOrder;
 
 public record Cooking(
     String id,
     String orderId,
-    Enum status
+    StatusOrder status
 ) {}
 
 // public class Cooking {
