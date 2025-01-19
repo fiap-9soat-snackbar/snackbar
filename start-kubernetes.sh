@@ -3,6 +3,7 @@
 #1. Aplicando permissão de execução aos scripts
 chmod +x ./infra/scripts/start-minikube.sh
 chmod +x ./infra/scripts/start-eks.sh
+chmod +x ./infra/scripts/host.sh
 
 #2. Função para verificar se AWS, HELM e TERRAFORM estão instalados
 check_command() {
@@ -52,10 +53,3 @@ case $OPTION in
         exit 1
         ;;
 esac
-
-
-#TODO
-# IMPLEMENT SERVICE ON HELM CHART
-# CREATE AWS R53 ZONE
-# CREATE AWS R53 RECORD TO SERVICE
-# VALIDATE SECRETS USES

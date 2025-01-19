@@ -17,7 +17,6 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-internal: {{.Values.SERVICE.INTERNAL | quote}}
   labels:
     app: {{ .Release.Name }}
-
 spec:
   type: LoadBalancer
   ports:

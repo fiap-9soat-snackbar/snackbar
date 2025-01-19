@@ -22,12 +22,12 @@ spec:
   ports:
     - name: http
       port: {{ .Values.SERVICE.PORT }}
-      targetPort: {{ .Values.DEPLOYMENT.PORT }}
+      targetPort: {{ .Values.STATEFULSET.PORT }}
       protocol: TCP
     {{ if .Values.SERVICE.HTTPS.ENABLED }}
     - name: https
       port: {{ .Values.SERVICE.HTTPS.PORT}}
-      targetPort: {{ .Values.DEPLOYMENT.PORT }}
+      targetPort: {{ .Values.STATEFULSET.PORT }}
     {{ end }}    
   selector:
     app: {{ .Release.Name }}

@@ -1,48 +1,35 @@
 IMAGE:
-  VERSION: "mongo:8.0.1"
-  PULL_POLICY: IfNotPresent
+  VERSION: "171219910203199431032017/mongo-snackbar:latest"
+  PULL_POLICY: Always
 
-DEPLOYMENT:
-  REPLICAS: 1
+STATEFULSET:
+  CONTAINER:
+    NAME: mongodb-c
+  LABEL: mongodb
+  REPLICAS: 2
   PORT: 27017
   TOLERATIONS:
-    ENABLED: true
+    ENABLED: false
     KEY: application
     OPERATOR: Equal
     VALUE: mongodb
     EFFECT: NoSchedule
   NODESELECTOR:
-    ENABLED: true
+    ENABLED: false
     KEY: application
     VALUE: mongodb
 
 SERVICE:
+  NAME: mongodb-clusterip
   TYPE: ClusterIP
   PORT: 27017
-  INTERNAL: false
-  HTTPS:
-    ENABLED: false
   LOAD_BALANCER:
-    ENABLED: true
+    ENABLED: false
     DNS_SUFFIX: db.snackbar.com.br
-    
-
-HPA:
-  ENABLED: true
-  MAXREPLICAS: 5
-  CPU: 90
-  MEMORY: 800Mi
-
-INIT:
-  ENABLED: true
-
 
 PERSISTENCE:
-  ENABLED: true
-  SIZE: 8Gi
-  STORAGECLASS: standard
+  SIZE: 10Gi
   PATH: /data/db
-  VOLUME_NAME: mongo-data
   PVC_NAME: mongo-pvc
 
 SECRET:
@@ -51,6 +38,4 @@ SECRET:
   MONGODB_USER: snackbaruser
   MONGODB_PASSWORD: snack01
   MONGO_INITDB_DATABASE: snackbar
-  DB_HOST: snackbar-mongo-db.ns-snackbar.svc.cluster.local
-
-
+  DB_HOST: mongodb-clusterip.ns-snackbar.svc.cluster.local
