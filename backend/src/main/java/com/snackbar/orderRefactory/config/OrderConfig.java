@@ -1,5 +1,6 @@
 package com.snackbar.orderRefactory.config;
 
+import com.snackbar.iam.application.UserService;
 import com.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapper;
 import com.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway;
 import com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl;
@@ -15,8 +16,12 @@ import com.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepo
 @Configuration
 public class OrderConfig {
     @Bean
-    OrderUseCase orderUseCase(OrderRepositoryGateway orderRepositoryGateway, ProductServiceGateway productServiceGateway) {
-        return new OrderUseCase(orderRepositoryGateway, productServiceGateway);
+    OrderUseCase orderUseCase(
+            OrderRepositoryGateway orderRepositoryGateway,
+            ProductServiceGateway productServiceGateway,
+            UserService userService
+    ) {
+        return new OrderUseCase(orderRepositoryGateway, productServiceGateway, userService);
     }
 
     @Bean
