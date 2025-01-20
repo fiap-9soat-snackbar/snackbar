@@ -12,5 +12,4 @@ public class ItemEntity {
     private Integer quantity;
     private BigDecimal price;
     private Integer cookingTime;
-    private String customization;
 }

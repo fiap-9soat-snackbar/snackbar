@@ -6,6 +6,5 @@ public record ItemResponse(
         String name,
         Integer quantity,
         BigDecimal price,
-        Integer cookingTime,
-        String customization
+        Integer cookingTime
 ) {}

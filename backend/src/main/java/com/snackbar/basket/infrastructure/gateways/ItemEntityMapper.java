@@ -10,8 +10,7 @@ public class ItemEntityMapper {
                 itemDomainObj.name(),
                 itemDomainObj.quantity(),
                 itemDomainObj.price(),
-                itemDomainObj.cookingTime(),
-                itemDomainObj.customization()
+                itemDomainObj.cookingTime()
         );
     }
 
@@ -20,8 +19,7 @@ public class ItemEntityMapper {
                 itemEntity.getName(),
                 itemEntity.getQuantity(),
                 itemEntity.getPrice(),
-                itemEntity.getCookingTime(),
-                itemEntity.getCustomization()
+                itemEntity.getCookingTime()
         );
     }
 }

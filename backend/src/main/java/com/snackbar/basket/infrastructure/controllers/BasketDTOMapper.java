@@ -17,7 +17,6 @@ public class BasketDTOMapper {
                 request.id(),
                 request.basketDateTime(),
                 request.cpf(),
-                request.name(),
                 items,
                 request.totalPrice()
         );
@@ -31,7 +30,6 @@ public class BasketDTOMapper {
                 basket.id(),
                 basket.basketDateTime(),
                 basket.cpf(),
-                basket.name(),
                 items,
                 basket.totalPrice()
         );
@@ -48,8 +46,7 @@ public class BasketDTOMapper {
                 request.name(),
                 request.quantity(),
                 request.price(),
-                request.cookingTime(),
-                request.customization()
+                request.cookingTime()
         );
     }
 
@@ -58,8 +55,7 @@ public class BasketDTOMapper {
                 item.name(),
                 item.quantity(),
                 item.price(),
-                item.cookingTime(),
-                item.customization()
+                item.cookingTime()
         );
     }
 }

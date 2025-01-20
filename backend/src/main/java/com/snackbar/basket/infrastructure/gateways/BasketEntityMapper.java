@@ -22,7 +22,6 @@ public class BasketEntityMapper {
                 basketDomainObj.id(),
                 basketDomainObj.basketDateTime(),
                 basketDomainObj.cpf(),
-                basketDomainObj.name(),
                 itemEntities,
                 basketDomainObj.totalPrice()
         );
@@ -37,7 +36,6 @@ public class BasketEntityMapper {
                 basketEntity.getId(),
                 basketEntity.getBasketDateTime(),
                 basketEntity.getCpf(),
-                basketEntity.getName(),
                 items,
                 basketEntity.getTotalPrice()
         );
