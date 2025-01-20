@@ -1,280 +1,438 @@
-# Application Operation Guide
+# API Instructions
 
-This guide provides instructions on how to operate the application, focusing on two roles: **User** and **Administrator**.
+## Client Side:
 
----
-
-## User Instructions: From Account Creation to Order Finalization
-
-### 1. Sign Up
-
-Create an account by using:  
+### 1. Sign-up
 **POST** `/api/user/auth/signup`
 
-#### Request Body Schema:
-
+Request body:
 ```json
 {
-  "email": "string",
-  "password": "string",
-  "cpf": "string",
-  "role": "string",
-  "fullName": "string"
+    "email": "string",
+    "password": "string",
+    "name": "string",
+    "cpf": "string"
 }
 ```
 
-#### Example:
-
+Response body:
 ```json
 {
-  "email": "fulano@user.com",
-  "password": "1234",
-  "cpf": "04953129326",
-  "role": "CONSUMER",
-  "fullName": "Fulano da Silva"
+    "token": "string",
+    "type": "Bearer",
+    "id": "string",
+    "username": "string",
+    "email": "string"
 }
 ```
 
-### 2. Log In
-
-Log in to your account by using:
+### 2. Log-in
 **POST** `/api/user/auth/login`
 
-#### Request Body Schema:
-
+Request body:
 ```json
 {
-  "cpf": "string",
-  "password": "string",
-  "anonymous": true
+    "email": "string",
+    "password": "string"
 }
 ```
 
-#### Example:
-
+Response body:
 ```json
 {
-  "cpf": "04953129326",
-  "password": "1234"
+    "token": "string",
+    "type": "Bearer",
+    "id": "string",
+    "username": "string",
+    "email": "string"
 }
 ```
-Upon successful login, a token will be generated. Save this token to use in Postman or for authorizing requests in Swagger.
 
-### 3. View Products
+### 3. Get data from all Users (Admin only)
+**GET** `/api/user/`
 
-Retrieve available products:
-
-- View All Products:
-
-  **GET** /api/products
-
-- View Products by Category:
-
-  **GET** /api/products/category/{category}
-
-  Example: /api/products/category/Lanche
-
-- View Product by ID:
-
-  **GET** /api/products/{id}
-
-### 4. Place an Order
-
-Create an order using:
-**POST** `/api/orders`
-
-#### Request Body Schema (Working Example):
-
+Response body:
 ```json
-{
-  "cpf": "04953129326",
-  "items": [
+[
     {
-      "name": "Pizza de Calabresa",
-      "quantity": 1
-    },
-    {
-      "name": "Coca-Cola 350mL",
-      "quantity": 3
-    },
-    {
-      "name": "Sundae de Chocolate",
-      "quantity": 3
+        "id": "string",
+        "name": "string",
+        "email": "string",
+        "cpf": "string",
+        "role": "string"
     }
-  ]
+]
+```
+
+### 4. Get data from a specific User by CPF (Admin only)
+**GET** `/api/user/cpf/{{user_cpf}}`
+
+Response body:
+```json
+{
+    "id": "string",
+    "name": "string",
+    "email": "string",
+    "cpf": "string",
+    "role": "string"
 }
 ```
 
-### 5. Check an Order
+### 5. Delete an User (Admin only)
+**DELETE** `/api/user/{{user_id}}`
 
-Retrieve an order:
+Response: 204 No Content
 
-By Order ID:
-**GET** /api/orders/{id}
+### 6. Get data from all Products
+**GET** `/api/productsv2`
 
-By Order Number:
-**GET** /api/orders/number/000001
-
-### 6. Modify an Order
-
-Update an existing order using:
-**PUT** /api/orders
-
-Request Body Schema (Working Example):
+Response body:
 ```json
-{
-  "id": "6783d012d5753c9470fe6911",
-  "items": [
+[
     {
-      "name": "Hot Dog de Salsicha",
-      "quantity": 1,
-      "customization": "Sem molho"
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "category": "string",
+        "price": "number",
+        "image": "string"
     }
-  ]
-}
+]
 ```
 
-The id field is required and refers to the order ID.
+### 7. Get data from a specific Product
+**GET** `/api/productsv2/id/{{product_id}}`
 
-### 7. Verify Order Update
-
-Check if the order was updated successfully:
-**GET** /api/orders/{id}
-
-### 8. Receive Order
-
-Update the order status from PAGO ("paid") to RECEBIDO ("received") using:
-**POST** `/api/cooking/receive-order/{order_id}`
-
-### 9. Start Order Preparation
-
-Update the order status from RECEBIDO ("received") to PREPARACAO ("preparing") using:
-**POST** `/api/cooking/start-preparation/{order_id}`
-
-### 10. Finish Order Preparation
-
-Update the order status from PREPARACAO ("preparing") to PRONTO ("ready") using:
-**POST** `/api/cooking/finish-preparation/{order_id}`
-
-### 11. Notify Client
-
-Notify the client that the order is ready for pickup using:
-**POST** `/api/pickup/notify/{order_id}`
-
-### 12. Deliver the Order
-
-Mark the order as delivered using:
-**POST** `/api/pickup/delivery/{order_id}`
-
-## Administrator Instructions: Managing Users and Products
-
-### 1. Sign Up
-
-Create an admin account using:
-**POST** `/api/user/auth/signup`
-
-#### Request Body Schema:
-
+Response body:
 ```json
 {
-  "email": "string",
-  "password": "string",
-  "cpf": "string",
-  "role": "string",
-  "fullName": "string"
+    "id": "string",
+    "name": "string",
+    "description": "string",
+    "category": "string",
+    "price": "number",
+    "image": "string"
 }
 ```
-#### Example:
 
+### 8. Get data from Products of specific category
+**GET** `/api/productsv2/category/{{category}}`
+
+Response body:
+```json
+[
+    {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "category": "string",
+        "price": "number",
+        "image": "string"
+    }
+]
+```
+
+### 9. Delete a Product (Admin only)
+**DELETE** `/api/productsv2/id/{{product_id}}`
+
+Response: 204 No Content
+
+### 10. Create a Basket
+**POST** `/api/baskets`
+
+Request body:
 ```json
 {
-  "email": "admin@user.com",
-  "password": "1234",
-  "cpf": "04953129326",
-  "role": "ADMIN",
-  "fullName": "Admin da Silva"
+    "items": [
+        {
+            "productId": "string",
+            "quantity": "number"
+        }
+    ]
 }
 ```
 
-### 2. Log In
-
-Log in to the admin account using:
-**POST** `/api/user/auth/login`
-
-#### Request Body Schema:
+Response body:
 ```json
 {
-  "cpf": "string",
-  "password": "string"
+    "id": "string",
+    "items": [
+        {
+            "id": "string",
+            "productId": "string",
+            "quantity": "number"
+        }
+    ]
 }
 ```
 
-#### Example:
+### 11. Add item to Basket
+**POST** `/api/baskets/{{item_id}}/items`
+
+Request body:
 ```json
 {
-  "cpf": "04953129326",
-  "password": "1234"
+    "productId": "string",
+    "quantity": "number"
 }
 ```
-Upon successful login, a token will be generated. Save this token to use in Postman or for authorizing requests in Swagger.
 
-### 3. Create a Product
-
-Add a new product using:
-**POST** `/api/products`
-
-#### Request Body Schema (Example):
+Response body:
 ```json
 {
-  "category": "Lanche",
-  "description": "Hamburguer delicioso de São Paulo",
-  "name": "Xis",
-  "price": 12.0,
-  "cookingTime": 5
+    "id": "string",
+    "items": [
+        {
+            "id": "string",
+            "productId": "string",
+            "quantity": "number"
+        }
+    ]
 }
 ```
-### 4. Check a Product
 
-Retrieve a product by its ID using:
-**GET** `/api/products/{product_id}`
+### 12. Get data from a specific Basket
+**GET** `/api/baskets/{{basket_id}}`
 
-The _product_id_ is returned in the response when the product is created.
-
-### 5. Modify a Product
-
-Update a product using:
-**PUT** `/api/products/{product_id}`
-
-#### Request Body Schema (Example):
+Response body:
 ```json
 {
-  "category": "Lanche",
-  "description": "Hamburguer delicioso de São Paulo e Rio de Janeiro",
-  "name": "Xis Bolacha-Biscoito",
-  "price": 15.0,
-  "cookingTime": 10
+    "id": "string",
+    "items": [
+        {
+            "id": "string",
+            "productId": "string",
+            "quantity": "number"
+        }
+    ]
 }
 ```
 
-### 6. Verify Product Update
+### 13. Delete a Basket
+**DELETE** `/api/baskets/{{basket_id}}/items/{{item_id}}`
 
-Check if the product was updated successfully using:
-**GET** /`api/products/{product_id}`
+Response: 204 No Content
 
-### 7. View Users
+### 14. Check the order out
+**POST** `/api/checkout/{{order_id}}`
 
-- Retrieve a list of users:
-  **GET** `/api/user/`
+Response body:
+```json
+{
+    "id": "string",
+    "status": "string",
+    "items": [
+        {
+            "productId": "string",
+            "quantity": "number"
+        }
+    ],
+    "total": "number"
+}
+```
 
-- Retrieve a user by CPF:
-**GET** `/api/user/cpf/{user_cpf}`
+### 15. Pay for the order
+**POST** `/api/payments`
 
-### 8. Delete a User
+Request body:
+```json
+{
+    "orderId": "string",
+    "amount": "number",
+    "paymentMethod": "string"
+}
+```
 
-Remove a user by their ID using:
-**DELETE** `/api/user/{user_id}`
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string",
+    "amount": "number",
+    "status": "string",
+    "externalId": "string"
+}
+```
 
-### 9. Delete a Product
+### 16. Get data from all payments (Admin only)
+**GET** `/api/payments`
 
-Remove a product by its ID using:
-**DELETE** `/api/products/{product_id}`
+Response body:
+```json
+[
+    {
+        "id": "string",
+        "orderId": "string",
+        "amount": "number",
+        "status": "string",
+        "externalId": "string"
+    }
+]
+```
+
+### 17. Get data from a specific payment (Admin only)
+**GET** `/api/payments/id/{{order_id}}`
+
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string",
+    "amount": "number",
+    "status": "string",
+    "externalId": "string"
+}
+```
+
+### 18. Get data from an external Payment (Admin only)
+**GET** `/api/payments/externalId/{{external_id}}`
+
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string",
+    "amount": "number",
+    "status": "string",
+    "externalId": "string"
+}
+```
+
+### 19. Update Payment status (Application internal use)
+**PATCH** `/api/payments/updateStatusWebhook`
+
+Request body:
+```json
+{
+    "externalId": "string",
+    "status": "string"
+}
+```
+
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "string",
+    "externalId": "string"
+}
+```
+
+## Kitchen Side:
+
+### 1. Receive an Order
+**POST** `/api/cooking/receive-order/{{order_id}}`
+
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "RECEIVED",
+    "items": [
+        {
+            "productId": "string",
+            "quantity": "number"
+        }
+    ]
+}
+```
+
+### 2. Start Preparation
+**POST** `/api/cooking/start-preparation/{{order_id}}`
+
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "IN_PREPARATION",
+    "items": [
+        {
+            "productId": "string",
+            "quantity": "number"
+        }
+    ]
+}
+```
+
+### 3. Finish Preparation
+**POST** `/api/cooking/finish-preparation/{{order_id}}`
+
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "READY",
+    "items": [
+        {
+            "productId": "string",
+            "quantity": "number"
+        }
+    ]
+}
+```
+
+### 4. Check the preparation status of a specific order which was already received
+**GET** `/api/cooking/{{order_id}}`
+
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "string",
+    "items": [
+        {
+            "productId": "string",
+            "quantity": "number"
+        }
+    ]
+}
+```
+
+### 5. Check the preparation status of all orders which were already received
+**GET** `/api/cooking`
+
+Response body:
+```json
+[
+    {
+        "id": "string",
+        "orderId": "string",
+        "status": "string",
+        "items": [
+            {
+                "productId": "string",
+                "quantity": "number"
+            }
+        ]
+    }
+]
+```
+
+### 6. Notify customer about order readiness
+**POST** `/api/pickup/notify/{{order_id}}`
+
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "CUSTOMER_NOTIFIED"
+}
+```
+
+### 7. Deliver order
+**POST** `/api/pickup/delivery/{{order_id}}`
+
+Response body:
+```json
+{
+    "id": "string",
+    "orderId": "string", 
+    "status": "DELIVERED"
+}
+```
