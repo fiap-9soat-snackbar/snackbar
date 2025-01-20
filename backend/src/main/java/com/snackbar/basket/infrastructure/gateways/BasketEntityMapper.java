@@ -20,7 +20,6 @@ public class BasketEntityMapper {
 
         return new BasketEntity(
                 basketDomainObj.id(),
-                basketDomainObj.basketDateTime(),
                 basketDomainObj.cpf(),
                 itemEntities,
                 basketDomainObj.totalPrice()
@@ -34,7 +33,6 @@ public class BasketEntityMapper {
 
         return new Basket(
                 basketEntity.getId(),
-                basketEntity.getBasketDateTime(),
                 basketEntity.getCpf(),
                 items,
                 basketEntity.getTotalPrice()

@@ -39,7 +39,6 @@ public class BasketUseCase {
 
         Basket updatedBasket = new Basket(
                 basket.id(),
-                basket.basketDateTime(),
                 basket.cpf(),
                 updatedItems,
                 totalPrice

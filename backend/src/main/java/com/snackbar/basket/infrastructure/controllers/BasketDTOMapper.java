@@ -15,7 +15,6 @@ public class BasketDTOMapper {
                 .collect(Collectors.toList());
         return new Basket(
                 request.id(),
-                request.basketDateTime(),
                 request.cpf(),
                 items,
                 request.totalPrice()
@@ -28,7 +27,6 @@ public class BasketDTOMapper {
                 .collect(Collectors.toList());
         return new CreateBasketResponse(
                 basket.id(),
-                basket.basketDateTime(),
                 basket.cpf(),
                 items,
                 basket.totalPrice()
