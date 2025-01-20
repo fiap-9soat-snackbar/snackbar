@@ -6,6 +6,5 @@ public record Item(
         String name,
         Integer quantity,
         BigDecimal price,
-        Integer cookingTime,
-        String customization
+        Integer cookingTime
 ) {}

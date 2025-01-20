@@ -61,6 +61,7 @@ public class OrderUseCase {
         BigDecimal totalPrice = updatedItems.stream()
                 .map(item -> item.getPrice() != null ? item.getPrice().multiply(BigDecimal.valueOf(item.getQuantity())) : BigDecimal.ZERO)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
+
         order.setTotalPrice(totalPrice);
 
         return orderGateway.createOrder(order);

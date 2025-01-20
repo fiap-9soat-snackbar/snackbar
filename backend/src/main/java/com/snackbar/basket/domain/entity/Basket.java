@@ -10,7 +10,6 @@ public record Basket(
         String id,
         @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Instant basketDateTime,
         String cpf,
-        String name,
         List<Item> items,
         BigDecimal totalPrice
 ) {}
