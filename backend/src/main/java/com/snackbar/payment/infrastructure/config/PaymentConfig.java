@@ -2,6 +2,7 @@ package com.snackbar.payment.infrastructure.config;
 
 import com.snackbar.payment.application.gateways.PaymentGateway;
 import com.snackbar.payment.application.usecases.*;
+import com.snackbar.orderRefactory.application.usecases.OrderUseCase;
 import com.snackbar.payment.infrastructure.MpService;
 import com.snackbar.payment.infrastructure.controllers.PaymentDTOMapper;
 import com.snackbar.payment.infrastructure.controllers.PaymentMPDTOMapper;
@@ -83,10 +84,10 @@ public class PaymentConfig {
     }
 
     @Bean
-    public UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase(PaymentGateway paymentGateway, GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase) {
+    public UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase(PaymentGateway paymentGateway, GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase, OrderUseCase orderUseCase) {
         // Logging
         //logger.info("Creating CreatePaymentUseCase bean");
-        return new UpdatePaymentStatusWebhook(paymentGateway, getPaymentByExternalIdUseCase);
+        return new UpdatePaymentStatusWebhook(paymentGateway, getPaymentByExternalIdUseCase, orderUseCase);
     }
 
 

@@ -135,30 +135,6 @@ public class OrderUseCase {
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Invalid order status: " + orderStatus);
         }
-        //order.setStatusOrder(StatusOrder.valueOf(orderStatus));
-
-        /*
-        // Check if the order has been paid
-        boolean isPaid = this.checkoutOrderUseCase.isPaid(orderId);
-
-        boolean isReady = this.isReadyPickupUseCaseImpl.isReady(orderId);
-
-
-        // Check if the order has been picked up
-        boolean isDone = this.isReadyPickupUseCaseImpl.isDone(orderId);
-
-
-        // Update StatusOrder based on payment and pickup status
-        if (isPaid && isDone) {
-            order.setStatusOrder(StatusOrder.FINALIZADO);
-        } else if (isReady) {
-            order.setStatusOrder(StatusOrder.PRONTO);
-        } else if (isPaid) {
-            order.setStatusOrder(StatusOrder.PAGO);
-            order.setPaymentMethod("Mercado Pago");
-        } else {
-            order.setStatusOrder(StatusOrder.NOVO);
-        }*/
 
        return orderGateway.updateOrder(order);
     }
