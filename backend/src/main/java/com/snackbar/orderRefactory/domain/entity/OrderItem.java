@@ -8,28 +8,18 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 public class OrderItem {
-    private String id;
     private String name;
     private Integer quantity;
     private BigDecimal price;
     private Integer cookingTime;
     private String customization;
 
-    public OrderItem(String id, String name, Integer quantity, BigDecimal price, Integer cookingTime, String customization) {
-        this.id = id;
+    public OrderItem(String name, Integer quantity, BigDecimal price, Integer cookingTime, String customization) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.cookingTime = cookingTime;
         this.customization = customization;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
