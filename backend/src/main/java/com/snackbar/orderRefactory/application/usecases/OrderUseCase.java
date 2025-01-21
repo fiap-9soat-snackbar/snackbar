@@ -50,7 +50,7 @@ public class OrderUseCase {
         List<OrderItem> updatedItems = order.getItems().stream().map(item -> {
             OrderItem updatedItem = productGateway.getProductByName(item.getName());
             if (updatedItem != null) {
-                return new OrderItem(item.getId(), updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
+                return new OrderItem(updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
             } else {
                 throw new IllegalArgumentException("Product not found: " + item.getName());
             }
@@ -74,7 +74,7 @@ public class OrderUseCase {
         List<OrderItem> updatedItems = order.getItems().stream().map(item -> {
             OrderItem updatedItem = productGateway.getProductByName(item.getName());
             if (updatedItem != null) {
-                return new OrderItem(item.getId(), updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
+                return new OrderItem( updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
             } else {
                 throw new IllegalArgumentException("Product not found: " + item.getName());
             }
