@@ -35,16 +35,17 @@ The two videos that describe the user flow and the admin flow are hosted in Yout
 
 ## Phase 1 Content
 
-Project presentation and user flow: part 01 - https://youtu.be/T2oW0KYMC-U and part 02 - https://youtu.be/y6bCACwyYLU 
-Admin flow: - https://youtu.be/14HJadw8JQ0 
+* Project presentation and user flow: part 01 - https://youtu.be/T2oW0KYMC-U
+* User flow: part 02 - https://youtu.be/y6bCACwyYLU 
+* Admin flow: - https://youtu.be/14HJadw8JQ0 
 
 ## Phase 2 Content
 
-Infrastructure Video 01: https://youtu.be/IboMg2fjcig
-Infrastructure Video 02: https://youtu.be/w421NQZvaNU
-Application Navigation Video: https://youtu.be/wC2Kxfhk16M
-Documentation in C4 Model Video: https://youtu.be/QQ4ISStS3WU
-Documentation in C4 Model Miro Board: https://miro.com/app/board/uXjVL0azFlU=/?share_link_id=904093921496
+* Infrastructure Video 01: https://youtu.be/IboMg2fjcig
+* Infrastructure Video 02: https://youtu.be/w421NQZvaNU
+* Application Navigation Video: https://youtu.be/wC2Kxfhk16M
+* Documentation in C4 Model Video: https://youtu.be/QQ4ISStS3WU
+* Documentation in C4 Model Miro Board: https://miro.com/app/board/uXjVL0azFlU=/?share_link_id=904093921496
 
 </p>
    
