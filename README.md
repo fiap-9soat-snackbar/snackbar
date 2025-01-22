@@ -33,8 +33,18 @@ The Domain Drive Design (DDD) diagrams that define the main application flows ar
 
 The two videos that describe the user flow and the admin flow are hosted in Youtube in the following links (only visible through the links, not searcheable):
 
+## Phase 1 Content
+
 Project presentation and user flow: part 01 - https://youtu.be/T2oW0KYMC-U and part 02 - https://youtu.be/y6bCACwyYLU 
 Admin flow: - https://youtu.be/14HJadw8JQ0 
+
+## Phase 2 Content
+
+Infrastructure Video 01: https://youtu.be/IboMg2fjcig
+Infrastructure Video 02: https://youtu.be/w421NQZvaNU
+Application Navigation Video: https://youtu.be/wC2Kxfhk16M
+Documentation in C4 Model Video: https://youtu.be/QQ4ISStS3WU
+Documentation in C4 Model Miro Board: https://miro.com/app/board/uXjVL0azFlU=/?share_link_id=904093921496
 
 </p>
    
@@ -92,10 +102,13 @@ The application exposes the following REST API endpoints:
 | route               | description                                          
 |----------------------|-----------------------------------------------------
 | <kbd>Identity and Access Management (IAM) Endpoints</kbd>     | See [iam.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/iam/iam.md)
-| <kbd>Products Endpoints</kbd>     | See [products.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/product/products.md)
-| <kbd>Orders Endpoints</kbd>     | See [orders.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/order/orders.md)
-| <kbd>Cooking Endpoints</kbd>     | See [cooking.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/cooking/cooking.md)
+| <kbd>Productsv2 Endpoints</kbd>     | See [productsv2.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/product/productsv2.md)
+| <kbd>Basket Endpoints</kbd>     | See [basket.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/order/basket.md)
+| <kbd>Orders Refactored Endpoints</kbd>     | See [ordersRefactored.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/order/ordersRefactored.md)
 | <kbd>Checkout Endpoints</kbd>     | See [checkout.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/checkout/checkout.md)
+| <kbd>Payment Endpoints</kbd>     | See [payments.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/payment/payment.md)
+</div>
+| <kbd>Cooking Endpoints</kbd>     | See [cooking.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/cooking/cooking.md)
 | <kbd>Pickup Endpoints</kbd>     | See [pickup.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/pickup/pickup.md)
 </div>
 
