@@ -56,7 +56,6 @@ public class OrderEntityMapper {
 
     private ItemEntity toItemEntity(OrderItem item) {
         return new ItemEntity(
-                item.getId(),
                 item.getName(),
                 item.getQuantity(),
                 item.getPrice(),
@@ -67,7 +66,6 @@ public class OrderEntityMapper {
 
     private OrderItem toDomainItem(ItemEntity itemEntity) {
         return new OrderItem(
-                itemEntity.getId(),
                 itemEntity.getName(),
                 itemEntity.getQuantity(),
                 itemEntity.getPrice(),

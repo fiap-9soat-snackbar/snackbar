@@ -39,11 +39,10 @@ public class CheckoutOrderUseCaseImpl implements CheckoutOrderUseCase {
         Basket basket = basketUseCase.findBasket(basketId);
 
         Order order = new Order();
-        order.setName(basket.name());
         order.setCpf(basket.cpf());
         order.setStatusOrder(StatusOrder.NOVO);
         order.setTotalPrice(basket.totalPrice());
-
+        order.setPaymentMethod("mercado_pago");
         order.setItems(basket.items().stream().map(item -> {
             OrderItem orderItem = new OrderItem();
             orderItem.setName(item.name());

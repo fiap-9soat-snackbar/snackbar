@@ -6,6 +6,7 @@ import com.snackbar.basket.infrastructure.gateways.BasketEntityMapper;
 import com.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway;
 import com.snackbar.basket.infrastructure.gateways.ItemEntityMapper;
 import com.snackbar.basket.infrastructure.persistence.BasketRepository;
+import com.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,8 +29,11 @@ public class BasketConfig {
     }
 
     @Bean
-    public BasketUseCase basketUseCase(BasketRepositoryGateway basketRepositoryGateway) {
-        return new BasketUseCase(basketRepositoryGateway);
+    public BasketUseCase basketUseCase(
+            BasketRepositoryGateway basketRepositoryGateway,
+            GetProductv2ByNameUseCase getProductUseCase
+    ) {
+        return new BasketUseCase(basketRepositoryGateway, getProductUseCase);
     }
 
     @Bean

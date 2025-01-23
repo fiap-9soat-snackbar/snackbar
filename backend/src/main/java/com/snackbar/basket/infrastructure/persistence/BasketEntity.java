@@ -18,10 +18,7 @@ public class BasketEntity {
 
     @Id
     private String id;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private Instant basketDateTime;
     private String cpf;
-    private String name;
     private List<ItemEntity> items = new ArrayList<>();
     private BigDecimal totalPrice;
 }

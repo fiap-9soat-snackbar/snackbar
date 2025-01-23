@@ -11,7 +11,6 @@ public class OrderDTOMapper {
     public Order toDomain(CreateOrderRequest request) {
         List<OrderItem> items = request.items().stream()
                 .map(item -> new OrderItem(
-                        item.getId(),
                         item.getName(), // Add appropriate value for the name
                         item.getQuantity(),
                         item.getPrice(),
@@ -35,7 +34,6 @@ public class OrderDTOMapper {
     public CreateOrderResponse toResponse(Order order) {
         List<OrderItemResponse> items = order.getItems().stream()
                 .map(item -> new OrderItemResponse(
-                        item.getId(),
                         item.getQuantity(),
                         item.getPrice()
                 ))

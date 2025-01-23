@@ -8,10 +8,8 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 public class ItemEntity {
-    private String id;
     private String name;
     private Integer quantity;
     private BigDecimal price;
     private Integer cookingTime;
-    private String customization;
 }

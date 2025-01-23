@@ -5,6 +5,8 @@ import com.snackbar.basket.domain.entity.Basket;
 import com.snackbar.basket.domain.entity.Item;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/baskets")
 public class BasketController {
@@ -32,6 +34,12 @@ public class BasketController {
         return basketDTOMapper.toResponse(basket);
     }
 
+    @GetMapping("/")
+    public List<CreateBasketResponse> findAll() {
+        List<Basket> basket = basketUseCase.findAllBaskets();
+        return basketDTOMapper.toResponseList(basket);
+    }
+
     @PostMapping("/{basketId}/items")
     public CreateBasketResponse addItem(@PathVariable String basketId, @RequestBody ItemRequest itemRequest) {
         Item item = basketDTOMapper.toItem(itemRequest);
@@ -39,9 +47,9 @@ public class BasketController {
         return basketDTOMapper.toResponse(basket);
     }
 
-    @DeleteMapping("/{basketId}/items/{itemId}")
-    public CreateBasketResponse deleteItem(@PathVariable String basketId, @PathVariable String itemId) {
-        Basket basket = basketUseCase.deleteItemToBasket(basketId, itemId);
+    @DeleteMapping("/{basketId}/items/{name}")
+    public CreateBasketResponse deleteItem(@PathVariable String basketId, @PathVariable String name) {
+        Basket basket = basketUseCase.deleteItemToBasket(basketId, name);
         return basketDTOMapper.toResponse(basket);
     }
 }

@@ -11,7 +11,6 @@ public class ProductDTOToOrderItemMapper {
         }
 
         return new OrderItem(
-                productDTO.getId(),
                 productDTO.getName(),
                 0,
                 productDTO.getPrice(),

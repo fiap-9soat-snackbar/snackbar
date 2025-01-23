@@ -50,7 +50,7 @@ public class OrderUseCase {
         List<OrderItem> updatedItems = order.getItems().stream().map(item -> {
             OrderItem updatedItem = productGateway.getProductByName(item.getName());
             if (updatedItem != null) {
-                return new OrderItem(item.getId(), updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
+                return new OrderItem(updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
             } else {
                 throw new IllegalArgumentException("Product not found: " + item.getName());
             }
@@ -61,6 +61,7 @@ public class OrderUseCase {
         BigDecimal totalPrice = updatedItems.stream()
                 .map(item -> item.getPrice() != null ? item.getPrice().multiply(BigDecimal.valueOf(item.getQuantity())) : BigDecimal.ZERO)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
+
         order.setTotalPrice(totalPrice);
 
         return orderGateway.createOrder(order);
@@ -73,7 +74,7 @@ public class OrderUseCase {
         List<OrderItem> updatedItems = order.getItems().stream().map(item -> {
             OrderItem updatedItem = productGateway.getProductByName(item.getName());
             if (updatedItem != null) {
-                return new OrderItem(item.getId(), updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
+                return new OrderItem( updatedItem.getName(), item.getQuantity(), updatedItem.getPrice(), updatedItem.getCookingTime(), updatedItem.getCustomization());
             } else {
                 throw new IllegalArgumentException("Product not found: " + item.getName());
             }
@@ -135,30 +136,6 @@ public class OrderUseCase {
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Invalid order status: " + orderStatus);
         }
-        //order.setStatusOrder(StatusOrder.valueOf(orderStatus));
-
-        /*
-        // Check if the order has been paid
-        boolean isPaid = this.checkoutOrderUseCase.isPaid(orderId);
-
-        boolean isReady = this.isReadyPickupUseCaseImpl.isReady(orderId);
-
-
-        // Check if the order has been picked up
-        boolean isDone = this.isReadyPickupUseCaseImpl.isDone(orderId);
-
-
-        // Update StatusOrder based on payment and pickup status
-        if (isPaid && isDone) {
-            order.setStatusOrder(StatusOrder.FINALIZADO);
-        } else if (isReady) {
-            order.setStatusOrder(StatusOrder.PRONTO);
-        } else if (isPaid) {
-            order.setStatusOrder(StatusOrder.PAGO);
-            order.setPaymentMethod("Mercado Pago");
-        } else {
-            order.setStatusOrder(StatusOrder.NOVO);
-        }*/
 
        return orderGateway.updateOrder(order);
     }
