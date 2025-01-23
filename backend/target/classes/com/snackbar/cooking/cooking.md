@@ -13,25 +13,15 @@
 <h3 id="cooking">GET /api/cooking</h3>
 
 **RESPONSE**  
+
+- **Response Body**:
 ```json
 [
     {
-        "id": "678d69232673ebea95fe6912",
-        "name": "Jose Moreira",
-        "orderNumber": "000001",
-        "orderDateTime": "2024-11-03T01:00:25.14",
-        "itemEntities": [
-            {
-                "name": "Hot Dog de Salsicha",
-                "price": 20,
-                "quantity": 1,
-                "cookingTime": 10,
-                "customization": "Molho extra"
-            }
-        ],
-        "statusOrder": "PREPARACAO"
-    },
-    /* All other orders */
+        "id": "string",
+        "orderId": "string",
+        "status": "string"
+    }
 ]
 ```
 
@@ -39,43 +29,44 @@
 
 **RESPONSE**
 ```json
-[
-    {
-        "id": "678d69232673ebea95fe6912",
-        "name": "Jose Moreira",
-        "orderNumber": "000001",
-        "orderDateTime": "2024-11-03T01:00:25.14",
-        "itemEntities": [
-            {
-                "name": "Hot Dog de Salsicha",
-                "price": 20,
-                "quantity": 1,
-                "cookingTime": 10,
-                "customization": "Molho extra"
-            }
-        ],
-        "statusOrder": "PREPARACAO"
-    }
-]
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "string"
+}
 ```
 
 <h3 id="receive-order">POST /api/cooking/receive-order/{id}</h3>
 
-**RESPONSE**  
+**RESPONSE**
 ```json
-   Pedido recebido
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "string"
+}
 ```
 
 <h3 id="start-preparation">POST /api/cooking/start-preparation/{id}</h3>
 
-**RESPONSE**  
+
+**RESPONSE**
 ```json
-   Preparo iniciado
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "string"
+}
 ```
 
 <h3 id="finish-preparation">POST /api/cooking/finish-preparation/{id}</h3>
 
-**RESPONSE**  
+
+**RESPONSE**
 ```json
-   Preparo pronto
+{
+    "id": "string",
+    "orderId": "string",
+    "status": "string"
+}
 ```

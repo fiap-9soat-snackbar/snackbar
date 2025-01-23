@@ -2,16 +2,6 @@
 
 This document provides a comprehensive list of all available endpoints in the Snackbar application.
 
-## Products API (v1)
-Base path: `/api/products`
-
-- POST `/` - Create a new product
-- GET `/` - Get all products
-- GET `/{id}` - Get a product by ID
-- GET `/category/{category}` - Get products by category
-- PUT `/{id}` - Update a product
-- DELETE `/{id}` - Delete a product
-
 ## Products API (v2)
 Base path: `/api/productsv2`
 

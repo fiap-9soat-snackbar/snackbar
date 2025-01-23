@@ -1,5 +1,51 @@
 # API Endpoints Documentation
 
+## Authentication (`/api/user`)
+
+### Sign Up
+- **Method**: POST
+- **Endpoint**: `/auth/signup`
+- **Request Body**:
+```json
+{
+    "email": "string",
+    "password": "string",
+    "cpf": "string",
+    "role": "string",
+    "fullName": "string"
+}
+```
+- **Response Body**:
+```json
+{
+    "id": "string",
+    "email": "string",
+    "password": "string",
+    "cpf": "string",
+    "role": "string",
+    "fullName": "string"
+}
+```
+
+### Log In
+- **Method**: POST
+- **Endpoint**: `/auth/signup`
+- **Request Body**:
+```json
+{
+    "cpf": "string",
+    "password": "string"
+}
+```
+- **Response Body**:
+```json
+{
+    "jwtToken": "string",
+    "expirationTime": "integer"
+}
+```
+
+
 ## Basket Service Endpoints (`/api/baskets`)
 
 ### Create Basket
