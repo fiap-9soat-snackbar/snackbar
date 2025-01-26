@@ -3,14 +3,14 @@
 
 | route               | description                                          
 |----------------------|-----------------------------------------------------
-| <kbd>GET /api/orders</kbd>     | See [request details](#get-orders)
-| <kbd>GET /api/orders/{id}</kbd>     |  See [request details](#get-orders-id)
-| <kbd>GET /api/orders/number/{orderNumber}</kbd>     |See [request details](#get-orders-ordernumber)
-| <kbd>GET /api/orders/sorted</kbd>     | See [request details](#get-orders-sorted)
-| <kbd>POST /api/orders</kbd>     | See [request details](#post-orders)
-| <kbd>PUT /api/orders/{id}</kbd>     | See [request details](#put-orders)
+| <kbd>GET /api/ordersrefactored</kbd>     | See [request details](#get-orders)
+| <kbd>GET /api/ordersrefactored/{id}</kbd>     |  See [request details](#get-orders-id)
+| <kbd>GET /api/ordersrefactored/number/{orderNumber}</kbd>     |See [request details](#get-orders-ordernumber)
+| <kbd>GET /api/ordersrefactored/sorted</kbd>     | See [request details](#get-orders-sorted)
+| <kbd>POST /api/ordersrefactored</kbd>     | See [request details](#post-orders)
+| <kbd>PUT /api/ordersrefactored</kbd>     | See [request details](#put-orders)
 
-<h3 id="get-orders">GET /api/orders</h3>
+<h3 id="get-orders">GET /api/ordersrefactored</h3>
 
 **RESPONSE**  
 ```json
@@ -40,7 +40,7 @@
 ]
 ```
 
-<h3 id="get-orders-id">GET /api/orders/{id}</h3>
+<h3 id="get-orders-id">GET /api/ordersrefactored/{id}</h3>
 
 **RESPONSE**
 ```json
@@ -67,7 +67,7 @@
 }
 ```
 
-<h3 id="get-orders-ordernumber">GET /api/orders/number/{orderNumber}</h3>
+<h3 id="get-orders-ordernumber">GET /api/ordersrefactored/number/{orderNumber}</h3>
 
 **RESPONSE**
 ```json
@@ -93,7 +93,7 @@
     "waitingTime": 10
 }
 ```
-<h3 id="post-orders">POST /api/orders</h3>
+<h3 id="post-orders">POST /api/ordersrefactored</h3>
 
 **REQUEST**  
 ```json
@@ -156,7 +156,7 @@
 }
 ```
 
-<h3 id="put-orders">PUT /api/orders/{id}</h3>
+<h3 id="put-orders">PUT /api/ordersrefactored</h3>
 
 **REQUEST**  
 ```json
@@ -196,7 +196,7 @@
     "waitingTime": 2
 }
 ```
-<h3 id="get-orders-sorted">GET /api/orders/sorted</h3>
+<h3 id="get-orders-sorted">GET /api/ordersrefactored/sorted</h3>
 
 **RESPONSE**  
 ```json
