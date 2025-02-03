@@ -46,6 +46,8 @@ The two videos that describe the user flow and the admin flow are hosted in Yout
 * Application Navigation Video: https://youtu.be/wC2Kxfhk16M
 * Documentation in C4 Model Video: https://youtu.be/QQ4ISStS3WU
 * Documentation in C4 Model Miro Board: https://miro.com/app/board/uXjVL0azFlU=/?share_link_id=904093921496
+* Application User Guide: See [instructions.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/instructions.md) 
+* Postman Collection: See [Fase2-Postman-Collection.json](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/Fase2-Postman-Collection.json)
 
 </p>
    
