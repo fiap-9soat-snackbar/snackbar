@@ -60,8 +60,8 @@ jobs:
     - name: Run SonarCloud Analysis
       run: |
         mvn -f backend/pom.xml org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar \
-          -Dsonar.projectKey=snackbar \
-          -Dsonar.organization=snackbar\
+          -Dsonar.projectKey=smthiago_snackbar \
+          -Dsonar.organization=smthiago\
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
