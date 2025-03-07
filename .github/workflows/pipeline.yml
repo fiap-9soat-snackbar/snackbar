@@ -59,7 +59,7 @@ jobs:
 
     - name: Run SonarCloud Analysis
       run: |
-        mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar \
+        mvn -f backend/pom.xml org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar \
           -Dsonar.projectKey=snackbar \
           -Dsonar.organization=snackbar\
           -Dsonar.host.url=https://sonarcloud.io \
