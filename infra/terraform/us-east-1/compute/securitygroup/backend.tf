@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 terraform {
-  required_version = "~> 1.10.3"
+  #required_version = "~> 1.10.3"
 
   backend "s3" {
     region = "us-east-1"
