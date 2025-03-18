@@ -57,11 +57,14 @@
 ```json
 [
     {
-        "userId": "string",
-        "cpf": "string",
+        "id": "string",
+        "name": "string",
         "email": "string",
-        "name": "string"
-    }
+        "cpf": "string",
+        "role": "string",
+        "password": "string",
+    },
+    /* All other users */
 ]
 ```
 
@@ -70,10 +73,11 @@
 **RESPONSE**
 ```json
 {
-    "userId": "string",
-    "cpf": "string",
+    "id": "string",
+    "name": "string",
     "email": "string",
-    "name": "string"
+    "cpf": "string",
+    "role": "string"
 }
 ```
 
@@ -81,7 +85,5 @@
 
 **RESPONSE**
 ```json
-{
-    "message": "User deleted successfully"
-}
+(empty)
 ```
