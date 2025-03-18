@@ -8,6 +8,7 @@ import com.snackbar.iam.domain.UserEntity;
 import com.snackbar.iam.web.dto.LoginResponse;
 import com.snackbar.iam.web.dto.LoginUserDto;
 import com.snackbar.iam.web.dto.RegisterUserDto;
+import com.snackbar.iam.web.dto.RefreshTokenRequest; // <-- Novo DTO
 import com.snackbar.order.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,13 +16,18 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/user")
 @RestController
 public class AuthenticationController {
-    private final JwtService jwtService;
 
+    private final JwtService jwtService;
     private final AuthenticationService authenticationService;
     private final UserService userService;
     private final OrderService orderService;
 
-    public AuthenticationController(JwtService jwtService, AuthenticationService authenticationService, UserService userService, OrderService orderService) {
+    public AuthenticationController(
+            JwtService jwtService,
+            AuthenticationService authenticationService,
+            UserService userService,
+            OrderService orderService
+    ) {
         this.jwtService = jwtService;
         this.authenticationService = authenticationService;
         this.userService = userService;
@@ -31,16 +37,15 @@ public class AuthenticationController {
     @PostMapping("/auth/signup")
     public ResponseEntity<UserEntity> register(@RequestBody RegisterUserDto registerUserDto) {
         UserEntity registeredUser = authenticationService.signup(registerUserDto);
-
         return ResponseEntity.ok(registeredUser);
     }
 
     @PostMapping("/auth/login")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
-        String jwtToken = null;
-        UserDetailsEntity authenticatedUser = null;
+        String jwtToken;
+        UserDetailsEntity authenticatedUser;
 
-        if (loginUserDto.getAnonymous() == true) {
+        if (Boolean.TRUE.equals(loginUserDto.getAnonymous())) {
             authenticatedUser = new UserDetailsEntity();
             jwtToken = jwtService.generateToken(authenticatedUser);
         } else {
@@ -52,5 +57,22 @@ public class AuthenticationController {
         return ResponseEntity.ok(loginResponse);
     }
 
+    // Novo endpoint para refresh token
+    @PostMapping("/auth/refresh")
+    public ResponseEntity<LoginResponse> refreshToken(@RequestBody RefreshTokenRequest refreshTokenRequest) {
+        // Busca o usuário pelo CPF
+        UserDetailsEntity userDetails = authenticationService.findByCpf(refreshTokenRequest.getCpf());
+
+        // Gera um novo token JWT
+        String newJwtToken = jwtService.generateToken(userDetails);
+
+        // Monta a resposta com o novo token e seu tempo de expiração
+        LoginResponse loginResponse = new LoginResponse(
+                newJwtToken,
+                jwtService.getExpirationTime()
+        );
+
+        return ResponseEntity.ok(loginResponse);
+    }
 
 }
