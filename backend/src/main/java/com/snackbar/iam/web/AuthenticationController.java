@@ -57,16 +57,12 @@ public class AuthenticationController {
         return ResponseEntity.ok(loginResponse);
     }
 
-    // Novo endpoint para refresh token
     @PostMapping("/auth/refresh")
     public ResponseEntity<LoginResponse> refreshToken(@RequestBody RefreshTokenRequest refreshTokenRequest) {
-        // Busca o usuário pelo CPF
         UserDetailsEntity userDetails = authenticationService.findByCpf(refreshTokenRequest.getCpf());
 
-        // Gera um novo token JWT
         String newJwtToken = jwtService.generateToken(userDetails);
 
-        // Monta a resposta com o novo token e seu tempo de expiração
         LoginResponse loginResponse = new LoginResponse(
                 newJwtToken,
                 jwtService.getExpirationTime()
