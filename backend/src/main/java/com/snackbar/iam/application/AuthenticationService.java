@@ -48,8 +48,7 @@ public class AuthenticationService {
                 )
         );
 
-        return userRepository.findByCpf(input.getCpf())
-                .orElseThrow(() -> new UserNotFoundException("Usuário não encontrado para o CPF: " + input.getCpf()));
+        return findByCpf(input.getCpf());
     }
 
     public UserDetailsEntity findByCpf(String cpf) {
