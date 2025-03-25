@@ -27,17 +27,17 @@
 ## 💻 About the project
 This is a backend-only application for managing products in a snackbar, following an hexagonal architecture.
 
-The application is written in Java 21 using Spring Boot, built using Maven 3.9.9, uses MongoDB 8.0.1 as database, and runs containerized using Docker 27.2 and Docker Compose 2.29 on container images based on Ubuntu 24.04 (Noble Numbat) of amd64 architecture.
+The application is written in Java 21 using Spring Boot, built using Maven 3.9.9, uses MongoDB Atlas as database, and the application runs containerized using Docker 27.2 and on container images based on Ubuntu 24.04 (Noble Numbat) of amd64 architecture.
 
 The Domain Drive Design (DDD) diagrams that define the main application flows are accessible in this Miro board: https://miro.com/app/board/uXjVLK2yXLA=/
 
 The two videos that describe the user flow and the admin flow are hosted in Youtube in the following links (only visible through the links, not searcheable):
 
-## Phase 1 Content
+## Phase 3 Content
 
-* Project presentation and user flow: part 01 - https://youtu.be/T2oW0KYMC-U
-* User flow: part 02 - https://youtu.be/y6bCACwyYLU 
-* Admin flow: - https://youtu.be/14HJadw8JQ0 
+* Pipeline Video: https://youtu.be/xxxxxx
+* Managed Database (MongoDB Atlas) Video: https://youtu.be/xxxxx
+* Amazon API Gateway + Lambda Authorizer Video: https://youtu.be/xxxxxx
 
 ## Phase 2 Content
 
@@ -49,46 +49,72 @@ The two videos that describe the user flow and the admin flow are hosted in Yout
 * Application User Guide: See [instructions.md](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/instructions.md) 
 * Postman Collection: See [Fase2-Postman-Collection.json](https://github.com/commskywalker/snackbar/blob/main/backend/src/main/java/com/snackbar/Fase2-Postman-Collection.json)
 
+## Phase 1 Content
+
+* Project presentation and user flow: part 01 - https://youtu.be/T2oW0KYMC-U
+* User flow: part 02 - https://youtu.be/y6bCACwyYLU 
+* Admin flow: - https://youtu.be/14HJadw8JQ0 
+
 </p>
    
 
 <p id="run">
 
+# Pipeline-based Provisioning
+
+This project consists of: 1/A Java Spring Boot application hosted on **EKS** (Amazon Elastic Kubernetes Service) from AWS, 2/A MongoDB Atlas database, 3/An Amazon API Gateway and 4/A Lambda function working as an API Gateway Authorizer. All components can be provisioned in using GitHub Actions pipeline.
+
+## Running the Pipeline Manually
+
+To manually trigger the pipeline, follow these steps:
+
+0. Ensure that these environment variables are correctly configured for the pipeline to work properly:
+
+    AWS_ACCESS_KEY_ID
+    AWS_DEFAULT_REGION
+    AWS_SECRET_ACCESS_KEY
+    AWS_SESSION_TOKEN
+    MONGODBATLAS_ORG_PRIVATE_KEY
+    MONGODBATLAS_ORG_PUBLIC_KEY
+    ORG_ID
+
+1. Navigate to the **snackbar-pipelines repository** where the pipeline is configured.
+2. Click on the **"Actions"** tab located at the top of the repository.
+3. In the list of workflows on the left, look for and select **"multi-stage-pipelines"**.
+4. Once selected, click the **"Run workflow"** button on the right side of the page.
+5. You can select the branch you want to run the pipeline on or use the main branch 
+6. Click **"Run workflow"** to start the pipeline manually.
+
+This will trigger the multi-stage pipeline and run the steps including build, test, and deploy stages based on the current code in the main branch.
+
+To provision a homolog environment, commit to the homolog branch in the snackbar application repository. This way, the pipeline will provision a homolog docker image and homolog namespace in Kubernetes dedicated to this environment.
+
+# Kubernetes Specifications
+
+## 1. Technologies Used:
+- **Backend API:** Java Spring Boot (Java 21, using Maven 3.9.9).
+- **Container Orchestration:** AWS EKS v1.31.
+- **Package Management:** Helm v3.15.3.
+- **IaC:** Terraform v1.10.3.
+
+## 2. System Components
+
+### Backend (Java Spring Boot):
+- Configured as a **Deployment** and implemented via Helm Chart.
+   - Main container **snackbar** used for the API service.
+- Communication via port **8080** for APIs exposed by the Kubernetes Service.
+- Secret configuration stored in **Kubernetes Secret**:
+  - **snackbar Secret:** Stores the database access credentials, connection string, JWT token, and its validity period.
+- **Horizontal Pod Autoscaling (HPA)** enabled for scaling based on CPU and memory usage.
+- Lineness and Readiness probes configured for health checks.
+
+
 ## 🏃‍♂️‍➡️ Running the Application
 </p>
 
-The application repository is privately hosted on [GitHub](https://github.com/commskywalker/snackbar), with access allowed only to specific users.
+The pipeline outputs the ALB URL to access application in the "appready" step of the pipeline.
 
-### To run the application: 
-* Ensure you are running a system with Windows Subsystem for Linux (WSL) with Ubuntu 22 or 24 installed, Ubuntu 22 or 24 directly or MacOS Sequoia (version 15)
-* Ensure you have Git installed on your system
-* Ensure you have Docker and Docker Compose installed on your system.
-
-```bash
-# Create a new directory
-$ mkdir grupo-82
-# Access the new directory
-$ cd grupo-82
-# Clone this repository:
-$ git clone https://github.com/commskywalker/snackbar.git
-# Access the cloned repository directory
-$ cd snackbar
-# Build and start the application in background using the command:
-$ docker-compose up -d --build
-
-```
-The application will start and be accessible at [localhost:8080](http://localhost:8080).
-
-#### Other Docker Compose instructions:
-```bash
-# To build and start the application in foreground with the logs displaying in the console, use the following command:
-$ docker-compose up --build
-
-# Stop the application using the command:
-$ docker-compose down -v
-# If you were running in foregroud with logs displaying, use Ctrl+C in the terminal where docker-compose is running and then the command above
-
-```
+Remember that the application is backend only (no frontend).
 
 <p id="endpoints">
    
@@ -123,7 +149,9 @@ The application exposes the following REST API endpoints:
 
 You can access the Swagger UI to explore and test the APIs at:
 
-http://localhost:8080/swagger-ui.html
+http://host/swagger-ui.html
+
+The host above changes depending on where you are running the application (e.g.: locally would be localhost:8080, on EKS with ALB would be the ALB endpoint)
 
 <p id="architecture">
 	
@@ -176,97 +204,6 @@ $ java -jar ./backend/target/snackbar-0.0.1-SNAPSHOT.jar
 
 ```
 
-# Kubernetes Provisioning
-
-This project consists of an application composed of a MongoDB and a Java Spring Boot application. Both components can be provisioned in Kubernetes in two ways: using **EKS** (Elastic Kubernetes Service) from AWS or **Minikube**. This README provides detailed instructions for environment provisioning, either locally or on AWS.
-
-## Prerequisites
-
-Before you begin, ensure that the following tools are installed on your environment:
-
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-- [Helm](https://helm.sh/docs/intro/install/)
-- [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
-- [Minikube](https://minikube.sigs.k8s.io/docs/start/)
-
-If any of these tools are not installed, follow the links above to complete the installation.
-
-# Kubernetes Specifications
-
-## 1. Technologies Used:
-- **Backend API:** Java Spring Boot (Java 21, using Maven 3.9.9).
-- **Database:** MongoDB 8.0.1 in replicaset mode.
-- **Container Orchestration:** Minikube v1.34.0 / AWS EKS v1.31.
-- **Package Management:** Helm v3.15.3.
-- **IaC:** Terraform v1.10.3.
-
-## 2. System Components
-
-### Backend (Java Spring Boot):
-- Configured as a **Deployment** and implemented via Helm Chart.
-   - Main container **snackbar** used for the API service.
-- Communication via port **8080** for APIs exposed by the Kubernetes Service.
-- Secret configuration stored in **Kubernetes Secret**:
-  - **snackbar Secret:** Stores the database access credentials, connection string, JWT token, and its validity period.
-- **Horizontal Pod Autoscaling (HPA)** enabled for scaling based on CPU and memory usage.
-- Lineness and Readiness probes configured for health checks.
-
-### MongoDB:
-- Configured as a **StatefulSet** and implemented via Helm Chart.
-   - Init container **wait-mongo** used to configure the MongoDB replicaset.
-   - Main container **mongo-c** used as the primary container for MongoDB database.
-- StatefulSet starts with **2 replicas** needed for replicaset mode.
-- Communication via port **27017** exposed by the Kubernetes Service.
-- Secret configuration stored in **Kubernetes Secret**:
-  - **mongodb Secret:** Stores the users and passwords created during the database startup.
-
-## Infrastructure Provisioning
-
-The infrastructure can be provisioned with the `start-kubernetes.sh` script, which offers two environment options:
-
-### Starting the Provisioning
-
-1. Navigate to the project root.
-2. Run the following command to start the provisioning:
-
-   ```bash
-   ./start-kubernetes.sh
-
-   ```
-3. The script will prompt you to choose between two environment options:
-
-   1. Provision with Minikube (local)
-   2. Provision with EKS (AWS)
-Choose the desired option by entering **1** or **2**.
-
-### Provisioning with Minikube
-
-If you choose option **1**, the environment will be configured locally with Minikube. The script `infra/scripts/start-minikube.sh` will be executed to provision the application and MongoDB in the local cluster.
-
-### Provisioning with EKS
-
-If you choose option **2**, the environment will be configured on AWS using EKS. The script `infra/scripts/start-eks.sh` will be responsible for provisioning the resources on AWS and configuring the Kubernetes cluster on EKS.
-
-### What do these scripts do?
-
-- Start a Kubernetes Cluster v1.31 on Minikube or AWS EKS.
-- Create the ns-snackbar namespace.
-- Install the Helm chart for the Snackbar application.
-- Install the MongoDB database used by the Snackbar application in Replicaset configuration.
-- Connect the Snackbar and MongoDB services to the user's machine via port-forward (Minikube).
-- Provision a LoadBalancer so that the user can access the Snackbar and MongoDB services (AWS EKS).
-- List the pods that were created.
-
-### Destroying the Infrastructure
-
-If you want to remove the provisioned environment, use the `destroy-kubernetes.sh` script. It works similarly to the creation script and allows for the removal of the Kubernetes cluster based on your choice (Minikube or EKS).
-
-To start the destruction process, run:
-
-   ```bash
-   ./destroy-kubernetes.sh
-
-   ```
 ### Infrastructure Architecture
 
 Available at: [miro.com.br](https://miro.com/app/board/uXjVL0azFlU=/?track=true&utm_source=notification&utm_medium=email&utm_campaign=approve-request&utm_content=go-to-miro&lid=1v8fyk3ru6qu)
