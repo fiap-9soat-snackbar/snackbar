@@ -7,7 +7,7 @@ on:
       - homolog
 
 jobs:
-  dispatch_infra_pipeline:
+  dispatch_app_pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger App Commit Event
