@@ -35,9 +35,9 @@ The two videos that describe the user flow and the admin flow are hosted in Yout
 
 ## Phase 3 Content
 
-* Pipeline Video: https://youtu.be/xxxxxx
+* Pipeline Video: https://youtu.be/aNIVJqTinHo
 * Managed Database (MongoDB Atlas) Video: https://youtu.be/xxxxx
-* Amazon API Gateway + Lambda Authorizer Video: https://youtu.be/xxxxxx
+* Amazon API Gateway + Lambda Authorizer Video: https://www.youtube.com/watch?v=kKcrDEj90PI
 
 ## Phase 2 Content
 
