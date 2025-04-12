@@ -16,5 +16,12 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
             https://api.github.com/repos/fiap-9soat-snackbar/snackbar-pipeline/dispatches \
-            -d '{"event_type":"app_commit", "client_payload": { "branch": "'"${BRANCH_NAME}"'" }}'
+            -d '{
+              "event_type":"app_commit", 
+              "client_payload": {
+                "repository_full_name": "fiap-9soat-snackbar/snackbar",
+                "app_name": "snackbar",
+                "branch": "'"${BRANCH_NAME}"'"
+              }
+            }'
 
