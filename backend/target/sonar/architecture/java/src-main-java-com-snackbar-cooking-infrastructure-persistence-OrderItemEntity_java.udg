@@ -1,399 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889205466*java2.BÎ
-W
-Rsrc/main/java/com/snackbar/cooking/infrastructure/persistence/OrderItemEntity.java2
-
-package4
-4
-/com.snackbar.cooking.infrastructure.persistence5
-D
-?com.snackbar.cooking.infrastructure.persistence.OrderItemEntity7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-OrderItemEntity12
-J
-Dcom.snackbar.cooking.infrastructure.persistence.OrderItemEntity.name14
-
-field15
-
-private16
-
-
-name17
-K
-Ecom.snackbar.cooking.infrastructure.persistence.OrderItemEntity.price19
-
-price20
-N
-Hcom.snackbar.cooking.infrastructure.persistence.OrderItemEntity.quantity22
-
-quantity23
-Q
-Kcom.snackbar.cooking.infrastructure.persistence.OrderItemEntity.cookingTime25
-
-cookingTime26
-S
-Mcom.snackbar.cooking.infrastructure.persistence.OrderItemEntity.customization28
-
-customization29
-¨
-•com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#<init>(Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V31
-
-method32
-
-calls33
-
-
-uses34
-
-
-references35
-a
-[com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getName()Ljava/lang/String;37
-
-getName38
-b
-\com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#setName(Ljava/lang/String;)V40
-
-setName41
-b
-\com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getPrice()Ljava/lang/Double;43
-
-getPrice44
-c
-]com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#setPrice(Ljava/lang/Double;)V46
-
-setPrice47
-f
-`com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getQuantity()Ljava/lang/Integer;49
-
-getQuantity50
-g
-acom.snackbar.cooking.infrastructure.persistence.OrderItemEntity#setQuantity(Ljava/lang/Integer;)V52
-
-setQuantity53
-i
-ccom.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getCookingTime()Ljava/lang/Integer;55
-
-getCookingTime56
-j
-dcom.snackbar.cooking.infrastructure.persistence.OrderItemEntity#setCookingTime(Ljava/lang/Integer;)V58
-
-setCookingTime59
-j
-dcom.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getCustomization()Ljava/lang/String;61
-
-getCustomization62
-k
-ecom.snackbar.cooking.infrastructure.persistence.OrderItemEntity#setCustomization(Ljava/lang/String;)V64
-
-setCustomization65J
-
-1
-12Z
-
-3	
-354j€
-9
-64
-678 *
-1 (:3B
-	
-9
-10
-
-
-11
-12
-@
-51:
-515232 *
-1) )(26:3B
-	
-9
-10
-
-
-11
-53
-@
-24:
-242515 *
-1 (26:3B
-	
-9
-16
-
-
-11
-26
-@
-57:
-575832 *
-11 1(26:3B
-	
-9
-10
-
-
-11
-59
-@
-30:
-303132 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-@
-21:
-212215 *
-1 (26:3B
-	
-9
-16
-
-
-11
-23
-@
-63:
-636432 *
-19 9(26:3B
-	
-9
-10
-
-
-11
-65
-@
-60:
-606132 *
-15 5(26:3B
-	
-9
-10
-
-
-11
-62
-@
-45:
-454632 *
-1! !(26:3B
-	
-9
-10
-
-
-11
-47
-@
-54:
-545532 *
-1- -(26:3B
-	
-9
-10
-
-
-11
-56
-@
-18:
-181915 *
-1 (26:3B
-	
-9
-16
-
-
-11
-20
-@
-13:
-131415 *
-1 (26:3B
-	
-9
-16
-
-
-11
-17
-@
-27:
-272815 *
-1 (26:3B
-	
-9
-16
-
-
-11
-29
-@
-48:
-484932 *
-1% %(26:3B
-	
-9
-10
-
-
-11
-50
-@
-36:
-363732 *
-1 (26:3B
-	
-9
-10
-
-
-11
-38
-@
-39:
-394032 *
-1 (26:3B
-	
-9
-10
-
-
-11
-41
-@
-42:
-424332 *
-1 (26:3B
-	
-9
-10
-
-
-11
-44r∑
-
-30633*
-1 (
-
-30634*
-1	 (
-
-30635*
-1	 (
-
-301335*
-1 (
-
-30634*
-1	 (
-
-30635*
-1	 (
-
-301835*
-1 (
-
-30634*
-1	 (
-
-30635*
-1	 (
-
-302135*
-1 (
-
-30634*
-1	 (
-
-30635*
-1	 (
-
-302435*
-1 (
-
-30634*
-1	 (
-
-30635*
-1	 (
-
-302735*
-1 (
-
-361335*
-1 (
-
-39634*
-1	 (
-
-39635*
-1	 (
-
-391335*
-1 (
-
-421835*
-1 (
-
-45634*
-1"	 "(
-
-45635*
-1"	 "(
-
-451835*
-1" "(
-
-482135*
-1& &(
-
-51634*
-1*	 *(
-
-51635*
-1*	 *(
-
-512135*
-1* *(
-
-542435*
-1. .(
-
-57634*
-12	 2(
-
-57635*
-12	 2(
-
-572435*
-12 2(
-
-602735*
-16 6(
-
-63634*
-1:	 :(
-
-63635*
-1:	 :(
-
-632735*
-1: :(

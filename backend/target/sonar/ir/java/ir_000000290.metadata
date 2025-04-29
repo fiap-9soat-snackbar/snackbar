@@ -1,6 +1,0 @@
-com.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway#findByOrderId(Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Cooking;
-false
-c4e8927a5b28781b682f5fc791a6e048
-==
-findByOrderId com.snackbar.cooking.infrastructure.persistence.CookingRepository#findByOrderId(Ljava/lang/String;)Lcom/snackbar/cooking/infrastructure/persistence/CookingEntity;
-toDomainObj com.snackbar.cooking.infrastructure.gateways.CookingEntityMapper#toDomainObj(Lcom/snackbar/cooking/infrastructure/persistence/CookingEntity;)Lcom/snackbar/cooking/domain/entity/Cooking;

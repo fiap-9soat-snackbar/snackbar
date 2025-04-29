@@ -1,59 +1,0 @@
-
-_com.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway#findAll()Ljava/util/List;–
-‹/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/gateways/CookingRepositoryGateway.java3 3( "1*Ü
-14' 4(8Ú
-×
-4' 4(8G
-%0Acom.snackbar.cooking.infrastructure.persistence.CookingRepository"__id*|
-
-__unknown_file (`*^G
-Ecom.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway"
-cookingRepositoryçä
-4' 4(B
-%1java.util.List"Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;*e
-
-__unknown_file (I
-G
-%0Acom.snackbar.cooking.infrastructure.persistence.CookingRepository2	findAll()b
-`
-4 4(C
-entitiesjava.util.List"__id*2
-
-__unknown_file (
-
-%1java.util.List¨¥
-5 5( 
-%2java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*8
-
-__unknown_file (
-
-entitiesjava.util.List2stream()†ƒ
-5 6(0
-%3java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*;
-
-__unknown_file (
-
-%2java.util.stream.Stream*"
-
-__unknown_file (
-""2"map(Ljava/util/function/Function;)®
-«
-7 7(, 
-%4java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*;
-
-__unknown_file ("
-java.util.stream.Collectors˜•
-5 7(-
-%5java.util.List"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*;
-
-__unknown_file (
-
-%3java.util.stream.Stream*>
-
-__unknown_file ("
- 
-%4java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)""
-5 7(.
-
-%5java.util.ListBIG
-Ecom.snackbar.cooking.infrastructure.gateways.CookingRepositoryGatewayH

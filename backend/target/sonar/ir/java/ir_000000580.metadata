@@ -1,7 +1,0 @@
-com.snackbar.cooking.infrastructure.controllers.CookingExceptionHandler#handleUserNotFoundException(Lcom/snackbar/cooking/domain/exceptions/UserNotFoundException;)Lorg/springframework/http/ResponseEntity;
-false
-8c5646dfd701bf2b7c8dd7af4c4c8e79
-org.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;
-==
-body org.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;
-getMessage java.lang.Throwable#getMessage()Ljava/lang/String;

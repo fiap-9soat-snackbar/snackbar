@@ -1,15 +1,0 @@
-
-|com.snackbar.orderRefactory.domain.entity.Order#getStatusOrder()Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;
-u/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/domain/entity/Order.javaX X(%"1*—
-1Y Y(·
-´
-Y Y(@
-%0:com.snackbar.orderRefactory.domain.valueobject.StatusOrder"__id*`
-
-__unknown_file (D*B1
-/com.snackbar.orderRefactory.domain.entity.Order"
-statusOrder"N
-Y Y(B
-@
-%0:com.snackbar.orderRefactory.domain.valueobject.StatusOrderB31
-/com.snackbar.orderRefactory.domain.entity.OrderH

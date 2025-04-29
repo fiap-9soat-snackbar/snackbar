@@ -1,402 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207792*java2.Bç
-A
-<src/main/java/com/snackbar/iam/domain/UserDetailsEntity.java2
-
-package4
-
-com.snackbar.iam.domain5
-.
-)com.snackbar.iam.domain.UserDetailsEntity7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-UserDetailsEntity12
-?
-9org.springframework.security.core.userdetails.UserDetails14
-
-unknown15
-
-
-implements16
-<
-6org.springframework.data.mongodb.core.mapping.Document18
-
-annotated by19
-
-
-uses20
-
-lombok.Getter22
-
-lombok.Setter24
-
-lombok.NoArgsConstructor26
-
-lombok.AllArgsConstructor28
-
-lombok.Builder30
-2
-,com.snackbar.iam.domain.UserDetailsEntity.id32
-
-field33
-
-private34
-
-id35
-,
-&org.springframework.data.annotation.Id37
-4
-.com.snackbar.iam.domain.UserDetailsEntity.name39
-
-
-name40
-5
-/com.snackbar.iam.domain.UserDetailsEntity.email42
-
-email43
-3
--com.snackbar.iam.domain.UserDetailsEntity.cpf45
-	
-cpf46
-4
-.com.snackbar.iam.domain.UserDetailsEntity.role48
-
-
-role49
-%
-com.snackbar.iam.domain.IamRole51
-
-is type52
-8
-2com.snackbar.iam.domain.UserDetailsEntity.password54
-
-password55
-V
-Pcom.snackbar.iam.domain.UserDetailsEntity#getAuthorities()Ljava/util/Collection;57
-
-method58
-
-getAuthorities59
-8
-2org.springframework.security.core.GrantedAuthority61
-
-bound by62
-O
-Icom.snackbar.iam.domain.UserDetailsEntity#getPassword()Ljava/lang/String;64
-
-getPassword65
-
-
-references66
-s
-mcom.snackbar.iam.domain.UserDetailsEntity#getAuthorities(Lcom/snackbar/iam/domain/IamRole;)Ljava/lang/String;68
-
-	has param69
-O
-Icom.snackbar.iam.domain.UserDetailsEntity#getUsername()Ljava/lang/String;71
-
-getUsername72
-F
-@com.snackbar.iam.domain.UserDetailsEntity#isAccountNonExpired()Z74
-
-isAccountNonExpired75
-E
-?com.snackbar.iam.domain.UserDetailsEntity#isAccountNonLocked()Z77
-
-isAccountNonLocked78
-J
-Dcom.snackbar.iam.domain.UserDetailsEntity#isCredentialsNonExpired()Z80
-
-isCredentialsNonExpired81
-<
-6com.snackbar.iam.domain.UserDetailsEntity#isEnabled()Z83
-
-	isEnabled84J
-
-1
-12Z
-
-3	
-354jŸ	
-
-23
-232415
-
-21
-212215
-@
-76:
-767758 *
-1: :(26:3B
-	
-9
-10
-
-
-11
-78
-
-17
-171815
-9
-64
-678 *
-1 (:3B
-	
-9
-10
-
-
-11
-12
-@
-82:
-828358 *
-1D D(26:3B
-	
-9
-10
-
-
-11
-84
-
-13
-131415
-@
-38:
-383933 *
-1 (26:3B
-	
-9
-34
-
-
-11
-40
-@
-63:
-636458 *
-1( ((26:3B
-	
-9
-10
-
-
-11
-65
-@
-67:
-676858 *
-1, ,(26:3B
-	
-9
-34
-
-
-11
-59
-@
-56:
-565758 *
-1# #(26:3B
-	
-9
-10
-
-
-11
-59
-@
-79:
-798058 *
-1? ?(26:3B
-	
-9
-10
-
-
-11
-81
-@
-53:
-535433 *
-1! !(26:3B
-	
-9
-34
-
-
-11
-55
-@
-31:
-313233 *
-1 (26:3B
-	
-9
-34
-
-
-11
-35
-@
-70:
-707158 *
-10 0(26:3B
-	
-9
-10
-
-
-11
-72
-@
-47:
-474833 *
-1 (26:3B
-	
-9
-34
-
-
-11
-49
-
-60
-606115
-@
-73:
-737458 *
-15 5(26:3B
-	
-9
-10
-
-
-11
-75
-
-50
-505115
-
-29
-293015
-@
-41:
-414233 *
-1 (26:3B
-	
-9
-34
-
-
-11
-43
-
-27
-272815
-
-36
-363715
-@
-44:
-444533 *
-1 (26:3B
-	
-9
-34
-
-
-11
-46
-
-25
-252615r°
-
-61316*
-1+ (6
-
-61719*
-1 (
-
-61720*
-1 (
-
-
-62119*
-1 (
-
-62120*
-1 (
-
-62319*
-1 (
-
-62320*
-1 (
-
-62519*
-1 (
-
-62520*
-1 (
-
-62719*
-1 (
-
-62720*
-1 (
-
-62919*
-1 (
-
-62920*
-1 (	
-
-61320*
-1+ (6
-
-313619*
-1 (
-
-313620*
-1 (
-
-475052*
-1 (
-
-475020*
-1 (
-
-475020*
-1 (
-
-566062*
-1$! $(1
-
-566020*
-1$! $(1
-
-635366*
-1) )(
-
-675069*
-1,# ,(*
-
-675052*
-1,+ ,(/
-
-675020*
-1,# ,(*
-
-704466*
-12 2(

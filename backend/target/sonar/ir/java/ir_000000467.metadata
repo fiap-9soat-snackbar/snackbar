@@ -1,7 +1,0 @@
-com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toDomainListObj(Ljava/util/List;)Ljava/util/List;
-false
-86f3d5a8a9bbfc3d6cc526e70ed6b5a1
-==
-map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
-stream java.util.Collection#stream()Ljava/util/stream/Stream;
-toList java.util.stream.Stream#toList()Ljava/util/List;

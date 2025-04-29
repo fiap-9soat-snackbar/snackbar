@@ -1,175 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889205452*java2.BÚ
-U
-Psrc/main/java/com/snackbar/payment/application/usecases/ListPaymentsUseCase.java2
-
-package4
-.
-)com.snackbar.payment.application.usecases5
-B
-=com.snackbar.payment.application.usecases.ListPaymentsUseCase7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-ListPaymentsUseCase12
-S
-Mcom.snackbar.payment.application.usecases.ListPaymentsUseCase.payment2Gateway14
-
-field15
-
-private16
-
-payment2Gateway17
->
-8com.snackbar.payment.application.gateways.PaymentGateway19
-
-unknown20
-
-is type21
-
-
-uses22
-à
-Åcom.snackbar.payment.application.usecases.ListPaymentsUseCase#<init>(Lcom/snackbar/payment/application/gateways/PaymentGateway;)V24
-
-method25
-
-	has param26
-
-calls27
-
-
-references28
-b
-\com.snackbar.payment.application.usecases.ListPaymentsUseCase#listPayments()Ljava/util/List;30
-
-listPayments31
-0
-*com.snackbar.payment.domain.entity.Payment33
-]
-Wcom.snackbar.payment.application.gateways.PaymentGateway#listPayments()Ljava/util/List;35J
-
-1
-12Z
-
-3	
-354jΩ
-9
-64
-678 *
-1 (!:3B
-	
-9
-10
-
-
-11
-12
-@
-29:
-293025 *
-1 (26:3B
-	
-9
-10
-
-
-11
-31
-
-18
-181920
-@
-13:
-131415 *
-1
- 
-(26:3B
-	
-9
-16
-
-
-11
-17
-@
-23:
-232425 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-
-32
-323320
-
-34
-343520r»
-
-131821*
-1
- 
-(!
-
-131822*
-1
- 
-(!
-
-131822*
-1
-" 
-(1
-
-231826*
-1  (.
-
-23627*
-1 (
-
-231821*
-1/ (>
-
-231822*
-1  (.
-
-23622*
-1 (
-
-23628*
-1 (
-
-231822*
-1 (!
-
-231328*
-1 (!
-
-293222*
-1 (
-
-291828*
-1 (
-
-293427*
-1  (,
-
-291328*
-1 (
-
-291822*
-1 (
-
-291328*
-1 (

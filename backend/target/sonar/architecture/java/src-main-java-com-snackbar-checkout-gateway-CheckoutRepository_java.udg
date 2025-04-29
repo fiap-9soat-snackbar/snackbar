@@ -1,105 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207565*java2.B˛
-H
-Csrc/main/java/com/snackbar/checkout/gateway/CheckoutRepository.java2
-
-package4
-"
-com.snackbar.checkout.gateway5
-5
-0com.snackbar.checkout.gateway.CheckoutRepository7
-
-	interface8
-
-access9
-
-public10
-
-simple name11
-
-CheckoutRepository12
-A
-;org.springframework.data.mongodb.repository.MongoRepository14
-
-unknown15
-
-
-implements16
-/
-)org.springframework.stereotype.Repository18
-
-annotated by19
-
-
-uses20
-+
-%com.snackbar.checkout.entity.Checkout22
-l
-fcom.snackbar.checkout.gateway.CheckoutRepository#findByOrderId(Ljava/lang/String;)Ljava/util/Optional;24
-
-method25
-
-findByOrderId26J
-
-1
-12Z
-
-3	
-354jπ
-
-21
-212215
-@
-23:
-232425 *
-1 (26:3B
-	
-9
-10
-
-
-11
-26
-
-17
-171815
-
-13
-131415
-9
-64
-678 *
-1
- 
-($:3B
-	
-9
-10
-
-
-11
-12rù
-
-61316*
-1
-- 
-(<
-
-61719*
-1	 	(
-
-61720*
-1	 	(
-
-61320*
-1
-- 
-(<
-
-62120*
-1
-= 
-(E
-
-232120*
-1 (

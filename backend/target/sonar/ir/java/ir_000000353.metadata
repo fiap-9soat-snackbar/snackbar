@@ -1,9 +1,0 @@
-com.snackbar.iam.application.AuthenticationService#authenticate(Lcom/snackbar/iam/web/dto/LoginUserDto;)Lcom/snackbar/iam/domain/UserDetailsEntity;
-false
-d2ab1487ff4af245e79ab23a4adb5cce
-org.springframework.security.authentication.UsernamePasswordAuthenticationToken#<init>(Ljava/lang/Object;Ljava/lang/Object;)V
-org.springframework.security.authentication.UsernamePasswordAuthenticationToken#instance-init#
-==
-!unknownMethod! !unknownMethod!
-authenticate org.springframework.security.authentication.AuthenticationManager#authenticate(Lorg/springframework/security/core/Authentication;)Lorg/springframework/security/core/Authentication;
-findByCpf com.snackbar.iam.application.AuthenticationService#findByCpf(Ljava/lang/String;)Lcom/snackbar/iam/domain/UserDetailsEntity;

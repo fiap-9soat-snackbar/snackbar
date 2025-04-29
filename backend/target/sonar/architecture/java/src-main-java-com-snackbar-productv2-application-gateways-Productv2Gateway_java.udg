@@ -1,222 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207359*java2.BÅ
-T
-Osrc/main/java/com/snackbar/productv2/application/gateways/Productv2Gateway.java2
-
-package4
-0
-+com.snackbar.productv2.application.gateways5
-A
-<com.snackbar.productv2.application.gateways.Productv2Gateway7
-
-	interface8
-
-access9
-
-public10
-
-simple name11
-
-Productv2Gateway12
-µ
-Æcom.snackbar.productv2.application.gateways.Productv2Gateway#createProductv2(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;14
-
-method15
-
-createProductv216
-4
-.com.snackbar.productv2.domain.entity.Productv218
-
-unknown19
-
-returns20
-
-	has param21
-
-
-uses22
-
-is type23
-ò
-ëcom.snackbar.productv2.application.gateways.Productv2Gateway#getProductv2ById(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;25
-
-getProductv2ById26
-c
-]com.snackbar.productv2.application.gateways.Productv2Gateway#listProductsv2()Ljava/util/List;28
-
-listProductsv229
-~
-xcom.snackbar.productv2.application.gateways.Productv2Gateway#getProductsv2ByCategory(Ljava/lang/String;)Ljava/util/List;31
-
-getProductsv2ByCategory32
-ö
-ìcom.snackbar.productv2.application.gateways.Productv2Gateway#getProductv2ByName(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;34
-
-getProductv2ByName35
-À
-ƒcom.snackbar.productv2.application.gateways.Productv2Gateway#updateProductv2ById(Ljava/lang/String;Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;37
-
-updateProductv2ById38
-k
-ecom.snackbar.productv2.application.gateways.Productv2Gateway#deleteProductv2ById(Ljava/lang/String;)V40
-
-deleteProductv2ById41J
-
-1
-12Z
-
-3	
-354jù
-
-17
-171819
-@
-27:
-272815 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-29
-9
-64
-678 *
-1	 	(":3B
-	
-9
-10
-
-
-11
-12
-@
-30:
-303115 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-32
-@
-13:
-131415 *
-1
- 
-(26:3B
-	
-9
-10
-
-
-11
-16
-@
-36:
-363715 *
-1 (26:3B
-	
-9
-10
-
-
-11
-38
-@
-39:
-394015 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-41
-@
-33:
-333415 *
-1 (26:3B
-	
-9
-10
-
-
-11
-35
-@
-24:
-242515 *
-1 (26:3B
-	
-9
-10
-
-
-11
-26r∞
-
-131720*
-1
- 
-(
-
-131721*
-1
- 
-((
-
-131722*
-1
- 
-(
-
-131723*
-1
-) 
-(2
-
-131722*
-1
- 
-((
-
-241720*
-1 (
-
-241722*
-1 (
-
-271722*
-1
- (
-
-301722*
-1
- (
-
-331720*
-1 (
-
-331722*
-1 (
-
-361720*
-1 (
-
-361721*
-1. (7
-
-361722*
-1 (
-
-361723*
-18 (A
-
-361722*
-1. (7

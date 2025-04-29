@@ -1,5 +1,0 @@
-com.snackbar.cooking.infrastructure.config.CookingConfig#getAllCookingsUseCase(Lcom/snackbar/cooking/application/gateways/CookingGateway;)Lcom/snackbar/cooking/application/usecases/GetAllCookingsUseCase;
-false
-40d65cccc1ec44b3a827a11c210afdc2
-com.snackbar.cooking.application.usecases.GetAllCookingsUseCase#<init>(Lcom/snackbar/cooking/application/gateways/CookingGateway;)V
-com.snackbar.cooking.application.usecases.GetAllCookingsUseCase#instance-init#

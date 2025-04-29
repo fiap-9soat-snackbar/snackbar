@@ -1,7 +1,0 @@
-organization=fiap-9soat-snackbar
-projectKey=fiap-9soat-snackbar_snackbar
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.62755
-dashboardUrl=https://sonarcloud.io/dashboard?id=fiap-9soat-snackbar_snackbar
-ceTaskId=AZZ_GzuOOD14d_nfl4Mb
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZZ_GzuOOD14d_nfl4Mb

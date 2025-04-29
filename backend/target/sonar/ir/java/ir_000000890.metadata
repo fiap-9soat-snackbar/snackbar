@@ -1,7 +1,0 @@
-com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl#getProductByName(Ljava/lang/String;)Lcom/snackbar/product/dto/ProductDTO;
-false
-b43d55790b4b46fd6da52c62979611ae
-com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl#mapToDTO(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/dto/ProductDTO;
-java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
-==
-findByName com.snackbar.product.gateway.ProductRepository#findByName(Ljava/lang/String;)Ljava/util/Optional;

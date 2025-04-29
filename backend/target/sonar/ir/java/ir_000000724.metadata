@@ -1,7 +1,0 @@
-com.snackbar.cooking.infrastructure.controllers.CookingController#getCookingByOrderId(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;
-false
-4295391cb52a4a45b7473f81d60b0fc6
-org.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;
-==
-createToResponse com.snackbar.cooking.infrastructure.controllers.CookingDTOMapper#createToResponse(Lcom/snackbar/cooking/domain/entity/Cooking;)Lcom/snackbar/cooking/infrastructure/controllers/CreateCookingResponse;
-execute com.snackbar.cooking.application.usecases.GetCookingByOrderIdUseCase#execute(Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Cooking;

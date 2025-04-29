@@ -1,7 +1,0 @@
-com.snackbar.payment.application.usecases.UpdatePaymentExternalIdByIdUseCase#updatePaymentExternalIdById(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
-false
-3183e962971e63c10922e2cb8f456cc8
-com.snackbar.payment.domain.entity.Payment#id()Ljava/lang/String;
-==
-getPaymentById com.snackbar.payment.application.usecases.GetPaymentByIdUseCase#getPaymentById(Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
-updatePaymentExternalIdById com.snackbar.payment.application.gateways.PaymentGateway#updatePaymentExternalIdById(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;

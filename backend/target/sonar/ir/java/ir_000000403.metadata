@@ -1,5 +1,0 @@
-com.snackbar.cooking.domain.exceptions.OrderStatusInvalidException#<init>(Ljava/lang/String;)V
-false
-467d24142088c5ed195968019017a573
-==
-<init> java.lang.RuntimeException#<init>(Ljava/lang/String;)V

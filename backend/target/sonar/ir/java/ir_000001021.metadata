@@ -1,7 +1,0 @@
-com.snackbar.payment.infrastructure.config.WebClientConfig#webClient()Lorg/springframework/web/reactive/function/client/WebClient;
-false
-70f903f0cbea885273ee7e8a3a3efcae
-org.springframework.web.reactive.function.client.WebClient#builder()Lorg/springframework/web/reactive/function/client/WebClient$Builder;
-==
-baseUrl org.springframework.web.reactive.function.client.WebClient$Builder#baseUrl(Ljava/lang/String;)Lorg/springframework/web/reactive/function/client/WebClient$Builder;
-build org.springframework.web.reactive.function.client.WebClient$Builder#build()Lorg/springframework/web/reactive/function/client/WebClient;

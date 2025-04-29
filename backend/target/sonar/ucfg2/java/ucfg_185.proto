@@ -1,16 +1,0 @@
-
-D__sonar_lambda_22$com.snackbar.iam.application.SecurityConfiguration‚
-x/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/SecurityConfiguration.java" "(("1*õ
-1" "(‡„
-" "((N
-%1Horg.springframework.security.config.annotation.web.builders.HttpSecurity"§org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer#disable()Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;*s
-
-__unknown_file (W
-U
-csrfMorg.springframework.security.config.annotation.web.configurers.CsrfConfigurer2	disable()"\
-" "((P
-N
-%1Horg.springframework.security.config.annotation.web.builders.HttpSecurity:a
-" "(U
-csrfMorg.springframework.security.config.annotation.web.configurers.CsrfConfigurerB20
-.org.springframework.security.config.Customizer

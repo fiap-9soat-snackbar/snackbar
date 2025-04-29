@@ -1,7 +1,0 @@
-com.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway#deleteProductv2ById(Ljava/lang/String;)V
-false
-3652a3a3f1f8c5679ab62dc89cbbb428
-java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
-==
-delete org.springframework.data.repository.CrudRepository#delete(Ljava/lang/Object;)V
-findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;

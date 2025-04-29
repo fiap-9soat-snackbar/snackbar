@@ -1,4 +1,0 @@
-com.snackbar.SnackbarApplication#main([Ljava/lang/String;)V
-false
-5221d2285af895f299729fdfec4d7178
-org.springframework.boot.SpringApplication#run(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;

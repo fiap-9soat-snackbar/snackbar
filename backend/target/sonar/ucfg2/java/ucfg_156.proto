@@ -1,42 +1,0 @@
-
-9__sonar_lambda_14$com.snackbar.order.service.OrderServicey
-m/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/order/service/OrderService.java‹ ‹(F"1*Ú
-1
-‹ ‹(ûø
-
-‹ ‹(/.
-%15'com.snackbar.pickup.entity.StatusPickup"\com.snackbar.pickup.entity.Pickup#getStatusPickup()Lcom/snackbar/pickup/entity/StatusPickup;*I
-
-__unknown_file (-
-+
-pickup!com.snackbar.pickup.entity.Pickup2getStatusPickup()h
-f
-
-‹3 ‹(F.
-%16'com.snackbar.pickup.entity.StatusPickup"__id*"
-
-__unknown_file (
-""À
-½
-
-‹ ‹(F
-%17boolean"	__compare*
-
-‹0 ‹(2
-==*>
-
-‹ ‹(/0
-.
-%15'com.snackbar.pickup.entity.StatusPickup*>
-
-‹3 ‹(F0
-.
-%16'com.snackbar.pickup.entity.StatusPickup"
-
-‹ ‹(F
-
-%17boolean:9
-
-‹ ‹(+
-pickup!com.snackbar.pickup.entity.PickupB
-java.util.function.Function

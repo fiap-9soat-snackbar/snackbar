@@ -1,693 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889206646*java2.BÆ
-?
-:src/main/java/com/snackbar/iam/application/JwtService.java2
-
-package4
-!
-com.snackbar.iam.application5
-,
-'com.snackbar.iam.application.JwtService7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-
-JwtService12
-,
-&org.springframework.stereotype.Service14
-
-unknown15
-
-annotated by16
-
-
-uses17
-7
-1com.snackbar.iam.application.JwtService.secretKey19
-
-field20
-
-private21
-
-	secretKey22
-8
-2org.springframework.beans.factory.annotation.Value24
-;
-5com.snackbar.iam.application.JwtService.jwtExpiration26
-
-jwtExpiration27
-c
-]com.snackbar.iam.application.JwtService#extractUsername(Ljava/lang/String;)Ljava/lang/String;29
-
-method30
-
-extractUsername31
-
-
-references32
-}
-wcom.snackbar.iam.application.JwtService#extractClaim(Ljava/lang/String;Ljava/util/function/Function;)Ljava/lang/Object;34
-
-calls35
-
-io.jsonwebtoken.Claims37
-
-extractClaim38
-
-T40
-
-returns41
-
-is type42
-j
-dcom.snackbar.iam.application.JwtService#extractAllClaims(Ljava/lang/String;)Lio/jsonwebtoken/Claims;44
-‹
-„com.snackbar.iam.application.JwtService#generateToken(Lorg/springframework/security/core/userdetails/UserDetails;)Ljava/lang/String;46
-
-generateToken47
-?
-9org.springframework.security.core.userdetails.UserDetails49
-
-	has param50
-š
-“com.snackbar.iam.application.JwtService#generateToken(Ljava/util/Map;Lorg/springframework/security/core/userdetails/UserDetails;)Ljava/lang/String;52
-˜
-‘com.snackbar.iam.application.JwtService#buildToken(Ljava/util/Map;Lorg/springframework/security/core/userdetails/UserDetails;J)Ljava/lang/String;54
-B
-<com.snackbar.iam.application.JwtService#getExpirationTime()J56
-
-getExpirationTime57
-
-
-buildToken58
- 
-io.jsonwebtoken.JwtBuilder60
-<
-6io.jsonwebtoken.JwtBuilder#compact()Ljava/lang/String;62
-~
-xio.jsonwebtoken.JwtBuilder#signWith(Ljava/security/Key;Lio/jsonwebtoken/SignatureAlgorithm;)Lio/jsonwebtoken/JwtBuilder;64
-\
-Vio.jsonwebtoken.JwtBuilder#setExpiration(Ljava/util/Date;)Lio/jsonwebtoken/JwtBuilder;66
-Z
-Tio.jsonwebtoken.JwtBuilder#setIssuedAt(Ljava/util/Date;)Lio/jsonwebtoken/JwtBuilder;68
-[
-Uio.jsonwebtoken.JwtBuilder#setSubject(Ljava/lang/String;)Lio/jsonwebtoken/JwtBuilder;70
-W
-Qio.jsonwebtoken.JwtBuilder#setClaims(Ljava/util/Map;)Lio/jsonwebtoken/JwtBuilder;72
-
-io.jsonwebtoken.Jwts74
-@
-:io.jsonwebtoken.Jwts#builder()Lio/jsonwebtoken/JwtBuilder;76
-_
-Yorg.springframework.security.core.userdetails.UserDetails#getUsername()Ljava/lang/String;78
-O
-Icom.snackbar.iam.application.JwtService#getSignInKey()Ljava/security/Key;80
-(
-"io.jsonwebtoken.SignatureAlgorithm82
-.
-(io.jsonwebtoken.SignatureAlgorithm.HS25684
-‹
-„com.snackbar.iam.application.JwtService#isTokenValid(Ljava/lang/String;Lorg/springframework/security/core/userdetails/UserDetails;)Z86
-
-isTokenValid87
-Q
-Kcom.snackbar.iam.application.JwtService#isTokenExpired(Ljava/lang/String;)Z89
-
-isTokenExpired90
-c
-]com.snackbar.iam.application.JwtService#extractExpiration(Ljava/lang/String;)Ljava/util/Date;92
-
-extractExpiration93
-
-extractAllClaims94
-
-io.jsonwebtoken.Jwt96
-5
-/io.jsonwebtoken.Jwt#getBody()Ljava/lang/Object;98
-
-io.jsonwebtoken.Jws100
- 
-io.jsonwebtoken.JwtParser102
-X
-Qio.jsonwebtoken.JwtParser#parseClaimsJws(Ljava/lang/String;)Lio/jsonwebtoken/Jws;104
-'
- io.jsonwebtoken.JwtParserBuilder106
-J
-Cio.jsonwebtoken.JwtParserBuilder#build()Lio/jsonwebtoken/JwtParser;108
-l
-eio.jsonwebtoken.JwtParserBuilder#setSigningKey(Ljava/security/Key;)Lio/jsonwebtoken/JwtParserBuilder;110
-M
-Fio.jsonwebtoken.Jwts#parserBuilder()Lio/jsonwebtoken/JwtParserBuilder;112
-
-getSignInKey113
-$
-io.jsonwebtoken.security.Keys115
-N
-Gio.jsonwebtoken.security.Keys#hmacShaKeyFor([B)Ljavax/crypto/SecretKey;117J
-
-1
-12Z
-
-3	
-354jß
-
-83
-838415
-
-97
-979815
-
-105
-10510615
-
-67
-676815
-9
-64
-678 *
-1 (:3B
-	
-9
-10
-
-
-11
-12
-A
-79;
-798030 *
-1X X(26:3B
-	
-9
-21
-
-11
-113
-@
-28:
-282930 *
-1 (26:3B
-	
-9
-10
-
-
-11
-31
-
-101
-10110215
-@
-25:
-252620 *
-1 (26:3B
-	
-9
-21
-
-
-11
-27
-
-23
-232415
-
-36
-363715
-
-95
-959615
-
-99
-9910015
-@
-53:
-535430 *
-12 2(26:3B
-	
-9
-21
-
-
-11
-58
-
-39
-394015
-
-13
-131415
-
-63
-636415
-
-114
-11411515
-
-59
-596015
-@
-91:
-919230 *
-1K K(26:3B
-	
-9
-21
-
-
-11
-93
-
-48
-484915
-
-81
-818215
-@
-43:
-434430 *
-1O O(26:3B
-	
-9
-21
-
-
-11
-94
-@
-33:
-333430 *
-1! !(26:3B
-	
-9
-10
-
-
-11
-38
-
-69
-697015
-
-77
-777815
-@
-85:
-858630 *
-1B B(26:3B
-	
-9
-10
-
-
-11
-87
-
-109
-10911015
-
-71
-717215
-@
-18:
-181920 *
-1 (26:3B
-	
-9
-21
-
-
-11
-22
-@
-88:
-888930 *
-1G G(26:3B
-	
-9
-21
-
-
-11
-90
-
-73
-737415
-@
-55:
-555630 *
-1. .(26:3B
-	
-9
-10
-
-
-11
-57
-
-111
-11111215
-@
-45:
-454630 *
-1& &(26:3B
-	
-9
-10
-
-
-11
-47
-
-65
-656615
-
-107
-10710815
-
-75
-757615
-
-116
-11611715
-
-103
-10310415
-@
-51:
-515230 *
-1* *(26:3B
-	
-9
-10
-
-
-11
-47
-
-61
-616215rò
-
-61316*
-1 (
-
-61317*
-1 (	
-
-182316*
-1 (
-
-182317*
-1 (
-
-252316*
-1 (
-
-252317*
-1 (
-
-28632*
-1 (
-
-283335*
-1 (
-
-283617*
-1$ (*
-
-333941*
-1! !(
-
-333617*
-1!6 !(<
-
-333642*
-1" "(
-
-333617*
-1" "(
-
-333641*
-1" "(/
-
-33632*
-1" "(/
-
-334335*
-1" "(/
-
-333941*
-1# #(
-
-454850*
-1&! &(,
-
-454842*
-1&- &(8
-
-454817*
-1&! &(,
-
-45632*
-1' '(
-
-455135*
-1' '(
-
-514850*
-1*B *(M
-
-514842*
-1*N *(Y
-
-514817*
-1*B *(M
-
-51632*
-1+ +(
-
-515335*
-1+ +(
-
-512532*
-1+5 +(B
-
-552532*
-1/ /(
-
-534850*
-14 4(
-
-534842*
-14 4($
-
-534817*
-14 4(
-
-535932*
-18 8(
-
-536135*
-1? ?(
-
-535941*
-18 8(
-
-535932*
-18 8(
-
-536335*
-1> >(
-
-535941*
-18 8(
-
-535932*
-18 8(
-
-536535*
-1= =(#
-
-535941*
-18 8(
-
-535932*
-18 8(
-
-536735*
-1< <(!
-
-535941*
-18 8(
-
-535932*
-18 8(
-
-536935*
-1; ;( 
-
-535941*
-18 8(
-
-535932*
-18 8(
-
-537135*
-1: :(
-
-535941*
-18 8(
-
-537332*
-18 8(
-
-537535*
-19 9(
-
-537317*
-18 8(
-
-534832*
-1;! ;(,
-
-537735*
-1;- ;(8
-
-53632*
-1> >(+
-
-537935*
-1> >(+
-
-538117*
-1>/ >(A
-
-538117*
-1>B >(G
-
-538332*
-1>B >(G
-
-854850*
-1B/ B(:
-
-854842*
-1B; B(F
-
-854817*
-1B/ B(:
-
-85632*
-1C! C(0
-
-852835*
-1C! C(0
-
-854832*
-1D! D(,
-
-857735*
-1D- D(8
-
-85632*
-1DA D(O
-
-858835*
-1DA D(O
-
-88632*
-1H H(!
-
-889135*
-1H H(!
-
-91632*
-1L L(
-
-913335*
-1L L(
-
-913617*
-1L$ L(*
-
-433641*
-1O O(
-
-433617*
-1O O(
-
-433641*
-1P P(
-
-439532*
-1P P(
-
-439735*
-1U U(
-
-439941*
-1P P(
-
-4310132*
-1P P(
-
-4310335*
-1T T( 
-
-4310141*
-1P P(
-
-4310532*
-1P P(
-
-4310735*
-1S S(
-
-4310541*
-1P P(
-
-4310532*
-1P P(
-
-4310935*
-1R R(
-
-4310541*
-1P P(
-
-437332*
-1P P(
-
-4311135*
-1Q Q(
-
-437317*
-1P P(
-
-43632*
-1R  R(,
-
-437935*
-1R  R(,
-
-791832*
-1Y Y($
-
-791832*
-1Y Y($
-
-7911432*
-1Z Z(
-
-7911635*
-1Z Z("
-
-7911417*
-1Z Z(

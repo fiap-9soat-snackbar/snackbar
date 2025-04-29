@@ -1,5 +1,0 @@
-com.snackbar.pickup.presentation.PickupController#deliveryOrder(Ljava/lang/String;)Ljava/lang/String;
-false
-3a5b55a7a0a40eeecd6b61461fe179ea
-==
-delivery com.snackbar.pickup.usecase.DeliveryPickupUseCase#delivery(Ljava/lang/String;)V

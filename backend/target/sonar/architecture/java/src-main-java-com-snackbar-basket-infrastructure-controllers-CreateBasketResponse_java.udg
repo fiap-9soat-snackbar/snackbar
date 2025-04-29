@@ -1,180 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207685*java2.Bë	
-[
-Vsrc/main/java/com/snackbar/basket/infrastructure/controllers/CreateBasketResponse.java2
-
-package4
-3
-.com.snackbar.basket.infrastructure.controllers5
-H
-Ccom.snackbar.basket.infrastructure.controllers.CreateBasketResponse7
-
-record8
-
-access9
-
-public10
-
-simple name11
-
-CreateBasketResponse12
-L
-Fcom.snackbar.basket.infrastructure.controllers.CreateBasketResponse.id14
-
-field15
-
-	protected16
-
-id17
-`
-Zcom.snackbar.basket.infrastructure.controllers.CreateBasketResponse#id()Ljava/lang/String;19
-
-method20
-
-
-references21
-M
-Gcom.snackbar.basket.infrastructure.controllers.CreateBasketResponse.cpf23
-	
-cpf24
-a
-[com.snackbar.basket.infrastructure.controllers.CreateBasketResponse#cpf()Ljava/lang/String;26
-O
-Icom.snackbar.basket.infrastructure.controllers.CreateBasketResponse.items28
-
-items29
-a
-[com.snackbar.basket.infrastructure.controllers.CreateBasketResponse#items()Ljava/util/List;31
-A
-;com.snackbar.basket.infrastructure.controllers.ItemResponse33
-
-unknown34
-
-
-uses35
-T
-Ncom.snackbar.basket.infrastructure.controllers.CreateBasketResponse.totalPrice37
-
-
-totalPrice38
-l
-fcom.snackbar.basket.infrastructure.controllers.CreateBasketResponse#totalPrice()Ljava/math/BigDecimal;40J
-
-1
-12Z
-
-3	
-354j³
-@
-36:
-363715 *
-1	 (26:3B
-	
-9
-16
-
-
-11
-38
-5
-39/
-394020 *
-1	 (26:3B
-
-
-11
-38
-9
-64
-678 *
-1 (#:3B
-	
-9
-10
-
-
-11
-12
-@
-27:
-272815 *
-1
-	 
-(26:3B
-	
-9
-16
-
-
-11
-29
-5
-18/
-181920 *
-1	 (26:3B
-
-
-11
-17
-@
-13:
-131415 *
-1	 (26:3B
-	
-9
-16
-
-
-11
-17
-@
-22:
-222315 *
-1		 	(26:3B
-	
-9
-16
-
-
-11
-24
-
-32
-323334
-5
-30/
-303120 *
-1
-	 
-(26:3B
-
-
-11
-29
-5
-25/
-252620 *
-1		 	(26:3B
-
-
-11
-24r‡
-
-181321*
-1	 (
-
-252221*
-1		 	(
-
-302721*
-1
-	 
-(
-
-273235*
-1
- 
-(
-
-393621*
-1	 (

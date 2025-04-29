@@ -1,9 +1,0 @@
-com.snackbar.iam.application.SecurityConfiguration#securityFilterChain(Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;)Lorg/springframework/security/web/SecurityFilterChain;
-false
-a49cff07ad264ed8039c716dc68bb891
-org.springframework.security.config.annotation.AbstractSecurityBuilder#build()Ljava/lang/Object;
-org.springframework.security.config.annotation.web.builders.HttpSecurity#addFilterBefore(Ljakarta/servlet/Filter;Ljava/lang/Class;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;
-org.springframework.security.config.annotation.web.builders.HttpSecurity#authenticationProvider(Lorg/springframework/security/authentication/AuthenticationProvider;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;
-org.springframework.security.config.annotation.web.builders.HttpSecurity#authorizeHttpRequests(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;
-org.springframework.security.config.annotation.web.builders.HttpSecurity#csrf(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;
-org.springframework.security.config.annotation.web.builders.HttpSecurity#sessionManagement(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;

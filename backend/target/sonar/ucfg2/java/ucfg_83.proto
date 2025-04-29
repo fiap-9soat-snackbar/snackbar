@@ -1,15 +1,0 @@
-
-\com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getPrice()Ljava/lang/Double;ê
-Ö/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/persistence/OrderItemEntity.java ("1*Õ
-1 (ó
-î
- (
-%0java.lang.Double"__id*j
-
-__unknown_file (N*LA
-?com.snackbar.cooking.infrastructure.persistence.OrderItemEntity"
-price"$
- (
-
-%0java.lang.DoubleBCA
-?com.snackbar.cooking.infrastructure.persistence.OrderItemEntityH

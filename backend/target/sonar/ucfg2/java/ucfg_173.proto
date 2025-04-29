@@ -1,36 +1,0 @@
-
-˘com.snackbar.iam.application.ApplicationConfiguration#authenticationManager(Lorg/springframework/security/config/annotation/authentication/configuration/AuthenticationConfiguration;)Lorg/springframework/security/authentication/AuthenticationManager;Ö
-{/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/ApplicationConfiguration.java%! %(6"startingBlock*‘
-startingBlock%6 %(Z˛
-˚
-$ $(	
-%1"
-__annotate*K
-
-__unknown_file (/-
-+org.springframework.context.annotation.Bean*è
-
-__unknown_file (s
-q
-configgorg.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration≤
-Ø
-%S %(Yq
-configgorg.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration"__annotation*"
-
-__unknown_file (
-
-%1*
-1*≥
-1& &(Ã…
-& &(0G
-%0Aorg.springframework.security.authentication.AuthenticationManager"≈org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration#getAuthenticationManager()Lorg/springframework/security/authentication/AuthenticationManager;*è
-
-__unknown_file (s
-q
-configgorg.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration2getAuthenticationManager()"U
-& &(1I
-G
-%0Aorg.springframework.security.authentication.AuthenticationManager:}
-%7 %(Yq
-configgorg.springframework.security.config.annotation.authentication.configuration.AuthenticationConfigurationB97
-5com.snackbar.iam.application.ApplicationConfigurationH

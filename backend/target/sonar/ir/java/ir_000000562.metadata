@@ -1,6 +1,0 @@
-com.snackbar.cooking.infrastructure.gateways.OrderDatabaseGatewayCooking#findById(Ljava/lang/String;)Ljava/util/Optional;
-false
-d66079e11dde05d796bb54187370fed4
-java.util.Optional#map(Ljava/util/function/Function;)Ljava/util/Optional;
-==
-findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;

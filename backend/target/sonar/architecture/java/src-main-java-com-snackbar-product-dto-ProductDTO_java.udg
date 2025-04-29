@@ -1,485 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207605*java2.Bø
-;
-6src/main/java/com/snackbar/product/dto/ProductDTO.java2
-
-package4
-
-com.snackbar.product.dto5
-(
-#com.snackbar.product.dto.ProductDTO7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-
-ProductDTO12
-,
-&com.snackbar.product.dto.ProductDTO.id14
-
-field15
-
-private16
-
-id17
-.
-(com.snackbar.product.dto.ProductDTO.name19
-
-
-name20
-2
-,com.snackbar.product.dto.ProductDTO.category22
-
-category23
-5
-/com.snackbar.product.dto.ProductDTO.description25
-
-description26
-/
-)com.snackbar.product.dto.ProductDTO.price28
-
-price29
-5
-/com.snackbar.product.dto.ProductDTO.cookingTime31
-
-cookingTime32
-3
--com.snackbar.product.dto.ProductDTO#<init>()V34
-
-method35
-
-calls36
-¥
-žcom.snackbar.product.dto.ProductDTO#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/Integer;)V38
-
-
-uses39
-
-
-references40
-C
-=com.snackbar.product.dto.ProductDTO#getId()Ljava/lang/String;42
-
-getId43
-D
->com.snackbar.product.dto.ProductDTO#setId(Ljava/lang/String;)V45
-
-setId46
-E
-?com.snackbar.product.dto.ProductDTO#getName()Ljava/lang/String;48
-
-getName49
-F
-@com.snackbar.product.dto.ProductDTO#setName(Ljava/lang/String;)V51
-
-setName52
-I
-Ccom.snackbar.product.dto.ProductDTO#getCategory()Ljava/lang/String;54
-
-getCategory55
-J
-Dcom.snackbar.product.dto.ProductDTO#setCategory(Ljava/lang/String;)V57
-
-setCategory58
-L
-Fcom.snackbar.product.dto.ProductDTO#getDescription()Ljava/lang/String;60
-
-getDescription61
-M
-Gcom.snackbar.product.dto.ProductDTO#setDescription(Ljava/lang/String;)V63
-
-setDescription64
-J
-Dcom.snackbar.product.dto.ProductDTO#getPrice()Ljava/math/BigDecimal;66
-
-getPrice67
-K
-Ecom.snackbar.product.dto.ProductDTO#setPrice(Ljava/math/BigDecimal;)V69
-
-setPrice70
-M
-Gcom.snackbar.product.dto.ProductDTO#getCookingTime()Ljava/lang/Integer;72
-
-getCookingTime73
-N
-Hcom.snackbar.product.dto.ProductDTO#setCookingTime(Ljava/lang/Integer;)V75
-
-setCookingTime76J
-
-1
-12Z
-
-3	
-354jã
-
-@
-37:
-373835 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-@
-65:
-656635 *
-19 9(26:3B
-	
-9
-10
-
-
-11
-67
-@
-27:
-272815 *
-1
- 
-(26:3B
-	
-9
-16
-
-
-11
-29
-@
-30:
-303115 *
-1 (26:3B
-	
-9
-16
-
-
-11
-32
-@
-50:
-505135 *
-1% %(26:3B
-	
-9
-10
-
-
-11
-52
-@
-44:
-444535 *
-1 (26:3B
-	
-9
-10
-
-
-11
-46
-@
-33:
-333435 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-@
-74:
-747535 *
-1E E(26:3B
-	
-9
-10
-
-
-11
-76
-@
-56:
-565735 *
-1- -(26:3B
-	
-9
-10
-
-
-11
-58
-@
-62:
-626335 *
-15 5(26:3B
-	
-9
-10
-
-
-11
-64
-@
-13:
-131415 *
-1 (26:3B
-	
-9
-16
-
-
-11
-17
-@
-59:
-596035 *
-11 1(26:3B
-	
-9
-10
-
-
-11
-61
-@
-68:
-686935 *
-1= =(26:3B
-	
-9
-10
-
-
-11
-70
-@
-24:
-242515 *
-1	 	(26:3B
-	
-9
-16
-
-
-11
-26
-@
-21:
-212215 *
-1 (26:3B
-	
-9
-16
-
-
-11
-23
-@
-71:
-717235 *
-1A A(26:3B
-	
-9
-10
-
-
-11
-73
-@
-47:
-474835 *
-1! !(26:3B
-	
-9
-10
-
-
-11
-49
-@
-53:
-535435 *
-1) )(26:3B
-	
-9
-10
-
-
-11
-55
-9
-64
-678 *
-1 (:3B
-	
-9
-10
-
-
-11
-12
-@
-41:
-414235 *
-1 (26:3B
-	
-9
-10
-
-
-11
-43
-@
-18:
-181915 *
-1 (26:3B
-	
-9
-16
-
-
-11
-20rŠ	
-
-33636*
-1 (
-
-37636*
-1 (
-
-37639*
-1	 (
-
-37640*
-1	 (
-
-371340*
-1 (
-
-37639*
-1	 (
-
-37640*
-1	 (
-
-371840*
-1 (
-
-37639*
-1	 (
-
-37640*
-1	 (
-
-372140*
-1 (
-
-37639*
-1	 (
-
-37640*
-1	 (
-
-372440*
-1 (
-
-37639*
-1	 (
-
-37640*
-1	 (
-
-372740*
-1 (
-
-37639*
-1	 (
-
-37640*
-1	 (
-
-373040*
-1 (
-
-411340*
-1 (
-
-44639*
-1	 (
-
-44640*
-1	 (
-
-441340*
-1 (
-
-471840*
-1" "(
-
-50639*
-1&	 &(
-
-50640*
-1&	 &(
-
-501840*
-1& &(
-
-532140*
-1* *(
-
-56639*
-1.	 .(
-
-56640*
-1.	 .(
-
-562140*
-1. .(
-
-592440*
-12 2(
-
-62639*
-16	 6(
-
-62640*
-16	 6(
-
-622440*
-16 6(
-
-652740*
-1: :(
-
-68639*
-1>	 >(
-
-68640*
-1>	 >(
-
-682740*
-1> >(
-
-713040*
-1B B(
-
-74639*
-1F	 F(
-
-74640*
-1F	 F(
-
-743040*
-1F F(

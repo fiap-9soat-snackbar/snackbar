@@ -1,9 +1,0 @@
-com.snackbar.payment.application.usecases.UpdatePaymentStatusWebhook#updatePaymentStatus(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
-false
-adba9eb84077f14951d88c2e7948c2f3
-com.snackbar.payment.domain.entity.Payment#externalPaymentId()Ljava/lang/String;
-com.snackbar.payment.domain.entity.Payment#orderId()Ljava/lang/String;
-==
-getPaymentByExternalId com.snackbar.payment.application.usecases.GetPaymentByExternalIdUseCase#getPaymentByExternalId(Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
-updatePaymentStatusByExternalId com.snackbar.payment.application.gateways.PaymentGateway#updatePaymentStatusByExternalId(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
-updateStatusOrder com.snackbar.orderRefactory.application.usecases.OrderUseCase#updateStatusOrder(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;

@@ -1,6 +1,0 @@
-com.snackbar.order.adapter.in.web.OrderController#listOrders()Ljava/util/List;
-false
-41b20bb07919a42c1a11d5ed61fe4c80
-==
-forEach java.lang.Iterable#forEach(Ljava/util/function/Consumer;)V
-listOrders com.snackbar.order.service.OrderService#listOrders()Ljava/util/List;

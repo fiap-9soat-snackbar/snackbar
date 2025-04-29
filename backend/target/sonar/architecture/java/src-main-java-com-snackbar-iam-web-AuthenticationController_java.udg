@@ -1,706 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889204910*java2.BÚ
-E
-@src/main/java/com/snackbar/iam/web/AuthenticationController.java2
-
-package4
-
-com.snackbar.iam.web5
-2
--com.snackbar.iam.web.AuthenticationController7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-AuthenticationController12
-<
-6org.springframework.web.bind.annotation.RequestMapping14
-
-unknown15
-
-annotated by16
-
-
-uses17
-<
-6org.springframework.web.bind.annotation.RestController19
->
-8com.snackbar.iam.web.AuthenticationController.jwtService21
-
-field22
-
-private23
-
-
-jwtService24
--
-'com.snackbar.iam.application.JwtService26
-
-is type27
-I
-Ccom.snackbar.iam.web.AuthenticationController.authenticationService29
-
-authenticationService30
-8
-2com.snackbar.iam.application.AuthenticationService32
-?
-9com.snackbar.iam.web.AuthenticationController.userService34
-
-userService35
-.
-(com.snackbar.iam.application.UserService37
-@
-:com.snackbar.iam.web.AuthenticationController.orderService39
-
-orderService40
--
-'com.snackbar.order.service.OrderService42
-Ó
-Ácom.snackbar.iam.web.AuthenticationController#<init>(Lcom/snackbar/iam/application/JwtService;Lcom/snackbar/iam/application/AuthenticationService;Lcom/snackbar/iam/application/UserService;Lcom/snackbar/order/service/OrderService;)V44
-
-method45
-
-	has param46
-
-calls47
-
-
-references48
-í
-ãcom.snackbar.iam.web.AuthenticationController#register(Lcom/snackbar/iam/web/dto/RegisterUserDto;)Lorg/springframework/http/ResponseEntity;50
-
-register51
--
-'org.springframework.http.ResponseEntity53
-
-returns54
-.
-(com.snackbar.iam.web.dto.RegisterUserDto56
-9
-3org.springframework.web.bind.annotation.PostMapping58
-(
-"com.snackbar.iam.domain.UserEntity60
-9
-3org.springframework.web.bind.annotation.RequestBody62
-ê
-âcom.snackbar.iam.application.AuthenticationService#signup(Lcom/snackbar/iam/web/dto/RegisterUserDto;)Lcom/snackbar/iam/domain/UserEntity;64
-m
-gorg.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;66
-ì
-åcom.snackbar.iam.web.AuthenticationController#authenticate(Lcom/snackbar/iam/web/dto/LoginUserDto;)Lorg/springframework/http/ResponseEntity;68
-
-authenticate69
-+
-%com.snackbar.iam.web.dto.LoginUserDto71
-,
-&com.snackbar.iam.web.dto.LoginResponse73
-/
-)com.snackbar.iam.domain.UserDetailsEntity75
-ã
-Ñcom.snackbar.iam.application.JwtService#generateToken(Lorg/springframework/security/core/userdetails/UserDetails;)Ljava/lang/String;77
-ö
-ìcom.snackbar.iam.application.AuthenticationService#authenticate(Lcom/snackbar/iam/web/dto/LoginUserDto;)Lcom/snackbar/iam/domain/UserDetailsEntity;79
-B
-<com.snackbar.iam.application.JwtService#getExpirationTime()J81
-ö
-ìcom.snackbar.iam.web.AuthenticationController#refreshToken(Lcom/snackbar/iam/web/dto/RefreshTokenRequest;)Lorg/springframework/http/ResponseEntity;83
-
-refreshToken84
-2
-,com.snackbar.iam.web.dto.RefreshTokenRequest86
-Å
-{com.snackbar.iam.application.AuthenticationService#findByCpf(Ljava/lang/String;)Lcom/snackbar/iam/domain/UserDetailsEntity;88J
-
-1
-12Z
-
-3	
-354jÔ
-
-25
-252615
-@
-33:
-333422 *
-1 (26:3B
-	
-9
-23
-
-
-11
-35
-
-85
-858615
-
-13
-131415
-@
-82:
-828345 *
-1< <(26:3B
-	
-9
-10
-
-
-11
-84
-@
-28:
-282922 *
-1 (26:3B
-	
-9
-23
-
-
-11
-30
-
-41
-414215
-
-61
-616215
-@
-49:
-495045 *
-1% %(26:3B
-	
-9
-10
-
-
-11
-51
-
-65
-656615
-
-72
-727315
-
-74
-747515
-@
-38:
-383922 *
-1 (26:3B
-	
-9
-23
-
-
-11
-40
-
-36
-363715
-
-59
-596015
-
-55
-555615
-
-87
-878815
-
-57
-575815
-9
-64
-678 *
-1 (&:3B
-	
-9
-10
-
-
-11
-12
-@
-20:
-202122 *
-1 (26:3B
-	
-9
-23
-
-
-11
-24
-@
-67:
-676845 *
-1+ +(26:3B
-	
-9
-10
-
-
-11
-69
-
-18
-181915
-
-70
-707115
-
-31
-313215
-
-63
-636415
-
-80
-808115
-
-76
-767715
-
-78
-787915
-
-52
-525315
-@
-43:
-434445 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12r∑
-
-61316*
-1 (
-
-61317*
-1 (
-
-61816*
-1 (
-
-61817*
-1 (
-
-202527*
-1 (
-
-202517*
-1 (
-
-202517*
-1 ((
-
-283127*
-1 ((
-
-283117*
-1 ((
-
-283117*
-1) (>
-
-333627*
-1 (
-
-333617*
-1 (
-
-333617*
-1 (*
-
-384127*
-1 (
-
-384117*
-1 (
-
-384117*
-1  (,
-
-432546*
-1 (
-
-433146*
-1 ("
-
-433646*
-1 (
-
-434146*
-1 (
-
-43647*
-1 ($
-
-432527*
-1 ("
-
-432517*
-1 (
-
-433127*
-1# (8
-
-433117*
-1 ("
-
-433627*
-1 ($
-
-433617*
-1 (
-
-434127*
-1 (&
-
-434117*
-1 (
-
-43617*
-1	 (
-
-43648*
-1	 (
-
-432517*
-1 (
-
-432048*
-1 (
-
-43617*
-1 	  (
-
-43648*
-1 	  (
-
-433117*
-1   (#
-
-432848*
-1   (#
-
-43617*
-1!	 !(
-
-43648*
-1!	 !(
-
-433617*
-1! !(
-
-433348*
-1! !(
-
-43617*
-1"	 "(
-
-43648*
-1"	 "(
-
-434117*
-1" "(
-
-433848*
-1" "(
-
-495254*
-1& &(
-
-495546*
-1&= &(L
-
-495716*
-1% %(
-
-495717*
-1% %(
-
-495217*
-1& &(
-
-495917*
-1& &(%
-
-495527*
-1&M &(\
-
-496116*
-1&0 &(1
-
-496117*
-1&1 &(<
-
-495517*
-1&= &(L
-
-495927*
-1' '("
-
-495917*
-1'	 '(
-
-495954*
-1'% '(:
-
-493148*
-1'% '(:
-
-496347*
-1'; '(A
-
-492848*
-1'% '(:
-
-493117*
-1'% '(:
-
-492848*
-1'% '(:
-
-495254*
-1( ((
-
-495248*
-1( ((
-
-496547*
-1( ((!
-
-675254*
-1, ,(
-
-677046*
-1,D ,(P
-
-675716*
-1+ +(
-
-675717*
-1+ +(
-
-675217*
-1, ,(
-
-677217*
-1, ,((
-
-677027*
-1,Q ,(]
-
-676116*
-1,7 ,(8
-
-676117*
-1,8 ,(C
-
-677017*
-1,D ,(P
-
-677427*
-1. .(,
-
-677417*
-1.	 .(
-
-677447*
-11% 1(6
-
-672548*
-12 2("
-
-677647*
-12# 2(0
-
-672048*
-12 2("
-
-672517*
-12 2("
-
-672048*
-12 2("
-
-677454*
-14! 4(6
-
-673148*
-14! 4(6
-
-677847*
-147 4(C
-
-672848*
-14! 4(6
-
-673117*
-14! 4(6
-
-672848*
-14! 4(6
-
-672548*
-15 5("
-
-677647*
-15# 5(0
-
-672048*
-15 5("
-
-672517*
-15 5("
-
-672048*
-15 5("
-
-677227*
-18 8($
-
-677217*
-18	 8(
-
-677247*
-18+ 8(8
-
-672548*
-18C 8(M
-
-678047*
-18N 8(_
-
-672048*
-18C 8(M
-
-672517*
-18C 8(M
-
-672048*
-18C 8(M
-
-675254*
-19 9(
-
-675248*
-19 9(
-
-676547*
-19 9(!
-
-825254*
-1= =(
-
-828546*
-1=D =(W
-
-825716*
-1< <(
-
-825717*
-1< <(
-
-825217*
-1= =(
-
-827217*
-1= =((
-
-828527*
-1=X =(k
-
-826116*
-1=7 =(8
-
-826117*
-1=8 =(C
-
-828517*
-1=D =(W
-
-827427*
-1> >(&
-
-827417*
-1>	 >(
-
-827454*
-1>) >(>
-
-823148*
-1>) >(>
-
-828747*
-1>? >(H
-
-822848*
-1>) >(>
-
-823117*
-1>) >(>
-
-822848*
-1>) >(>
-
-822548*
-1@ @((
-
-827647*
-1@) @(6
-
-822048*
-1@ @((
-
-822517*
-1@ @((
-
-822048*
-1@ @((
-
-827227*
-1B B($
-
-827217*
-1B	 B(
-
-827247*
-1B+ B(8
-
-822548*
-1D D(
-
-828047*
-1D D(-
-
-822048*
-1D D(
-
-822517*
-1D D(
-
-822048*
-1D D(
-
-825254*
-1G G(
-
-825248*
-1G G(
-
-826547*
-1G G(!

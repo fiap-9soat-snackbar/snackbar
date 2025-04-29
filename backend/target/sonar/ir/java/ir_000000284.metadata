@@ -1,5 +1,0 @@
-com.snackbar.basket.domain.valueobject.ProductId#<init>(Ljava/util/UUID;)V
-false
-56e741d0971d8f4b84a8a0baed158bd2
-java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
-java.lang.IllegalArgumentException#instance-init#

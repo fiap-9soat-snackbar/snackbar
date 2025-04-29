@@ -1,7 +1,0 @@
-com.snackbar.cooking.application.usecases.CreateCookingUseCase#validateOrderStatus(Lcom/snackbar/order/domain/model/Order;Lcom/snackbar/order/domain/model/StatusOrder;)V
-false
-075dbc901dc7e2ce8705d93c312163a5
-com.snackbar.cooking.domain.exceptions.OrderStatusInvalidException#<init>(Ljava/lang/String;)V
-com.snackbar.cooking.domain.exceptions.OrderStatusInvalidException#instance-init#
-==
-getStatusOrder com.snackbar.order.domain.model.Order#getStatusOrder()Lcom/snackbar/order/domain/model/StatusOrder;

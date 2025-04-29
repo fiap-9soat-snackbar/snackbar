@@ -1,8 +1,0 @@
-com.snackbar.basket.infrastructure.gateways.BasketEntityMapper#toDomainObj(Lcom/snackbar/basket/infrastructure/persistence/BasketEntity;)Lcom/snackbar/basket/domain/entity/Basket;
-false
-2b46344c8c58e7dafcee22ac389b0fad
-com.snackbar.basket.domain.entity.Basket#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/math/BigDecimal;)V
-com.snackbar.basket.domain.entity.Basket#instance-init#
-java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
-==
-!unknownMethod! !unknownMethod!

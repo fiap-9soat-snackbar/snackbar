@@ -1,6 +1,0 @@
-com.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway#getProductByName(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/OrderItem;
-false
-a4acf3815c630f544600bb06790f7e3b
-==
-getProductByName com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl#getProductByName(Ljava/lang/String;)Lcom/snackbar/product/dto/ProductDTO;
-toOrderItem com.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapper#toOrderItem(Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/orderRefactory/domain/entity/OrderItem;

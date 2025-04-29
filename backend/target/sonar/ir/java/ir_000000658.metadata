@@ -1,6 +1,0 @@
-com.snackbar.iam.web.UserController#getByCpf(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;
-false
-64fe2d2ab3958668e2b8eeed728e3768
-org.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;
-==
-getUserByCpf com.snackbar.iam.application.UserService#getUserByCpf(Ljava/lang/String;)Lcom/snackbar/iam/web/dto/UserResponse;

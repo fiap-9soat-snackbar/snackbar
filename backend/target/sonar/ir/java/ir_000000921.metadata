@@ -1,5 +1,0 @@
-com.snackbar.productv2.infrastructure.config.ProductConfig#deleteProductv2ByIdUseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/DeleteProductv2ByIdUseCase;
-false
-4528b336a705ef2a6e837eecabeff9b6
-com.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase#<init>(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)V
-com.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase#instance-init#

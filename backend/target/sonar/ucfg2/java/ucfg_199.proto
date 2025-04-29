@@ -1,82 +1,0 @@
-
-≈com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toDomainObj(Lcom/snackbar/productv2/infrastructure/persistence/Productv2Entity;)Lcom/snackbar/productv2/domain/entity/Productv2;ï
-ä/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/gateways/Productv2EntityMapper.java ("1*˚
-1 (,ˇ¸
- (4
-%0java.lang.String"[com.snackbar.productv2.infrastructure.persistence.Productv2Entity#getId()Ljava/lang/String;*r
-
-__unknown_file (V
-T
-productv2EntityAcom.snackbar.productv2.infrastructure.persistence.Productv2Entity2getId()ÉÄ
-6 (O
-%1java.lang.String"]com.snackbar.productv2.infrastructure.persistence.Productv2Entity#getName()Ljava/lang/String;*r
-
-__unknown_file (V
-T
-productv2EntityAcom.snackbar.productv2.infrastructure.persistence.Productv2Entity2	getName()ãà
-Q (n
-%2java.lang.String"acom.snackbar.productv2.infrastructure.persistence.Productv2Entity#getCategory()Ljava/lang/String;*r
-
-__unknown_file (V
-T
-productv2EntityAcom.snackbar.productv2.infrastructure.persistence.Productv2Entity2getCategory()íè
-	p (ê
-%3java.lang.String"dcom.snackbar.productv2.infrastructure.persistence.Productv2Entity#getDescription()Ljava/lang/String;*r
-
-__unknown_file (V
-T
-productv2EntityAcom.snackbar.productv2.infrastructure.persistence.Productv2Entity2getDescription()èå
-
-í (¨
-%4java.math.BigDecimal"bcom.snackbar.productv2.infrastructure.persistence.Productv2Entity#getPrice()Ljava/math/BigDecimal;*r
-
-__unknown_file (V
-T
-productv2EntityAcom.snackbar.productv2.infrastructure.persistence.Productv2Entity2
-getPrice()ïí
-
-Æ (Œ
-%5java.lang.Integer"ecom.snackbar.productv2.infrastructure.persistence.Productv2Entity#getCookingTime()Ljava/lang/Integer;*r
-
-__unknown_file (V
-T
-productv2EntityAcom.snackbar.productv2.infrastructure.persistence.Productv2Entity2getCookingTime()rp
- (4
-%6.com.snackbar.productv2.domain.entity.Productv2".com.snackbar.productv2.domain.entity.Productv2›
-⁄
-	 (œ
-%7"©com.snackbar.productv2.domain.entity.Productv2#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/Integer;)V*R
-
-__unknown_file (6
-4
-%6.com.snackbar.productv2.domain.entity.Productv2*4
-
-__unknown_file (
-
-%0java.lang.String*4
-
-__unknown_file (
-
-%1java.lang.String*4
-
-__unknown_file (
-
-%2java.lang.String*4
-
-__unknown_file (
-
-%3java.lang.String*8
-
-__unknown_file (
-
-%4java.math.BigDecimal*5
-
-__unknown_file (
-
-%5java.lang.Integer"C
-	 (–6
-4
-%6.com.snackbar.productv2.domain.entity.Productv2:`
- (9T
-productv2EntityAcom.snackbar.productv2.infrastructure.persistence.Productv2EntityBHF
-Dcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper

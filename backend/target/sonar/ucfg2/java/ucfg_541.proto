@@ -1,43 +1,0 @@
-
-Þcom.snackbar.productv2.infrastructure.config.ProductConfig#getProductsv2ByCategory(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/GetProductsv2ByCategoryUseCase;‹
-€/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/config/ProductConfig.java# (:"startingBlock*‘
-startingBlock: (]Ü
-Ù
- (	
-%2"
-__annotate*K
-
-__unknown_file (/-
-+org.springframework.context.annotation.Bean*n
-
-__unknown_file (R
-P
-productv2Gateway<com.snackbar.productv2.application.gateways.Productv2Gateway‘
-Ž
-L (\P
-productv2Gateway<com.snackbar.productv2.application.gateways.Productv2Gateway"__annotation*"
-
-__unknown_file (
-
-%2*
-1*¦
-1 2  (B«¨
-   (1P
-%0Jcom.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase"Jcom.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCaseˆ
-…
-   (C
-%1"’com.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase#<init>(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)V*n
-
-__unknown_file (R
-P
-%0Jcom.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase*n
-
-__unknown_file (R
-P
-productv2Gateway<com.snackbar.productv2.application.gateways.Productv2Gateway"^
-   (DR
-P
-%0Jcom.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase:\
-; (\P
-productv2Gateway<com.snackbar.productv2.application.gateways.Productv2GatewayB><
-:com.snackbar.productv2.infrastructure.config.ProductConfig

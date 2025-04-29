@@ -1,64 +1,0 @@
-
-Ñcom.snackbar.product.controller.ProductController#getProductsByCategory(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;Å
-w/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/product/controller/ProductController.java9, 9(A"startingBlock*∞
-startingBlock9A 9(`±
-Æ
-9B 9(O
-%3"
-__annotate*T
-
-__unknown_file (86
-4org.springframework.web.bind.annotation.PathVariable*:
-
-__unknown_file (
-
-categoryjava.lang.String\
-Z
-9W 9(_
-categoryjava.lang.String"__annotation*"
-
-__unknown_file (
-
-%3*
-1*Ü
-1:$ :(@…
-∆
-:$ :(@?
-%09com.snackbar.product.usecase.GetProductsByCategoryUseCase"__id*s
-
-__unknown_file (W*U3
-1com.snackbar.product.controller.ProductController"
-getProductsByCategoryUseCaseﬁ€
-:$ :(`
-%1java.util.List"scom.snackbar.product.usecase.GetProductsByCategoryUseCase#getProductsByCategory(Ljava/lang/String;)Ljava/util/List;*]
-
-__unknown_file (A
-?
-%09com.snackbar.product.usecase.GetProductsByCategoryUseCase*:
-
-__unknown_file (
-
-categoryjava.lang.String2)getProductsByCategory(Ljava/lang/String;)b
-`
-: :(a
-productsjava.util.List"__id*2
-
-__unknown_file (
-
-%1java.util.List®
-•
-; ;(*-
-%2'org.springframework.http.ResponseEntity"gorg.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*G
-
-__unknown_file (+")
-'org.springframework.http.ResponseEntity*8
-
-__unknown_file (
-
-productsjava.util.List";
-; ;(+/
--
-%2'org.springframework.http.ResponseEntity:(
-9B 9(_
-categoryjava.lang.StringB53
-1com.snackbar.product.controller.ProductControllerH

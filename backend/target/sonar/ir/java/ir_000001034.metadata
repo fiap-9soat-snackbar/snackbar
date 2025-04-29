@@ -1,7 +1,0 @@
-com.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway#getProductv2ByName(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;
-false
-4ce939d95ff89e41ef04a3cf95489553
-java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
-==
-findByName com.snackbar.productv2.infrastructure.persistence.Productv2Repository#findByName(Ljava/lang/String;)Ljava/util/Optional;
-toDomainObj com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toDomainObj(Lcom/snackbar/productv2/infrastructure/persistence/Productv2Entity;)Lcom/snackbar/productv2/domain/entity/Productv2;

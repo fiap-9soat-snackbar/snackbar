@@ -1,8 +1,0 @@
-com.snackbar.iam.application.JwtService#isTokenValid(Ljava/lang/String;Lorg/springframework/security/core/userdetails/UserDetails;)Z
-false
-30f58e4f2ec8ad6459f19bd49b824ab9
-com.snackbar.iam.application.JwtService#isTokenExpired(Ljava/lang/String;)Z
-java.lang.String#equals(Ljava/lang/Object;)Z
-==
-extractUsername com.snackbar.iam.application.JwtService#extractUsername(Ljava/lang/String;)Ljava/lang/String;
-getUsername org.springframework.security.core.userdetails.UserDetails#getUsername()Ljava/lang/String;

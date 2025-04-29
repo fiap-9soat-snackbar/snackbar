@@ -1,9 +1,0 @@
-com.snackbar.product.entity.Product#validateProduct()V
-false
-db23891e9eb647e5bdd51db522704965
-com.snackbar.product.common.exception.BusinessException#<init>(Ljava/lang/String;)V
-com.snackbar.product.common.exception.BusinessException#instance-init#
-java.lang.String#isEmpty()Z
-java.lang.String#trim()Ljava/lang/String;
-==
-compareTo java.math.BigDecimal#compareTo(Ljava/math/BigDecimal;)I

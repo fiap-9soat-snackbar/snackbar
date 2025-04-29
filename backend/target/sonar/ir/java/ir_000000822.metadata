@@ -1,9 +1,0 @@
-com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#getSortedOrders()Ljava/util/List;
-false
-71961212686c35e23dd7af8dc7636ca4
-java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
-==
-collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
-findAllByOrderByOrderNumberAsc com.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository#findAllByOrderByOrderNumberAsc()Ljava/util/List;
-map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
-stream java.util.Collection#stream()Ljava/util/stream/Stream;

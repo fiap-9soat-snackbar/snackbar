@@ -1,7 +1,0 @@
-com.snackbar.iam.application.JwtService#generateToken(Lorg/springframework/security/core/userdetails/UserDetails;)Ljava/lang/String;
-false
-5f58147a6804397eba9787562a6a1ad1
-java.util.HashMap#<init>()V
-java.util.HashMap#instance-init#
-==
-generateToken com.snackbar.iam.application.JwtService#generateToken(Ljava/util/Map;Lorg/springframework/security/core/userdetails/UserDetails;)Ljava/lang/String;

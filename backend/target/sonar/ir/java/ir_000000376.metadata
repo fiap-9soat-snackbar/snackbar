@@ -1,3 +1,0 @@
-com.snackbar.orderRefactory.domain.entity.Order#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;Ljava/lang/String;Ljava/math/BigDecimal;J)V
-false
-22a4fe76fc474c53184f71c76c79775b

@@ -1,31 +1,0 @@
-
-ucom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#listToResponse(Ljava/util/List;)Ljava/util/List;•
-Š/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/controllers/Productv2DTOMapper.java (-"1*Š
-1 (®«
- (&
-%0java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*>
-
-__unknown_file ("
- 
-listProductsv2java.util.List2stream()†ƒ
- (%
-%1java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*;
-
-__unknown_file (
-
-%0java.util.stream.Stream*"
-
-__unknown_file (
-""2"map(Ljava/util/function/Function;)œ™
- (
-%2java.util.List"0java.util.stream.Stream#toList()Ljava/util/List;*;
-
-__unknown_file (
-
-%1java.util.stream.Stream2toList()""
- (
-
-%2java.util.List:,
-. (L 
-listProductsv2java.util.ListBHF
-Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper

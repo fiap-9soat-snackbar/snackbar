@@ -1,6 +1,8 @@
 services:
   app:
-    build: backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     restart: always
     container_name: snackbar-app-container
     ports:

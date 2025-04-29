@@ -1,283 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207065*java2.B˙
-U
-Psrc/main/java/com/snackbar/orderRefactory/application/gateways/OrderGateway.java2
-
-package4
-5
-0com.snackbar.orderRefactory.application.gateways5
-B
-=com.snackbar.orderRefactory.application.gateways.OrderGateway7
-
-	interface8
-
-access9
-
-public10
-
-simple name11
-
-OrderGateway12
-¥
-≠com.snackbar.orderRefactory.application.gateways.OrderGateway#createOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;14
-
-method15
-
-createOrder16
-5
-/com.snackbar.orderRefactory.domain.entity.Order18
-
-unknown19
-
-returns20
-
-	has param21
-
-
-uses22
-
-is type23
-¥
-≠com.snackbar.orderRefactory.application.gateways.OrderGateway#updateOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;25
-
-updateOrder26
-`
-Zcom.snackbar.orderRefactory.application.gateways.OrderGateway#listOrders()Ljava/util/List;28
-
-
-listOrders29
-ó
-êcom.snackbar.orderRefactory.application.gateways.OrderGateway#searchOrderId(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;31
-
-searchOrderId32
-j
-dcom.snackbar.orderRefactory.application.gateways.OrderGateway#updateStatusOrder(Ljava/lang/String;)V34
-
-updateStatusOrder35
-ü
-òcom.snackbar.orderRefactory.application.gateways.OrderGateway#getOrderByOrderNumber(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;37
-
-getOrderByOrderNumber38
-e
-_com.snackbar.orderRefactory.application.gateways.OrderGateway#getSortedOrders()Ljava/util/List;40
-
-getSortedOrders41
-y
-scom.snackbar.orderRefactory.application.gateways.OrderGateway#findOrderById(Ljava/lang/String;)Ljava/util/Optional;43
-
-findOrderById44
-y
-scom.snackbar.orderRefactory.application.gateways.OrderGateway#findUserByCpf(Ljava/lang/String;)Ljava/util/Optional;46
-
-findUserByCpf47
-w
-qcom.snackbar.orderRefactory.application.gateways.OrderGateway#findTopByOrderByOrderNumberDesc()Ljava/lang/String;49
-%
-findTopByOrderByOrderNumberDesc50J
-
-1
-12Z
-
-3	
-354j„
-@
-13:
-131415 *
-1	 	(
-26:3B
-	
-9
-10
-
-
-11
-16
-@
-27:
-272815 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-29
-@
-36:
-363715 *
-1 (
-26:3B
-	
-9
-10
-
-
-11
-38
-@
-39:
-394015 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-41
-@
-48:
-484915 *
-1 (26:3B
-	
-9
-10
-
-
-11
-50
-@
-42:
-424315 *
-1 (26:3B
-	
-9
-10
-
-
-11
-44
-@
-24:
-242515 *
-1
- 
-(
-26:3B
-	
-9
-10
-
-
-11
-26
-@
-45:
-454615 *
-1 (26:3B
-	
-9
-10
-
-
-11
-47
-@
-30:
-303115 *
-1 (
-26:3B
-	
-9
-10
-
-
-11
-32
-
-17
-171819
-9
-64
-678 *
-1 (:3B
-	
-9
-10
-
-
-11
-12
-@
-33:
-333415 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-35rÀ
-
-131720*
-1	 	(
-
-
-131721*
-1	 	(
-
-131722*
-1	 	(
-
-
-131723*
-1	 	("
-
-131722*
-1	 	(
-
-241720*
-1
- 
-(
-
-
-241721*
-1
- 
-(
-
-241722*
-1
- 
-(
-
-
-241723*
-1
- 
-("
-
-241722*
-1
- 
-(
-
-271722*
-1
- (
-
-301720*
-1 (
-
-
-301722*
-1 (
-
-
-361720*
-1 (
-
-
-361722*
-1 (
-
-
-391722*
-1
- (
-
-421722*
-1 (

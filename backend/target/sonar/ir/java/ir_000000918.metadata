@@ -1,5 +1,0 @@
-com.snackbar.productv2.infrastructure.config.ProductConfig#getProductsv2ByCategory(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/GetProductsv2ByCategoryUseCase;
-false
-ea22136e8bf23f2ccfb51a89a01645f7
-com.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase#<init>(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)V
-com.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase#instance-init#

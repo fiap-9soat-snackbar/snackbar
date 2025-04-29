@@ -1,15 +1,0 @@
-
-dcom.snackbar.productv2.infrastructure.persistence.Productv2Entity#getDescription()Ljava/lang/String;’
-‡/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/persistence/Productv2Entity.java7 7( "1*Õ
-18 8(Ÿ
-œ
-8 8(
-%0java.lang.String"__id*r
-
-__unknown_file (V*TC
-Acom.snackbar.productv2.infrastructure.persistence.Productv2Entity"
-description"$
-8 8(
-
-%0java.lang.StringBEC
-Acom.snackbar.productv2.infrastructure.persistence.Productv2EntityH

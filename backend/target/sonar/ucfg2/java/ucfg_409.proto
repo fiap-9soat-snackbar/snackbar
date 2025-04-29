@@ -1,15 +1,0 @@
-
-ecom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity#getOrderNumber()Ljava/lang/String;ì
-à/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/infrastructure/persistence/OrderEntity.java5 5( "1*÷
-16 6(†
-ù
-6 6(
-%0java.lang.String"__id*s
-
-__unknown_file (W*UD
-Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity"
-orderNumber"$
-6 6(
-
-%0java.lang.StringBFD
-Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntityH

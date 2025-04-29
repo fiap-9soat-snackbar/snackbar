@@ -1,1307 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207170*java2.B¥:
-]
-Xsrc/main/java/com/snackbar/productv2/infrastructure/controllers/Productv2Controller.java2
-
-package4
-6
-1com.snackbar.productv2.infrastructure.controllers5
-J
-Ecom.snackbar.productv2.infrastructure.controllers.Productv2Controller7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-Productv2Controller12
-<
-6org.springframework.web.bind.annotation.RestController14
-
-unknown15
-
-annotated by16
-
-
-uses17
-<
-6org.springframework.web.bind.annotation.RequestMapping19
-b
-\com.snackbar.productv2.infrastructure.controllers.Productv2Controller.createProductv2UseCase21
-
-field22
-
-private23
-
-createProductv2UseCase24
-H
-Bcom.snackbar.productv2.application.usecases.CreateProductv2UseCase26
-
-is type27
-c
-]com.snackbar.productv2.infrastructure.controllers.Productv2Controller.getProductv2ByIdUseCase29
-
-getProductv2ByIdUseCase30
-I
-Ccom.snackbar.productv2.application.usecases.GetProductv2ByIdUseCase32
-a
-[com.snackbar.productv2.infrastructure.controllers.Productv2Controller.listProductsv2UseCase34
-
-listProductsv2UseCase35
-G
-Acom.snackbar.productv2.application.usecases.ListProductsv2UseCase37
-j
-dcom.snackbar.productv2.infrastructure.controllers.Productv2Controller.getProductsv2ByCategoryUseCase39
-$
-getProductsv2ByCategoryUseCase40
-P
-Jcom.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase42
-e
-_com.snackbar.productv2.infrastructure.controllers.Productv2Controller.getProductv2ByNameUseCase44
-
-getProductv2ByNameUseCase45
-K
-Ecom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase47
-f
-`com.snackbar.productv2.infrastructure.controllers.Productv2Controller.updateProductv2ByIdUseCase49
- 
-updateProductv2ByIdUseCase50
-L
-Fcom.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase52
-f
-`com.snackbar.productv2.infrastructure.controllers.Productv2Controller.deleteProductv2ByIdUseCase54
- 
-deleteProductv2ByIdUseCase55
-L
-Fcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase57
-^
-Xcom.snackbar.productv2.infrastructure.controllers.Productv2Controller.productv2DTOMapper59
-
-productv2DTOMapper60
-J
-Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper62
-‹
-„com.snackbar.productv2.infrastructure.controllers.Productv2Controller#<init>(Lcom/snackbar/productv2/application/usecases/CreateProductv2UseCase;Lcom/snackbar/productv2/application/usecases/GetProductv2ByIdUseCase;Lcom/snackbar/productv2/application/usecases/ListProductsv2UseCase;Lcom/snackbar/productv2/application/usecases/GetProductsv2ByCategoryUseCase;Lcom/snackbar/productv2/application/usecases/GetProductv2ByNameUseCase;Lcom/snackbar/productv2/application/usecases/UpdateProductv2ByIdUseCase;Lcom/snackbar/productv2/application/usecases/DeleteProductv2ByIdUseCase;Lcom/snackbar/productv2/infrastructure/controllers/Productv2DTOMapper;)V64
-
-method65
-
-	has param66
-<
-6org.springframework.beans.factory.annotation.Autowired68
-
-calls69
-
-
-references70
-Ñ
-Êcom.snackbar.productv2.infrastructure.controllers.Productv2Controller#createProductv2(Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Request;)Lorg/springframework/http/ResponseEntity;72
-
-createProductv273
--
-'org.springframework.http.ResponseEntity75
-
-returns76
-N
-Hcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request78
-9
-3org.springframework.web.bind.annotation.PostMapping80
-O
-Icom.snackbar.productv2.infrastructure.controllers.CreateProductv2Response82
-9
-3org.springframework.web.bind.annotation.RequestBody84
-4
-.com.snackbar.productv2.domain.entity.Productv286
-Ý
-Öcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#createRequestToDomain(Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Request;)Lcom/snackbar/productv2/domain/entity/Productv2;88
-»
-´com.snackbar.productv2.application.usecases.CreateProductv2UseCase#createProductv2(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;90
-Ù
-Òcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#createToResponse(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Response;92
-m
-gorg.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;94
-š
-“com.snackbar.productv2.infrastructure.controllers.Productv2Controller#getProductv2ById(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;96
-
-getProductv2ById97
-8
-2org.springframework.web.bind.annotation.GetMapping99
-M
-Fcom.snackbar.productv2.infrastructure.controllers.GetProductv2Response101
-;
-4org.springframework.web.bind.annotation.PathVariable103
- 
-˜com.snackbar.productv2.application.usecases.GetProductv2ByIdUseCase#getProductv2ById(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;105
-Ô
-Ìcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#getToResponse(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/infrastructure/controllers/GetProductv2Response;107
-†
-com.snackbar.productv2.infrastructure.controllers.Productv2Controller#listProductsv2()Lorg/springframework/http/ResponseEntity;109
-
-listProductsv2110
-i
-bcom.snackbar.productv2.application.usecases.ListProductsv2UseCase#listProductsv2()Ljava/util/List;112
-|
-ucom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#listToResponse(Ljava/util/List;)Ljava/util/List;114
-¢
-šcom.snackbar.productv2.infrastructure.controllers.Productv2Controller#getProductsv2ByCategory(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;116
-
-getProductsv2ByCategory117
-Ž
-†com.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase#getProductsv2ByCategory(Ljava/lang/String;)Ljava/util/List;119
-
-•com.snackbar.productv2.infrastructure.controllers.Productv2Controller#getProductv2ByName(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;121
-
-getProductv2ByName122
-¤
-œcom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase#getProductv2ByName(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;124
-è
-àcom.snackbar.productv2.infrastructure.controllers.Productv2Controller#updateProductv2ById(Ljava/lang/String;Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Request;)Lorg/springframework/http/ResponseEntity;126
-
-updateProductv2ById127
-9
-2org.springframework.web.bind.annotation.PutMapping129
-Ö
-Îcom.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase#updateProductv2ById(Ljava/lang/String;Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;131
-˜
-com.snackbar.productv2.infrastructure.controllers.Productv2Controller#deleteProduct(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;133
-
-deleteProduct134
-<
-5org.springframework.web.bind.annotation.DeleteMapping136
-v
-ocom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase#deleteProductv2ById(Ljava/lang/String;)V138
-=
-6org.springframework.http.ResponseEntity$HeadersBuilder140
-n
-gorg.springframework.http.ResponseEntity$HeadersBuilder#build()Lorg/springframework/http/ResponseEntity;142
-:
-3org.springframework.http.ResponseEntity$BodyBuilder144
-h
-aorg.springframework.http.ResponseEntity#ok()Lorg/springframework/http/ResponseEntity$BodyBuilder;146J
-
-1
-12Z
-
-3	
-354j—
-
-102
-10210315
-
-130
-13013115
-
-87
-878815
-@
-53:
-535422 *
-1 (26:3B
-	
-9
-23
-
-
-11
-55
-
-67
-676815
-
-141
-14114215
-@
-33:
-333422 *
-1 (26:3B
-	
-9
-23
-
-
-11
-35
-
-106
-10610715
-
-128
-12812915
-
-31
-313215
-@
-48:
-484922 *
-1 (26:3B
-	
-9
-23
-
-
-11
-50
-
-135
-13513615
-
-79
-798015
-D
-125=
-12512665 *
-1\ \(26:3B
-	
-9
-10
-
-11
-127
-
-145
-14514615
-
-89
-899015
-@
-43:
-434422 *
-1 (26:3B
-	
-9
-23
-
-
-11
-45
-
-104
-10410515
-
-137
-13713815
-
-77
-777815
-
-13
-131415
-
-41
-414215
-
-25
-252615
-@
-71:
-717265 *
-12 2(26:3B
-	
-9
-10
-
-
-11
-73
-
-139
-13914015
-@
-95:
-959665 *
-1< <(26:3B
-	
-9
-10
-
-
-11
-97
-
-85
-858615
-
-91
-919215
-D
-108=
-10810965 *
-1E E(26:3B
-	
-9
-10
-
-11
-110
-
-51
-515215
-
-18
-181915
-D
-132=
-13213365 *
-1d d(26:3B
-	
-9
-10
-
-11
-134
-
-143
-14314415
-
-61
-616215
-
-83
-838415
-D
-120=
-12012165 *
-1S S(26:3B
-	
-9
-10
-
-11
-122
-9
-64
-678 *
-1 (!:3B
-	
-9
-10
-
-
-11
-12
-D
-115=
-11511665 *
-1L L(26:3B
-	
-9
-10
-
-11
-117
-@
-58:
-585922 *
-1 (26:3B
-	
-9
-23
-
-
-11
-60
-
-93
-939415
-
-123
-12312415
-
-56
-565715
-@
-63:
-636465 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-@
-38:
-383922 *
-1 (26:3B
-	
-9
-23
-
-
-11
-40
-
-98
-989915
-@
-28:
-282922 *
-1 (26:3B
-	
-9
-23
-
-
-11
-30
-
-118
-11811915
-
-113
-11311415
-
-36
-363715
-
-81
-818215
-
-100
-10010115
-
-46
-464715
-
-74
-747515
-@
-20:
-202122 *
-1 (26:3B
-	
-9
-23
-
-
-11
-24
-
-111
-11111215rù:
-
-61316*
-1 (
-
-61317*
-1 (
-
-61816*
-1 (
-
-61817*
-1 (
-
-202527*
-1 ()
-
-202517*
-1 ()
-
-202517*
-1* (@
-
-283127*
-1 (*
-
-283117*
-1 (*
-
-283117*
-1+ (B
-
-333627*
-1 ((
-
-333617*
-1 ((
-
-333617*
-1) (>
-
-384127*
-1 (1
-
-384117*
-1 (1
-
-384117*
-12 (P
-
-434627*
-1 (,
-
-434617*
-1 (,
-
-434617*
-1- (F
-
-485127*
-1 (-
-
-485117*
-1 (-
-
-485117*
-1. (H
-
-535627*
-1 (-
-
-535617*
-1 (-
-
-535617*
-1. (H
-
-586127*
-1 (%
-
-586117*
-1 (%
-
-586117*
-1& (8
-
-632566*
-1   (#
-
-633166*
-1! !($
-
-633666*
-1" "("
-
-634166*
-1# #(+
-
-634666*
-1$ $(&
-
-635166*
-1% %('
-
-635666*
-1& &('
-
-636166*
-1' '(
-
-636716*
-1 (
-
-636717*
-1 (
-
-63669*
-1 (
-
-632527*
-1 $  (:
-
-632517*
-1   (#
-
-633127*
-1!% !(<
-
-633117*
-1! !($
-
-633627*
-1"# "(8
-
-633617*
-1" "("
-
-634127*
-1#, #(J
-
-634117*
-1# #(+
-
-634627*
-1$' $(@
-
-634617*
-1$ $(&
-
-635127*
-1%( %(B
-
-635117*
-1% %('
-
-635627*
-1&( &(B
-
-635617*
-1& &('
-
-636127*
-1'  '(2
-
-636117*
-1' '(
-
-63617*
-1(	 ((
-
-63670*
-1(	 ((
-
-632517*
-1( (($
-
-632070*
-1( (($
-
-63617*
-1)	 )(
-
-63670*
-1)	 )(
-
-633117*
-1) )(%
-
-632870*
-1) )(%
-
-63617*
-1*	 *(
-
-63670*
-1*	 *(
-
-633617*
-1* *(#
-
-633370*
-1* *(#
-
-63617*
-1+	 +(
-
-63670*
-1+	 +(
-
-634117*
-1+ +(,
-
-633870*
-1+ +(,
-
-63617*
-1,	 ,(
-
-63670*
-1,	 ,(
-
-634617*
-1, ,('
-
-634370*
-1, ,('
-
-63617*
-1-	 -(
-
-63670*
-1-	 -(
-
-635117*
-1- -((
-
-634870*
-1- -((
-
-63617*
-1.	 .(
-
-63670*
-1.	 .(
-
-635617*
-1. .((
-
-635370*
-1. .((
-
-63617*
-1/	 /(
-
-63670*
-1/	 /(
-
-636117*
-1/ /( 
-
-635870*
-1/ /( 
-
-717476*
-13 3(
-
-717766*
-13Q 3(g
-
-717916*
-12 2(
-
-717917*
-12 2(
-
-717417*
-13 3(
-
-718117*
-13 3(2
-
-717727*
-13h 3(o
-
-718316*
-13D 3(E
-
-718317*
-13E 3(P
-
-717717*
-13Q 3(g
-
-718527*
-15 5(
-
-718517*
-15	 5(
-
-718576*
-15 5(1
-
-716170*
-15 5(1
-
-718769*
-152 5(G
-
-715870*
-15 5(1
-
-716117*
-15 5(1
-
-715870*
-15 5(1
-
-718527*
-16 6(#
-
-718517*
-16	 6(
-
-718576*
-16& 6(<
-
-712570*
-16& 6(<
-
-718969*
-16= 6(L
-
-712070*
-16& 6(<
-
-712517*
-16& 6(<
-
-712070*
-16& 6(<
-
-718127*
-17! 7()
-
-718117*
-17	 7( 
-
-718176*
-17, 7(>
-
-716170*
-17, 7(>
-
-719169*
-17? 7(O
-
-715870*
-17, 7(>
-
-716117*
-17, 7(>
-
-715870*
-17, 7(>
-
-717476*
-19 9(
-
-717470*
-19 9(
-
-719369*
-19 9(!
-
-957476*
-1= =(
-
-959816*
-1< <(
-
-959817*
-1< <(
-
-957417*
-1= =(
-
-9510017*
-1= =(/
-
-9510216*
-1=B =(C
-
-9510217*
-1=C =(O
-
-958527*
-1? ?(%
-
-958517*
-1?	 ?(
-
-958576*
-1?( ?(?
-
-953170*
-1?( ?(?
-
-9510469*
-1?@ ?(P
-
-952870*
-1?( ?(?
-
-953117*
-1?( ?(?
-
-952870*
-1?( ?(?
-
-9510027*
-1@ @(&
-
-9510017*
-1@	 @(
-
-9510076*
-1@) @(;
-
-956170*
-1@) @(;
-
-9510669*
-1@< @(I
-
-955870*
-1@) @(;
-
-956117*
-1@) @(;
-
-955870*
-1@) @(;
-
-957476*
-1B B(
-
-957470*
-1B B(
-
-959369*
-1B B(!
-
-1087476*
-1F F(
-
-1089816*
-1E E(
-
-1089817*
-1E E(
-
-1087417*
-1F F(
-
-10810017*
-1F  F(4
-
-1088517*
-1G G(
-
-1083670*
-1G3 G(H
-
-10811169*
-1GI G(W
-
-1083370*
-1G3 G(H
-
-1083617*
-1G3 G(H
-
-1083370*
-1G3 G(H
-
-10810017*
-1H H("
-
-1086170*
-1H/ H(A
-
-10811369*
-1HB H(P
-
-1085870*
-1H/ H(A
-
-1086117*
-1H/ H(A
-
-1085870*
-1H/ H(A
-
-1087476*
-1I I(
-
-1087470*
-1I I(
-
-1089369*
-1I I(!
-
-1157476*
-1M M(
-
-1159816*
-1L L(
-
-1159817*
-1L L(
-
-1157417*
-1M M(
-
-11510017*
-1M  M(4
-
-11510216*
-1MO M(P
-
-11510217*
-1MP M(\
-
-1158517*
-1N N(
-
-1154170*
-1N3 N(Q
-
-11511869*
-1NR N(i
-
-1153870*
-1N3 N(Q
-
-1154117*
-1N3 N(Q
-
-1153870*
-1N3 N(Q
-
-11510017*
-1O O("
-
-1156170*
-1O/ O(A
-
-11511369*
-1OB O(P
-
-1155870*
-1O/ O(A
-
-1156117*
-1O/ O(A
-
-1155870*
-1O/ O(A
-
-1157476*
-1P P(
-
-1157470*
-1P P(
-
-1159369*
-1P P(!
-
-1207476*
-1T T(
-
-1209816*
-1S S(
-
-1209817*
-1S S(
-
-1207417*
-1T T(
-
-12010017*
-1T T(/
-
-12010216*
-1TD T(E
-
-12010217*
-1TE T(Q
-
-1208527*
-1V V(%
-
-1208517*
-1V	 V(
-
-1208576*
-1V( V(A
-
-1204670*
-1V( V(A
-
-12012369*
-1VB V(T
-
-1204370*
-1V( V(A
-
-1204617*
-1V( V(A
-
-1204370*
-1V( V(A
-
-12010027*
-1W W(&
-
-12010017*
-1W	 W(
-
-12010076*
-1W) W(;
-
-1206170*
-1W) W(;
-
-12010669*
-1W< W(I
-
-1205870*
-1W) W(;
-
-1206117*
-1W) W(;
-
-1205870*
-1W) W(;
-
-1207476*
-1Y Y(
-
-1207470*
-1Y Y(
-
-1209369*
-1Y Y(!
-
-1257476*
-1] ](
-
-1257766*
-1]t ](Š
-
-12512816*
-1\ \(
-
-12512817*
-1\ \(
-
-1257417*
-1] ](
-
-1258117*
-1] ](2
-
-12510216*
-1]H ](I
-
-12510217*
-1]I ](U
-
-1257727*
-1]‹ ](’
-
-1258316*
-1]g ](h
-
-1258317*
-1]h ](s
-
-1257717*
-1]t ](Š
-
-1258527*
-1^ ^(
-
-1258517*
-1^	 ^(
-
-1258576*
-1^ ^(1
-
-1256170*
-1^ ^(1
-
-1258769*
-1^2 ^(G
-
-1255870*
-1^ ^(1
-
-1256117*
-1^ ^(1
-
-1255870*
-1^ ^(1
-
-1258527*
-1_ _(#
-
-1258517*
-1_	 _(
-
-1258576*
-1_& _(@
-
-1255170*
-1_& _(@
-
-12513069*
-1_A _(T
-
-1254870*
-1_& _(@
-
-1255117*
-1_& _(@
-
-1254870*
-1_& _(@
-
-1258127*
-1`! `()
-
-1258117*
-1`	 `( 
-
-1258176*
-1`, `(>
-
-1256170*
-1`, `(>
-
-1259169*
-1`? `(O
-
-1255870*
-1`, `(>
-
-1256117*
-1`, `(>
-
-1255870*
-1`, `(>
-
-1257476*
-1a a(
-
-1257470*
-1a a(
-
-1259369*
-1a a(!
-
-1327476*
-1e e(
-
-13213516*
-1d d(
-
-13213517*
-1d d(
-
-1327417*
-1e e(
-
-13210216*
-1e/ e(0
-
-13210217*
-1e0 e(<
-
-1325670*
-1f	 f(#
-
-13213769*
-1f$ f(7
-
-1325370*
-1f	 f(#
-
-1325617*
-1f	 f(#
-
-1325370*
-1f	 f(#
-
-1327476*
-1g g(
-
-13213970*
-1g g(
-
-13214169*
-1g$ g()
-
-13214376*
-1g g(
-
-1327470*
-1g g(
-
-13214569*
-1g g(!

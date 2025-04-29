@@ -1,106 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207533*java2.B£
-F
-Asrc/main/java/com/snackbar/iam/infrastructure/UserRepository.java2
-
-package4
-$
-com.snackbar.iam.infrastructure5
-3
-.com.snackbar.iam.infrastructure.UserRepository7
-
-	interface8
-
-access9
-
-public10
-
-simple name11
-
-UserRepository12
-A
-;org.springframework.data.mongodb.repository.MongoRepository14
-
-unknown15
-
-
-implements16
-
-
-uses17
-(
-"com.snackbar.iam.domain.UserEntity19
-h
-bcom.snackbar.iam.infrastructure.UserRepository#findByEmail(Ljava/lang/String;)Ljava/util/Optional;21
-
-method22
-
-findByEmail23
-f
-`com.snackbar.iam.infrastructure.UserRepository#findByCpf(Ljava/lang/String;)Ljava/util/Optional;25
-
-	findByCpf26J
-
-1
-12Z
-
-3	
-354jç
-@
-24:
-242522 *
-1 (26:3B
-	
-9
-10
-
-
-11
-26
-9
-64
-678 *
-1 ( :3B
-	
-9
-10
-
-
-11
-12
-
-18
-181915
-@
-20:
-202122 *
-1
- 
-(26:3B
-	
-9
-10
-
-
-11
-23
-
-13
-131415r„
-
-61316*
-1) (8
-
-61317*
-1) (8
-
-61817*
-19 (C
-
-201817*
-1
- 
-(
-
-241817*
-1 (

@@ -1,21 +1,0 @@
-
-Zcom.snackbar.orderRefactory.application.usecases.OrderUseCase#listOrders()Ljava/util/List;Ž
-ƒ/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/application/usecases/OrderUseCase.java] ](!"1*ð
-1^ ^(É
-Æ
-^ ^(C
-%0=com.snackbar.orderRefactory.application.gateways.OrderGateway"__id*o
-
-__unknown_file (S*Q?
-=com.snackbar.orderRefactory.application.usecases.OrderUseCase"
-orderGatewayðí
-^ ^((
-%1java.util.List"Zcom.snackbar.orderRefactory.application.gateways.OrderGateway#listOrders()Ljava/util/List;*a
-
-__unknown_file (E
-C
-%0=com.snackbar.orderRefactory.application.gateways.OrderGateway2listOrders()""
-^ ^()
-
-%1java.util.ListBA?
-=com.snackbar.orderRefactory.application.usecases.OrderUseCaseH

@@ -1,32 +1,0 @@
-
-„com.snackbar.iam.application.JwtService#generateToken(Lorg/springframework/security/core/userdetails/UserDetails;)Ljava/lang/String;w
-m/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/JwtService.java& &("1*Ö
-1' '(86
-'! '(*
-%0java.util.HashMap"java.util.HashMapf
-d
-' '(,
-%1"java.util.HashMap#<init>()V*5
-
-__unknown_file (
-
-%0java.util.HashMapþû
-' '(:
-%2java.lang.String"“com.snackbar.iam.application.JwtService#generateToken(Ljava/util/Map;Lorg/springframework/security/core/userdetails/UserDetails;)Ljava/lang/String;*G
-
-__unknown_file (+)
-'com.snackbar.iam.application.JwtService*5
-
-__unknown_file (
-
-%0java.util.HashMap*f
-
-__unknown_file (J
-H
-userDetails9org.springframework.security.core.userdetails.UserDetails2YgenerateToken(Ljava/util/Map;Lorg/springframework/security/core/userdetails/UserDetails;)"$
-' '(;
-
-%2java.lang.String:T
-&  &(7H
-userDetails9org.springframework.security.core.userdetails.UserDetailsB+)
-'com.snackbar.iam.application.JwtServiceH

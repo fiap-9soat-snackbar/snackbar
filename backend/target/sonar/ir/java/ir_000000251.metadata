@@ -1,5 +1,0 @@
-com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderController#listOrders()Ljava/util/List;
-false
-fd142aabb8d16aa8cd01403b264eca93
-==
-listOrders com.snackbar.orderRefactory.application.usecases.OrderUseCase#listOrders()Ljava/util/List;

@@ -1,163 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889205645*java2.B¬
-S
-Nsrc/main/java/com/snackbar/basket/infrastructure/persistence/BasketEntity.java2
-
-package4
-3
-.com.snackbar.basket.infrastructure.persistence5
-@
-;com.snackbar.basket.infrastructure.persistence.BasketEntity7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-BasketEntity12
-<
-6org.springframework.data.mongodb.core.mapping.Document14
-
-unknown15
-
-annotated by16
-
-
-uses17
-
-lombok.Data19
-
-lombok.AllArgsConstructor21
-D
->com.snackbar.basket.infrastructure.persistence.BasketEntity.id23
-
-field24
-
-private25
-
-id26
-,
-&org.springframework.data.annotation.Id28
-E
-?com.snackbar.basket.infrastructure.persistence.BasketEntity.cpf30
-	
-cpf31
-G
-Acom.snackbar.basket.infrastructure.persistence.BasketEntity.items33
-
-items34
-?
-9com.snackbar.basket.infrastructure.persistence.ItemEntity36
-L
-Fcom.snackbar.basket.infrastructure.persistence.BasketEntity.totalPrice38
-
-
-totalPrice39J
-
-1
-12Z
-
-3	
-354j§
-@
-32:
-323324 *
-1 (26:3B
-	
-9
-25
-
-
-11
-34
-@
-37:
-373824 *
-1 (26:3B
-	
-9
-25
-
-
-11
-39
-@
-22:
-222324 *
-1 (26:3B
-	
-9
-25
-
-
-11
-26
-9
-64
-678 *
-1 (:3B
-	
-9
-10
-
-
-11
-12
-
-18
-181915
-
-35
-353615
-@
-29:
-293024 *
-1 (26:3B
-	
-9
-25
-
-
-11
-31
-
-20
-202115
-
-27
-272815
-
-13
-131415rí
-
-61316*
-1 (
-
-61317*
-1 (
-
-
-61816*
-1 (
-
-61817*
-1 (
-
-62016*
-1 (
-
-62017*
-1 (
-
-222716*
-1 (
-
-222717*
-1 (
-
-323517*
-1 (

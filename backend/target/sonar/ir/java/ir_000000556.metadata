@@ -1,5 +1,0 @@
-com.snackbar.cooking.application.usecases.GetAllCookingsUseCase#execute()Ljava/util/List;
-false
-468ba487311d84088d04e94cc3feb5f9
-==
-findAll com.snackbar.cooking.application.gateways.CookingGateway#findAll()Ljava/util/List;

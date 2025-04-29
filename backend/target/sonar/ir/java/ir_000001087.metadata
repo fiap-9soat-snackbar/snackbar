@@ -1,5 +1,0 @@
-com.snackbar.payment.application.usecases.GetPaymentByExternalIdUseCase#getPaymentByExternalId(Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
-false
-777958edc5daf5182e428bfc2e4c0cf3
-==
-getPaymentByExternalId com.snackbar.payment.application.gateways.PaymentGateway#getPaymentByExternalId(Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;

@@ -1,15 +1,0 @@
-
-ecom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getOrderNumber()Ljava/lang/String;ì
-à/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/persistence/OrderEntityCooking.java1 1( "1*÷
-12 2(†
-ù
-2 2(
-%0java.lang.String"__id*s
-
-__unknown_file (W*UD
-Bcom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking"
-orderNumber"$
-2 2(
-
-%0java.lang.StringBFD
-Bcom.snackbar.cooking.infrastructure.persistence.OrderEntityCookingH
