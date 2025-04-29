@@ -1,0 +1,129 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126690*java2.B¸
+=
+8src/main/java/com/snackbar/iam/web/dto/LoginUserDto.java2
+
+package4
+
+com.snackbar.iam.web.dto5
+*
+%com.snackbar.iam.web.dto.LoginUserDto7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+LoginUserDto12
+
+lombok.Data14
+
+unknown15
+
+annotated by16
+
+
+uses17
+
+lombok.Getter19
+
+lombok.Setter21
+/
+)com.snackbar.iam.web.dto.LoginUserDto.cpf23
+
+field24
+
+private25
+	
+cpf26
+4
+.com.snackbar.iam.web.dto.LoginUserDto.password28
+
+password29
+5
+/com.snackbar.iam.web.dto.LoginUserDto.anonymous31
+
+	anonymous32J
+
+1
+12Z
+
+3	
+354j½
+
+20
+202115
+@
+27:
+272824 *
+1 (26:3B
+	
+9
+25
+
+
+11
+29
+
+18
+181915
+@
+22:
+222324 *
+1 (26:3B
+	
+9
+25
+
+
+11
+26
+
+13
+131415
+@
+30:
+303124 *
+1 (26:3B
+	
+9
+25
+
+
+11
+32
+9
+64
+678 *
+1
+ 
+(:3B
+	
+9
+10
+
+
+11
+12rœ
+
+61316*
+1 (
+
+61317*
+1 (
+
+61816*
+1 (
+
+61817*
+1 (
+
+62016*
+1	 	(
+
+62017*
+1	 	(

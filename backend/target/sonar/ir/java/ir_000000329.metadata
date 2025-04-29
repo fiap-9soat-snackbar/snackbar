@@ -1,0 +1,5 @@
+com.snackbar.orderRefactory.config.OrderConfig#orderUseCase(Lcom/snackbar/orderRefactory/infrastructure/gateways/OrderRepositoryGateway;Lcom/snackbar/orderRefactory/infrastructure/gateways/ProductServiceGateway;Lcom/snackbar/iam/application/UserService;)Lcom/snackbar/orderRefactory/application/usecases/OrderUseCase;
+false
+ec3e851b143064a58914459761f39782
+com.snackbar.orderRefactory.application.usecases.OrderUseCase#<init>(Lcom/snackbar/orderRefactory/application/gateways/OrderGateway;Lcom/snackbar/orderRefactory/application/gateways/ProductGateway;Lcom/snackbar/iam/application/UserService;)V
+com.snackbar.orderRefactory.application.usecases.OrderUseCase#instance-init#

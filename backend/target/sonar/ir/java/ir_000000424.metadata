@@ -1,0 +1,3 @@
+com.snackbar.order.service.OrderService#compareStatus(Lcom/snackbar/order/domain/model/StatusOrder;Lcom/snackbar/order/domain/model/StatusOrder;)I
+false
+b225801ab1d720592c88680e14523e08

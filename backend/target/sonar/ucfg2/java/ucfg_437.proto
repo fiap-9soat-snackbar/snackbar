@@ -1,0 +1,34 @@
+
+œcom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase#getProductv2ByName(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;–
+‹/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/application/usecases/GetProductv2ByNameUseCase.java ('"1*†
+1' (7Ô
+Ñ
+' (7B
+%0<com.snackbar.productv2.application.gateways.Productv2Gateway"__id*{
+
+__unknown_file (_*]G
+Ecom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase"
+productv2Gateway›˜
+' (P4
+%1.com.snackbar.productv2.domain.entity.Productv2"“com.snackbar.productv2.application.gateways.Productv2Gateway#getProductv2ByName(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;*`
+
+__unknown_file (D
+B
+%0<com.snackbar.productv2.application.gateways.Productv2Gateway*6
+
+__unknown_file (
+
+namejava.lang.String2&getProductv2ByName(Ljava/lang/String;)­
+ª
+ (QD
+retrievedProductv2.com.snackbar.productv2.domain.entity.Productv2"__id*R
+
+__unknown_file (6
+4
+%1.com.snackbar.productv2.domain.entity.Productv2"R
+ ("F
+D
+retrievedProductv2.com.snackbar.productv2.domain.entity.Productv2:$
+( (3
+namejava.lang.StringBIG
+Ecom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCaseH

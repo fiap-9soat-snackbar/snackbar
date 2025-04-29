@@ -1,0 +1,42 @@
+
+@__sonar_lambda_4$com.snackbar.orderRefactory.domain.entity.OrderÅ
+u/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/domain/entity/Order.javaÄ Ä(L"1*ó
+1
+Ä" Ä(&ÓÎ
+
+Ä" Ä(7
+%3java.lang.Integer"Wcom.snackbar.orderRefactory.domain.entity.OrderItem#getCookingTime()Ljava/lang/Integer;*Y
+
+__unknown_file (=
+;
+item3com.snackbar.orderRefactory.domain.entity.OrderItem2getCookingTime()ËÂ
+
+Ä: Ä(L
+%4java.lang.Integer"Tcom.snackbar.orderRefactory.domain.entity.OrderItem#getQuantity()Ljava/lang/Integer;*Y
+
+__unknown_file (=
+;
+item3com.snackbar.orderRefactory.domain.entity.OrderItem2getQuantity()é
+ã
+
+Ä" Ä(L	
+%5int"__calculate*
+
+Ä8 Ä(9
+**'
+
+Ä" Ä(7
+
+%3java.lang.Integer*'
+
+Ä: Ä(L
+
+%4java.lang.Integer"
+
+Ä" Ä(L
+	
+%5int:I
+
+Ä Ä(;
+item3com.snackbar.orderRefactory.domain.entity.OrderItemB$"
+ java.util.function.ToIntFunction

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PaymentDTOMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.payment.infrastructure.controllers</a> &gt; <span class="el_source">PaymentDTOMapper.java</span></div><h1>PaymentDTOMapper.java</h1><pre class="source lang-java linenums">package com.snackbar.payment.infrastructure.controllers;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import com.snackbar.payment.domain.entity.Payment;
+import com.snackbar.payment.domain.entity.PaymentMP;
+
+<span class="nc" id="L9">public class PaymentDTOMapper {</span>
+
+    CreatePaymentResponse createToResponse(Payment payment) {
+<span class="nc" id="L12">        return new CreatePaymentResponse(payment.id(), payment.orderId(), payment.totalDue(), payment.paymentStatus(), payment.paymentMethod(), payment.externalPaymentId());</span>
+    }
+
+    public Payment createRequestToDomain(CreatePaymentRequest request) {
+        
+<span class="nc" id="L17">        String myOrderId = request.orderId();</span>
+<span class="nc" id="L18">        BigDecimal totalDue = new BigDecimal(0.0);</span>
+<span class="nc" id="L19">        String id = null;</span>
+<span class="nc" id="L20">        String paymentStatus = null;</span>
+<span class="nc" id="L21">        String externalPaymentId = null;</span>
+<span class="nc" id="L22">        String myPaymentMethod = request.paymentMethod();</span>
+<span class="nc" id="L23">        Payment localPayment = new Payment(id, myOrderId, totalDue, paymentStatus, myPaymentMethod, externalPaymentId);</span>
+<span class="nc" id="L24">        return localPayment;</span>
+    }    
+
+    GetPaymentResponse getToResponse(Payment payment) {
+<span class="nc" id="L28">        return new GetPaymentResponse(payment.id(), payment.orderId(), payment.totalDue(), payment.paymentStatus(), payment.paymentMethod(), payment.externalPaymentId());</span>
+    }
+
+    List&lt;GetPaymentResponse&gt; listToResponse(List&lt;Payment&gt; listPayments) {
+<span class="nc" id="L32">        return listPayments.stream()</span>
+<span class="nc" id="L33">            .map(this::getToResponse)</span>
+<span class="nc" id="L34">            .toList();</span>
+    }
+
+    public PaymentMP toPaymentMP(Payment payment) {
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        if (payment == null) {</span>
+<span class="nc" id="L39">            return null;</span>
+        }
+
+<span class="nc" id="L42">        String id = null;</span>
+<span class="nc" id="L43">        String cpf = &quot;UM_CPF&quot;;</span>
+<span class="nc" id="L44">        String callbackURL = &quot;/payments/updateStatusWebhook&quot;;</span>
+
+<span class="nc" id="L46">        return new PaymentMP(</span>
+<span class="nc" id="L47">                id,</span>
+<span class="nc" id="L48">                payment.id(),</span>
+<span class="nc" id="L49">                payment.totalDue(),</span>
+<span class="nc" id="L50">                cpf,</span>
+<span class="nc" id="L51">                callbackURL</span>
+        );
+    }
+
+    public Payment updateRequestToDomain(UpdatePaymentStatusByExternalIdRequest request) {
+<span class="nc" id="L56">        String id = null;</span>
+<span class="nc" id="L57">        String orderId = null;</span>
+<span class="nc" id="L58">        BigDecimal totalDue = new BigDecimal(0.0);</span>
+<span class="nc" id="L59">        String paymentStatus = request.paymentStatus();</span>
+<span class="nc" id="L60">        String paymentMethod = null;</span>
+<span class="nc" id="L61">        String externalPaymentId = request.externalId();</span>
+<span class="nc" id="L62">        return new Payment(id, orderId, totalDue, paymentStatus, paymentMethod, externalPaymentId);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

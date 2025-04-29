@@ -1,0 +1,62 @@
+
+“com.snackbar.cooking.infrastructure.controllers.CookingExceptionHandler#handleCookingNotFoundException(Lcom/snackbar/cooking/domain/exceptions/CookingNotFoundException;)Lorg/springframework/http/ResponseEntity;ò
+ç/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/controllers/CookingExceptionHandler.java" (@"startingBlock*à
+startingBlock@ (]ﬁ
+€
+ (5
+%4"
+__annotate*X
+
+__unknown_file (<:
+8org.springframework.web.bind.annotation.ExceptionHandler*c
+
+__unknown_file (G
+E
+ex?com.snackbar.cooking.domain.exceptions.CookingNotFoundExceptionÜ
+É
+Z (\E
+ex?com.snackbar.cooking.domain.exceptions.CookingNotFoundException"__annotation*"
+
+__unknown_file (
+
+%4*
+1*…
+1 (a
+_
+ (,)
+%0#org.springframework.http.HttpStatus"__id*"
+
+__unknown_file (
+""Î
+Ë
+ (-9
+%13org.springframework.http.ResponseEntity$BodyBuilder"éorg.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntity*G
+
+__unknown_file (+
+)
+%0#org.springframework.http.HttpStatusÃ…
+ (%
+%2java.lang.String"2java.lang.Throwable#getMessage()Ljava/lang/String;*c
+
+__unknown_file (G
+E
+ex?com.snackbar.cooking.domain.exceptions.CookingNotFoundException2getMessage()‹Ÿ
+ (&-
+%3'org.springframework.http.ResponseEntity"uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*W
+
+__unknown_file (;
+9
+%13org.springframework.http.ResponseEntity$BodyBuilder*4
+
+__unknown_file (
+
+%2java.lang.String2body(Ljava/lang/Object;)";
+ ('/
+-
+%3'org.springframework.http.ResponseEntity:Q
+A (\E
+ex?com.snackbar.cooking.domain.exceptions.CookingNotFoundExceptionBKI
+Gcom.snackbar.cooking.infrastructure.controllers.CookingExceptionHandlerH

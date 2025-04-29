@@ -1,0 +1,5 @@
+com.snackbar.cooking.infrastructure.config.CookingConfig#cookingGateway(Lcom/snackbar/cooking/infrastructure/persistence/CookingRepository;Lcom/snackbar/cooking/infrastructure/gateways/CookingEntityMapper;)Lcom/snackbar/cooking/application/gateways/CookingGateway;
+false
+0aec8835f801ea890d0f6bf1e88b0780
+com.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway#<init>(Lcom/snackbar/cooking/infrastructure/persistence/CookingRepository;Lcom/snackbar/cooking/infrastructure/gateways/CookingEntityMapper;)V
+com.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway#instance-init#

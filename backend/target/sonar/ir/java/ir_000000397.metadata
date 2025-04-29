@@ -1,0 +1,9 @@
+com.snackbar.orderRefactory.domain.entity.Order#calculateRemainingTime()J
+false
+af49d02e7e86f71c88f9407c7ce61368
+java.lang.Math#max(JJ)J
+java.time.Duration#between(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)Ljava/time/Duration;
+java.time.Duration#toMinutes()J
+java.time.Instant#now()Ljava/time/Instant;
+==
+getWaitingTime com.snackbar.orderRefactory.domain.entity.Order#getWaitingTime()I

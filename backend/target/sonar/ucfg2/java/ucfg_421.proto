@@ -1,0 +1,16 @@
+
+hcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity#getTotalPrice()Ljava/math/BigDecimal;“
+ˆ/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/infrastructure/persistence/OrderEntity.javaf f(#"1*Ý
+1g g(£
+ 
+g g(
+%0java.math.BigDecimal"__id*r
+
+__unknown_file (V*TD
+Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity"
+
+totalPrice"(
+g g(
+
+%0java.math.BigDecimalBFD
+Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntityH

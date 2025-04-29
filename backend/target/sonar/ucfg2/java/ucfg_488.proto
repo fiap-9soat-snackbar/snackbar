@@ -1,0 +1,15 @@
+
+@com.snackbar.order.domain.model.Order#getItems()Ljava/util/List;u
+k/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/order/domain/model/Order.javaS S("1*­
+1T T(z
+x
+T T(
+%0java.util.List"__id*P
+
+__unknown_file (4*2'
+%com.snackbar.order.domain.model.Order"
+items""
+T T(
+
+%0java.util.ListB)'
+%com.snackbar.order.domain.model.OrderH

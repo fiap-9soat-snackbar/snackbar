@@ -1,0 +1,7 @@
+com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#searchOrderId(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+false
+e1cf566dcf5aa0355366c1a4cae0bbf3
+java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+toDomainObj com.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#toDomainObj(Lcom/snackbar/orderRefactory/infrastructure/persistence/OrderEntity;)Lcom/snackbar/orderRefactory/domain/entity/Order;

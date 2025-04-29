@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.order.service</a> &gt; <span class="el_source">OrderService.java</span></div><h1>OrderService.java</h1><pre class="source lang-java linenums">package com.snackbar.order.service;
+
+import com.snackbar.order.domain.model.Order;
+import com.snackbar.order.domain.model.StatusOrder;
+import com.snackbar.order.domain.model.Item;
+import com.snackbar.order.adapter.out.OrderRepository;
+import com.snackbar.product.usecase.GetProductByNameUseCase;
+import com.snackbar.product.dto.ProductDTO;
+import org.springframework.stereotype.Service;
+
+import com.snackbar.pickup.entity.StatusPickup;
+import com.snackbar.pickup.gateway.PickupRepository;
+import com.snackbar.iam.infrastructure.UserRepository;
+import com.snackbar.checkout.gateway.CheckoutRepository;
+import com.snackbar.iam.domain.UserEntity;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.math.BigDecimal;
+import java.time.Instant;
+
+@Service
+public class OrderService { // Service for managing orders
+
+    private final OrderRepository orderRepository;
+    private final GetProductByNameUseCase getProductByNameUseCase;
+    private final CheckoutRepository checkoutRepository;
+    private final PickupRepository pickupRepository;
+    private final UserRepository userRepository;
+
+<span class="nc" id="L30">    public OrderService(OrderRepository orderRepository, GetProductByNameUseCase getProductByNameUseCase, CheckoutRepository checkoutRepository, PickupRepository pickupRepository, UserRepository userRepository) {</span>
+<span class="nc" id="L31">        this.orderRepository = orderRepository;</span>
+<span class="nc" id="L32">        this.getProductByNameUseCase = getProductByNameUseCase;</span>
+<span class="nc" id="L33">        this.checkoutRepository = checkoutRepository;</span>
+<span class="nc" id="L34">        this.pickupRepository = pickupRepository;</span>
+<span class="nc" id="L35">        this.userRepository = userRepository;</span>
+<span class="nc" id="L36">    }</span>
+
+    // Create new order
+    public Order createOrder(Order order) {
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (order.getCpf() == null) {</span>
+<span class="nc" id="L41">            throw new IllegalArgumentException(&quot;CPF is mandatory for creating an order&quot;);</span>
+        }
+        
+        // Validate if the user exists and get the user's name
+<span class="nc" id="L45">        String userName = userRepository.findByCpf(order.getCpf())</span>
+<span class="nc" id="L46">            .map(UserEntity::getName)</span>
+<span class="nc" id="L47">            .orElseThrow(() -&gt; new IllegalArgumentException(&quot;User with provided CPF does not exist&quot;));</span>
+        
+<span class="nc" id="L49">        order.setName(userName);</span>
+
+<span class="nc" id="L51">        String lastOrderNumber = orderRepository.findTopByOrderByOrderNumberDesc()</span>
+<span class="nc" id="L52">                .map(Order::getOrderNumber)</span>
+<span class="nc" id="L53">                .orElse(null);</span>
+<span class="nc" id="L54">        order.setOrderNumber(Order.generateOrderNumber(lastOrderNumber));</span>
+<span class="nc" id="L55">        order.setStatusOrder(StatusOrder.NOVO);</span>
+<span class="nc" id="L56">        order.setOrderDateTime(Instant.now()); // Set orderDateTime to current time in ISO format</span>
+        
+<span class="nc" id="L58">        List&lt;Item&gt; updatedItems = order.getItems().stream().map(item -&gt; {</span>
+<span class="nc" id="L59">            ProductDTO product = getProductByNameUseCase.getProductByName(item.getName());</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">            if (product != null) {</span>
+<span class="nc" id="L61">                item.setName(product.getName());  // Explicitly set the product name</span>
+<span class="nc" id="L62">                item.setPrice(product.getPrice());</span>
+<span class="nc" id="L63">                item.setCookingTime(product.getCookingTime());</span>
+<span class="nc" id="L64">            } else {</span>
+<span class="nc" id="L65">                throw new IllegalArgumentException(&quot;Product not found: &quot; + item.getName());</span>
+            }
+<span class="nc" id="L67">            return item;</span>
+<span class="nc" id="L68">        }).collect(Collectors.toList());</span>
+        
+<span class="nc" id="L70">        order.setItems(updatedItems);</span>
+        
+        // Calculate and set the total price
+<span class="nc" id="L73">        BigDecimal totalPrice = updatedItems.stream()</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">            .map(item -&gt; item.getPrice() != null ? item.getPrice().multiply(BigDecimal.valueOf(item.getQuantity())) : BigDecimal.ZERO)</span>
+<span class="nc" id="L75">            .reduce(BigDecimal.ZERO, BigDecimal::add);</span>
+<span class="nc" id="L76">        order.setTotalPrice(totalPrice);</span>
+        
+        // No need to set waiting time as it's now calculated dynamically in Order class
+        
+<span class="nc" id="L80">        return orderRepository.save(order);</span>
+    }
+
+    // Update an existing order
+    public Order updateOrder(Order order) {
+        // Fetch the existing order
+<span class="nc" id="L86">        Order existingOrder = orderRepository.findById(order.getId())</span>
+<span class="nc" id="L87">            .orElseThrow(() -&gt; new IllegalArgumentException(&quot;Order not found&quot;));</span>
+
+        // Update items
+<span class="nc" id="L90">        List&lt;Item&gt; updatedItems = order.getItems().stream().map(item -&gt; {</span>
+<span class="nc" id="L91">            ProductDTO product = getProductByNameUseCase.getProductByName(item.getName());</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">            if (product != null) {</span>
+<span class="nc" id="L93">                item.setName(product.getName());</span>
+<span class="nc" id="L94">                item.setPrice(product.getPrice());</span>
+<span class="nc" id="L95">                item.setCookingTime(product.getCookingTime());</span>
+<span class="nc" id="L96">            } else {</span>
+<span class="nc" id="L97">                throw new IllegalArgumentException(&quot;Product not found: &quot; + item.getName());</span>
+            }
+<span class="nc" id="L99">            return item;</span>
+<span class="nc" id="L100">        }).collect(Collectors.toList());</span>
+        
+<span class="nc" id="L102">        existingOrder.setItems(updatedItems);</span>
+
+        // Calculate and set the total price
+<span class="nc" id="L105">        BigDecimal totalPrice = updatedItems.stream()</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">            .map(item -&gt; item.getPrice() != null ? item.getPrice().multiply(BigDecimal.valueOf(item.getQuantity())) : BigDecimal.ZERO)</span>
+<span class="nc" id="L107">            .reduce(BigDecimal.ZERO, BigDecimal::add);</span>
+<span class="nc" id="L108">        existingOrder.setTotalPrice(totalPrice);</span>
+
+        // No need to set waiting time as it's now calculated dynamically in Order class
+
+<span class="nc" id="L112">        return orderRepository.save(existingOrder);</span>
+    }
+
+    // List all orders
+    public List&lt;Order&gt; listOrders() {
+<span class="nc" id="L117">        return orderRepository.findAll();</span>
+    }
+
+    // Search an order with status
+    public Order searchOrderId(String orderId) {
+<span class="nc" id="L122">        Order order = orderRepository.findById(orderId)</span>
+<span class="nc" id="L123">                .orElseThrow(() -&gt; new IllegalArgumentException(&quot;Order not Found&quot;));</span>
+<span class="nc" id="L124">        return orderRepository.findById(orderId).orElse(order);</span>
+    }
+
+    // Update the Order status based on Checkout and Pickup statuses
+    public void updateStatusOrder(String orderId) {
+<span class="nc" id="L129">        Order order = orderRepository.findById(orderId)</span>
+<span class="nc" id="L130">                .orElseThrow(() -&gt; new IllegalArgumentException(&quot;Pedido não encontrado&quot;));</span>
+
+        // Check if the order has been paid
+<span class="nc" id="L133">        boolean isPaid = checkoutRepository.findByOrderId(orderId)</span>
+<span class="nc" id="L134">                .map(checkout -&gt; checkout.isPaid())</span>
+<span class="nc" id="L135">                .orElse(false);</span>
+
+        // Check if the order is ready for pickup or has been picked up
+<span class="nc" id="L138">        boolean isReady = pickupRepository.findByOrderId(orderId)</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">        .map(pickup -&gt; pickup.getStatusPickup() == StatusPickup.PRONTO)</span>
+<span class="nc" id="L140">        .orElse(false);</span>
+
+        // Check if the order has been picked up
+<span class="nc" id="L143">        boolean isDone = pickupRepository.findByOrderId(orderId)</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">                .map(pickup -&gt; pickup.getStatusPickup() == StatusPickup.FINALIZADO)</span>
+<span class="nc" id="L145">                .orElse(false);</span>
+
+        // Update StatusOrder based on payment and pickup status
+<span class="nc bnc" id="L148" title="All 4 branches missed.">        if (isPaid &amp;&amp; isDone) {</span>
+<span class="nc" id="L149">            order.setStatusOrder(StatusOrder.FINALIZADO);</span>
+<span class="nc bnc" id="L150" title="All 2 branches missed.">        } else if (isReady) {</span>
+<span class="nc" id="L151">            order.setStatusOrder(StatusOrder.PRONTO);</span>
+<span class="nc bnc" id="L152" title="All 2 branches missed.">        } else if (isPaid) {</span>
+<span class="nc" id="L153">            order.setStatusOrder(StatusOrder.PAGO);</span>
+<span class="nc" id="L154">            order.setPaymentMethod(&quot;Mercado Pago&quot;);</span>
+<span class="nc" id="L155">        } else {</span>
+<span class="nc" id="L156">            order.setStatusOrder(StatusOrder.NOVO);</span>
+        }
+
+<span class="nc" id="L159">        orderRepository.save(order);</span>
+<span class="nc" id="L160">    }</span>
+
+    public void updateOrderStatus(String orderId, StatusOrder newStatus) {
+<span class="nc" id="L163">        Order order = orderRepository.findById(orderId)</span>
+<span class="nc" id="L164">            .orElseThrow(() -&gt; new IllegalArgumentException(&quot;Order not found with ID: &quot; + orderId));</span>
+<span class="nc" id="L165">        order.setStatusOrder(newStatus);</span>
+<span class="nc" id="L166">        orderRepository.save(order);</span>
+<span class="nc" id="L167">    }</span>
+
+    // Search order by orderNumber
+    public Order getOrderByOrderNumber(String orderNumber) {
+<span class="nc" id="L171">        return orderRepository.findByOrderNumber(orderNumber)</span>
+<span class="nc" id="L172">                .orElseThrow(() -&gt; new IllegalArgumentException(&quot;Order not found with orderNumber: &quot; + orderNumber));</span>
+    }
+
+    // Get all orders sorted by status and orderDateTime
+    public List&lt;Order&gt; getSortedOrders() {
+<span class="nc" id="L177">        return orderRepository.findAll().stream()</span>
+<span class="nc bnc" id="L178" title="All 2 branches missed.">                .filter(order -&gt; order.getStatusOrder() == StatusOrder.PRONTO ||</span>
+<span class="nc bnc" id="L179" title="All 2 branches missed.">                                 order.getStatusOrder() == StatusOrder.PREPARACAO ||</span>
+<span class="nc bnc" id="L180" title="All 2 branches missed.">                                 order.getStatusOrder() == StatusOrder.RECEBIDO)</span>
+<span class="nc" id="L181">                .sorted((o1, o2) -&gt; {</span>
+<span class="nc" id="L182">                    int statusComparison = compareStatus(o1.getStatusOrder(), o2.getStatusOrder());</span>
+<span class="nc bnc" id="L183" title="All 2 branches missed.">                    if (statusComparison != 0) {</span>
+<span class="nc" id="L184">                        return statusComparison;</span>
+                    }
+<span class="nc" id="L186">                    return o1.getOrderDateTime().compareTo(o2.getOrderDateTime());</span>
+                })
+<span class="nc" id="L188">                .collect(Collectors.toList());</span>
+    }
+
+    private int compareStatus(StatusOrder status1, StatusOrder status2) {
+<span class="nc bnc" id="L192" title="All 2 branches missed.">        if (status1 == status2) return 0;</span>
+<span class="nc bnc" id="L193" title="All 2 branches missed.">        if (status1 == StatusOrder.PRONTO) return -1;</span>
+<span class="nc bnc" id="L194" title="All 2 branches missed.">        if (status2 == StatusOrder.PRONTO) return 1;</span>
+<span class="nc bnc" id="L195" title="All 2 branches missed.">        if (status1 == StatusOrder.PREPARACAO) return -1;</span>
+<span class="nc bnc" id="L196" title="All 2 branches missed.">        if (status2 == StatusOrder.PREPARACAO) return 1;</span>
+<span class="nc" id="L197">        return 0;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

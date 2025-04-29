@@ -1,0 +1,308 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125758*java2.B‘
+=
+8src/main/java/com/snackbar/checkout/entity/Checkout.java2
+
+package4
+!
+com.snackbar.checkout.entity5
+*
+%com.snackbar.checkout.entity.Checkout7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+Checkout12
+<
+6org.springframework.data.mongodb.core.mapping.Document14
+
+unknown15
+
+annotated by16
+
+
+uses17
+.
+(com.snackbar.checkout.entity.Checkout.id19
+
+field20
+
+private21
+
+id22
+,
+&org.springframework.data.annotation.Id24
+3
+-com.snackbar.checkout.entity.Checkout.orderId26
+
+orderId27
+0
+*com.snackbar.checkout.entity.Checkout.paid29
+
+
+paid30
+9
+3com.snackbar.checkout.entity.Checkout.paymentMethod32
+
+paymentMethod33
+E
+?com.snackbar.checkout.entity.Checkout#getId()Ljava/lang/String;35
+
+method36
+
+getId37
+
+
+references38
+F
+@com.snackbar.checkout.entity.Checkout#setId(Ljava/lang/String;)V40
+
+setId41
+J
+Dcom.snackbar.checkout.entity.Checkout#getOrderId()Ljava/lang/String;43
+
+
+getOrderId44
+K
+Ecom.snackbar.checkout.entity.Checkout#setOrderId(Ljava/lang/String;)V46
+
+
+setOrderId47
+5
+/com.snackbar.checkout.entity.Checkout#isPaid()Z49
+
+isPaid50
+7
+1com.snackbar.checkout.entity.Checkout#setPaid(Z)V52
+
+setPaid53
+P
+Jcom.snackbar.checkout.entity.Checkout#getPaymentMethod()Ljava/lang/String;55
+
+getPaymentMethod56
+Q
+Kcom.snackbar.checkout.entity.Checkout#setPaymentMethod(Ljava/lang/String;)V58
+
+setPaymentMethod59J
+
+1
+12Z
+
+3	
+354jû
+@
+39:
+394036 *
+1 (26:3B
+	
+9
+10
+
+
+11
+41
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+@
+34:
+343536 *
+1 (26:3B
+	
+9
+10
+
+
+11
+37
+@
+54:
+545536 *
+1( ((26:3B
+	
+9
+10
+
+
+11
+56
+@
+57:
+575836 *
+1, ,(26:3B
+	
+9
+10
+
+
+11
+59
+
+13
+131415
+@
+18:
+181920 *
+1	 	(26:3B
+	
+9
+21
+
+
+11
+22
+@
+28:
+282920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+30
+@
+31:
+313220 *
+1 (26:3B
+	
+9
+21
+
+
+11
+33
+@
+48:
+484936 *
+1   (26:3B
+	
+9
+10
+
+
+11
+50
+@
+42:
+424336 *
+1 (26:3B
+	
+9
+10
+
+
+11
+44
+@
+51:
+515236 *
+1$ $(26:3B
+	
+9
+10
+
+
+11
+53
+@
+45:
+454636 *
+1 (26:3B
+	
+9
+10
+
+
+11
+47
+
+23
+232415
+@
+25:
+252620 *
+1 (26:3B
+	
+9
+21
+
+
+11
+27r’
+
+61316*
+1 (
+
+61317*
+1 (
+
+
+182316*
+1	 	(
+
+182317*
+1	 	(
+
+341838*
+1 (
+
+39617*
+1	 (
+
+39638*
+1	 (
+
+391838*
+1 (
+
+422538*
+1 (
+
+45617*
+1	 (
+
+45638*
+1	 (
+
+452538*
+1 (
+
+482838*
+1! !(
+
+51617*
+1%	 %(
+
+51638*
+1%	 %(
+
+512838*
+1% %(
+
+543138*
+1) )(
+
+57617*
+1-	 -(
+
+57638*
+1-	 -(
+
+573138*
+1- -(

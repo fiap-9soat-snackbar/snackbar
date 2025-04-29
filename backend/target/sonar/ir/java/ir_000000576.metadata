@@ -1,0 +1,15 @@
+com.snackbar.iam.application.OpenApiConfig#customOpenAPI()Lio/swagger/v3/oas/models/OpenAPI;
+false
+e30b2d47e693c1db7f1a9fc206ed2dfa
+io.swagger.v3.oas.models.Components#<init>()V
+io.swagger.v3.oas.models.Components#instance-init#
+io.swagger.v3.oas.models.OpenAPI#<init>()V
+io.swagger.v3.oas.models.OpenAPI#instance-init#
+io.swagger.v3.oas.models.info.Info#<init>()V
+io.swagger.v3.oas.models.info.Info#instance-init#
+==
+components io.swagger.v3.oas.models.OpenAPI#components(Lio/swagger/v3/oas/models/Components;)Lio/swagger/v3/oas/models/OpenAPI;
+description io.swagger.v3.oas.models.info.Info#description(Ljava/lang/String;)Lio/swagger/v3/oas/models/info/Info;
+info io.swagger.v3.oas.models.OpenAPI#info(Lio/swagger/v3/oas/models/info/Info;)Lio/swagger/v3/oas/models/OpenAPI;
+title io.swagger.v3.oas.models.info.Info#title(Ljava/lang/String;)Lio/swagger/v3/oas/models/info/Info;
+version io.swagger.v3.oas.models.info.Info#version(Ljava/lang/String;)Lio/swagger/v3/oas/models/info/Info;

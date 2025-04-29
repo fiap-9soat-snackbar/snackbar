@@ -1,0 +1,104 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125864*java2.B¹
+]
+Xsrc/main/java/com/snackbar/productv2/infrastructure/persistence/Productv2Repository.java2
+
+package4
+6
+1com.snackbar.productv2.infrastructure.persistence5
+J
+Ecom.snackbar.productv2.infrastructure.persistence.Productv2Repository7
+
+	interface8
+
+access9
+
+public10
+
+simple name11
+
+Productv2Repository12
+A
+;org.springframework.data.mongodb.repository.MongoRepository14
+
+unknown15
+
+
+implements16
+
+
+uses17
+G
+Acom.snackbar.productv2.infrastructure.persistence.Productv2Entity19
+~
+xcom.snackbar.productv2.infrastructure.persistence.Productv2Repository#findByCategory(Ljava/lang/String;)Ljava/util/List;21
+
+method22
+
+findByCategory23
+~
+xcom.snackbar.productv2.infrastructure.persistence.Productv2Repository#findByName(Ljava/lang/String;)Ljava/util/Optional;25
+
+
+findByName26J
+
+1
+12Z
+
+3	
+354jç
+@
+24:
+242522 *
+1 (26:3B
+	
+9
+10
+
+
+11
+26
+
+18
+181915
+@
+20:
+202122 *
+1 (	26:3B
+	
+9
+10
+
+
+11
+23
+9
+64
+678 *
+1 (%:3B
+	
+9
+10
+
+
+11
+12
+
+13
+131415r„
+
+61316*
+1. (=
+
+61317*
+1. (=
+
+61817*
+1> (M
+
+201817*
+1
+ (
+
+241817*
+1 (

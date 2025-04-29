@@ -1,0 +1,5 @@
+com.snackbar.iam.application.JwtService#getSignInKey()Ljava/security/Key;
+false
+de64060fbf0dd45ecbfd51f8bf3f5a33
+io.jsonwebtoken.security.Keys#hmacShaKeyFor([B)Ljavax/crypto/SecretKey;
+java.lang.String#getBytes(Ljava/nio/charset/Charset;)[B

@@ -1,0 +1,43 @@
+
+Acom.snackbar.orderRefactory.domain.entity.Order#getWaitingTime()I
+u/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/domain/entity/Order.java~ ~("1* 
+1 (Ö
+Ç
+ (
+%0java.util.List"__id*Z
+
+__unknown_file (>*<1
+/com.snackbar.orderRefactory.domain.entity.Order"
+items¢ü
+ (
+%1java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*2
+
+__unknown_file (
+
+%0java.util.List2stream()¨
+©
+
+Ä Ä(L&
+%2 java.util.function.ToIntFunction"__declareFunction*`
+
+__unknown_file (DB
+@__sonar_lambda_4$com.snackbar.orderRefactory.domain.entity.Order√¿
+	 Ä(M 
+%6java.util.stream.IntStream"`java.util.stream.Stream#mapToInt(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;*;
+
+__unknown_file (
+
+%1java.util.stream.Stream*D
+
+__unknown_file ((
+&
+%2 java.util.function.ToIntFunction2,mapToInt(Ljava/util/function/ToIntFunction;)ÉÄ
+	 Å(	
+%7int"!java.util.stream.IntStream#sum()I*>
+
+__unknown_file ("
+ 
+%6java.util.stream.IntStream2sum()"
+	 Å(
+""B31
+/com.snackbar.orderRefactory.domain.entity.OrderHX

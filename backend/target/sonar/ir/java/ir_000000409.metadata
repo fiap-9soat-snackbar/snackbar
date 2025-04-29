@@ -1,0 +1,5 @@
+com.snackbar.cooking.domain.exceptions.UserNotFoundException#<init>(Ljava/lang/String;)V
+false
+04c92fa7db8960038928f7b3d8c6b234
+==
+<init> java.lang.RuntimeException#<init>(Ljava/lang/String;)V

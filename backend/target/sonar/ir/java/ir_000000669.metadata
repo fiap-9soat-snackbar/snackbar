@@ -1,0 +1,6 @@
+com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway#listPayments()Ljava/util/List;
+false
+05f45228db46f8eebe5a586e8b3d4c06
+==
+findAll org.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;
+toDomainListObj com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper#toDomainListObj(Ljava/util/List;)Ljava/util/List;

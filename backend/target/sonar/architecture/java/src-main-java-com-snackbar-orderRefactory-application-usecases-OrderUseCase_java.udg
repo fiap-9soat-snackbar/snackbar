@@ -1,0 +1,1247 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125430*java2.B‰1
+U
+Psrc/main/java/com/snackbar/orderRefactory/application/usecases/OrderUseCase.java2
+
+package4
+5
+0com.snackbar.orderRefactory.application.usecases5
+B
+=com.snackbar.orderRefactory.application.usecases.OrderUseCase7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+OrderUseCase12
+P
+Jcom.snackbar.orderRefactory.application.usecases.OrderUseCase.orderGateway14
+
+field15
+
+private16
+
+orderGateway17
+C
+=com.snackbar.orderRefactory.application.gateways.OrderGateway19
+
+unknown20
+
+is type21
+
+
+uses22
+R
+Lcom.snackbar.orderRefactory.application.usecases.OrderUseCase.productGateway24
+
+productGateway25
+E
+?com.snackbar.orderRefactory.application.gateways.ProductGateway27
+O
+Icom.snackbar.orderRefactory.application.usecases.OrderUseCase.userService29
+
+userService30
+.
+(com.snackbar.iam.application.UserService32
+¯
+Òcom.snackbar.orderRefactory.application.usecases.OrderUseCase#<init>(Lcom/snackbar/orderRefactory/application/gateways/OrderGateway;Lcom/snackbar/orderRefactory/application/gateways/ProductGateway;Lcom/snackbar/iam/application/UserService;)V34
+
+method35
+
+	has param36
+
+calls37
+
+
+references38
+¥
+≠com.snackbar.orderRefactory.application.usecases.OrderUseCase#createOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;40
+
+createOrder41
+5
+/com.snackbar.orderRefactory.domain.entity.Order43
+
+returns44
+P
+Jcom.snackbar.orderRefactory.domain.entity.Order#getCpf()Ljava/lang/String;46
++
+%com.snackbar.iam.web.dto.UserResponse48
+v
+pcom.snackbar.iam.application.UserService#getUserByCpf(Ljava/lang/String;)Lcom/snackbar/iam/web/dto/UserResponse;50
+R
+Lcom.snackbar.orderRefactory.domain.entity.Order#setName(Ljava/lang/String;)V52
+w
+qcom.snackbar.orderRefactory.application.gateways.OrderGateway#findTopByOrderByOrderNumberDesc()Ljava/lang/String;54
+Y
+Scom.snackbar.orderRefactory.domain.entity.Order#setOrderNumber(Ljava/lang/String;)V56
+o
+icom.snackbar.orderRefactory.domain.entity.Order#generateOrderNumber(Ljava/lang/String;)Ljava/lang/String;58
+\
+Vcom.snackbar.orderRefactory.domain.entity.Order#setOrderDateTime(Ljava/time/Instant;)V60
+É
+}com.snackbar.orderRefactory.domain.entity.Order#setStatusOrder(Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;)V62
+@
+:com.snackbar.orderRefactory.domain.valueobject.StatusOrder64
+E
+?com.snackbar.orderRefactory.domain.valueobject.StatusOrder.NOVO66
+9
+3com.snackbar.orderRefactory.domain.entity.OrderItem68
+P
+Jcom.snackbar.orderRefactory.domain.entity.Order#getItems()Ljava/util/List;70
+†
+ôcom.snackbar.orderRefactory.application.gateways.ProductGateway#getProductByName(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/OrderItem;72
+U
+Ocom.snackbar.orderRefactory.domain.entity.OrderItem#getName()Ljava/lang/String;74
+Z
+Tcom.snackbar.orderRefactory.domain.entity.OrderItem#getQuantity()Ljava/lang/Integer;76
+Z
+Tcom.snackbar.orderRefactory.domain.entity.OrderItem#getPrice()Ljava/math/BigDecimal;78
+]
+Wcom.snackbar.orderRefactory.domain.entity.OrderItem#getCookingTime()Ljava/lang/Integer;80
+^
+Xcom.snackbar.orderRefactory.domain.entity.OrderItem#getCustomization()Ljava/lang/String;82
+Q
+Kcom.snackbar.orderRefactory.domain.entity.Order#setItems(Ljava/util/List;)V84
+\
+Vcom.snackbar.orderRefactory.domain.entity.Order#setTotalPrice(Ljava/math/BigDecimal;)V86
+¥
+≠com.snackbar.orderRefactory.application.gateways.OrderGateway#createOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;88
+¥
+≠com.snackbar.orderRefactory.application.usecases.OrderUseCase#updateOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;90
+
+updateOrder91
+y
+scom.snackbar.orderRefactory.application.gateways.OrderGateway#findOrderById(Ljava/lang/String;)Ljava/util/Optional;93
+O
+Icom.snackbar.orderRefactory.domain.entity.Order#getId()Ljava/lang/String;95
+¥
+≠com.snackbar.orderRefactory.application.gateways.OrderGateway#updateOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;97
+`
+Zcom.snackbar.orderRefactory.application.usecases.OrderUseCase#listOrders()Ljava/util/List;99
+
+
+listOrders100
+a
+Zcom.snackbar.orderRefactory.application.gateways.OrderGateway#listOrders()Ljava/util/List;102
+ò
+êcom.snackbar.orderRefactory.application.usecases.OrderUseCase#searchOrderId(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;104
+
+searchOrderId105
+ò
+êcom.snackbar.orderRefactory.application.gateways.OrderGateway#searchOrderId(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;107
+†
+òcom.snackbar.orderRefactory.application.usecases.OrderUseCase#getOrderByOrderNumber(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;109
+
+getOrderByOrderNumber110
+†
+òcom.snackbar.orderRefactory.application.gateways.OrderGateway#getOrderByOrderNumber(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;112
+f
+_com.snackbar.orderRefactory.application.usecases.OrderUseCase#getSortedOrders()Ljava/util/List;114
+
+getSortedOrders115
+f
+_com.snackbar.orderRefactory.application.gateways.OrderGateway#getSortedOrders()Ljava/util/List;117
+É
+|com.snackbar.orderRefactory.domain.entity.Order#getStatusOrder()Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;119
+H
+Acom.snackbar.orderRefactory.domain.valueobject.StatusOrder.PRONTO121
+L
+Ecom.snackbar.orderRefactory.domain.valueobject.StatusOrder.PREPARACAO123
+J
+Ccom.snackbar.orderRefactory.domain.valueobject.StatusOrder.RECEBIDO125
+Œ
+∆com.snackbar.orderRefactory.application.usecases.OrderUseCase#compareStatus(Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;)I127
+\
+Ucom.snackbar.orderRefactory.domain.entity.Order#getOrderDateTime()Ljava/time/Instant;129
+
+compareStatus130
+Æ
+¶com.snackbar.orderRefactory.application.usecases.OrderUseCase#updateStatusOrder(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;132
+
+updateStatusOrder133
+ö
+ícom.snackbar.orderRefactory.domain.valueobject.StatusOrder#valueOf(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;135J
+
+1
+12Z
+
+3	
+354jî
+
+94
+949520
+
+51
+515220
+
+101
+10110220
+
+92
+929320
+@
+23:
+232415 *
+1 (26:3B
+	
+9
+16
+
+
+11
+25
+
+106
+10610720
+
+83
+838420
+
+26
+262720
+
+53
+535420
+
+61
+616220
+
+87
+878820
+
+67
+676820
+D
+126=
+12612735 *
+1x x(26:3B
+	
+9
+16
+
+11
+130
+
+31
+313220
+
+45
+454620
+D
+103=
+10310435 *
+1a a(26:3B
+	
+9
+10
+
+11
+105
+A
+98;
+989935 *
+1] ](26:3B
+	
+9
+10
+
+11
+100
+
+128
+12812920
+
+55
+555620
+@
+13:
+131415 *
+1 (26:3B
+	
+9
+16
+
+
+11
+17
+D
+113=
+11311435 *
+1i i(26:3B
+	
+9
+10
+
+11
+115
+
+57
+575820
+@
+28:
+282915 *
+1 (26:3B
+	
+9
+16
+
+
+11
+30
+@
+89:
+899035 *
+1F F(26:3B
+	
+9
+10
+
+
+11
+91
+F
+131?
+13113235 *
+1Å Å(26:3B
+	
+9
+10
+
+11
+133
+
+49
+495020
+
+77
+777820
+
+118
+11811920
+
+65
+656620
+
+18
+181920
+
+85
+858620
+@
+39:
+394035 *
+1" "(26:3B
+	
+9
+10
+
+
+11
+41
+
+122
+12212320
+
+75
+757620
+@
+33:
+333435 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+
+111
+11111220
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+
+79
+798020
+D
+108=
+10810935 *
+1e e(26:3B
+	
+9
+10
+
+11
+110
+
+120
+12012120
+
+124
+12412520
+
+47
+474820
+
+73
+737420
+
+96
+969720
+
+63
+636420
+
+134
+13413520
+
+42
+424320
+
+69
+697020
+
+71
+717220
+
+116
+11611720
+
+59
+596020
+
+81
+818220r:
+
+131821*
+1 (
+
+131822*
+1 (
+
+131822*
+1  (,
+
+232621*
+1 (!
+
+232622*
+1 (!
+
+232622*
+1" (0
+
+283121*
+1 (
+
+283122*
+1 (
+
+283122*
+1 (*
+
+331836*
+1 (
+
+332636*
+1 (
+
+333136*
+1 (
+
+33637*
+1 (
+
+331821*
+1 (&
+
+331822*
+1 (
+
+332621*
+1 (*
+
+332622*
+1 (
+
+333121*
+1 ($
+
+333122*
+1 (
+
+33622*
+1	 (
+
+33638*
+1	 (
+
+331822*
+1 (
+
+331338*
+1 (
+
+33622*
+1	 (
+
+33638*
+1	 (
+
+332622*
+1 (
+
+332338*
+1 (
+
+33622*
+1	 (
+
+33638*
+1	 (
+
+333122*
+1 (
+
+332838*
+1 (
+
+394244*
+1" "(
+
+394236*
+1" "(#
+
+394222*
+1" "(
+
+394221*
+1"$ "()
+
+394222*
+1" "(#
+
+394238*
+1# #(
+
+394537*
+1# #(
+
+394721*
+1) )(
+
+394744*
+1) )(
+
+393138*
+1) )(
+
+394937*
+1)% )(1
+
+39622*
+1) )(
+
+39638*
+1) )(
+
+393122*
+1) )($
+
+392838*
+1) )($
+
+394238*
+1)2 )(7
+
+394537*
+1)8 )(>
+
+394238*
+1+	 +(
+
+395137*
+1+ +(
+
+391838*
+1-" -(.
+
+395337*
+1-/ -(N
+
+391338*
+1-" -(.
+
+391822*
+1-" -(.
+
+391338*
+1-" -(.
+
+394238*
+1.	 .(
+
+395537*
+1. .(
+
+394238*
+1. .(#
+
+395737*
+1.$ .(7
+
+394222*
+1. .(#
+
+394238*
+1/	 /(
+
+395937*
+1/ /(
+
+394238*
+10	 0(
+
+396137*
+10 0(
+
+396322*
+10 0()
+
+396322*
+10* 0(.
+
+396538*
+10* 0(.
+
+396722*
+12 2(
+
+394238*
+12( 2(-
+
+396937*
+12. 2(6
+
+396721*
+12F 2(J
+
+396721*
+13 3("
+
+396722*
+13 3(
+
+396744*
+13% 3(3
+
+392638*
+13% 3(3
+
+397137*
+134 3(D
+
+392338*
+13% 3(3
+
+392622*
+13% 3(3
+
+392338*
+13% 3(3
+
+396738*
+13E 3(I
+
+397337*
+13J 3(Q
+
+396737*
+15 5(%
+
+396738*
+15& 5(1
+
+397337*
+152 5(9
+
+396738*
+15= 5(A
+
+397537*
+15B 5(M
+
+396738*
+15Q 5(\
+
+397737*
+15] 5(e
+
+396738*
+15i 5(t
+
+397937*
+15u 5(É
+
+396738*
+15á 5(í
+
+398137*
+15ì 5(£
+
+396738*
+17L 7(P
+
+397337*
+17Q 7(X
+
+394238*
+1;	 ;(
+
+398337*
+1; ;(
+
+396721*
+1> >(
+
+396738*
+1> >("
+
+397737*
+1># >(+
+
+396738*
+1>8 >(<
+
+397737*
+1>= >(E
+
+396738*
+1>d >(h
+
+397537*
+1>i >(t
+
+394238*
+1A	 A(
+
+398537*
+1A A(
+
+394244*
+1C C(
+
+391838*
+1C C(
+
+398737*
+1C C((
+
+391338*
+1C C(
+
+391822*
+1C C(
+
+391338*
+1C C(
+
+894244*
+1F F(
+
+894236*
+1F F(#
+
+894222*
+1F F(
+
+894221*
+1F$ F()
+
+894222*
+1F F(#
+
+894221*
+1G G(
+
+894222*
+1G	 G(
+
+894244*
+1G G(+
+
+891838*
+1G G(+
+
+899237*
+1G, G(9
+
+891338*
+1G G(+
+
+891822*
+1G G(+
+
+891338*
+1G G(+
+
+894238*
+1G: G(?
+
+899437*
+1G@ G(E
+
+896722*
+1J J(
+
+894238*
+1J( J(-
+
+896937*
+1J. J(6
+
+896721*
+1JF J(J
+
+896721*
+1K K("
+
+896722*
+1K K(
+
+896744*
+1K% K(3
+
+892638*
+1K% K(3
+
+897137*
+1K4 K(D
+
+892338*
+1K% K(3
+
+892622*
+1K% K(3
+
+892338*
+1K% K(3
+
+896738*
+1KE K(I
+
+897337*
+1KJ K(Q
+
+896737*
+1M M(%
+
+896738*
+1M' M(2
+
+897337*
+1M3 M(:
+
+896738*
+1M> M(B
+
+897537*
+1MC M(N
+
+896738*
+1MR M(]
+
+897737*
+1M^ M(f
+
+896738*
+1Mj M(u
+
+897937*
+1Mv M(Ñ
+
+896738*
+1Mà M(ì
+
+898137*
+1Mî M(§
+
+896738*
+1OL O(P
+
+897337*
+1OQ O(X
+
+894238*
+1S	 S(
+
+898337*
+1S S(
+
+896721*
+1V V(
+
+896738*
+1V V("
+
+897737*
+1V# V(+
+
+896738*
+1V8 V(<
+
+897737*
+1V= V(E
+
+896738*
+1Vd V(h
+
+897537*
+1Vi V(t
+
+894238*
+1X	 X(
+
+898537*
+1X X($
+
+894244*
+1Z Z(
+
+891838*
+1Z Z(
+
+899637*
+1Z Z((
+
+891338*
+1Z Z(
+
+891822*
+1Z Z(
+
+891338*
+1Z Z(
+
+984222*
+1] ](
+
+981838*
+1^ ^(
+
+9810137*
+1^ ^('
+
+981338*
+1^ ^(
+
+981822*
+1^ ^(
+
+981338*
+1^ ^(
+
+1034244*
+1a a(
+
+1034222*
+1a a(
+
+1034244*
+1b b(
+
+1031838*
+1b b(
+
+10310637*
+1b b(*
+
+1031338*
+1b b(
+
+1031822*
+1b b(
+
+1031338*
+1b b(
+
+1084244*
+1e e(
+
+1084222*
+1e e(
+
+1084244*
+1f f(
+
+1081838*
+1f f(
+
+10811137*
+1f f(2
+
+1081338*
+1f f(
+
+1081822*
+1f f(
+
+1081338*
+1f f(
+
+1134222*
+1i i(
+
+1131838*
+1j j(
+
+11311637*
+1j j(,
+
+1131338*
+1j j(
+
+1131822*
+1j j(
+
+1131338*
+1j j(
+
+1134221*
+1k k(
+
+1136344*
+1k" k('
+
+1134238*
+1k" k('
+
+11311837*
+1k( k(6
+
+1136322*
+1k< k(G
+
+1136322*
+1kH k(N
+
+11312038*
+1kH k(N
+
+1136344*
+1l l(
+
+1134238*
+1l l(
+
+11311837*
+1l l(-
+
+1136322*
+1l3 l(>
+
+1136322*
+1l? l(I
+
+11312238*
+1l? l(I
+
+1136344*
+1m m(
+
+1134238*
+1m m(
+
+11311837*
+1m m(-
+
+1136322*
+1m3 m(>
+
+1136322*
+1m? m(G
+
+11312438*
+1m? m(G
+
+1134221*
+1n n(
+
+1134221*
+1n n( 
+
+113638*
+1o, o(9
+
+11312637*
+1o, o(9
+
+1136344*
+1o: o(<
+
+1134238*
+1o: o(<
+
+11311837*
+1o= o(K
+
+1136344*
+1oO o(Q
+
+1134238*
+1oO o(Q
+
+11311837*
+1oR o(`
+
+1134238*
+1s s(
+
+11312837*
+1s s(/
+
+1134238*
+1s< s(>
+
+11312837*
+1s? s(O
+
+1266336*
+1x x(*
+
+1266336*
+1x4 x(?
+
+1266321*
+1x+ x(2
+
+1266322*
+1x x(*
+
+1266321*
+1x@ x(G
+
+1266322*
+1x4 x(?
+
+1266322*
+1z z(#
+
+1266322*
+1z$ z(*
+
+12612038*
+1z$ z(*
+
+1266322*
+1{ {(#
+
+1266322*
+1{$ {(*
+
+12612038*
+1{$ {(*
+
+1266322*
+1| |(#
+
+1266322*
+1|$ |(.
+
+12612238*
+1|$ |(.
+
+1266322*
+1} }(#
+
+1266322*
+1}$ }(.
+
+12612238*
+1}$ }(.
+
+1314244*
+1Å Å(
+
+1314222*
+1Å Å(
+
+1314221*
+1Ç Ç(
+
+1314222*
+1Ç	 Ç(
+
+1314244*
+1Ç Ç(#
+
+1311838*
+1Ç Ç(#
+
+1319237*
+1Ç$ Ç(1
+
+1311338*
+1Ç Ç(#
+
+1311822*
+1Ç Ç(#
+
+1311338*
+1Ç Ç(#
+
+1316321*
+1Ü Ü(
+
+1316322*
+1Ü Ü(
+
+1316344*
+1Ü" Ü(-
+
+1316338*
+1Ü" Ü(-
+
+13113437*
+1Ü. Ü(5
+
+1316322*
+1Ü" Ü(-
+
+1314238*
+1á á(
+
+1316137*
+1á á(!
+
+1314244*
+1å å(
+
+1311838*
+1å å(
+
+1319637*
+1å å('
+
+1311338*
+1å å(
+
+1311822*
+1å å(
+
+1311338*
+1å å(

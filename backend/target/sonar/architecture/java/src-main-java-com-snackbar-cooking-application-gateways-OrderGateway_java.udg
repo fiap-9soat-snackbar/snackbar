@@ -1,0 +1,92 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125380*java2.Bµ
+N
+Isrc/main/java/com/snackbar/cooking/application/gateways/OrderGateway.java2
+
+package4
+.
+)com.snackbar.cooking.application.gateways5
+;
+6com.snackbar.cooking.application.gateways.OrderGateway7
+
+	interface8
+
+access9
+
+public10
+
+simple name11
+
+OrderGateway12
+m
+gcom.snackbar.cooking.application.gateways.OrderGateway#findById(Ljava/lang/String;)Ljava/util/Optional;14
+
+method15
+
+findById16
+.
+(com.snackbar.cooking.domain.entity.Order18
+
+unknown19
+
+
+uses20
+ö
+ìcom.snackbar.cooking.application.gateways.OrderGateway#updateStatus(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Order;22
+
+updateStatus23
+
+returns24J
+
+1
+12Z
+
+3	
+354j”
+
+17
+171819
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+@
+21:
+212215 *
+1 (
+26:3B
+	
+9
+10
+
+
+11
+23
+@
+13:
+131415 *
+1 (26:3B
+	
+9
+10
+
+
+11
+16rQ
+
+131720*
+1 (
+
+211724*
+1 (
+
+
+211720*
+1 (

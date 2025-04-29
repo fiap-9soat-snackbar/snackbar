@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderDTOMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.orderRefactory.infrastructure.controllers</a> &gt; <span class="el_source">OrderDTOMapper.java</span></div><h1>OrderDTOMapper.java</h1><pre class="source lang-java linenums">package com.snackbar.orderRefactory.infrastructure.controllers;
+
+import com.snackbar.orderRefactory.domain.entity.Order;
+import com.snackbar.orderRefactory.domain.entity.OrderItem;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+<span class="nc" id="L9">public class OrderDTOMapper {</span>
+
+    public Order toDomain(CreateOrderRequest request) {
+<span class="nc" id="L12">        List&lt;OrderItem&gt; items = request.items().stream()</span>
+<span class="nc" id="L13">                .map(item -&gt; new OrderItem(</span>
+<span class="nc" id="L14">                        item.getName(), // Add appropriate value for the name</span>
+<span class="nc" id="L15">                        item.getQuantity(),</span>
+<span class="nc" id="L16">                        item.getPrice(),</span>
+<span class="nc" id="L17">                        item.getCookingTime(),</span>
+<span class="nc" id="L18">                        item.getCustomization()</span>
+<span class="nc" id="L19">                ))</span>
+<span class="nc" id="L20">                .collect(Collectors.toList());</span>
+<span class="nc" id="L21">        return new Order(</span>
+<span class="nc" id="L22">                null, // Add appropriate value for the first argument</span>
+<span class="nc" id="L23">                null, // Add appropriate value for the second argument</span>
+<span class="nc" id="L24">                request.orderDate(),</span>
+<span class="nc" id="L25">                request.cpf(),</span>
+<span class="nc" id="L26">                request.name(), // Add appropriate value for the fifth argument</span>
+<span class="nc" id="L27">                items,</span>
+<span class="nc" id="L28">                null, // Add appropriate value for the seventh argument</span>
+<span class="nc" id="L29">                null, // Add appropriate value for the eighth argument</span>
+<span class="nc" id="L30">                request.totalPrice(),</span>
+<span class="nc" id="L31">                0  // Add appropriate value for the tenth argument</span>
+        );
+    }
+    public CreateOrderResponse toResponse(Order order) {
+<span class="nc" id="L35">        List&lt;OrderItemResponse&gt; items = order.getItems().stream()</span>
+<span class="nc" id="L36">                .map(item -&gt; new OrderItemResponse(</span>
+<span class="nc" id="L37">                        item.getQuantity(),</span>
+<span class="nc" id="L38">                        item.getPrice()</span>
+<span class="nc" id="L39">                ))</span>
+<span class="nc" id="L40">                .collect(Collectors.toList());</span>
+<span class="nc" id="L41">        return new CreateOrderResponse(</span>
+<span class="nc" id="L42">                order.getId(),</span>
+<span class="nc" id="L43">                order.getCpf(), // Added cpf field</span>
+<span class="nc" id="L44">                order.getOrderDateTime(),</span>
+<span class="nc" id="L45">                items,</span>
+<span class="nc" id="L46">                order.getTotalPrice()</span>
+        );
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

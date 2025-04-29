@@ -1,0 +1,15 @@
+
+ecom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getStatusOrder()Ljava/lang/String;ì
+à/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/persistence/OrderEntityCooking.javaI I( "1*÷
+1J J(†
+ù
+J J(
+%0java.lang.String"__id*s
+
+__unknown_file (W*UD
+Bcom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking"
+statusOrder"$
+J J(
+
+%0java.lang.StringBFD
+Bcom.snackbar.cooking.infrastructure.persistence.OrderEntityCookingH

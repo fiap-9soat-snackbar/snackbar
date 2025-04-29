@@ -1,0 +1,5 @@
+com.snackbar.productv2.infrastructure.config.ProductConfig#createv2ProductUseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/CreateProductv2UseCase;
+false
+e35c599eb8c43b38a90d7cb34ed73ebd
+com.snackbar.productv2.application.usecases.CreateProductv2UseCase#<init>(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)V
+com.snackbar.productv2.application.usecases.CreateProductv2UseCase#instance-init#

@@ -1,0 +1,119 @@
+
+‚com.snackbar.iam.application.SecurityConfiguration#corsConfigurationSource()Lorg/springframework/web/cors/CorsConfigurationSource;‚
+x/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/SecurityConfiguration.java7 7(3"1*á
+18* 8(Arp
+8. 8(?4
+%0.org.springframework.web.cors.CorsConfiguration".org.springframework.web.cors.CorsConfiguration¡
+ž
+8* 8(A
+%1"8org.springframework.web.cors.CorsConfiguration#<init>()V*R
+
+__unknown_file (6
+4
+%0.org.springframework.web.cors.CorsConfiguration¨
+¥
+8 8(B?
+configuration.org.springframework.web.cors.CorsConfiguration"__id*R
+
+__unknown_file (6
+4
+%0.org.springframework.web.cors.CorsConfigurationÁ
+¾
+:( :(H
+%2java.util.List"5java.util.List#of(Ljava/lang/Object;)Ljava/util/List;*.
+
+__unknown_file ("
+java.util.List*5
+
+__unknown_file (
+http://localhost:8080¦£
+: :(I
+
+%3void"Sorg.springframework.web.cors.CorsConfiguration#setAllowedOrigins(Ljava/util/List;)V*]
+
+__unknown_file (A
+?
+configuration.org.springframework.web.cors.CorsConfiguration*2
+
+__unknown_file (
+
+%2java.util.List2#setAllowedOrigins(Ljava/util/List;)ç
+ä
+;( ;(=
+%4java.util.List"Gjava.util.List#of(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List;*.
+
+__unknown_file ("
+java.util.List*#
+
+__unknown_file (
+GET*$
+
+__unknown_file (
+POST¦£
+; ;(>
+
+%5void"Sorg.springframework.web.cors.CorsConfiguration#setAllowedMethods(Ljava/util/List;)V*]
+
+__unknown_file (A
+?
+configuration.org.springframework.web.cors.CorsConfiguration*2
+
+__unknown_file (
+
+%4java.util.List2#setAllowedMethods(Ljava/util/List;)ù
+ö
+<( <(O
+%6java.util.List"Gjava.util.List#of(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List;*.
+
+__unknown_file ("
+java.util.List*-
+
+__unknown_file (
+Authorization*,
+
+__unknown_file (
+Content-Type¦£
+< <(P
+
+%7void"Sorg.springframework.web.cors.CorsConfiguration#setAllowedHeaders(Ljava/util/List;)V*]
+
+__unknown_file (A
+?
+configuration.org.springframework.web.cors.CorsConfiguration*2
+
+__unknown_file (
+
+%6java.util.List2#setAllowedHeaders(Ljava/util/List;)Œ
+>5 >(TB
+%8<org.springframework.web.cors.UrlBasedCorsConfigurationSource"<org.springframework.web.cors.UrlBasedCorsConfigurationSource½
+º
+>1 >(V
+%9"Forg.springframework.web.cors.UrlBasedCorsConfigurationSource#<init>()V*`
+
+__unknown_file (D
+B
+%8<org.springframework.web.cors.UrlBasedCorsConfigurationSource½
+º
+> >(WF
+source<org.springframework.web.cors.UrlBasedCorsConfigurationSource"__id*`
+
+__unknown_file (D
+B
+%8<org.springframework.web.cors.UrlBasedCorsConfigurationSourceþ
+@ @(=
+%10void"›org.springframework.web.cors.UrlBasedCorsConfigurationSource#registerCorsConfiguration(Ljava/lang/String;Lorg/springframework/web/cors/CorsConfiguration;)V*d
+
+__unknown_file (H
+F
+source<org.springframework.web.cors.UrlBasedCorsConfigurationSource*#
+
+__unknown_file (
+/***]
+
+__unknown_file (A
+?
+configuration.org.springframework.web.cors.CorsConfiguration2]registerCorsConfiguration(Ljava/lang/String;Lorg/springframework/web/cors/CorsConfiguration;)"T
+B B(H
+F
+source<org.springframework.web.cors.UrlBasedCorsConfigurationSourceB64
+2com.snackbar.iam.application.SecurityConfiguration

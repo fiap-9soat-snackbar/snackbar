@@ -1,0 +1,4 @@
+com.snackbar.iam.domain.UserDetailsEntity#getAuthorities(Lcom/snackbar/iam/domain/IamRole;)Ljava/lang/String;
+false
+296e6a81610446cc29ab7e575eff9cb1
+java.lang.Enum#name()Ljava/lang/String;

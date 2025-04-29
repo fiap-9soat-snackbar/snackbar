@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CreateOrderController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.orderRefactory.infrastructure.controllers</a> &gt; <span class="el_source">CreateOrderController.java</span></div><h1>CreateOrderController.java</h1><pre class="source lang-java linenums">package com.snackbar.orderRefactory.infrastructure.controllers;
+
+import com.snackbar.orderRefactory.application.usecases.OrderUseCase;
+import com.snackbar.orderRefactory.domain.entity.Order;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/api/ordersrefactored&quot;)
+public class CreateOrderController {
+
+    private final OrderUseCase orderUseCase;
+    private final OrderDTOMapper orderDTOMapper;
+
+<span class="nc" id="L18">    public CreateOrderController(OrderUseCase orderUseCase, OrderDTOMapper orderDTOMapper) {</span>
+<span class="nc" id="L19">        this.orderUseCase = orderUseCase;</span>
+<span class="nc" id="L20">        this.orderDTOMapper = orderDTOMapper;</span>
+<span class="nc" id="L21">    }</span>
+
+    @PostMapping
+    public Order createOrder(@RequestBody CreateOrderRequest request) {
+<span class="nc bnc" id="L25" title="All 2 branches missed.">        if (request.cpf() == null) {</span>
+<span class="nc" id="L26">            throw new IllegalArgumentException(&quot;CPF is mandatory for creating an order&quot;);</span>
+        }
+<span class="nc" id="L28">        Order order = orderDTOMapper.toDomain(request);</span>
+<span class="nc" id="L29">        return orderUseCase.createOrder(order);</span>
+    }
+
+    @PutMapping
+    public Order updateOrder(@RequestBody CreateOrderRequest request) {
+<span class="nc" id="L34">        Order order = orderDTOMapper.toDomain(request);</span>
+<span class="nc" id="L35">        return orderUseCase.updateOrder(order);</span>
+    }
+
+    @GetMapping
+    public List&lt;Order&gt; listOrders() {
+<span class="nc" id="L40">        return orderUseCase.listOrders();</span>
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public Order searchOrderId(@PathVariable String id) {
+<span class="nc" id="L45">        return orderUseCase.searchOrderId(id);</span>
+    }
+
+    @GetMapping(&quot;/number/{orderNumber}&quot;)
+    public ResponseEntity&lt;?&gt; getOrderByOrderNumber(@PathVariable String orderNumber) {
+        try {
+<span class="nc" id="L51">            Order order = orderUseCase.getOrderByOrderNumber(orderNumber);</span>
+<span class="nc" id="L52">            return ResponseEntity.ok(order);</span>
+<span class="nc" id="L53">        } catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L54">            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());</span>
+        }
+    }
+
+    @GetMapping(&quot;/sorted&quot;)
+    public List&lt;Order&gt; getSortedOrders() {
+<span class="nc" id="L60">        return orderUseCase.getSortedOrders();</span>
+    }
+
+    @PutMapping(&quot;/status&quot;)
+    public Order updateStatusOrder(@RequestBody UpdateOrderStatusRequest request) {
+<span class="nc" id="L65">        String status = request.status();</span>
+<span class="nc" id="L66">        String id = request.orderId();</span>
+<span class="nc" id="L67">        return orderUseCase.updateStatusOrder(id, status);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

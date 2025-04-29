@@ -1,0 +1,9 @@
+com.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway#deleteItemToBasket(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/basket/domain/entity/Basket;
+false
+f8928b0c9a820324db4a5b1ea680dd1c
+java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
+==
+!unknownMethod! !unknownMethod!
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
+toDomainObj com.snackbar.basket.infrastructure.gateways.BasketEntityMapper#toDomainObj(Lcom/snackbar/basket/infrastructure/persistence/BasketEntity;)Lcom/snackbar/basket/domain/entity/Basket;

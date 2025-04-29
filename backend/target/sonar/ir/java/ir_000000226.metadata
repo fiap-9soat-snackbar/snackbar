@@ -1,0 +1,7 @@
+com.snackbar.payment.infrastructure.controllers.PaymentController#getPaymentByExternalId(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;
+false
+edc2d22b5dbfb7c1245644dab2b0b724
+org.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;
+==
+getPaymentByExternalId com.snackbar.payment.application.usecases.GetPaymentByExternalIdUseCase#getPaymentByExternalId(Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
+getToResponse com.snackbar.payment.infrastructure.controllers.PaymentDTOMapper#getToResponse(Lcom/snackbar/payment/domain/entity/Payment;)Lcom/snackbar/payment/infrastructure/controllers/GetPaymentResponse;

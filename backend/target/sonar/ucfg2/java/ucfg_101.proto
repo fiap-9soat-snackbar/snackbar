@@ -1,0 +1,45 @@
+
+³com.snackbar.basket.infrastructure.gateways.BasketEntityMapper#toDomainObj(Lcom/snackbar/basket/infrastructure/persistence/BasketEntity;)Lcom/snackbar/basket/domain/entity/Basket;
+„/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/basket/infrastructure/gateways/BasketEntityMapper.java ("1*º
+1 ('®
+«
+   (, 
+%0java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*;
+
+__unknown_file ("
+java.util.stream.CollectorsO
+M
+  (.
+itemsjava.util.List"__id*"
+
+__unknown_file (
+""fd
+" "(.
+%1(com.snackbar.basket.domain.entity.Basket"(com.snackbar.basket.domain.entity.Basket‚
+ÿ
+" '(	
+%2"|com.snackbar.basket.domain.entity.Basket#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/math/BigDecimal;)V*L
+
+__unknown_file (0
+.
+%1(com.snackbar.basket.domain.entity.Basket*"
+
+__unknown_file (
+""*"
+
+__unknown_file (
+""*5
+
+__unknown_file (
+
+itemsjava.util.List*"
+
+__unknown_file (
+"""<
+" '(
+0
+.
+%1(com.snackbar.basket.domain.entity.Basket:W
+ (7K
+basketEntity;com.snackbar.basket.infrastructure.persistence.BasketEntityBB@
+>com.snackbar.basket.infrastructure.gateways.BasketEntityMapperH

@@ -1,0 +1,6 @@
+com.snackbar.basket.infrastructure.controllers.BasketController#deleteItem(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/basket/infrastructure/controllers/CreateBasketResponse;
+false
+1378d2b5657aed46d348f47a6be9492e
+==
+deleteItemToBasket com.snackbar.basket.application.usecases.BasketUseCase#deleteItemToBasket(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/basket/domain/entity/Basket;
+toResponse com.snackbar.basket.infrastructure.controllers.BasketDTOMapper#toResponse(Lcom/snackbar/basket/domain/entity/Basket;)Lcom/snackbar/basket/infrastructure/controllers/CreateBasketResponse;

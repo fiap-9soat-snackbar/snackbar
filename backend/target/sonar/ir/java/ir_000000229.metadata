@@ -1,0 +1,3 @@
+com.snackbar.iam.web.AuthenticationController#<init>(Lcom/snackbar/iam/application/JwtService;Lcom/snackbar/iam/application/AuthenticationService;Lcom/snackbar/iam/application/UserService;Lcom/snackbar/order/service/OrderService;)V
+false
+a132e3c018e72be61744ec30223b797c

@@ -1,0 +1,6 @@
+com.snackbar.product.controller.ProductController#updateProduct(Ljava/lang/String;Lcom/snackbar/product/dto/ProductDTO;)Lorg/springframework/http/ResponseEntity;
+false
+43743f2821d99a36709d3ca57508567f
+org.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;
+==
+updateProduct com.snackbar.product.usecase.UpdateProductUseCase#updateProduct(Ljava/lang/String;Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/product/dto/ProductDTO;

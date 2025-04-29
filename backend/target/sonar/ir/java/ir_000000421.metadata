@@ -1,0 +1,8 @@
+com.snackbar.order.service.OrderService#updateOrderStatus(Ljava/lang/String;Lcom/snackbar/order/domain/model/StatusOrder;)V
+false
+6b447e41f2be0cddfbc29994016e6d28
+java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
+setStatusOrder com.snackbar.order.domain.model.Order#setStatusOrder(Lcom/snackbar/order/domain/model/StatusOrder;)V

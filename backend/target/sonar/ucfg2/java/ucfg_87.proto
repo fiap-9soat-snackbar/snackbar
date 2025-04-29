@@ -1,0 +1,15 @@
+
+ccom.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getCookingTime()Ljava/lang/Integer;ê
+Ö/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/persistence/OrderItemEntity.java- -(!"1*’
+1. .(û
+õ
+. .(
+%0java.lang.Integer"__id*p
+
+__unknown_file (T*RA
+?com.snackbar.cooking.infrastructure.persistence.OrderItemEntity"
+cookingTime"%
+. .(
+
+%0java.lang.IntegerBCA
+?com.snackbar.cooking.infrastructure.persistence.OrderItemEntityH

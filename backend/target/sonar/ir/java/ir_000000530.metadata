@@ -1,0 +1,10 @@
+com.snackbar.orderRefactory.application.usecases.OrderUseCase#getSortedOrders()Ljava/util/List;
+false
+582b11f0b30275a4722ddc23f9d99bb2
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+==
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+filter java.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+getSortedOrders com.snackbar.orderRefactory.application.gateways.OrderGateway#getSortedOrders()Ljava/util/List;
+sorted java.util.stream.Stream#sorted(Ljava/util/Comparator;)Ljava/util/stream/Stream;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;

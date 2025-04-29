@@ -1,0 +1,6 @@
+com.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway#getProductsv2ByCategory(Ljava/lang/String;)Ljava/util/List;
+false
+0c1fa706595834ef516d3efa90fe6b45
+==
+findByCategory com.snackbar.productv2.infrastructure.persistence.Productv2Repository#findByCategory(Ljava/lang/String;)Ljava/util/List;
+toDomainListObj com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toDomainListObj(Ljava/util/List;)Ljava/util/List;

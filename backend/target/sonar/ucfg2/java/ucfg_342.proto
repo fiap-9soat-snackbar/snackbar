@@ -1,0 +1,60 @@
+
+kcom.snackbar.iam.web.UserController#deleteUser(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;s
+i/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/web/UserController.java*  *(*"startingBlock*§
+startingBlock** *(C´
+®
+*+ *(8
+%4"
+__annotate*T
+
+__unknown_file (86
+4org.springframework.web.bind.annotation.PathVariable*4
+
+__unknown_file (
+
+idjava.lang.StringV
+T
+*@ *(B
+idjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%4*
+1*Å
+1+ +(ô
+ñ
++ +(.
+%0(com.snackbar.iam.application.UserService"__id*T
+
+__unknown_file (8*6%
+#com.snackbar.iam.web.UserController"
+userServiceáÑ
++ +("
+
+%1void"Hcom.snackbar.iam.application.UserService#deleteUser(Ljava/lang/String;)V*L
+
+__unknown_file (0
+.
+%0(com.snackbar.iam.application.UserService*4
+
+__unknown_file (
+
+idjava.lang.String2deleteUser(Ljava/lang/String;)Å
+˛
+, ,()<
+%26org.springframework.http.ResponseEntity$HeadersBuilder"korg.springframework.http.ResponseEntity#noContent()Lorg/springframework/http/ResponseEntity$HeadersBuilder;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntityäá
+, ,(1-
+%3'org.springframework.http.ResponseEntity"gorg.springframework.http.ResponseEntity$HeadersBuilder#build()Lorg/springframework/http/ResponseEntity;*Z
+
+__unknown_file (>
+<
+%26org.springframework.http.ResponseEntity$HeadersBuilder2build()";
+, ,(2/
+-
+%3'org.springframework.http.ResponseEntity:"
+*+ *(B
+idjava.lang.StringB'%
+#com.snackbar.iam.web.UserControllerH

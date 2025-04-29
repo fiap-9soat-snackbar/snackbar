@@ -1,0 +1,5 @@
+com.snackbar.basket.config.BasketConfig#basketUseCase(Lcom/snackbar/basket/infrastructure/gateways/BasketRepositoryGateway;Lcom/snackbar/productv2/application/usecases/GetProductv2ByNameUseCase;)Lcom/snackbar/basket/application/usecases/BasketUseCase;
+false
+971c8ddeda6309c4f939a6874cde00f4
+com.snackbar.basket.application.usecases.BasketUseCase#<init>(Lcom/snackbar/basket/application/gateways/BasketUseCaseGateway;Lcom/snackbar/productv2/application/usecases/GetProductv2ByNameUseCase;)V
+com.snackbar.basket.application.usecases.BasketUseCase#instance-init#

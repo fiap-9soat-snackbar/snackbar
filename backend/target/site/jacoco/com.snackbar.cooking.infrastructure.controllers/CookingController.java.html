@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CookingController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.cooking.infrastructure.controllers</a> &gt; <span class="el_source">CookingController.java</span></div><h1>CookingController.java</h1><pre class="source lang-java linenums">package com.snackbar.cooking.infrastructure.controllers;
+
+import com.snackbar.cooking.application.usecases.*;
+import com.snackbar.cooking.domain.entity.Cooking;
+import com.snackbar.cooking.infrastructure.persistence.CookingEntity;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping(&quot;/api/cooking&quot;)
+public class CookingController {
+    private final CreateCookingUseCase createCookingUseCase;
+    private final StartPreparationUseCase startPreparationUseCase;
+    private final FinishPreparationUseCase finishPreparationUseCase;
+    private final GetAllCookingsUseCase getAllCookingsUseCase;
+    private final GetCookingByOrderIdUseCase getCookingByOrderIdUseCase;
+    private final CookingDTOMapper cookingDTOMapper;
+
+<span class="nc" id="L25">    public CookingController(CreateCookingUseCase createCookingUseCase, StartPreparationUseCase startPreparationUseCase, FinishPreparationUseCase finishPreparationUseCase, GetAllCookingsUseCase getAllCookingsUseCase, GetCookingByOrderIdUseCase getCookingByOrderIdUseCase, CookingDTOMapper cookingDTOMapper) {</span>
+<span class="nc" id="L26">        this.createCookingUseCase = createCookingUseCase;</span>
+<span class="nc" id="L27">        this.startPreparationUseCase = startPreparationUseCase;</span>
+<span class="nc" id="L28">        this.finishPreparationUseCase = finishPreparationUseCase;</span>
+<span class="nc" id="L29">        this.getAllCookingsUseCase = getAllCookingsUseCase;</span>
+<span class="nc" id="L30">        this.getCookingByOrderIdUseCase = getCookingByOrderIdUseCase;</span>
+<span class="nc" id="L31">        this.cookingDTOMapper = cookingDTOMapper;</span>
+<span class="nc" id="L32">    }</span>
+
+    @PostMapping(&quot;/receive-order/{id}&quot;)
+    public ResponseEntity&lt;CreateCookingResponse&gt; receiveOrder(@PathVariable String id) {
+<span class="nc" id="L36">        Cooking cooking = cookingDTOMapper.createRequestToDomain(id);</span>
+<span class="nc" id="L37">        Cooking createdCooking = createCookingUseCase.createCooking(cooking);</span>
+<span class="nc" id="L38">        CreateCookingResponse response = cookingDTOMapper.createToResponse(createdCooking);</span>
+<span class="nc" id="L39">        return ResponseEntity.ok(response);</span>
+    }
+
+    @PostMapping(&quot;/start-preparation/{id}&quot;)
+    public ResponseEntity&lt;CreateCookingResponse&gt; startPreparation(@PathVariable String id) {
+<span class="nc" id="L44">        Cooking cooking = cookingDTOMapper.createRequestToDomain(id);</span>
+<span class="nc" id="L45">        Cooking result = startPreparationUseCase.updateCooking(cooking);</span>
+<span class="nc" id="L46">        CreateCookingResponse response = cookingDTOMapper.createToResponse(result);</span>
+<span class="nc" id="L47">        return ResponseEntity.ok(response);</span>
+    }
+
+    @PostMapping(&quot;/finish-preparation/{id}&quot;)
+    public ResponseEntity&lt;CreateCookingResponse&gt; finishPreparation(@PathVariable String id) {
+<span class="nc" id="L52">        Cooking cooking = cookingDTOMapper.createRequestToDomain(id);</span>
+<span class="nc" id="L53">        Cooking result = finishPreparationUseCase.updateCooking(cooking);</span>
+<span class="nc" id="L54">        CreateCookingResponse response = cookingDTOMapper.createToResponse(result);</span>
+<span class="nc" id="L55">        return ResponseEntity.ok(response);</span>
+    }
+
+    @GetMapping
+    public ResponseEntity&lt;List&lt;CreateCookingResponse&gt;&gt; getAllCookings() {
+<span class="nc" id="L60">        List&lt;Cooking&gt; cookings = getAllCookingsUseCase.execute();</span>
+        
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if (cookings.isEmpty()) {</span>
+<span class="nc" id="L63">            return ResponseEntity.noContent().build();</span>
+        }
+
+<span class="nc" id="L66">        List&lt;CreateCookingResponse&gt; response = cookings.stream()</span>
+<span class="nc" id="L67">                .map(cookingDTOMapper::createToResponse)</span>
+<span class="nc" id="L68">                .collect(Collectors.toList());</span>
+        
+<span class="nc" id="L70">        return ResponseEntity.ok(response);</span>
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;CreateCookingResponse&gt; getCookingByOrderId(@PathVariable String id) {
+<span class="nc" id="L75">        Cooking cooking = getCookingByOrderIdUseCase.execute(id);</span>
+<span class="nc" id="L76">        CreateCookingResponse response = cookingDTOMapper.createToResponse(cooking);</span>
+<span class="nc" id="L77">        return ResponseEntity.ok(response);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

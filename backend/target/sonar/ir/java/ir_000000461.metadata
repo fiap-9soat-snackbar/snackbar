@@ -1,0 +1,5 @@
+com.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#toPersistenceStatusOrder(Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;)Lcom/snackbar/orderRefactory/infrastructure/persistence/StatusOrderEntity;
+false
+f649661378b589291a957e56b1238d95
+com.snackbar.orderRefactory.infrastructure.persistence.StatusOrderEntity#valueOf(Ljava/lang/String;)Lcom/snackbar/orderRefactory/infrastructure/persistence/StatusOrderEntity;
+java.lang.Enum#name()Ljava/lang/String;

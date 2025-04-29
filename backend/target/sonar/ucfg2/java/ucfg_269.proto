@@ -1,0 +1,21 @@
+
+Ycom.snackbar.cooking.application.usecases.GetAllCookingsUseCase#execute()Ljava/util/List;
+…/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/application/usecases/GetAllCookingsUseCase.java ( "1*ß
+1 (È
+Å
+ (>
+%08com.snackbar.cooking.application.gateways.CookingGateway"__id*s
+
+__unknown_file (W*UA
+?com.snackbar.cooking.application.usecases.GetAllCookingsUseCase"
+cookingGatewayàÝ
+ ('
+%1java.util.List"Rcom.snackbar.cooking.application.gateways.CookingGateway#findAll()Ljava/util/List;*\
+
+__unknown_file (@
+>
+%08com.snackbar.cooking.application.gateways.CookingGateway2	findAll()""
+ ((
+
+%1java.util.ListBCA
+?com.snackbar.cooking.application.usecases.GetAllCookingsUseCaseH

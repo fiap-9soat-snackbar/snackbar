@@ -1,0 +1,9 @@
+com.snackbar.product.usecase.impl.DeleteProductUseCaseImpl#deleteProduct(Ljava/lang/String;)V
+false
+c0ad62e7e8f591d9f924fb4843463efd
+java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
+==
+deleteById com.snackbar.product.gateway.ProductRepository#deleteById(Ljava/lang/String;)V
+findById com.snackbar.product.gateway.ProductRepository#findById(Ljava/lang/String;)Ljava/util/Optional;
+getName com.snackbar.product.entity.Product#getName()Ljava/lang/String;
+println java.io.PrintStream#println(Ljava/lang/String;)V

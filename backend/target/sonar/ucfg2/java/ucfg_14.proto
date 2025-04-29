@@ -1,0 +1,39 @@
+
+K__sonar_lambda_0$com.snackbar.product.usecase.impl.DeleteProductUseCaseImpl‹
+€/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/product/usecase/impl/DeleteProductUseCaseImpl.java (\"startingBlock*À
+startingBlock (\Ÿ
+œ
+
+__unknown_file (
+idjava.lang.String"__id*b
+
+__unknown_file (F*D<
+:com.snackbar.product.usecase.impl.DeleteProductUseCaseImpl"
+id*
+1*ä
+19 (V
+
+9 ([
+%3java.lang.String"__concat*+
+9 (V
+Product not found with id: *$
+Y ([
+
+idjava.lang.String…‚
+' (8=
+%47com.snackbar.product.common.exception.BusinessException"7com.snackbar.product.common.exception.BusinessExceptionû
+ø
+# (\
+%5"Scom.snackbar.product.common.exception.BusinessException#<init>(Ljava/lang/String;)V*[
+
+__unknown_file (?
+=
+%47com.snackbar.product.common.exception.BusinessException*4
+
+__unknown_file (
+
+%3java.lang.String"K
+# (\?
+=
+%47com.snackbar.product.common.exception.BusinessExceptionB
+java.util.function.Supplier

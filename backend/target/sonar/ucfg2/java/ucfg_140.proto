@@ -1,0 +1,52 @@
+
+¶com.snackbar.product.common.handler.GlobalExceptionHandler#handleBusinessException(Lcom/snackbar/product/common/exception/BusinessException;)Lorg/springframework/http/ResponseEntity;‹
+€/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/product/common/handler/GlobalExceptionHandler.java" (9"startingBlock*ô
+startingBlock9 (NÕ
+Ò
+ (.
+%3"
+__annotate*X
+
+__unknown_file (<:
+8org.springframework.web.bind.annotation.ExceptionHandler*Z
+
+__unknown_file (>
+<
+e7com.snackbar.product.common.exception.BusinessException|
+z
+L (M<
+e7com.snackbar.product.common.exception.BusinessException"__annotation*"
+
+__unknown_file (
+
+%3*
+1*î
+1 (ü
+ù
+ (*9
+%03org.springframework.http.ResponseEntity$BodyBuilder"iorg.springframework.http.ResponseEntity#badRequest()Lorg/springframework/http/ResponseEntity$BodyBuilder;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntityÃÀ
+0 (>
+%1java.lang.String"2java.lang.Throwable#getMessage()Ljava/lang/String;*Z
+
+__unknown_file (>
+<
+e7com.snackbar.product.common.exception.BusinessException2getMessage()ÜÙ
+ (?-
+%2'org.springframework.http.ResponseEntity"uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*W
+
+__unknown_file (;
+9
+%03org.springframework.http.ResponseEntity$BodyBuilder*4
+
+__unknown_file (
+
+%1java.lang.String2body(Ljava/lang/Object;)";
+ (@/
+-
+%2'org.springframework.http.ResponseEntity:H
+: (M<
+e7com.snackbar.product.common.exception.BusinessExceptionB><
+:com.snackbar.product.common.handler.GlobalExceptionHandlerH

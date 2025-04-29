@@ -1,0 +1,5 @@
+com.snackbar.orderRefactory.config.OrderConfig#productDTOToOrderItemMapper()Lcom/snackbar/orderRefactory/infrastructure/gateways/ProductDTOToOrderItemMapper;
+false
+c347a794596547cceadeceaeb657ae89
+com.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapper#<init>()V
+com.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapper#instance-init#

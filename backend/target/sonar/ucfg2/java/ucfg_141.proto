@@ -1,0 +1,45 @@
+
+‘com.snackbar.product.common.handler.GlobalExceptionHandler#handleGenericException(Ljava/lang/Exception;)Lorg/springframework/http/ResponseEntity;‹
+€/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/product/common/handler/GlobalExceptionHandler.java" (8"startingBlock*¬
+startingBlock8 (E±
+®
+ (&
+%2"
+__annotate*X
+
+__unknown_file (<:
+8org.springframework.web.bind.annotation.ExceptionHandler*6
+
+__unknown_file (
+
+ejava.lang.ExceptionX
+V
+C (D
+ejava.lang.Exception"__annotation*"
+
+__unknown_file (
+
+%2*
+1*°
+1 (ü
+ù
+ (*9
+%03org.springframework.http.ResponseEntity$BodyBuilder"iorg.springframework.http.ResponseEntity#badRequest()Lorg/springframework/http/ResponseEntity$BodyBuilder;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntityäá
+ (O-
+%1'org.springframework.http.ResponseEntity"uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*W
+
+__unknown_file (;
+9
+%03org.springframework.http.ResponseEntity$BodyBuilder*<
+
+__unknown_file ( 
+An unexpected error occurred2body(Ljava/lang/Object;)";
+ (P/
+-
+%1'org.springframework.http.ResponseEntity:$
+9 (D
+ejava.lang.ExceptionB><
+:com.snackbar.product.common.handler.GlobalExceptionHandlerH

@@ -1,0 +1,20 @@
+
+Z__sonar_lambda_36$com.snackbar.cooking.infrastructure.gateways.OrderDatabaseGatewayCooking™
+Ž/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/gateways/OrderDatabaseGatewayCooking.java (F"1*È
+14 (EJH
+# (3 
+%3java.lang.RuntimeException"java.lang.RuntimeException¼
+¹
+ (F
+%4"6java.lang.RuntimeException#<init>(Ljava/lang/String;)V*>
+
+__unknown_file ("
+ 
+%3java.lang.RuntimeException*/
+
+__unknown_file (
+Order not found".
+ (F"
+ 
+%3java.lang.RuntimeExceptionB
+java.util.function.Supplier

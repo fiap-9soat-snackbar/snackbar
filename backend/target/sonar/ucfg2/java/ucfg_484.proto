@@ -1,0 +1,15 @@
+
+@com.snackbar.order.domain.model.Order#getCpf()Ljava/lang/String;u
+k/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/order/domain/model/Order.javaC C("1*¯
+1D D(z
+x
+D D(
+%0java.lang.String"__id*N
+
+__unknown_file (2*0'
+%com.snackbar.order.domain.model.Order"
+cpf"$
+D D(
+
+%0java.lang.StringB)'
+%com.snackbar.order.domain.model.OrderH

@@ -1,0 +1,59 @@
+
+‰com.snackbar.iam.application.AuthenticationService#signup(Lcom/snackbar/iam/web/dto/RegisterUserDto;)Lcom/snackbar/iam/domain/UserEntity;‚
+x/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/AuthenticationService.java ("1*÷
+
+1   ($Ö
+Ó
+# #(6
+%0"\com.snackbar.iam.domain.IamRole#valueOf(Ljava/lang/String;)Lcom/snackbar/iam/domain/IamRole;*?
+
+__unknown_file (#"!
+com.snackbar.iam.domain.IamRole*"
+
+__unknown_file (
+""À
+½
+% %()B
+%1<org.springframework.security.crypto.password.PasswordEncoder"__id*g
+
+__unknown_file (K*I4
+2com.snackbar.iam.application.AuthenticationService"
+passwordEncoder¬©
+% %(E
+%2"oorg.springframework.security.crypto.password.PasswordEncoder#encode(Ljava/lang/CharSequence;)Ljava/lang/String;*`
+
+__unknown_file (D
+B
+%1<org.springframework.security.crypto.password.PasswordEncoder*"
+
+__unknown_file (
+""2 encode(Ljava/lang/CharSequence;)b
+`
+  &(*
+user"com.snackbar.iam.domain.UserEntity"__id*"
+
+__unknown_file (
+""°
+­
+( ((3
+%3-com.snackbar.iam.infrastructure.IamRepository"__id*f
+
+__unknown_file (J*H4
+2com.snackbar.iam.application.AuthenticationService"
+userRepositoryÍÊ
+( ((((
+%4"com.snackbar.iam.domain.UserEntity"]org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;*Q
+
+__unknown_file (5
+3
+%3-com.snackbar.iam.infrastructure.IamRepository*H
+
+__unknown_file (,
+*
+user"com.snackbar.iam.domain.UserEntity2save(Ljava/lang/Object;)"6
+( (()*
+(
+%4"com.snackbar.iam.domain.UserEntity:=
+ (21
+input(com.snackbar.iam.web.dto.RegisterUserDtoB64
+2com.snackbar.iam.application.AuthenticationServiceH

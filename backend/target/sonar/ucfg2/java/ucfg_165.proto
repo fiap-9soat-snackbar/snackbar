@@ -1,0 +1,95 @@
+
+Icom.snackbar.order.service.OrderService#getSortedOrders()Ljava/util/List;y
+m/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/order/service/OrderService.java∞ ∞(&"1*Ë
+1
+± ±(©
+¶
+
+± ±(4
+%0.com.snackbar.order.adapter.out.OrderRepository"__id*\
+
+__unknown_file (@*>)
+'com.snackbar.order.service.OrderService"
+orderRepository÷”
+
+± ±((
+%1java.util.List"Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;*R
+
+__unknown_file (6
+4
+%0.com.snackbar.order.adapter.out.OrderRepository2	findAll()§°
+
+± ±(1
+%2java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*2
+
+__unknown_file (
+
+%1java.util.List2stream()°
+û
+
+≤ ¥(O"
+%3java.util.function.Predicate"__declareFunction*Y
+
+__unknown_file (=;
+9__sonar_lambda_18$com.snackbar.order.service.OrderServiceØ¨
+
+± ¥(P
+%13java.util.stream.Stream"Wjava.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;*;
+
+__unknown_file (
+
+%2java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%3java.util.function.Predicate2&filter(Ljava/util/function/Predicate;)ö
+ó
+
+µ ª(
+%14java.util.Comparator"__declareFunction*Y
+
+__unknown_file (=;
+9__sonar_lambda_19$com.snackbar.order.service.OrderService†
+ù
+
+__unknown_file (2
+
+%14java.util.Comparator"
+OrderService.this"__id*G
+
+__unknown_file (+)
+'com.snackbar.order.service.OrderServiceôñ
+
+± ª(
+%22java.util.stream.Stream"Ojava.util.stream.Stream#sorted(Ljava/util/Comparator;)Ljava/util/stream/Stream;*<
+
+__unknown_file ( 
+
+%13java.util.stream.Stream*9
+
+__unknown_file (
+
+%14java.util.Comparator2sorted(Ljava/util/Comparator;)±
+Æ
+
+º º(,!
+%23java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*;
+
+__unknown_file ("
+java.util.stream.Collectorsùö
+
+± º(-
+%24java.util.List"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*<
+
+__unknown_file ( 
+
+%22java.util.stream.Stream*?
+
+__unknown_file (#
+!
+%23java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)"%
+
+± º(.
+
+%24java.util.ListB+)
+'com.snackbar.order.service.OrderServiceH

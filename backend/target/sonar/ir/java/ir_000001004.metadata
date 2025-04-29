@@ -1,0 +1,5 @@
+com.snackbar.product.common.exception.BusinessException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+false
+c699d3aa9c494dd29eb0dcb2c90c0d8c
+==
+<init> java.lang.RuntimeException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V

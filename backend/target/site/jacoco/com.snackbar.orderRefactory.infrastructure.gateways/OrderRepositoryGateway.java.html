@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderRepositoryGateway.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.orderRefactory.infrastructure.gateways</a> &gt; <span class="el_source">OrderRepositoryGateway.java</span></div><h1>OrderRepositoryGateway.java</h1><pre class="source lang-java linenums">package com.snackbar.orderRefactory.infrastructure.gateways;
+
+import com.snackbar.orderRefactory.application.gateways.OrderGateway;
+import com.snackbar.orderRefactory.domain.entity.Order;
+import com.snackbar.orderRefactory.infrastructure.persistence.OrderEntity;
+import com.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class OrderRepositoryGateway implements OrderGateway {
+
+    private final OrderRefactoryRepository orderRefactoryRepository;
+    private final OrderEntityMapper orderEntityMapper;
+
+<span class="nc" id="L17">    public OrderRepositoryGateway(OrderRefactoryRepository orderRefactoryRepository, OrderEntityMapper orderEntityMapper) {</span>
+<span class="nc" id="L18">        this.orderRefactoryRepository = orderRefactoryRepository;</span>
+<span class="nc" id="L19">        this.orderEntityMapper = orderEntityMapper;</span>
+<span class="nc" id="L20">    }</span>
+
+    @Override
+    public Order createOrder(Order orderDomainObj) {
+<span class="nc" id="L24">        OrderEntity orderEntity = orderEntityMapper.toEntity(orderDomainObj);</span>
+<span class="nc" id="L25">        OrderEntity savedObj = orderRefactoryRepository.save(orderEntity);</span>
+<span class="nc" id="L26">        return orderEntityMapper.toDomainObj(savedObj);</span>
+    }
+
+    @Override
+    public Order updateOrder(Order orderDomainObj) {
+<span class="nc" id="L31">        OrderEntity orderEntity = orderEntityMapper.toEntity(orderDomainObj);</span>
+<span class="nc" id="L32">        OrderEntity updatedObj = orderRefactoryRepository.save(orderEntity);</span>
+<span class="nc" id="L33">        return orderEntityMapper.toDomainObj(updatedObj);</span>
+    }
+
+    @Override
+    public List&lt;Order&gt; listOrders() {
+<span class="nc" id="L38">        List&lt;OrderEntity&gt; orderEntities = orderRefactoryRepository.findAll();</span>
+<span class="nc" id="L39">        return orderEntities.stream()</span>
+<span class="nc" id="L40">                .map(orderEntityMapper::toDomainObj)</span>
+<span class="nc" id="L41">                .collect(Collectors.toList());</span>
+    }
+
+    @Override
+    public Order searchOrderId(String orderId) {
+<span class="nc" id="L46">        OrderEntity orderEntity = orderRefactoryRepository.findById(orderId).orElse(null);</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">        return orderEntity != null ? orderEntityMapper.toDomainObj(orderEntity) : null;</span>
+    }
+
+    @Override
+    public void updateStatusOrder(String orderId) {
+<span class="nc" id="L52">        OrderEntity orderEntity = orderRefactoryRepository.findById(orderId).orElse(null);</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">        if (orderEntity != null) {</span>
+            // Update the status of the order here
+<span class="nc" id="L55">            orderRefactoryRepository.save(orderEntity);</span>
+        }
+<span class="nc" id="L57">    }</span>
+
+    @Override
+    public Order getOrderByOrderNumber(String orderNumber) {
+<span class="nc" id="L61">        Optional&lt;OrderEntity&gt; orderEntity = orderRefactoryRepository.findByOrderNumber(orderNumber);</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        return orderEntity != null ? orderEntityMapper.toDomainObj(orderEntity.orElse(null)) : null;</span>
+    }
+
+    @Override
+    public List&lt;Order&gt; getSortedOrders() {
+<span class="nc" id="L67">        List&lt;OrderEntity&gt; orderEntities = orderRefactoryRepository.findAllByOrderByOrderNumberAsc();</span>
+<span class="nc" id="L68">        return orderEntities.stream()</span>
+<span class="nc" id="L69">                .map(orderEntityMapper::toDomainObj)</span>
+<span class="nc" id="L70">                .collect(Collectors.toList());</span>
+    }
+
+    @Override
+    public Optional&lt;Order&gt; findOrderById(String orderId) {
+<span class="nc" id="L75">        return orderRefactoryRepository.findById(orderId)</span>
+<span class="nc" id="L76">                .map(orderEntityMapper::toDomainObj);</span>
+    }
+
+    @Override
+    public Optional&lt;String&gt; findUserByCpf(String cpf) {
+//        return orderRepository.findUserByCpf(cpf);
+<span class="nc" id="L82">        return &quot; &quot;.describeConstable();</span>
+    }
+
+    @Override
+    public String findTopByOrderByOrderNumberDesc() {
+<span class="nc" id="L87">        return orderRefactoryRepository.findTopByOrderByOrderNumberDesc()</span>
+<span class="nc" id="L88">                .map(com.snackbar.order.domain.model.Order::getOrderNumber)</span>
+<span class="nc" id="L89">                .orElse(null);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

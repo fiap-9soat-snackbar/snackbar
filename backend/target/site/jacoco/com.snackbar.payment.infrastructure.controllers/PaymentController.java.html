@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PaymentController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.payment.infrastructure.controllers</a> &gt; <span class="el_source">PaymentController.java</span></div><h1>PaymentController.java</h1><pre class="source lang-java linenums">package com.snackbar.payment.infrastructure.controllers;
+
+import com.snackbar.payment.application.usecases.*;
+import com.snackbar.payment.domain.entity.Payment;
+import com.snackbar.payment.domain.entity.PaymentMP;
+import com.snackbar.payment.infrastructure.MpService;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/api/payments&quot;)
+public class PaymentController {
+
+    private final CreatePaymentUseCase createPaymentUseCase;
+    private final ListPaymentsUseCase listPaymentsUseCase;
+    private final CreatePaymentMPUseCase createPaymentMPUseCase;
+    private final PaymentDTOMapper paymentDTOMapper;
+    private final PaymentMPDTOMapper paymentMPDTOMapper;
+    private final MpService mpService;
+    private final GetPaymentByIdUseCase getPaymentByIdUseCase;
+    private final UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase;
+    private final GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase;
+    private final UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase;
+
+    @Autowired
+<span class="nc" id="L33">    public PaymentController(</span>
+            CreatePaymentUseCase createPaymentUseCase,
+            ListPaymentsUseCase listPaymentsUseCase,
+            CreatePaymentMPUseCase createPaymentMPUseCase,
+            PaymentDTOMapper paymentDTOMapper,
+            PaymentMPDTOMapper paymentMPDTOMapper,
+            GetPaymentByIdUseCase getPaymentByIdUseCase,
+            UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase,
+            GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase,
+            UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase,
+            MpService mpService) {
+<span class="nc" id="L44">        this.createPaymentUseCase = createPaymentUseCase;</span>
+<span class="nc" id="L45">        this.listPaymentsUseCase = listPaymentsUseCase;</span>
+<span class="nc" id="L46">        this.createPaymentMPUseCase = createPaymentMPUseCase;</span>
+<span class="nc" id="L47">        this.paymentDTOMapper = paymentDTOMapper;</span>
+<span class="nc" id="L48">        this.paymentMPDTOMapper = paymentMPDTOMapper;</span>
+<span class="nc" id="L49">        this.mpService = mpService;</span>
+<span class="nc" id="L50">        this.getPaymentByIdUseCase = getPaymentByIdUseCase;</span>
+<span class="nc" id="L51">        this.updatePaymentExternalIdByIdUseCase = updatePaymentExternalIdByIdUseCase;</span>
+<span class="nc" id="L52">        this.getPaymentByExternalIdUseCase = getPaymentByExternalIdUseCase;</span>
+<span class="nc" id="L53">        this.updatePaymentStatusByExternalIdUseCase = updatePaymentStatusByExternalIdUseCase;</span>
+<span class="nc" id="L54">    }</span>
+
+    @PostMapping
+    public ResponseEntity&lt;CreatePaymentResponse&gt; createPayment(@RequestBody CreatePaymentRequest request) {
+
+<span class="nc" id="L59">        Payment payment = paymentDTOMapper.createRequestToDomain(request);</span>
+<span class="nc" id="L60">        Payment createdPayment = createPaymentUseCase.createPayment(payment);</span>
+<span class="nc" id="L61">        var res = mpService.postMercadoPago(paymentDTOMapper.toPaymentMP(createdPayment));</span>
+        
+        // Parse the JSON response using Gson
+<span class="nc" id="L64">        JsonObject jsonObject = JsonParser.parseString(res).getAsJsonObject();</span>
+<span class="nc" id="L65">        String externalPaymentId = jsonObject.get(&quot;id&quot;).getAsString();</span>
+<span class="nc" id="L66">        String paymentId = jsonObject.get(&quot;paymentId&quot;).getAsString();</span>
+
+<span class="nc" id="L68">        Payment updatedPayment = updatePaymentExternalIdByIdUseCase.updatePaymentExternalIdById(paymentId,externalPaymentId);</span>
+        // lookup com cpf
+        // gerar url
+<span class="nc" id="L71">        CreatePaymentResponse response = paymentDTOMapper.createToResponse(updatedPayment);</span>
+<span class="nc" id="L72">        return ResponseEntity.ok(response);</span>
+    }
+
+    @GetMapping
+    public ResponseEntity&lt;List&lt;GetPaymentResponse&gt;&gt; listPayments() {
+<span class="nc" id="L77">        List&lt;Payment&gt; retrievedPaymentsList = listPaymentsUseCase.listPayments();</span>
+<span class="nc" id="L78">        List&lt;GetPaymentResponse&gt; response = paymentDTOMapper.listToResponse(retrievedPaymentsList);</span>
+<span class="nc" id="L79">        return ResponseEntity.ok(response);</span>
+    }
+
+    @GetMapping(&quot;/id/{id}&quot;)
+    public ResponseEntity&lt;GetPaymentResponse&gt; getPaymentById(@PathVariable(&quot;id&quot;) String id) {
+<span class="nc" id="L84">        Payment retrievedPayment = getPaymentByIdUseCase.getPaymentById(id);</span>
+<span class="nc" id="L85">        GetPaymentResponse response = paymentDTOMapper.getToResponse(retrievedPayment);</span>
+<span class="nc" id="L86">        return ResponseEntity.ok(response);</span>
+    }
+
+    @PostMapping(&quot;/mercadopago&quot;)
+    public ResponseEntity&lt;CreatePaymentMPResponse&gt; createPaymentMP(@RequestBody CreatePaymentMPRequest request) {
+<span class="nc" id="L91">        PaymentMP paymentMP = paymentMPDTOMapper.createRequestToDomain(request);</span>
+<span class="nc" id="L92">        PaymentMP createdPaymentMP = createPaymentMPUseCase.createPaymentMP(paymentMP);</span>
+<span class="nc" id="L93">        CreatePaymentMPResponse response = paymentMPDTOMapper.createToResponse(createdPaymentMP);</span>
+<span class="nc" id="L94">        return ResponseEntity.ok(response);</span>
+    }
+
+    @GetMapping(&quot;/externalId/{externalId}&quot;)
+    public ResponseEntity&lt;GetPaymentResponse&gt; getPaymentByExternalId(@PathVariable(&quot;externalId&quot;) String externalId) {
+<span class="nc" id="L99">        Payment retrievedPayment = getPaymentByExternalIdUseCase.getPaymentByExternalId(externalId);</span>
+<span class="nc" id="L100">        GetPaymentResponse response = paymentDTOMapper.getToResponse(retrievedPayment);</span>
+<span class="nc" id="L101">        return ResponseEntity.ok(response);</span>
+    }
+
+    @PatchMapping(&quot;/updateStatusWebhook&quot;)
+    public ResponseEntity&lt;GetPaymentResponse&gt; updatePaymentStatusByExternalId(@RequestBody UpdatePaymentStatusByExternalIdRequest request) {
+<span class="nc" id="L106">        Payment updatedPayment = updatePaymentStatusByExternalIdUseCase.updatePaymentStatus(request.externalId(), request.paymentStatus());</span>
+<span class="nc" id="L107">        GetPaymentResponse response = paymentDTOMapper.getToResponse(updatedPayment);</span>
+<span class="nc" id="L108">        return ResponseEntity.ok(response);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,370 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125586*java2.Bæ
+`
+[src/main/java/com/snackbar/cooking/infrastructure/gateways/OrderDatabaseGatewayCooking.java2
+
+package4
+1
+,com.snackbar.cooking.infrastructure.gateways5
+M
+Hcom.snackbar.cooking.infrastructure.gateways.OrderDatabaseGatewayCooking7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+!
+OrderDatabaseGatewayCooking12
+<
+6com.snackbar.cooking.application.gateways.OrderGateway14
+
+unknown15
+
+
+implements16
+.
+(org.springframework.stereotype.Component18
+
+annotated by19
+
+
+uses20
+^
+Xcom.snackbar.cooking.infrastructure.gateways.OrderDatabaseGatewayCooking.orderRepository22
+
+field23
+
+private24
+
+orderRepository25
+L
+Fcom.snackbar.cooking.infrastructure.persistence.OrderRepositoryCooking27
+
+is type28
+U
+Ocom.snackbar.cooking.infrastructure.gateways.OrderDatabaseGatewayCooking.mapper30
+
+mapper31
+K
+Ecom.snackbar.cooking.infrastructure.gateways.OrderEntityMapperCooking33
+è
+ácom.snackbar.cooking.infrastructure.gateways.OrderDatabaseGatewayCooking#<init>(Lcom/snackbar/cooking/infrastructure/persistence/OrderRepositoryCooking;Lcom/snackbar/cooking/infrastructure/gateways/OrderEntityMapperCooking;)V35
+
+method36
+
+	has param37
+
+calls38
+
+
+references39
+
+ycom.snackbar.cooking.infrastructure.gateways.OrderDatabaseGatewayCooking#findById(Ljava/lang/String;)Ljava/util/Optional;41
+
+findById42
+.
+(com.snackbar.cooking.domain.entity.Order44
+8
+2org.springframework.data.repository.CrudRepository46
+i
+corg.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;48
+¬
+¥com.snackbar.cooking.infrastructure.gateways.OrderDatabaseGatewayCooking#updateStatus(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Order;50
+
+updateStatus51
+
+returns52
+H
+Bcom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking54
+l
+fcom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#setStatusOrder(Ljava/lang/String;)V56
+c
+]org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;58
+Å
+¾com.snackbar.cooking.infrastructure.gateways.OrderEntityMapperCooking#toDomain(Lcom/snackbar/cooking/infrastructure/persistence/OrderEntityCooking;)Lcom/snackbar/cooking/domain/entity/Order;60J
+
+1
+12Z
+
+3	
+354já
+
+55
+555615
+
+57
+575815
+
+43
+434415
+
+32
+323315
+@
+21:
+212223 *
+1 (26:3B
+	
+9
+24
+
+
+11
+25
+@
+34:
+343536 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+@
+29:
+293023 *
+1 (26:3B
+	
+9
+24
+
+
+11
+31
+
+59
+596015
+
+45
+454615
+9
+64
+678 *
+1
+ 
+():3B
+	
+9
+10
+
+
+11
+12
+
+17
+171815
+
+13
+131415
+
+53
+535415
+
+26
+262715
+
+47
+474815
+@
+40:
+404136 *
+1 (26:3B
+	
+9
+10
+
+
+11
+42
+@
+49:
+495036 *
+1 (26:3B
+	
+9
+10
+
+
+11
+51rú
+
+61316*
+1
+5 
+(A
+
+61719*
+1	 	(
+
+61720*
+1	 	(
+
+61320*
+1
+5 
+(A
+
+212628*
+1 ()
+
+212620*
+1 ()
+
+212620*
+1* (9
+
+293228*
+1 (+
+
+293220*
+1 (+
+
+293220*
+1, (2
+
+342637*
+1( (>
+
+343237*
+1P (h
+
+34638*
+1 ('
+
+342628*
+1? (N
+
+342620*
+1( (>
+
+343228*
+1i (o
+
+343220*
+1P (h
+
+34620*
+1	 (
+
+34639*
+1	 (
+
+342620*
+1 (
+
+342139*
+1 (
+
+34620*
+1	 (
+
+34639*
+1	 (
+
+343220*
+1 (
+
+342939*
+1 (
+
+404320*
+1 (
+
+404539*
+1 (
+
+404738*
+1  ((
+
+402139*
+1 (
+
+402620*
+1 (
+
+402139*
+1 (
+
+403220*
+11 (7
+
+402939*
+11 (7
+
+494352*
+1 (
+
+494320*
+1 (
+
+495328*
+1 (
+
+495352*
+1 (%
+
+494539*
+1 (%
+
+494738*
+1& (.
+
+492139*
+1 (%
+
+492620*
+1 (%
+
+492139*
+1 (%
+
+495339*
+1	 (
+
+495538*
+1 (
+
+495328*
+1   (
+
+495352*
+1   (,
+
+494539*
+1   (,
+
+495738*
+1 -  (1
+
+492139*
+1   (,
+
+492620*
+1   (,
+
+492139*
+1   (,
+
+494352*
+1! !(
+
+493239*
+1! !(
+
+495938*
+1! !(
+
+492939*
+1! !(
+
+493220*
+1! !(
+
+492939*
+1! !(

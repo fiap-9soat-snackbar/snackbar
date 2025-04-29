@@ -1,0 +1,5 @@
+com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderController#getSortedOrders()Ljava/util/List;
+false
+a65d9a3b0c0026f6afc30132daa92a1a
+==
+getSortedOrders com.snackbar.orderRefactory.application.usecases.OrderUseCase#getSortedOrders()Ljava/util/List;

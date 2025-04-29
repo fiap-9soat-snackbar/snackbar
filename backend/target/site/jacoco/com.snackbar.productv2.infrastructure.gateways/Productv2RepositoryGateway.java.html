@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Productv2RepositoryGateway.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.productv2.infrastructure.gateways</a> &gt; <span class="el_source">Productv2RepositoryGateway.java</span></div><h1>Productv2RepositoryGateway.java</h1><pre class="source lang-java linenums">package com.snackbar.productv2.infrastructure.gateways;
+
+// This should be equivalent to the previous ProductRepository
+
+import com.snackbar.productv2.application.gateways.Productv2Gateway;
+import com.snackbar.productv2.domain.entity.Productv2;
+import com.snackbar.productv2.infrastructure.persistence.Productv2Entity;
+import com.snackbar.productv2.infrastructure.persistence.Productv2Repository;
+import java.util.List;
+
+
+public class Productv2RepositoryGateway implements Productv2Gateway {
+
+    private final Productv2Repository productv2Repository;
+    private final Productv2EntityMapper productv2EntityMapper;
+
+<span class="nc" id="L17">    public Productv2RepositoryGateway(Productv2Repository productv2Repository, Productv2EntityMapper productv2EntityMapper) {</span>
+<span class="nc" id="L18">        this.productv2Repository = productv2Repository;</span>
+<span class="nc" id="L19">        this.productv2EntityMapper = productv2EntityMapper;</span>
+<span class="nc" id="L20">    }</span>
+
+    @Override
+    public Productv2 createProductv2(Productv2 productv2DomainObj) {
+<span class="nc" id="L24">        Productv2Entity productv2Entity = productv2EntityMapper.toEntity(productv2DomainObj);</span>
+<span class="nc" id="L25">        Productv2Entity savedObj = productv2Repository.save(productv2Entity);</span>
+<span class="nc" id="L26">        Productv2 createdProductv2 = productv2EntityMapper.toDomainObj(savedObj);</span>
+<span class="nc" id="L27">        return createdProductv2;</span>
+    }
+    
+    @Override
+    public Productv2 getProductv2ById(String productv2Id) {
+<span class="nc" id="L32">        Productv2Entity retrievedObj = productv2Repository.findById(productv2Id).orElse(null);</span>
+<span class="nc" id="L33">        Productv2 retrievedProductv2 = productv2EntityMapper.toDomainObj(retrievedObj);</span>
+<span class="nc" id="L34">        return retrievedProductv2;</span>
+    }
+
+    @Override
+    public List&lt;Productv2&gt; listProductsv2() {
+<span class="nc" id="L39">        List&lt;Productv2Entity&gt; retrievedObjList = productv2Repository.findAll();</span>
+<span class="nc" id="L40">        List&lt;Productv2&gt; retrievedProductsv2List = productv2EntityMapper.toDomainListObj(retrievedObjList);</span>
+<span class="nc" id="L41">        return retrievedProductsv2List;</span>
+        
+    }
+
+    @Override
+    public List&lt;Productv2&gt; getProductsv2ByCategory(String productv2Category) {
+<span class="nc" id="L47">        List&lt;Productv2Entity&gt; retrievedObjList = productv2Repository.findByCategory(productv2Category);</span>
+<span class="nc" id="L48">        List&lt;Productv2&gt; retrievedProductsv2List = productv2EntityMapper.toDomainListObj(retrievedObjList);</span>
+<span class="nc" id="L49">        return retrievedProductsv2List;</span>
+    }
+
+    @Override
+    public Productv2 getProductv2ByName(String productv2Name) {
+<span class="nc" id="L54">        Productv2Entity retrievedObj = productv2Repository.findByName(productv2Name).orElse(null);</span>
+<span class="nc" id="L55">        Productv2 retrievedProductv2 = productv2EntityMapper.toDomainObj(retrievedObj);</span>
+<span class="nc" id="L56">        return retrievedProductv2;</span>
+    }
+
+    @Override
+    public Productv2 updateProductv2ById(String id, Productv2 productv2) {
+<span class="nc" id="L61">        Productv2Entity productv2Entity = productv2EntityMapper.toEntity(productv2);</span>
+<span class="nc" id="L62">        productv2Entity.setId(id);</span>
+<span class="nc" id="L63">        Productv2Entity savedObj = productv2Repository.save(productv2Entity);</span>
+<span class="nc" id="L64">        Productv2 updatedProductv2 = productv2EntityMapper.toDomainObj(savedObj);</span>
+<span class="nc" id="L65">        return updatedProductv2;</span>
+    }
+
+    @Override
+    public void deleteProductv2ById(String id) {
+<span class="nc" id="L70">        Productv2Entity retrievedObj = productv2Repository.findById(id).orElse(null);</span>
+<span class="nc" id="L71">        productv2Repository.delete(retrievedObj);</span>
+<span class="nc" id="L72">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

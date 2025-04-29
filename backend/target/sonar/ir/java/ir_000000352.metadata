@@ -1,0 +1,8 @@
+com.snackbar.iam.application.AuthenticationService#signup(Lcom/snackbar/iam/web/dto/RegisterUserDto;)Lcom/snackbar/iam/domain/UserEntity;
+false
+47b8c344eaec6994f7d2a709f21221db
+com.snackbar.iam.domain.IamRole#valueOf(Ljava/lang/String;)Lcom/snackbar/iam/domain/IamRole;
+==
+!unknownMethod! !unknownMethod!
+encode org.springframework.security.crypto.password.PasswordEncoder#encode(Ljava/lang/CharSequence;)Ljava/lang/String;
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;

@@ -1,0 +1,5 @@
+com.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase#deleteProductv2ById(Ljava/lang/String;)V
+false
+f3e7fa0716bd9605a213d213e32eb552
+==
+deleteProductv2ById com.snackbar.productv2.application.gateways.Productv2Gateway#deleteProductv2ById(Ljava/lang/String;)V

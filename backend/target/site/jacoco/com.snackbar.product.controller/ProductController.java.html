@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.product.controller</a> &gt; <span class="el_source">ProductController.java</span></div><h1>ProductController.java</h1><pre class="source lang-java linenums">package com.snackbar.product.controller;
+
+import com.snackbar.product.dto.ProductDTO;
+import com.snackbar.product.usecase.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/api/products&quot;)
+public class ProductController {
+
+    private final CreateProductUseCase createProductUseCase;
+    private final GetProductUseCase getProductUseCase;
+    private final GetAllProductsUseCase getAllProductsUseCase;
+    private final GetProductsByCategoryUseCase getProductsByCategoryUseCase;
+    private final UpdateProductUseCase updateProductUseCase;
+    private final DeleteProductUseCase deleteProductUseCase;
+
+    @Autowired
+<span class="nc" id="L23">    public ProductController(</span>
+            CreateProductUseCase createProductUseCase,
+            GetProductUseCase getProductUseCase,
+            GetAllProductsUseCase getAllProductsUseCase,
+            GetProductsByCategoryUseCase getProductsByCategoryUseCase,
+            UpdateProductUseCase updateProductUseCase,
+            DeleteProductUseCase deleteProductUseCase) {
+<span class="nc" id="L30">        this.createProductUseCase = createProductUseCase;</span>
+<span class="nc" id="L31">        this.getProductUseCase = getProductUseCase;</span>
+<span class="nc" id="L32">        this.getAllProductsUseCase = getAllProductsUseCase;</span>
+<span class="nc" id="L33">        this.getProductsByCategoryUseCase = getProductsByCategoryUseCase;</span>
+<span class="nc" id="L34">        this.updateProductUseCase = updateProductUseCase;</span>
+<span class="nc" id="L35">        this.deleteProductUseCase = deleteProductUseCase;</span>
+<span class="nc" id="L36">    }</span>
+
+    @PostMapping
+    public ResponseEntity&lt;ProductDTO&gt; createProduct(@RequestBody ProductDTO productDTO) {
+<span class="nc" id="L40">        ProductDTO createdProduct = createProductUseCase.createProduct(productDTO);</span>
+<span class="nc" id="L41">        return ResponseEntity.ok(createdProduct);</span>
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;ProductDTO&gt; getProduct(@PathVariable String id) {
+<span class="nc" id="L46">        ProductDTO product = getProductUseCase.getProduct(id);</span>
+<span class="nc" id="L47">        return ResponseEntity.ok(product);</span>
+    }
+
+    @GetMapping
+    public ResponseEntity&lt;List&lt;ProductDTO&gt;&gt; getAllProducts() {
+<span class="nc" id="L52">        List&lt;ProductDTO&gt; products = getAllProductsUseCase.getAllProducts();</span>
+<span class="nc" id="L53">        return ResponseEntity.ok(products);</span>
+    }
+
+    @GetMapping(&quot;/category/{category}&quot;)
+    public ResponseEntity&lt;List&lt;ProductDTO&gt;&gt; getProductsByCategory(@PathVariable String category) {
+<span class="nc" id="L58">        List&lt;ProductDTO&gt; products = getProductsByCategoryUseCase.getProductsByCategory(category);</span>
+<span class="nc" id="L59">        return ResponseEntity.ok(products);</span>
+    }
+
+    @PutMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;ProductDTO&gt; updateProduct(@PathVariable String id, @RequestBody ProductDTO productDTO) {
+<span class="nc" id="L64">        ProductDTO updatedProduct = updateProductUseCase.updateProduct(id, productDTO);</span>
+<span class="nc" id="L65">        return ResponseEntity.ok(updatedProduct);</span>
+    }
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteProduct(@PathVariable String id) {
+<span class="nc" id="L70">        deleteProductUseCase.deleteProduct(id);</span>
+<span class="nc" id="L71">        return ResponseEntity.ok().build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

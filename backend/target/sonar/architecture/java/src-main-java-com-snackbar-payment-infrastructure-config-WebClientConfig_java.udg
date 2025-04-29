@@ -1,0 +1,159 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126892*java2.Bˆ	
+R
+Msrc/main/java/com/snackbar/payment/infrastructure/config/WebClientConfig.java2
+
+package4
+/
+*com.snackbar.payment.infrastructure.config5
+?
+:com.snackbar.payment.infrastructure.config.WebClientConfig7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+WebClientConfig12
+:
+4org.springframework.context.annotation.Configuration14
+
+unknown15
+
+annotated by16
+
+
+uses17
+â
+Çcom.snackbar.payment.infrastructure.config.WebClientConfig#webClient()Lorg/springframework/web/reactive/function/client/WebClient;19
+
+method20
+
+	webClient21
+@
+:org.springframework.web.reactive.function.client.WebClient23
+
+returns24
+1
++org.springframework.context.annotation.Bean26
+H
+Borg.springframework.web.reactive.function.client.WebClient$Builder28
+
+
+references29
+ç
+Üorg.springframework.web.reactive.function.client.WebClient$Builder#build()Lorg/springframework/web/reactive/function/client/WebClient;31
+
+calls32
+©
+¢org.springframework.web.reactive.function.client.WebClient$Builder#baseUrl(Ljava/lang/String;)Lorg/springframework/web/reactive/function/client/WebClient$Builder;34
+è
+àorg.springframework.web.reactive.function.client.WebClient#builder()Lorg/springframework/web/reactive/function/client/WebClient$Builder;36J
+
+1
+12Z
+
+3	
+354jâ
+
+13
+131415
+
+35
+353615
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+
+30
+303115
+
+27
+272815
+
+33
+333415
+
+22
+222315
+
+25
+252615
+@
+18:
+181920 *
+1
+ 
+(26:3B
+	
+9
+10
+
+
+11
+21rÆ
+
+61316*
+1 (
+
+61317*
+1 (
+
+182224*
+1 (
+
+182516*
+1
+ 
+(
+
+182517*
+1
+ 
+(
+
+
+182217*
+1 (
+
+182224*
+1 (
+
+182729*
+1 (
+
+183032*
+1 (
+
+182724*
+1 (
+
+182729*
+1 (
+
+183332*
+1 (
+
+182724*
+1 (
+
+182229*
+1 (
+
+183532*
+1 (!
+
+182217*
+1 (

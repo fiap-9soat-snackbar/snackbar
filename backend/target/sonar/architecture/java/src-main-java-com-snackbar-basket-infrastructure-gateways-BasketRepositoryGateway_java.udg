@@ -1,0 +1,700 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125893*java2.B°
+[
+Vsrc/main/java/com/snackbar/basket/infrastructure/gateways/BasketRepositoryGateway.java2
+
+package4
+0
++com.snackbar.basket.infrastructure.gateways5
+H
+Ccom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+BasketRepositoryGateway12
+C
+=com.snackbar.basket.application.gateways.BasketUseCaseGateway14
+
+unknown15
+
+
+implements16
+
+
+uses17
+Z
+Tcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway.basketRepository19
+
+field20
+
+private21
+
+basketRepository22
+E
+?com.snackbar.basket.infrastructure.persistence.BasketRepository24
+
+is type25
+\
+Vcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway.basketEntityMapper27
+
+basketEntityMapper28
+D
+>com.snackbar.basket.infrastructure.gateways.BasketEntityMapper30
+Z
+Tcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway.itemEntityMapper32
+
+itemEntityMapper33
+B
+<com.snackbar.basket.infrastructure.gateways.ItemEntityMapper35
+“
+Œcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway#<init>(Lcom/snackbar/basket/infrastructure/persistence/BasketRepository;Lcom/snackbar/basket/infrastructure/gateways/BasketEntityMapper;Lcom/snackbar/basket/infrastructure/gateways/ItemEntityMapper;)V37
+
+method38
+
+	has param39
+
+calls40
+
+
+references41
+­
+¦com.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway#createBasket(Lcom/snackbar/basket/domain/entity/Basket;)Lcom/snackbar/basket/domain/entity/Basket;43
+
+createBasket44
+.
+(com.snackbar.basket.domain.entity.Basket46
+
+returns47
+A
+;com.snackbar.basket.infrastructure.persistence.BasketEntity49
+·
+°com.snackbar.basket.infrastructure.gateways.BasketEntityMapper#toEntity(Lcom/snackbar/basket/domain/entity/Basket;)Lcom/snackbar/basket/infrastructure/persistence/BasketEntity;51
+8
+2org.springframework.data.repository.CrudRepository53
+c
+]org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;55
+º
+³com.snackbar.basket.infrastructure.gateways.BasketEntityMapper#toDomainObj(Lcom/snackbar/basket/infrastructure/persistence/BasketEntity;)Lcom/snackbar/basket/domain/entity/Basket;57
+“
+Œcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway#findBasket(Ljava/lang/String;)Lcom/snackbar/basket/domain/entity/Basket;59
+
+
+findBasket60
+i
+corg.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;62
+j
+dcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway#findAllBaskets()Ljava/util/List;64
+
+findAllBaskets65
+<
+6org.springframework.data.repository.ListCrudRepository67
+V
+Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;69
+À
+¹com.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway#addItemToBasket(Ljava/lang/String;Lcom/snackbar/basket/domain/entity/Item;)Lcom/snackbar/basket/domain/entity/Basket;71
+
+addItemToBasket72
+,
+&com.snackbar.basket.domain.entity.Item74
+?
+9com.snackbar.basket.infrastructure.persistence.ItemEntity76
+±
+ªcom.snackbar.basket.infrastructure.gateways.ItemEntityMapper#toEntity(Lcom/snackbar/basket/domain/entity/Item;)Lcom/snackbar/basket/infrastructure/persistence/ItemEntity;78
+­
+¦com.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway#deleteItemToBasket(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/basket/domain/entity/Basket;80
+
+deleteItemToBasket81J
+
+1
+12Z
+
+3	
+354jÍ
+
+68
+686915
+@
+70:
+707138 *
+1) )(26:3B
+	
+9
+10
+
+
+11
+72
+9
+64
+678 *
+1 (%:3B
+	
+9
+10
+
+
+11
+12
+
+50
+505115
+
+48
+484915
+@
+63:
+636438 *
+1$ $(26:3B
+	
+9
+10
+
+
+11
+65
+
+13
+131415
+
+77
+777815
+@
+36:
+363738 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+
+52
+525315
+@
+79:
+798038 *
+11 1(26:3B
+	
+9
+10
+
+
+11
+81
+
+56
+565715
+@
+42:
+424338 *
+1 (26:3B
+	
+9
+10
+
+
+11
+44
+
+23
+232415
+@
+58:
+585938 *
+1 (26:3B
+	
+9
+10
+
+
+11
+60
+@
+18:
+181920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+22
+
+29
+293015
+
+34
+343515
+
+54
+545515
+
+45
+454615
+@
+31:
+313220 *
+1 (26:3B
+	
+9
+21
+
+
+11
+33
+
+66
+666715
+
+75
+757615
+@
+26:
+262720 *
+1 (26:3B
+	
+9
+21
+
+
+11
+28
+
+73
+737415
+
+61
+616215r×
+
+61316*
+11 (E
+
+61317*
+11 (E
+
+182325*
+1 (#
+
+182317*
+1 (#
+
+182317*
+1$ (4
+
+262925*
+1 (%
+
+262917*
+1 (%
+
+262917*
+1& (8
+
+313425*
+1 (#
+
+313417*
+1 (#
+
+313417*
+1$ (4
+
+362339*
+1$ (4
+
+362939*
+1G (Y
+
+363439*
+1n (~
+
+36640*
+1 (#
+
+362325*
+15 (E
+
+362317*
+1$ (4
+
+362925*
+1Z (l
+
+362917*
+1G (Y
+
+363425*
+1 (
+
+363417*
+1n (~
+
+36617*
+1	 (
+
+36641*
+1	 (
+
+362317*
+1 (
+
+361841*
+1 (
+
+36617*
+1	 (
+
+36641*
+1	 (
+
+362917*
+1 ( 
+
+362641*
+1 ( 
+
+36617*
+1	 (
+
+36641*
+1	 (
+
+363417*
+1 (
+
+363141*
+1 (
+
+424547*
+1 (
+
+424539*
+1  (&
+
+424517*
+1 (
+
+424525*
+1' (6
+
+424517*
+1  (&
+
+424825*
+1 ("
+
+424817*
+1	 (
+
+424847*
+1% (7
+
+422941*
+1% (7
+
+425040*
+18 (@
+
+422641*
+1% (7
+
+422917*
+1% (7
+
+422641*
+1% (7
+
+424825*
+1 (
+
+424817*
+1	 (
+
+424847*
+1! (1
+
+425241*
+1! (1
+
+425440*
+12 (6
+
+421841*
+1! (1
+
+422317*
+1! (1
+
+421841*
+1! (1
+
+424547*
+1 ("
+
+422941*
+1 ("
+
+425640*
+1# (.
+
+422641*
+1 ("
+
+422917*
+1 ("
+
+422641*
+1 ("
+
+584547*
+1 (
+
+584517*
+1 (
+
+584825*
+1   ("
+
+584817*
+1 	  (
+
+584847*
+1 %  (5
+
+585241*
+1 %  (5
+
+586140*
+1 6  (>
+
+581841*
+1 %  (5
+
+582317*
+1 %  (5
+
+581841*
+1 %  (5
+
+584547*
+1! !("
+
+582941*
+1! !("
+
+585640*
+1!# !(.
+
+582641*
+1! !("
+
+582917*
+1! !("
+
+582641*
+1! !("
+
+634517*
+1% %(
+
+636641*
+1& &( 
+
+636840*
+1&! &((
+
+631841*
+1& &( 
+
+632317*
+1& &( 
+
+631841*
+1& &( 
+
+632917*
+1&8 &(J
+
+632641*
+1&8 &(J
+
+704547*
+1* *(
+
+707339*
+1*4 *(8
+
+704517*
+1* *(
+
+707325*
+1*9 *(=
+
+707317*
+1*4 *(8
+
+704825*
+1+ +("
+
+704817*
+1+	 +(
+
+704847*
+1+% +(5
+
+705241*
+1+% +(5
+
+706140*
+1+6 +(>
+
+701841*
+1+% +(5
+
+702317*
+1+% +(5
+
+701841*
+1+% +(5
+
+707547*
+1,% ,(5
+
+703441*
+1,% ,(5
+
+707740*
+1,6 ,(>
+
+703141*
+1,% ,(5
+
+703417*
+1,% ,(5
+
+703141*
+1,% ,(5
+
+704825*
+1- -(#
+
+704817*
+1-	 -(
+
+704847*
+1-& -(6
+
+705241*
+1-& -(6
+
+705440*
+1-7 -(;
+
+701841*
+1-& -(6
+
+702317*
+1-& -(6
+
+701841*
+1-& -(6
+
+704547*
+1. .("
+
+702941*
+1. .("
+
+705640*
+1.# .(.
+
+702641*
+1. .("
+
+702917*
+1. .("
+
+702641*
+1. .("
+
+794547*
+12 2(
+
+794517*
+12 2(
+
+794825*
+13 3("
+
+794817*
+13	 3(
+
+794847*
+13% 3(5
+
+795241*
+13% 3(5
+
+796140*
+136 3(>
+
+791841*
+13% 3(5
+
+792317*
+13% 3(5
+
+791841*
+13% 3(5
+
+794825*
+15 5(#
+
+794817*
+15	 5(
+
+794847*
+15& 5(6
+
+795241*
+15& 5(6
+
+795440*
+157 5(;
+
+791841*
+15& 5(6
+
+792317*
+15& 5(6
+
+791841*
+15& 5(6
+
+794547*
+16 6("
+
+792941*
+16 6("
+
+795640*
+16# 6(.
+
+792641*
+16 6("
+
+792917*
+16 6("
+
+792641*
+16 6("

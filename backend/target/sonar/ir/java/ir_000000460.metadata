@@ -1,0 +1,7 @@
+com.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#toDomainItem(Lcom/snackbar/orderRefactory/infrastructure/persistence/ItemEntity;)Lcom/snackbar/orderRefactory/domain/entity/OrderItem;
+false
+b80420477e0ed432c675cd3fe7866a32
+com.snackbar.orderRefactory.domain.entity.OrderItem#<init>(Ljava/lang/String;Ljava/lang/Integer;Ljava/math/BigDecimal;Ljava/lang/Integer;Ljava/lang/String;)V
+com.snackbar.orderRefactory.domain.entity.OrderItem#instance-init#
+==
+!unknownMethod! !unknownMethod!

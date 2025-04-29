@@ -1,0 +1,533 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126567*java2.B¾
+R
+Msrc/main/java/com/snackbar/productv2/infrastructure/config/ProductConfig.java2
+
+package4
+1
+,com.snackbar.productv2.infrastructure.config5
+?
+:com.snackbar.productv2.infrastructure.config.ProductConfig7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+ProductConfig12
+:
+4org.springframework.context.annotation.Configuration14
+
+unknown15
+
+annotated by16
+
+
+uses17
+Ü
+Õcom.snackbar.productv2.infrastructure.config.ProductConfig#createv2ProductUseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/CreateProductv2UseCase;19
+
+method20
+
+	protected21
+
+createv2ProductUseCase22
+H
+Bcom.snackbar.productv2.application.usecases.CreateProductv2UseCase24
+
+returns25
+B
+<com.snackbar.productv2.application.gateways.Productv2Gateway27
+
+	has param28
+1
++org.springframework.context.annotation.Bean30
+
+is type31
+
+calls32
+Þ
+×com.snackbar.productv2.infrastructure.config.ProductConfig#getProductv2ByIdUseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/GetProductv2ByIdUseCase;34
+
+getProductv2ByIdUseCase35
+I
+Ccom.snackbar.productv2.application.usecases.GetProductv2ByIdUseCase37
+Ú
+Ócom.snackbar.productv2.infrastructure.config.ProductConfig#listProductsv2UseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/ListProductsv2UseCase;39
+
+listProductsv2UseCase40
+G
+Acom.snackbar.productv2.application.usecases.ListProductsv2UseCase42
+å
+Þcom.snackbar.productv2.infrastructure.config.ProductConfig#getProductsv2ByCategory(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/GetProductsv2ByCategoryUseCase;44
+
+getProductsv2ByCategory45
+P
+Jcom.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase47
+â
+Ûcom.snackbar.productv2.infrastructure.config.ProductConfig#getProductv2ByNameUseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/GetProductv2ByNameUseCase;49
+
+getProductv2ByNameUseCase50
+K
+Ecom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase52
+©
+¢com.snackbar.productv2.infrastructure.config.ProductConfig#updateProductv2ByIdUseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;Lcom/snackbar/productv2/application/usecases/GetProductv2ByIdUseCase;)Lcom/snackbar/productv2/application/usecases/UpdateProductv2ByIdUseCase;54
+ 
+updateProductv2ByIdUseCase55
+L
+Fcom.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase57
+ä
+Ýcom.snackbar.productv2.infrastructure.config.ProductConfig#deleteProductv2ByIdUseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/DeleteProductv2ByIdUseCase;59
+ 
+deleteProductv2ByIdUseCase60
+L
+Fcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase62
+Ÿ
+˜com.snackbar.productv2.infrastructure.config.ProductConfig#productv2Gateway(Lcom/snackbar/productv2/infrastructure/persistence/Productv2Repository;Lcom/snackbar/productv2/infrastructure/gateways/Productv2EntityMapper;)Lcom/snackbar/productv2/application/gateways/Productv2Gateway;64
+
+productv2Gateway65
+K
+Ecom.snackbar.productv2.infrastructure.persistence.Productv2Repository67
+J
+Dcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper69
+O
+Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway71
+Ÿ
+˜com.snackbar.productv2.infrastructure.config.ProductConfig#productv2EntityMapper()Lcom/snackbar/productv2/infrastructure/gateways/Productv2EntityMapper;73
+
+productv2EntityMapper74
+œ
+•com.snackbar.productv2.infrastructure.config.ProductConfig#productv2DTOMapper()Lcom/snackbar/productv2/infrastructure/controllers/Productv2DTOMapper;76
+
+productv2DTOMapper77
+J
+Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper79J
+
+1
+12Z
+
+3	
+354jç
+
+56
+565715
+@
+75:
+757620 *
+1< <(26:3B
+	
+9
+21
+
+
+11
+77
+@
+38:
+383920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+40
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+
+78
+787915
+
+66
+666715
+
+36
+363715
+
+61
+616215
+@
+72:
+727320 *
+17 7(26:3B
+	
+9
+21
+
+
+11
+74
+@
+33:
+333420 *
+1 (26:3B
+	
+9
+21
+
+
+11
+35
+
+68
+686915
+@
+58:
+585920 *
+1- -(26:3B
+	
+9
+21
+
+
+11
+60
+@
+18:
+181920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+22
+@
+48:
+484920 *
+1# #(26:3B
+	
+9
+21
+
+
+11
+50
+
+41
+414215
+
+13
+131415
+
+46
+464715
+@
+63:
+636420 *
+12 2(26:3B
+	
+9
+21
+
+
+11
+65
+
+23
+232415
+
+51
+515215
+
+26
+262715
+
+70
+707115
+
+29
+293015
+@
+43:
+434420 *
+1 (26:3B
+	
+9
+21
+
+
+11
+45
+@
+53:
+535420 *
+1( ((26:3B
+	
+9
+21
+
+
+11
+55r¥
+
+61316*
+1 (
+
+61317*
+1 (
+
+182325*
+1 (
+
+182628*
+13 (C
+
+182916*
+1 (
+
+182917*
+1 (
+
+
+182317*
+1 (
+
+182631*
+1D (T
+
+182617*
+13 (C
+
+182332*
+1 (*
+
+333625*
+1 (
+
+332628*
+15 (E
+
+332916*
+1 (
+
+332917*
+1 (
+
+
+333617*
+1 (
+
+332631*
+1F (V
+
+332617*
+15 (E
+
+333632*
+1 (+
+
+384125*
+1 (
+
+382628*
+11 (A
+
+382916*
+1 (
+
+382917*
+1 (
+
+
+384117*
+1 (
+
+382631*
+1B (R
+
+382617*
+11 (A
+
+384132*
+1 ()
+
+434625*
+1 (#
+
+432628*
+1< (L
+
+432916*
+1 (
+
+432917*
+1 (
+
+
+434617*
+1 (#
+
+432631*
+1M (]
+
+432617*
+1< (L
+
+434632*
+1   (2
+
+485125*
+1$ $(
+
+482628*
+1$9 $(I
+
+482916*
+1# #(
+
+482917*
+1# #(
+
+
+485117*
+1$ $(
+
+482631*
+1$J $(Z
+
+482617*
+1$9 $(I
+
+485132*
+1% %(-
+
+535625*
+1) )(
+
+532628*
+1); )(K
+
+533628*
+1)^ )(u
+
+532916*
+1( ((
+
+532917*
+1( ((
+
+
+535617*
+1) )(
+
+532631*
+1)L )(\
+
+532617*
+1); )(K
+
+533631*
+1)v )(
+
+533617*
+1)^ )(u
+
+535632*
+1* *(.
+
+586125*
+1. .(
+
+582628*
+1.; .(K
+
+582916*
+1- -(
+
+582917*
+1- -(
+
+
+586117*
+1. .(
+
+582631*
+1.L .(\
+
+582617*
+1.; .(K
+
+586132*
+1/ /(.
+
+632625*
+13 3(
+
+636628*
+13' 3(:
+
+636828*
+13P 3(e
+
+632916*
+12 2(
+
+632917*
+12 2(
+
+
+632617*
+13 3(
+
+636631*
+13; 3(N
+
+636617*
+13' 3(:
+
+636831*
+13f 3({
+
+636817*
+13P 3(e
+
+637032*
+14 4(.
+
+726825*
+18 8(
+
+722916*
+17 7(
+
+722917*
+17 7(
+
+
+726817*
+18 8(
+
+726832*
+19 9()
+
+757825*
+1= =(
+
+752916*
+1< <(
+
+752917*
+1< <(
+
+
+757817*
+1= =(
+
+757832*
+1> >(&

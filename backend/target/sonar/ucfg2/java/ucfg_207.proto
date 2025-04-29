@@ -1,0 +1,15 @@
+
+hcom.snackbar.checkout.infrastructure.configuration.ErrorResponse#getTimestamp()Ljava/time/LocalDateTime;ö
+è/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/checkout/infrastructure/configuration/GlobalExceptionHandler.java6 6(%"1*‡
+17 7(£
+†
+7 7(
+%0java.time.LocalDateTime"__id*o
+
+__unknown_file (S*QB
+@com.snackbar.checkout.infrastructure.configuration.ErrorResponse"
+	timestamp"+
+7 7(
+
+%0java.time.LocalDateTimeBDB
+@com.snackbar.checkout.infrastructure.configuration.ErrorResponseH

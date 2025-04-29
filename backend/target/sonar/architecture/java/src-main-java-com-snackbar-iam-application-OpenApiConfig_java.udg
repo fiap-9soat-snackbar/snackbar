@@ -1,0 +1,304 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125634*java2.Bý
+B
+=src/main/java/com/snackbar/iam/application/OpenApiConfig.java2
+
+package4
+!
+com.snackbar.iam.application5
+/
+*com.snackbar.iam.application.OpenApiConfig7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+OpenApiConfig12
+:
+4org.springframework.context.annotation.Configuration14
+
+unknown15
+
+annotated by16
+
+
+uses17
+;
+5io.swagger.v3.oas.annotations.security.SecurityScheme19
+<
+6io.swagger.v3.oas.annotations.enums.SecuritySchemeType21
+A
+;io.swagger.v3.oas.annotations.enums.SecuritySchemeType.HTTP23
+
+
+references24
+9
+3com.snackbar.iam.application.OpenApiConfig.appTitle26
+
+field27
+
+appTitle28
+8
+2org.springframework.beans.factory.annotation.Value30
+?
+9com.snackbar.iam.application.OpenApiConfig.appDescription32
+
+appDescription33
+;
+5com.snackbar.iam.application.OpenApiConfig.appVersion35
+
+
+appVersion36
+b
+\com.snackbar.iam.application.OpenApiConfig#customOpenAPI()Lio/swagger/v3/oas/models/OpenAPI;38
+
+method39
+
+	protected40
+
+customOpenAPI41
+&
+ io.swagger.v3.oas.models.OpenAPI43
+
+returns44
+1
++org.springframework.context.annotation.Bean46
+s
+mio.swagger.v3.oas.models.OpenAPI#info(Lio/swagger/v3/oas/models/info/Info;)Lio/swagger/v3/oas/models/OpenAPI;48
+
+calls49
+z
+tio.swagger.v3.oas.models.OpenAPI#components(Lio/swagger/v3/oas/models/Components;)Lio/swagger/v3/oas/models/OpenAPI;51
+)
+#io.swagger.v3.oas.models.Components53
+(
+"io.swagger.v3.oas.models.info.Info55
+h
+bio.swagger.v3.oas.models.info.Info#version(Ljava/lang/String;)Lio/swagger/v3/oas/models/info/Info;57
+l
+fio.swagger.v3.oas.models.info.Info#description(Ljava/lang/String;)Lio/swagger/v3/oas/models/info/Info;59
+f
+`io.swagger.v3.oas.models.info.Info#title(Ljava/lang/String;)Lio/swagger/v3/oas/models/info/Info;61J
+
+1
+12Z
+
+3	
+354jÛ
+
+60
+606115
+@
+34:
+343527 *
+1 (26:3B
+	
+9
+10
+
+
+11
+36
+
+54
+545515
+
+18
+181915
+
+22
+222315
+@
+37:
+373839 *
+1 (26:3B
+	
+9
+40
+
+
+11
+41
+
+13
+131415
+
+29
+293015
+
+58
+585915
+
+47
+474815
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+@
+31:
+313227 *
+1 (26:3B
+	
+9
+10
+
+
+11
+33
+
+42
+424315
+
+52
+525315
+
+56
+565715
+
+50
+505115
+
+45
+454615
+
+20
+202115
+@
+25:
+252627 *
+1 (26:3B
+	
+9
+10
+
+
+11
+28rû
+
+61316*
+1 (
+
+61317*
+1 (
+
+61816*
+1 (
+
+61817*
+1 (
+
+62017*
+1 ("
+
+62017*
+1# ('
+
+62224*
+1# ('
+
+252916*
+1 (
+
+252917*
+1 (
+
+312916*
+1 (
+
+312917*
+1 (
+
+342916*
+1 (
+
+342917*
+1 (
+
+374244*
+1 (
+
+374516*
+1 (
+
+374517*
+1 (
+
+
+374217*
+1 (
+
+374244*
+1   (
+
+374224*
+1   (
+
+374749*
+1" "(
+
+374244*
+1   (
+
+374224*
+1   (
+
+375049*
+1! !(
+
+374249*
+1   (
+
+375249*
+1!! !(+
+
+375444*
+1" "(
+
+375424*
+1" "(
+
+375649*
+1#) #(0
+
+375444*
+1" "(
+
+375424*
+1" "(
+
+375849*
+1"2 "(=
+
+375444*
+1" "(
+
+375424*
+1" "(
+
+376049*
+1"" "('
+
+375449*
+1" "(
+
+372524*
+1"( "(0
+
+373124*
+1# #('
+
+373424*
+1#1 #(;

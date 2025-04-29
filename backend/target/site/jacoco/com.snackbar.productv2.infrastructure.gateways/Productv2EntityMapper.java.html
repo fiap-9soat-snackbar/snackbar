@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Productv2EntityMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.productv2.infrastructure.gateways</a> &gt; <span class="el_source">Productv2EntityMapper.java</span></div><h1>Productv2EntityMapper.java</h1><pre class="source lang-java linenums">package com.snackbar.productv2.infrastructure.gateways;
+
+import com.snackbar.productv2.domain.entity.Productv2;
+import com.snackbar.productv2.infrastructure.persistence.Productv2Entity;
+
+import java.util.List;
+
+<span class="nc" id="L8">public class Productv2EntityMapper {</span>
+    Productv2Entity toEntity(Productv2 productv2DomainObj) {
+<span class="nc" id="L10">        return new Productv2Entity(productv2DomainObj.id (), productv2DomainObj.name (), productv2DomainObj.category(), productv2DomainObj.description(), productv2DomainObj.price(), productv2DomainObj.cookingTime());</span>
+    }
+    
+    Productv2 toDomainObj(Productv2Entity productv2Entity) {
+<span class="nc" id="L14">        return new Productv2(productv2Entity.getId(), productv2Entity.getName(), productv2Entity.getCategory(), productv2Entity.getDescription(), productv2Entity.getPrice(), productv2Entity.getCookingTime());</span>
+    }
+
+    List&lt;Productv2&gt; toDomainListObj(List&lt;Productv2Entity&gt; productv2EntityList) {
+<span class="nc" id="L18">        return productv2EntityList.stream()</span>
+<span class="nc" id="L19">            .map(this::toDomainObj)</span>
+<span class="nc" id="L20">            .toList();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

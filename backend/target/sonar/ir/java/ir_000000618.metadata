@@ -1,0 +1,7 @@
+com.snackbar.basket.infrastructure.controllers.BasketController#addItem(Ljava/lang/String;Lcom/snackbar/basket/infrastructure/controllers/ItemRequest;)Lcom/snackbar/basket/infrastructure/controllers/CreateBasketResponse;
+false
+ff6ebe7112d5e44667eb46cc479ee667
+==
+addItemToBasket com.snackbar.basket.application.usecases.BasketUseCase#addItemToBasket(Ljava/lang/String;Lcom/snackbar/basket/domain/entity/Item;)Lcom/snackbar/basket/domain/entity/Basket;
+toItem com.snackbar.basket.infrastructure.controllers.BasketDTOMapper#toItem(Lcom/snackbar/basket/infrastructure/controllers/ItemRequest;)Lcom/snackbar/basket/domain/entity/Item;
+toResponse com.snackbar.basket.infrastructure.controllers.BasketDTOMapper#toResponse(Lcom/snackbar/basket/domain/entity/Basket;)Lcom/snackbar/basket/infrastructure/controllers/CreateBasketResponse;

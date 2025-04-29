@@ -1,0 +1,5 @@
+com.snackbar.productv2.infrastructure.config.ProductConfig#updateProductv2ByIdUseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;Lcom/snackbar/productv2/application/usecases/GetProductv2ByIdUseCase;)Lcom/snackbar/productv2/application/usecases/UpdateProductv2ByIdUseCase;
+false
+a87ed111e8edb06b589e7bae2e099091
+com.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase#<init>(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;Lcom/snackbar/productv2/application/usecases/GetProductv2ByIdUseCase;)V
+com.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase#instance-init#

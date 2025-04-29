@@ -1,0 +1,67 @@
+
+ûcom.snackbar.basket.config.BasketConfig#basketUseCase(Lcom/snackbar/basket/infrastructure/gateways/BasketRepositoryGateway;Lcom/snackbar/productv2/application/usecases/GetProductv2ByNameUseCase;)Lcom/snackbar/basket/application/usecases/BasketUseCase;w
+m/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/basket/config/BasketConfig.java   (&"startingBlock*´
+startingBlock & #(ê
+ç
+ (	
+%2"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*|
+
+__unknown_file (`
+^
+basketRepositoryGatewayCcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGatewayŸ
+œ
+!$ !(;^
+basketRepositoryGatewayCcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway"__annotation*"
+
+__unknown_file (
+
+%2æ
+ã
+ (	
+%3"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*x
+
+__unknown_file (\
+Z
+getProductUseCaseEcom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase›
+˜
+"& "(7Z
+getProductUseCaseEcom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase"__annotation*"
+
+__unknown_file (
+
+%3*
+1*’
+1$! $(8ƒ€
+$ $( <
+%06com.snackbar.basket.application.usecases.BasketUseCase"6com.snackbar.basket.application.usecases.BasketUseCase°
+­
+$ $(L
+%1"Æcom.snackbar.basket.application.usecases.BasketUseCase#<init>(Lcom/snackbar/basket/application/gateways/BasketUseCaseGateway;Lcom/snackbar/productv2/application/usecases/GetProductv2ByNameUseCase;)V*Z
+
+__unknown_file (>
+<
+%06com.snackbar.basket.application.usecases.BasketUseCase*|
+
+__unknown_file (`
+^
+basketRepositoryGatewayCcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway*x
+
+__unknown_file (\
+Z
+getProductUseCaseEcom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase"J
+$ $(M>
+<
+%06com.snackbar.basket.application.usecases.BasketUseCase:j
+! !(<^
+basketRepositoryGatewayCcom.snackbar.basket.infrastructure.gateways.BasketRepositoryGateway:f
+" "(7Z
+getProductUseCaseEcom.snackbar.productv2.application.usecases.GetProductv2ByNameUseCaseB+)
+'com.snackbar.basket.config.BasketConfigH

@@ -1,0 +1,15 @@
+
+ecom.snackbar.productv2.infrastructure.persistence.Productv2Entity#getCookingTime()Ljava/lang/Integer;í
+á/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/persistence/Productv2Entity.javaG G(!"1*◊
+1H H(†
+ù
+H H(
+%0java.lang.Integer"__id*r
+
+__unknown_file (V*TC
+Acom.snackbar.productv2.infrastructure.persistence.Productv2Entity"
+cookingTime"%
+H H(
+
+%0java.lang.IntegerBEC
+Acom.snackbar.productv2.infrastructure.persistence.Productv2EntityH

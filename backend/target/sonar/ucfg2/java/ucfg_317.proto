@@ -1,0 +1,58 @@
+
+„com.snackbar.iam.application.JwtService#isTokenValid(Ljava/lang/String;Lorg/springframework/security/core/userdetails/UserDetails;)Zw
+m/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/JwtService.javaB B("3*€
+2D@ D(Në
+è
+D@ D(U
+%3boolean"Kcom.snackbar.iam.application.JwtService#isTokenExpired(Ljava/lang/String;)Z*G
+
+__unknown_file (+)
+'com.snackbar.iam.application.JwtService*7
+
+__unknown_file (
+
+tokenjava.lang.String*
+1*€
+3C  C(/«¨
+C  C(6
+%0java.lang.String"]com.snackbar.iam.application.JwtService#extractUsername(Ljava/lang/String;)Ljava/lang/String;*G
+
+__unknown_file (+)
+'com.snackbar.iam.application.JwtService*7
+
+__unknown_file (
+
+tokenjava.lang.String2#extractUsername(Ljava/lang/String;)f
+d
+C C(7
+usernamejava.lang.String"__id*4
+
+__unknown_file (
+
+%0java.lang.String÷ô
+D  D(9
+%1java.lang.String"Yorg.springframework.security.core.userdetails.UserDetails#getUsername()Ljava/lang/String;*f
+
+__unknown_file (J
+H
+userDetails9org.springframework.security.core.userdetails.UserDetails2getUsername()ØÕ
+D D(:
+%2boolean",java.lang.String#equals(Ljava/lang/Object;)Z*:
+
+__unknown_file (
+
+usernamejava.lang.String*4
+
+__unknown_file (
+
+%1java.lang.String2equals(Ljava/lang/Object;)*
+2
+1*!
+1D D(V"
+D D(V
+"":%
+B  B(-
+tokenjava.lang.String:T
+B. B(EH
+userDetails9org.springframework.security.core.userdetails.UserDetailsB+)
+'com.snackbar.iam.application.JwtServiceHX

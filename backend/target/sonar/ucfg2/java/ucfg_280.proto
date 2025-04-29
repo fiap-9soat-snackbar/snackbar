@@ -1,0 +1,108 @@
+
+\com.snackbar.iam.application.OpenApiConfig#customOpenAPI()Lio/swagger/v3/oas/models/OpenAPI;z
+p/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/OpenApiConfig.java ("1*Ÿ
+1   (VT
+   (&
+%0 io.swagger.v3.oas.models.OpenAPI" io.swagger.v3.oas.models.OpenAPI…
+‚
+   (
+%1"*io.swagger.v3.oas.models.OpenAPI#<init>()V*D
+
+__unknown_file ((
+&
+%0 io.swagger.v3.oas.models.OpenAPI\Z
+!  !(*)
+%2#io.swagger.v3.oas.models.Components"#io.swagger.v3.oas.models.Components‹
+ˆ
+! !(,
+%3"-io.swagger.v3.oas.models.Components#<init>()V*G
+
+__unknown_file (+
+)
+%2#io.swagger.v3.oas.models.Componentsíê
+  !(-&
+%4 io.swagger.v3.oas.models.OpenAPI"tio.swagger.v3.oas.models.OpenAPI#components(Lio/swagger/v3/oas/models/Components;)Lio/swagger/v3/oas/models/OpenAPI;*D
+
+__unknown_file ((
+&
+%0 io.swagger.v3.oas.models.OpenAPI*G
+
+__unknown_file (+
+)
+%2#io.swagger.v3.oas.models.Components21components(Lio/swagger/v3/oas/models/Components;)ZX
+" "((
+%5"io.swagger.v3.oas.models.info.Info""io.swagger.v3.oas.models.info.Info‰
+†
+" "( 
+%6",io.swagger.v3.oas.models.info.Info#<init>()V*F
+
+__unknown_file (*
+(
+%5"io.swagger.v3.oas.models.info.Info…
+‚
+"' "(/
+%7java.lang.String"__id*X
+
+__unknown_file (<*:,
+*com.snackbar.iam.application.OpenApiConfig"
+
+appTitle²¯
+" "(0(
+%8"io.swagger.v3.oas.models.info.Info"`io.swagger.v3.oas.models.info.Info#title(Ljava/lang/String;)Lio/swagger/v3/oas/models/info/Info;*F
+
+__unknown_file (*
+(
+%5"io.swagger.v3.oas.models.info.Info*4
+
+__unknown_file (
+
+%7java.lang.String2title(Ljava/lang/String;)‹
+ˆ
+# #(&
+%9java.lang.String"__id*^
+
+__unknown_file (B*@,
+*com.snackbar.iam.application.OpenApiConfig"
+appDescription¿¼
+" #(')
+%10"io.swagger.v3.oas.models.info.Info"fio.swagger.v3.oas.models.info.Info#description(Ljava/lang/String;)Lio/swagger/v3/oas/models/info/Info;*F
+
+__unknown_file (*
+(
+%8"io.swagger.v3.oas.models.info.Info*4
+
+__unknown_file (
+
+%9java.lang.String2description(Ljava/lang/String;)ˆ
+…
+#0 #(:
+%11java.lang.String"__id*Z
+
+__unknown_file (>*<,
+*com.snackbar.iam.application.OpenApiConfig"
+
+appVersion¹¶
+" #(;)
+%12"io.swagger.v3.oas.models.info.Info"bio.swagger.v3.oas.models.info.Info#version(Ljava/lang/String;)Lio/swagger/v3/oas/models/info/Info;*G
+
+__unknown_file (+
+)
+%10"io.swagger.v3.oas.models.info.Info*5
+
+__unknown_file (
+
+%11java.lang.String2version(Ljava/lang/String;)àÝ
+  #(<'
+%13 io.swagger.v3.oas.models.OpenAPI"mio.swagger.v3.oas.models.OpenAPI#info(Lio/swagger/v3/oas/models/info/Info;)Lio/swagger/v3/oas/models/OpenAPI;*D
+
+__unknown_file ((
+&
+%4 io.swagger.v3.oas.models.OpenAPI*G
+
+__unknown_file (+
+)
+%12"io.swagger.v3.oas.models.info.Info2*info(Lio/swagger/v3/oas/models/info/Info;)"5
+  #(=)
+'
+%13 io.swagger.v3.oas.models.OpenAPIB.,
+*com.snackbar.iam.application.OpenApiConfig

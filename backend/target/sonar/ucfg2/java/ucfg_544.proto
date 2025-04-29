@@ -1,0 +1,43 @@
+
+Ýcom.snackbar.productv2.infrastructure.config.ProductConfig#deleteProductv2ByIdUseCase(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)Lcom/snackbar/productv2/application/usecases/DeleteProductv2ByIdUseCase;‹
+€/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/config/ProductConfig.java. .(9"startingBlock*‘
+startingBlock.9 .(\Ü
+Ù
+- -(	
+%2"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*n
+
+__unknown_file (R
+P
+productv2Gateway<com.snackbar.productv2.application.gateways.Productv2Gateway‘
+Ž
+.K .([P
+productv2Gateway<com.snackbar.productv2.application.gateways.Productv2Gateway"__annotation*"
+
+__unknown_file (
+
+%2*
+1*’
+1/. /(>£ 
+/ /(-L
+%0Fcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase"Fcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase€
+ý
+/ /(?
+%1"Žcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase#<init>(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)V*j
+
+__unknown_file (N
+L
+%0Fcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase*n
+
+__unknown_file (R
+P
+productv2Gateway<com.snackbar.productv2.application.gateways.Productv2Gateway"Z
+/ /(@N
+L
+%0Fcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase:\
+.: .([P
+productv2Gateway<com.snackbar.productv2.application.gateways.Productv2GatewayB><
+:com.snackbar.productv2.infrastructure.config.ProductConfig

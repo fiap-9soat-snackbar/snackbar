@@ -1,0 +1,5 @@
+com.snackbar.productv2.application.usecases.GetProductv2ByNameUseCase#getProductv2ByName(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;
+false
+60ad5628841024edf0f911c00e62a3ba
+==
+getProductv2ByName com.snackbar.productv2.application.gateways.Productv2Gateway#getProductv2ByName(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;

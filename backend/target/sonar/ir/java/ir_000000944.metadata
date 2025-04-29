@@ -1,0 +1,5 @@
+com.snackbar.iam.application.IamServiceImpl#create(Lcom/snackbar/iam/domain/UserEntity;)Lcom/snackbar/iam/domain/UserEntity;
+false
+0445d2a0be6a8af007ae5078c01342e8
+==
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;

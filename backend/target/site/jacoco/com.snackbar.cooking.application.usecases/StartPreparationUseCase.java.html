@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StartPreparationUseCase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.cooking.application.usecases</a> &gt; <span class="el_source">StartPreparationUseCase.java</span></div><h1>StartPreparationUseCase.java</h1><pre class="source lang-java linenums">package com.snackbar.cooking.application.usecases;
+
+import com.snackbar.cooking.domain.entity.Cooking;
+import com.snackbar.cooking.domain.exceptions.CookingOperationException;
+import com.snackbar.cooking.domain.exceptions.OrderStatusInvalidException;
+import com.snackbar.cooking.domain.exceptions.OrderUpdateException;
+import com.snackbar.order.domain.model.Order;
+import com.snackbar.order.domain.model.StatusOrder;
+import com.snackbar.cooking.application.gateways.CookingGateway;
+import com.snackbar.order.service.OrderService;
+import com.snackbar.cooking.infrastructure.persistence.CookingRepository;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class StartPreparationUseCase {
+
+    private final CookingGateway cookingGateway;
+    private final CookingRepository cookingRepository;
+    private final OrderService orderService;
+
+<span class="nc" id="L22">    public StartPreparationUseCase(CookingGateway cookingGateway, CookingRepository cookingRepository, OrderService orderService) {</span>
+<span class="nc" id="L23">        this.cookingGateway = cookingGateway;</span>
+<span class="nc" id="L24">        this.cookingRepository = cookingRepository;</span>
+<span class="nc" id="L25">        this.orderService = orderService;</span>
+<span class="nc" id="L26">    }</span>
+
+    public Cooking updateCooking(Cooking cooking) {
+        // 1. Get and validate order
+<span class="nc" id="L30">        Order order = orderService.searchOrderId(cooking.orderId());</span>
+<span class="nc" id="L31">        validateOrderStatus(order, StatusOrder.RECEBIDO);</span>
+        
+        try {
+            // 2. Create cooking record with RECEBIDO status
+<span class="nc" id="L35">            cookingGateway.updateCookingStatus(cooking.orderId(), StatusOrder.PREPARACAO);</span>
+<span class="nc" id="L36">            Cooking savedCooking = cookingGateway.findByOrderId(cooking.orderId());</span>
+            // 3. Update order status
+<span class="nc" id="L38">            orderService.updateOrderStatus(cooking.orderId(), StatusOrder.PREPARACAO);</span>
+
+<span class="nc" id="L40">            return savedCooking;</span>
+            
+<span class="nc" id="L42">        } catch (Exception e) {</span>
+<span class="nc" id="L43">            throw new CookingOperationException(&quot;Failed to process cooking order&quot;, e);</span>
+        }
+    }
+
+    private void validateOrderStatus(Order order, StatusOrder currentStatusOrder) {
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (order.getStatusOrder() != currentStatusOrder) {</span>
+<span class="nc" id="L49">            throw new OrderStatusInvalidException(</span>
+<span class="nc" id="L50">                &quot;Order must be in RECEBIDO status to be received for cooking. Current status: &quot; + order.getStatusOrder()</span>
+            );
+        }
+<span class="nc" id="L53">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,15 @@
+com.snackbar.basket.application.usecases.BasketUseCase#createBasket(Lcom/snackbar/basket/domain/entity/Basket;)Lcom/snackbar/basket/domain/entity/Basket;
+false
+7c406d67de2c47a523ed8622f816264d
+com.snackbar.basket.domain.entity.Basket#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/math/BigDecimal;)V
+com.snackbar.basket.domain.entity.Basket#cpf()Ljava/lang/String;
+com.snackbar.basket.domain.entity.Basket#id()Ljava/lang/String;
+com.snackbar.basket.domain.entity.Basket#instance-init#
+com.snackbar.basket.domain.entity.Basket#items()Ljava/util/List;
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+==
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+createBasket com.snackbar.basket.application.gateways.BasketUseCaseGateway#createBasket(Lcom/snackbar/basket/domain/entity/Basket;)Lcom/snackbar/basket/domain/entity/Basket;
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+reduce java.util.stream.Stream#reduce(Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;

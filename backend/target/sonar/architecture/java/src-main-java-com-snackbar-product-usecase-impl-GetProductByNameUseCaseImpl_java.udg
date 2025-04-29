@@ -1,0 +1,341 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126519*java2.BÇ
+U
+Psrc/main/java/com/snackbar/product/usecase/impl/GetProductByNameUseCaseImpl.java2
+
+package4
+&
+!com.snackbar.product.usecase.impl5
+B
+=com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+!
+GetProductByNameUseCaseImpl12
+:
+4com.snackbar.product.usecase.GetProductByNameUseCase14
+
+unknown15
+
+
+implements16
+,
+&org.springframework.stereotype.Service18
+
+annotated by19
+
+
+uses20
+U
+Ocom.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl.ProductRepository22
+
+field23
+
+private24
+
+ProductRepository25
+4
+.com.snackbar.product.gateway.ProductRepository27
+
+is type28
+}
+wcom.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl#<init>(Lcom/snackbar/product/gateway/ProductRepository;)V30
+
+method31
+
+	has param32
+<
+6org.springframework.beans.factory.annotation.Autowired34
+
+calls35
+
+
+references36
+Ž
+‡com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl#getProductByName(Ljava/lang/String;)Lcom/snackbar/product/dto/ProductDTO;38
+
+getProductByName39
+)
+#com.snackbar.product.dto.ProductDTO41
+
+returns42
+)
+#com.snackbar.product.entity.Product44
+g
+acom.snackbar.product.gateway.ProductRepository#findByName(Ljava/lang/String;)Ljava/util/Optional;46
+=
+7com.snackbar.product.common.exception.BusinessException48
+™
+’com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl#mapToDTO(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/dto/ProductDTO;50
+
+mapToDTO51
+C
+=com.snackbar.product.entity.Product#getId()Ljava/lang/String;53
+E
+?com.snackbar.product.entity.Product#getName()Ljava/lang/String;55
+I
+Ccom.snackbar.product.entity.Product#getCategory()Ljava/lang/String;57
+L
+Fcom.snackbar.product.entity.Product#getDescription()Ljava/lang/String;59
+J
+Dcom.snackbar.product.entity.Product#getPrice()Ljava/math/BigDecimal;61
+M
+Gcom.snackbar.product.entity.Product#getCookingTime()Ljava/lang/Integer;63J
+
+1
+12Z
+
+3	
+354jÛ
+@
+49:
+495031 *
+1 (26:3B
+	
+9
+24
+
+
+11
+51
+
+56
+565715
+@
+21:
+212223 *
+1 (26:3B
+	
+9
+24
+
+
+11
+25
+
+58
+585915
+
+45
+454615
+9
+64
+678 *
+1 ():3B
+	
+9
+10
+
+
+11
+12
+
+33
+333415
+
+62
+626315
+
+26
+262715
+@
+37:
+373831 *
+1 (26:3B
+	
+9
+10
+
+
+11
+39
+
+54
+545515
+
+13
+131415
+
+43
+434415
+
+17
+171815
+
+60
+606115
+@
+29:
+293031 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+
+47
+474815
+
+52
+525315
+
+40
+404115r£
+
+
+61316*
+15 (L
+
+61719*
+1 (
+
+61720*
+1 (	
+
+61320*
+15 (L
+
+212628*
+1 ($
+
+212620*
+1 ($
+
+212620*
+1% (6
+
+292632*
+1( (9
+
+293319*
+1 (
+
+293320*
+1 (
+
+29635*
+1 ('
+
+292628*
+1: (K
+
+292620*
+1( (9
+
+29620*
+1	 (
+
+29636*
+1	 (
+
+292620*
+1 (
+
+292136*
+1 (
+
+374042*
+1 (
+
+374020*
+1 (
+
+374328*
+1 (
+
+374320*
+1	 (
+
+374342*
+1 (,
+
+372636*
+1 (,
+
+374535*
+1- (7
+
+372136*
+1 (,
+
+372620*
+1 (,
+
+372136*
+1 (,
+
+374735*
+1$ (5
+
+374042*
+1 (
+
+37636*
+1 (
+
+374935*
+1 (
+
+494042*
+1 (
+
+494332*
+1! ((
+
+494020*
+1 (
+
+494328*
+1) (0
+
+494320*
+1! ((
+
+494035*
+1 (
+
+494336*
+1 (
+
+495235*
+1 (
+
+494336*
+1 (
+
+495435*
+1 ( 
+
+494336*
+1 (
+
+495635*
+1 ($
+
+494336*
+1   (
+
+495835*
+1   ('
+
+494336*
+1! !(
+
+496035*
+1! !(!
+
+494336*
+1" "(
+
+496235*
+1" "('

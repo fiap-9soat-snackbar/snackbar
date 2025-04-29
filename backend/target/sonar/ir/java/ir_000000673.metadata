@@ -1,0 +1,9 @@
+com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway#updatePaymentExternalIdById(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
+false
+dbe8354735d10c2f8ea7689cc2f71a29
+java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
+setExternalPaymentId com.snackbar.payment.infrastructure.persistence.PaymentEntity#setExternalPaymentId(Ljava/lang/String;)V
+toDomainObj com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper#toDomainObj(Lcom/snackbar/payment/infrastructure/persistence/PaymentEntity;)Lcom/snackbar/payment/domain/entity/Payment;

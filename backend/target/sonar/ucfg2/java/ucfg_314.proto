@@ -1,0 +1,29 @@
+
+“com.snackbar.iam.application.JwtService#generateToken(Ljava/util/Map;Lorg/springframework/security/core/userdetails/UserDetails;)Ljava/lang/String;w
+m/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/JwtService.java* *("1*€
+1+ +(Ê
+Ç
++ +(B
+%0java.lang.String"‘com.snackbar.iam.application.JwtService#buildToken(Ljava/util/Map;Lorg/springframework/security/core/userdetails/UserDetails;J)Ljava/lang/String;*G
+
+__unknown_file (+)
+'com.snackbar.iam.application.JwtService*:
+
+__unknown_file (
+
+extraClaimsjava.util.Map*f
+
+__unknown_file (J
+H
+userDetails9org.springframework.security.core.userdetails.UserDetails*"
+
+__unknown_file (
+"""$
++ +(C
+
+%0java.lang.String:(
+*  *(@
+extraClaimsjava.util.Map:T
+*A *(XH
+userDetails9org.springframework.security.core.userdetails.UserDetailsB+)
+'com.snackbar.iam.application.JwtServiceH

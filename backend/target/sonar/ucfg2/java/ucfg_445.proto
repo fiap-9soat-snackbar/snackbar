@@ -1,0 +1,88 @@
+
+šcom.snackbar.productv2.infrastructure.controllers.Productv2Controller#getProductsv2ByCategory(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;–
+‹/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/controllers/Productv2Controller.javaM6 M(M"startingBlock*°
+startingBlockMM M(x±
+®
+MN M(g
+%5"
+__annotate*T
+
+__unknown_file (86
+4org.springframework.web.bind.annotation.PathVariable*:
+
+__unknown_file (
+
+categoryjava.lang.String\
+Z
+Mo M(w
+categoryjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%5*
+1*›
+1N2 N(Pñ
+î
+N2 N(PP
+%0Jcom.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase"__id*‰
+
+__unknown_file (m*kG
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2Controller" 
+getProductsv2ByCategoryUseCase…‚
+N2 N(r
+%1java.util.List"†com.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase#getProductsv2ByCategory(Ljava/lang/String;)Ljava/util/List;*n
+
+__unknown_file (R
+P
+%0Jcom.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase*:
+
+__unknown_file (
+
+categoryjava.lang.String2+getProductsv2ByCategory(Ljava/lang/String;)q
+o
+N N(s)
+retrievedProductsv2Listjava.util.List"__id*2
+
+__unknown_file (
+
+%1java.util.ListÞ
+Û
+O. O(@J
+%2Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper"__id*}
+
+__unknown_file (a*_G
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2Controller"
+productv2DTOMapperïì
+O. O(h
+%3java.util.List"ucom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#listToResponse(Ljava/util/List;)Ljava/util/List;*h
+
+__unknown_file (L
+J
+%2Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper*G
+
+__unknown_file (+
+)
+retrievedProductsv2Listjava.util.List2 listToResponse(Ljava/util/List;)b
+`
+O O(i
+responsejava.util.List"__id*2
+
+__unknown_file (
+
+%3java.util.List¨
+¥
+P P(*-
+%4'org.springframework.http.ResponseEntity"gorg.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntity*8
+
+__unknown_file (
+
+responsejava.util.List";
+P P(+/
+-
+%4'org.springframework.http.ResponseEntity:(
+MN M(w
+categoryjava.lang.StringBIG
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2ControllerH

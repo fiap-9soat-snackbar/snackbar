@@ -1,0 +1,3 @@
+com.snackbar.orderRefactory.application.usecases.OrderUseCase#<init>(Lcom/snackbar/orderRefactory/application/gateways/OrderGateway;Lcom/snackbar/orderRefactory/application/gateways/ProductGateway;Lcom/snackbar/iam/application/UserService;)V
+false
+da55a50e3b00a107df4d17c26ad1cabc

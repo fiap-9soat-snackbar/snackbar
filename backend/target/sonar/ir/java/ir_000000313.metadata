@@ -1,0 +1,10 @@
+com.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#createRequestToDomain(Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Request;)Lcom/snackbar/productv2/domain/entity/Productv2;
+false
+4ed8f3caa95f234ff1e0f437a7b46057
+com.snackbar.productv2.domain.entity.Productv2#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/Integer;)V
+com.snackbar.productv2.domain.entity.Productv2#instance-init#
+com.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#category()Ljava/lang/String;
+com.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#cookingTime()Ljava/lang/Integer;
+com.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#description()Ljava/lang/String;
+com.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#name()Ljava/lang/String;
+com.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#price()Ljava/math/BigDecimal;

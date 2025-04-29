@@ -1,0 +1,6 @@
+com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#findOrderById(Ljava/lang/String;)Ljava/util/Optional;
+false
+629c23ebd35781b738c5de24e9c17464
+java.util.Optional#map(Ljava/util/function/Function;)Ljava/util/Optional;
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;

@@ -1,0 +1,42 @@
+
+pcom.snackbar.iam.application.UserService#getUserByCpf(Ljava/lang/String;)Lcom/snackbar/iam/web/dto/UserResponse;x
+n/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/UserService.java ($"1*¡
+1   (§
+¤
+   (4
+%0.com.snackbar.iam.infrastructure.UserRepository"__id*\
+
+__unknown_file (@*>*
+(com.snackbar.iam.application.UserService"
+userRepository³°
+   (,
+%1java.util.Optional"`com.snackbar.iam.infrastructure.UserRepository#findByCpf(Ljava/lang/String;)Ljava/util/Optional;*R
+
+__unknown_file (6
+4
+%0.com.snackbar.iam.infrastructure.UserRepository*5
+
+__unknown_file (
+
+cpfjava.lang.String2findByCpf(Ljava/lang/String;)Ÿ
+œ
+ 1 '(!
+%2java.util.function.Function"__declareFunction*Z
+
+__unknown_file (><
+:__sonar_lambda_48$com.snackbar.iam.application.UserServiceûø
+  ((	
+%3"Ijava.util.Optional#map(Ljava/util/function/Function;)Ljava/util/Optional;*6
+
+__unknown_file (
+
+%1java.util.Optional*?
+
+__unknown_file (#
+!
+%2java.util.function.Function2"map(Ljava/util/function/Function;)"
+  ((
+"":#
+% (/
+cpfjava.lang.StringB,*
+(com.snackbar.iam.application.UserServiceH

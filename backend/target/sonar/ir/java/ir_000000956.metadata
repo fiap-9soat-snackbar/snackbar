@@ -1,0 +1,5 @@
+com.snackbar.basket.application.usecases.BasketUseCase#deleteItemToBasket(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/basket/domain/entity/Basket;
+false
+7e0abe349b3a7b05699f1880d5b198fa
+==
+deleteItemToBasket com.snackbar.basket.application.gateways.BasketUseCaseGateway#deleteItemToBasket(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/basket/domain/entity/Basket;

@@ -1,0 +1,470 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126365*java2.BÉ
+R
+Msrc/main/java/com/snackbar/product/usecase/impl/CreateProductUseCaseImpl.java2
+
+package4
+&
+!com.snackbar.product.usecase.impl5
+?
+:com.snackbar.product.usecase.impl.CreateProductUseCaseImpl7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+CreateProductUseCaseImpl12
+7
+1com.snackbar.product.usecase.CreateProductUseCase14
+
+unknown15
+
+
+implements16
+,
+&org.springframework.stereotype.Service18
+
+annotated by19
+
+
+uses20
+R
+Lcom.snackbar.product.usecase.impl.CreateProductUseCaseImpl.ProductRepository22
+
+field23
+
+private24
+
+ProductRepository25
+4
+.com.snackbar.product.gateway.ProductRepository27
+
+is type28
+z
+tcom.snackbar.product.usecase.impl.CreateProductUseCaseImpl#<init>(Lcom/snackbar/product/gateway/ProductRepository;)V30
+
+method31
+
+	has param32
+<
+6org.springframework.beans.factory.annotation.Autowired34
+
+calls35
+
+
+references36
+›
+”com.snackbar.product.usecase.impl.CreateProductUseCaseImpl#createProduct(Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/product/dto/ProductDTO;38
+
+createProduct39
+)
+#com.snackbar.product.dto.ProductDTO41
+
+returns42
+)
+#com.snackbar.product.entity.Product44
+™
+’com.snackbar.product.usecase.impl.CreateProductUseCaseImpl#mapToEntity(Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/product/entity/Product;46
+<
+6com.snackbar.product.entity.Product#validateProduct()V48
+…
+com.snackbar.product.gateway.ProductRepository#save(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/entity/Product;50
+–
+com.snackbar.product.usecase.impl.CreateProductUseCaseImpl#mapToDTO(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/dto/ProductDTO;52
+
+mapToEntity53
+C
+=com.snackbar.product.dto.ProductDTO#getId()Ljava/lang/String;55
+E
+?com.snackbar.product.dto.ProductDTO#getName()Ljava/lang/String;57
+I
+Ccom.snackbar.product.dto.ProductDTO#getCategory()Ljava/lang/String;59
+L
+Fcom.snackbar.product.dto.ProductDTO#getDescription()Ljava/lang/String;61
+J
+Dcom.snackbar.product.dto.ProductDTO#getPrice()Ljava/math/BigDecimal;63
+M
+Gcom.snackbar.product.dto.ProductDTO#getCookingTime()Ljava/lang/Integer;65
+
+mapToDTO66
+C
+=com.snackbar.product.entity.Product#getId()Ljava/lang/String;68
+E
+?com.snackbar.product.entity.Product#getName()Ljava/lang/String;70
+I
+Ccom.snackbar.product.entity.Product#getCategory()Ljava/lang/String;72
+L
+Fcom.snackbar.product.entity.Product#getDescription()Ljava/lang/String;74
+J
+Dcom.snackbar.product.entity.Product#getPrice()Ljava/math/BigDecimal;76
+M
+Gcom.snackbar.product.entity.Product#getCookingTime()Ljava/lang/Integer;78J
+
+1
+12Z
+
+3	
+354j•
+
+71
+717215
+@
+45:
+454631 *
+1 (26:3B
+	
+9
+24
+
+
+11
+53
+
+73
+737415
+
+33
+333415
+
+26
+262715
+
+13
+131415
+@
+21:
+212223 *
+1 (26:3B
+	
+9
+24
+
+
+11
+25
+
+69
+697015
+
+43
+434415
+9
+64
+678 *
+1 (&:3B
+	
+9
+10
+
+
+11
+12
+
+17
+171815
+
+64
+646515
+
+49
+495015
+@
+51:
+515231 *
+1( ((26:3B
+	
+9
+24
+
+
+11
+66
+
+58
+585915
+
+67
+676815
+
+40
+404115
+@
+29:
+293031 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+
+62
+626315
+
+47
+474815
+
+77
+777815
+@
+37:
+373831 *
+1 (26:3B
+	
+9
+10
+
+
+11
+39
+
+60
+606115
+
+75
+757615
+
+56
+565715
+
+54
+545515rû
+
+61316*
+12 (F
+
+61719*
+1
+ 
+(
+
+61720*
+1
+ 
+(	
+
+61320*
+12 (F
+
+212628*
+1 ($
+
+212620*
+1 ($
+
+212620*
+1% (6
+
+292632*
+1% (6
+
+293319*
+1 (
+
+293320*
+1 (
+
+29635*
+1 ($
+
+292628*
+17 (H
+
+292620*
+1% (6
+
+29620*
+1	 (
+
+29636*
+1	 (
+
+292620*
+1 (
+
+292136*
+1 (
+
+374042*
+1 (
+
+374032*
+1% (/
+
+374020*
+1 (
+
+374028*
+10 (:
+
+374020*
+1% (/
+
+374328*
+1 (
+
+374320*
+1	 (
+
+374342*
+1 (&
+
+37636*
+1 (&
+
+374535*
+1 (&
+
+374336*
+1	 (
+
+374735*
+1 ( 
+
+374328*
+1 (
+
+374320*
+1	 (
+
+374342*
+1  (1
+
+372636*
+1  (1
+
+374935*
+12 (6
+
+372136*
+1  (1
+
+372620*
+1  (1
+
+372136*
+1  (1
+
+374042*
+1 (
+
+37636*
+1 (
+
+375135*
+1 (
+
+454342*
+1 (
+
+454032*
+1! (+
+
+454320*
+1 (
+
+454028*
+1, (6
+
+454020*
+1! (+
+
+454335*
+1 (
+
+454036*
+1 (
+
+455435*
+1 (!
+
+454036*
+1 (
+
+455635*
+1 (#
+
+454036*
+1   (
+
+455835*
+1   ('
+
+454036*
+1! !(
+
+456035*
+1! !(*
+
+454036*
+1" "(
+
+456235*
+1" "($
+
+454036*
+1# #(
+
+456435*
+1# #(*
+
+514042*
+1( ((
+
+514332*
+1(! (((
+
+514020*
+1( ((
+
+514328*
+1() ((0
+
+514320*
+1(! (((
+
+514035*
+1) )(
+
+514336*
+1* *(
+
+516735*
+1* *(
+
+514336*
+1+ +(
+
+516935*
+1+ +( 
+
+514336*
+1, ,(
+
+517135*
+1, ,($
+
+514336*
+1- -(
+
+517335*
+1- -('
+
+514336*
+1. .(
+
+517535*
+1. .(!
+
+514336*
+1/ /(
+
+517735*
+1/ /('

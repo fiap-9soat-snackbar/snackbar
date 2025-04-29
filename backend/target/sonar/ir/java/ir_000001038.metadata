@@ -1,0 +1,3 @@
+com.snackbar.product.controller.ProductController#<init>(Lcom/snackbar/product/usecase/CreateProductUseCase;Lcom/snackbar/product/usecase/GetProductUseCase;Lcom/snackbar/product/usecase/GetAllProductsUseCase;Lcom/snackbar/product/usecase/GetProductsByCategoryUseCase;Lcom/snackbar/product/usecase/UpdateProductUseCase;Lcom/snackbar/product/usecase/DeleteProductUseCase;)V
+false
+6f314df14ab1812d46d13dbabf744c3e

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NotifyCustomerUseCaseImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.pickup.usecase</a> &gt; <span class="el_source">NotifyCustomerUseCaseImpl.java</span></div><h1>NotifyCustomerUseCaseImpl.java</h1><pre class="source lang-java linenums">package com.snackbar.pickup.usecase;
+
+import com.snackbar.pickup.entity.Pickup;
+import com.snackbar.pickup.entity.StatusPickup;
+import com.snackbar.pickup.gateway.PickupRepository;
+import com.snackbar.order.service.OrderService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class NotifyCustomerUseCaseImpl implements NotifyCustomerUseCase {
+
+    private final PickupRepository pickupRepository;
+    private final OrderService orderService;
+
+<span class="fc" id="L15">    public NotifyCustomerUseCaseImpl(PickupRepository pickupRepository, OrderService orderService) {</span>
+<span class="fc" id="L16">        this.pickupRepository = pickupRepository;</span>
+<span class="fc" id="L17">        this.orderService = orderService;</span>
+<span class="fc" id="L18">    }</span>
+
+    @Override
+    public void notify(String orderId) {
+<span class="fc" id="L22">        Pickup pickup = new Pickup();</span>
+<span class="fc" id="L23">        pickup.setOrderId(orderId);</span>
+<span class="fc" id="L24">        pickup.setStatusPickup(StatusPickup.PRONTO);</span>
+<span class="fc" id="L25">        pickup.setNotifyCustomer(true);</span>
+
+        // Save status update in Pickup Collection
+<span class="fc" id="L28">        pickupRepository.save(pickup);</span>
+<span class="fc" id="L29">        System.out.println(&quot;Pedido &quot; + orderId + &quot; está PRONTO, Cliente notificado&quot;);</span>
+
+        // Update status in Order Collection
+<span class="fc" id="L32">        orderService.updateStatusOrder(orderId);</span>
+<span class="fc" id="L33">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

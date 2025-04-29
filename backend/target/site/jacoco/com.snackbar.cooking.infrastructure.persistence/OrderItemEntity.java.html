@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderItemEntity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Snack bar</a> &gt; <a href="index.source.html" class="el_package">com.snackbar.cooking.infrastructure.persistence</a> &gt; <span class="el_source">OrderItemEntity.java</span></div><h1>OrderItemEntity.java</h1><pre class="source lang-java linenums">package com.snackbar.cooking.infrastructure.persistence;
+
+public class OrderItemEntity {
+    private String name;
+    private Double price;
+    private Integer quantity;
+    private Integer cookingTime;
+    private String customization;
+
+    // Constructor
+<span class="nc" id="L11">    public OrderItemEntity(String name, Double price, Integer quantity,</span>
+                           Integer cookingTime, String customization) {
+<span class="nc" id="L13">        this.name = name;</span>
+<span class="nc" id="L14">        this.price = price;</span>
+<span class="nc" id="L15">        this.quantity = quantity;</span>
+<span class="nc" id="L16">        this.cookingTime = cookingTime;</span>
+<span class="nc" id="L17">        this.customization = customization;</span>
+<span class="nc" id="L18">    }</span>
+
+    // Getters and Setters
+    public String getName() {
+<span class="nc" id="L22">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L26">        this.name = name;</span>
+<span class="nc" id="L27">    }</span>
+
+    public Double getPrice() {
+<span class="nc" id="L30">        return price;</span>
+    }
+
+    public void setPrice(Double price) {
+<span class="nc" id="L34">        this.price = price;</span>
+<span class="nc" id="L35">    }</span>
+
+    public Integer getQuantity() {
+<span class="nc" id="L38">        return quantity;</span>
+    }
+
+    public void setQuantity(Integer quantity) {
+<span class="nc" id="L42">        this.quantity = quantity;</span>
+<span class="nc" id="L43">    }</span>
+
+    public Integer getCookingTime() {
+<span class="nc" id="L46">        return cookingTime;</span>
+    }
+
+    public void setCookingTime(Integer cookingTime) {
+<span class="nc" id="L50">        this.cookingTime = cookingTime;</span>
+<span class="nc" id="L51">    }</span>
+
+    public String getCustomization() {
+<span class="nc" id="L54">        return customization;</span>
+    }
+
+    public void setCustomization(String customization) {
+<span class="nc" id="L58">        this.customization = customization;</span>
+<span class="nc" id="L59">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

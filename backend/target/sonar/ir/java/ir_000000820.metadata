@@ -1,0 +1,7 @@
+com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#updateStatusOrder(Ljava/lang/String;)V
+false
+c1d245be62c7b8278521010679dd0805
+java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;

@@ -1,0 +1,4 @@
+com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#findUserByCpf(Ljava/lang/String;)Ljava/util/Optional;
+false
+fadec2aac96cd6aafdaeb452cea9df6e
+java.lang.String#describeConstable()Ljava/util/Optional;

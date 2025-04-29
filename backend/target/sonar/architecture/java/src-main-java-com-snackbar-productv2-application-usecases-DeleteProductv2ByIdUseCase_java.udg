@@ -1,0 +1,167 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125328*java2.BŸ
+^
+Ysrc/main/java/com/snackbar/productv2/application/usecases/DeleteProductv2ByIdUseCase.java2
+
+package4
+0
++com.snackbar.productv2.application.usecases5
+K
+Fcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+ 
+DeleteProductv2ByIdUseCase12
+]
+Wcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase.productv2Gateway14
+
+field15
+
+private16
+
+productv2Gateway17
+B
+<com.snackbar.productv2.application.gateways.Productv2Gateway19
+
+unknown20
+
+is type21
+
+
+uses22
+•
+Žcom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase#<init>(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)V24
+
+method25
+
+	has param26
+
+calls27
+
+
+references28
+u
+ocom.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase#deleteProductv2ById(Ljava/lang/String;)V30
+
+deleteProductv2ById31
+k
+ecom.snackbar.productv2.application.gateways.Productv2Gateway#deleteProductv2ById(Ljava/lang/String;)V33J
+
+1
+12Z
+
+3	
+354j©
+@
+29:
+293025 *
+1 (26:3B
+	
+9
+10
+
+
+11
+31
+
+18
+181920
+9
+64
+678 *
+1 ((:3B
+	
+9
+10
+
+
+11
+12
+@
+23:
+232425 *
+1	 	(26:3B
+	
+9
+10
+
+
+11
+12
+
+32
+323320
+@
+13:
+131415 *
+1 (26:3B
+	
+9
+16
+
+
+11
+17r­
+
+131821*
+1 (#
+
+131822*
+1 (#
+
+131822*
+1$ (4
+
+231826*
+1	' 	(7
+
+23627*
+1	 	(&
+
+231821*
+1	8 	(H
+
+231822*
+1	' 	(7
+
+23622*
+1
+	 
+(
+
+23628*
+1
+	 
+(
+
+231822*
+1
+ 
+(
+
+231328*
+1
+ 
+(
+
+291828*
+1	 (
+
+293227*
+1 (-
+
+291328*
+1	 (
+
+291822*
+1	 (
+
+291328*
+1	 (
