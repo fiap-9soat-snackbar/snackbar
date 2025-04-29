@@ -1,5 +1,0 @@
-com.snackbar.orderRefactory.application.usecases.OrderUseCase#listOrders()Ljava/util/List;
-false
-405d423b51151597c6a79cb69db71c4a
-==
-listOrders com.snackbar.orderRefactory.application.gateways.OrderGateway#listOrders()Ljava/util/List;

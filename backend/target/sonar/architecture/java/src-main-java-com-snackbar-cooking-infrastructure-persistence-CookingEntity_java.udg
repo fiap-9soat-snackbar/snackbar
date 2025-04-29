@@ -1,350 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126597*java2.Bƒ
-U
-Psrc/main/java/com/snackbar/cooking/infrastructure/persistence/CookingEntity.java2
-
-package4
-4
-/com.snackbar.cooking.infrastructure.persistence5
-B
-=com.snackbar.cooking.infrastructure.persistence.CookingEntity7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-CookingEntity12
-<
-6org.springframework.data.mongodb.core.mapping.Document14
-
-unknown15
-
-annotated by16
-
-
-uses17
-F
-@com.snackbar.cooking.infrastructure.persistence.CookingEntity.id19
-
-field20
-
-private21
-
-id22
-,
-&org.springframework.data.annotation.Id24
-K
-Ecom.snackbar.cooking.infrastructure.persistence.CookingEntity.orderId26
-
-orderId27
-J
-Dcom.snackbar.cooking.infrastructure.persistence.CookingEntity.status29
-
-status30
-1
-+com.snackbar.order.domain.model.StatusOrder32
-
-is type33
-Ÿ
-˜com.snackbar.cooking.infrastructure.persistence.CookingEntity#<init>(Ljava/lang/String;Ljava/lang/String;Lcom/snackbar/order/domain/model/StatusOrder;)V35
-
-method36
-
-	has param37
-
-calls38
-
-
-references39
-]
-Wcom.snackbar.cooking.infrastructure.persistence.CookingEntity#getId()Ljava/lang/String;41
-
-getId42
-^
-Xcom.snackbar.cooking.infrastructure.persistence.CookingEntity#setId(Ljava/lang/String;)V44
-
-setId45
-b
-\com.snackbar.cooking.infrastructure.persistence.CookingEntity#getOrderId()Ljava/lang/String;47
-
-
-getOrderId48
-c
-]com.snackbar.cooking.infrastructure.persistence.CookingEntity#setOrderId(Ljava/lang/String;)V50
-
-
-setOrderId51
-|
-vcom.snackbar.cooking.infrastructure.persistence.CookingEntity#getStatus()Lcom/snackbar/order/domain/model/StatusOrder;53
-
-	getStatus54
-
-returns55
-}
-wcom.snackbar.cooking.infrastructure.persistence.CookingEntity#setStatus(Lcom/snackbar/order/domain/model/StatusOrder;)V57
-
-	setStatus58J
-
-1
-12Z
-
-3	
-354j‹
-
-31
-313215
-@
-52:
-525336 *
-1* *(26:3B
-	
-9
-10
-
-
-11
-54
-@
-43:
-434436 *
-1 (26:3B
-	
-9
-10
-
-
-11
-45
-@
-25:
-252620 *
-1 (26:3B
-	
-9
-21
-
-
-11
-27
-9
-64
-678 *
-1
- 
-(:3B
-	
-9
-10
-
-
-11
-12
-@
-40:
-404136 *
-1 (26:3B
-	
-9
-10
-
-
-11
-42
-@
-49:
-495036 *
-1& &(26:3B
-	
-9
-10
-
-
-11
-51
-
-13
-131415
-@
-34:
-343536 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-@
-28:
-282920 *
-1 (26:3B
-	
-9
-21
-
-
-11
-30
-@
-56:
-565736 *
-1. .(26:3B
-	
-9
-10
-
-
-11
-58
-@
-18:
-181920 *
-1 (26:3B
-	
-9
-21
-
-
-11
-22
-@
-46:
-464736 *
-1" "(26:3B
-	
-9
-10
-
-
-11
-48
-
-23
-232415r©
-
-61316*
-1	 	(
-
-61317*
-1	 	(
-
-
-182316*
-1 (
-
-182317*
-1 (
-
-283133*
-1 (
-
-283117*
-1 (
-
-283117*
-1 (
-
-343137*
-15 (@
-
-34638*
-1 (
-
-343133*
-1A (G
-
-343117*
-15 (@
-
-34617*
-1	 (
-
-34639*
-1	 (
-
-341839*
-1 (
-
-34617*
-1	 (
-
-34639*
-1	 (
-
-342539*
-1 (
-
-34617*
-1	 (
-
-34639*
-1	 (
-
-343117*
-1 (
-
-342839*
-1 (
-
-401839*
-1 (
-
-43617*
-1	 (
-
-43639*
-1	 (
-
-431839*
-1 (
-
-462539*
-1# #(
-
-49617*
-1'	 '(
-
-49639*
-1'	 '(
-
-492539*
-1' '(
-
-523155*
-1* *(
-
-523117*
-1* *(
-
-523117*
-1+ +(
-
-522839*
-1+ +(
-
-563137*
-1. .(&
-
-563133*
-1.' .(-
-
-563117*
-1. .(&
-
-56617*
-1/	 /(
-
-56639*
-1/	 /(
-
-563117*
-1/ /(
-
-562839*
-1/ /(

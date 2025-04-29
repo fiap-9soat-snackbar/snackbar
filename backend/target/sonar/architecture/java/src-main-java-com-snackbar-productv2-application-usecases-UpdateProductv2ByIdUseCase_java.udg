@@ -1,280 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125620*java2.Bª
-^
-Ysrc/main/java/com/snackbar/productv2/application/usecases/UpdateProductv2ByIdUseCase.java2
-
-package4
-0
-+com.snackbar.productv2.application.usecases5
-K
-Fcom.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
- 
-UpdateProductv2ByIdUseCase12
-]
-Wcom.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase.productv2Gateway14
-
-field15
-
-private16
-
-productv2Gateway17
-B
-<com.snackbar.productv2.application.gateways.Productv2Gateway19
-
-unknown20
-
-is type21
-
-
-uses22
-d
-^com.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase.getProductv2ByIdUseCase24
-
-getProductv2ByIdUseCase25
-I
-Ccom.snackbar.productv2.application.usecases.GetProductv2ByIdUseCase27
-Ú
-Ócom.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase#<init>(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;Lcom/snackbar/productv2/application/usecases/GetProductv2ByIdUseCase;)V29
-
-method30
-
-	has param31
-
-calls32
-
-
-references33
-Õ
-Îcom.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase#updateProductv2ById(Ljava/lang/String;Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;35
-
-updateProductv2ById36
-4
-.com.snackbar.productv2.domain.entity.Productv238
-
-returns39
-Ÿ
-˜com.snackbar.productv2.application.usecases.GetProductv2ByIdUseCase#getProductv2ById(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;41
-Ë
-Äcom.snackbar.productv2.application.gateways.Productv2Gateway#updateProductv2ById(Ljava/lang/String;Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;43
-K
-Ecom.snackbar.productv2.domain.entity.Productv2#id()Ljava/lang/String;45J
-
-1
-12Z
-
-3	
-354j»
-
-37
-373820
-@
-13:
-131415 *
-1 (26:3B
-	
-9
-16
-
-
-11
-17
-@
-34:
-343530 *
-1 (26:3B
-	
-9
-10
-
-
-11
-36
-9
-64
-678 *
-1	 	((:3B
-	
-9
-10
-
-
-11
-12
-
-40
-404120
-
-18
-181920
-
-26
-262720
-
-42
-424320
-@
-23:
-232415 *
-1 (26:3B
-	
-9
-16
-
-
-11
-25
-@
-28:
-282930 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-
-44
-444520rŸ	
-
-131821*
-1 (#
-
-131822*
-1 (#
-
-131822*
-1$ (4
-
-232621*
-1 (*
-
-232622*
-1 (*
-
-232622*
-1+ (B
-
-281831*
-1' (7
-
-282631*
-1' (>
-
-28632*
-1 (&
-
-281821*
-18 (H
-
-281822*
-1' (7
-
-282621*
-1? (V
-
-282622*
-1' (>
-
-28622*
-1	 (
-
-28633*
-1	 (
-
-281822*
-1 (
-
-281333*
-1 (
-
-28622*
-1	 (
-
-28633*
-1	 (
-
-282622*
-1 (%
-
-282333*
-1 (%
-
-343739*
-1 (
-
-343731*
-15 (>
-
-343722*
-1 (
-
-343721*
-1? (H
-
-343722*
-15 (>
-
-343721*
-1 (#
-
-343722*
-1	 (
-
-343739*
-1& (=
-
-342633*
-1& (=
-
-344032*
-1> (N
-
-342333*
-1& (=
-
-342622*
-1& (=
-
-342333*
-1& (=
-
-343721*
-1 (#
-
-343722*
-1	 (
-
-343739*
-1& (6
-
-341833*
-1& (6
-
-344232*
-17 (J
-
-341333*
-1& (6
-
-341822*
-1& (6
-
-341333*
-1& (6
-
-343733*
-1K ([
-
-344432*
-1\ (^

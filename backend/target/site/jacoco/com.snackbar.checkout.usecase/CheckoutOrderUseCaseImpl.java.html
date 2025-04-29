@@ -22,12 +22,12 @@ public class CheckoutOrderUseCaseImpl implements CheckoutOrderUseCase {
     private final OrderUseCase orderUseCase;
     private final CreatePaymentUseCase createPaymentUseCase;
 
-<span class="nc" id="L25">    public CheckoutOrderUseCaseImpl(</span>
+    public CheckoutOrderUseCaseImpl(
             CheckoutRepository checkoutRepository,
             BasketUseCase basketUseCase,
             OrderUseCase orderUseCase,
             CreatePaymentUseCase createPaymentUseCase
-    ) {
+<span class="nc" id="L30">    ) {</span>
 <span class="nc" id="L31">        this.checkoutRepository = checkoutRepository;</span>
 <span class="nc" id="L32">        this.basketUseCase = basketUseCase;</span>
 <span class="nc" id="L33">        this.orderUseCase = orderUseCase;</span>

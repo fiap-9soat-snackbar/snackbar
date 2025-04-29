@@ -1,8 +1,0 @@
-com.snackbar.basket.infrastructure.controllers.BasketDTOMapper#toResponseList(Ljava/util/List;)Ljava/util/List;
-false
-54c9dccb691e2bf1e1413eadedb78b0a
-java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
-==
-collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
-map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
-stream java.util.Collection#stream()Ljava/util/stream/Stream;

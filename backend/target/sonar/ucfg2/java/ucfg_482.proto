@@ -1,15 +1,0 @@
-
-Kcom.snackbar.order.domain.model.Order#getOrderDateTime()Ljava/time/Instant;u
-k/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/order/domain/model/Order.java; ;(#"1*½
-1< <(†
-ƒ
-< <(
-%0java.time.Instant"__id*X
-
-__unknown_file (<*:'
-%com.snackbar.order.domain.model.Order"
-orderDateTime"%
-< <(
-
-%0java.time.InstantB)'
-%com.snackbar.order.domain.model.OrderH

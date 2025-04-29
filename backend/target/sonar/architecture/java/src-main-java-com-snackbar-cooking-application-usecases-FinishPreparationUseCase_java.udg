@@ -1,529 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887124743*java2.BÔ
-Z
-Usrc/main/java/com/snackbar/cooking/application/usecases/FinishPreparationUseCase.java2
-
-package4
-.
-)com.snackbar.cooking.application.usecases5
-G
-Bcom.snackbar.cooking.application.usecases.FinishPreparationUseCase7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-FinishPreparationUseCase12
-,
-&org.springframework.stereotype.Service14
-
-unknown15
-
-annotated by16
-
-
-uses17
-W
-Qcom.snackbar.cooking.application.usecases.FinishPreparationUseCase.cookingGateway19
-
-field20
-
-private21
-
-cookingGateway22
->
-8com.snackbar.cooking.application.gateways.CookingGateway24
-
-is type25
-Z
-Tcom.snackbar.cooking.application.usecases.FinishPreparationUseCase.cookingRepository27
-
-cookingRepository28
-G
-Acom.snackbar.cooking.infrastructure.persistence.CookingRepository30
-U
-Ocom.snackbar.cooking.application.usecases.FinishPreparationUseCase.orderService32
-
-orderService33
--
-'com.snackbar.order.service.OrderService35
-ù
-òcom.snackbar.cooking.application.usecases.FinishPreparationUseCase#<init>(Lcom/snackbar/cooking/application/gateways/CookingGateway;Lcom/snackbar/cooking/infrastructure/persistence/CookingRepository;Lcom/snackbar/order/service/OrderService;)V37
-
-method38
-
-	has param39
-
-calls40
-
-
-references41
-±
-ªcom.snackbar.cooking.application.usecases.FinishPreparationUseCase#updateCooking(Lcom/snackbar/cooking/domain/entity/Cooking;)Lcom/snackbar/cooking/domain/entity/Cooking;43
-
-updateCooking44
-0
-*com.snackbar.cooking.domain.entity.Cooking46
-
-returns47
-+
-%com.snackbar.order.domain.model.Order49
-v
-pcom.snackbar.order.service.OrderService#searchOrderId(Ljava/lang/String;)Lcom/snackbar/order/domain/model/Order;51
-L
-Fcom.snackbar.cooking.domain.entity.Cooking#orderId()Ljava/lang/String;53
-´
-­com.snackbar.cooking.application.usecases.FinishPreparationUseCase#validateOrderStatus(Lcom/snackbar/order/domain/model/Order;Lcom/snackbar/order/domain/model/StatusOrder;)V55
-1
-+com.snackbar.order.domain.model.StatusOrder57
-<
-6com.snackbar.order.domain.model.StatusOrder.PREPARACAO59
-À
-¹com.snackbar.cooking.application.gateways.CookingGateway#updateCookingStatus(Ljava/lang/String;Lcom/snackbar/order/domain/model/StatusOrder;)Lcom/snackbar/cooking/domain/entity/Cooking;61
-8
-2com.snackbar.order.domain.model.StatusOrder.PRONTO63
-
-†com.snackbar.cooking.application.gateways.CookingGateway#findByOrderId(Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Cooking;65
-
-{com.snackbar.order.service.OrderService#updateOrderStatus(Ljava/lang/String;Lcom/snackbar/order/domain/model/StatusOrder;)V67
-F
-@com.snackbar.cooking.domain.exceptions.CookingOperationException69
-
-validateOrderStatus70
-i
-ccom.snackbar.order.domain.model.Order#getStatusOrder()Lcom/snackbar/order/domain/model/StatusOrder;72
-H
-Bcom.snackbar.cooking.domain.exceptions.OrderStatusInvalidException74J
-
-1
-12Z
-
-3	
-354j›
-
-56
-565715
-@
-54:
-545538 *
-1. .(26:3B
-	
-9
-21
-
-
-11
-70
-
-29
-293015
-
-71
-717215
-
-66
-666715
-
-34
-343515
-@
-36:
-363738 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-9
-64
-678 *
-1 (&:3B
-	
-9
-10
-
-
-11
-12
-
-23
-232415
-
-48
-484915
-@
-42:
-424338 *
-1 (26:3B
-	
-9
-10
-
-
-11
-44
-
-50
-505115
-
-60
-606115
-
-68
-686915
-
-62
-626315
-
-13
-131415
-
-45
-454615
-
-73
-737415
-
-64
-646515
-@
-26:
-262720 *
-1 (26:3B
-	
-9
-21
-
-
-11
-28
-@
-31:
-313220 *
-1 (26:3B
-	
-9
-21
-
-
-11
-33
-@
-18:
-181920 *
-1 (26:3B
-	
-9
-21
-
-
-11
-22
-
-52
-525315
-
-58
-585915rÍ
-
-61316*
-1 (
-
-61317*
-1 (	
-
-182325*
-1 (!
-
-182317*
-1 (!
-
-182317*
-1" (0
-
-262925*
-1 ($
-
-262917*
-1 ($
-
-262917*
-1% (6
-
-313425*
-1 (
-
-313417*
-1 (
-
-313417*
-1  (,
-
-362339*
-1% (3
-
-362939*
-1D (U
-
-363439*
-1i (u
-
-36640*
-1 ($
-
-362325*
-14 (B
-
-362317*
-1% (3
-
-362925*
-1V (g
-
-362917*
-1D (U
-
-363425*
-1v (‚
-
-363417*
-1i (u
-
-36617*
-1	 (
-
-36641*
-1	 (
-
-362317*
-1 (
-
-361841*
-1 (
-
-36617*
-1	 (
-
-36641*
-1	 (
-
-362917*
-1 (
-
-362641*
-1 (
-
-36617*
-1	 (
-
-36641*
-1	 (
-
-363417*
-1 (
-
-363141*
-1 (
-
-424547*
-1 (
-
-424539*
-1" ()
-
-424517*
-1 (
-
-424525*
-1* (1
-
-424517*
-1" ()
-
-424825*
-1 (
-
-424817*
-1	 (
-
-424847*
-1 (#
-
-423441*
-1 (#
-
-425040*
-1$ (1
-
-423141*
-1 (#
-
-423417*
-1 (#
-
-423141*
-1 (#
-
-424541*
-12 (9
-
-425240*
-1: (A
-
-42641*
-1	 (
-
-425440*
-1	 (
-
-425617*
-1$ (/
-
-425617*
-10 (:
-
-425841*
-10 (:
-
-424547*
-1" "(
-
-422341*
-1" "(
-
-426040*
-1" "(/
-
-421841*
-1" "(
-
-422317*
-1" "(
-
-421841*
-1" "(
-
-424541*
-1"0 "(7
-
-425240*
-1"8 "(?
-
-425617*
-1"C "(N
-
-425617*
-1"O "(U
-
-426241*
-1"O "(U
-
-424525*
-1# #(!
-
-424517*
-1# #(
-
-424547*
-1#$ #(2
-
-422341*
-1#$ #(2
-
-426440*
-1#3 #(@
-
-421841*
-1#$ #(2
-
-422317*
-1#$ #(2
-
-421841*
-1#$ #(2
-
-424541*
-1#A #(H
-
-425240*
-1#I #(P
-
-423441*
-1% %(
-
-426640*
-1% %(+
-
-423141*
-1% %(
-
-423417*
-1% %(
-
-423141*
-1% %(
-
-424541*
-1%, %(3
-
-425240*
-1%4 %(;
-
-425617*
-1%? %(J
-
-425617*
-1%K %(Q
-
-426241*
-1%K %(Q
-
-426840*
-1* *(0
-
-544839*
-1.& .(+
-
-545639*
-1.3 .(>
-
-544825*
-1., .(1
-
-544817*
-1.& .(+
-
-545625*
-1.? .(Q
-
-545617*
-1.3 .(>
-
-545647*
-1/ /(
-
-544841*
-1/ /(
-
-547140*
-1/ /(!
-
-547340*
-10 0(2
-
-545647*
-11e 1(j
-
-544841*
-11e 1(j
-
-547140*
-11k 1(y

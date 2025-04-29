@@ -1,7 +1,0 @@
-com.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway#createCooking(Lcom/snackbar/cooking/domain/entity/Cooking;)Lcom/snackbar/cooking/domain/entity/Cooking;
-false
-07722ac78d905c5bc948b1e319f1fd46
-==
-save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
-toDomainObj com.snackbar.cooking.infrastructure.gateways.CookingEntityMapper#toDomainObj(Lcom/snackbar/cooking/infrastructure/persistence/CookingEntity;)Lcom/snackbar/cooking/domain/entity/Cooking;
-toEntity com.snackbar.cooking.infrastructure.gateways.CookingEntityMapper#toEntity(Lcom/snackbar/cooking/domain/entity/Cooking;)Lcom/snackbar/cooking/infrastructure/persistence/CookingEntity;

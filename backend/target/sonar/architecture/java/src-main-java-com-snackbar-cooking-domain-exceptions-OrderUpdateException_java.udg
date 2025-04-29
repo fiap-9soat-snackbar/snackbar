@@ -1,57 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125689*java2.B»
-S
-Nsrc/main/java/com/snackbar/cooking/domain/exceptions/OrderUpdateException.java2
-
-package4
-+
-&com.snackbar.cooking.domain.exceptions5
-@
-;com.snackbar.cooking.domain.exceptions.OrderUpdateException7
-
-	exception8
-
-access9
-
-public10
-
-simple name11
-
-OrderUpdateException12
-r
-lcom.snackbar.cooking.domain.exceptions.OrderUpdateException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V14
-
-method15
-
-calls16J
-
-1
-12Z
-
-3	
-354j}
-9
-64
-678 *
-1 (":3B
-	
-9
-10
-
-
-11
-12
-@
-13:
-131415 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12r
-
-13616*
-1 ( 

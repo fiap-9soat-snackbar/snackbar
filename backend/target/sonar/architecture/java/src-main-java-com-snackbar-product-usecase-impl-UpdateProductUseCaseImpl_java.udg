@@ -1,520 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126848*java2.BÇ
-R
-Msrc/main/java/com/snackbar/product/usecase/impl/UpdateProductUseCaseImpl.java2
-
-package4
-&
-!com.snackbar.product.usecase.impl5
-?
-:com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-UpdateProductUseCaseImpl12
-7
-1com.snackbar.product.usecase.UpdateProductUseCase14
-
-unknown15
-
-
-implements16
-,
-&org.springframework.stereotype.Service18
-
-annotated by19
-
-
-uses20
-R
-Lcom.snackbar.product.usecase.impl.UpdateProductUseCaseImpl.ProductRepository22
-
-field23
-
-private24
-
-ProductRepository25
-4
-.com.snackbar.product.gateway.ProductRepository27
-
-is type28
-z
-tcom.snackbar.product.usecase.impl.UpdateProductUseCaseImpl#<init>(Lcom/snackbar/product/gateway/ProductRepository;)V30
-
-method31
-
-	has param32
-<
-6org.springframework.beans.factory.annotation.Autowired34
-
-calls35
-
-
-references36
-­
-¦com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl#updateProduct(Ljava/lang/String;Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/product/dto/ProductDTO;38
-
-updateProduct39
-)
-#com.snackbar.product.dto.ProductDTO41
-
-returns42
-)
-#com.snackbar.product.entity.Product44
-e
-_com.snackbar.product.gateway.ProductRepository#findById(Ljava/lang/String;)Ljava/util/Optional;46
-=
-7com.snackbar.product.common.exception.BusinessException48
-™
-’com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl#mapToEntity(Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/product/entity/Product;50
-D
->com.snackbar.product.entity.Product#setId(Ljava/lang/String;)V52
-C
-=com.snackbar.product.entity.Product#getId()Ljava/lang/String;54
-<
-6com.snackbar.product.entity.Product#validateProduct()V56
-…
-com.snackbar.product.gateway.ProductRepository#save(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/entity/Product;58
-–
-com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl#mapToDTO(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/dto/ProductDTO;60
-
-mapToEntity61
-C
-=com.snackbar.product.dto.ProductDTO#getId()Ljava/lang/String;63
-E
-?com.snackbar.product.dto.ProductDTO#getName()Ljava/lang/String;65
-I
-Ccom.snackbar.product.dto.ProductDTO#getCategory()Ljava/lang/String;67
-L
-Fcom.snackbar.product.dto.ProductDTO#getDescription()Ljava/lang/String;69
-J
-Dcom.snackbar.product.dto.ProductDTO#getPrice()Ljava/math/BigDecimal;71
-M
-Gcom.snackbar.product.dto.ProductDTO#getCookingTime()Ljava/lang/Integer;73
-
-mapToDTO74
-E
-?com.snackbar.product.entity.Product#getName()Ljava/lang/String;76
-I
-Ccom.snackbar.product.entity.Product#getCategory()Ljava/lang/String;78
-L
-Fcom.snackbar.product.entity.Product#getDescription()Ljava/lang/String;80
-J
-Dcom.snackbar.product.entity.Product#getPrice()Ljava/math/BigDecimal;82
-M
-Gcom.snackbar.product.entity.Product#getCookingTime()Ljava/lang/Integer;84J
-
-1
-12Z
-
-3	
-354jÑ
-@
-21:
-212223 *
-1 (26:3B
-	
-9
-24
-
-
-11
-25
-
-77
-777815
-9
-64
-678 *
-1 (&:3B
-	
-9
-10
-
-
-11
-12
-
-79
-798015
-
-33
-333415
-
-26
-262715
-@
-49:
-495031 *
-1! !(26:3B
-	
-9
-24
-
-
-11
-61
-
-75
-757615
-
-43
-434415
-
-17
-171815
-
-72
-727315
-
-57
-575815
-
-47
-474815
-
-53
-535415
-
-66
-666715
-
-40
-404115
-
-51
-515215
-
-70
-707115
-
-13
-131415
-
-55
-555615
-
-83
-838415
-
-45
-454615
-
-68
-686915
-
-81
-818215
-@
-37:
-373831 *
-1 (26:3B
-	
-9
-10
-
-
-11
-39
-@
-29:
-293031 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-
-64
-646515
-@
-59:
-596031 *
-1, ,(26:3B
-	
-9
-24
-
-
-11
-74
-
-62
-626315rÚ
-
-61316*
-12 (F
-
-61719*
-1 (
-
-61720*
-1 (	
-
-61320*
-12 (F
-
-212628*
-1 ($
-
-212620*
-1 ($
-
-212620*
-1% (6
-
-292632*
-1% (6
-
-293319*
-1 (
-
-293320*
-1 (
-
-29635*
-1 ($
-
-292628*
-17 (H
-
-292620*
-1% (6
-
-29620*
-1	 (
-
-29636*
-1	 (
-
-292620*
-1 (
-
-292136*
-1 (
-
-374042*
-1 (
-
-374032*
-10 (:
-
-374020*
-1 (
-
-374028*
-1; (E
-
-374020*
-10 (:
-
-374328*
-1 ( 
-
-374320*
-1	 (
-
-374342*
-1# (4
-
-372636*
-1# (4
-
-374535*
-15 (=
-
-372136*
-1# (4
-
-372620*
-1# (4
-
-372136*
-1# (4
-
-374735*
-1$ (5
-
-374328*
-1 (
-
-374320*
-1	 (
-
-374342*
-1" (-
-
-37636*
-1" (-
-
-374935*
-1" (-
-
-374336*
-1	 (
-
-375135*
-1 (
-
-374336*
-1 (-
-
-375335*
-1. (3
-
-374336*
-1	 (
-
-375535*
-1 ('
-
-374328*
-1 (
-
-374320*
-1	 (
-
-374342*
-1  (1
-
-372636*
-1  (1
-
-375735*
-12 (6
-
-372136*
-1  (1
-
-372620*
-1  (1
-
-372136*
-1  (1
-
-374042*
-1 (
-
-37636*
-1 (
-
-375935*
-1 (
-
-494342*
-1! !(
-
-494032*
-1!! !(+
-
-494320*
-1! !(
-
-494028*
-1!, !(6
-
-494020*
-1!! !(+
-
-494335*
-1" "(
-
-494036*
-1# #(
-
-496235*
-1# #(!
-
-494036*
-1$ $(
-
-496435*
-1$ $(#
-
-494036*
-1% %(
-
-496635*
-1% %('
-
-494036*
-1& &(
-
-496835*
-1& &(*
-
-494036*
-1' '(
-
-497035*
-1' '($
-
-494036*
-1( ((
-
-497235*
-1( ((*
-
-594042*
-1, ,(
-
-594332*
-1,! ,((
-
-594020*
-1, ,(
-
-594328*
-1,) ,(0
-
-594320*
-1,! ,((
-
-594035*
-1- -(
-
-594336*
-1. .(
-
-595335*
-1. .(
-
-594336*
-1/ /(
-
-597535*
-1/ /( 
-
-594336*
-10 0(
-
-597735*
-10 0($
-
-594336*
-11 1(
-
-597935*
-11 1('
-
-594336*
-12 2(
-
-598135*
-12 2(!
-
-594336*
-13 3(
-
-598335*
-13 3('

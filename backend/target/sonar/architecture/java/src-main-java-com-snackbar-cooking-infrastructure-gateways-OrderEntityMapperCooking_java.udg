@@ -1,527 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125502*java2.B„ 
-]
-Xsrc/main/java/com/snackbar/cooking/infrastructure/gateways/OrderEntityMapperCooking.java2
-
-package4
-1
-,com.snackbar.cooking.infrastructure.gateways5
-J
-Ecom.snackbar.cooking.infrastructure.gateways.OrderEntityMapperCooking7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-OrderEntityMapperCooking12
-.
-(org.springframework.stereotype.Component14
-
-unknown15
-
-annotated by16
-
-
-uses17
-Å
-¾com.snackbar.cooking.infrastructure.gateways.OrderEntityMapperCooking#toDomain(Lcom/snackbar/cooking/infrastructure/persistence/OrderEntityCooking;)Lcom/snackbar/cooking/domain/entity/Order;19
-
-method20
-
-toDomain21
-.
-(com.snackbar.cooking.domain.entity.Order23
-
-returns24
-H
-Bcom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking26
-
-	has param27
-
-is type28
-2
-,com.snackbar.cooking.domain.entity.OrderItem30
-
-
-references31
-j
-dcom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getItemEntities()Ljava/util/List;33
-
-calls34
-b
-\com.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getId()Ljava/lang/String;36
-d
-^com.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getName()Ljava/lang/String;38
-k
-ecom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getOrderNumber()Ljava/lang/String;40
-t
-ncom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getOrderDateTime()Ljava/time/LocalDateTime;42
-k
-ecom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getStatusOrder()Ljava/lang/String;44
-l
-fcom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getWaitingTime()Ljava/lang/Integer;46
-u
-ocom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getRemainingWaitingTime()Ljava/lang/Integer;48
-É
-Âcom.snackbar.cooking.infrastructure.gateways.OrderEntityMapperCooking#toOrderItem(Lcom/snackbar/cooking/infrastructure/persistence/OrderItemEntity;)Lcom/snackbar/cooking/domain/entity/OrderItem;50
-
-private51
-
-toOrderItem52
-E
-?com.snackbar.cooking.infrastructure.persistence.OrderItemEntity54
-a
-[com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getName()Ljava/lang/String;56
-b
-\com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getPrice()Ljava/lang/Double;58
-f
-`com.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getQuantity()Ljava/lang/Integer;60
-i
-ccom.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getCookingTime()Ljava/lang/Integer;62
-j
-dcom.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getCustomization()Ljava/lang/String;64
-Å
-¾com.snackbar.cooking.infrastructure.gateways.OrderEntityMapperCooking#toEntity(Lcom/snackbar/cooking/domain/entity/Order;)Lcom/snackbar/cooking/infrastructure/persistence/OrderEntityCooking;66
-
-toEntity67
-F
-@com.snackbar.cooking.domain.entity.Order#items()Ljava/util/List;69
-E
-?com.snackbar.cooking.domain.entity.Order#id()Ljava/lang/String;71
-G
-Acom.snackbar.cooking.domain.entity.Order#name()Ljava/lang/String;73
-N
-Hcom.snackbar.cooking.domain.entity.Order#orderNumber()Ljava/lang/String;75
-W
-Qcom.snackbar.cooking.domain.entity.Order#orderDateTime()Ljava/time/LocalDateTime;77
-N
-Hcom.snackbar.cooking.domain.entity.Order#statusOrder()Ljava/lang/String;79
-O
-Icom.snackbar.cooking.domain.entity.Order#waitingTime()Ljava/lang/Integer;81
-X
-Rcom.snackbar.cooking.domain.entity.Order#remainingWaitingTime()Ljava/lang/Integer;83
-Ï
-Ècom.snackbar.cooking.infrastructure.gateways.OrderEntityMapperCooking#toOrderItemEntity(Lcom/snackbar/cooking/domain/entity/OrderItem;)Lcom/snackbar/cooking/infrastructure/persistence/OrderItemEntity;85
-
-toOrderItemEntity86
-K
-Ecom.snackbar.cooking.domain.entity.OrderItem#name()Ljava/lang/String;88
-L
-Fcom.snackbar.cooking.domain.entity.OrderItem#price()Ljava/lang/Double;90
-P
-Jcom.snackbar.cooking.domain.entity.OrderItem#quantity()Ljava/lang/Integer;92
-S
-Mcom.snackbar.cooking.domain.entity.OrderItem#cookingTime()Ljava/lang/Integer;94
-T
-Ncom.snackbar.cooking.domain.entity.OrderItem#customization()Ljava/lang/String;96J
-
-1
-12Z
-
-3	
-354j¯
-
-22
-222315
-
-43
-434415
-
-82
-828315
-9
-64
-678 *
-1 (&:3B
-	
-9
-10
-
-
-11
-12
-
-78
-787915
-
-76
-767715
-@
-18:
-181920 *
-1 (26:3B
-	
-9
-10
-
-
-11
-21
-
-91
-919215
-
-63
-636415
-
-45
-454615
-
-93
-939415
-
-25
-252615
-@
-84:
-848520 *
-1? ?(26:3B
-	
-9
-51
-
-
-11
-86
-
-59
-596015
-
-32
-323315
-
-55
-555615
-@
-65:
-656620 *
-1, ,(26:3B
-	
-9
-10
-
-
-11
-67
-
-57
-575815
-
-95
-959615
-
-53
-535415
-
-72
-727315
-
-41
-414215
-
-74
-747515
-
-70
-707115
-
-39
-394015
-
-89
-899015
-
-87
-878815
-
-47
-474815
-
-29
-293015
-
-61
-616215
-
-35
-353615
-
-13
-131415
-@
-49:
-495020 *
-1" "(26:3B
-	
-9
-51
-
-
-11
-52
-
-68
-686915
-
-37
-373815
-
-80
-808115rÖ
-
-61316*
-1 (
-
-61317*
-1 (
-
-182224*
-1 (
-
-182527*
-1 (-
-
-182217*
-1 (
-
-182528*
-1. (4
-
-182517*
-1 (-
-
-182917*
-1 (
-
-182531*
-1! ('
-
-183234*
-1( (7
-
-18617*
-1 (
-
-18631*
-1 (
-
-182234*
-1 (
-
-182531*
-1 (
-
-183534*
-1 (
-
-182531*
-1 (
-
-183734*
-1 (
-
-182531*
-1 (
-
-183934*
-1 ("
-
-182531*
-1 (
-
-184134*
-1 ($
-
-182531*
-1 (
-
-184334*
-1 ("
-
-182531*
-1 (
-
-184534*
-1 ("
-
-182531*
-1 (
-
-184734*
-1 (+
-
-492924*
-1" "(
-
-495327*
-1"# "(2
-
-492917*
-1" "(
-
-495328*
-1"3 "(9
-
-495317*
-1"# "(2
-
-492934*
-1# #(
-
-495331*
-1$ $(
-
-495534*
-1$ $(
-
-495331*
-1% %(
-
-495734*
-1% %(
-
-495331*
-1& &(
-
-495934*
-1& &(
-
-495331*
-1' '(
-
-496134*
-1' '("
-
-495331*
-1( ((
-
-496334*
-1( (($
-
-652524*
-1, ,(
-
-652227*
-1,( ,(-
-
-652517*
-1, ,(
-
-652228*
-1,. ,(4
-
-652217*
-1,( ,(-
-
-655317*
-1/ /(
-
-652231*
-1/. /(4
-
-656834*
-1/5 /(:
-
-65617*
-10 0(
-
-65631*
-10 0(
-
-652534*
-13 3(&
-
-652231*
-14 4(
-
-657034*
-14 4(
-
-652231*
-15 5(
-
-657234*
-15 5(
-
-652231*
-16 6(
-
-657434*
-16 6(
-
-652231*
-17 7(
-
-657634*
-17 7(!
-
-652231*
-19 9(
-
-657834*
-19 9(
-
-652231*
-1: :(
-
-658034*
-1: :(
-
-652231*
-1; ;(
-
-658234*
-1; ;((
-
-845324*
-1? ?(
-
-842927*
-1?/ ?(8
-
-845317*
-1? ?(
-
-842928*
-1?9 ?(=
-
-842917*
-1?/ ?(8
-
-845334*
-1@ @(#
-
-842931*
-1A A(
-
-848734*
-1A A(
-
-842931*
-1B B(
-
-848934*
-1B B(
-
-842931*
-1C C(
-
-849134*
-1C C(
-
-842931*
-1D D(
-
-849334*
-1D D(
-
-842931*
-1E E(
-
-849534*
-1E E(

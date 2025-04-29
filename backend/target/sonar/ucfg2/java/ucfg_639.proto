@@ -1,15 +1,0 @@
-
-Icom.snackbar.iam.domain.UserDetailsEntity#getUsername()Ljava/lang/String;y
-o/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/domain/UserDetailsEntity.java1 1("1*³
-12 2(~
-|
-2 2(
-%0java.lang.String"__id*R
-
-__unknown_file (6*4+
-)com.snackbar.iam.domain.UserDetailsEntity"
-cpf"$
-2 2(
-
-%0java.lang.StringB-+
-)com.snackbar.iam.domain.UserDetailsEntityH

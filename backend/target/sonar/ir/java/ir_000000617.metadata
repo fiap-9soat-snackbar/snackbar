@@ -1,6 +1,0 @@
-com.snackbar.basket.infrastructure.controllers.BasketController#findAll()Ljava/util/List;
-false
-2e46a98ed5acef7091ada4a456cf0757
-==
-findAllBaskets com.snackbar.basket.application.usecases.BasketUseCase#findAllBaskets()Ljava/util/List;
-toResponseList com.snackbar.basket.infrastructure.controllers.BasketDTOMapper#toResponseList(Ljava/util/List;)Ljava/util/List;

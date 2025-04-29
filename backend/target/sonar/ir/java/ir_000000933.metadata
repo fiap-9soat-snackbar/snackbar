@@ -1,5 +1,0 @@
-com.snackbar.cooking.infrastructure.config.CookingConfig#getCookingByOrderIdUseCase(Lcom/snackbar/cooking/application/gateways/CookingGateway;)Lcom/snackbar/cooking/application/usecases/GetCookingByOrderIdUseCase;
-false
-0dee403323e2bdf36772c628972d33e4
-com.snackbar.cooking.application.usecases.GetCookingByOrderIdUseCase#<init>(Lcom/snackbar/cooking/application/gateways/CookingGateway;)V
-com.snackbar.cooking.application.usecases.GetCookingByOrderIdUseCase#instance-init#

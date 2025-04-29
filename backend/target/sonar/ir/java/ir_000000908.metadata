@@ -1,8 +1,0 @@
-com.snackbar.iam.application.UserService#allUsers()Ljava/util/List;
-false
-c9b318fdb3a6429730d00a290b6c061a
-java.util.ArrayList#<init>()V
-java.util.ArrayList#instance-init#
-==
-findAll org.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;
-forEach java.lang.Iterable#forEach(Ljava/util/function/Consumer;)V

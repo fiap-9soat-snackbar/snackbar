@@ -1,7 +1,0 @@
-com.snackbar.payment.infrastructure.controllers.PaymentDTOMapper#listToResponse(Ljava/util/List;)Ljava/util/List;
-false
-16277d35f5305601da2ea1fbde1b7d82
-==
-map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
-stream java.util.Collection#stream()Ljava/util/stream/Stream;
-toList java.util.stream.Stream#toList()Ljava/util/List;

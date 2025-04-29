@@ -1,6 +1,0 @@
-com.snackbar.orderRefactory.infrastructure.persistence.OrderEntity#generateOrderNumber(Ljava/lang/String;)Ljava/lang/String;
-false
-985fe49ff9b12bb767fa0b3a6561bca7
-java.lang.Integer#parseInt(Ljava/lang/String;)I
-java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-java.lang.String#isEmpty()Z

@@ -1,611 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125098*java2.B«
-I
-Dsrc/main/java/com/snackbar/order/adapter/in/web/OrderController.java2
-
-package4
-&
-!com.snackbar.order.adapter.in.web5
-6
-1com.snackbar.order.adapter.in.web.OrderController7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-OrderController12
-<
-6org.springframework.web.bind.annotation.RestController14
-
-unknown15
-
-annotated by16
-
-
-uses17
-<
-6org.springframework.web.bind.annotation.RequestMapping19
-D
->com.snackbar.order.adapter.in.web.OrderController.orderService21
-
-field22
-
-private23
-
-orderService24
--
-'com.snackbar.order.service.OrderService26
-
-is type27
-j
-dcom.snackbar.order.adapter.in.web.OrderController#<init>(Lcom/snackbar/order/service/OrderService;)V29
-
-method30
-
-	has param31
-
-calls32
-
-
-references33
-”
-com.snackbar.order.adapter.in.web.OrderController#createOrder(Lcom/snackbar/order/domain/model/Order;)Lcom/snackbar/order/domain/model/Order;35
-
-createOrder36
-+
-%com.snackbar.order.domain.model.Order38
-
-returns39
-9
-3org.springframework.web.bind.annotation.PostMapping41
-9
-3org.springframework.web.bind.annotation.RequestBody43
-F
-@com.snackbar.order.domain.model.Order#getCpf()Ljava/lang/String;45
-Š
-ƒcom.snackbar.order.service.OrderService#createOrder(Lcom/snackbar/order/domain/model/Order;)Lcom/snackbar/order/domain/model/Order;47
-”
-com.snackbar.order.adapter.in.web.OrderController#updateOrder(Lcom/snackbar/order/domain/model/Order;)Lcom/snackbar/order/domain/model/Order;49
-
-updateOrder50
-8
-2org.springframework.web.bind.annotation.PutMapping52
-Š
-ƒcom.snackbar.order.service.OrderService#updateOrder(Lcom/snackbar/order/domain/model/Order;)Lcom/snackbar/order/domain/model/Order;54
-T
-Ncom.snackbar.order.adapter.in.web.OrderController#listOrders()Ljava/util/List;56
-
-
-listOrders57
-8
-2org.springframework.web.bind.annotation.GetMapping59
-J
-Dcom.snackbar.order.service.OrderService#listOrders()Ljava/util/List;61
-€
-zcom.snackbar.order.adapter.in.web.OrderController#searchOrderId(Ljava/lang/String;)Lcom/snackbar/order/domain/model/Order;63
-
-searchOrderId64
-:
-4org.springframework.web.bind.annotation.PathVariable66
-v
-pcom.snackbar.order.service.OrderService#searchOrderId(Ljava/lang/String;)Lcom/snackbar/order/domain/model/Order;68
-‹
-„com.snackbar.order.adapter.in.web.OrderController#getOrderByOrderNumber(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;70
-
-getOrderByOrderNumber71
--
-'org.springframework.http.ResponseEntity73
-~
-xcom.snackbar.order.service.OrderService#getOrderByOrderNumber(Ljava/lang/String;)Lcom/snackbar/order/domain/model/Order;75
-m
-gorg.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;77
-9
-3org.springframework.http.ResponseEntity$BodyBuilder79
-{
-uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;81
-•
-Žorg.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;83
-)
-#org.springframework.http.HttpStatus85
-3
--org.springframework.http.HttpStatus.NOT_FOUND87
-Y
-Scom.snackbar.order.adapter.in.web.OrderController#getSortedOrders()Ljava/util/List;89
-
-getSortedOrders90
-O
-Icom.snackbar.order.service.OrderService#getSortedOrders()Ljava/util/List;92J
-
-1
-12Z
-
-3	
-354j—
-
-44
-444515
-
-65
-656615
-
-86
-868715
-@
-69:
-697030 *
-14 4(26:3B
-	
-9
-10
-
-
-11
-71
-9
-64
-678 *
-1 (:3B
-	
-9
-10
-
-
-11
-12
-@
-48:
-484930 *
-1 (26:3B
-	
-9
-10
-
-
-11
-50
-
-18
-181915
-
-25
-252615
-
-78
-787915
-@
-34:
-343530 *
-1 (26:3B
-	
-9
-10
-
-
-11
-36
-
-42
-424315
-@
-28:
-282930 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-
-76
-767715
-
-51
-515215
-
-46
-464715
-
-80
-808115
-
-58
-585915
-
-91
-919215
-
-82
-828315
-
-40
-404115
-@
-55:
-555630 *
-1% %(26:3B
-	
-9
-10
-
-
-11
-57
-@
-20:
-202122 *
-1 (26:3B
-	
-9
-23
-
-
-11
-24
-
-37
-373815
-
-60
-606115
-
-13
-131415
-
-67
-676815
-@
-62:
-626330 *
-1- -(26:3B
-	
-9
-10
-
-
-11
-64
-
-84
-848515
-@
-88:
-888930 *
-1? ?(26:3B
-	
-9
-10
-
-
-11
-90
-
-53
-535415
-
-74
-747515
-
-72
-727315rŒ
-
-61316*
-1 (
-
-61317*
-1 (
-
-61816*
-1 (
-
-61817*
-1 (
-
-202527*
-1 (
-
-202517*
-1 (
-
-202517*
-1  (,
-
-282531*
-1 ((
-
-28632*
-1 (
-
-282527*
-1) (5
-
-282517*
-1 ((
-
-28617*
-1	 (
-
-28633*
-1	 (
-
-282517*
-1 (
-
-282033*
-1 (
-
-343739*
-1 (
-
-343731*
-1+ (0
-
-344016*
-1 (
-
-344017*
-1 (
-
-343717*
-1 (
-
-343727*
-11 (6
-
-344216*
-1 (
-
-344217*
-1 (*
-
-343717*
-1+ (0
-
-343733*
-1 (
-
-344432*
-1 (
-
-343739*
-1 (
-
-342533*
-1 (
-
-344632*
-1 ((
-
-342033*
-1 (
-
-342517*
-1 (
-
-342033*
-1 (
-
-483739*
-1   (
-
-483731*
-1 +  (0
-
-485116*
-1 (
-
-485117*
-1 (
-
-483717*
-1   (
-
-483727*
-1 1  (6
-
-484216*
-1   (
-
-484217*
-1   (*
-
-483717*
-1 +  (0
-
-483739*
-1! !(
-
-482533*
-1! !(
-
-485332*
-1! !((
-
-482033*
-1! !(
-
-482517*
-1! !(
-
-482033*
-1! !(
-
-555816*
-1% %(
-
-555817*
-1% %(
-
-553717*
-1& &(
-
-553717*
-1' '(
-
-552533*
-1' '(*
-
-556032*
-1'+ '(5
-
-552033*
-1' '(*
-
-552517*
-1' '(*
-
-552033*
-1' '(*
-
-553717*
-1( ((
-
-623739*
-1. .(
-
-625816*
-1- -(
-
-625817*
-1- -(
-
-623717*
-1. .(
-
-626516*
-1.  .(!
-
-626517*
-1.! .(-
-
-623727*
-1/ /(
-
-623717*
-1/	 /(
-
-623739*
-1/ /(#
-
-622533*
-1/ /(#
-
-626732*
-1/$ /(1
-
-622033*
-1/ /(#
-
-622517*
-1/ /(#
-
-622033*
-1/ /(#
-
-697239*
-15 5(
-
-695816*
-14 4(
-
-695817*
-14 4(
-
-697217*
-15 5(
-
-696516*
-154 5(5
-
-696517*
-155 5(A
-
-693727*
-17 7(
-
-693717*
-17 7(
-
-693739*
-17 7('
-
-692533*
-17 7('
-
-697432*
-17( 7(=
-
-692033*
-17 7('
-
-692517*
-17 7('
-
-692033*
-17 7('
-
-697239*
-18 8("
-
-697233*
-18 8("
-
-697632*
-18# 8(%
-
-697239*
-1: :("
-
-697833*
-1: :("
-
-698032*
-1:@ :(D
-
-697839*
-1: :("
-
-697233*
-1: :("
-
-698232*
-1:# :()
-
-698417*
-1:* :(4
-
-698417*
-1:5 :(>
-
-698633*
-1:5 :(>
-
-885816*
-1? ?(
-
-885817*
-1? ?(
-
-883717*
-1@ @(
-
-882533*
-1A A(
-
-889132*
-1A A(,
-
-882033*
-1A A(
-
-882517*
-1A A(
-
-882033*
-1A A(

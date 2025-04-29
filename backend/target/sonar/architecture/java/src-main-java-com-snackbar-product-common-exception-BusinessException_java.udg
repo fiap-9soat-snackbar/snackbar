@@ -1,73 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126838*java2.B†
-O
-Jsrc/main/java/com/snackbar/product/common/exception/BusinessException.java2
-
-package4
-*
-%com.snackbar.product.common.exception5
-<
-7com.snackbar.product.common.exception.BusinessException7
-
-	exception8
-
-access9
-
-public10
-
-simple name11
-
-BusinessException12
-Y
-Scom.snackbar.product.common.exception.BusinessException#<init>(Ljava/lang/String;)V14
-
-method15
-
-calls16
-n
-hcom.snackbar.product.common.exception.BusinessException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V18J
-
-1
-12Z
-
-3	
-354j¿
-@
-13:
-131415 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-9
-64
-678 *
-1 (:3B
-	
-9
-10
-
-
-11
-12
-@
-17:
-171815 *
-1	 	(26:3B
-	
-9
-10
-
-
-11
-12r4
-
-13616*
-1 (
-
-17616*
-1	 	(

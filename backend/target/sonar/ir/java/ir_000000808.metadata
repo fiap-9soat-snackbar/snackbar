@@ -1,5 +1,0 @@
-com.snackbar.productv2.application.usecases.GetProductsv2ByCategoryUseCase#getProductsv2ByCategory(Ljava/lang/String;)Ljava/util/List;
-false
-7c95f630302f9af2096fbd3bc1e5fd02
-==
-getProductsv2ByCategory com.snackbar.productv2.application.gateways.Productv2Gateway#getProductsv2ByCategory(Ljava/lang/String;)Ljava/util/List;

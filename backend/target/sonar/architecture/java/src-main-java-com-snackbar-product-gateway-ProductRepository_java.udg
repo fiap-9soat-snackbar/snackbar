@@ -1,197 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126697*java2.Bº	
-F
-Asrc/main/java/com/snackbar/product/gateway/ProductRepository.java2
-
-package4
-!
-com.snackbar.product.gateway5
-3
-.com.snackbar.product.gateway.ProductRepository7
-
-	interface8
-
-access9
-
-public10
-
-simple name11
-
-ProductRepository12
-Ö
-com.snackbar.product.gateway.ProductRepository#save(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/entity/Product;14
-
-method15
-
-
-save16
-)
-#com.snackbar.product.entity.Product18
-
-unknown19
-
-returns20
-
-	has param21
-
-
-uses22
-
-is type23
-e
-_com.snackbar.product.gateway.ProductRepository#findById(Ljava/lang/String;)Ljava/util/Optional;25
-
-findById26
-g
-acom.snackbar.product.gateway.ProductRepository#findByName(Ljava/lang/String;)Ljava/util/Optional;28
-
-
-findByName29
-N
-Hcom.snackbar.product.gateway.ProductRepository#findAll()Ljava/util/List;31
-
-findAll32
-g
-acom.snackbar.product.gateway.ProductRepository#findByCategory(Ljava/lang/String;)Ljava/util/List;34
-
-findByCategory35
-T
-Ncom.snackbar.product.gateway.ProductRepository#existsById(Ljava/lang/String;)Z37
-
-
-existsById38
-T
-Ncom.snackbar.product.gateway.ProductRepository#deleteById(Ljava/lang/String;)V40
-
-
-deleteById41J
-
-1
-12Z
-
-3	
-354jù
-@
-33:
-333415 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-35
-@
-30:
-303115 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-32
-
-17
-171819
-@
-27:
-272815 *
-1
- 
-(26:3B
-	
-9
-10
-
-
-11
-29
-@
-39:
-394015 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-41
-@
-13:
-131415 *
-1 (26:3B
-	
-9
-10
-
-
-11
-16
-@
-36:
-363715 *
-1 (26:3B
-	
-9
-10
-
-
-11
-38
-9
-64
-678 *
-1 (#:3B
-	
-9
-10
-
-
-11
-12
-@
-24:
-242515 *
-1	 	(26:3B
-	
-9
-10
-
-
-11
-26rÛ
-
-131720*
-1 (
-
-131721*
-1 (
-
-131722*
-1 (
-
-131723*
-1 (!
-
-131722*
-1 (
-
-241722*
-1	 	(
-
-271722*
-1
- 
-(
-
-301722*
-1
- (
-
-331722*
-1
- (

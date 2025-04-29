@@ -1,6 +1,0 @@
-com.snackbar.orderRefactory.domain.entity.Order#generateOrderNumber(Ljava/lang/String;)Ljava/lang/String;
-false
-8d9bd9eb59f00695b08d439b88570a05
-java.lang.Integer#parseInt(Ljava/lang/String;)I
-java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-java.lang.String#isEmpty()Z

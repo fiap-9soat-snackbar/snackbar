@@ -1,7 +1,0 @@
-com.snackbar.productv2.application.usecases.UpdateProductv2ByIdUseCase#updateProductv2ById(Ljava/lang/String;Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;
-false
-9ce486f46a99bbeef22c6b04af8cd7a7
-com.snackbar.productv2.domain.entity.Productv2#id()Ljava/lang/String;
-==
-getProductv2ById com.snackbar.productv2.application.usecases.GetProductv2ByIdUseCase#getProductv2ById(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;
-updateProductv2ById com.snackbar.productv2.application.gateways.Productv2Gateway#updateProductv2ById(Ljava/lang/String;Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;

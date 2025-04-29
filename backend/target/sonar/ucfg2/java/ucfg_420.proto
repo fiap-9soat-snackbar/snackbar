@@ -1,42 +1,0 @@
-
-Tcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity#getWaitingTime()I“
-ˆ/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/infrastructure/persistence/OrderEntity.java^ ^("1*ë
-1_ _(˜
-•
-_ _(
-%0java.util.List"__id*m
-
-__unknown_file (Q*OD
-Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity"
-items¢Ÿ
-_ _(
-%1java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*2
-
-__unknown_file (
-
-%0java.util.List2stream()¾
-»
-` `(^&
-%2 java.util.function.ToIntFunction"__declareFunction*t
-
-__unknown_file (XV
-T__sonar_lambda_42$com.snackbar.orderRefactory.infrastructure.persistence.OrderEntityÂ¿
-_ `(_ 
-%4java.util.stream.IntStream"`java.util.stream.Stream#mapToInt(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;*;
-
-__unknown_file (
-
-%1java.util.stream.Stream*D
-
-__unknown_file ((
-&
-%2 java.util.function.ToIntFunction2,mapToInt(Ljava/util/function/ToIntFunction;)
-_ a(	
-%5int"!java.util.stream.IntStream#sum()I*>
-
-__unknown_file ("
- 
-%4java.util.stream.IntStream2sum()"
-_ a(
-""BFD
-Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntityHX

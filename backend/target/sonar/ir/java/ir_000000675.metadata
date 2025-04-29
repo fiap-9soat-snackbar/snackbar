@@ -1,9 +1,0 @@
-com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway#updatePaymentStatusByExternalId(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
-false
-a6a104f83659fada1d30224f0f947d03
-java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
-==
-findByExternalPaymentId com.snackbar.payment.infrastructure.persistence.PaymentRepository#findByExternalPaymentId(Ljava/lang/String;)Ljava/util/Optional;
-save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
-setPaymentStatus com.snackbar.payment.infrastructure.persistence.PaymentEntity#setPaymentStatus(Ljava/lang/String;)V
-toDomainObj com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper#toDomainObj(Lcom/snackbar/payment/infrastructure/persistence/PaymentEntity;)Lcom/snackbar/payment/domain/entity/Payment;

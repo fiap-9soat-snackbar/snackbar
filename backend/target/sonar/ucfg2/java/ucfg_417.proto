@@ -1,15 +1,0 @@
-
-]com.snackbar.orderRefactory.infrastructure.persistence.OrderEntity#getItems()Ljava/util/List;“
-ˆ/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/infrastructure/persistence/OrderEntity.javaU U($"1*Ì
-1V V(˜
-•
-V V(
-%0java.util.List"__id*m
-
-__unknown_file (Q*OD
-Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity"
-items""
-V V(
-
-%0java.util.ListBFD
-Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntityH

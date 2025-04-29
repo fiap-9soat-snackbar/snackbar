@@ -1,84 +1,0 @@
-
-_com.snackbar.orderRefactory.application.usecases.OrderUseCase#getSortedOrders()Ljava/util/List;Ž
-ƒ/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/application/usecases/OrderUseCase.javai i(&"1*Ü
-1j j(É
-Æ
-j j(C
-%0=com.snackbar.orderRefactory.application.gateways.OrderGateway"__id*o
-
-__unknown_file (S*Q?
-=com.snackbar.orderRefactory.application.usecases.OrderUseCase"
-orderGatewayú÷
-j j(-
-%1java.util.List"_com.snackbar.orderRefactory.application.gateways.OrderGateway#getSortedOrders()Ljava/util/List;*a
-
-__unknown_file (E
-C
-%0=com.snackbar.orderRefactory.application.gateways.OrderGateway2getSortedOrders()¢Ÿ
-j j(6
-%2java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*2
-
-__unknown_file (
-
-%1java.util.List2stream()µ
-²
-k m(F"
-%3java.util.function.Predicate"__declareFunction*o
-
-__unknown_file (SQ
-O__sonar_lambda_32$com.snackbar.orderRefactory.application.usecases.OrderUseCase­ª
-j m(G
-%13java.util.stream.Stream"Wjava.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;*;
-
-__unknown_file (
-
-%2java.util.stream.Stream*@
-
-__unknown_file ($
-"
-%3java.util.function.Predicate2&filter(Ljava/util/function/Predicate;)®
-«
-n t(
-%14java.util.Comparator"__declareFunction*o
-
-__unknown_file (SQ
-O__sonar_lambda_33$com.snackbar.orderRefactory.application.usecases.OrderUseCase¶
-³
-
-__unknown_file (2
-
-%14java.util.Comparator"
-OrderUseCase.this"__id*]
-
-__unknown_file (A?
-=com.snackbar.orderRefactory.application.usecases.OrderUseCase—”
-j t(
-%22java.util.stream.Stream"Ojava.util.stream.Stream#sorted(Ljava/util/Comparator;)Ljava/util/stream/Stream;*<
-
-__unknown_file ( 
-
-%13java.util.stream.Stream*9
-
-__unknown_file (
-
-%14java.util.Comparator2sorted(Ljava/util/Comparator;)¯
-¬
-u u(,!
-%23java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*;
-
-__unknown_file ("
-java.util.stream.Collectors›˜
-j u(-
-%24java.util.List"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*<
-
-__unknown_file ( 
-
-%22java.util.stream.Stream*?
-
-__unknown_file (#
-!
-%23java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)"#
-j u(.
-
-%24java.util.ListBA?
-=com.snackbar.orderRefactory.application.usecases.OrderUseCaseH

@@ -1,15 +1,0 @@
-
-Jcom.snackbar.order.domain.model.Order#getPaymentMethod()Ljava/lang/String;u
-k/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/order/domain/model/Order.java| |(""1*»
-1} }(…
-‚
-} }(
-%0java.lang.String"__id*X
-
-__unknown_file (<*:'
-%com.snackbar.order.domain.model.Order"
-paymentMethod"$
-} }(
-
-%0java.lang.StringB)'
-%com.snackbar.order.domain.model.OrderH

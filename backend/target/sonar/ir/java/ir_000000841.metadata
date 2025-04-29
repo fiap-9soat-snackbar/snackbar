@@ -1,8 +1,0 @@
-com.snackbar.cooking.infrastructure.gateways.CookingEntityMapper#toEntity(Lcom/snackbar/cooking/domain/entity/Cooking;)Lcom/snackbar/cooking/infrastructure/persistence/CookingEntity;
-false
-dc48cca3def630799d67c6d3224644f0
-com.snackbar.cooking.domain.entity.Cooking#id()Ljava/lang/String;
-com.snackbar.cooking.domain.entity.Cooking#orderId()Ljava/lang/String;
-com.snackbar.cooking.domain.entity.Cooking#status()Lcom/snackbar/order/domain/model/StatusOrder;
-com.snackbar.cooking.infrastructure.persistence.CookingEntity#<init>(Ljava/lang/String;Ljava/lang/String;Lcom/snackbar/order/domain/model/StatusOrder;)V
-com.snackbar.cooking.infrastructure.persistence.CookingEntity#instance-init#

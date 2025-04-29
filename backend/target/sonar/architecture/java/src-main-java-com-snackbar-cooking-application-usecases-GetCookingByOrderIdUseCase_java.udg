@@ -1,211 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126816*java2.Bâ
-
-\
-Wsrc/main/java/com/snackbar/cooking/application/usecases/GetCookingByOrderIdUseCase.java2
-
-package4
-.
-)com.snackbar.cooking.application.usecases5
-I
-Dcom.snackbar.cooking.application.usecases.GetCookingByOrderIdUseCase7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
- 
-GetCookingByOrderIdUseCase12
-,
-&org.springframework.stereotype.Service14
-
-unknown15
-
-annotated by16
-
-
-uses17
-Y
-Scom.snackbar.cooking.application.usecases.GetCookingByOrderIdUseCase.cookingGateway19
-
-field20
-
-private21
-
-cookingGateway22
->
-8com.snackbar.cooking.application.gateways.CookingGateway24
-
-is type25
-è
-àcom.snackbar.cooking.application.usecases.GetCookingByOrderIdUseCase#<init>(Lcom/snackbar/cooking/application/gateways/CookingGateway;)V27
-
-method28
-
-	has param29
-
-calls30
-
-
-references31
-ì
-åcom.snackbar.cooking.application.usecases.GetCookingByOrderIdUseCase#execute(Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Cooking;33
-
-execute34
-0
-*com.snackbar.cooking.domain.entity.Cooking36
-
-returns37
-ç
-Ücom.snackbar.cooking.application.gateways.CookingGateway#findByOrderId(Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Cooking;39
-E
-?com.snackbar.cooking.domain.exceptions.CookingNotFoundException41J
-
-1
-12Z
-
-3	
-354jÂ
-
-40
-404115
-9
-64
-678 *
-1	 	((:3B
-	
-9
-10
-
-
-11
-12
-@
-26:
-262728 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-
-13
-131415
-@
-32:
-323328 *
-1 (26:3B
-	
-9
-10
-
-
-11
-34
-
-35
-353615
-
-38
-383915
-@
-18:
-181920 *
-1
- 
-(26:3B
-	
-9
-21
-
-
-11
-22
-
-23
-232415rÉ
-
-61316*
-1 (
-
-61317*
-1 (	
-
-182325*
-1
- 
-(!
-
-182317*
-1
- 
-(!
-
-182317*
-1
-" 
-(0
-
-262329*
-1' (5
-
-26630*
-1 (&
-
-262325*
-16 (D
-
-262317*
-1' (5
-
-26617*
-1	 (
-
-26631*
-1	 (
-
-262317*
-1 (
-
-261831*
-1 (
-
-323537*
-1 (
-
-323517*
-1 (
-
-323525*
-1 (
-
-323517*
-1	 (
-
-323537*
-1 ()
-
-322331*
-1 ()
-
-323830*
-1* (7
-
-321831*
-1 ()
-
-322317*
-1 ()
-
-321831*
-1 ()
-
-324030*
-1 (/

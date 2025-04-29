@@ -1,7 +1,0 @@
-com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderController#updateStatusOrder(Lcom/snackbar/orderRefactory/infrastructure/controllers/UpdateOrderStatusRequest;)Lcom/snackbar/orderRefactory/domain/entity/Order;
-false
-a98f3730397628946e8b23f735ba42f2
-com.snackbar.orderRefactory.infrastructure.controllers.UpdateOrderStatusRequest#orderId()Ljava/lang/String;
-com.snackbar.orderRefactory.infrastructure.controllers.UpdateOrderStatusRequest#status()Ljava/lang/String;
-==
-updateStatusOrder com.snackbar.orderRefactory.application.usecases.OrderUseCase#updateStatusOrder(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;

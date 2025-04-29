@@ -38,6 +38,7 @@ com/snackbar/product/usecase/CreateProductUseCase.class
 com/snackbar/productv2/application/usecases/ListProductsv2UseCase.class
 com/snackbar/cooking/infrastructure/gateways/OrderDatabaseGatewayCooking.class
 com/snackbar/product/common/exception/BusinessException.class
+com/snackbar/iam/application/SecurityConfiguration.class
 com/snackbar/product/gateway/ProductRepository.class
 com/snackbar/product/usecase/GetProductUseCase.class
 com/snackbar/pickup/usecase/NotifyCustomerUseCase.class
@@ -63,7 +64,9 @@ com/snackbar/iam/application/ApplicationConfiguration.class
 com/snackbar/checkout/infrastructure/configuration/GlobalExceptionHandler.class
 com/snackbar/iam/application/OpenApiConfig.class
 com/snackbar/iam/web/dto/RegisterUserDto.class
+com/snackbar/iam/application/AuthenticationService.class
 com/snackbar/payment/application/usecases/ListPaymentsUseCase.class
+com/snackbar/iam/application/JwtAuthenticationFilter.class
 com/snackbar/cooking/infrastructure/persistence/CookingEntity.class
 com/snackbar/iam/infrastructure/UserRepository.class
 com/snackbar/productv2/infrastructure/gateways/Productv2RepositoryGateway.class
@@ -78,6 +81,7 @@ com/snackbar/iam/domain/UserEntity$UserEntityBuilder.class
 com/snackbar/product/common/handler/GlobalExceptionHandler.class
 com/snackbar/iam/application/UserService.class
 com/snackbar/cooking/domain/exceptions/CookingNotFoundException.class
+com/snackbar/cooking/domain/exceptions/UserNotFoundException.class
 com/snackbar/payment/infrastructure/gateways/PaymentEntityMapper.class
 com/snackbar/order/adapter/out/OrderRepository.class
 com/snackbar/product/usecase/impl/GetProductByNameUseCaseImpl.class
@@ -99,6 +103,7 @@ com/snackbar/productv2/infrastructure/controllers/GetProductv2Response.class
 com/snackbar/pickup/usecase/IsReadyPickupUseCaseImpl.class
 com/snackbar/cooking/domain/entity/Order.class
 com/snackbar/pickup/usecase/NotifyCustomerUseCaseImpl.class
+com/snackbar/iam/application/JwtService.class
 com/snackbar/iam/domain/UserDetailsEntity.class
 com/snackbar/payment/infrastructure/controllers/CreatePaymentMPRequest.class
 com/snackbar/payment/application/gateways/PaymentGateway.class
@@ -137,19 +142,23 @@ com/snackbar/productv2/infrastructure/config/ProductConfig.class
 com/snackbar/cooking/infrastructure/persistence/OrderRepositoryCooking.class
 com/snackbar/product/usecase/impl/GetProductUseCaseImpl.class
 com/snackbar/product/usecase/GetAllProductsUseCase.class
+com/snackbar/cooking/infrastructure/controllers/CookingExceptionHandler.class
 com/snackbar/pickup/entity/Pickup.class
 com/snackbar/orderRefactory/domain/entity/OrderItem.class
 com/snackbar/iam/application/IamService.class
 com/snackbar/checkout/entity/Checkout.class
+com/snackbar/iam/web/UserController.class
 com/snackbar/iam/domain/IamRole.class
 com/snackbar/productv2/infrastructure/gateways/Productv2EntityMapper.class
 com/snackbar/payment/infrastructure/MpService.class
+com/snackbar/iam/web/dto/RefreshTokenRequest.class
 com/snackbar/payment/infrastructure/persistence/PaymentRepository.class
 com/snackbar/order/adapter/in/web/OrderController.class
 com/snackbar/cooking/application/usecases/ReceiveOrderUseCase.class
 com/snackbar/orderRefactory/application/gateways/OrderGateway.class
 com/snackbar/orderRefactory/infrastructure/persistence/OrderRefactoryRepository.class
 com/snackbar/checkout/presentation/CheckoutController.class
+com/snackbar/iam/web/AuthenticationController.class
 com/snackbar/payment/application/usecases/UpdatePaymentStatusWebhook.class
 com/snackbar/productv2/application/usecases/GetProductv2ByIdUseCase.class
 com/snackbar/orderRefactory/application/gateways/ProductGateway.class

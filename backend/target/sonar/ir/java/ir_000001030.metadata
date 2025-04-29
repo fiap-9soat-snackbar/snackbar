@@ -1,7 +1,0 @@
-com.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway#createProductv2(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;
-false
-534fc6130def15f520eaca95d7a388ff
-==
-save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
-toDomainObj com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toDomainObj(Lcom/snackbar/productv2/infrastructure/persistence/Productv2Entity;)Lcom/snackbar/productv2/domain/entity/Productv2;
-toEntity com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toEntity(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/infrastructure/persistence/Productv2Entity;

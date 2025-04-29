@@ -1,47 +1,0 @@
-
-Ccom.snackbar.iam.application.UserService#allUsers()Ljava/util/List;x
-n/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/UserService.java ($"1*š
-1! (2<:
-% (0
-%0java.util.ArrayList"java.util.ArrayListj
-h
-! (2
-%1"java.util.ArrayList#<init>()V*7
-
-__unknown_file (
-
-%0java.util.ArrayListd
-b
- (3
-usersjava.util.List"__id*7
-
-__unknown_file (
-
-%0java.util.ArrayList¥
-¢
- (3
-%2-com.snackbar.iam.infrastructure.IamRepository"__id*[
-
-__unknown_file (?*=*
-(com.snackbar.iam.application.UserService"
-iamRepositoryÓÐ
- (
-%3java.util.List"Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;*Q
-
-__unknown_file (5
-3
-%2-com.snackbar.iam.infrastructure.IamRepository2	findAll()ÕÒ
- (3
-
-%4void":java.lang.Iterable#forEach(Ljava/util/function/Consumer;)V*2
-
-__unknown_file (
-
-%3java.util.List*"
-
-__unknown_file (
-""2&forEach(Ljava/util/function/Consumer;)"%
- (
-
-usersjava.util.ListB,*
-(com.snackbar.iam.application.UserServiceH

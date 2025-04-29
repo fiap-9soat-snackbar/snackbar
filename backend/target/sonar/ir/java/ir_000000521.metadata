@@ -1,5 +1,0 @@
-com.snackbar.pickup.presentation.PickupController#customerNotify(Ljava/lang/String;)Ljava/lang/String;
-false
-fdeee9d50f966992b18316a7bde9982f
-==
-notify com.snackbar.pickup.usecase.NotifyCustomerUseCase#notify(Ljava/lang/String;)V

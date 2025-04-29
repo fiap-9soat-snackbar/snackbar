@@ -1,15 +1,0 @@
-
-bcom.snackbar.productv2.infrastructure.persistence.Productv2Entity#getPrice()Ljava/math/BigDecimal;í
-á/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/persistence/Productv2Entity.java? ?("1*◊
-1@ @(ù
-ö
-@ @(
-%0java.math.BigDecimal"__id*l
-
-__unknown_file (P*NC
-Acom.snackbar.productv2.infrastructure.persistence.Productv2Entity"
-price"(
-@ @(
-
-%0java.math.BigDecimalBEC
-Acom.snackbar.productv2.infrastructure.persistence.Productv2EntityH

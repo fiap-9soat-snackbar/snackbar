@@ -1,7 +1,0 @@
-com.snackbar.order.service.OrderService#searchOrderId(Ljava/lang/String;)Lcom/snackbar/order/domain/model/Order;
-false
-bfc6b92d14469efb34fd47a0a4613ea9
-java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
-java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
-==
-findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;

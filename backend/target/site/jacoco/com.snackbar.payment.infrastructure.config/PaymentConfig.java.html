@@ -107,11 +107,11 @@ import javax.annotation.PostConstruct;*/
             MpService mpService
     ) {
 <span class="nc" id="L109">        return new PaymentRepositoryGateway(</span>
-<span class="nc" id="L110">                paymentRepository,</span>
-<span class="nc" id="L111">                paymentMPRepository,</span>
-<span class="nc" id="L112">                paymentEntityMapper,</span>
-<span class="nc" id="L113">                paymentMPEntityMapper,</span>
-<span class="nc" id="L114">                mpService);</span>
+                paymentRepository,
+                paymentMPRepository,
+                paymentEntityMapper,
+                paymentMPEntityMapper,
+                mpService);
     }
 
     @Bean

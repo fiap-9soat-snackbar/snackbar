@@ -1,119 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125317*java2.B‘
-F
-Asrc/main/java/com/snackbar/order/adapter/out/OrderRepository.java2
-
-package4
-#
-com.snackbar.order.adapter.out5
-3
-.com.snackbar.order.adapter.out.OrderRepository7
-
-	interface8
-
-access9
-
-public10
-
-simple name11
-
-OrderRepository12
-A
-;org.springframework.data.mongodb.repository.MongoRepository14
-
-unknown15
-
-
-implements16
-/
-)org.springframework.stereotype.Repository18
-
-annotated by19
-
-
-uses20
-+
-%com.snackbar.order.domain.model.Order22
-j
-dcom.snackbar.order.adapter.out.OrderRepository#findTopByOrderByOrderNumberDesc()Ljava/util/Optional;24
-
-method25
-%
-findTopByOrderByOrderNumberDesc26
-n
-hcom.snackbar.order.adapter.out.OrderRepository#findByOrderNumber(Ljava/lang/String;)Ljava/util/Optional;28
-
-findByOrderNumber29J
-
-1
-12Z
-
-3	
-354jû
-9
-64
-678 *
-1	 	(!:3B
-	
-9
-10
-
-
-11
-12
-@
-27:
-272825 *
-1 (26:3B
-	
-9
-10
-
-
-11
-29
-
-17
-171815
-
-21
-212215
-
-13
-131415
-@
-23:
-232425 *
-1
- 
-(26:3B
-	
-9
-10
-
-
-11
-26r¸
-
-61316*
-1	* 	(9
-
-61719*
-1 (
-
-61720*
-1 (
-
-61320*
-1	* 	(9
-
-62120*
-1	: 	(?
-
-232120*
-1
- 
-(
-
-272120*
-1 (

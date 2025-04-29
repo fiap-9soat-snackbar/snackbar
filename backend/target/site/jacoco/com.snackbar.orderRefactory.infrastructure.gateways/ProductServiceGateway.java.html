@@ -9,10 +9,10 @@ public class ProductServiceGateway implements ProductGateway {
     private final GetProductByNameUseCaseImpl productUseCase;
     private final ProductDTOToOrderItemMapper productDTOToOrderItemMapper;
 
-<span class="nc" id="L12">    public ProductServiceGateway(</span>
+    public ProductServiceGateway(
             GetProductByNameUseCaseImpl productUseCase,
             ProductDTOToOrderItemMapper productDTOToOrderItemMapper
-    ) {
+<span class="nc" id="L15">    ) {</span>
 <span class="nc" id="L16">        this.productUseCase = productUseCase;</span>
 <span class="nc" id="L17">        this.productDTOToOrderItemMapper = productDTOToOrderItemMapper;</span>
 <span class="nc" id="L18">    }</span>

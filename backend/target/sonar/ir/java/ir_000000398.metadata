@@ -1,7 +1,0 @@
-com.snackbar.orderRefactory.domain.entity.Order#getWaitingTime()I
-false
-a01006e683d59a24d0bc966d7f0afa5a
-==
-mapToInt java.util.stream.Stream#mapToInt(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
-stream java.util.Collection#stream()Ljava/util/stream/Stream;
-sum java.util.stream.IntStream#sum()I

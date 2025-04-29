@@ -1,7 +1,0 @@
-com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#findTopByOrderByOrderNumberDesc()Ljava/lang/String;
-false
-adaef12ac7168efdfe0444d5303230b3
-java.util.Optional#map(Ljava/util/function/Function;)Ljava/util/Optional;
-java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
-==
-findTopByOrderByOrderNumberDesc com.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository#findTopByOrderByOrderNumberDesc()Ljava/util/Optional;

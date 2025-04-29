@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 <span class="nc" id="L16">        return new Basket(</span>
 <span class="nc" id="L17">                request.id(),</span>
 <span class="nc" id="L18">                request.cpf(),</span>
-<span class="nc" id="L19">                items,</span>
+                items,
 <span class="nc" id="L20">                request.totalPrice()</span>
         );
     }
@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 <span class="nc" id="L28">        return new CreateBasketResponse(</span>
 <span class="nc" id="L29">                basket.id(),</span>
 <span class="nc" id="L30">                basket.cpf(),</span>
-<span class="nc" id="L31">                items,</span>
+                items,
 <span class="nc" id="L32">                basket.totalPrice()</span>
         );
     }

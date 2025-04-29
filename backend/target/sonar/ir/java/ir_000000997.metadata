@@ -1,5 +1,0 @@
-com.snackbar.basket.config.BasketConfig#itemEntityMapper()Lcom/snackbar/basket/infrastructure/gateways/ItemEntityMapper;
-false
-91aebc4787ebb6bc945ffd06035ae841
-com.snackbar.basket.infrastructure.gateways.ItemEntityMapper#<init>()V
-com.snackbar.basket.infrastructure.gateways.ItemEntityMapper#instance-init#

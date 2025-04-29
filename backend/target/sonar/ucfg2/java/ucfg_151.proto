@@ -1,21 +1,0 @@
-
-Dcom.snackbar.order.service.OrderService#listOrders()Ljava/util/List;w
-m/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/order/service/OrderService.javat t(!"1*²
-1u u(§
-¤
-u u(4
-%0.com.snackbar.order.adapter.out.OrderRepository"__id*\
-
-__unknown_file (@*>)
-'com.snackbar.order.service.OrderService"
-orderRepositoryÔÑ
-u u((
-%1java.util.List"Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;*R
-
-__unknown_file (6
-4
-%0.com.snackbar.order.adapter.out.OrderRepository2	findAll()""
-u u()
-
-%1java.util.ListB+)
-'com.snackbar.order.service.OrderServiceH

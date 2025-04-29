@@ -18,11 +18,11 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
 
-<span class="nc" id="L21">    public AuthenticationService(</span>
+    public AuthenticationService(
             IamRepository userRepository,
             AuthenticationManager authenticationManager,
             PasswordEncoder passwordEncoder
-    ) {
+<span class="nc" id="L25">    ) {</span>
 <span class="nc" id="L26">        this.authenticationManager = authenticationManager;</span>
 <span class="nc" id="L27">        this.userRepository = userRepository;</span>
 <span class="nc" id="L28">        this.passwordEncoder = passwordEncoder;</span>
@@ -42,7 +42,7 @@ public class AuthenticationService {
 
     public UserDetailsEntity authenticate(LoginUserDto input) {
 <span class="nc" id="L44">        authenticationManager.authenticate(</span>
-<span class="nc" id="L45">                new UsernamePasswordAuthenticationToken(</span>
+                new UsernamePasswordAuthenticationToken(
 <span class="nc" id="L46">                        input.getCpf(),</span>
 <span class="nc" id="L47">                        input.getPassword()</span>
                 )

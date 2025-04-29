@@ -1,31 +1,0 @@
-
-qcom.snackbar.payment.infrastructure.controllers.PaymentDTOMapper#listToResponse(Ljava/util/List;)Ljava/util/List;‘
-†/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/payment/infrastructure/controllers/PaymentDTOMapper.java (+"1*ˆ
-1   (¬©
-   ($
-%0java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*<
-
-__unknown_file ( 
-
-listPaymentsjava.util.List2stream()†ƒ
-  !(%
-%1java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*;
-
-__unknown_file (
-
-%0java.util.stream.Stream*"
-
-__unknown_file (
-""2"map(Ljava/util/function/Function;)œ™
-  "(
-%2java.util.List"0java.util.stream.Stream#toList()Ljava/util/List;*;
-
-__unknown_file (
-
-%1java.util.stream.Stream2toList()""
-  "(
-
-%2java.util.List:*
-, (F
-listPaymentsjava.util.ListBDB
-@com.snackbar.payment.infrastructure.controllers.PaymentDTOMapper

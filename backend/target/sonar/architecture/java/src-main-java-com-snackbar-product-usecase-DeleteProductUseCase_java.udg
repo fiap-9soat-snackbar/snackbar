@@ -1,54 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887126626*java2.Bç
-I
-Dsrc/main/java/com/snackbar/product/usecase/DeleteProductUseCase.java2
-
-package4
-!
-com.snackbar.product.usecase5
-6
-1com.snackbar.product.usecase.DeleteProductUseCase7
-
-	interface8
-
-access9
-
-public10
-
-simple name11
-
-DeleteProductUseCase12
-Z
-Tcom.snackbar.product.usecase.DeleteProductUseCase#deleteProduct(Ljava/lang/String;)V14
-
-method15
-
-deleteProduct16J
-
-1
-12Z
-
-3	
-354j}
-9
-64
-678 *
-1 (&:3B
-	
-9
-10
-
-
-11
-12
-@
-13:
-131415 *
-1 (	26:3B
-	
-9
-10
-
-
-11
-16

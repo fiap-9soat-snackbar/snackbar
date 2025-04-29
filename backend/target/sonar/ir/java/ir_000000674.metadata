@@ -1,7 +1,0 @@
-com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway#getPaymentByExternalId(Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
-false
-4a5a068f318d9d72c1e7ca1f2c6a0a7d
-java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
-==
-findByExternalPaymentId com.snackbar.payment.infrastructure.persistence.PaymentRepository#findByExternalPaymentId(Ljava/lang/String;)Ljava/util/Optional;
-toDomainObj com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper#toDomainObj(Lcom/snackbar/payment/infrastructure/persistence/PaymentEntity;)Lcom/snackbar/payment/domain/entity/Payment;

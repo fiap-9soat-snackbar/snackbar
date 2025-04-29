@@ -30,7 +30,7 @@ public class PaymentController {
     private final UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase;
 
     @Autowired
-<span class="nc" id="L33">    public PaymentController(</span>
+    public PaymentController(
             CreatePaymentUseCase createPaymentUseCase,
             ListPaymentsUseCase listPaymentsUseCase,
             CreatePaymentMPUseCase createPaymentMPUseCase,
@@ -40,7 +40,7 @@ public class PaymentController {
             UpdatePaymentExternalIdByIdUseCase updatePaymentExternalIdByIdUseCase,
             GetPaymentByExternalIdUseCase getPaymentByExternalIdUseCase,
             UpdatePaymentStatusWebhook updatePaymentStatusByExternalIdUseCase,
-            MpService mpService) {
+<span class="nc" id="L43">            MpService mpService) {</span>
 <span class="nc" id="L44">        this.createPaymentUseCase = createPaymentUseCase;</span>
 <span class="nc" id="L45">        this.listPaymentsUseCase = listPaymentsUseCase;</span>
 <span class="nc" id="L46">        this.createPaymentMPUseCase = createPaymentMPUseCase;</span>

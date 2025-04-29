@@ -61,7 +61,7 @@ public class OrderService { // Service for managing orders
 <span class="nc" id="L61">                item.setName(product.getName());  // Explicitly set the product name</span>
 <span class="nc" id="L62">                item.setPrice(product.getPrice());</span>
 <span class="nc" id="L63">                item.setCookingTime(product.getCookingTime());</span>
-<span class="nc" id="L64">            } else {</span>
+            } else {
 <span class="nc" id="L65">                throw new IllegalArgumentException(&quot;Product not found: &quot; + item.getName());</span>
             }
 <span class="nc" id="L67">            return item;</span>
@@ -93,7 +93,7 @@ public class OrderService { // Service for managing orders
 <span class="nc" id="L93">                item.setName(product.getName());</span>
 <span class="nc" id="L94">                item.setPrice(product.getPrice());</span>
 <span class="nc" id="L95">                item.setCookingTime(product.getCookingTime());</span>
-<span class="nc" id="L96">            } else {</span>
+            } else {
 <span class="nc" id="L97">                throw new IllegalArgumentException(&quot;Product not found: &quot; + item.getName());</span>
             }
 <span class="nc" id="L99">            return item;</span>
@@ -152,7 +152,7 @@ public class OrderService { // Service for managing orders
 <span class="nc bnc" id="L152" title="All 2 branches missed.">        } else if (isPaid) {</span>
 <span class="nc" id="L153">            order.setStatusOrder(StatusOrder.PAGO);</span>
 <span class="nc" id="L154">            order.setPaymentMethod(&quot;Mercado Pago&quot;);</span>
-<span class="nc" id="L155">        } else {</span>
+        } else {
 <span class="nc" id="L156">            order.setStatusOrder(StatusOrder.NOVO);</span>
         }
 

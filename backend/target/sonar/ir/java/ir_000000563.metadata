@@ -1,9 +1,0 @@
-com.snackbar.cooking.infrastructure.gateways.OrderDatabaseGatewayCooking#updateStatus(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Order;
-false
-56ed908f2124dd805958c481bcad9da0
-java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
-==
-findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
-save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
-setStatusOrder com.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#setStatusOrder(Ljava/lang/String;)V
-toDomain com.snackbar.cooking.infrastructure.gateways.OrderEntityMapperCooking#toDomain(Lcom/snackbar/cooking/infrastructure/persistence/OrderEntityCooking;)Lcom/snackbar/cooking/domain/entity/Order;

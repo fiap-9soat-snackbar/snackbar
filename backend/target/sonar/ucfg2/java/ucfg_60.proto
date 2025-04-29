@@ -1,15 +1,0 @@
-
-bcom.snackbar.payment.infrastructure.persistence.PaymentMPEntity#getCallbackURL()Ljava/lang/String;ê
-Ö/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/payment/infrastructure/persistence/PaymentMPEntity.java: :( "1*”
-1; ;(ù
-ö
-; ;(
-%0java.lang.String"__id*p
-
-__unknown_file (T*RA
-?com.snackbar.payment.infrastructure.persistence.PaymentMPEntity"
-callbackURL"$
-; ;(
-
-%0java.lang.StringBCA
-?com.snackbar.payment.infrastructure.persistence.PaymentMPEntityH

@@ -1,339 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887124308*java2.BÑ
-<
-7src/main/java/com/snackbar/order/domain/model/Item.java2
-
-package4
-$
-com.snackbar.order.domain.model5
-)
-$com.snackbar.order.domain.model.Item7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-
-Item12
-/
-)com.snackbar.order.domain.model.Item.name14
-
-field15
-
-private16
-
-
-name17
-3
--com.snackbar.order.domain.model.Item.quantity19
-
-quantity20
-0
-*com.snackbar.order.domain.model.Item.price22
-
-price23
-6
-0com.snackbar.order.domain.model.Item.cookingTime25
-
-cookingTime26
-8
-2com.snackbar.order.domain.model.Item.customization28
-
-customization29
-F
-@com.snackbar.order.domain.model.Item#getName()Ljava/lang/String;31
-
-method32
-
-getName33
-
-
-references34
-G
-Acom.snackbar.order.domain.model.Item#setName(Ljava/lang/String;)V36
-
-setName37
-
-
-uses38
-K
-Ecom.snackbar.order.domain.model.Item#getQuantity()Ljava/lang/Integer;40
-
-getQuantity41
-L
-Fcom.snackbar.order.domain.model.Item#setQuantity(Ljava/lang/Integer;)V43
-
-setQuantity44
-K
-Ecom.snackbar.order.domain.model.Item#getPrice()Ljava/math/BigDecimal;46
-
-getPrice47
-L
-Fcom.snackbar.order.domain.model.Item#setPrice(Ljava/math/BigDecimal;)V49
-
-setPrice50
-N
-Hcom.snackbar.order.domain.model.Item#getCookingTime()Ljava/lang/Integer;52
-
-getCookingTime53
-O
-Icom.snackbar.order.domain.model.Item#setCookingTime(Ljava/lang/Integer;)V55
-
-setCookingTime56
-O
-Icom.snackbar.order.domain.model.Item#getCustomization()Ljava/lang/String;58
-
-getCustomization59
-P
-Jcom.snackbar.order.domain.model.Item#setCustomization(Ljava/lang/String;)V61
-
-setCustomization62J
-
-1
-12Z
-
-3	
-354j™
-@
-45:
-454632 *
-1 (26:3B
-	
-9
-10
-
-
-11
-47
-@
-48:
-484932 *
-1! !(26:3B
-	
-9
-10
-
-
-11
-50
-@
-18:
-181915 *
-1 (26:3B
-	
-9
-16
-
-
-11
-20
-@
-57:
-575832 *
-1- -(26:3B
-	
-9
-10
-
-
-11
-59
-@
-30:
-303132 *
-1 (26:3B
-	
-9
-10
-
-
-11
-33
-@
-13:
-131415 *
-1 (26:3B
-	
-9
-16
-
-
-11
-17
-@
-42:
-424332 *
-1 (26:3B
-	
-9
-10
-
-
-11
-44
-@
-35:
-353632 *
-1 (26:3B
-	
-9
-10
-
-
-11
-37
-@
-21:
-212215 *
-1 (26:3B
-	
-9
-16
-
-
-11
-23
-@
-51:
-515232 *
-1% %(26:3B
-	
-9
-10
-
-
-11
-53
-9
-64
-678 *
-1 (:3B
-	
-9
-10
-
-
-11
-12
-@
-39:
-394032 *
-1 (26:3B
-	
-9
-10
-
-
-11
-41
-@
-60:
-606132 *
-11 1(26:3B
-	
-9
-10
-
-
-11
-62
-@
-54:
-545532 *
-1) )(26:3B
-	
-9
-10
-
-
-11
-56
-@
-27:
-272815 *
-1
- 
-(26:3B
-	
-9
-16
-
-
-11
-29
-@
-24:
-242515 *
-1	 	(26:3B
-	
-9
-16
-
-
-11
-26r’
-
-301334*
-1 (
-
-35638*
-1	 (
-
-35634*
-1	 (
-
-351334*
-1 (
-
-391834*
-1 (
-
-42638*
-1	 (
-
-42634*
-1	 (
-
-421834*
-1 (
-
-452134*
-1 (
-
-48638*
-1"	 "(
-
-48634*
-1"	 "(
-
-482134*
-1" "(
-
-512434*
-1& &(
-
-54638*
-1*	 *(
-
-54634*
-1*	 *(
-
-542434*
-1* *(
-
-572734*
-1. .(
-
-60638*
-12	 2(
-
-60634*
-12	 2(
-
-602734*
-12 2(

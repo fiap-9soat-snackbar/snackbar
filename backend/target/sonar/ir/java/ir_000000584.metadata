@@ -1,5 +1,0 @@
-com.snackbar.cooking.domain.exceptions.OrderUpdateException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-false
-279baa7350f67c2517ec56bd09efd96f
-==
-<init> java.lang.RuntimeException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V

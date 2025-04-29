@@ -22,12 +22,12 @@ public class AuthenticationController {
     private final UserService userService;
     private final OrderService orderService;
 
-<span class="nc" id="L25">    public AuthenticationController(</span>
+    public AuthenticationController(
             JwtService jwtService,
             AuthenticationService authenticationService,
             UserService userService,
             OrderService orderService
-    ) {
+<span class="nc" id="L30">    ) {</span>
 <span class="nc" id="L31">        this.jwtService = jwtService;</span>
 <span class="nc" id="L32">        this.authenticationService = authenticationService;</span>
 <span class="nc" id="L33">        this.userService = userService;</span>
@@ -48,7 +48,7 @@ public class AuthenticationController {
 <span class="nc bnc" id="L48" title="All 2 branches missed.">        if (Boolean.TRUE.equals(loginUserDto.getAnonymous())) {</span>
 <span class="nc" id="L49">            authenticatedUser = new UserDetailsEntity();</span>
 <span class="nc" id="L50">            jwtToken = jwtService.generateToken(authenticatedUser);</span>
-<span class="nc" id="L51">        } else {</span>
+        } else {
 <span class="nc" id="L52">            authenticatedUser = authenticationService.authenticate(loginUserDto);</span>
 <span class="nc" id="L53">            jwtToken = jwtService.generateToken(authenticatedUser);</span>
         }
@@ -64,7 +64,7 @@ public class AuthenticationController {
 <span class="nc" id="L64">        String newJwtToken = jwtService.generateToken(userDetails);</span>
 
 <span class="nc" id="L66">        LoginResponse loginResponse = new LoginResponse(</span>
-<span class="nc" id="L67">                newJwtToken,</span>
+                newJwtToken,
 <span class="nc" id="L68">                jwtService.getExpirationTime()</span>
         );
 

@@ -1,5 +1,0 @@
-com.snackbar.basket.application.usecases.BasketUseCase#findAllBaskets()Ljava/util/List;
-false
-cef1bbd32495eff2df11c6c381afa749
-==
-findAllBaskets com.snackbar.basket.application.gateways.BasketUseCaseGateway#findAllBaskets()Ljava/util/List;

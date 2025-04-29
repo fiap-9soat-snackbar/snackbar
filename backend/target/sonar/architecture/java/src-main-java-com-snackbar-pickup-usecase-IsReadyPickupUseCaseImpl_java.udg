@@ -1,291 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125349*java2.B£
-L
-Gsrc/main/java/com/snackbar/pickup/usecase/IsReadyPickupUseCaseImpl.java2
-
-package4
- 
-com.snackbar.pickup.usecase5
-9
-4com.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl7
-
-
-class8
-
-access9
-
-public10
-
-simple name11
-
-IsReadyPickupUseCaseImpl12
-6
-0com.snackbar.pickup.usecase.IsReadyPickupUseCase14
-
-unknown15
-
-
-implements16
-,
-&org.springframework.stereotype.Service18
-
-annotated by19
-
-
-uses20
-K
-Ecom.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl.pickupRepository22
-
-field23
-
-private24
-
-pickupRepository25
-2
-,com.snackbar.pickup.gateway.PickupRepository27
-
-is type28
-r
-lcom.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl#<init>(Lcom/snackbar/pickup/gateway/PickupRepository;)V30
-
-method31
-
-	has param32
-
-calls33
-
-
-references34
-W
-Qcom.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl#isReady(Ljava/lang/String;)Z36
-
-isReady37
-h
-bcom.snackbar.pickup.gateway.PickupRepository#findByOrderId(Ljava/lang/String;)Ljava/util/Optional;39
-'
-!com.snackbar.pickup.entity.Pickup41
--
-'com.snackbar.pickup.entity.StatusPickup43
-
-returns44
-b
-\com.snackbar.pickup.entity.Pickup#getStatusPickup()Lcom/snackbar/pickup/entity/StatusPickup;46
-4
-.com.snackbar.pickup.entity.StatusPickup.PRONTO48
-V
-Pcom.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl#isDone(Ljava/lang/String;)Z50
-
-isDone51
-8
-2com.snackbar.pickup.entity.StatusPickup.FINALIZADO53J
-
-1
-12Z
-
-3	
-354j÷
-@
-21:
-212223 *
-1 (26:3B
-	
-9
-24
-
-
-11
-25
-9
-64
-678 *
-1
- 
-(&:3B
-	
-9
-10
-
-
-11
-12
-
-52
-525315
-@
-29:
-293031 *
-1 (26:3B
-	
-9
-10
-
-
-11
-12
-@
-35:
-353631 *
-1 (26:3B
-	
-9
-10
-
-
-11
-37
-
-40
-404115
-
-38
-383915
-
-42
-424315
-
-17
-171815
-
-45
-454615
-
-26
-262715
-
-13
-131415
-@
-49:
-495031 *
-1 (26:3B
-	
-9
-10
-
-
-11
-51
-
-47
-474815r–
-
-61316*
-1
-2 
-(F
-
-61719*
-1	 	(
-
-61720*
-1	 	(	
-
-61320*
-1
-2 
-(F
-
-212628*
-1 (#
-
-212620*
-1 (#
-
-212620*
-1$ (4
-
-292632*
-1% (5
-
-29633*
-1 ($
-
-292628*
-16 (F
-
-292620*
-1% (5
-
-29620*
-1	 (
-
-29634*
-1	 (
-
-292620*
-1 (
-
-292134*
-1 (
-
-352634*
-1 (+
-
-353833*
-1, (9
-
-352134*
-1 (+
-
-352620*
-1 (+
-
-352134*
-1 (+
-
-354028*
-1 (
-
-354244*
-1  (&
-
-354034*
-1  (&
-
-354533*
-1' (6
-
-354220*
-1< (H
-
-354220*
-1I (O
-
-354734*
-1I (O
-
-492634*
-1 (*
-
-493833*
-1+ (8
-
-492134*
-1 (*
-
-492620*
-1 (*
-
-492134*
-1 (*
-
-494028*
-1 (
-
-494244*
-1  (&
-
-494034*
-1  (&
-
-494533*
-1' (6
-
-494220*
-1< (H
-
-494220*
-1I (S
-
-495234*
-1I (S

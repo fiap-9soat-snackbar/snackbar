@@ -21,11 +21,11 @@ public class OrderUseCase {
     private final ProductGateway productGateway;
     private final UserService userService;
 
-<span class="nc" id="L24">    public OrderUseCase(</span>
+    public OrderUseCase(
             OrderGateway orderGateway,
             ProductGateway productGateway,
             UserService userService
-    ) {
+<span class="nc" id="L28">    ) {</span>
 <span class="nc" id="L29">        this.orderGateway = orderGateway;</span>
 <span class="nc" id="L30">        this.productGateway = productGateway;</span>
 <span class="nc" id="L31">        this.userService = userService;</span>
@@ -135,7 +135,7 @@ public class OrderUseCase {
 <span class="nc" id="L135">            order.setStatusOrder(status);</span>
 <span class="nc" id="L136">        } catch (IllegalArgumentException e) {</span>
 <span class="nc" id="L137">            throw new IllegalArgumentException(&quot;Invalid order status: &quot; + orderStatus);</span>
-        }
+<span class="nc" id="L138">        }</span>
 
 <span class="nc" id="L140">       return orderGateway.updateOrder(order);</span>
     }

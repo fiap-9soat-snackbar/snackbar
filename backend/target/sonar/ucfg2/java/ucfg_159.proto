@@ -1,47 +1,0 @@
-
-9__sonar_lambda_16$com.snackbar.order.service.OrderServicey
-m/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/order/service/OrderService.java¤ ¤(b"startingBlock*¹
-startingBlock
-¤ ¤(b–
-“
-
-__unknown_file (
-orderIdjava.lang.String"__id*T
-
-__unknown_file (8*6)
-'com.snackbar.order.service.OrderService"	
-orderId*
-1*‹
-1
-¤< ¤(W‹
-ˆ
-
-¤< ¤(a
-%3java.lang.String"__concat*+
-
-¤< ¤(W
-Order not found with ID: *+
-
-¤Z ¤(a
-
-orderIdjava.lang.String\Z
-
-¤# ¤(;(
-%4"java.lang.IllegalArgumentException""java.lang.IllegalArgumentExceptionÓ
-Ð
-
-¤ ¤(b
-%5">java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V*F
-
-__unknown_file (*
-(
-%4"java.lang.IllegalArgumentException*4
-
-__unknown_file (
-
-%3java.lang.String"8
-
-¤ ¤(b*
-(
-%4"java.lang.IllegalArgumentExceptionB
-java.util.function.Supplier

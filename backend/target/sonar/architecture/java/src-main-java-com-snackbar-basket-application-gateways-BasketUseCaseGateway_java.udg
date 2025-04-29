@@ -1,187 +1,0 @@
-
-1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745887125390*java2.B‹
-
-U
-Psrc/main/java/com/snackbar/basket/application/gateways/BasketUseCaseGateway.java2
-
-package4
--
-(com.snackbar.basket.application.gateways5
-B
-=com.snackbar.basket.application.gateways.BasketUseCaseGateway7
-
-	interface8
-
-access9
-
-public10
-
-simple name11
-
-BasketUseCaseGateway12
-ß
-†com.snackbar.basket.application.gateways.BasketUseCaseGateway#createBasket(Lcom/snackbar/basket/domain/entity/Basket;)Lcom/snackbar/basket/domain/entity/Basket;14
-
-method15
-
-createBasket16
-.
-(com.snackbar.basket.domain.entity.Basket18
-
-unknown19
-
-returns20
-
-	has param21
-
-
-uses22
-
-is type23
-ç
-Ücom.snackbar.basket.application.gateways.BasketUseCaseGateway#findBasket(Ljava/lang/String;)Lcom/snackbar/basket/domain/entity/Basket;25
-
-
-findBasket26
-d
-^com.snackbar.basket.application.gateways.BasketUseCaseGateway#findAllBaskets()Ljava/util/List;28
-
-findAllBaskets29
-∫
-≥com.snackbar.basket.application.gateways.BasketUseCaseGateway#addItemToBasket(Ljava/lang/String;Lcom/snackbar/basket/domain/entity/Item;)Lcom/snackbar/basket/domain/entity/Basket;31
-
-addItemToBasket32
-,
-&com.snackbar.basket.domain.entity.Item34
-ß
-†com.snackbar.basket.application.gateways.BasketUseCaseGateway#deleteItemToBasket(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/basket/domain/entity/Basket;36
-
-deleteItemToBasket37J
-
-1
-12Z
-
-3	
-354j≠
-@
-30:
-303115 *
-1 (26:3B
-	
-9
-10
-
-
-11
-32
-@
-13:
-131415 *
-1 (26:3B
-	
-9
-10
-
-
-11
-16
-
-33
-333419
-
-17
-171819
-@
-27:
-272815 *
-1
- 
-(	26:3B
-	
-9
-10
-
-
-11
-29
-@
-24:
-242515 *
-1	 	(26:3B
-	
-9
-10
-
-
-11
-26
-9
-64
-678 *
-1 (&:3B
-	
-9
-10
-
-
-11
-12
-@
-35:
-353615 *
-1 (26:3B
-	
-9
-10
-
-
-11
-37rï
-
-131720*
-1 (
-
-131721*
-1 (
-
-131722*
-1 (
-
-131723*
-1  (&
-
-131722*
-1 (
-
-241720*
-1	 	(
-
-241722*
-1	 	(
-
-271722*
-1
-
- 
-(
-
-301720*
-1 (
-
-303321*
-1- (1
-
-301722*
-1 (
-
-303323*
-12 (9
-
-303322*
-1- (1
-
-351720*
-1 (
-
-351722*
-1 (

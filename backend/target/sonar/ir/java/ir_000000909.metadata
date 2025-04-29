@@ -1,7 +1,0 @@
-com.snackbar.iam.application.UserService#getUserByCpf(Ljava/lang/String;)Lcom/snackbar/iam/web/dto/UserResponse;
-false
-730f051b4813393b24b4114788f10ab2
-java.util.Optional#map(Ljava/util/function/Function;)Ljava/util/Optional;
-==
-!unknownMethod! !unknownMethod!
-findByCpf com.snackbar.iam.infrastructure.UserRepository#findByCpf(Ljava/lang/String;)Ljava/util/Optional;

@@ -1,8 +1,0 @@
-com.snackbar.product.usecase.impl.CreateProductUseCaseImpl#createProduct(Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/product/dto/ProductDTO;
-false
-a436053c3b5dc931c6b3f4ca32521186
-com.snackbar.product.usecase.impl.CreateProductUseCaseImpl#mapToDTO(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/dto/ProductDTO;
-com.snackbar.product.usecase.impl.CreateProductUseCaseImpl#mapToEntity(Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/product/entity/Product;
-==
-save com.snackbar.product.gateway.ProductRepository#save(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/entity/Product;
-validateProduct com.snackbar.product.entity.Product#validateProduct()V

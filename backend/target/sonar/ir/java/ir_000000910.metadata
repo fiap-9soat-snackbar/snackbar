@@ -1,5 +1,0 @@
-com.snackbar.iam.application.UserService#deleteUser(Ljava/lang/String;)V
-false
-a44d12e8cf413d0db534ff31268c2a1a
-==
-deleteById org.springframework.data.repository.CrudRepository#deleteById(Ljava/lang/Object;)V

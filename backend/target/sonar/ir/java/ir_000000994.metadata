@@ -1,7 +1,0 @@
-com.snackbar.cooking.application.usecases.GetCookingByOrderIdUseCase#execute(Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Cooking;
-false
-7951623b939c428aafec89b9d6b95760
-com.snackbar.cooking.domain.exceptions.CookingNotFoundException#<init>(Ljava/lang/String;)V
-com.snackbar.cooking.domain.exceptions.CookingNotFoundException#instance-init#
-==
-findByOrderId com.snackbar.cooking.application.gateways.CookingGateway#findByOrderId(Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Cooking;

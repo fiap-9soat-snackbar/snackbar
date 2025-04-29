@@ -1,5 +1,0 @@
-com.snackbar.orderRefactory.application.usecases.OrderUseCase#searchOrderId(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;
-false
-3a1c6091a8e44a75295a1920c22e2d87
-==
-searchOrderId com.snackbar.orderRefactory.application.gateways.OrderGateway#searchOrderId(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;
