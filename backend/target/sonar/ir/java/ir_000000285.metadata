@@ -1,0 +1,5 @@
+com.snackbar.basket.domain.valueobject.ProductId#<init>()V
+false
+93364b2b904c7fc91cef497391010ff3
+com.snackbar.basket.domain.valueobject.ProductId#<init>(Ljava/util/UUID;)V
+java.util.UUID#randomUUID()Ljava/util/UUID;

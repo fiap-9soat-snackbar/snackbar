@@ -1,0 +1,9 @@
+com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderController#createOrder(Lcom/snackbar/orderRefactory/infrastructure/controllers/CreateOrderRequest;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+false
+5ade71789834372858005e92750c6345
+com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#cpf()Ljava/lang/String;
+java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
+java.lang.IllegalArgumentException#instance-init#
+==
+createOrder com.snackbar.orderRefactory.application.usecases.OrderUseCase#createOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+toDomain com.snackbar.orderRefactory.infrastructure.controllers.OrderDTOMapper#toDomain(Lcom/snackbar/orderRefactory/infrastructure/controllers/CreateOrderRequest;)Lcom/snackbar/orderRefactory/domain/entity/Order;

@@ -1,0 +1,7 @@
+com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#getOrderByOrderNumber(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+false
+c7829d8b578f403d466ce992accad726
+java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
+==
+findByOrderNumber com.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository#findByOrderNumber(Ljava/lang/String;)Ljava/util/Optional;
+toDomainObj com.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#toDomainObj(Lcom/snackbar/orderRefactory/infrastructure/persistence/OrderEntity;)Lcom/snackbar/orderRefactory/domain/entity/Order;

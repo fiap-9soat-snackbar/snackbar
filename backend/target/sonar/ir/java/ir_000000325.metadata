@@ -1,0 +1,9 @@
+com.snackbar.product.usecase.impl.GetProductsByCategoryUseCaseImpl#getProductsByCategory(Ljava/lang/String;)Ljava/util/List;
+false
+66c24ce99c4bc83e322d327413a23f4d
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+==
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+findByCategory com.snackbar.product.gateway.ProductRepository#findByCategory(Ljava/lang/String;)Ljava/util/List;
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;

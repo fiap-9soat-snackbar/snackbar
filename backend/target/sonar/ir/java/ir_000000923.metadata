@@ -1,0 +1,5 @@
+com.snackbar.productv2.infrastructure.config.ProductConfig#productv2EntityMapper()Lcom/snackbar/productv2/infrastructure/gateways/Productv2EntityMapper;
+false
+0c23d66262c675cb6bc67534677cbe4c
+com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#<init>()V
+com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#instance-init#

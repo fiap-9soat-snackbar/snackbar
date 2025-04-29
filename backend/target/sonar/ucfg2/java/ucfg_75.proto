@@ -1,0 +1,67 @@
+
+°com.snackbar.orderRefactory.config.OrderConfig#productServiceGateway(Lcom/snackbar/product/usecase/impl/GetProductByNameUseCaseImpl;Lcom/snackbar/orderRefactory/infrastructure/gateways/ProductDTOToOrderItemMapper;)Lcom/snackbar/orderRefactory/infrastructure/gateways/ProductServiceGateway;~
+t/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/config/OrderConfig.java& &(/"startingBlock*¡
+startingBlock	&/ &(î€
+ÿ
+% %(	
+%2"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*m
+
+__unknown_file (Q
+O
+productUseCase=com.snackbar.product.usecase.impl.GetProductByNameUseCaseImplê
+ç
+&L &(ZO
+productUseCase=com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl"__annotation*"
+
+__unknown_file (
+
+%2˚
+¯
+% %(	
+%3"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*å
+
+__unknown_file (p
+n
+productDTOToOrderItemMapperOcom.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapper∞
+≠
+	&x &(ìn
+productDTOToOrderItemMapperOcom.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapper"__annotation*"
+
+__unknown_file (
+
+%3*
+1*Å
+1') '(7©¶
+' '((O
+%0Icom.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway"Icom.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGatewayÊ
+„
+' '(U
+%1"„com.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway#<init>(Lcom/snackbar/product/usecase/impl/GetProductByNameUseCaseImpl;Lcom/snackbar/orderRefactory/infrastructure/gateways/ProductDTOToOrderItemMapper;)V*m
+
+__unknown_file (Q
+O
+%0Icom.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway*m
+
+__unknown_file (Q
+O
+productUseCase=com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl*å
+
+__unknown_file (p
+n
+productDTOToOrderItemMapperOcom.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapper"]
+' '(VQ
+O
+%0Icom.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway:[
+&0 &([O
+productUseCase=com.snackbar.product.usecase.impl.GetProductByNameUseCaseImpl:{
+	&\ &(ìn
+productDTOToOrderItemMapperOcom.snackbar.orderRefactory.infrastructure.gateways.ProductDTOToOrderItemMapperB20
+.com.snackbar.orderRefactory.config.OrderConfig

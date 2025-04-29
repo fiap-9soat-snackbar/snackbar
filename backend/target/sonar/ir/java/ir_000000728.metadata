@@ -1,0 +1,12 @@
+com.snackbar.product.usecase.impl.GetAllProductsUseCaseImpl#mapToDTO(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/dto/ProductDTO;
+false
+abcdbd88f57f95131c67cb201f8808a1
+com.snackbar.product.dto.ProductDTO#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/Integer;)V
+com.snackbar.product.dto.ProductDTO#instance-init#
+==
+getCategory com.snackbar.product.entity.Product#getCategory()Ljava/lang/String;
+getCookingTime com.snackbar.product.entity.Product#getCookingTime()Ljava/lang/Integer;
+getDescription com.snackbar.product.entity.Product#getDescription()Ljava/lang/String;
+getId com.snackbar.product.entity.Product#getId()Ljava/lang/String;
+getName com.snackbar.product.entity.Product#getName()Ljava/lang/String;
+getPrice com.snackbar.product.entity.Product#getPrice()Ljava/math/BigDecimal;

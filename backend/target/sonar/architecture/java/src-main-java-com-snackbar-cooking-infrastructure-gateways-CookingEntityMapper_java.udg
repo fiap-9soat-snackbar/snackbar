@@ -1,0 +1,228 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207289*java2.B“
+X
+Ssrc/main/java/com/snackbar/cooking/infrastructure/gateways/CookingEntityMapper.java2
+
+package4
+1
+,com.snackbar.cooking.infrastructure.gateways5
+E
+@com.snackbar.cooking.infrastructure.gateways.CookingEntityMapper7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+CookingEntityMapper12
+.
+(org.springframework.stereotype.Component14
+
+unknown15
+
+annotated by16
+
+
+uses17
+½
+¶com.snackbar.cooking.infrastructure.gateways.CookingEntityMapper#toEntity(Lcom/snackbar/cooking/domain/entity/Cooking;)Lcom/snackbar/cooking/infrastructure/persistence/CookingEntity;19
+
+method20
+
+	protected21
+
+toEntity22
+C
+=com.snackbar.cooking.infrastructure.persistence.CookingEntity24
+
+returns25
+0
+*com.snackbar.cooking.domain.entity.Cooking27
+
+	has param28
+
+is type29
+
+calls30
+
+
+references31
+G
+Acom.snackbar.cooking.domain.entity.Cooking#id()Ljava/lang/String;33
+L
+Fcom.snackbar.cooking.domain.entity.Cooking#orderId()Ljava/lang/String;35
+1
++com.snackbar.order.domain.model.StatusOrder37
+f
+`com.snackbar.cooking.domain.entity.Cooking#status()Lcom/snackbar/order/domain/model/StatusOrder;39
+À
+¹com.snackbar.cooking.infrastructure.gateways.CookingEntityMapper#toDomainObj(Lcom/snackbar/cooking/infrastructure/persistence/CookingEntity;)Lcom/snackbar/cooking/domain/entity/Cooking;41
+
+toDomainObj42
+]
+Wcom.snackbar.cooking.infrastructure.persistence.CookingEntity#getId()Ljava/lang/String;44
+b
+\com.snackbar.cooking.infrastructure.persistence.CookingEntity#getOrderId()Ljava/lang/String;46
+|
+vcom.snackbar.cooking.infrastructure.persistence.CookingEntity#getStatus()Lcom/snackbar/order/domain/model/StatusOrder;48J
+
+1
+12Z
+
+3	
+354j‡
+
+36
+363715
+
+47
+474815
+
+23
+232415
+
+38
+383915
+@
+18:
+181920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+22
+@
+40:
+404120 *
+1 (26:3B
+	
+9
+21
+
+
+11
+42
+
+43
+434415
+
+13
+131415
+
+26
+262715
+9
+64
+678 *
+1 (!:3B
+	
+9
+10
+
+
+11
+12
+
+45
+454615
+
+32
+323315
+
+34
+343515rò
+
+61316*
+1
+ 
+(
+
+61317*
+1
+ 
+(
+
+182325*
+1 (
+
+182628*
+1 ("
+
+182317*
+1 (
+
+182629*
+1# (3
+
+182617*
+1 ("
+
+182330*
+1 (!
+
+182631*
+1 (
+
+183230*
+1 ( 
+
+182631*
+1 (
+
+183430*
+1 (%
+
+183625*
+1 (
+
+182631*
+1 (
+
+183830*
+1 ($
+
+402625*
+1 (
+
+402328*
+1 (&
+
+402617*
+1 (
+
+402329*
+1' (2
+
+402317*
+1 (&
+
+402630*
+1 (
+
+402331*
+1 (
+
+404330*
+1 (
+
+402331*
+1 (
+
+404530*
+1 (#
+
+403625*
+1 (
+
+402331*
+1 (
+
+404730*
+1 ("

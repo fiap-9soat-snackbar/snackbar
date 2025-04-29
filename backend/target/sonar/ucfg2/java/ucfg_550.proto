@@ -1,0 +1,67 @@
+
+àcom.snackbar.cooking.infrastructure.config.CookingConfig#cookingGateway(Lcom/snackbar/cooking/infrastructure/persistence/CookingRepository;Lcom/snackbar/cooking/infrastructure/gateways/CookingEntityMapper;)Lcom/snackbar/cooking/application/gateways/CookingGateway;à
+~/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/config/CookingConfig.java (("startingBlock*í
+startingBlock( (p‚
+ﬂ
+ (	
+%2"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*t
+
+__unknown_file (X
+V
+cookingRepositoryAcom.snackbar.cooking.infrastructure.persistence.CookingRepositoryó
+î
+; (LV
+cookingRepositoryAcom.snackbar.cooking.infrastructure.persistence.CookingRepository"__annotation*"
+
+__unknown_file (
+
+%2›
+⁄
+ (	
+%3"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*o
+
+__unknown_file (S
+Q
+cookingMapper@com.snackbar.cooking.infrastructure.gateways.CookingEntityMapperí
+è
+b (oQ
+cookingMapper@com.snackbar.cooking.infrastructure.gateways.CookingEntityMapper"__annotation*"
+
+__unknown_file (
+
+%3*
+1*À
+1 ,  (=°û
+   (+K
+%0Ecom.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway"Ecom.snackbar.cooking.infrastructure.gateways.CookingRepositoryGatewayº
+π
+   (M
+%1"‘com.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway#<init>(Lcom/snackbar/cooking/infrastructure/persistence/CookingRepository;Lcom/snackbar/cooking/infrastructure/gateways/CookingEntityMapper;)V*i
+
+__unknown_file (M
+K
+%0Ecom.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway*t
+
+__unknown_file (X
+V
+cookingRepositoryAcom.snackbar.cooking.infrastructure.persistence.CookingRepository*o
+
+__unknown_file (S
+Q
+cookingMapper@com.snackbar.cooking.infrastructure.gateways.CookingEntityMapper"Y
+   (NM
+K
+%0Ecom.snackbar.cooking.infrastructure.gateways.CookingRepositoryGateway:b
+) (MV
+cookingRepositoryAcom.snackbar.cooking.infrastructure.persistence.CookingRepository:]
+N (oQ
+cookingMapper@com.snackbar.cooking.infrastructure.gateways.CookingEntityMapperB<:
+8com.snackbar.cooking.infrastructure.config.CookingConfigH

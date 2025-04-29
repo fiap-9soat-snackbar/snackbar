@@ -1,0 +1,13 @@
+com.snackbar.cooking.infrastructure.controllers.CookingController#getAllCookings()Lorg/springframework/http/ResponseEntity;
+false
+78b0c13ee126782b402c030e279d5d38
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+org.springframework.http.ResponseEntity#noContent()Lorg/springframework/http/ResponseEntity$HeadersBuilder;
+org.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;
+==
+build org.springframework.http.ResponseEntity$HeadersBuilder#build()Lorg/springframework/http/ResponseEntity;
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+execute com.snackbar.cooking.application.usecases.GetAllCookingsUseCase#execute()Ljava/util/List;
+isEmpty java.util.List#isEmpty()Z
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;

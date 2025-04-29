@@ -1,0 +1,74 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207707*java2.Bš
+J
+Esrc/main/java/com/snackbar/checkout/usecase/CheckoutOrderUseCase.java2
+
+package4
+"
+com.snackbar.checkout.usecase5
+7
+2com.snackbar.checkout.usecase.CheckoutOrderUseCase7
+
+	interface8
+
+access9
+
+public10
+
+simple name11
+
+CheckoutOrderUseCase12
+‡
+€com.snackbar.checkout.usecase.CheckoutOrderUseCase#checkout(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;14
+
+method15
+
+checkout16
+5
+/com.snackbar.orderRefactory.domain.entity.Order18
+
+unknown19
+
+returns20
+
+
+uses21J
+
+1
+12Z
+
+3	
+354j‘
+@
+13:
+131415 *
+1 (
+26:3B
+	
+9
+10
+
+
+11
+16
+
+17
+171819
+9
+64
+678 *
+1 (&:3B
+	
+9
+10
+
+
+11
+12r6
+
+131720*
+1 (
+
+
+131721*
+1 (

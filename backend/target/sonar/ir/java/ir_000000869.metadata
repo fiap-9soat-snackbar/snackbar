@@ -1,0 +1,12 @@
+com.snackbar.pickup.usecase.NotifyCustomerUseCaseImpl#notify(Ljava/lang/String;)V
+false
+c6b3c0f702f51c05482f63ebc4f70ba2
+com.snackbar.pickup.entity.Pickup#<init>()V
+com.snackbar.pickup.entity.Pickup#instance-init#
+==
+println java.io.PrintStream#println(Ljava/lang/String;)V
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
+setNotifyCustomer com.snackbar.pickup.entity.Pickup#setNotifyCustomer(Z)V
+setOrderId com.snackbar.pickup.entity.Pickup#setOrderId(Ljava/lang/String;)V
+setStatusPickup com.snackbar.pickup.entity.Pickup#setStatusPickup(Lcom/snackbar/pickup/entity/StatusPickup;)V
+updateStatusOrder com.snackbar.order.service.OrderService#updateStatusOrder(Ljava/lang/String;)V

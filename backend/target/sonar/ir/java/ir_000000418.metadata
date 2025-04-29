@@ -1,0 +1,5 @@
+com.snackbar.order.service.OrderService#listOrders()Ljava/util/List;
+false
+0de74584c87a6e509c43d2f4b37637b6
+==
+findAll org.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;

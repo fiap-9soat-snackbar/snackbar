@@ -1,0 +1,7 @@
+com.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway#getProductv2ById(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;
+false
+558b8c82257e09edb2392d19476d2abf
+java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+toDomainObj com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toDomainObj(Lcom/snackbar/productv2/infrastructure/persistence/Productv2Entity;)Lcom/snackbar/productv2/domain/entity/Productv2;

@@ -1,0 +1,354 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889206828*java2.B—
+9
+4src/main/java/com/snackbar/pickup/entity/Pickup.java2
+
+package4
+
+com.snackbar.pickup.entity5
+&
+!com.snackbar.pickup.entity.Pickup7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+Pickup12
+<
+6org.springframework.data.mongodb.core.mapping.Document14
+
+unknown15
+
+annotated by16
+
+
+uses17
+*
+$com.snackbar.pickup.entity.Pickup.id19
+
+field20
+
+private21
+
+id22
+,
+&org.springframework.data.annotation.Id24
+/
+)com.snackbar.pickup.entity.Pickup.orderId26
+
+orderId27
+4
+.com.snackbar.pickup.entity.Pickup.statusPickup29
+
+statusPickup30
+-
+'com.snackbar.pickup.entity.StatusPickup32
+
+is type33
+6
+0com.snackbar.pickup.entity.Pickup.notifyCustomer35
+
+notifyCustomer36
+A
+;com.snackbar.pickup.entity.Pickup#getId()Ljava/lang/String;38
+
+method39
+
+getId40
+
+
+references41
+B
+<com.snackbar.pickup.entity.Pickup#setId(Ljava/lang/String;)V43
+
+setId44
+F
+@com.snackbar.pickup.entity.Pickup#getOrderId()Ljava/lang/String;46
+
+
+getOrderId47
+G
+Acom.snackbar.pickup.entity.Pickup#setOrderId(Ljava/lang/String;)V49
+
+
+setOrderId50
+b
+\com.snackbar.pickup.entity.Pickup#getStatusPickup()Lcom/snackbar/pickup/entity/StatusPickup;52
+
+getStatusPickup53
+
+returns54
+c
+]com.snackbar.pickup.entity.Pickup#setStatusPickup(Lcom/snackbar/pickup/entity/StatusPickup;)V56
+
+setStatusPickup57
+
+	has param58
+;
+5com.snackbar.pickup.entity.Pickup#isNotifyCustomer()Z60
+
+isNotifyCustomer61
+=
+7com.snackbar.pickup.entity.Pickup#setNotifyCustomer(Z)V63
+
+setNotifyCustomer64J
+
+1
+12Z
+
+3	
+354j
+@
+55:
+555639 *
+1% %(26:3B
+	
+9
+10
+
+
+11
+57
+@
+34:
+343520 *
+1 (26:3B
+	
+9
+21
+
+
+11
+36
+@
+42:
+424339 *
+1 (26:3B
+	
+9
+10
+
+
+11
+44
+@
+18:
+181920 *
+1
+ 
+(26:3B
+	
+9
+21
+
+
+11
+22
+@
+28:
+282920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+30
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+
+13
+131415
+@
+37:
+373839 *
+1 (26:3B
+	
+9
+10
+
+
+11
+40
+
+31
+313215
+@
+62:
+626339 *
+1- -(26:3B
+	
+9
+10
+
+
+11
+64
+@
+25:
+252620 *
+1 (26:3B
+	
+9
+21
+
+
+11
+27
+@
+45:
+454639 *
+1 (26:3B
+	
+9
+10
+
+
+11
+47
+@
+51:
+515239 *
+1! !(26:3B
+	
+9
+10
+
+
+11
+53
+
+23
+232415
+@
+48:
+484939 *
+1 (26:3B
+	
+9
+10
+
+
+11
+50
+@
+59:
+596039 *
+1) )(26:3B
+	
+9
+10
+
+
+11
+61r 
+
+61316*
+1 (
+
+61317*
+1 (
+
+
+182316*
+1
+ 
+(
+
+182317*
+1
+ 
+(
+
+283133*
+1 (
+
+283117*
+1 (
+
+283117*
+1 (&
+
+371841*
+1 (
+
+42617*
+1	 (
+
+42641*
+1	 (
+
+421841*
+1 (
+
+452541*
+1 (
+
+48617*
+1	 (
+
+48641*
+1	 (
+
+482541*
+1 (
+
+513154*
+1! !(
+
+513117*
+1! !(
+
+513117*
+1" "(
+
+512841*
+1" "(
+
+553158*
+1%! %(-
+
+553133*
+1%. %(:
+
+553117*
+1%! %(-
+
+55617*
+1&	 &(
+
+55641*
+1&	 &(
+
+553117*
+1& &(
+
+552841*
+1& &(
+
+593441*
+1* *(
+
+62617*
+1.	 .(
+
+62641*
+1.	 .(
+
+623441*
+1. .(

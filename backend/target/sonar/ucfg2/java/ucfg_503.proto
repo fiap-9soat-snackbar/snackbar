@@ -1,0 +1,43 @@
+
+«com.snackbar.payment.infrastructure.config.PaymentConfig#listPaymentsUseCase(Lcom/snackbar/payment/application/gateways/PaymentGateway;)Lcom/snackbar/payment/application/usecases/ListPaymentsUseCase;à
+~/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/payment/infrastructure/config/PaymentConfig.java- -(2"startingBlock*Ö
+startingBlock-2 -(Q÷
+”
+, ,(	
+%2"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*h
+
+__unknown_file (L
+J
+paymentGateway8com.snackbar.payment.application.gateways.PaymentGatewayã
+à
+-B -(PJ
+paymentGateway8com.snackbar.payment.application.gateways.PaymentGateway"__annotation*"
+
+__unknown_file (
+
+%2*
+1*€
+10' 0(5ëé
+0 0(&C
+%0=com.snackbar.payment.application.usecases.ListPaymentsUseCase"=com.snackbar.payment.application.usecases.ListPaymentsUseCase‰
+·
+0 0(6
+%1"Åcom.snackbar.payment.application.usecases.ListPaymentsUseCase#<init>(Lcom/snackbar/payment/application/gateways/PaymentGateway;)V*a
+
+__unknown_file (E
+C
+%0=com.snackbar.payment.application.usecases.ListPaymentsUseCase*h
+
+__unknown_file (L
+J
+paymentGateway8com.snackbar.payment.application.gateways.PaymentGateway"Q
+0 0(7E
+C
+%0=com.snackbar.payment.application.usecases.ListPaymentsUseCase:V
+-3 -(PJ
+paymentGateway8com.snackbar.payment.application.gateways.PaymentGatewayB<:
+8com.snackbar.payment.infrastructure.config.PaymentConfigH

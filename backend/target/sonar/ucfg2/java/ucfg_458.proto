@@ -1,0 +1,59 @@
+
+gcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#listOrders()Ljava/util/List;›
+/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/infrastructure/gateways/OrderRepositoryGateway.java% %(!"1*
+1&* &(Bõ
+ò
+&* &(BU
+%0Ocom.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository"__id*ˆ
+
+__unknown_file (l*jL
+Jcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway"
+orderRefactoryRepositoryõò
+&* &(L
+%1java.util.List"Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;*s
+
+__unknown_file (W
+U
+%0Ocom.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository2	findAll()g
+e
+& &(M
+orderEntitiesjava.util.List"__id*2
+
+__unknown_file (
+
+%1java.util.List­ª
+' '(%
+%2java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*=
+
+__unknown_file (!
+
+orderEntitiesjava.util.List2stream()†ƒ
+' ((4
+%3java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*;
+
+__unknown_file (
+
+%2java.util.stream.Stream*"
+
+__unknown_file (
+""2"map(Ljava/util/function/Function;)®
+«
+) )(, 
+%4java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*;
+
+__unknown_file ("
+java.util.stream.Collectors˜•
+' )(-
+%5java.util.List"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*;
+
+__unknown_file (
+
+%3java.util.stream.Stream*>
+
+__unknown_file ("
+ 
+%4java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)""
+' )(.
+
+%5java.util.ListBNL
+Jcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGatewayH

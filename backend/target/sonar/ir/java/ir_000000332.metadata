@@ -1,0 +1,5 @@
+com.snackbar.orderRefactory.config.OrderConfig#productServiceGateway(Lcom/snackbar/product/usecase/impl/GetProductByNameUseCaseImpl;Lcom/snackbar/orderRefactory/infrastructure/gateways/ProductDTOToOrderItemMapper;)Lcom/snackbar/orderRefactory/infrastructure/gateways/ProductServiceGateway;
+false
+027463a70bdcb8daa66b5ddb930b4de2
+com.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway#<init>(Lcom/snackbar/product/usecase/impl/GetProductByNameUseCaseImpl;Lcom/snackbar/orderRefactory/infrastructure/gateways/ProductDTOToOrderItemMapper;)V
+com.snackbar.orderRefactory.infrastructure.gateways.ProductServiceGateway#instance-init#

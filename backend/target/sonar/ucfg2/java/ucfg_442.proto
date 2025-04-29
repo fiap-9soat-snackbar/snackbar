@@ -1,0 +1,212 @@
+
+ com.snackbar.productv2.infrastructure.controllers.Productv2Controller#createProductv2(Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Request;)Lorg/springframework/http/ResponseEntity;ñ
+ã/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/controllers/Productv2Controller.java33 3(B"startingBlock*’
+startingBlock3B 3(o™
+ß
+
+__unknown_file (
+%7"__id*
+
+__unknown_file (c*a
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request"
+
+categoryÆ
+´
+
+__unknown_file (
+%8"__id*Ç
+
+__unknown_file (f*d
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request"
+description¶
+£
+
+__unknown_file (
+%9"__id*{
+
+__unknown_file (_*]
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request"
+name®
+•
+
+__unknown_file (
+%10"__id*|
+
+__unknown_file (`*^
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request"
+priceô
+ñ
+3C 3(O
+%11"
+__annotate*S
+
+__unknown_file (75
+3org.springframework.web.bind.annotation.RequestBody*"
+
+__unknown_file (
+
+%9ü
+ú
+3g 3(n]
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request"
+name"__annotation*#
+
+__unknown_file (
+
+%11ô
+ñ
+3C 3(O
+%12"
+__annotate*S
+
+__unknown_file (75
+3org.springframework.web.bind.annotation.RequestBody*"
+
+__unknown_file (
+
+%8¶
+£
+3g 3(nd
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request"
+description"__annotation*#
+
+__unknown_file (
+
+%12ô
+ñ
+3C 3(O
+%13"
+__annotate*S
+
+__unknown_file (75
+3org.springframework.web.bind.annotation.RequestBody*"
+
+__unknown_file (
+
+%7£
+†
+3g 3(na
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request"
+
+category"__annotation*#
+
+__unknown_file (
+
+%13ö
+ó
+3C 3(O
+%14"
+__annotate*S
+
+__unknown_file (75
+3org.springframework.web.bind.annotation.RequestBody*#
+
+__unknown_file (
+
+%10†
+ù
+3g 3(n^
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request"
+price"__annotation*#
+
+__unknown_file (
+
+%14*
+1*Ø
+15 5(0ﬁ
+€
+5 5(0J
+%0Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper"__id*}
+
+__unknown_file (a*_G
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2Controller"
+productv2DTOMapper‹Ÿ
+5 5(O4
+%1.com.snackbar.productv2.domain.entity.Productv2"÷com.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#createRequestToDomain(Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Request;)Lcom/snackbar/productv2/domain/entity/Productv2;*h
+
+__unknown_file (L
+J
+%0Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper*q
+
+__unknown_file (U
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request2acreateRequestToDomain(Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Request;)§
+°
+5 5(P;
+	productv2.com.snackbar.productv2.domain.entity.Productv2"__id*R
+
+__unknown_file (6
+4
+%1.com.snackbar.productv2.domain.entity.Productv2·
+ﬁ
+6% 6(;H
+%2Bcom.snackbar.productv2.application.usecases.CreateProductv2UseCase"__id*Å
+
+__unknown_file (e*cG
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2Controller"
+createProductv2UseCaseÄ˝
+6% 6(V4
+%3.com.snackbar.productv2.domain.entity.Productv2"¥com.snackbar.productv2.application.usecases.CreateProductv2UseCase#createProductv2(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;*f
+
+__unknown_file (J
+H
+%2Bcom.snackbar.productv2.application.usecases.CreateProductv2UseCase*Y
+
+__unknown_file (=
+;
+	productv2.com.snackbar.productv2.domain.entity.Productv22AcreateProductv2(Lcom/snackbar/productv2/domain/entity/Productv2;)´
+®
+6 6(WB
+createdProductv2.com.snackbar.productv2.domain.entity.Productv2"__id*R
+
+__unknown_file (6
+4
+%3.com.snackbar.productv2.domain.entity.Productv2ﬁ
+€
+7+ 7(=J
+%4Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper"__id*}
+
+__unknown_file (a*_G
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2Controller"
+productv2DTOMapper√¿
+7+ 7(`O
+%5Icom.snackbar.productv2.infrastructure.controllers.CreateProductv2Response"“com.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#createToResponse(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Response;*h
+
+__unknown_file (L
+J
+%4Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper*`
+
+__unknown_file (D
+B
+createdProductv2.com.snackbar.productv2.domain.entity.Productv22BcreateToResponse(Lcom/snackbar/productv2/domain/entity/Productv2;)Ÿ
+÷
+7 7(aU
+responseIcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Response"__id*m
+
+__unknown_file (Q
+O
+%5Icom.snackbar.productv2.infrastructure.controllers.CreateProductv2Response„
+‡
+9 9(*-
+%6'org.springframework.http.ResponseEntity"gorg.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntity*s
+
+__unknown_file (W
+U
+responseIcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Response";
+9 9(+/
+-
+%6'org.springframework.http.ResponseEntity:_
+3C 3(nS
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2RequestBIG
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2ControllerH

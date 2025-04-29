@@ -1,0 +1,570 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889206134*java2.B›
+;
+6src/main/java/com/snackbar/product/entity/Product.java2
+
+package4
+ 
+com.snackbar.product.entity5
+(
+#com.snackbar.product.entity.Product7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+Product12
+<
+6org.springframework.data.mongodb.core.mapping.Document14
+
+unknown15
+
+annotated by16
+
+
+uses17
+,
+&com.snackbar.product.entity.Product.id19
+
+field20
+
+private21
+
+id22
+,
+&org.springframework.data.annotation.Id24
+.
+(com.snackbar.product.entity.Product.name26
+
+
+name27
+2
+,com.snackbar.product.entity.Product.category29
+
+category30
+5
+/com.snackbar.product.entity.Product.description32
+
+description33
+/
+)com.snackbar.product.entity.Product.price35
+
+price36
+5
+/com.snackbar.product.entity.Product.cookingTime38
+
+cookingTime39
+3
+-com.snackbar.product.entity.Product#<init>()V41
+
+method42
+
+calls43
+¥
+žcom.snackbar.product.entity.Product#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/Integer;)V45
+
+
+references46
+C
+=com.snackbar.product.entity.Product#getId()Ljava/lang/String;48
+
+getId49
+D
+>com.snackbar.product.entity.Product#setId(Ljava/lang/String;)V51
+
+setId52
+E
+?com.snackbar.product.entity.Product#getName()Ljava/lang/String;54
+
+getName55
+F
+@com.snackbar.product.entity.Product#setName(Ljava/lang/String;)V57
+
+setName58
+I
+Ccom.snackbar.product.entity.Product#getCategory()Ljava/lang/String;60
+
+getCategory61
+J
+Dcom.snackbar.product.entity.Product#setCategory(Ljava/lang/String;)V63
+
+setCategory64
+L
+Fcom.snackbar.product.entity.Product#getDescription()Ljava/lang/String;66
+
+getDescription67
+M
+Gcom.snackbar.product.entity.Product#setDescription(Ljava/lang/String;)V69
+
+setDescription70
+J
+Dcom.snackbar.product.entity.Product#getPrice()Ljava/math/BigDecimal;72
+
+getPrice73
+K
+Ecom.snackbar.product.entity.Product#setPrice(Ljava/math/BigDecimal;)V75
+
+setPrice76
+M
+Gcom.snackbar.product.entity.Product#getCookingTime()Ljava/lang/Integer;78
+
+getCookingTime79
+N
+Hcom.snackbar.product.entity.Product#setCookingTime(Ljava/lang/Integer;)V81
+
+setCookingTime82
+<
+6com.snackbar.product.entity.Product#validateProduct()V84
+
+validateProduct85
+=
+7com.snackbar.product.common.exception.BusinessException87J
+
+1
+12Z
+
+3	
+354já
+@
+59:
+596042 *
+1. .(26:3B
+	
+9
+10
+
+
+11
+61
+@
+80:
+808142 *
+1J J(26:3B
+	
+9
+10
+
+
+11
+82
+@
+65:
+656642 *
+16 6(26:3B
+	
+9
+10
+
+
+11
+67
+@
+62:
+626342 *
+12 2(26:3B
+	
+9
+10
+
+
+11
+64
+@
+68:
+686942 *
+1: :(26:3B
+	
+9
+10
+
+
+11
+70
+
+13
+131415
+@
+25:
+252620 *
+1 (26:3B
+	
+9
+21
+
+
+11
+27
+@
+53:
+535442 *
+1& &(26:3B
+	
+9
+10
+
+
+11
+55
+9
+64
+678 *
+1	 	(:3B
+	
+9
+10
+
+
+11
+12
+@
+34:
+343520 *
+1 (26:3B
+	
+9
+21
+
+
+11
+36
+
+86
+868715
+@
+37:
+373820 *
+1 (26:3B
+	
+9
+21
+
+
+11
+39
+@
+47:
+474842 *
+1 (26:3B
+	
+9
+10
+
+
+11
+49
+@
+50:
+505142 *
+1" "(26:3B
+	
+9
+10
+
+
+11
+52
+@
+44:
+444542 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+@
+74:
+747542 *
+1B B(26:3B
+	
+9
+10
+
+
+11
+76
+@
+83:
+838442 *
+1O O(26:3B
+	
+9
+10
+
+
+11
+85
+@
+18:
+181920 *
+1
+ 
+(26:3B
+	
+9
+21
+
+
+11
+22
+@
+77:
+777842 *
+1F F(26:3B
+	
+9
+10
+
+
+11
+79
+@
+71:
+717242 *
+1> >(26:3B
+	
+9
+10
+
+
+11
+73
+@
+56:
+565742 *
+1* *(26:3B
+	
+9
+10
+
+
+11
+58
+@
+40:
+404142 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+
+23
+232415
+@
+31:
+313220 *
+1 (26:3B
+	
+9
+21
+
+
+11
+33
+@
+28:
+282920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+30r¸
+
+61316*
+1 (
+
+61317*
+1 (
+
+
+182316*
+1
+ 
+(
+
+182317*
+1
+ 
+(
+
+40643*
+1 (
+
+44643*
+1 (
+
+44617*
+1	 (
+
+44646*
+1	 (
+
+441846*
+1 (
+
+44617*
+1	 (
+
+44646*
+1	 (
+
+442546*
+1 (
+
+44617*
+1	 (
+
+44646*
+1	 (
+
+442846*
+1 (
+
+44617*
+1	 (
+
+44646*
+1	 (
+
+443146*
+1 (
+
+44617*
+1	 (
+
+44646*
+1	 (
+
+443446*
+1 (
+
+44617*
+1	 (
+
+44646*
+1	 (
+
+443746*
+1 (
+
+471846*
+1 (
+
+50617*
+1#	 #(
+
+50646*
+1#	 #(
+
+501846*
+1# #(
+
+532546*
+1' '(
+
+56617*
+1+	 +(
+
+56646*
+1+	 +(
+
+562546*
+1+ +(
+
+592846*
+1/ /(
+
+62617*
+13	 3(
+
+62646*
+13	 3(
+
+622846*
+13 3(
+
+653146*
+17 7(
+
+68617*
+1;	 ;(
+
+68646*
+1;	 ;(
+
+683146*
+1; ;(
+
+713446*
+1? ?(
+
+74617*
+1C	 C(
+
+74646*
+1C	 C(
+
+743446*
+1C C(
+
+773746*
+1G G(
+
+80617*
+1K	 K(
+
+80646*
+1K	 K(
+
+803746*
+1K K(
+
+832546*
+1P P(
+
+832546*
+1P P(!
+
+832546*
+1P P(!
+
+838643*
+1Q Q((
+
+832846*
+1S S(
+
+832846*
+1S! S()
+
+832846*
+1S! S()
+
+838643*
+1T T((
+
+833446*
+1V V(
+
+833446*
+1V V(#
+
+833446*
+1V V(#
+
+838643*
+1W W((

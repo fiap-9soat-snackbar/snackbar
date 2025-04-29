@@ -1,0 +1,624 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207943*java2.B‰
+P
+Ksrc/test/java/com/snackbar/pickup/usecase/IsReadyPickupUseCaseImplTest.java2
+
+package4
+ 
+com.snackbar.pickup.usecase5
+=
+8com.snackbar.pickup.usecase.IsReadyPickupUseCaseImplTest7
+
+
+class8
+
+access9
+
+	protected10
+
+simple name11
+"
+IsReadyPickupUseCaseImplTest12
+O
+Icom.snackbar.pickup.usecase.IsReadyPickupUseCaseImplTest.pickupRepository14
+
+field15
+
+private16
+
+pickupRepository17
+2
+,com.snackbar.pickup.gateway.PickupRepository19
+
+unknown20
+
+is type21
+
+org.mockito.Mock23
+
+annotated by24
+
+
+uses25
+W
+Qcom.snackbar.pickup.usecase.IsReadyPickupUseCaseImplTest.isReadyPickupUseCaseImpl27
+
+isReadyPickupUseCaseImpl28
+:
+4com.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl30
+
+org.mockito.InjectMocks32
+G
+Acom.snackbar.pickup.usecase.IsReadyPickupUseCaseImplTest#setUp()V34
+
+method35
+
+setUp36
+&
+ org.junit.jupiter.api.BeforeEach38
+$
+org.mockito.MockitoAnnotations40
+
+
+references41
+[
+Uorg.mockito.MockitoAnnotations#openMocks(Ljava/lang/Object;)Ljava/lang/AutoCloseable;43
+
+calls44
+p
+jcom.snackbar.pickup.usecase.IsReadyPickupUseCaseImplTest#testIsReady_whenPickupIsReady_shouldReturnTrue()V46
+4
+.testIsReady_whenPickupIsReady_shouldReturnTrue47
+ 
+org.junit.jupiter.api.Test49
+'
+!com.snackbar.pickup.entity.Pickup51
+c
+]com.snackbar.pickup.entity.Pickup#setStatusPickup(Lcom/snackbar/pickup/entity/StatusPickup;)V53
+-
+'com.snackbar.pickup.entity.StatusPickup55
+4
+.com.snackbar.pickup.entity.StatusPickup.PRONTO57
+*
+$org.mockito.stubbing.OngoingStubbing59
+
+returns60
+o
+iorg.mockito.stubbing.OngoingStubbing#thenReturn(Ljava/lang/Object;)Lorg/mockito/stubbing/OngoingStubbing;62
+
+org.mockito.Mockito64
+X
+Rorg.mockito.Mockito#when(Ljava/lang/Object;)Lorg/mockito/stubbing/OngoingStubbing;66
+h
+bcom.snackbar.pickup.gateway.PickupRepository#findByOrderId(Ljava/lang/String;)Ljava/util/Optional;68
+W
+Qcom.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl#isReady(Ljava/lang/String;)Z70
+&
+ org.junit.jupiter.api.Assertions72
+5
+/org.junit.jupiter.api.Assertions#assertTrue(Z)V74
+t
+ncom.snackbar.pickup.usecase.IsReadyPickupUseCaseImplTest#testIsReady_whenPickupIsNotFound_shouldReturnFalse()V76
+8
+2testIsReady_whenPickupIsNotFound_shouldReturnFalse77
+6
+0org.junit.jupiter.api.Assertions#assertFalse(Z)V79
+s
+mcom.snackbar.pickup.usecase.IsReadyPickupUseCaseImplTest#testIsDone_whenPickupIsFinalized_shouldReturnTrue()V81
+7
+1testIsDone_whenPickupIsFinalized_shouldReturnTrue82
+8
+2com.snackbar.pickup.entity.StatusPickup.FINALIZADO84
+V
+Pcom.snackbar.pickup.usecase.IsReadyPickupUseCaseImpl#isDone(Ljava/lang/String;)Z86
+s
+mcom.snackbar.pickup.usecase.IsReadyPickupUseCaseImplTest#testIsDone_whenPickupIsNotFound_shouldReturnFalse()V88
+7
+1testIsDone_whenPickupIsNotFound_shouldReturnFalse89J
+
+1
+12Z
+
+3	
+354jÕ
+
+37
+373820
+
+83
+838420
+
+52
+525320
+
+22
+222320
+@
+26:
+262715 *
+1 (26:3B
+	
+9
+16
+
+
+11
+28
+
+50
+505120
+
+39
+394020
+@
+87:
+878835 *
+1M M(26:3B
+	
+9
+10
+
+
+11
+89
+
+67
+676820
+9
+64
+678 *
+1 (#:3B
+	
+9
+10
+
+
+11
+12
+
+85
+858620
+
+56
+565720
+@
+13:
+131415 *
+1 (26:3B
+	
+9
+16
+
+
+11
+17
+
+31
+313220
+@
+80:
+808135 *
+1= =(26:3B
+	
+9
+10
+
+
+11
+82
+
+29
+293020
+@
+45:
+454635 *
+1 (26:3B
+	
+9
+10
+
+
+11
+47
+
+69
+697020
+
+78
+787920
+
+58
+585920
+@
+33:
+333435 *
+1 (26:3B
+	
+9
+10
+
+
+11
+36
+
+61
+616220
+
+48
+484920
+
+63
+636420
+
+73
+737420
+
+54
+545520
+@
+75:
+757635 *
+1/ /(26:3B
+	
+9
+10
+
+
+11
+77
+
+42
+424320
+
+71
+717220
+
+18
+181920
+
+65
+656620ré
+
+131821*
+1 (
+
+132224*
+1 (
+
+132225*
+1 (
+
+
+131825*
+1 (
+
+131825*
+1 (.
+
+262921*
+1 (%
+
+263124*
+1 (
+
+263125*
+1 (
+
+262925*
+1 (%
+
+262925*
+1& (>
+
+333724*
+1 (
+
+333725*
+1 (
+
+333941*
+1	 (
+
+334244*
+1 (%
+
+333925*
+1	 (
+
+33625*
+1& (*
+
+33641*
+1& (*
+
+454824*
+1 (
+
+454825*
+1 (
+
+
+455021*
+1# #(
+
+455025*
+1#	 #(
+
+455044*
+1# #(#
+
+455041*
+1$	 $(
+
+455244*
+1$ $(
+
+455425*
+1$  $(,
+
+455425*
+1$- $(3
+
+455641*
+1$- $(3
+
+455860*
+1&	 &(
+
+455841*
+1&	 &(
+
+456144*
+1&7 &(A
+
+455860*
+1&	 &(
+
+456341*
+1&	 &(
+
+456544*
+1&	 &(
+
+451841*
+1& &(
+
+456744*
+1& &(,
+
+451341*
+1& &(
+
+451825*
+1& &(
+
+451341*
+1& &(
+
+452941*
+1) )(3
+
+456944*
+1)4 )(;
+
+452641*
+1) )(3
+
+452925*
+1) )(3
+
+452641*
+1) )(3
+
+457141*
+1,	 ,(
+
+457344*
+1,	 ,(
+
+754824*
+1/ /(
+
+754825*
+1/ /(
+
+
+755860*
+14	 4(
+
+755841*
+14	 4(
+
+756144*
+147 4(A
+
+755860*
+14	 4(
+
+756341*
+14	 4(
+
+756544*
+14	 4(
+
+751841*
+14 4(
+
+756744*
+14 4(,
+
+751341*
+14 4(
+
+751825*
+14 4(
+
+751341*
+14 4(
+
+752941*
+17 7(3
+
+756944*
+174 7(;
+
+752641*
+17 7(3
+
+752925*
+17 7(3
+
+752641*
+17 7(3
+
+757141*
+1:	 :(
+
+757844*
+1:	 :(
+
+804824*
+1= =(
+
+804825*
+1= =(
+
+
+805021*
+1A A(
+
+805025*
+1A	 A(
+
+805044*
+1A A(#
+
+805041*
+1B	 B(
+
+805244*
+1B B(
+
+805425*
+1B  B(,
+
+805425*
+1B- B(7
+
+808341*
+1B- B(7
+
+805860*
+1D	 D(
+
+805841*
+1D	 D(
+
+806144*
+1D7 D(A
+
+805860*
+1D	 D(
+
+806341*
+1D	 D(
+
+806544*
+1D	 D(
+
+801841*
+1D D(
+
+806744*
+1D D(,
+
+801341*
+1D D(
+
+801825*
+1D D(
+
+801341*
+1D D(
+
+802941*
+1G G(2
+
+808544*
+1G3 G(9
+
+802641*
+1G G(2
+
+802925*
+1G G(2
+
+802641*
+1G G(2
+
+807141*
+1J	 J(
+
+807344*
+1J	 J(
+
+874824*
+1M M(
+
+874825*
+1M M(
+
+
+875860*
+1R	 R(
+
+875841*
+1R	 R(
+
+876144*
+1R7 R(A
+
+875860*
+1R	 R(
+
+876341*
+1R	 R(
+
+876544*
+1R	 R(
+
+871841*
+1R R(
+
+876744*
+1R R(,
+
+871341*
+1R R(
+
+871825*
+1R R(
+
+871341*
+1R R(
+
+872941*
+1U U(2
+
+878544*
+1U3 U(9
+
+872641*
+1U U(2
+
+872925*
+1U U(2
+
+872641*
+1U U(2
+
+877141*
+1X	 X(
+
+877844*
+1X	 X(

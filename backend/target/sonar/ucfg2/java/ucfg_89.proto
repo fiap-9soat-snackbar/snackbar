@@ -1,0 +1,15 @@
+
+dcom.snackbar.cooking.infrastructure.persistence.OrderItemEntity#getCustomization()Ljava/lang/String;ê
+Ö/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/persistence/OrderItemEntity.java5 5(""1*’
+16 6(ü
+ú
+6 6(
+%0java.lang.String"__id*r
+
+__unknown_file (V*TA
+?com.snackbar.cooking.infrastructure.persistence.OrderItemEntity"
+customization"$
+6 6(
+
+%0java.lang.StringBCA
+?com.snackbar.cooking.infrastructure.persistence.OrderItemEntityH

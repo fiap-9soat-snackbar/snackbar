@@ -1,0 +1,5 @@
+com.snackbar.payment.application.usecases.ListPaymentsUseCase#listPayments()Ljava/util/List;
+false
+4f99dd895f0d24c03064d75784468379
+==
+listPayments com.snackbar.payment.application.gateways.PaymentGateway#listPayments()Ljava/util/List;

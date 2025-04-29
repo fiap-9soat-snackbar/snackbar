@@ -1,0 +1,62 @@
+
+com.snackbar.productv2.infrastructure.controllers.Productv2Controller#listProductsv2()Lorg/springframework/http/ResponseEntity;–
+‹/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/controllers/Productv2Controller.javaF6 F(D"1*„
+1G2 G(Gß
+Ü
+G2 G(GG
+%0Acom.snackbar.productv2.application.usecases.ListProductsv2UseCase"__id*€
+
+__unknown_file (d*bG
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2Controller"
+listProductsv2UseCase€ý
+G2 G(X
+%1java.util.List"bcom.snackbar.productv2.application.usecases.ListProductsv2UseCase#listProductsv2()Ljava/util/List;*e
+
+__unknown_file (I
+G
+%0Acom.snackbar.productv2.application.usecases.ListProductsv2UseCase2listProductsv2()q
+o
+G G(Y)
+retrievedProductsv2Listjava.util.List"__id*2
+
+__unknown_file (
+
+%1java.util.ListÞ
+Û
+H. H(@J
+%2Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper"__id*}
+
+__unknown_file (a*_G
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2Controller"
+productv2DTOMapperïì
+H. H(h
+%3java.util.List"ucom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#listToResponse(Ljava/util/List;)Ljava/util/List;*h
+
+__unknown_file (L
+J
+%2Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper*G
+
+__unknown_file (+
+)
+retrievedProductsv2Listjava.util.List2 listToResponse(Ljava/util/List;)b
+`
+H H(i
+responsejava.util.List"__id*2
+
+__unknown_file (
+
+%3java.util.List¨
+¥
+I I(*-
+%4'org.springframework.http.ResponseEntity"gorg.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntity*8
+
+__unknown_file (
+
+responsejava.util.List";
+I I(+/
+-
+%4'org.springframework.http.ResponseEntityBIG
+Ecom.snackbar.productv2.infrastructure.controllers.Productv2ControllerH

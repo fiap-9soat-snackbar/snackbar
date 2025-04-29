@@ -1,0 +1,15 @@
+
+Xcom.snackbar.orderRefactory.domain.entity.OrderItem#getCustomization()Ljava/lang/String;É
+y/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/domain/entity/OrderItem.java9 9(""1*…
+1: :(ì
+ê
+: :(
+%0java.lang.String"__id*f
+
+__unknown_file (J*H5
+3com.snackbar.orderRefactory.domain.entity.OrderItem"
+customization"$
+: :(
+
+%0java.lang.StringB75
+3com.snackbar.orderRefactory.domain.entity.OrderItemH

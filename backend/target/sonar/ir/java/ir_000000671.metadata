@@ -1,0 +1,6 @@
+com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway#webHookExecution(Lcom/snackbar/payment/domain/entity/PaymentStatus;)V
+false
+0d0660b3ec81bd730906abe5d5ccd523
+com.snackbar.payment.domain.entity.PaymentStatus#callbackURL()Ljava/lang/String;
+==
+patchBackMercadoPago com.snackbar.payment.infrastructure.MpService#patchBackMercadoPago(Ljava/lang/String;Ljava/lang/Object;)V

@@ -1,0 +1,178 @@
+
+¦com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl#updateProduct(Ljava/lang/String;Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/product/dto/ProductDTO;‹
+€/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/product/usecase/impl/UpdateProductUseCaseImpl.java (#"startingBlock* 
+startingBlock# (EŠ
+‡
+ (
+%14"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*4
+
+__unknown_file (
+
+idjava.lang.StringW
+U
++ (-
+idjava.lang.String"__annotation*#
+
+__unknown_file (
+
+%14¥
+¢
+ (
+%15"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*O
+
+__unknown_file (3
+1
+
+productDTO#com.snackbar.product.dto.ProductDTOr
+p
+: (D1
+
+productDTO#com.snackbar.product.dto.ProductDTO"__annotation*#
+
+__unknown_file (
+
+%15*
+1*º
+1" (3¼
+¹
+" (34
+%0.com.snackbar.product.gateway.ProductRepository"__id*q
+
+__unknown_file (U*S<
+:com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl"
+ProductRepository°­
+" (@
+%1java.util.Optional"_com.snackbar.product.gateway.ProductRepository#findById(Ljava/lang/String;)Ljava/util/Optional;*R
+
+__unknown_file (6
+4
+%0.com.snackbar.product.gateway.ProductRepository*4
+
+__unknown_file (
+
+idjava.lang.String2findById(Ljava/lang/String;)±
+®
+ (X!
+%2java.util.function.Supplier"__declareFunction*l
+
+__unknown_file (PN
+L__sonar_lambda_52$com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl„
+
+
+__unknown_file ()
+!
+%2java.util.function.Supplier"
+id"__id*4
+
+__unknown_file (
+
+idjava.lang.String®«
+" (Y)
+%6#com.snackbar.product.entity.Product"Ojava.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;*6
+
+__unknown_file (
+
+%1java.util.Optional*?
+
+__unknown_file (#
+!
+%2java.util.function.Supplier2*orElseThrow(Ljava/util/function/Supplier;)”
+‘
+ (Z6
+existingProduct#com.snackbar.product.entity.Product"__id*G
+
+__unknown_file (+
+)
+%6#com.snackbar.product.entity.Productú
+÷
+! (8)
+%7#com.snackbar.product.entity.Product"’com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl#mapToEntity(Lcom/snackbar/product/dto/ProductDTO;)Lcom/snackbar/product/entity/Product;*Z
+
+__unknown_file (><
+:com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl*O
+
+__unknown_file (3
+1
+
+productDTO#com.snackbar.product.dto.ProductDTO“
+
+ (95
+updatedProduct#com.snackbar.product.entity.Product"__id*G
+
+__unknown_file (+
+)
+%7#com.snackbar.product.entity.ProductÃÀ
+ (4
+%8java.lang.String"=com.snackbar.product.entity.Product#getId()Ljava/lang/String;*T
+
+__unknown_file (8
+6
+existingProduct#com.snackbar.product.entity.Product2getId()ÿü
+ (5
+
+%9void">com.snackbar.product.entity.Product#setId(Ljava/lang/String;)V*S
+
+__unknown_file (7
+5
+updatedProduct#com.snackbar.product.entity.Product*4
+
+__unknown_file (
+
+%8java.lang.String2setId(Ljava/lang/String;)º·
+ ((
+%10void"6com.snackbar.product.entity.Product#validateProduct()V*S
+
+__unknown_file (7
+5
+updatedProduct#com.snackbar.product.entity.Product2validateProduct()½
+º
+ (05
+%11.com.snackbar.product.gateway.ProductRepository"__id*q
+
+__unknown_file (U*S<
+:com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl"
+ProductRepository‘Ž
+ (E*
+%12#com.snackbar.product.entity.Product"com.snackbar.product.gateway.ProductRepository#save(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/entity/Product;*S
+
+__unknown_file (7
+5
+%11.com.snackbar.product.gateway.ProductRepository*S
+
+__unknown_file (7
+5
+updatedProduct#com.snackbar.product.entity.Product2+save(Lcom/snackbar/product/entity/Product;)’
+
+ (F3
+savedProduct#com.snackbar.product.entity.Product"__id*H
+
+__unknown_file (,
+*
+%12#com.snackbar.product.entity.Productú
+÷
+ (%*
+%13#com.snackbar.product.dto.ProductDTO"com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl#mapToDTO(Lcom/snackbar/product/entity/Product;)Lcom/snackbar/product/dto/ProductDTO;*Z
+
+__unknown_file (><
+:com.snackbar.product.usecase.impl.UpdateProductUseCaseImpl*Q
+
+__unknown_file (5
+3
+savedProduct#com.snackbar.product.entity.Product"8
+ (&,
+*
+%13#com.snackbar.product.dto.ProductDTO:"
+$ (.
+idjava.lang.String:=
+/ (D1
+
+productDTO#com.snackbar.product.dto.ProductDTOB><
+:com.snackbar.product.usecase.impl.UpdateProductUseCaseImplH

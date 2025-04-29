@@ -1,0 +1,5 @@
+com.snackbar.cooking.infrastructure.config.CookingConfig#cookingDTOMapper()Lcom/snackbar/cooking/infrastructure/controllers/CookingDTOMapper;
+false
+e63e995a5a2d52fdd4f2a64f4320ff05
+com.snackbar.cooking.infrastructure.controllers.CookingDTOMapper#<init>()V
+com.snackbar.cooking.infrastructure.controllers.CookingDTOMapper#instance-init#

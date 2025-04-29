@@ -1,0 +1,56 @@
+
+ícom.snackbar.iam.application.ApplicationConfiguration#authenticationProvider()Lorg/springframework/security/authentication/AuthenticationProvider;Ö
+{/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/ApplicationConfiguration.java* *(1"1*Í
+1+1 +(P©¶
++5 +(NO
+%0Iorg.springframework.security.authentication.dao.DaoAuthenticationProvider"Iorg.springframework.security.authentication.dao.DaoAuthenticationProvider◊
+‘
++1 +(P
+%1"Sorg.springframework.security.authentication.dao.DaoAuthenticationProvider#<init>()V*m
+
+__unknown_file (Q
+O
+%0Iorg.springframework.security.authentication.dao.DaoAuthenticationProvider›
+⁄
++ +(QY
+authProviderIorg.springframework.security.authentication.dao.DaoAuthenticationProvider"__id*m
+
+__unknown_file (Q
+O
+%0Iorg.springframework.security.authentication.dao.DaoAuthenticationProvider—Œ
+-+ -(?F
+%2@org.springframework.security.core.userdetails.UserDetailsService"åcom.snackbar.iam.application.ApplicationConfiguration#userDetailsService()Lorg/springframework/security/core/userdetails/UserDetailsService;*U
+
+__unknown_file (97
+5com.snackbar.iam.application.ApplicationConfiguration2userDetailsService()˙˜
+- -(@
+
+%3void"§org.springframework.security.authentication.dao.DaoAuthenticationProvider#setUserDetailsService(Lorg/springframework/security/core/userdetails/UserDetailsService;)V*w
+
+__unknown_file ([
+Y
+authProviderIorg.springframework.security.authentication.dao.DaoAuthenticationProvider*d
+
+__unknown_file (H
+F
+%2@org.springframework.security.core.userdetails.UserDetailsService2YsetUserDetailsService(Lorg/springframework/security/core/userdetails/UserDetailsService;)À»
+.( .(9F
+%4@org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"âcom.snackbar.iam.application.ApplicationConfiguration#passwordEncoder()Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;*U
+
+__unknown_file (97
+5com.snackbar.iam.application.ApplicationConfiguration2passwordEncoder()ÏÈ
+. .(:
+
+%5void"ùorg.springframework.security.authentication.dao.DaoAuthenticationProvider#setPasswordEncoder(Lorg/springframework/security/crypto/password/PasswordEncoder;)V*w
+
+__unknown_file ([
+Y
+authProviderIorg.springframework.security.authentication.dao.DaoAuthenticationProvider*d
+
+__unknown_file (H
+F
+%4@org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder2RsetPasswordEncoder(Lorg/springframework/security/crypto/password/PasswordEncoder;)"g
+0 0([
+Y
+authProviderIorg.springframework.security.authentication.dao.DaoAuthenticationProviderB97
+5com.snackbar.iam.application.ApplicationConfiguration

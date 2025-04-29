@@ -1,0 +1,21 @@
+
+Wcom.snackbar.basket.application.usecases.BasketUseCase#findAllBaskets()Ljava/util/List;†
+|/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/basket/application/usecases/BasketUseCase.java= =(&"1*ù
+1> >(#Ê
+Ç
+> >(#C
+%0=com.snackbar.basket.application.gateways.BasketUseCaseGateway"__id*p
+
+__unknown_file (T*R8
+6com.snackbar.basket.application.usecases.BasketUseCase"
+basketUseCaseGatewayøõ
+> >(4
+%1java.util.List"^com.snackbar.basket.application.gateways.BasketUseCaseGateway#findAllBaskets()Ljava/util/List;*a
+
+__unknown_file (E
+C
+%0=com.snackbar.basket.application.gateways.BasketUseCaseGateway2findAllBaskets()""
+> >(5
+
+%1java.util.ListB:8
+6com.snackbar.basket.application.usecases.BasketUseCaseH

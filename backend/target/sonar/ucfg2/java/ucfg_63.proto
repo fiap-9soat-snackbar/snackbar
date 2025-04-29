@@ -1,0 +1,73 @@
+
+÷com.snackbar.productv2.infrastructure.controllers.Productv2DTOMapper#createRequestToDomain(Lcom/snackbar/productv2/infrastructure/controllers/CreateProductv2Request;)Lcom/snackbar/productv2/domain/entity/Productv2;ï
+ä/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/controllers/Productv2DTOMapper.java (*"1*„
+1 (!ÉÄ
+# (1
+%0java.lang.String"acom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#name()Ljava/lang/String;*q
+
+__unknown_file (U
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request2name()ãà
+3 (E
+%1java.lang.String"ecom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#category()Ljava/lang/String;*q
+
+__unknown_file (U
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request2
+category()ëé
+G (\
+%2java.lang.String"hcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#description()Ljava/lang/String;*q
+
+__unknown_file (U
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request2description()çä
+^ (m
+%3java.math.BigDecimal"fcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#price()Ljava/math/BigDecimal;*q
+
+__unknown_file (U
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request2price()îë
+	o (Ñ
+%4java.lang.Integer"icom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request#cookingTime()Ljava/lang/Integer;*q
+
+__unknown_file (U
+S
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2Request2cookingTime()rp
+ (4
+%5.com.snackbar.productv2.domain.entity.Productv2".com.snackbar.productv2.domain.entity.Productv2À
+»
+	 (Ö
+%6"©com.snackbar.productv2.domain.entity.Productv2#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/Integer;)V*R
+
+__unknown_file (6
+4
+%5.com.snackbar.productv2.domain.entity.Productv2*"
+
+__unknown_file (
+""*4
+
+__unknown_file (
+
+%0java.lang.String*4
+
+__unknown_file (
+
+%1java.lang.String*4
+
+__unknown_file (
+
+%2java.lang.String*8
+
+__unknown_file (
+
+%3java.math.BigDecimal*5
+
+__unknown_file (
+
+%4java.lang.Integer"C
+	 (Ü6
+4
+%5.com.snackbar.productv2.domain.entity.Productv2:_
++ (IS
+requestHcom.snackbar.productv2.infrastructure.controllers.CreateProductv2RequestBHF
+Dcom.snackbar.productv2.infrastructure.controllers.Productv2DTOMapperH

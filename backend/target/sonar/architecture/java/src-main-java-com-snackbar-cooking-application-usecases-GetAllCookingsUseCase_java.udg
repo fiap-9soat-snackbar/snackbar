@@ -1,0 +1,182 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889206392*java2.B¯
+W
+Rsrc/main/java/com/snackbar/cooking/application/usecases/GetAllCookingsUseCase.java2
+
+package4
+.
+)com.snackbar.cooking.application.usecases5
+D
+?com.snackbar.cooking.application.usecases.GetAllCookingsUseCase7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+GetAllCookingsUseCase12
+,
+&org.springframework.stereotype.Service14
+
+unknown15
+
+annotated by16
+
+
+uses17
+T
+Ncom.snackbar.cooking.application.usecases.GetAllCookingsUseCase.cookingGateway19
+
+field20
+
+private21
+
+cookingGateway22
+>
+8com.snackbar.cooking.application.gateways.CookingGateway24
+
+is type25
+Š
+ƒcom.snackbar.cooking.application.usecases.GetAllCookingsUseCase#<init>(Lcom/snackbar/cooking/application/gateways/CookingGateway;)V27
+
+method28
+
+	has param29
+
+calls30
+
+
+references31
+_
+Ycom.snackbar.cooking.application.usecases.GetAllCookingsUseCase#execute()Ljava/util/List;33
+
+execute34
+0
+*com.snackbar.cooking.domain.entity.Cooking36
+X
+Rcom.snackbar.cooking.application.gateways.CookingGateway#findAll()Ljava/util/List;38J
+
+1
+12Z
+
+3	
+354jÑ
+@
+18:
+181920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+22
+
+13
+131415
+
+35
+353615
+@
+32:
+323328 *
+1 (26:3B
+	
+9
+10
+
+
+11
+34
+
+37
+373815
+
+23
+232415
+9
+64
+678 *
+1
+ 
+(#:3B
+	
+9
+10
+
+
+11
+12
+@
+26:
+262728 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12rü
+
+61316*
+1	 	(
+
+61317*
+1	 	(	
+
+182325*
+1 (!
+
+182317*
+1 (!
+
+182317*
+1" (0
+
+262329*
+1" (0
+
+26630*
+1 (!
+
+262325*
+11 (?
+
+262317*
+1" (0
+
+26617*
+1	 (
+
+26631*
+1	 (
+
+262317*
+1 (
+
+261831*
+1 (
+
+323517*
+1 (
+
+322331*
+1 (
+
+323730*
+1 (&
+
+321831*
+1 (
+
+322317*
+1 (
+
+321831*
+1 (

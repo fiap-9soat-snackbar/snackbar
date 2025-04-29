@@ -1,0 +1,87 @@
+
+ûcom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway#getProductv2ById(Ljava/lang/String;)Lcom/snackbar/productv2/domain/entity/Productv2;ö
+è/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/gateways/Productv2RepositoryGateway.java (%"startingBlock*î
+startingBlock% (9í
+è
+ (
+%5"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*=
+
+__unknown_file (!
+
+productv2Idjava.lang.String_
+]
+- (8
+productv2Idjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%5*
+1*÷
+1 '  (:Â
+‚
+ '  (:K
+%0Ecom.snackbar.productv2.infrastructure.persistence.Productv2Repository"__id*Ç
+
+__unknown_file (f*dK
+Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway"
+productv2Repository‘—
+ '  (P
+%1java.util.Optional"corg.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;*i
+
+__unknown_file (M
+K
+%0Ecom.snackbar.productv2.infrastructure.persistence.Productv2Repository*=
+
+__unknown_file (!
+
+productv2Idjava.lang.String2findById(Ljava/lang/Object;)èå
+ '  (]G
+%2Acom.snackbar.productv2.infrastructure.persistence.Productv2Entity"?java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;*6
+
+__unknown_file (
+
+%1java.util.Optional*"
+
+__unknown_file (
+""2orElse(Ljava/lang/Object;)Õ
+ 
+   (^Q
+retrievedObjAcom.snackbar.productv2.infrastructure.persistence.Productv2Entity"__id*e
+
+__unknown_file (I
+G
+%2Acom.snackbar.productv2.infrastructure.persistence.Productv2EntityÊ
+„
+!' !(<J
+%3Dcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper"__id*Ñ
+
+__unknown_file (h*fK
+Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway"
+productv2EntityMapper∏µ
+!' !(V4
+%4.com.snackbar.productv2.domain.entity.Productv2"≈com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toDomainObj(Lcom/snackbar/productv2/infrastructure/persistence/Productv2Entity;)Lcom/snackbar/productv2/domain/entity/Productv2;*h
+
+__unknown_file (L
+J
+%3Dcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper*o
+
+__unknown_file (S
+Q
+retrievedObjAcom.snackbar.productv2.infrastructure.persistence.Productv2Entity2PtoDomainObj(Lcom/snackbar/productv2/infrastructure/persistence/Productv2Entity;)≠
+™
+! !(WD
+retrievedProductv2.com.snackbar.productv2.domain.entity.Productv2"__id*R
+
+__unknown_file (6
+4
+%4.com.snackbar.productv2.domain.entity.Productv2"R
+" "("F
+D
+retrievedProductv2.com.snackbar.productv2.domain.entity.Productv2:+
+& (8
+productv2Idjava.lang.StringBMK
+Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGatewayH

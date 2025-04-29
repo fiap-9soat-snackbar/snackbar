@@ -1,0 +1,7 @@
+com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper#toDomainListObj(Ljava/util/List;)Ljava/util/List;
+false
+e03083752538e9c0638c38d085c5579c
+==
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+toList java.util.stream.Stream#toList()Ljava/util/List;

@@ -1,0 +1,6 @@
+com.snackbar.order.service.OrderService#getOrderByOrderNumber(Ljava/lang/String;)Lcom/snackbar/order/domain/model/Order;
+false
+8323b814e460fa41068a0055df257a1e
+java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
+==
+findByOrderNumber com.snackbar.order.adapter.out.OrderRepository#findByOrderNumber(Ljava/lang/String;)Ljava/util/Optional;

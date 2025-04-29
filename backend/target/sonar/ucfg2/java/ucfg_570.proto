@@ -1,0 +1,33 @@
+
+¬com.snackbar.basket.application.usecases.BasketUseCase#addItemToBasket(Ljava/lang/String;Lcom/snackbar/basket/domain/entity/Item;)Lcom/snackbar/basket/domain/entity/Basket;†
+|/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/basket/application/usecases/BasketUseCase.java5 5(!"1*È
+16 6(#Ê
+Ç
+6 6(#C
+%0=com.snackbar.basket.application.gateways.BasketUseCaseGateway"__id*p
+
+__unknown_file (T*R8
+6com.snackbar.basket.application.usecases.BasketUseCase"
+basketUseCaseGateway­ª
+6 6(C.
+%1(com.snackbar.basket.domain.entity.Basket"³com.snackbar.basket.application.gateways.BasketUseCaseGateway#addItemToBasket(Ljava/lang/String;Lcom/snackbar/basket/domain/entity/Item;)Lcom/snackbar/basket/domain/entity/Basket;*a
+
+__unknown_file (E
+C
+%0=com.snackbar.basket.application.gateways.BasketUseCaseGateway*:
+
+__unknown_file (
+
+basketIdjava.lang.String*L
+
+__unknown_file (0
+.
+item&com.snackbar.basket.domain.entity.Item2KaddItemToBasket(Ljava/lang/String;Lcom/snackbar/basket/domain/entity/Item;)"<
+6 6(D0
+.
+%1(com.snackbar.basket.domain.entity.Basket:(
+5" 5(2
+basketIdjava.lang.String::
+53 5(<.
+item&com.snackbar.basket.domain.entity.ItemB:8
+6com.snackbar.basket.application.usecases.BasketUseCaseH

@@ -1,0 +1,53 @@
+
+jcom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway#listProductsv2()Ljava/util/List;ö
+è/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/gateways/Productv2RepositoryGateway.java& &()"1*—
+
+1'1 '(DÂ
+‚
+'1 '(DK
+%0Ecom.snackbar.productv2.infrastructure.persistence.Productv2Repository"__id*Ç
+
+__unknown_file (f*dK
+Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway"
+productv2RepositoryÎË
+'1 '(N
+%1java.util.List"Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;*i
+
+__unknown_file (M
+K
+%0Ecom.snackbar.productv2.infrastructure.persistence.Productv2Repository2	findAll()j
+h
+' '(O"
+retrievedObjListjava.util.List"__id*2
+
+__unknown_file (
+
+%1java.util.ListÊ
+„
+(2 ((GJ
+%2Dcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper"__id*Ñ
+
+__unknown_file (h*fK
+Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway"
+productv2EntityMapperÍÁ
+(2 ((i
+%3java.util.List"vcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toDomainListObj(Ljava/util/List;)Ljava/util/List;*h
+
+__unknown_file (L
+J
+%2Dcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper*@
+
+__unknown_file ($
+"
+retrievedObjListjava.util.List2!toDomainListObj(Ljava/util/List;)q
+o
+( ((j)
+retrievedProductsv2Listjava.util.List"__id*2
+
+__unknown_file (
+
+%3java.util.List"7
+) )('+
+)
+retrievedProductsv2Listjava.util.ListBMK
+Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGatewayH

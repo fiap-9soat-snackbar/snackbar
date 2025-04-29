@@ -1,0 +1,6 @@
+com.snackbar.iam.application.AuthenticationService#findByCpf(Ljava/lang/String;)Lcom/snackbar/iam/domain/UserDetailsEntity;
+false
+1d6d56b0cd2686395b98cf9adbc0c4bf
+java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
+==
+findByCpf com.snackbar.iam.infrastructure.IamRepository#findByCpf(Ljava/lang/String;)Ljava/util/Optional;

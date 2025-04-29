@@ -1,0 +1,7 @@
+com.snackbar.basket.infrastructure.gateways.ItemEntityMapper#toDomainObj(Lcom/snackbar/basket/infrastructure/persistence/ItemEntity;)Lcom/snackbar/basket/domain/entity/Item;
+false
+02119e30179117a193ef2fe6b7067e49
+com.snackbar.basket.domain.entity.Item#<init>(Ljava/lang/String;Ljava/lang/Integer;Ljava/math/BigDecimal;Ljava/lang/Integer;)V
+com.snackbar.basket.domain.entity.Item#instance-init#
+==
+!unknownMethod! !unknownMethod!

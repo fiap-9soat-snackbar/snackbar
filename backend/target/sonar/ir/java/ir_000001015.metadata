@@ -1,0 +1,9 @@
+com.snackbar.basket.infrastructure.controllers.BasketDTOMapper#toItem(Lcom/snackbar/basket/infrastructure/controllers/ItemRequest;)Lcom/snackbar/basket/domain/entity/Item;
+false
+ce533dfc7f10cf9bda9926628ddf7ade
+com.snackbar.basket.domain.entity.Item#<init>(Ljava/lang/String;Ljava/lang/Integer;Ljava/math/BigDecimal;Ljava/lang/Integer;)V
+com.snackbar.basket.domain.entity.Item#instance-init#
+com.snackbar.basket.infrastructure.controllers.ItemRequest#cookingTime()Ljava/lang/Integer;
+com.snackbar.basket.infrastructure.controllers.ItemRequest#name()Ljava/lang/String;
+com.snackbar.basket.infrastructure.controllers.ItemRequest#price()Ljava/math/BigDecimal;
+com.snackbar.basket.infrastructure.controllers.ItemRequest#quantity()Ljava/lang/Integer;

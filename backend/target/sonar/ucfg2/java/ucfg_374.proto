@@ -1,0 +1,15 @@
+
+fcom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking#getWaitingTime()Ljava/lang/Integer;“
+ˆ/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/cooking/infrastructure/persistence/OrderEntityCooking.javaQ Q(!"1*Ø
+1R R(¡
+ž
+R R(
+%0java.lang.Integer"__id*s
+
+__unknown_file (W*UD
+Bcom.snackbar.cooking.infrastructure.persistence.OrderEntityCooking"
+waitingTime"%
+R R(
+
+%0java.lang.IntegerBFD
+Bcom.snackbar.cooking.infrastructure.persistence.OrderEntityCookingH

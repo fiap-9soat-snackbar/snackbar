@@ -1,0 +1,7 @@
+com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway#getPaymentById(Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
+false
+df43687702141e9511f34265a74ff18c
+java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+toDomainObj com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper#toDomainObj(Lcom/snackbar/payment/infrastructure/persistence/PaymentEntity;)Lcom/snackbar/payment/domain/entity/Payment;

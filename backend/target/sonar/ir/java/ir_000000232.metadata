@@ -1,0 +1,11 @@
+com.snackbar.iam.web.AuthenticationController#refreshToken(Lcom/snackbar/iam/web/dto/RefreshTokenRequest;)Lorg/springframework/http/ResponseEntity;
+false
+2d1d0b0a2e7dbfe93d2dbb1d325d3a67
+com.snackbar.iam.web.dto.LoginResponse#<init>(Ljava/lang/String;J)V
+com.snackbar.iam.web.dto.LoginResponse#instance-init#
+org.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;
+==
+!unknownMethod! !unknownMethod!
+findByCpf com.snackbar.iam.application.AuthenticationService#findByCpf(Ljava/lang/String;)Lcom/snackbar/iam/domain/UserDetailsEntity;
+generateToken com.snackbar.iam.application.JwtService#generateToken(Lorg/springframework/security/core/userdetails/UserDetails;)Ljava/lang/String;
+getExpirationTime com.snackbar.iam.application.JwtService#getExpirationTime()J

@@ -1,0 +1,68 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889206763*java2.BÖ
+J
+Esrc/main/java/com/snackbar/product/usecase/GetAllProductsUseCase.java2
+
+package4
+!
+com.snackbar.product.usecase5
+7
+2com.snackbar.product.usecase.GetAllProductsUseCase7
+
+	interface8
+
+access9
+
+public10
+
+simple name11
+
+GetAllProductsUseCase12
+Y
+Scom.snackbar.product.usecase.GetAllProductsUseCase#getAllProducts()Ljava/util/List;14
+
+method15
+
+getAllProducts16
+)
+#com.snackbar.product.dto.ProductDTO18
+
+unknown19
+
+
+uses20J
+
+1
+12Z
+
+3	
+354j‘
+9
+64
+678 *
+1 (':3B
+	
+9
+10
+
+
+11
+12
+@
+13:
+131415 *
+1 (	26:3B
+	
+9
+10
+
+
+11
+16
+
+17
+171819r
+
+131720*
+1
+ (

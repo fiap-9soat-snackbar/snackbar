@@ -1,0 +1,799 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207226*java2.B¼"
+b
+]src/main/java/com/snackbar/orderRefactory/infrastructure/gateways/OrderRepositoryGateway.java2
+
+package4
+8
+3com.snackbar.orderRefactory.infrastructure.gateways5
+O
+Jcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+OrderRepositoryGateway12
+C
+=com.snackbar.orderRefactory.application.gateways.OrderGateway14
+
+unknown15
+
+
+implements16
+
+
+uses17
+i
+ccom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway.orderRefactoryRepository19
+
+field20
+
+private21
+
+orderRefactoryRepository22
+U
+Ocom.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository24
+
+is type25
+b
+\com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway.orderEntityMapper27
+
+orderEntityMapper28
+K
+Ecom.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper30
+ó
+ìcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#<init>(Lcom/snackbar/orderRefactory/infrastructure/persistence/OrderRefactoryRepository;Lcom/snackbar/orderRefactory/infrastructure/gateways/OrderEntityMapper;)V32
+
+method33
+
+	has param34
+
+calls35
+
+
+references36
+Á
+ºcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#createOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;38
+
+createOrder39
+5
+/com.snackbar.orderRefactory.domain.entity.Order41
+
+returns42
+H
+Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity44
+Ì
+Åcom.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#toEntity(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/infrastructure/persistence/OrderEntity;46
+8
+2org.springframework.data.repository.CrudRepository48
+c
+]org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;50
+Ï
+Ècom.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#toDomainObj(Lcom/snackbar/orderRefactory/infrastructure/persistence/OrderEntity;)Lcom/snackbar/orderRefactory/domain/entity/Order;52
+Á
+ºcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#updateOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;54
+
+updateOrder55
+m
+gcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#listOrders()Ljava/util/List;57
+
+
+listOrders58
+<
+6org.springframework.data.repository.ListCrudRepository60
+V
+Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;62
+¤
+com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#searchOrderId(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;64
+
+searchOrderId65
+i
+corg.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;67
+w
+qcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#updateStatusOrder(Ljava/lang/String;)V69
+
+updateStatusOrder70
+¬
+¥com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#getOrderByOrderNumber(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;72
+
+getOrderByOrderNumber73
+
+‰com.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository#findByOrderNumber(Ljava/lang/String;)Ljava/util/Optional;75
+r
+lcom.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#getSortedOrders()Ljava/util/List;77
+
+getSortedOrders78
+‡
+€com.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository#findAllByOrderByOrderNumberAsc()Ljava/util/List;80
+‡
+€com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#findOrderById(Ljava/lang/String;)Ljava/util/Optional;82
+
+findOrderById83
+‡
+€com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#findUserByCpf(Ljava/lang/String;)Ljava/util/Optional;85
+
+findUserByCpf86
+„
+~com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#findTopByOrderByOrderNumberDesc()Ljava/lang/String;88
+%
+findTopByOrderByOrderNumberDesc89
+Œ
+…com.snackbar.orderRefactory.infrastructure.persistence.OrderRefactoryRepository#findTopByOrderByOrderNumberDesc()Ljava/util/Optional;91
++
+%com.snackbar.order.domain.model.Order93J
+
+1
+12Z
+
+3	
+354jÕ	
+
+61
+616215
+
+43
+434415
+9
+64
+678 *
+1 ($:3B
+	
+9
+10
+
+
+11
+12
+
+47
+474815
+@
+18:
+181920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+22
+@
+53:
+535433 *
+1 (26:3B
+	
+9
+10
+
+
+11
+55
+@
+31:
+313233 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+
+51
+515215
+
+23
+232415
+@
+26:
+262720 *
+1 (26:3B
+	
+9
+21
+
+
+11
+28
+@
+76:
+767733 *
+1A A(26:3B
+	
+9
+10
+
+
+11
+78
+@
+87:
+878833 *
+1U U(26:3B
+	
+9
+10
+
+
+11
+89
+
+90
+909115
+
+45
+454615
+
+79
+798015
+
+49
+495015
+@
+37:
+373833 *
+1 (26:3B
+	
+9
+10
+
+
+11
+39
+
+29
+293015
+@
+63:
+636433 *
+1, ,(26:3B
+	
+9
+10
+
+
+11
+65
+
+59
+596015
+
+74
+747515
+
+92
+929315
+
+40
+404115
+@
+71:
+717233 *
+1; ;(26:3B
+	
+9
+10
+
+
+11
+73
+@
+84:
+848533 *
+1O O(26:3B
+	
+9
+10
+
+
+11
+86
+@
+56:
+565733 *
+1$ $(26:3B
+	
+9
+10
+
+
+11
+58
+@
+81:
+818233 *
+1I I(26:3B
+	
+9
+10
+
+
+11
+83
+
+66
+666715
+
+13
+131415
+@
+68:
+686933 *
+12 2(26:3B
+	
+9
+10
+
+
+11
+70r· 
+
+61316*
+10 (<
+
+61317*
+10 (<
+
+182325*
+1 (+
+
+182317*
+1 (+
+
+182317*
+1, (D
+
+262925*
+1 ($
+
+262917*
+1 ($
+
+262917*
+1% (6
+
+312334*
+1# (;
+
+312934*
+1V (g
+
+31635*
+1 ("
+
+312325*
+1< (T
+
+312317*
+1# (;
+
+312925*
+1h (y
+
+312917*
+1V (g
+
+31617*
+1	 (
+
+31636*
+1	 (
+
+312317*
+1 (&
+
+311836*
+1 (&
+
+31617*
+1	 (
+
+31636*
+1	 (
+
+312917*
+1 (
+
+312636*
+1 (
+
+374042*
+1 (
+
+374034*
+1 (#
+
+374017*
+1 (
+
+374025*
+1$ (2
+
+374017*
+1 (#
+
+374325*
+1 ( 
+
+374317*
+1	 (
+
+374342*
+1# (4
+
+372936*
+1# (4
+
+374535*
+15 (=
+
+372636*
+1# (4
+
+372917*
+1# (4
+
+372636*
+1# (4
+
+374325*
+1 (
+
+374317*
+1	 (
+
+374342*
+1  (8
+
+374736*
+1  (8
+
+374935*
+19 (=
+
+371836*
+1  (8
+
+372317*
+1  (8
+
+371836*
+1  (8
+
+374042*
+1 (!
+
+372936*
+1 (!
+
+375135*
+1" (-
+
+372636*
+1 (!
+
+372917*
+1 (!
+
+372636*
+1 (!
+
+534042*
+1 (
+
+534034*
+1 (#
+
+534017*
+1 (
+
+534025*
+1$ (2
+
+534017*
+1 (#
+
+534325*
+1 ( 
+
+534317*
+1	 (
+
+534342*
+1# (4
+
+532936*
+1# (4
+
+534535*
+15 (=
+
+532636*
+1# (4
+
+532917*
+1# (4
+
+532636*
+1# (4
+
+534325*
+1   (
+
+534317*
+1 	  (
+
+534342*
+1 "  (:
+
+534736*
+1 "  (:
+
+534935*
+1 ;  (?
+
+531836*
+1 "  (:
+
+532317*
+1 "  (:
+
+531836*
+1 "  (:
+
+534042*
+1! !(!
+
+532936*
+1! !(!
+
+535135*
+1!" !(-
+
+532636*
+1! !(!
+
+532917*
+1! !(!
+
+532636*
+1! !(!
+
+564017*
+1% %(
+
+564317*
+1& &(
+
+565936*
+1&+ &(C
+
+566135*
+1&D &(K
+
+561836*
+1&+ &(C
+
+562317*
+1&+ &(C
+
+561836*
+1&+ &(C
+
+562917*
+1( (('
+
+562636*
+1( (('
+
+634042*
+1- -(
+
+634017*
+1- -(
+
+634325*
+1. .( 
+
+634317*
+1.	 .(
+
+634342*
+1.# .(;
+
+634736*
+1.# .(;
+
+636635*
+1.< .(D
+
+631836*
+1.# .(;
+
+632317*
+1.# .(;
+
+631836*
+1.# .(;
+
+634042*
+1/& /(7
+
+632936*
+1/& /(7
+
+635135*
+1/8 /(C
+
+632636*
+1/& /(7
+
+632917*
+1/& /(7
+
+632636*
+1/& /(7
+
+684325*
+14 4( 
+
+684317*
+14	 4(
+
+684342*
+14# 4(;
+
+684736*
+14# 4(;
+
+686635*
+14< 4(D
+
+681836*
+14# 4(;
+
+682317*
+14# 4(;
+
+681836*
+14# 4(;
+
+684342*
+17 7(%
+
+684736*
+17 7(%
+
+684935*
+17& 7(*
+
+681836*
+17 7(%
+
+682317*
+17 7(%
+
+681836*
+17 7(%
+
+714042*
+1< <(
+
+714017*
+1< <(
+
+714317*
+1= =(
+
+712336*
+1=- =(E
+
+717435*
+1=F =(W
+
+711836*
+1=- =(E
+
+712317*
+1=- =(E
+
+711836*
+1=- =(E
+
+714042*
+1>& >(7
+
+712936*
+1>& >(7
+
+715135*
+1>8 >(C
+
+712636*
+1>& >(7
+
+712917*
+1>& >(7
+
+712636*
+1>& >(7
+
+714342*
+1>D >(O
+
+764017*
+1B B(
+
+764317*
+1C C(
+
+762336*
+1C+ C(C
+
+767935*
+1CD C(b
+
+761836*
+1C+ C(C
+
+762317*
+1C+ C(C
+
+761836*
+1C+ C(C
+
+762917*
+1E E('
+
+762636*
+1E E('
+
+814017*
+1J J(
+
+814736*
+1K K((
+
+816635*
+1K) K(1
+
+811836*
+1K K((
+
+812317*
+1K K((
+
+811836*
+1K K((
+
+812917*
+1L L('
+
+812636*
+1L L('
+
+872336*
+1W W((
+
+879035*
+1W) W(H
+
+871836*
+1W W((
+
+872317*
+1W W((
+
+871836*
+1W W((
+
+879217*
+1X6 X(;

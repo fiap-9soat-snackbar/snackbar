@@ -1,0 +1,5 @@
+com.snackbar.productv2.application.usecases.ListProductsv2UseCase#listProductsv2()Ljava/util/List;
+false
+853ea7b61593325d5ebee496bba41641
+==
+listProductsv2 com.snackbar.productv2.application.gateways.Productv2Gateway#listProductsv2()Ljava/util/List;

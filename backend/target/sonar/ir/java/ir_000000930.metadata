@@ -1,0 +1,5 @@
+com.snackbar.cooking.infrastructure.config.CookingConfig#createCookingUseCase(Lcom/snackbar/cooking/application/gateways/CookingGateway;Lcom/snackbar/order/service/OrderService;)Lcom/snackbar/cooking/application/usecases/CreateCookingUseCase;
+false
+6207be114e8dc0d3a762c874cc72d14b
+com.snackbar.cooking.application.usecases.CreateCookingUseCase#<init>(Lcom/snackbar/cooking/application/gateways/CookingGateway;Lcom/snackbar/order/service/OrderService;)V
+com.snackbar.cooking.application.usecases.CreateCookingUseCase#instance-init#

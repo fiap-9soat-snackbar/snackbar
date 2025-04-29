@@ -1,0 +1,5 @@
+com.snackbar.iam.application.ApplicationConfiguration#passwordEncoder()Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;
+false
+88c93fbe0d1fc82c40879bdfbed15fc1
+org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder#<init>()V
+org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder#instance-init#

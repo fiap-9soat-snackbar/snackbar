@@ -1,0 +1,6 @@
+com.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway#listProductsv2()Ljava/util/List;
+false
+906c7e0de4f31595ba9c3e4ad604d421
+==
+findAll org.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;
+toDomainListObj com.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper#toDomainListObj(Ljava/util/List;)Ljava/util/List;

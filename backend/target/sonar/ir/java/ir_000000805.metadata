@@ -1,0 +1,7 @@
+com.snackbar.productv2.infrastructure.controllers.Productv2Controller#deleteProduct(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;
+false
+9a2d90df6829c3d76e7bb36b3c7db394
+org.springframework.http.ResponseEntity#ok()Lorg/springframework/http/ResponseEntity$BodyBuilder;
+==
+build org.springframework.http.ResponseEntity$HeadersBuilder#build()Lorg/springframework/http/ResponseEntity;
+deleteProductv2ById com.snackbar.productv2.application.usecases.DeleteProductv2ByIdUseCase#deleteProductv2ById(Ljava/lang/String;)V

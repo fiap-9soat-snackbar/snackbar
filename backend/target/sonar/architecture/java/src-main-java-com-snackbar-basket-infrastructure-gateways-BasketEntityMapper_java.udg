@@ -1,0 +1,237 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889205550*java2.B
+V
+Qsrc/main/java/com/snackbar/basket/infrastructure/gateways/BasketEntityMapper.java2
+
+package4
+0
++com.snackbar.basket.infrastructure.gateways5
+C
+>com.snackbar.basket.infrastructure.gateways.BasketEntityMapper7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+BasketEntityMapper12
+U
+Ocom.snackbar.basket.infrastructure.gateways.BasketEntityMapper.itemEntityMapper14
+
+field15
+
+private16
+
+itemEntityMapper17
+B
+<com.snackbar.basket.infrastructure.gateways.ItemEntityMapper19
+
+unknown20
+
+is type21
+
+
+uses22
+
+calls23
+·
+°com.snackbar.basket.infrastructure.gateways.BasketEntityMapper#toEntity(Lcom/snackbar/basket/domain/entity/Basket;)Lcom/snackbar/basket/infrastructure/persistence/BasketEntity;25
+
+method26
+
+toEntity27
+A
+;com.snackbar.basket.infrastructure.persistence.BasketEntity29
+
+returns30
+.
+(com.snackbar.basket.domain.entity.Basket32
+
+	has param33
+?
+9com.snackbar.basket.infrastructure.persistence.ItemEntity35
+
+
+references36
+F
+@com.snackbar.basket.domain.entity.Basket#items()Ljava/util/List;38
+E
+?com.snackbar.basket.domain.entity.Basket#id()Ljava/lang/String;40
+F
+@com.snackbar.basket.domain.entity.Basket#cpf()Ljava/lang/String;42
+Q
+Kcom.snackbar.basket.domain.entity.Basket#totalPrice()Ljava/math/BigDecimal;44
+º
+³com.snackbar.basket.infrastructure.gateways.BasketEntityMapper#toDomainObj(Lcom/snackbar/basket/infrastructure/persistence/BasketEntity;)Lcom/snackbar/basket/domain/entity/Basket;46
+
+toDomainObj47
+,
+&com.snackbar.basket.domain.entity.Item49J
+
+1
+12Z
+
+3	
+354jµ
+
+18
+181920
+@
+24:
+242526 *
+1 (26:3B
+	
+9
+10
+
+
+11
+27
+
+31
+313220
+
+28
+282920
+
+43
+434420
+
+34
+343520
+@
+45:
+454626 *
+1 (26:3B
+	
+9
+10
+
+
+11
+47
+
+39
+394020
+
+48
+484920
+
+37
+373820
+
+41
+414220
+9
+64
+678 *
+1 ( :3B
+	
+9
+10
+
+
+11
+12
+@
+13:
+131415 *
+1 (26:3B
+	
+9
+16
+
+
+11
+17r
+
+131821*
+1 (#
+
+131822*
+1 (#
+
+131822*
+1$ (4
+
+131823*
+1; (K
+
+242830*
+1 (
+
+243133*
+1" ((
+
+242822*
+1 (
+
+243121*
+1) (8
+
+243122*
+1" ((
+
+243422*
+1 (
+
+243136*
+1) (8
+
+243723*
+19 (>
+
+241822*
+1 (&
+
+241336*
+1 (&
+
+243136*
+1 ( 
+
+243923*
+1! (#
+
+243136*
+1 ( 
+
+244123*
+1! ($
+
+243136*
+1 ( 
+
+244323*
+1! (+
+
+453130*
+1 (
+
+452833*
+1 (+
+
+453122*
+1 (
+
+452821*
+1, (8
+
+452822*
+1 (+
+
+454822*
+1 (
+
+451822*
+1 (&
+
+451336*
+1 (&
+
+453123*
+1" "(

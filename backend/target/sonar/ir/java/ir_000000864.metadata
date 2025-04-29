@@ -1,0 +1,6 @@
+com.snackbar.order.domain.model.Order#generateOrderNumber(Ljava/lang/String;)Ljava/lang/String;
+false
+5c99c8a3fa3f9dec44d21c98d847a42b
+java.lang.Integer#parseInt(Ljava/lang/String;)I
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+java.lang.String#isEmpty()Z

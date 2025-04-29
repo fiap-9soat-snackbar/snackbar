@@ -1,0 +1,246 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889206478*java2.B¼
+_
+Zsrc/main/java/com/snackbar/cooking/infrastructure/controllers/CookingExceptionHandler.java2
+
+package4
+4
+/com.snackbar.cooking.infrastructure.controllers5
+L
+Gcom.snackbar.cooking.infrastructure.controllers.CookingExceptionHandler7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+CookingExceptionHandler12
+>
+8org.springframework.web.bind.annotation.ControllerAdvice14
+
+unknown15
+
+annotated by16
+
+
+uses17
+Ù
+Òcom.snackbar.cooking.infrastructure.controllers.CookingExceptionHandler#handleCookingNotFoundException(Lcom/snackbar/cooking/domain/exceptions/CookingNotFoundException;)Lorg/springframework/http/ResponseEntity;19
+
+method20
+$
+handleCookingNotFoundException21
+-
+'org.springframework.http.ResponseEntity23
+
+returns24
+E
+?com.snackbar.cooking.domain.exceptions.CookingNotFoundException26
+
+	has param27
+>
+8org.springframework.web.bind.annotation.ExceptionHandler29
+
+is type30
+9
+3org.springframework.http.ResponseEntity$BodyBuilder32
+
+
+references33
+{
+uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;35
+
+calls36
+•
+Žorg.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;38
+)
+#org.springframework.http.HttpStatus40
+3
+-org.springframework.http.HttpStatus.NOT_FOUND42
+Ó
+Ìcom.snackbar.cooking.infrastructure.controllers.CookingExceptionHandler#handleUserNotFoundException(Lcom/snackbar/cooking/domain/exceptions/UserNotFoundException;)Lorg/springframework/http/ResponseEntity;44
+!
+handleUserNotFoundException45
+B
+<com.snackbar.cooking.domain.exceptions.UserNotFoundException47J
+
+1
+12Z
+
+3	
+354j‡
+
+13
+131415
+
+25
+252615
+
+41
+414215
+
+31
+313215
+
+46
+464715
+
+39
+394015
+@
+18:
+181920 *
+1 (26:3B
+	
+9
+10
+
+
+11
+21
+
+34
+343515
+
+28
+282915
+9
+64
+678 *
+1 (%:3B
+	
+9
+10
+
+
+11
+12
+
+22
+222315
+@
+43:
+434420 *
+1 (26:3B
+	
+9
+10
+
+
+11
+45
+
+37
+373815rÊ
+
+61316*
+1 (
+
+61317*
+1 (
+
+182224*
+1 (
+
+182527*
+1B (Z
+
+182816*
+1 (
+
+182817*
+1 (
+
+182517*
+1 (/
+
+182217*
+1 (
+
+182530*
+1[ (]
+
+182517*
+1B (Z
+
+182224*
+1 (
+
+183133*
+1 (
+
+183436*
+1 (
+
+183124*
+1 (
+
+182233*
+1 (
+
+183736*
+1 (
+
+183917*
+1 (#
+
+183917*
+1$ (-
+
+184133*
+1$ (-
+
+432224*
+1 (
+
+434627*
+1? (T
+
+432816*
+1 (
+
+432817*
+1 (
+
+434617*
+1 (,
+
+432217*
+1 (
+
+434630*
+1U (W
+
+434617*
+1? (T
+
+432224*
+1 (
+
+433133*
+1 (
+
+433436*
+1 (
+
+433124*
+1 (
+
+432233*
+1 (
+
+433736*
+1 (
+
+433917*
+1 (#
+
+433917*
+1$ (-
+
+434133*
+1$ (-

@@ -1,0 +1,6 @@
+com.snackbar.product.common.handler.GlobalExceptionHandler#handleGenericException(Ljava/lang/Exception;)Lorg/springframework/http/ResponseEntity;
+false
+f16ffd1f6b7a5ba92e53732e56e78999
+org.springframework.http.ResponseEntity#badRequest()Lorg/springframework/http/ResponseEntity$BodyBuilder;
+==
+body org.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;

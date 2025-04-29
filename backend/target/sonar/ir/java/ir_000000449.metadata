@@ -1,0 +1,14 @@
+com.snackbar.iam.application.SecurityConfiguration#corsConfigurationSource()Lorg/springframework/web/cors/CorsConfigurationSource;
+false
+fe5eeb05419289d0679cda1ac473be1e
+java.util.List#of(Ljava/lang/Object;)Ljava/util/List;
+java.util.List#of(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List;
+org.springframework.web.cors.CorsConfiguration#<init>()V
+org.springframework.web.cors.CorsConfiguration#instance-init#
+org.springframework.web.cors.UrlBasedCorsConfigurationSource#<init>()V
+org.springframework.web.cors.UrlBasedCorsConfigurationSource#instance-init#
+==
+registerCorsConfiguration org.springframework.web.cors.UrlBasedCorsConfigurationSource#registerCorsConfiguration(Ljava/lang/String;Lorg/springframework/web/cors/CorsConfiguration;)V
+setAllowedHeaders org.springframework.web.cors.CorsConfiguration#setAllowedHeaders(Ljava/util/List;)V
+setAllowedMethods org.springframework.web.cors.CorsConfiguration#setAllowedMethods(Ljava/util/List;)V
+setAllowedOrigins org.springframework.web.cors.CorsConfiguration#setAllowedOrigins(Ljava/util/List;)V

@@ -1,0 +1,6 @@
+com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderController#updateOrder(Lcom/snackbar/orderRefactory/infrastructure/controllers/CreateOrderRequest;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+false
+48793ae4b3b34bcde4a596f486b33580
+==
+toDomain com.snackbar.orderRefactory.infrastructure.controllers.OrderDTOMapper#toDomain(Lcom/snackbar/orderRefactory/infrastructure/controllers/CreateOrderRequest;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+updateOrder com.snackbar.orderRefactory.application.usecases.OrderUseCase#updateOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;

@@ -1,0 +1,7 @@
+com.snackbar.payment.infrastructure.gateways.PaymentRepositoryGateway#createPayment(Lcom/snackbar/payment/domain/entity/Payment;)Lcom/snackbar/payment/domain/entity/Payment;
+false
+58287f47f7f2aa5d18b6d622749c172e
+==
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
+toDomainObj com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper#toDomainObj(Lcom/snackbar/payment/infrastructure/persistence/PaymentEntity;)Lcom/snackbar/payment/domain/entity/Payment;
+toEntity com.snackbar.payment.infrastructure.gateways.PaymentEntityMapper#toEntity(Lcom/snackbar/payment/domain/entity/Payment;)Lcom/snackbar/payment/infrastructure/persistence/PaymentEntity;

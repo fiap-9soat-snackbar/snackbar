@@ -1,0 +1,15 @@
+
+@com.snackbar.pickup.entity.Pickup#getOrderId()Ljava/lang/String;q
+g/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/pickup/entity/Pickup.java ("1*¯
+1 (z
+x
+ (
+%0java.lang.String"__id*N
+
+__unknown_file (2*0#
+!com.snackbar.pickup.entity.Pickup"	
+orderId"$
+ (
+
+%0java.lang.StringB%#
+!com.snackbar.pickup.entity.PickupH

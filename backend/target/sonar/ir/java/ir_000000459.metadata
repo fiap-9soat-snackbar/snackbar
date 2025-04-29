@@ -1,0 +1,10 @@
+com.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#toItemEntity(Lcom/snackbar/orderRefactory/domain/entity/OrderItem;)Lcom/snackbar/orderRefactory/infrastructure/persistence/ItemEntity;
+false
+6b5f9bfabb5d9fe8423a4f1f3c3bb8f4
+com.snackbar.orderRefactory.infrastructure.persistence.ItemEntity#instance-init#
+==
+getCookingTime com.snackbar.orderRefactory.domain.entity.OrderItem#getCookingTime()Ljava/lang/Integer;
+getCustomization com.snackbar.orderRefactory.domain.entity.OrderItem#getCustomization()Ljava/lang/String;
+getName com.snackbar.orderRefactory.domain.entity.OrderItem#getName()Ljava/lang/String;
+getPrice com.snackbar.orderRefactory.domain.entity.OrderItem#getPrice()Ljava/math/BigDecimal;
+getQuantity com.snackbar.orderRefactory.domain.entity.OrderItem#getQuantity()Ljava/lang/Integer;

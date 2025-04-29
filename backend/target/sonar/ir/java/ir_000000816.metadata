@@ -1,0 +1,7 @@
+com.snackbar.orderRefactory.infrastructure.gateways.OrderRepositoryGateway#createOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+false
+335f2c673ca15662bdd7e09a234b78ac
+==
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
+toDomainObj com.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#toDomainObj(Lcom/snackbar/orderRefactory/infrastructure/persistence/OrderEntity;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+toEntity com.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#toEntity(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/infrastructure/persistence/OrderEntity;

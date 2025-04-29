@@ -1,0 +1,266 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889206327*java2.Bç
+U
+Psrc/main/java/com/snackbar/cooking/application/usecases/ReceiveOrderUseCase.java2
+
+package4
+.
+)com.snackbar.cooking.application.usecases5
+B
+=com.snackbar.cooking.application.usecases.ReceiveOrderUseCase7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+ReceiveOrderUseCase12
+,
+&org.springframework.stereotype.Service14
+
+unknown15
+
+annotated by16
+
+
+uses17
+P
+Jcom.snackbar.cooking.application.usecases.ReceiveOrderUseCase.orderGateway19
+
+field20
+
+private21
+
+orderGateway22
+<
+6com.snackbar.cooking.application.gateways.OrderGateway24
+
+is type25
+O
+Icom.snackbar.cooking.application.usecases.ReceiveOrderUseCase.STATUS_PAID27
+
+STATUS_PAID28
+S
+Mcom.snackbar.cooking.application.usecases.ReceiveOrderUseCase.STATUS_RECEIVED30
+
+STATUS_RECEIVED31
+Ö
+com.snackbar.cooking.application.usecases.ReceiveOrderUseCase#<init>(Lcom/snackbar/cooking/application/gateways/OrderGateway;)V33
+
+method34
+
+	has param35
+
+calls36
+
+
+references37
+q
+kcom.snackbar.cooking.application.usecases.ReceiveOrderUseCase#execute(Ljava/lang/String;)Ljava/lang/String;39
+
+execute40
+.
+(com.snackbar.cooking.domain.entity.Order42
+
+returns43
+m
+gcom.snackbar.cooking.application.gateways.OrderGateway#findById(Ljava/lang/String;)Ljava/util/Optional;45
+N
+Hcom.snackbar.cooking.domain.entity.Order#statusOrder()Ljava/lang/String;47
+ö
+ìcom.snackbar.cooking.application.gateways.OrderGateway#updateStatus(Ljava/lang/String;Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Order;49J
+
+1
+12Z
+
+3	
+354j˝
+9
+64
+678 *
+1 (!:3B
+	
+9
+10
+
+
+11
+12
+
+41
+414215
+
+23
+232415
+@
+26:
+262720 *
+1	 	(26:3B
+	
+9
+21
+
+
+11
+28
+@
+29:
+293020 *
+1
+ 
+(26:3B
+	
+9
+21
+
+
+11
+31
+
+13
+131415
+
+46
+464715
+
+48
+484915
+@
+38:
+383934 *
+1 (26:3B
+	
+9
+10
+
+
+11
+40
+@
+32:
+323334 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+@
+18:
+181920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+22
+
+44
+444515rˆ
+
+61316*
+1 (
+
+61317*
+1 (	
+
+182325*
+1 (
+
+182317*
+1 (
+
+182317*
+1  (,
+
+322335*
+1  (,
+
+32636*
+1 (
+
+322325*
+1- (9
+
+322317*
+1  (,
+
+32617*
+1	 (
+
+32637*
+1	 (
+
+322317*
+1 (
+
+321837*
+1 (
+
+384125*
+1 (
+
+384143*
+1 (!
+
+382337*
+1 (!
+
+384436*
+1" (*
+
+381837*
+1 (!
+
+382317*
+1 (!
+
+381837*
+1 (!
+
+382637*
+1 (
+
+382637*
+1 (
+
+384137*
+1  (%
+
+384636*
+1& (1
+
+384143*
+1 (
+
+382337*
+1 (
+
+384836*
+1 (&
+
+381837*
+1 (
+
+382317*
+1 (
+
+381837*
+1 (
+
+382937*
+1+ (:
+
+384137*
+1- (2
+
+384636*
+13 (>

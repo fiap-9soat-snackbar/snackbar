@@ -1,0 +1,10 @@
+com.snackbar.payment.infrastructure.MpService#postMercadoPago(Ljava/lang/Object;)Ljava/lang/String;
+false
+adb79caf9f407bea78b9675cb4c07164
+==
+block reactor.core.publisher.Mono#block()Ljava/lang/Object;
+bodyToMono org.springframework.web.reactive.function.client.WebClient$ResponseSpec#bodyToMono(Ljava/lang/Class;)Lreactor/core/publisher/Mono;
+bodyValue org.springframework.web.reactive.function.client.WebClient$RequestBodySpec#bodyValue(Ljava/lang/Object;)Lorg/springframework/web/reactive/function/client/WebClient$RequestHeadersSpec;
+post org.springframework.web.reactive.function.client.WebClient#post()Lorg/springframework/web/reactive/function/client/WebClient$RequestBodyUriSpec;
+retrieve org.springframework.web.reactive.function.client.WebClient$RequestHeadersSpec#retrieve()Lorg/springframework/web/reactive/function/client/WebClient$ResponseSpec;
+uri org.springframework.web.reactive.function.client.WebClient$UriSpec#uri(Ljava/lang/String;[Ljava/lang/Object;)Lorg/springframework/web/reactive/function/client/WebClient$RequestHeadersSpec;

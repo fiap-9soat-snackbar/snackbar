@@ -1,0 +1,5 @@
+com.snackbar.payment.application.usecases.GetPaymentByIdUseCase#getPaymentById(Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;
+false
+38ad9cf1901a9d73f0cca1159b74dbac
+==
+getPaymentById com.snackbar.payment.application.gateways.PaymentGateway#getPaymentById(Ljava/lang/String;)Lcom/snackbar/payment/domain/entity/Payment;

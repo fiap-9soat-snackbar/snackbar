@@ -1,0 +1,15 @@
+
+Wcom.snackbar.orderRefactory.domain.entity.OrderItem#getCookingTime()Ljava/lang/Integer;É
+y/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/domain/entity/OrderItem.java1 1(!"1*…
+12 2(í
+è
+2 2(
+%0java.lang.Integer"__id*d
+
+__unknown_file (H*F5
+3com.snackbar.orderRefactory.domain.entity.OrderItem"
+cookingTime"%
+2 2(
+
+%0java.lang.IntegerB75
+3com.snackbar.orderRefactory.domain.entity.OrderItemH

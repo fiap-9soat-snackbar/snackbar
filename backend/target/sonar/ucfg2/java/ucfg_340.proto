@@ -1,0 +1,39 @@
+
+Ucom.snackbar.iam.web.UserController#getAll()Lorg/springframework/http/ResponseEntity;s
+i/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/web/UserController.java, (2"1*²
+1 (™
+–
+ (#.
+%0(com.snackbar.iam.application.UserService"__id*T
+
+__unknown_file (8*6%
+#com.snackbar.iam.web.UserController"
+userServiceÂ¿
+ (.
+%1java.util.List"Ccom.snackbar.iam.application.UserService#allUsers()Ljava/util/List;*L
+
+__unknown_file (0
+.
+%0(com.snackbar.iam.application.UserService2
+allUsers()^
+\
+ (/
+iamsjava.util.List"__id*2
+
+__unknown_file (
+
+%1java.util.List¤
+¡
+ (&-
+%2'org.springframework.http.ResponseEntity"gorg.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntity*4
+
+__unknown_file (
+
+iamsjava.util.List";
+ ('/
+-
+%2'org.springframework.http.ResponseEntityB'%
+#com.snackbar.iam.web.UserControllerH

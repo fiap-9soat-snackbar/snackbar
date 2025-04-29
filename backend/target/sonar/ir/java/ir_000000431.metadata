@@ -1,0 +1,5 @@
+com.snackbar.iam.application.ApplicationConfiguration#authenticationManager(Lorg/springframework/security/config/annotation/authentication/configuration/AuthenticationConfiguration;)Lorg/springframework/security/authentication/AuthenticationManager;
+false
+d0bda86a0264a757d80468f491c68d88
+==
+getAuthenticationManager org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration#getAuthenticationManager()Lorg/springframework/security/authentication/AuthenticationManager;

@@ -1,0 +1,10 @@
+com.snackbar.iam.application.ApplicationConfiguration#authenticationProvider()Lorg/springframework/security/authentication/AuthenticationProvider;
+false
+13d165fa4d2e0b630150c43590c21495
+org.springframework.security.authentication.dao.DaoAuthenticationProvider#<init>()V
+org.springframework.security.authentication.dao.DaoAuthenticationProvider#instance-init#
+==
+passwordEncoder com.snackbar.iam.application.ApplicationConfiguration#passwordEncoder()Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;
+setPasswordEncoder org.springframework.security.authentication.dao.DaoAuthenticationProvider#setPasswordEncoder(Lorg/springframework/security/crypto/password/PasswordEncoder;)V
+setUserDetailsService org.springframework.security.authentication.dao.DaoAuthenticationProvider#setUserDetailsService(Lorg/springframework/security/core/userdetails/UserDetailsService;)V
+userDetailsService com.snackbar.iam.application.ApplicationConfiguration#userDetailsService()Lorg/springframework/security/core/userdetails/UserDetailsService;

@@ -1,0 +1,800 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207305*java2.Bµ
+=
+8src/main/java/com/snackbar/order/domain/model/Order.java2
+
+package4
+$
+com.snackbar.order.domain.model5
+*
+%com.snackbar.order.domain.model.Order7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+Order12
+<
+6org.springframework.data.mongodb.core.mapping.Document14
+
+unknown15
+
+annotated by16
+
+
+uses17
+.
+(com.snackbar.order.domain.model.Order.id19
+
+field20
+
+private21
+
+id22
+,
+&org.springframework.data.annotation.Id24
+7
+1com.snackbar.order.domain.model.Order.orderNumber26
+
+orderNumber27
+9
+3com.snackbar.order.domain.model.Order.orderDateTime29
+
+orderDateTime30
+:
+4org.springframework.format.annotation.DateTimeFormat32
+>
+8org.springframework.format.annotation.DateTimeFormat$ISO34
+
+
+references35
+H
+Borg.springframework.format.annotation.DateTimeFormat$ISO.DATE_TIME37
+/
+)com.snackbar.order.domain.model.Order.cpf39
+	
+cpf40
+0
+*com.snackbar.order.domain.model.Order.name42
+
+
+name43
+1
++com.snackbar.order.domain.model.Order.items45
+
+items46
+*
+$com.snackbar.order.domain.model.Item48
+7
+1com.snackbar.order.domain.model.Order.statusOrder50
+
+statusOrder51
+1
++com.snackbar.order.domain.model.StatusOrder53
+
+is type54
+9
+3com.snackbar.order.domain.model.Order.paymentMethod56
+
+paymentMethod57
+6
+0com.snackbar.order.domain.model.Order.totalPrice59
+
+
+totalPrice60
+9
+3com.snackbar.order.domain.model.Order.remainingTime62
+
+remainingTime63
+?
+9com.snackbar.order.domain.model.Order#getRemainingTime()J65
+
+method66
+
+getRemainingTime67
+E
+?com.snackbar.order.domain.model.Order#calculateRemainingTime()V69
+
+calculateRemainingTime70
+=
+7com.snackbar.order.domain.model.Order#getWaitingTime()I72
+
+calls73
+E
+?com.snackbar.order.domain.model.Order#getId()Ljava/lang/String;75
+
+getId76
+F
+@com.snackbar.order.domain.model.Order#setId(Ljava/lang/String;)V78
+
+setId79
+N
+Hcom.snackbar.order.domain.model.Order#getOrderNumber()Ljava/lang/String;81
+
+getOrderNumber82
+O
+Icom.snackbar.order.domain.model.Order#setOrderNumber(Ljava/lang/String;)V84
+
+setOrderNumber85
+Q
+Kcom.snackbar.order.domain.model.Order#getOrderDateTime()Ljava/time/Instant;87
+
+getOrderDateTime88
+R
+Lcom.snackbar.order.domain.model.Order#setOrderDateTime(Ljava/time/Instant;)V90
+
+setOrderDateTime91
+F
+@com.snackbar.order.domain.model.Order#getCpf()Ljava/lang/String;93
+
+getCpf94
+G
+Acom.snackbar.order.domain.model.Order#setCpf(Ljava/lang/String;)V96
+
+setCpf97
+G
+Acom.snackbar.order.domain.model.Order#getName()Ljava/lang/String;99
+
+getName100
+I
+Bcom.snackbar.order.domain.model.Order#setName(Ljava/lang/String;)V102
+
+setName103
+G
+@com.snackbar.order.domain.model.Order#getItems()Ljava/util/List;105
+
+getItems106
+H
+Acom.snackbar.order.domain.model.Order#setItems(Ljava/util/List;)V108
+
+setItems109
+
+getWaitingTime110
+O
+Hcom.snackbar.order.domain.model.Item#getCookingTime()Ljava/lang/Integer;112
+L
+Ecom.snackbar.order.domain.model.Item#getQuantity()Ljava/lang/Integer;114
+R
+Kcom.snackbar.order.domain.model.Order#getTotalPrice()Ljava/math/BigDecimal;116
+
+getTotalPrice117
+S
+Lcom.snackbar.order.domain.model.Order#setTotalPrice(Ljava/math/BigDecimal;)V119
+
+setTotalPrice120
+j
+ccom.snackbar.order.domain.model.Order#getStatusOrder()Lcom/snackbar/order/domain/model/StatusOrder;122
+
+getStatusOrder123
+
+returns124
+k
+dcom.snackbar.order.domain.model.Order#setStatusOrder(Lcom/snackbar/order/domain/model/StatusOrder;)V126
+
+setStatusOrder127
+
+	has param128
+f
+_com.snackbar.order.domain.model.Order#generateOrderNumber(Ljava/lang/String;)Ljava/lang/String;130
+
+generateOrderNumber131
+Q
+Jcom.snackbar.order.domain.model.Order#getPaymentMethod()Ljava/lang/String;133
+
+getPaymentMethod134
+R
+Kcom.snackbar.order.domain.model.Order#setPaymentMethod(Ljava/lang/String;)V136
+
+setPaymentMethod137J
+
+1
+12Z
+
+3	
+354j·
+D
+115=
+11511666 *
+1d d(26:3B
+	
+9
+10
+
+11
+117
+@
+92:
+929366 *
+1C C(26:3B
+	
+9
+10
+
+
+11
+94
+D
+132=
+13213366 *
+1| |(26:3B
+	
+9
+10
+
+11
+134
+D
+129=
+12913066 *
+1t t(26:3B
+	
+9
+10
+
+11
+131
+@
+55:
+555620 *
+1 (26:3B
+	
+9
+21
+
+
+11
+57
+F
+135?
+13513666 *
+1Ä Ä(26:3B
+	
+9
+10
+
+11
+137
+@
+83:
+838466 *
+17 7(26:3B
+	
+9
+10
+
+
+11
+85
+@
+86:
+868766 *
+1; ;(26:3B
+	
+9
+10
+
+
+11
+88
+
+33
+333415
+D
+104=
+10410566 *
+1S S(26:3B
+	
+9
+10
+
+11
+106
+
+31
+313215
+@
+38:
+383920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+40
+@
+89:
+899066 *
+1? ?(26:3B
+	
+9
+10
+
+
+11
+91
+
+13
+131415
+A
+98;
+989966 *
+1K K(26:3B
+	
+9
+10
+
+11
+100
+
+36
+363715
+@
+77:
+777866 *
+1/ /(26:3B
+	
+9
+10
+
+
+11
+79
+
+111
+11111215
+@
+25:
+252620 *
+1 (26:3B
+	
+9
+21
+
+
+11
+27
+
+52
+525315
+@
+49:
+495020 *
+1 (26:3B
+	
+9
+21
+
+
+11
+51
+D
+107=
+10710866 *
+1W W(26:3B
+	
+9
+10
+
+11
+109
+@
+58:
+585920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+60
+D
+101=
+10110266 *
+1O O(26:3B
+	
+9
+10
+
+11
+103
+@
+28:
+282920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+30
+D
+121=
+12112266 *
+1l l(26:3B
+	
+9
+10
+
+11
+123
+D
+125=
+12512666 *
+1p p(26:3B
+	
+9
+10
+
+11
+127
+@
+18:
+181920 *
+1 (26:3B
+	
+9
+21
+
+
+11
+22
+@
+41:
+414220 *
+1 (26:3B
+	
+9
+21
+
+
+11
+43
+@
+64:
+646566 *
+1! !(26:3B
+	
+9
+10
+
+
+11
+67
+A
+71;
+717266 *
+1\ \(26:3B
+	
+9
+10
+
+11
+110
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+@
+74:
+747566 *
+1+ +(26:3B
+	
+9
+10
+
+
+11
+76
+@
+44:
+444520 *
+1 (26:3B
+	
+9
+21
+
+
+11
+46
+@
+61:
+616220 *
+1 (26:3B
+	
+9
+21
+
+
+11
+63
+
+47
+474815
+@
+80:
+808166 *
+13 3(26:3B
+	
+9
+10
+
+
+11
+82
+
+113
+11311415
+@
+95:
+959666 *
+1G G(26:3B
+	
+9
+10
+
+
+11
+97
+
+23
+232415
+D
+118=
+11811966 *
+1h h(26:3B
+	
+9
+10
+
+11
+120
+@
+68:
+686966 *
+1% %(26:3B
+	
+9
+10
+
+
+11
+70r›
+
+61316*
+1 (
+
+61317*
+1 (
+
+
+182316*
+1 (
+
+182317*
+1 (
+
+283116*
+1 (
+
+283117*
+1 (
+
+283117*
+1 ()
+
+283317*
+1* (-
+
+283335*
+1* (-
+
+283317*
+1. (7
+
+283635*
+1. (7
+
+444717*
+1 (
+
+495254*
+1 (
+
+495217*
+1 (
+
+495217*
+1 ($
+
+646135*
+1" "(
+
+682835*
+1'7 '(D
+
+68617*
+1(	 ((
+
+68635*
+1(	 ((
+
+686135*
+1( ((
+
+68635*
+1(* ((8
+
+687173*
+1(* ((8
+
+741835*
+1, ,(
+
+77617*
+10	 0(
+
+77635*
+10	 0(
+
+771835*
+10 0(
+
+802535*
+14 4(
+
+83617*
+18	 8(
+
+83635*
+18	 8(
+
+832535*
+18 8(
+
+862835*
+1< <(
+
+89617*
+1@	 @(
+
+89635*
+1@	 @(
+
+892835*
+1@ @(
+
+923835*
+1D D(
+
+95617*
+1H	 H(
+
+95635*
+1H	 H(
+
+953835*
+1H H(
+
+984135*
+1L L(
+
+101617*
+1P	 P(
+
+101635*
+1P	 P(
+
+1014135*
+1P P(
+
+1044717*
+1S S(
+
+1044435*
+1T T(
+
+1074717*
+1W W(#
+
+107617*
+1X	 X(
+
+107635*
+1X	 X(
+
+1074435*
+1X X(
+
+714435*
+1] ](
+
+714435*
+1] ](
+
+714754*
+1^ ^(
+
+714735*
+1^# ^('
+
+7111173*
+1^( ^(6
+
+714735*
+1^; ^(?
+
+7111373*
+1^@ ^(K
+
+1155835*
+1e e(
+
+118617*
+1i	 i(
+
+118635*
+1i	 i(
+
+1185835*
+1i i(
+
+12152124*
+1l l(
+
+1215217*
+1l l(
+
+1215217*
+1m m(
+
+1214935*
+1m m(
+
+12552128*
+1p  p(+
+
+1255254*
+1p, p(7
+
+1255217*
+1p  p(+
+
+125617*
+1q	 q(
+
+125635*
+1q	 q(
+
+1255217*
+1q q(
+
+1254935*
+1q q(
+
+1325535*
+1} }(
+
+135617*
+1Å	 Å(
+
+135635*
+1Å	 Å(
+
+1355535*
+1Å Å(

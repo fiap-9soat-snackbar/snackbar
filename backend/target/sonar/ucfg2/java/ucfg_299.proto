@@ -1,0 +1,15 @@
+
+Dcom.snackbar.checkout.entity.Checkout#getOrderId()Ljava/lang/String;u
+k/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/checkout/entity/Checkout.java ("1*³
+1 (~
+|
+ (
+%0java.lang.String"__id*R
+
+__unknown_file (6*4'
+%com.snackbar.checkout.entity.Checkout"	
+orderId"$
+ (
+
+%0java.lang.StringB)'
+%com.snackbar.checkout.entity.CheckoutH

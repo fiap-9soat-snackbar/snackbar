@@ -1,0 +1,303 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207253*java2.BÉ
+]
+Xsrc/main/java/com/snackbar/orderRefactory/infrastructure/controllers/OrderDTOMapper.java2
+
+package4
+;
+6com.snackbar.orderRefactory.infrastructure.controllers5
+J
+Ecom.snackbar.orderRefactory.infrastructure.controllers.OrderDTOMapper7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+OrderDTOMapper12
+Ó
+Ìcom.snackbar.orderRefactory.infrastructure.controllers.OrderDTOMapper#toDomain(Lcom/snackbar/orderRefactory/infrastructure/controllers/CreateOrderRequest;)Lcom/snackbar/orderRefactory/domain/entity/Order;14
+
+method15
+
+toDomain16
+5
+/com.snackbar.orderRefactory.domain.entity.Order18
+
+unknown19
+
+returns20
+O
+Icom.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest22
+
+	has param23
+
+
+uses24
+
+is type25
+9
+3com.snackbar.orderRefactory.domain.entity.OrderItem27
+
+
+references28
+g
+acom.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#items()Ljava/util/List;30
+
+calls31
+M
+Gcom.snackbar.orderRefactory.infrastructure.controllers.OrderItemRequest33
+n
+hcom.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#orderDate()Ljava/time/Instant;35
+g
+acom.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#cpf()Ljava/lang/String;37
+h
+bcom.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#name()Ljava/lang/String;39
+r
+lcom.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#totalPrice()Ljava/math/BigDecimal;41
+Ö
+Ïcom.snackbar.orderRefactory.infrastructure.controllers.OrderDTOMapper#toResponse(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/infrastructure/controllers/CreateOrderResponse;43
+
+
+toResponse44
+P
+Jcom.snackbar.orderRefactory.infrastructure.controllers.CreateOrderResponse46
+N
+Hcom.snackbar.orderRefactory.infrastructure.controllers.OrderItemResponse48
+P
+Jcom.snackbar.orderRefactory.domain.entity.Order#getItems()Ljava/util/List;50
+Z
+Tcom.snackbar.orderRefactory.domain.entity.OrderItem#getQuantity()Ljava/lang/Integer;52
+Z
+Tcom.snackbar.orderRefactory.domain.entity.OrderItem#getPrice()Ljava/math/BigDecimal;54
+O
+Icom.snackbar.orderRefactory.domain.entity.Order#getId()Ljava/lang/String;56
+P
+Jcom.snackbar.orderRefactory.domain.entity.Order#getCpf()Ljava/lang/String;58
+[
+Ucom.snackbar.orderRefactory.domain.entity.Order#getOrderDateTime()Ljava/time/Instant;60
+[
+Ucom.snackbar.orderRefactory.domain.entity.Order#getTotalPrice()Ljava/math/BigDecimal;62J
+
+1
+12Z
+
+3	
+354j§
+
+55
+555619
+
+61
+616219
+
+21
+212219
+
+47
+474819
+
+59
+596019
+@
+13:
+131415 *
+1 (26:3B
+	
+9
+10
+
+
+11
+16
+
+36
+363719
+
+29
+293019
+
+51
+515219
+
+17
+171819
+
+45
+454619
+
+40
+404119
+
+49
+495019
+
+34
+343519
+
+32
+323319
+@
+42:
+424315 *
+1" "(26:3B
+	
+9
+10
+
+
+11
+44
+
+53
+535419
+
+26
+262719
+9
+64
+678 *
+1	 	(:3B
+	
+9
+10
+
+
+11
+12
+
+57
+575819
+
+38
+383919rî
+
+131720*
+1 (
+
+132123*
+1 (-
+
+131724*
+1 (
+
+132125*
+1. (5
+
+132124*
+1 (-
+
+132624*
+1 (
+
+132128*
+1! ((
+
+132931*
+1) (.
+
+133225*
+1 (
+
+132631*
+1" (+
+
+131731*
+1 (
+
+132128*
+1 (
+
+133431*
+1 ("
+
+132128*
+1 (
+
+133631*
+1 (
+
+132128*
+1 (
+
+133831*
+1 (
+
+132128*
+1 (
+
+134031*
+1 (#
+
+424520*
+1" "(
+
+421723*
+1"+ "(0
+
+424524*
+1" "(
+
+421725*
+1"1 "(6
+
+421724*
+1"+ "(0
+
+424724*
+1# #(
+
+421728*
+1#) #(.
+
+424931*
+1#/ #(7
+
+422625*
+1$ $(
+
+424731*
+1$" $(3
+
+422628*
+1% %(
+
+425131*
+1% %()
+
+422628*
+1& &(
+
+425331*
+1& &(&
+
+424531*
+1) )('
+
+421728*
+1* *(
+
+425531*
+1* *(
+
+421728*
+1+ +(
+
+425731*
+1+ +(
+
+421728*
+1, ,(
+
+425931*
+1, ,('
+
+421728*
+1. .(
+
+426131*
+1. .($

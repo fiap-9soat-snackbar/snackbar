@@ -1,0 +1,26 @@
+
+D__sonar_lambda_24$com.snackbar.iam.application.SecurityConfiguration‚
+x/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/SecurityConfiguration.java,# -(O"1*Å
+1,. ,(5}
+{
+-/ -(NE
+%21>org.springframework.security.config.http.SessionCreationPolicy"__id*"
+
+__unknown_file (
+""ÅÂ
+,. -(Oa
+%22Zorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer"Žorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer#sessionCreationPolicy(Lorg/springframework/security/config/http/SessionCreationPolicy;)Lorg/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer;*ƒ
+
+__unknown_file (g
+e
+sessionZorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer*c
+
+__unknown_file (G
+E
+%21>org.springframework.security.config.http.SessionCreationPolicy2WsessionCreationPolicy(Lorg/springframework/security/config/http/SessionCreationPolicy;)"o
+,. -(Oc
+a
+%22Zorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer:q
+,# ,(*e
+sessionZorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurerB20
+.org.springframework.security.config.Customizer

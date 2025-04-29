@@ -1,0 +1,5 @@
+com.snackbar.payment.infrastructure.config.PaymentConfig#createMpService(Lorg/springframework/web/reactive/function/client/WebClient;)Lcom/snackbar/payment/infrastructure/MpService;
+false
+988b066e8ac292f7cbf7361806c59294
+com.snackbar.payment.infrastructure.MpService#<init>(Lorg/springframework/web/reactive/function/client/WebClient;)V
+com.snackbar.payment.infrastructure.MpService#instance-init#

@@ -1,0 +1,54 @@
+
+G__sonar_lambda_20$com.snackbar.iam.application.ApplicationConfiguration…
+{/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/ApplicationConfiguration.java (S"startingBlock*–
+startingBlock (Sõ
+ò
+
+__unknown_file (V
+ApplicationConfiguration.this5com.snackbar.iam.application.ApplicationConfiguration"__id*x
+
+__unknown_file (\*Z7
+5com.snackbar.iam.application.ApplicationConfiguration"
+ApplicationConfiguration.this*
+1*¼
+1 ($Ó
+Ð
+ ($3
+%1-com.snackbar.iam.infrastructure.IamRepository"__id*ˆ
+
+__unknown_file (l*j
+V
+ApplicationConfiguration.this5com.snackbar.iam.application.ApplicationConfiguration"
+userRepository±®
+ (3
+%2java.util.Optional"_com.snackbar.iam.infrastructure.IamRepository#findByCpf(Ljava/lang/String;)Ljava/util/Optional;*Q
+
+__unknown_file (5
+3
+%1-com.snackbar.iam.infrastructure.IamRepository*5
+
+__unknown_file (
+
+cpfjava.lang.String2findByCpf(Ljava/lang/String;)¬
+©
+ (R!
+%3java.util.function.Supplier"__declareFunction*g
+
+__unknown_file (KI
+G__sonar_lambda_21$com.snackbar.iam.application.ApplicationConfiguration´±
+ (S/
+%6)com.snackbar.iam.domain.UserDetailsEntity"Ojava.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;*6
+
+__unknown_file (
+
+%2java.util.Optional*?
+
+__unknown_file (#
+!
+%3java.util.function.Supplier2*orElseThrow(Ljava/util/function/Supplier;)"=
+ (S1
+/
+%6)com.snackbar.iam.domain.UserDetailsEntity:#
+ (
+cpfjava.lang.StringBDB
+@org.springframework.security.core.userdetails.UserDetailsService

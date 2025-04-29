@@ -1,0 +1,15 @@
+com.snackbar.orderRefactory.infrastructure.controllers.OrderDTOMapper#toDomain(Lcom/snackbar/orderRefactory/infrastructure/controllers/CreateOrderRequest;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+false
+92d30c7f0b7d98bec3b088dc63562b4d
+com.snackbar.orderRefactory.domain.entity.Order#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;Ljava/lang/String;Ljava/math/BigDecimal;J)V
+com.snackbar.orderRefactory.domain.entity.Order#instance-init#
+com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#cpf()Ljava/lang/String;
+com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#items()Ljava/util/List;
+com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#name()Ljava/lang/String;
+com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#orderDate()Ljava/time/Instant;
+com.snackbar.orderRefactory.infrastructure.controllers.CreateOrderRequest#totalPrice()Ljava/math/BigDecimal;
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+==
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;

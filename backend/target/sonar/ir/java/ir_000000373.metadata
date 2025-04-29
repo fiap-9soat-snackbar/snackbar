@@ -1,0 +1,5 @@
+com.snackbar.cooking.infrastructure.controllers.CookingDTOMapper#createRequestToDomain(Ljava/lang/String;)Lcom/snackbar/cooking/domain/entity/Cooking;
+false
+682e6c12d9431c74213939293cd05e2b
+com.snackbar.cooking.domain.entity.Cooking#<init>(Ljava/lang/String;Ljava/lang/String;Lcom/snackbar/order/domain/model/StatusOrder;)V
+com.snackbar.cooking.domain.entity.Cooking#instance-init#

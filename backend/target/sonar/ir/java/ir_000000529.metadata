@@ -1,0 +1,5 @@
+com.snackbar.orderRefactory.application.usecases.OrderUseCase#getOrderByOrderNumber(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;
+false
+a82f1b773240a3c0c3f1ee35b34f5eef
+==
+getOrderByOrderNumber com.snackbar.orderRefactory.application.gateways.OrderGateway#getOrderByOrderNumber(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;

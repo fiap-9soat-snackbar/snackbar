@@ -1,0 +1,190 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889207149*java2.BÞ	
+Z
+Usrc/main/java/com/snackbar/productv2/application/usecases/CreateProductv2UseCase.java2
+
+package4
+0
++com.snackbar.productv2.application.usecases5
+G
+Bcom.snackbar.productv2.application.usecases.CreateProductv2UseCase7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+CreateProductv2UseCase12
+Y
+Scom.snackbar.productv2.application.usecases.CreateProductv2UseCase.productv2Gateway14
+
+field15
+
+private16
+
+productv2Gateway17
+B
+<com.snackbar.productv2.application.gateways.Productv2Gateway19
+
+unknown20
+
+is type21
+
+
+uses22
+‘
+Šcom.snackbar.productv2.application.usecases.CreateProductv2UseCase#<init>(Lcom/snackbar/productv2/application/gateways/Productv2Gateway;)V24
+
+method25
+
+	has param26
+
+calls27
+
+
+references28
+»
+´com.snackbar.productv2.application.usecases.CreateProductv2UseCase#createProductv2(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;30
+
+createProductv231
+4
+.com.snackbar.productv2.domain.entity.Productv233
+
+returns34
+µ
+®com.snackbar.productv2.application.gateways.Productv2Gateway#createProductv2(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;36J
+
+1
+12Z
+
+3	
+354j½
+
+32
+323320
+@
+13:
+131415 *
+1 (26:3B
+	
+9
+16
+
+
+11
+17
+@
+29:
+293025 *
+1 (26:3B
+	
+9
+10
+
+
+11
+31
+9
+64
+678 *
+1 ($:3B
+	
+9
+10
+
+
+11
+12
+
+18
+181920
+
+35
+353620
+@
+23:
+232425 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12r…
+
+131821*
+1 (#
+
+131822*
+1 (#
+
+131822*
+1$ (4
+
+231826*
+1# (3
+
+23627*
+1 ("
+
+231821*
+14 (D
+
+231822*
+1# (3
+
+23622*
+1	 (
+
+23628*
+1	 (
+
+231822*
+1 (
+
+231328*
+1 (
+
+293234*
+1 (
+
+293226*
+1& (/
+
+293222*
+1 (
+
+293221*
+10 (9
+
+293222*
+1& (/
+
+293221*
+1 (#
+
+293222*
+1	 (
+
+293234*
+1& (6
+
+291828*
+1& (6
+
+293527*
+17 (F
+
+291328*
+1& (6
+
+291822*
+1& (6
+
+291328*
+1& (6

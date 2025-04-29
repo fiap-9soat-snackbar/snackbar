@@ -1,0 +1,5 @@
+com.snackbar.productv2.application.usecases.CreateProductv2UseCase#createProductv2(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;
+false
+9fe9d2c6541885c1bb3b1d17ebe7f632
+==
+createProductv2 com.snackbar.productv2.application.gateways.Productv2Gateway#createProductv2(Lcom/snackbar/productv2/domain/entity/Productv2;)Lcom/snackbar/productv2/domain/entity/Productv2;

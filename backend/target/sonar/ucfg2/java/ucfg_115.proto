@@ -1,0 +1,15 @@
+
+Rcom.snackbar.orderRefactory.domain.entity.Order#getOrderNumber()Ljava/lang/String;
+u/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/domain/entity/Order.java0 0( "1*√
+11 1(ç
+ä
+1 1(
+%0java.lang.String"__id*`
+
+__unknown_file (D*B1
+/com.snackbar.orderRefactory.domain.entity.Order"
+orderNumber"$
+1 1(
+
+%0java.lang.StringB31
+/com.snackbar.orderRefactory.domain.entity.OrderH

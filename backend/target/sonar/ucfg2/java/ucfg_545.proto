@@ -1,0 +1,67 @@
+
+òcom.snackbar.productv2.infrastructure.config.ProductConfig#productv2Gateway(Lcom/snackbar/productv2/infrastructure/persistence/Productv2Repository;Lcom/snackbar/productv2/infrastructure/gateways/Productv2EntityMapper;)Lcom/snackbar/productv2/application/gateways/Productv2Gateway;ã
+Ä/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/productv2/infrastructure/config/ProductConfig.java3 3(%"startingBlock*∂
+startingBlock3% 3({Ë
+Â
+2 2(	
+%2"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*z
+
+__unknown_file (^
+\
+productv2RepositoryEcom.snackbar.productv2.infrastructure.persistence.Productv2Repositoryù
+ö
+3: 3(M\
+productv2RepositoryEcom.snackbar.productv2.infrastructure.persistence.Productv2Repository"__annotation*"
+
+__unknown_file (
+
+%2È
+Ê
+2 2(	
+%3"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*{
+
+__unknown_file (_
+]
+productv2EntityMapperDcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapperû
+õ
+3e 3(z]
+productv2EntityMapperDcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper"__annotation*"
+
+__unknown_file (
+
+%3*
+1*˘
+14. 4(A©¶
+4 4(-O
+%0Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway"Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGatewayﬁ
+€
+4 4(Y
+%1"‡com.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway#<init>(Lcom/snackbar/productv2/infrastructure/persistence/Productv2Repository;Lcom/snackbar/productv2/infrastructure/gateways/Productv2EntityMapper;)V*m
+
+__unknown_file (Q
+O
+%0Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway*z
+
+__unknown_file (^
+\
+productv2RepositoryEcom.snackbar.productv2.infrastructure.persistence.Productv2Repository*{
+
+__unknown_file (_
+]
+productv2EntityMapperDcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapper"]
+4 4(ZQ
+O
+%0Icom.snackbar.productv2.infrastructure.gateways.Productv2RepositoryGateway:h
+3& 3(N\
+productv2RepositoryEcom.snackbar.productv2.infrastructure.persistence.Productv2Repository:i
+3O 3(z]
+productv2EntityMapperDcom.snackbar.productv2.infrastructure.gateways.Productv2EntityMapperB><
+:com.snackbar.productv2.infrastructure.config.ProductConfig

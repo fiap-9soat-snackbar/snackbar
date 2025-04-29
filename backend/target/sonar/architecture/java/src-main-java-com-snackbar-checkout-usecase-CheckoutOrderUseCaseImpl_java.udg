@@ -1,0 +1,571 @@
+
+1.0fiap-9soat-snackbar_snackbarJavaFrontend"1745889205191*java2.B“
+N
+Isrc/main/java/com/snackbar/checkout/usecase/CheckoutOrderUseCaseImpl.java2
+
+package4
+"
+com.snackbar.checkout.usecase5
+;
+6com.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+CheckoutOrderUseCaseImpl12
+8
+2com.snackbar.checkout.usecase.CheckoutOrderUseCase14
+
+unknown15
+
+
+implements16
+.
+(org.springframework.stereotype.Component18
+
+annotated by19
+
+
+uses20
+O
+Icom.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl.checkoutRepository22
+
+field23
+
+private24
+
+checkoutRepository25
+6
+0com.snackbar.checkout.gateway.CheckoutRepository27
+
+is type28
+J
+Dcom.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl.basketUseCase30
+
+basketUseCase31
+<
+6com.snackbar.basket.application.usecases.BasketUseCase33
+I
+Ccom.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl.orderUseCase35
+
+orderUseCase36
+C
+=com.snackbar.orderRefactory.application.usecases.OrderUseCase38
+Q
+Kcom.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl.createPaymentUseCase40
+
+createPaymentUseCase41
+D
+>com.snackbar.payment.application.usecases.CreatePaymentUseCase43
+∞
+©com.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl#<init>(Lcom/snackbar/checkout/gateway/CheckoutRepository;Lcom/snackbar/basket/application/usecases/BasketUseCase;Lcom/snackbar/orderRefactory/application/usecases/OrderUseCase;Lcom/snackbar/payment/application/usecases/CreatePaymentUseCase;)V45
+
+method46
+
+	has param47
+
+calls48
+
+
+references49
+ã
+Ñcom.snackbar.checkout.usecase.CheckoutOrderUseCaseImpl#checkout(Ljava/lang/String;)Lcom/snackbar/orderRefactory/domain/entity/Order;51
+
+checkout52
+5
+/com.snackbar.orderRefactory.domain.entity.Order54
+
+returns55
+.
+(com.snackbar.basket.domain.entity.Basket57
+Ö
+com.snackbar.basket.application.usecases.BasketUseCase#findBasket(Ljava/lang/String;)Lcom/snackbar/basket/domain/entity/Basket;59
+Q
+Kcom.snackbar.orderRefactory.domain.entity.Order#setCpf(Ljava/lang/String;)V61
+F
+@com.snackbar.basket.domain.entity.Basket#cpf()Ljava/lang/String;63
+É
+}com.snackbar.orderRefactory.domain.entity.Order#setStatusOrder(Lcom/snackbar/orderRefactory/domain/valueobject/StatusOrder;)V65
+@
+:com.snackbar.orderRefactory.domain.valueobject.StatusOrder67
+E
+?com.snackbar.orderRefactory.domain.valueobject.StatusOrder.NOVO69
+\
+Vcom.snackbar.orderRefactory.domain.entity.Order#setTotalPrice(Ljava/math/BigDecimal;)V71
+Q
+Kcom.snackbar.basket.domain.entity.Basket#totalPrice()Ljava/math/BigDecimal;73
+[
+Ucom.snackbar.orderRefactory.domain.entity.Order#setPaymentMethod(Ljava/lang/String;)V75
+Q
+Kcom.snackbar.orderRefactory.domain.entity.Order#setItems(Ljava/util/List;)V77
+F
+@com.snackbar.basket.domain.entity.Basket#items()Ljava/util/List;79
+,
+&com.snackbar.basket.domain.entity.Item81
+9
+3com.snackbar.orderRefactory.domain.entity.OrderItem83
+V
+Pcom.snackbar.orderRefactory.domain.entity.OrderItem#setName(Ljava/lang/String;)V85
+E
+?com.snackbar.basket.domain.entity.Item#name()Ljava/lang/String;87
+[
+Ucom.snackbar.orderRefactory.domain.entity.OrderItem#setQuantity(Ljava/lang/Integer;)V89
+J
+Dcom.snackbar.basket.domain.entity.Item#quantity()Ljava/lang/Integer;91
+¥
+≠com.snackbar.orderRefactory.application.usecases.OrderUseCase#createOrder(Lcom/snackbar/orderRefactory/domain/entity/Order;)Lcom/snackbar/orderRefactory/domain/entity/Order;93J
+
+1
+12Z
+
+3	
+354jœ
+
+90
+909115
+@
+34:
+343523 *
+1 (26:3B
+	
+9
+24
+
+
+11
+36
+
+70
+707115
+
+72
+727315
+
+92
+929315
+
+84
+848515
+
+76
+767715
+@
+29:
+293023 *
+1 (26:3B
+	
+9
+24
+
+
+11
+31
+
+64
+646515
+
+37
+373815
+9
+64
+678 *
+1 (&:3B
+	
+9
+10
+
+
+11
+12
+
+86
+868715
+@
+50:
+505146 *
+1% %(26:3B
+	
+9
+10
+
+
+11
+52
+
+82
+828315
+@
+21:
+212223 *
+1 (26:3B
+	
+9
+24
+
+
+11
+25
+
+62
+626315
+
+74
+747515
+@
+44:
+444546 *
+1 (26:3B
+	
+9
+10
+
+
+11
+12
+
+56
+565715
+
+66
+666715
+
+53
+535415
+
+13
+131415
+
+42
+424315
+
+88
+888915
+
+17
+171815
+
+80
+808115
+
+68
+686915
+
+78
+787915
+
+58
+585915
+
+60
+606115
+
+26
+262715
+@
+39:
+394023 *
+1 (26:3B
+	
+9
+24
+
+
+11
+41
+
+32
+323315rë
+
+61316*
+12 (F
+
+61719*
+1 (
+
+61720*
+1 (
+
+61320*
+12 (F
+
+212628*
+1 (%
+
+212620*
+1 (%
+
+212620*
+1& (8
+
+293228*
+1 ( 
+
+293220*
+1 ( 
+
+293220*
+1! (.
+
+343728*
+1 (
+
+343720*
+1 (
+
+343720*
+1  (,
+
+394228*
+1 ('
+
+394220*
+1 ('
+
+394220*
+1( (<
+
+442647*
+1 (
+
+443247*
+1 (
+
+443747*
+1 (
+
+444247*
+1 (!
+
+44648*
+1 ($
+
+442628*
+1  (2
+
+442620*
+1 (
+
+443228*
+1 ((
+
+443220*
+1 (
+
+443728*
+1 (&
+
+443720*
+1 (
+
+444228*
+1" (6
+
+444220*
+1 (!
+
+44620*
+1	 (
+
+44649*
+1	 (
+
+442620*
+1 ( 
+
+442149*
+1 ( 
+
+44620*
+1 	  (
+
+44649*
+1 	  (
+
+443220*
+1   (
+
+442949*
+1   (
+
+44620*
+1!	 !(
+
+44649*
+1!	 !(
+
+443720*
+1! !(
+
+443449*
+1! !(
+
+44620*
+1"	 "(
+
+44649*
+1"	 "(
+
+444220*
+1" "("
+
+443949*
+1" "("
+
+505355*
+1& &(
+
+505320*
+1& &(
+
+505628*
+1' '(
+
+505620*
+1'	 '(
+
+505655*
+1' '(&
+
+503249*
+1' '(&
+
+505848*
+1'' '(1
+
+502949*
+1' '(&
+
+503220*
+1' '(&
+
+502949*
+1' '(&
+
+505328*
+1) )(
+
+505320*
+1)	 )(
+
+505349*
+1*	 *(
+
+506048*
+1* *(
+
+505649*
+1* *(
+
+506248*
+1* *( 
+
+505349*
+1+	 +(
+
+506448*
+1+ +(
+
+506620*
+1+ +()
+
+506620*
+1+* +(.
+
+506849*
+1+* +(.
+
+505349*
+1,	 ,(
+
+507048*
+1, ,(
+
+505649*
+1, ,(#
+
+507248*
+1,$ ,(.
+
+505349*
+1-	 -(
+
+507448*
+1- -(
+
+505349*
+1.	 .(
+
+507648*
+1. .(
+
+505649*
+1. .(
+
+507848*
+1. .($
+
+508028*
+1.4 .(8
+
+508228*
+1/ /( 
+
+508220*
+1/ /(
+
+508249*
+10 0(
+
+508448*
+10 0(
+
+508049*
+10 0(#
+
+508648*
+10$ 0((
+
+508249*
+11 1(
+
+508848*
+11 1("
+
+508049*
+11# 1('
+
+509048*
+11( 1(0
+
+505328*
+15 5(
+
+505320*
+15	 5(
+
+505355*
+15 5("
+
+503749*
+15 5("
+
+509248*
+150 5(;
+
+50620*
+15 5("
+
+50649*
+15 5("
+
+503720*
+15# 5(/
+
+503449*
+15# 5(/

@@ -1,0 +1,5 @@
+com.snackbar.basket.config.BasketConfig#basketDTOMapper()Lcom/snackbar/basket/infrastructure/controllers/BasketDTOMapper;
+false
+e5458abba6fdb0483a34c84a9988146f
+com.snackbar.basket.infrastructure.controllers.BasketDTOMapper#<init>()V
+com.snackbar.basket.infrastructure.controllers.BasketDTOMapper#instance-init#

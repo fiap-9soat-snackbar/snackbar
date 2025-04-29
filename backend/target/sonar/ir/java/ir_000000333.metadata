@@ -1,0 +1,5 @@
+com.snackbar.orderRefactory.config.OrderConfig#orderEntityMapper()Lcom/snackbar/orderRefactory/infrastructure/gateways/OrderEntityMapper;
+false
+3bd748f7ec559b983da14f7034ec0cee
+com.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#<init>()V
+com.snackbar.orderRefactory.infrastructure.gateways.OrderEntityMapper#instance-init#

@@ -1,0 +1,23 @@
+
+Œcom.snackbar.iam.application.ApplicationConfiguration#userDetailsService()Lorg/springframework/security/core/userdetails/UserDetailsService;…
+{/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/iam/application/ApplicationConfiguration.java ()"1*Ÿ
+1 (SÑ
+Î
+ (SF
+%0@org.springframework.security.core.userdetails.UserDetailsService"__declareFunction*g
+
+__unknown_file (KI
+G__sonar_lambda_20$com.snackbar.iam.application.ApplicationConfigurationå
+â
+
+__unknown_file (i
+F
+%0@org.springframework.security.core.userdetails.UserDetailsService"
+ApplicationConfiguration.this"__id*U
+
+__unknown_file (97
+5com.snackbar.iam.application.ApplicationConfiguration"T
+ (TH
+F
+%0@org.springframework.security.core.userdetails.UserDetailsServiceB97
+5com.snackbar.iam.application.ApplicationConfiguration

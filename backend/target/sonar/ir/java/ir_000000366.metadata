@@ -1,0 +1,7 @@
+com.snackbar.cooking.application.usecases.FinishPreparationUseCase#validateOrderStatus(Lcom/snackbar/order/domain/model/Order;Lcom/snackbar/order/domain/model/StatusOrder;)V
+false
+d3d3aaefe2677934493892509a09cd91
+com.snackbar.cooking.domain.exceptions.OrderStatusInvalidException#<init>(Ljava/lang/String;)V
+com.snackbar.cooking.domain.exceptions.OrderStatusInvalidException#instance-init#
+==
+getStatusOrder com.snackbar.order.domain.model.Order#getStatusOrder()Lcom/snackbar/order/domain/model/StatusOrder;

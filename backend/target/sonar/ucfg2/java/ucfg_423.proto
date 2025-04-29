@@ -1,0 +1,15 @@
+
+ùcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity#getStatusOrder()Lcom/snackbar/orderRefactory/infrastructure/persistence/StatusOrderEntity;ì
+à/Users/thiagomoreira/APP-Snackbar/snackbar/backend/src/main/java/com/snackbar/orderRefactory/infrastructure/persistence/OrderEntity.javan n(+"1*∆
+1o o(ÿ
+’
+o o(N
+%0Hcom.snackbar.orderRefactory.infrastructure.persistence.StatusOrderEntity"__id*s
+
+__unknown_file (W*UD
+Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntity"
+statusOrder"\
+o o(P
+N
+%0Hcom.snackbar.orderRefactory.infrastructure.persistence.StatusOrderEntityBFD
+Bcom.snackbar.orderRefactory.infrastructure.persistence.OrderEntityH
