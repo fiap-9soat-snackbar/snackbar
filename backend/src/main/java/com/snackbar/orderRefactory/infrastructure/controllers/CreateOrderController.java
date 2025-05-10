@@ -66,4 +66,14 @@ public class CreateOrderController {
         String id = request.orderId();
         return orderUseCase.updateStatusOrder(id, status);
     }
+    
+    @PutMapping("/{id}/status")
+    public ResponseEntity<?> updateOrderStatus(@PathVariable String id, @RequestBody UpdateOrderStatusRequest request) {
+        try {
+            Order order = orderUseCase.updateStatusOrder(id, request.status());
+            return ResponseEntity.ok(order);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
 }
